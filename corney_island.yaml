@@ -80,7 +80,7 @@ outlines:
     -   what: rectangle
         adjust: 
             ref: thumbfan_far_home
-        size: [1.5 kx, min(2 ky)]
+        size: [1.5 ks, 1.75 kp]
         operation: subtract
 
   _matrix_outline:
@@ -112,25 +112,25 @@ outlines:
     -   what: rectangle
         adjust: 
             ref: thumbfan_far_home
-            shift: [0, 0.165 kp]
-        size: [1.5 kx, 1.5 ky]
+            shift: [0, 0.275 kp]
+        size: [1.5 ks, 1.5 kp]
     -   what: rectangle
         adjust: 
             ref: matrix_ring_bottom
             shift: [0, -0.5 kp]
-        size: [3 kx, 0.5 ky]
+        size: [3 ks, 0.5 kp]
     -   what: polygon
         points:
             -   ref: matrix_pinky_bottom
-                shift: [1.5 ks, -0.5 ky]
+                shift: [1.5 ks, -0.5 kp]
             -   ref: thumbfan_near_home
-                shift: [-0.5 kx, -0.5 ky]
+                shift: [-0.5 ks, -0.5 kp]
             -   ref: thumbfan_far_home
-                shift: [-0.75 kx, 0.5 ky]
+                shift: [-0.75 ks, 0.5 kp]
             -   ref: thumbfan_far_home
-                shift: [0.75 kx, 0.5 ky]
+                shift: [0.75 ks, 0.5 kp]
             -   ref: thumbfan_near_home
-                shift: [-0.5 ks, 0.75 ky]
+                shift: [-0.5 ks, 0.75 kp]
 
   _screws:
     -   &circle
@@ -138,33 +138,33 @@ outlines:
         radius: screw_radius
         adjust:
             ref: matrix_pinky_top
-            shift: [-0.5 kx, -0.5 ky]
+            shift: [-0.5 ks, -0.5 kp]
     -   <<: *circle
         adjust:
             ref: matrix_pinky_home
-            shift: [-0.5 kx, -0.5 ky]
+            shift: [-0.5 ks, -0.5 kp]
     -   <<: *circle
         adjust:
             ref: matrix_inner_top
-            shift: [-0.5 kx, -0.5 ky + 1.4]
+            shift: [-0.5 ks, -0.5 kp + 1.4]
     -   <<: *circle
         adjust:
             ref: thumbfan_near_home
-            shift: [-0.7 kx -0.2, 7.1]
+            shift: [-0.7 ks -0.2, 7.1]
     -   <<: *circle
         adjust:
             ref: thumbfan_far_home
-            shift: [0, 0.5 ky + 2]
+            shift: [0, 0.5 kp + 2]
 
   _controller_overlay_screws:
     -   <<: *circle
         adjust:
         -   ref: thumbfan_far_home
-            shift: [0.9 kx, 0.65 ky]
+            shift: [0.9 ks, 0.65 kp]
     -   <<: *circle
         adjust:
         -   ref: thumbfan_far_home
-            shift: [0.9 kx, -0.25 ky]
+            shift: [0.9 ks, -0.25 kp]
 
   _spacers:
     -   &bigCircle
@@ -172,23 +172,23 @@ outlines:
         radius: spacer_radius
         adjust:
             ref: matrix_pinky_top
-            shift: [-0.5 kx, -0.5 ky]
+            shift: [-0.5 ks, -0.5 kp]
     -   <<: *bigCircle
         adjust:
             ref: matrix_pinky_home
-            shift: [-0.5 kx, -0.5 ky]
+            shift: [-0.5 ks, -0.5 kp]
     -   <<: *bigCircle
         adjust:
             ref: matrix_inner_top
-            shift: [-0.5 kx, -0.5 ky + 1.4]
+            shift: [-0.5 ks, -0.5 kp + 1.4]
     -   <<: *bigCircle
         adjust:
             ref: thumbfan_near_home
-            shift: [-0.7 kx -0.2, 7.1]
+            shift: [-0.7 ks -0.2, 7.1]
     -   <<: *bigCircle
         adjust:
             ref: thumbfan_far_home
-            shift: [0, 0.5 ky + 2]
+            shift: [0, 0.5 kp + 2]
 
   _keycap_outlines:
     -   what: rectangle
