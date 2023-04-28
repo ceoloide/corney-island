@@ -73,9 +73,9 @@ outlines:
     -   what: rectangle
         where:
             - matrix_inner_top
-        size: [20, 4 kp]
+        size: [20, 3.5 kp]
         adjust:
-            shift: [ks + (20 - ks) / 2, -1.5 kp]
+            shift: [ks + (20 - ks) / 2, -1.25 kp -0.125 kp]
         operation: stack
     -   what: rectangle
         adjust: 
