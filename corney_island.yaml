@@ -1,0 +1,265 @@
+vars:
+  version: &kb_version 'Corney Island v0.1'
+
+units:
+  # Key and keycap measures
+  kx: u  # spacing between key centers (X-axis)
+  ky: u  # spacing between key centers (X-axis)
+  ks: 19  # horizontal space between columns (default: 19)
+  kp: 19  # vertical padding between keys (deafult: 19)
+  kcow: 14  # key cutout hole width (cherry: 14, choc: 13.8)
+  kcoh: 14  # key cutout hole height (cherry: 14, choc: 13.8)
+  keycw: 18  # keycap width (cherry: 18, choc: 17.5)
+  keych: 18  # keycap height (cherry: 18, choc: 16.5)
+  hand_rotation: 0
+
+  # Physical measures
+  screw_radius: 1.1  # M2 screws
+  spacer_radius: 2.05  # M2 standoffs
+  fillet_radius: 0.5
+
+  # Thumb splay
+  splay_thumb_middle: -15
+  splay_thumb_far: -15
+
+points:
+  zones:
+    matrix:
+      key:
+        padding: kp
+        spread: ks
+        tags: key
+      anchor:
+        rotate: hand_rotation
+        shift: [100, -100]  # Fix KiCad placement
+      columns:
+        outer:
+        pinky:
+        ring.key.stagger: 0.25 kp
+        middle.key.stagger: 0.125 kp
+        index.key.stagger: -0.125 kp
+        inner.key.stagger: -0.125 kp
+      rows:
+        bottom:
+        home:
+        top:
+    thumbfan:
+      key:
+        padding: kp
+        spread: ks
+        tags: key
+      anchor:
+        ref: matrix_index_bottom
+        shift: [-0.5 ks, -kp -0.5]
+      columns:
+        near:
+        middle.key:
+          splay: splay_thumb_middle
+          origin: [-0.5 ks, -0.5 kp]
+        far.key:
+          splay: splay_thumb_far
+          origin: [0.5 ks, -0.55 kp]
+          rotate: 90
+      rows:
+        home:
+
+outlines:
+  _switch_cutouts:
+    - what: rectangle
+      where: true
+      size: [kcow, kcoh]
+
+  _backplate_additional_outline:
+    -   what: rectangle
+        where:
+            - matrix_inner_top
+        size: [20, 4 kp]
+        adjust:
+            shift: [ks + (20 - ks) / 2, -1.5 kp]
+        operation: stack
+    -   what: rectangle
+        adjust: 
+            ref: thumbfan_far_home
+        size: [1.5 kx, min(2 ky)]
+        operation: subtract
+
+  _matrix_outline:
+    -   what: rectangle
+        where:
+            - matrix_outer_top
+            - matrix_outer_home
+            - matrix_outer_bottom
+            - matrix_pinky_top
+            - matrix_pinky_home
+            - matrix_pinky_bottom
+            - matrix_ring_top
+            - matrix_ring_home
+            - matrix_ring_bottom
+            - matrix_middle_top
+            - matrix_middle_home
+            - matrix_middle_bottom
+            - matrix_index_top
+            - matrix_index_home
+            - matrix_index_bottom
+            - matrix_inner_top
+            - matrix_inner_home
+            - matrix_inner_bottom
+        size: [ks, kp]
+
+  _plate_outline:
+    -   what: outline
+        name: _matrix_outline
+    -   what: rectangle
+        adjust: 
+            ref: thumbfan_far_home
+            shift: [0, 0.165 kp]
+        size: [1.5 kx, 1.5 ky]
+    -   what: rectangle
+        adjust: 
+            ref: matrix_ring_bottom
+            shift: [0, -0.5 kp]
+        size: [3 kx, 0.5 ky]
+    -   what: polygon
+        points:
+            -   ref: matrix_pinky_bottom
+                shift: [1.5 ks, -0.5 ky]
+            -   ref: thumbfan_near_home
+                shift: [-0.5 kx, -0.5 ky]
+            -   ref: thumbfan_far_home
+                shift: [-0.75 kx, 0.5 ky]
+            -   ref: thumbfan_far_home
+                shift: [0.75 kx, 0.5 ky]
+            -   ref: thumbfan_near_home
+                shift: [-0.5 ks, 0.75 ky]
+
+  _screws:
+    -   &circle
+        what: circle
+        radius: screw_radius
+        adjust:
+            ref: matrix_pinky_top
+            shift: [-0.5 kx, -0.5 ky]
+    -   <<: *circle
+        adjust:
+            ref: matrix_pinky_home
+            shift: [-0.5 kx, -0.5 ky]
+    -   <<: *circle
+        adjust:
+            ref: matrix_inner_top
+            shift: [-0.5 kx, -0.5 ky + 1.4]
+    -   <<: *circle
+        adjust:
+            ref: thumbfan_near_home
+            shift: [-0.7 kx -0.2, 7.1]
+    -   <<: *circle
+        adjust:
+            ref: thumbfan_far_home
+            shift: [0, 0.5 ky + 2]
+
+  _controller_overlay_screws:
+    -   <<: *circle
+        adjust:
+        -   ref: thumbfan_far_home
+            shift: [0.9 kx, 0.65 ky]
+    -   <<: *circle
+        adjust:
+        -   ref: thumbfan_far_home
+            shift: [0.9 kx, -0.25 ky]
+
+  _spacers:
+    -   &bigCircle
+        what: circle
+        radius: spacer_radius
+        adjust:
+            ref: matrix_pinky_top
+            shift: [-0.5 kx, -0.5 ky]
+    -   <<: *bigCircle
+        adjust:
+            ref: matrix_pinky_home
+            shift: [-0.5 kx, -0.5 ky]
+    -   <<: *bigCircle
+        adjust:
+            ref: matrix_inner_top
+            shift: [-0.5 kx, -0.5 ky + 1.4]
+    -   <<: *bigCircle
+        adjust:
+            ref: thumbfan_near_home
+            shift: [-0.7 kx -0.2, 7.1]
+    -   <<: *bigCircle
+        adjust:
+            ref: thumbfan_far_home
+            shift: [0, 0.5 ky + 2]
+
+  _keycap_outlines:
+    -   what: rectangle
+        fillet: 2
+        where: true
+        size: [keycw, keych]
+
+  _backplate_outline:
+    -   what: outline
+        name: _plate_outline
+    -   what: outline
+        name: _backplate_additional_outline
+        operation: add
+
+  backplate:
+    -   what: outline
+        name: _backplate_outline
+        fillet: fillet_radius
+    -   what: outline
+        name: _screws
+        operation: subtract
+
+  pcb:
+    -   what: outline
+        name: backplate
+    -   what: outline
+        name: _spacers
+        operation: subtract
+    -   what: outline
+        name: _controller_overlay_screws
+        operation: subtract
+  
+  frontplate:
+    -   what: outline
+        name: _plate_outline
+        fillet: fillet_radius
+    -   what: outline
+        name: _switch_cutouts
+        operation: subtract
+    -   what: outline
+        name: _screws
+        operation: subtract
+
+  controller_overlay:
+    -   what: outline
+        name: _backplate_additional_outline
+        fillet: fillet_radius
+    -   what: outline
+        name: _controller_overlay_screws
+        operation: subtract
+
+  _debug:
+    -   what: outline
+        name: frontplate
+        operation: stack
+    -   what: outline
+        name: controller_overlay
+        operation: stack
+
+  preview:
+    -   what: outline
+        name: backplate
+    -   what: outline
+        name: pcb
+        operation: stack
+    -   what: outline
+        name: frontplate
+        operation: stack
+    -   what: outline
+        name: controller_overlay
+        operation: stack
+    -   what: outline
+        name: _keycap_outlines
+        operation: stack
