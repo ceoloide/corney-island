@@ -24,6 +24,8 @@ units:
 
 points:
   zones:
+
+    # Main key matrix
     matrix:
       key:
         padding: kp
@@ -34,15 +36,36 @@ points:
         shift: [100, -100]  # Fix KiCad placement
       columns:
         outer:
+            key:
+                column_net: C0
         pinky:
-        ring.key.stagger: 0.25 kp
-        middle.key.stagger: 0.125 kp
-        index.key.stagger: -0.125 kp
-        inner.key.stagger: -0.125 kp
+            key:
+                column_net: C1
+        ring:
+            key:
+                stagger: 0.25 kp
+                column_net: C2
+        middle:
+            key:
+                stagger: 0.125 kp
+                column_net: C3
+        index:
+            key:
+                stagger: -0.125 kp
+                column_net: C4
+        inner:
+            key:
+                stagger: -0.125 kp
+                column_net: C5z
       rows:
         bottom:
+            row_net: R0
         home:
+            row_net: R1
         top:
+            row_net: R2
+
+    # Thumb cluster
     thumbfan:
       key:
         padding: kp
@@ -53,15 +76,22 @@ points:
         shift: [-0.5 ks, -kp -0.5]
       columns:
         near:
-        middle.key:
-          splay: splay_thumb_middle
-          origin: [-0.5 ks, -0.5 kp]
-        far.key:
-          splay: splay_thumb_far
-          origin: [0.5 ks, -0.55 kp]
-          rotate: 90
+            key:
+                column_net: C3
+        middle:
+            key:
+                splay: splay_thumb_middle
+                origin: [-0.5 ks, -0.5 kp]
+                column_net: C4
+        far:
+            key:
+                splay: splay_thumb_far
+                origin: [0.5 ks, -0.55 kp]
+                rotate: 90
+                column_net: C5
       rows:
         home:
+            row_net: R3
 
 outlines:
   _switch_cutouts:
@@ -104,7 +134,7 @@ outlines:
             - matrix_inner_top
             - matrix_inner_home
             - matrix_inner_bottom
-        size: [ks, kp]
+        size: [kp, ks]
 
   _plate_outline:
     -   what: outline
