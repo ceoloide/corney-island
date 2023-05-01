@@ -293,3 +293,48 @@ outlines:
     -   what: outline
         name: _keycap_outlines
         operation: stack
+
+pcbs:
+    corney_island:
+        outlines:
+            main:
+                outline: pcb
+
+        footprints:
+            key_switches:
+                what: mx
+                where: [key]
+                params:
+                    reverse: false
+                    hotswap: true
+                    keycaps: false
+                    from: "{{column_net}}"
+                    to: "{{colrow}}"
+            
+            diode:
+                what: diode
+                where: [key]
+                params:
+                    from: "{{colrow}}"
+                    to: "{{row_net}}"
+                adjust:
+                    shift: [8.5, -0.5]
+                    rotate: 90
+            
+            mcu:
+                what: promicro
+                where: matrix_inner_top
+                params:
+                    P21: C0
+                    P20: C1
+                    P19: C2
+                    P18: C3
+                    P15: C4
+                    P14: C5
+                    P4: R0
+                    P5: R1
+                    P6: R2
+                    P7: R3
+                adjust:
+                    shift: [19.7, 0.5 kp -0.125 kp - 19.3]
+                    rotate: -90
