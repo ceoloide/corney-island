@@ -332,6 +332,8 @@ pcbs:
                     P18: C3
                     P15: C4
                     P14: C5
+                    P2: SDA
+                    P3: SCL
                     P4: R0
                     P5: R1
                     P6: R2
@@ -339,6 +341,16 @@ pcbs:
                 adjust:
                     shift: [19.7, 0.5 kp -0.125 kp - 19.3]
                     rotate: -90
+
+            oled:
+                what: oled
+                where: matrix_inner_top
+                params:
+                    SDA: SDA
+                    SCL: SCL
+                adjust:
+                    shift: [0.5 ks + 4.16, 0.5 kp -0.125 kp - 19.3 - 20]
+                    rotate: 90
 
             trrs:
                 what: trrs
