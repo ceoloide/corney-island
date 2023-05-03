@@ -311,7 +311,7 @@ pcbs:
                     from: "{{column_net}}"
                     to: "{{colrow}}"
             
-            diode:
+            diodes:
                 what: diode
                 where: [key]
                 params:
@@ -320,6 +320,14 @@ pcbs:
                 adjust:
                     shift: [8.5, -0.5]
                     rotate: 90
+
+            vias:
+                what: via
+                where: [key]
+                params:
+                    net: "{{column_net}}"
+                adjust:
+                    shift: [-7, 0]
             
             mcu:
                 what: promicro
