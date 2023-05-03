@@ -56,7 +56,7 @@ points:
         inner:
             key:
                 stagger: -0.125 kp
-                column_net: C5z
+                column_net: C5
       rows:
         bottom:
             row_net: R0
