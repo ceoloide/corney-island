@@ -30,3 +30,9 @@ fp-info-cache
 
 # MacOS
 .DS_Store
+
+# ergogen
+ergogen/output/outlines/_*.*
+ergogen/output/outlines/*.yaml
+ergogen/output/points
+ergogen/output/source
