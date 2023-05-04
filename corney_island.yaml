@@ -134,7 +134,7 @@ outlines:
             - matrix_inner_top
             - matrix_inner_home
             - matrix_inner_bottom
-        size: [kp, ks]
+        size: [ks, kp]
 
   _plate_outline:
     -   what: outline
