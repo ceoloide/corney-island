@@ -360,6 +360,16 @@ pcbs:
                     shift: [0.5 ks + 4.16, 0.5 kp -0.125 kp - 19.3 - 22.65]
                     rotate: 90
 
+            reset_switch:
+                what: reset_switch
+                where: matrix_inner_top
+                params:
+                    from: RST
+                    to: GND
+                adjust:
+                    shift: [0.5 ks + 18, 0.5 kp -0.125 kp - 19.3 - 20.65]
+                    rotate: -90
+
             trrs:
                 what: trrs
                 where: matrix_inner_top
