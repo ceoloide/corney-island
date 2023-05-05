@@ -305,7 +305,7 @@ pcbs:
                 what: mx
                 where: [key]
                 params:
-                    reverse: false
+                    reverse: true
                     hotswap: true
                     keycaps: false
                     from: "{{column_net}}"
@@ -318,7 +318,7 @@ pcbs:
                     from: "{{colrow}}"
                     to: "{{row_net}}"
                 adjust:
-                    shift: [8.5, -0.5]
+                    shift: [0.5 kcow + 0.5, -3.5]
                     rotate: 90
 
             vias:
@@ -330,7 +330,7 @@ pcbs:
                     shift: [-7, 0]
             
             mcu:
-                what: promicro
+                what: promicro_pretty
                 where: matrix_inner_top
                 params:
                     P0: data
@@ -357,7 +357,7 @@ pcbs:
                     SDA: SDA
                     SCL: SCL
                 adjust:
-                    shift: [0.5 ks + 4.16, 0.5 kp -0.125 kp - 19.3 - 20]
+                    shift: [0.5 ks + 4.16, 0.5 kp -0.125 kp - 19.3 - 22.65]
                     rotate: 90
 
             trrs:
