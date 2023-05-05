@@ -1,0 +1,8 @@
+{
+    "scripts": {
+        "gen": "ergogen ergogen --debug --clear --output ergogen/output"
+    },
+    "dependencies": {
+        "ergogen": "github:ergogen/ergogen"
+    }
+}

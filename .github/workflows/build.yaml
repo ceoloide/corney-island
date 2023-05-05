@@ -1,0 +1,28 @@
+on: [push, pull_request, workflow_dispatch]
+
+name: Build
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    name: Generate
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Docker Cache
+        uses: ScribeMD/docker-cache@0.3.3
+        with:
+          key: docker-${{ runner.os }}
+      - name: Use Node.js 17
+        uses: actions/setup-node@v3
+        with:
+          node-version: 17.x
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm install
+      - name: Generate unrouted PCBs with Ergogen (definition in package.json)
+        run: npm run gen
+      - name: Persist output
+        uses: actions/upload-artifact@v3
+        with:
+          name: unrouted-pcb
+          path: ergogen/output/pcbs
