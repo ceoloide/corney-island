@@ -37,3 +37,6 @@ ergogen/output/outlines/_*.*
 ergogen/output/outlines/*.yaml
 ergogen/output/points
 ergogen/output/source
+
+# npm
+node_modules
