@@ -21,8 +21,28 @@ jobs:
         run: npm install
       - name: Generate unrouted PCBs with Ergogen (definition in package.json)
         run: npm run gen
+      - name: Export DSN 
+        uses: ./.github/actions/export-dsn
+        with:
+          boards: corney_island
+      - name: Autoroute PCB
+        uses: ./.github/actions/autoroute
+        with:
+          boards: corney_island
+      - name: Import SES
+        uses: ./.github/actions/import-ses
+        with:
+          boards: corney_island
+      - name: DRC check
+        uses: ./.github/actions/run-drc
+        with:
+          boards: corney_island
+      - name: Export Gerbers
+        uses: ./.github/actions/export-gerbers
+        with:
+          boards: corney_island
       - name: Persist output
         uses: actions/upload-artifact@v3
         with:
-          name: unrouted-pcb
-          path: ergogen/output/pcbs
+          name: corney_island
+          path: ergogen/output

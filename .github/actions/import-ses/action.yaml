@@ -1,0 +1,21 @@
+name: 'Import SES to Kicad'
+description: 'Import Specctra SES into a Kicad PCB'
+inputs:
+  boards:
+    description: 'Board name'
+    required: true
+runs:
+  using: 'docker'
+  image: 'docker://soundmonster/kicad-automation-scripts:latest'
+  entrypoint: '/bin/sh'
+  args:
+    - '-c'
+    # GH actions set $HOME to a weird location and we have to move Kicad settings there first
+    - |
+      mkdir -p $HOME/.config/kicad ;
+      cp /root/.config/kicad/* $HOME/.config/kicad ;
+      for board in ${{ inputs.boards }};
+      do
+        echo Processing $board
+        /usr/lib/python2.7/dist-packages/kicad-automation/pcbnew_automation/import_ses.py $GITHUB_WORKSPACE/ergogen/output/pcbs/${board}.kicad_pcb $GITHUB_WORKSPACE/output/pcbs/${board}.ses --output-file $GITHUB_WORKSPACE/output/pcbs/${board}_routed.kicad_pcb;
+      done
