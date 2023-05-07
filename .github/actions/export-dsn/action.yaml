@@ -12,6 +12,8 @@ runs:
     - '-c'
     # GH actions set $HOME to a weird location and we have to move Kicad settings there first
     - |
+      echo "HOME=$HOME"
+      ls -la $HOME
       mkdir -p $HOME/.config/kicad ;
       cp /root/.config/kicad/* $HOME/.config/kicad ;
       for board in ${{ inputs.boards }};
