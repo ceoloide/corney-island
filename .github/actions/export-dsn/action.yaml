@@ -12,15 +12,10 @@ runs:
     - '-c'
     # GH actions set $HOME to a weird location and we have to move Kicad settings there first
     - |
-      echo "GITHUB_WORKSPACE=$GITHUB_WORKSPACE"
-      ls -la $GITHUB_WORKSPACE
-      mkdir -p $HOME/.config/kicad ;
-      cp /root/.config/kicad/* $HOME/.config/kicad ;
-      echo "HOME=$HOME"
-      ls -la $HOME
+      mkdir -p $HOME/.config/kicad;
+      cp /root/.config/kicad/* $HOME/.config/kicad;
       for board in ${{ inputs.boards }};
       do
-        echo Processing $board
-        test -f $GITHUB_WORKSPACE/ergogen/output/pcbs/${board}.kicad_pcb
+        echo Processing $board;
         /usr/lib/python2.7/dist-packages/kicad-automation/pcbnew_automation/export_dsn.py $GITHUB_WORKSPACE/ergogen/output/pcbs/${board}.kicad_pcb $GITHUB_WORKSPACE/ergogen/output/pcbs/${board}.dsn
       done
