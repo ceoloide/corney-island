@@ -12,12 +12,12 @@ runs:
     - '-c'
     # GH actions set $HOME to a weird location and we have to move Kicad settings there first
     - |
-      echo "HOME=$HOME"
-      ls -la $HOME
       echo "GITHUB_WORKSPACE=$GITHUB_WORKSPACE"
       ls -la $GITHUB_WORKSPACE
       mkdir -p $HOME/.config/kicad ;
       cp /root/.config/kicad/* $HOME/.config/kicad ;
+      echo "HOME=$HOME"
+      ls -la $HOME
       for board in ${{ inputs.boards }};
       do
         echo Processing $board
