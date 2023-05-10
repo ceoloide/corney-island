@@ -21,5 +21,5 @@ runs:
       do
         echo Processing $board
         mkdir -p $GITHUB_WORKSPACE/ergogen/output/gerbers/${board} ;
-        kikit fab ${{ inputs.fab }} ${{ inputs.flags }} $GITHUB_WORKSPACE/ergogen/output/pcbs/${board}_routed.kicad_pcb $GITHUB_WORKSPACE/ergogen/output/gerbers/${board}
+        kikit fab ${{ inputs.fab }} ${{ inputs.flags }} $GITHUB_WORKSPACE/ergogen/output/pcbs/${board}_routed.kicad_pcb $GITHUB_WORKSPACE/ergogen/output/gerbers/${board}/${board}.kicad_pcb
       done
