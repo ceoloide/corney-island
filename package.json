@@ -1,6 +1,6 @@
 {
     "scripts": {
-        "gen": "ergogen ergogen/. --output ergogen/output"
+        "gen": "ergogen input/"
     },
     "dependencies": {
         "ergogen": "github:ergogen/ergogen"

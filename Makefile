@@ -1,0 +1,73 @@
+# .DELETE_ON_ERROR:
+.SECONDARY:
+.PHONY: clean all setup
+.DEFAULT: all
+
+container_cmd ?= docker
+container_args ?= -w /board -v $(shell pwd):/board --rm
+
+setup:
+	npm install
+
+# outputs from 
+output/pcbs/left.kicad_pcb output/pcbs/right.kicad_pcb &: input/config.yaml
+	npm run gen
+
+output/pcbs/%.dsn: output/pcbs/%.kicad_pcb
+	# file can not be present or the script will refuse to run
+	if [ -f "$@" ] ; then rm -f $@ ; fi
+	${container_cmd} run ${container_args} soundmonster/kicad-automation-scripts:latest /usr/lib/python2.7/dist-packages/kicad-automation/pcbnew_automation/export_dsn.py $< $@
+
+output/routed_pcbs/%.ses: output/pcbs/%.dsn
+	mkdir -p $(shell dirname $@)
+	${container_cmd} run ${container_args} soundmonster/freerouting_cli:v0.1.0 java -jar /opt/freerouting_cli.jar -ap 10 -mt 26 -de $< -do $@
+
+output/routed_pcbs/%.kicad_pcb: output/routed_pcbs/%.ses output/pcbs/%.kicad_pcb
+	mkdir -p $(shell dirname $@)
+	# file can not be present or the script will refuse to run
+	if [ -f "$@" ] ; then rm -f $@ ; fi
+	${container_cmd} run ${container_args} soundmonster/kicad-automation-scripts:latest /usr/lib/python2.7/dist-packages/kicad-automation/pcbnew_automation/import_ses.py output/pcbs/$*.kicad_pcb $< --output-file $@
+
+output/routed_pcbs/%-drc/: output/routed_pcbs/%.kicad_pcb
+	mkdir -p $@
+	${container_cmd} run ${container_args} soundmonster/kicad-automation-scripts:latest /usr/lib/python2.7/dist-packages/kicad-automation/pcbnew_automation/run_drc.py  $< $@
+
+output/routed_pcbs/%-front.png: output/routed_pcbs/%.kicad_pcb
+	mkdir -p $(shell dirname $@)
+	${container_cmd} run ${container_args} yaqwsx/kikit:v0.7 pcbdraw --style builtin:oshpark-afterdark.json $< $@
+
+output/routed_pcbs/%-back.png: output/routed_pcbs/%.kicad_pcb
+	mkdir -p $(shell dirname $@)
+	${container_cmd} run ${container_args} yaqwsx/kikit:v0.7 pcbdraw -b --style builtin:oshpark-afterdark.json $< $@
+
+output/pcbs/%-front.png: output/pcbs/%.kicad_pcb
+	mkdir -p $(shell dirname $@)
+	${container_cmd} run ${container_args} yaqwsx/kikit:v0.7 pcbdraw --style builtin:oshpark-afterdark.json $< $@
+
+output/pcbs/%-back.png: output/pcbs/%.kicad_pcb
+	mkdir -p $(shell dirname $@)
+	${container_cmd} run ${container_args} yaqwsx/kikit:v0.7 pcbdraw -b --style builtin:oshpark-afterdark.json $< $@
+
+output/gerbers/%/gerbers.zip: output/routed_pcbs/%.kicad_pcb
+	mkdir -p $(shell dirname $@)
+	${container_cmd} run ${container_args} yaqwsx/kikit:v0.7 kikit fab jlcpcb --no-assembly $< $(shell dirname $@)
+
+clean:
+	rm -rf output
+
+all: \
+	output/routed_pcbs/left-drc/drc_result.rpt \
+	output/routed_pcbs/right-drc/drc_result.rpt \
+	output/routed_pcbs/left-front.png \
+	output/routed_pcbs/left-back.png \
+	output/routed_pcbs/right-front.png \
+	output/routed_pcbs/right-back.png \
+	output/gerbers/left/gerbers.zip \
+	output/gerbers/right/gerbers.zip
+
+preview: \
+	output/pcbs/left-front.png \
+	output/pcbs/left-back.png \
+	output/pcbs/right-front.png \
+	output/pcbs/right-back.png \
+
