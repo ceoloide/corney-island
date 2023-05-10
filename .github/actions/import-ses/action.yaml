@@ -17,5 +17,5 @@ runs:
       for board in ${{ inputs.boards }};
       do
         echo Processing $board
-        /usr/lib/python2.7/dist-packages/kicad-automation/pcbnew_automation/import_ses.py $GITHUB_WORKSPACE/ergogen/output/pcbs/${board}.kicad_pcb $GITHUB_WORKSPACE/output/pcbs/${board}.ses --output-file $GITHUB_WORKSPACE/ergogen/output/pcbs/${board}_routed.kicad_pcb;
+        /usr/lib/python2.7/dist-packages/kicad-automation/pcbnew_automation/import_ses.py $GITHUB_WORKSPACE/ergogen/output/pcbs/${board}.kicad_pcb $GITHUB_WORKSPACE/ergogen/output/pcbs/${board}.ses --output-file $GITHUB_WORKSPACE/ergogen/output/pcbs/${board}_routed.kicad_pcb;
       done
