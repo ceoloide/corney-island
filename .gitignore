@@ -41,3 +41,7 @@ ergogen/output/source
 
 # npm
 node_modules
+
+# gerbers
+ergogen/output/gerbers/*
+!ergogen/output/gerbers/*.zip
