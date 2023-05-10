@@ -312,7 +312,7 @@ pcbs:
                     to: "{{colrow}}"
             
             diodes:
-                what: sod-123w
+                what: diode
                 where: [key]
                 params:
                     from: "{{colrow}}"
