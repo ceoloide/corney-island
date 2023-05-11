@@ -295,6 +295,21 @@ outlines:
         operation: stack
 
 pcbs:
+    backplate:
+        outlines:
+            main:
+                outline: backplate
+    
+    frontplate:
+        outlines:
+            main:
+                outline: frontplate
+    
+    controller_overlay:
+        outlines:
+            main:
+                outline: controller_overlay
+
     corney_island:
         outlines:
             main:
