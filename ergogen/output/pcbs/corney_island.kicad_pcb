@@ -1157,1074 +1157,1116 @@
         )
         
 
-        (footprint "Diode_SMD:Nexperia_CFP3_SOD-123W"
-            (at 107.5 103.5 90)
-            (descr "Nexperia CFP3 (SOD-123W), https://assets.nexperia.com/documents/outline-drawing/SOD123W.pdf")
-            (tags "CFP3 SOD-123W")
-            (attr smd)
-            (fp_text reference "D1" (at 0 -2 90) (layer "F.SilkS") hide
-                (effects (font (size 1 1) (thickness 0.15)))
-            )
-            (fp_text value "Nexperia_CFP3_SOD-123W" (at 0 2 90) (layer "F.Fab") hide
-                (effects (font (size 1 1) (thickness 0.15)))
-            )
-            (fp_line (start -2.26 -0.95) (end -2.26 0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.26 -0.95) (end 1.4 -0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.26 0.95) (end 1.4 0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.25 -1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start -2.25 -1.1) (end 2.25 -1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start 2.25 -1.1) (end 2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start 2.25 1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start -1.3 -0.85) (end 1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -1.3 0.85) (end -1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.75 0) (end -0.35 0) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 -0.55) (end -0.35 0.55) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 -0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 0.25 -0.4) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 0.75 0) (end 0.25 0) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 1.3 -0.85) (end 1.3 0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 1.3 0.85) (end -1.3 0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-
-            (fp_line (start -2.26 -0.95) (end -2.26 0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.26 -0.95) (end 1.4 -0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.26 0.95) (end 1.4 0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.25 -1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start -2.25 -1.1) (end 2.25 -1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start 2.25 -1.1) (end 2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start 2.25 1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start -1.3 -0.85) (end 1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -1.3 0.85) (end -1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.75 0) (end -0.35 0) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 -0.55) (end -0.35 0.55) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 -0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 0.25 -0.4) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 0.75 0) (end 0.25 0) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 1.3 -0.85) (end 1.3 0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 1.3 0.85) (end -1.3 0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (pad "1" thru_hole rect (at -1.4 0 90) (size 1.2 1.2) (drill 0.3) (layers *.Cu *.Mask) (zone_connect 2) (net 27 "R0"))
-            (pad "2" thru_hole rect (at 1.4 0 90) (size 1.2 1.2) (drill 0.3) (layers *.Cu *.Mask) (zone_connect 2) (net 2 "outer_bottom"))
+        (via
+            (at 93 100)
+            (size 0.8)
+            (drill 0.4)
+            (layers "F.Cu" "B.Cu")
+            (net 1)
         )
     
 
-        (footprint "Diode_SMD:Nexperia_CFP3_SOD-123W"
-            (at 107.5 84.5 90)
-            (descr "Nexperia CFP3 (SOD-123W), https://assets.nexperia.com/documents/outline-drawing/SOD123W.pdf")
-            (tags "CFP3 SOD-123W")
-            (attr smd)
-            (fp_text reference "D2" (at 0 -2 90) (layer "F.SilkS") hide
-                (effects (font (size 1 1) (thickness 0.15)))
-            )
-            (fp_text value "Nexperia_CFP3_SOD-123W" (at 0 2 90) (layer "F.Fab") hide
-                (effects (font (size 1 1) (thickness 0.15)))
-            )
-            (fp_line (start -2.26 -0.95) (end -2.26 0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.26 -0.95) (end 1.4 -0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.26 0.95) (end 1.4 0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.25 -1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start -2.25 -1.1) (end 2.25 -1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start 2.25 -1.1) (end 2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start 2.25 1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start -1.3 -0.85) (end 1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -1.3 0.85) (end -1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.75 0) (end -0.35 0) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 -0.55) (end -0.35 0.55) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 -0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 0.25 -0.4) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 0.75 0) (end 0.25 0) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 1.3 -0.85) (end 1.3 0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 1.3 0.85) (end -1.3 0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-
-            (fp_line (start -2.26 -0.95) (end -2.26 0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.26 -0.95) (end 1.4 -0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.26 0.95) (end 1.4 0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.25 -1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start -2.25 -1.1) (end 2.25 -1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start 2.25 -1.1) (end 2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start 2.25 1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start -1.3 -0.85) (end 1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -1.3 0.85) (end -1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.75 0) (end -0.35 0) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 -0.55) (end -0.35 0.55) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 -0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 0.25 -0.4) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 0.75 0) (end 0.25 0) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 1.3 -0.85) (end 1.3 0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 1.3 0.85) (end -1.3 0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (pad "1" thru_hole rect (at -1.4 0 90) (size 1.2 1.2) (drill 0.3) (layers *.Cu *.Mask) (zone_connect 2) (net 28 "R1"))
-            (pad "2" thru_hole rect (at 1.4 0 90) (size 1.2 1.2) (drill 0.3) (layers *.Cu *.Mask) (zone_connect 2) (net 3 "outer_home"))
+        (via
+            (at 93 81)
+            (size 0.8)
+            (drill 0.4)
+            (layers "F.Cu" "B.Cu")
+            (net 1)
         )
     
 
-        (footprint "Diode_SMD:Nexperia_CFP3_SOD-123W"
-            (at 107.5 65.5 90)
-            (descr "Nexperia CFP3 (SOD-123W), https://assets.nexperia.com/documents/outline-drawing/SOD123W.pdf")
-            (tags "CFP3 SOD-123W")
-            (attr smd)
-            (fp_text reference "D3" (at 0 -2 90) (layer "F.SilkS") hide
-                (effects (font (size 1 1) (thickness 0.15)))
-            )
-            (fp_text value "Nexperia_CFP3_SOD-123W" (at 0 2 90) (layer "F.Fab") hide
-                (effects (font (size 1 1) (thickness 0.15)))
-            )
-            (fp_line (start -2.26 -0.95) (end -2.26 0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.26 -0.95) (end 1.4 -0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.26 0.95) (end 1.4 0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.25 -1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start -2.25 -1.1) (end 2.25 -1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start 2.25 -1.1) (end 2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start 2.25 1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start -1.3 -0.85) (end 1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -1.3 0.85) (end -1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.75 0) (end -0.35 0) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 -0.55) (end -0.35 0.55) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 -0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 0.25 -0.4) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 0.75 0) (end 0.25 0) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 1.3 -0.85) (end 1.3 0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 1.3 0.85) (end -1.3 0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-
-            (fp_line (start -2.26 -0.95) (end -2.26 0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.26 -0.95) (end 1.4 -0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.26 0.95) (end 1.4 0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.25 -1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start -2.25 -1.1) (end 2.25 -1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start 2.25 -1.1) (end 2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start 2.25 1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start -1.3 -0.85) (end 1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -1.3 0.85) (end -1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.75 0) (end -0.35 0) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 -0.55) (end -0.35 0.55) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 -0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 0.25 -0.4) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 0.75 0) (end 0.25 0) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 1.3 -0.85) (end 1.3 0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 1.3 0.85) (end -1.3 0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (pad "1" thru_hole rect (at -1.4 0 90) (size 1.2 1.2) (drill 0.3) (layers *.Cu *.Mask) (zone_connect 2) (net 29 "R2"))
-            (pad "2" thru_hole rect (at 1.4 0 90) (size 1.2 1.2) (drill 0.3) (layers *.Cu *.Mask) (zone_connect 2) (net 4 "outer_top"))
+        (via
+            (at 93 62)
+            (size 0.8)
+            (drill 0.4)
+            (layers "F.Cu" "B.Cu")
+            (net 1)
         )
     
 
-        (footprint "Diode_SMD:Nexperia_CFP3_SOD-123W"
-            (at 126.5 103.5 90)
-            (descr "Nexperia CFP3 (SOD-123W), https://assets.nexperia.com/documents/outline-drawing/SOD123W.pdf")
-            (tags "CFP3 SOD-123W")
-            (attr smd)
-            (fp_text reference "D4" (at 0 -2 90) (layer "F.SilkS") hide
-                (effects (font (size 1 1) (thickness 0.15)))
-            )
-            (fp_text value "Nexperia_CFP3_SOD-123W" (at 0 2 90) (layer "F.Fab") hide
-                (effects (font (size 1 1) (thickness 0.15)))
-            )
-            (fp_line (start -2.26 -0.95) (end -2.26 0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.26 -0.95) (end 1.4 -0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.26 0.95) (end 1.4 0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.25 -1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start -2.25 -1.1) (end 2.25 -1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start 2.25 -1.1) (end 2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start 2.25 1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start -1.3 -0.85) (end 1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -1.3 0.85) (end -1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.75 0) (end -0.35 0) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 -0.55) (end -0.35 0.55) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 -0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 0.25 -0.4) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 0.75 0) (end 0.25 0) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 1.3 -0.85) (end 1.3 0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 1.3 0.85) (end -1.3 0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-
-            (fp_line (start -2.26 -0.95) (end -2.26 0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.26 -0.95) (end 1.4 -0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.26 0.95) (end 1.4 0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.25 -1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start -2.25 -1.1) (end 2.25 -1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start 2.25 -1.1) (end 2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start 2.25 1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start -1.3 -0.85) (end 1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -1.3 0.85) (end -1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.75 0) (end -0.35 0) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 -0.55) (end -0.35 0.55) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 -0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 0.25 -0.4) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 0.75 0) (end 0.25 0) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 1.3 -0.85) (end 1.3 0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 1.3 0.85) (end -1.3 0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (pad "1" thru_hole rect (at -1.4 0 90) (size 1.2 1.2) (drill 0.3) (layers *.Cu *.Mask) (zone_connect 2) (net 27 "R0"))
-            (pad "2" thru_hole rect (at 1.4 0 90) (size 1.2 1.2) (drill 0.3) (layers *.Cu *.Mask) (zone_connect 2) (net 6 "pinky_bottom"))
+        (via
+            (at 112 100)
+            (size 0.8)
+            (drill 0.4)
+            (layers "F.Cu" "B.Cu")
+            (net 5)
         )
     
 
-        (footprint "Diode_SMD:Nexperia_CFP3_SOD-123W"
-            (at 126.5 84.5 90)
-            (descr "Nexperia CFP3 (SOD-123W), https://assets.nexperia.com/documents/outline-drawing/SOD123W.pdf")
-            (tags "CFP3 SOD-123W")
-            (attr smd)
-            (fp_text reference "D5" (at 0 -2 90) (layer "F.SilkS") hide
-                (effects (font (size 1 1) (thickness 0.15)))
-            )
-            (fp_text value "Nexperia_CFP3_SOD-123W" (at 0 2 90) (layer "F.Fab") hide
-                (effects (font (size 1 1) (thickness 0.15)))
-            )
-            (fp_line (start -2.26 -0.95) (end -2.26 0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.26 -0.95) (end 1.4 -0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.26 0.95) (end 1.4 0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.25 -1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start -2.25 -1.1) (end 2.25 -1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start 2.25 -1.1) (end 2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start 2.25 1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start -1.3 -0.85) (end 1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -1.3 0.85) (end -1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.75 0) (end -0.35 0) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 -0.55) (end -0.35 0.55) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 -0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 0.25 -0.4) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 0.75 0) (end 0.25 0) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 1.3 -0.85) (end 1.3 0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 1.3 0.85) (end -1.3 0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-
-            (fp_line (start -2.26 -0.95) (end -2.26 0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.26 -0.95) (end 1.4 -0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.26 0.95) (end 1.4 0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.25 -1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start -2.25 -1.1) (end 2.25 -1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start 2.25 -1.1) (end 2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start 2.25 1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start -1.3 -0.85) (end 1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -1.3 0.85) (end -1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.75 0) (end -0.35 0) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 -0.55) (end -0.35 0.55) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 -0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 0.25 -0.4) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 0.75 0) (end 0.25 0) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 1.3 -0.85) (end 1.3 0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 1.3 0.85) (end -1.3 0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (pad "1" thru_hole rect (at -1.4 0 90) (size 1.2 1.2) (drill 0.3) (layers *.Cu *.Mask) (zone_connect 2) (net 28 "R1"))
-            (pad "2" thru_hole rect (at 1.4 0 90) (size 1.2 1.2) (drill 0.3) (layers *.Cu *.Mask) (zone_connect 2) (net 7 "pinky_home"))
+        (via
+            (at 112 81)
+            (size 0.8)
+            (drill 0.4)
+            (layers "F.Cu" "B.Cu")
+            (net 5)
         )
     
 
-        (footprint "Diode_SMD:Nexperia_CFP3_SOD-123W"
-            (at 126.5 65.5 90)
-            (descr "Nexperia CFP3 (SOD-123W), https://assets.nexperia.com/documents/outline-drawing/SOD123W.pdf")
-            (tags "CFP3 SOD-123W")
-            (attr smd)
-            (fp_text reference "D6" (at 0 -2 90) (layer "F.SilkS") hide
-                (effects (font (size 1 1) (thickness 0.15)))
-            )
-            (fp_text value "Nexperia_CFP3_SOD-123W" (at 0 2 90) (layer "F.Fab") hide
-                (effects (font (size 1 1) (thickness 0.15)))
-            )
-            (fp_line (start -2.26 -0.95) (end -2.26 0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.26 -0.95) (end 1.4 -0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.26 0.95) (end 1.4 0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.25 -1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start -2.25 -1.1) (end 2.25 -1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start 2.25 -1.1) (end 2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start 2.25 1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start -1.3 -0.85) (end 1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -1.3 0.85) (end -1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.75 0) (end -0.35 0) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 -0.55) (end -0.35 0.55) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 -0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 0.25 -0.4) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 0.75 0) (end 0.25 0) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 1.3 -0.85) (end 1.3 0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 1.3 0.85) (end -1.3 0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-
-            (fp_line (start -2.26 -0.95) (end -2.26 0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.26 -0.95) (end 1.4 -0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.26 0.95) (end 1.4 0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.25 -1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start -2.25 -1.1) (end 2.25 -1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start 2.25 -1.1) (end 2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start 2.25 1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start -1.3 -0.85) (end 1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -1.3 0.85) (end -1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.75 0) (end -0.35 0) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 -0.55) (end -0.35 0.55) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 -0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 0.25 -0.4) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 0.75 0) (end 0.25 0) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 1.3 -0.85) (end 1.3 0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 1.3 0.85) (end -1.3 0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (pad "1" thru_hole rect (at -1.4 0 90) (size 1.2 1.2) (drill 0.3) (layers *.Cu *.Mask) (zone_connect 2) (net 29 "R2"))
-            (pad "2" thru_hole rect (at 1.4 0 90) (size 1.2 1.2) (drill 0.3) (layers *.Cu *.Mask) (zone_connect 2) (net 8 "pinky_top"))
+        (via
+            (at 112 62)
+            (size 0.8)
+            (drill 0.4)
+            (layers "F.Cu" "B.Cu")
+            (net 5)
         )
     
 
-        (footprint "Diode_SMD:Nexperia_CFP3_SOD-123W"
-            (at 145.5 98.75 90)
-            (descr "Nexperia CFP3 (SOD-123W), https://assets.nexperia.com/documents/outline-drawing/SOD123W.pdf")
-            (tags "CFP3 SOD-123W")
-            (attr smd)
-            (fp_text reference "D7" (at 0 -2 90) (layer "F.SilkS") hide
-                (effects (font (size 1 1) (thickness 0.15)))
-            )
-            (fp_text value "Nexperia_CFP3_SOD-123W" (at 0 2 90) (layer "F.Fab") hide
-                (effects (font (size 1 1) (thickness 0.15)))
-            )
-            (fp_line (start -2.26 -0.95) (end -2.26 0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.26 -0.95) (end 1.4 -0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.26 0.95) (end 1.4 0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.25 -1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start -2.25 -1.1) (end 2.25 -1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start 2.25 -1.1) (end 2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start 2.25 1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start -1.3 -0.85) (end 1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -1.3 0.85) (end -1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.75 0) (end -0.35 0) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 -0.55) (end -0.35 0.55) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 -0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 0.25 -0.4) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 0.75 0) (end 0.25 0) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 1.3 -0.85) (end 1.3 0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 1.3 0.85) (end -1.3 0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-
-            (fp_line (start -2.26 -0.95) (end -2.26 0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.26 -0.95) (end 1.4 -0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.26 0.95) (end 1.4 0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.25 -1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start -2.25 -1.1) (end 2.25 -1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start 2.25 -1.1) (end 2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start 2.25 1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start -1.3 -0.85) (end 1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -1.3 0.85) (end -1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.75 0) (end -0.35 0) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 -0.55) (end -0.35 0.55) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 -0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 0.25 -0.4) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 0.75 0) (end 0.25 0) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 1.3 -0.85) (end 1.3 0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 1.3 0.85) (end -1.3 0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (pad "1" thru_hole rect (at -1.4 0 90) (size 1.2 1.2) (drill 0.3) (layers *.Cu *.Mask) (zone_connect 2) (net 27 "R0"))
-            (pad "2" thru_hole rect (at 1.4 0 90) (size 1.2 1.2) (drill 0.3) (layers *.Cu *.Mask) (zone_connect 2) (net 10 "ring_bottom"))
+        (via
+            (at 131 95.25)
+            (size 0.8)
+            (drill 0.4)
+            (layers "F.Cu" "B.Cu")
+            (net 9)
         )
     
 
-        (footprint "Diode_SMD:Nexperia_CFP3_SOD-123W"
-            (at 145.5 79.75 90)
-            (descr "Nexperia CFP3 (SOD-123W), https://assets.nexperia.com/documents/outline-drawing/SOD123W.pdf")
-            (tags "CFP3 SOD-123W")
-            (attr smd)
-            (fp_text reference "D8" (at 0 -2 90) (layer "F.SilkS") hide
-                (effects (font (size 1 1) (thickness 0.15)))
-            )
-            (fp_text value "Nexperia_CFP3_SOD-123W" (at 0 2 90) (layer "F.Fab") hide
-                (effects (font (size 1 1) (thickness 0.15)))
-            )
-            (fp_line (start -2.26 -0.95) (end -2.26 0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.26 -0.95) (end 1.4 -0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.26 0.95) (end 1.4 0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.25 -1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start -2.25 -1.1) (end 2.25 -1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start 2.25 -1.1) (end 2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start 2.25 1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start -1.3 -0.85) (end 1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -1.3 0.85) (end -1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.75 0) (end -0.35 0) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 -0.55) (end -0.35 0.55) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 -0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 0.25 -0.4) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 0.75 0) (end 0.25 0) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 1.3 -0.85) (end 1.3 0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 1.3 0.85) (end -1.3 0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-
-            (fp_line (start -2.26 -0.95) (end -2.26 0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.26 -0.95) (end 1.4 -0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.26 0.95) (end 1.4 0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.25 -1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start -2.25 -1.1) (end 2.25 -1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start 2.25 -1.1) (end 2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start 2.25 1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start -1.3 -0.85) (end 1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -1.3 0.85) (end -1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.75 0) (end -0.35 0) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 -0.55) (end -0.35 0.55) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 -0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 0.25 -0.4) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 0.75 0) (end 0.25 0) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 1.3 -0.85) (end 1.3 0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 1.3 0.85) (end -1.3 0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (pad "1" thru_hole rect (at -1.4 0 90) (size 1.2 1.2) (drill 0.3) (layers *.Cu *.Mask) (zone_connect 2) (net 28 "R1"))
-            (pad "2" thru_hole rect (at 1.4 0 90) (size 1.2 1.2) (drill 0.3) (layers *.Cu *.Mask) (zone_connect 2) (net 11 "ring_home"))
+        (via
+            (at 131 76.25)
+            (size 0.8)
+            (drill 0.4)
+            (layers "F.Cu" "B.Cu")
+            (net 9)
         )
     
 
-        (footprint "Diode_SMD:Nexperia_CFP3_SOD-123W"
-            (at 145.5 60.75 90)
-            (descr "Nexperia CFP3 (SOD-123W), https://assets.nexperia.com/documents/outline-drawing/SOD123W.pdf")
-            (tags "CFP3 SOD-123W")
-            (attr smd)
-            (fp_text reference "D9" (at 0 -2 90) (layer "F.SilkS") hide
-                (effects (font (size 1 1) (thickness 0.15)))
-            )
-            (fp_text value "Nexperia_CFP3_SOD-123W" (at 0 2 90) (layer "F.Fab") hide
-                (effects (font (size 1 1) (thickness 0.15)))
-            )
-            (fp_line (start -2.26 -0.95) (end -2.26 0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.26 -0.95) (end 1.4 -0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.26 0.95) (end 1.4 0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.25 -1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start -2.25 -1.1) (end 2.25 -1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start 2.25 -1.1) (end 2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start 2.25 1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start -1.3 -0.85) (end 1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -1.3 0.85) (end -1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.75 0) (end -0.35 0) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 -0.55) (end -0.35 0.55) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 -0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 0.25 -0.4) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 0.75 0) (end 0.25 0) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 1.3 -0.85) (end 1.3 0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 1.3 0.85) (end -1.3 0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-
-            (fp_line (start -2.26 -0.95) (end -2.26 0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.26 -0.95) (end 1.4 -0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.26 0.95) (end 1.4 0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.25 -1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start -2.25 -1.1) (end 2.25 -1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start 2.25 -1.1) (end 2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start 2.25 1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start -1.3 -0.85) (end 1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -1.3 0.85) (end -1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.75 0) (end -0.35 0) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 -0.55) (end -0.35 0.55) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 -0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 0.25 -0.4) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 0.75 0) (end 0.25 0) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 1.3 -0.85) (end 1.3 0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 1.3 0.85) (end -1.3 0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (pad "1" thru_hole rect (at -1.4 0 90) (size 1.2 1.2) (drill 0.3) (layers *.Cu *.Mask) (zone_connect 2) (net 29 "R2"))
-            (pad "2" thru_hole rect (at 1.4 0 90) (size 1.2 1.2) (drill 0.3) (layers *.Cu *.Mask) (zone_connect 2) (net 12 "ring_top"))
+        (via
+            (at 131 57.25)
+            (size 0.8)
+            (drill 0.4)
+            (layers "F.Cu" "B.Cu")
+            (net 9)
         )
     
 
-        (footprint "Diode_SMD:Nexperia_CFP3_SOD-123W"
-            (at 164.5 96.375 90)
-            (descr "Nexperia CFP3 (SOD-123W), https://assets.nexperia.com/documents/outline-drawing/SOD123W.pdf")
-            (tags "CFP3 SOD-123W")
-            (attr smd)
-            (fp_text reference "D10" (at 0 -2 90) (layer "F.SilkS") hide
-                (effects (font (size 1 1) (thickness 0.15)))
-            )
-            (fp_text value "Nexperia_CFP3_SOD-123W" (at 0 2 90) (layer "F.Fab") hide
-                (effects (font (size 1 1) (thickness 0.15)))
-            )
-            (fp_line (start -2.26 -0.95) (end -2.26 0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.26 -0.95) (end 1.4 -0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.26 0.95) (end 1.4 0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.25 -1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start -2.25 -1.1) (end 2.25 -1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start 2.25 -1.1) (end 2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start 2.25 1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start -1.3 -0.85) (end 1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -1.3 0.85) (end -1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.75 0) (end -0.35 0) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 -0.55) (end -0.35 0.55) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 -0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 0.25 -0.4) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 0.75 0) (end 0.25 0) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 1.3 -0.85) (end 1.3 0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 1.3 0.85) (end -1.3 0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-
-            (fp_line (start -2.26 -0.95) (end -2.26 0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.26 -0.95) (end 1.4 -0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.26 0.95) (end 1.4 0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.25 -1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start -2.25 -1.1) (end 2.25 -1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start 2.25 -1.1) (end 2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start 2.25 1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start -1.3 -0.85) (end 1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -1.3 0.85) (end -1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.75 0) (end -0.35 0) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 -0.55) (end -0.35 0.55) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 -0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 0.25 -0.4) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 0.75 0) (end 0.25 0) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 1.3 -0.85) (end 1.3 0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 1.3 0.85) (end -1.3 0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (pad "1" thru_hole rect (at -1.4 0 90) (size 1.2 1.2) (drill 0.3) (layers *.Cu *.Mask) (zone_connect 2) (net 27 "R0"))
-            (pad "2" thru_hole rect (at 1.4 0 90) (size 1.2 1.2) (drill 0.3) (layers *.Cu *.Mask) (zone_connect 2) (net 14 "middle_bottom"))
+        (via
+            (at 150 92.875)
+            (size 0.8)
+            (drill 0.4)
+            (layers "F.Cu" "B.Cu")
+            (net 13)
         )
     
 
-        (footprint "Diode_SMD:Nexperia_CFP3_SOD-123W"
-            (at 164.5 77.375 90)
-            (descr "Nexperia CFP3 (SOD-123W), https://assets.nexperia.com/documents/outline-drawing/SOD123W.pdf")
-            (tags "CFP3 SOD-123W")
-            (attr smd)
-            (fp_text reference "D11" (at 0 -2 90) (layer "F.SilkS") hide
-                (effects (font (size 1 1) (thickness 0.15)))
-            )
-            (fp_text value "Nexperia_CFP3_SOD-123W" (at 0 2 90) (layer "F.Fab") hide
-                (effects (font (size 1 1) (thickness 0.15)))
-            )
-            (fp_line (start -2.26 -0.95) (end -2.26 0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.26 -0.95) (end 1.4 -0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.26 0.95) (end 1.4 0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.25 -1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start -2.25 -1.1) (end 2.25 -1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start 2.25 -1.1) (end 2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start 2.25 1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start -1.3 -0.85) (end 1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -1.3 0.85) (end -1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.75 0) (end -0.35 0) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 -0.55) (end -0.35 0.55) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 -0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 0.25 -0.4) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 0.75 0) (end 0.25 0) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 1.3 -0.85) (end 1.3 0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 1.3 0.85) (end -1.3 0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-
-            (fp_line (start -2.26 -0.95) (end -2.26 0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.26 -0.95) (end 1.4 -0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.26 0.95) (end 1.4 0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.25 -1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start -2.25 -1.1) (end 2.25 -1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start 2.25 -1.1) (end 2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start 2.25 1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start -1.3 -0.85) (end 1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -1.3 0.85) (end -1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.75 0) (end -0.35 0) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 -0.55) (end -0.35 0.55) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 -0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 0.25 -0.4) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 0.75 0) (end 0.25 0) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 1.3 -0.85) (end 1.3 0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 1.3 0.85) (end -1.3 0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (pad "1" thru_hole rect (at -1.4 0 90) (size 1.2 1.2) (drill 0.3) (layers *.Cu *.Mask) (zone_connect 2) (net 28 "R1"))
-            (pad "2" thru_hole rect (at 1.4 0 90) (size 1.2 1.2) (drill 0.3) (layers *.Cu *.Mask) (zone_connect 2) (net 15 "middle_home"))
+        (via
+            (at 150 73.875)
+            (size 0.8)
+            (drill 0.4)
+            (layers "F.Cu" "B.Cu")
+            (net 13)
         )
     
 
-        (footprint "Diode_SMD:Nexperia_CFP3_SOD-123W"
-            (at 164.5 58.375 90)
-            (descr "Nexperia CFP3 (SOD-123W), https://assets.nexperia.com/documents/outline-drawing/SOD123W.pdf")
-            (tags "CFP3 SOD-123W")
-            (attr smd)
-            (fp_text reference "D12" (at 0 -2 90) (layer "F.SilkS") hide
-                (effects (font (size 1 1) (thickness 0.15)))
-            )
-            (fp_text value "Nexperia_CFP3_SOD-123W" (at 0 2 90) (layer "F.Fab") hide
-                (effects (font (size 1 1) (thickness 0.15)))
-            )
-            (fp_line (start -2.26 -0.95) (end -2.26 0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.26 -0.95) (end 1.4 -0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.26 0.95) (end 1.4 0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.25 -1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start -2.25 -1.1) (end 2.25 -1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start 2.25 -1.1) (end 2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start 2.25 1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start -1.3 -0.85) (end 1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -1.3 0.85) (end -1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.75 0) (end -0.35 0) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 -0.55) (end -0.35 0.55) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 -0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 0.25 -0.4) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 0.75 0) (end 0.25 0) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 1.3 -0.85) (end 1.3 0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 1.3 0.85) (end -1.3 0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-
-            (fp_line (start -2.26 -0.95) (end -2.26 0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.26 -0.95) (end 1.4 -0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.26 0.95) (end 1.4 0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.25 -1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start -2.25 -1.1) (end 2.25 -1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start 2.25 -1.1) (end 2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start 2.25 1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start -1.3 -0.85) (end 1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -1.3 0.85) (end -1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.75 0) (end -0.35 0) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 -0.55) (end -0.35 0.55) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 -0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 0.25 -0.4) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 0.75 0) (end 0.25 0) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 1.3 -0.85) (end 1.3 0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 1.3 0.85) (end -1.3 0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (pad "1" thru_hole rect (at -1.4 0 90) (size 1.2 1.2) (drill 0.3) (layers *.Cu *.Mask) (zone_connect 2) (net 29 "R2"))
-            (pad "2" thru_hole rect (at 1.4 0 90) (size 1.2 1.2) (drill 0.3) (layers *.Cu *.Mask) (zone_connect 2) (net 16 "middle_top"))
+        (via
+            (at 150 54.875)
+            (size 0.8)
+            (drill 0.4)
+            (layers "F.Cu" "B.Cu")
+            (net 13)
         )
     
 
-        (footprint "Diode_SMD:Nexperia_CFP3_SOD-123W"
-            (at 183.5 98.75 90)
-            (descr "Nexperia CFP3 (SOD-123W), https://assets.nexperia.com/documents/outline-drawing/SOD123W.pdf")
-            (tags "CFP3 SOD-123W")
-            (attr smd)
-            (fp_text reference "D13" (at 0 -2 90) (layer "F.SilkS") hide
-                (effects (font (size 1 1) (thickness 0.15)))
-            )
-            (fp_text value "Nexperia_CFP3_SOD-123W" (at 0 2 90) (layer "F.Fab") hide
-                (effects (font (size 1 1) (thickness 0.15)))
-            )
-            (fp_line (start -2.26 -0.95) (end -2.26 0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.26 -0.95) (end 1.4 -0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.26 0.95) (end 1.4 0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.25 -1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start -2.25 -1.1) (end 2.25 -1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start 2.25 -1.1) (end 2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start 2.25 1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start -1.3 -0.85) (end 1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -1.3 0.85) (end -1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.75 0) (end -0.35 0) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 -0.55) (end -0.35 0.55) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 -0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 0.25 -0.4) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 0.75 0) (end 0.25 0) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 1.3 -0.85) (end 1.3 0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 1.3 0.85) (end -1.3 0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-
-            (fp_line (start -2.26 -0.95) (end -2.26 0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.26 -0.95) (end 1.4 -0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.26 0.95) (end 1.4 0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.25 -1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start -2.25 -1.1) (end 2.25 -1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start 2.25 -1.1) (end 2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start 2.25 1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start -1.3 -0.85) (end 1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -1.3 0.85) (end -1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.75 0) (end -0.35 0) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 -0.55) (end -0.35 0.55) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 -0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 0.25 -0.4) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 0.75 0) (end 0.25 0) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 1.3 -0.85) (end 1.3 0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 1.3 0.85) (end -1.3 0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (pad "1" thru_hole rect (at -1.4 0 90) (size 1.2 1.2) (drill 0.3) (layers *.Cu *.Mask) (zone_connect 2) (net 27 "R0"))
-            (pad "2" thru_hole rect (at 1.4 0 90) (size 1.2 1.2) (drill 0.3) (layers *.Cu *.Mask) (zone_connect 2) (net 18 "index_bottom"))
+        (via
+            (at 169 95.25)
+            (size 0.8)
+            (drill 0.4)
+            (layers "F.Cu" "B.Cu")
+            (net 17)
         )
     
 
-        (footprint "Diode_SMD:Nexperia_CFP3_SOD-123W"
-            (at 183.5 79.75 90)
-            (descr "Nexperia CFP3 (SOD-123W), https://assets.nexperia.com/documents/outline-drawing/SOD123W.pdf")
-            (tags "CFP3 SOD-123W")
-            (attr smd)
-            (fp_text reference "D14" (at 0 -2 90) (layer "F.SilkS") hide
-                (effects (font (size 1 1) (thickness 0.15)))
-            )
-            (fp_text value "Nexperia_CFP3_SOD-123W" (at 0 2 90) (layer "F.Fab") hide
-                (effects (font (size 1 1) (thickness 0.15)))
-            )
-            (fp_line (start -2.26 -0.95) (end -2.26 0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.26 -0.95) (end 1.4 -0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.26 0.95) (end 1.4 0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.25 -1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start -2.25 -1.1) (end 2.25 -1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start 2.25 -1.1) (end 2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start 2.25 1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start -1.3 -0.85) (end 1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -1.3 0.85) (end -1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.75 0) (end -0.35 0) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 -0.55) (end -0.35 0.55) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 -0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 0.25 -0.4) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 0.75 0) (end 0.25 0) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 1.3 -0.85) (end 1.3 0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 1.3 0.85) (end -1.3 0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-
-            (fp_line (start -2.26 -0.95) (end -2.26 0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.26 -0.95) (end 1.4 -0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.26 0.95) (end 1.4 0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.25 -1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start -2.25 -1.1) (end 2.25 -1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start 2.25 -1.1) (end 2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start 2.25 1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start -1.3 -0.85) (end 1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -1.3 0.85) (end -1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.75 0) (end -0.35 0) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 -0.55) (end -0.35 0.55) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 -0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 0.25 -0.4) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 0.75 0) (end 0.25 0) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 1.3 -0.85) (end 1.3 0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 1.3 0.85) (end -1.3 0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (pad "1" thru_hole rect (at -1.4 0 90) (size 1.2 1.2) (drill 0.3) (layers *.Cu *.Mask) (zone_connect 2) (net 28 "R1"))
-            (pad "2" thru_hole rect (at 1.4 0 90) (size 1.2 1.2) (drill 0.3) (layers *.Cu *.Mask) (zone_connect 2) (net 19 "index_home"))
+        (via
+            (at 169 76.25)
+            (size 0.8)
+            (drill 0.4)
+            (layers "F.Cu" "B.Cu")
+            (net 17)
         )
     
 
-        (footprint "Diode_SMD:Nexperia_CFP3_SOD-123W"
-            (at 183.5 60.75 90)
-            (descr "Nexperia CFP3 (SOD-123W), https://assets.nexperia.com/documents/outline-drawing/SOD123W.pdf")
-            (tags "CFP3 SOD-123W")
-            (attr smd)
-            (fp_text reference "D15" (at 0 -2 90) (layer "F.SilkS") hide
-                (effects (font (size 1 1) (thickness 0.15)))
-            )
-            (fp_text value "Nexperia_CFP3_SOD-123W" (at 0 2 90) (layer "F.Fab") hide
-                (effects (font (size 1 1) (thickness 0.15)))
-            )
-            (fp_line (start -2.26 -0.95) (end -2.26 0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.26 -0.95) (end 1.4 -0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.26 0.95) (end 1.4 0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.25 -1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start -2.25 -1.1) (end 2.25 -1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start 2.25 -1.1) (end 2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start 2.25 1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start -1.3 -0.85) (end 1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -1.3 0.85) (end -1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.75 0) (end -0.35 0) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 -0.55) (end -0.35 0.55) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 -0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 0.25 -0.4) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 0.75 0) (end 0.25 0) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 1.3 -0.85) (end 1.3 0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 1.3 0.85) (end -1.3 0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-
-            (fp_line (start -2.26 -0.95) (end -2.26 0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.26 -0.95) (end 1.4 -0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.26 0.95) (end 1.4 0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.25 -1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start -2.25 -1.1) (end 2.25 -1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start 2.25 -1.1) (end 2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start 2.25 1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start -1.3 -0.85) (end 1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -1.3 0.85) (end -1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.75 0) (end -0.35 0) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 -0.55) (end -0.35 0.55) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 -0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 0.25 -0.4) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 0.75 0) (end 0.25 0) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 1.3 -0.85) (end 1.3 0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 1.3 0.85) (end -1.3 0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (pad "1" thru_hole rect (at -1.4 0 90) (size 1.2 1.2) (drill 0.3) (layers *.Cu *.Mask) (zone_connect 2) (net 29 "R2"))
-            (pad "2" thru_hole rect (at 1.4 0 90) (size 1.2 1.2) (drill 0.3) (layers *.Cu *.Mask) (zone_connect 2) (net 20 "index_top"))
+        (via
+            (at 169 57.25)
+            (size 0.8)
+            (drill 0.4)
+            (layers "F.Cu" "B.Cu")
+            (net 17)
         )
     
 
-        (footprint "Diode_SMD:Nexperia_CFP3_SOD-123W"
-            (at 202.5 101.125 90)
-            (descr "Nexperia CFP3 (SOD-123W), https://assets.nexperia.com/documents/outline-drawing/SOD123W.pdf")
-            (tags "CFP3 SOD-123W")
-            (attr smd)
-            (fp_text reference "D16" (at 0 -2 90) (layer "F.SilkS") hide
-                (effects (font (size 1 1) (thickness 0.15)))
-            )
-            (fp_text value "Nexperia_CFP3_SOD-123W" (at 0 2 90) (layer "F.Fab") hide
-                (effects (font (size 1 1) (thickness 0.15)))
-            )
-            (fp_line (start -2.26 -0.95) (end -2.26 0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.26 -0.95) (end 1.4 -0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.26 0.95) (end 1.4 0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.25 -1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start -2.25 -1.1) (end 2.25 -1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start 2.25 -1.1) (end 2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start 2.25 1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start -1.3 -0.85) (end 1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -1.3 0.85) (end -1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.75 0) (end -0.35 0) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 -0.55) (end -0.35 0.55) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 -0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 0.25 -0.4) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 0.75 0) (end 0.25 0) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 1.3 -0.85) (end 1.3 0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 1.3 0.85) (end -1.3 0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-
-            (fp_line (start -2.26 -0.95) (end -2.26 0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.26 -0.95) (end 1.4 -0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.26 0.95) (end 1.4 0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.25 -1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start -2.25 -1.1) (end 2.25 -1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start 2.25 -1.1) (end 2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start 2.25 1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start -1.3 -0.85) (end 1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -1.3 0.85) (end -1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.75 0) (end -0.35 0) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 -0.55) (end -0.35 0.55) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 -0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 0.25 -0.4) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 0.75 0) (end 0.25 0) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 1.3 -0.85) (end 1.3 0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 1.3 0.85) (end -1.3 0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (pad "1" thru_hole rect (at -1.4 0 90) (size 1.2 1.2) (drill 0.3) (layers *.Cu *.Mask) (zone_connect 2) (net 27 "R0"))
-            (pad "2" thru_hole rect (at 1.4 0 90) (size 1.2 1.2) (drill 0.3) (layers *.Cu *.Mask) (zone_connect 2) (net 22 "inner_bottom"))
+        (via
+            (at 188 97.625)
+            (size 0.8)
+            (drill 0.4)
+            (layers "F.Cu" "B.Cu")
+            (net 21)
         )
     
 
-        (footprint "Diode_SMD:Nexperia_CFP3_SOD-123W"
-            (at 202.5 82.125 90)
-            (descr "Nexperia CFP3 (SOD-123W), https://assets.nexperia.com/documents/outline-drawing/SOD123W.pdf")
-            (tags "CFP3 SOD-123W")
-            (attr smd)
-            (fp_text reference "D17" (at 0 -2 90) (layer "F.SilkS") hide
-                (effects (font (size 1 1) (thickness 0.15)))
-            )
-            (fp_text value "Nexperia_CFP3_SOD-123W" (at 0 2 90) (layer "F.Fab") hide
-                (effects (font (size 1 1) (thickness 0.15)))
-            )
-            (fp_line (start -2.26 -0.95) (end -2.26 0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.26 -0.95) (end 1.4 -0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.26 0.95) (end 1.4 0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.25 -1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start -2.25 -1.1) (end 2.25 -1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start 2.25 -1.1) (end 2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start 2.25 1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start -1.3 -0.85) (end 1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -1.3 0.85) (end -1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.75 0) (end -0.35 0) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 -0.55) (end -0.35 0.55) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 -0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 0.25 -0.4) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 0.75 0) (end 0.25 0) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 1.3 -0.85) (end 1.3 0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 1.3 0.85) (end -1.3 0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-
-            (fp_line (start -2.26 -0.95) (end -2.26 0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.26 -0.95) (end 1.4 -0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.26 0.95) (end 1.4 0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.25 -1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start -2.25 -1.1) (end 2.25 -1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start 2.25 -1.1) (end 2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start 2.25 1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start -1.3 -0.85) (end 1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -1.3 0.85) (end -1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.75 0) (end -0.35 0) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 -0.55) (end -0.35 0.55) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 -0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 0.25 -0.4) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 0.75 0) (end 0.25 0) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 1.3 -0.85) (end 1.3 0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 1.3 0.85) (end -1.3 0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (pad "1" thru_hole rect (at -1.4 0 90) (size 1.2 1.2) (drill 0.3) (layers *.Cu *.Mask) (zone_connect 2) (net 28 "R1"))
-            (pad "2" thru_hole rect (at 1.4 0 90) (size 1.2 1.2) (drill 0.3) (layers *.Cu *.Mask) (zone_connect 2) (net 23 "inner_home"))
+        (via
+            (at 188 78.625)
+            (size 0.8)
+            (drill 0.4)
+            (layers "F.Cu" "B.Cu")
+            (net 21)
         )
     
 
-        (footprint "Diode_SMD:Nexperia_CFP3_SOD-123W"
-            (at 202.5 63.125 90)
-            (descr "Nexperia CFP3 (SOD-123W), https://assets.nexperia.com/documents/outline-drawing/SOD123W.pdf")
-            (tags "CFP3 SOD-123W")
-            (attr smd)
-            (fp_text reference "D18" (at 0 -2 90) (layer "F.SilkS") hide
-                (effects (font (size 1 1) (thickness 0.15)))
-            )
-            (fp_text value "Nexperia_CFP3_SOD-123W" (at 0 2 90) (layer "F.Fab") hide
-                (effects (font (size 1 1) (thickness 0.15)))
-            )
-            (fp_line (start -2.26 -0.95) (end -2.26 0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.26 -0.95) (end 1.4 -0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.26 0.95) (end 1.4 0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.25 -1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start -2.25 -1.1) (end 2.25 -1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start 2.25 -1.1) (end 2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start 2.25 1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start -1.3 -0.85) (end 1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -1.3 0.85) (end -1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.75 0) (end -0.35 0) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 -0.55) (end -0.35 0.55) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 -0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 0.25 -0.4) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 0.75 0) (end 0.25 0) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 1.3 -0.85) (end 1.3 0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 1.3 0.85) (end -1.3 0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-
-            (fp_line (start -2.26 -0.95) (end -2.26 0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.26 -0.95) (end 1.4 -0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.26 0.95) (end 1.4 0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.25 -1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start -2.25 -1.1) (end 2.25 -1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start 2.25 -1.1) (end 2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start 2.25 1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start -1.3 -0.85) (end 1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -1.3 0.85) (end -1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.75 0) (end -0.35 0) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 -0.55) (end -0.35 0.55) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 -0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 0.25 -0.4) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 0.75 0) (end 0.25 0) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 1.3 -0.85) (end 1.3 0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 1.3 0.85) (end -1.3 0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (pad "1" thru_hole rect (at -1.4 0 90) (size 1.2 1.2) (drill 0.3) (layers *.Cu *.Mask) (zone_connect 2) (net 29 "R2"))
-            (pad "2" thru_hole rect (at 1.4 0 90) (size 1.2 1.2) (drill 0.3) (layers *.Cu *.Mask) (zone_connect 2) (net 24 "inner_top"))
+        (via
+            (at 188 59.625)
+            (size 0.8)
+            (drill 0.4)
+            (layers "F.Cu" "B.Cu")
+            (net 21)
         )
     
 
-        (footprint "Diode_SMD:Nexperia_CFP3_SOD-123W"
-            (at 174 118.25 90)
-            (descr "Nexperia CFP3 (SOD-123W), https://assets.nexperia.com/documents/outline-drawing/SOD123W.pdf")
-            (tags "CFP3 SOD-123W")
-            (attr smd)
-            (fp_text reference "D19" (at 0 -2 90) (layer "F.SilkS") hide
-                (effects (font (size 1 1) (thickness 0.15)))
-            )
-            (fp_text value "Nexperia_CFP3_SOD-123W" (at 0 2 90) (layer "F.Fab") hide
-                (effects (font (size 1 1) (thickness 0.15)))
-            )
-            (fp_line (start -2.26 -0.95) (end -2.26 0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.26 -0.95) (end 1.4 -0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.26 0.95) (end 1.4 0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.25 -1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start -2.25 -1.1) (end 2.25 -1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start 2.25 -1.1) (end 2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start 2.25 1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start -1.3 -0.85) (end 1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -1.3 0.85) (end -1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.75 0) (end -0.35 0) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 -0.55) (end -0.35 0.55) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 -0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 0.25 -0.4) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 0.75 0) (end 0.25 0) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 1.3 -0.85) (end 1.3 0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 1.3 0.85) (end -1.3 0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-
-            (fp_line (start -2.26 -0.95) (end -2.26 0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.26 -0.95) (end 1.4 -0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.26 0.95) (end 1.4 0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.25 -1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start -2.25 -1.1) (end 2.25 -1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start 2.25 -1.1) (end 2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start 2.25 1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start -1.3 -0.85) (end 1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -1.3 0.85) (end -1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.75 0) (end -0.35 0) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 -0.55) (end -0.35 0.55) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 -0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 0.25 -0.4) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 0.75 0) (end 0.25 0) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 1.3 -0.85) (end 1.3 0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 1.3 0.85) (end -1.3 0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (pad "1" thru_hole rect (at -1.4 0 90) (size 1.2 1.2) (drill 0.3) (layers *.Cu *.Mask) (zone_connect 2) (net 30 "R3"))
-            (pad "2" thru_hole rect (at 1.4 0 90) (size 1.2 1.2) (drill 0.3) (layers *.Cu *.Mask) (zone_connect 2) (net 25 "near_home"))
+        (via
+            (at 159.5 114.75)
+            (size 0.8)
+            (drill 0.4)
+            (layers "F.Cu" "B.Cu")
+            (net 13)
         )
     
 
-        (footprint "Diode_SMD:Nexperia_CFP3_SOD-123W"
-            (at 193.9736533 122.8543688 75)
-            (descr "Nexperia CFP3 (SOD-123W), https://assets.nexperia.com/documents/outline-drawing/SOD123W.pdf")
-            (tags "CFP3 SOD-123W")
-            (attr smd)
-            (fp_text reference "D20" (at 0 -2 75) (layer "F.SilkS") hide
-                (effects (font (size 1 1) (thickness 0.15)))
-            )
-            (fp_text value "Nexperia_CFP3_SOD-123W" (at 0 2 75) (layer "F.Fab") hide
-                (effects (font (size 1 1) (thickness 0.15)))
-            )
-            (fp_line (start -2.26 -0.95) (end -2.26 0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.26 -0.95) (end 1.4 -0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.26 0.95) (end 1.4 0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.25 -1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start -2.25 -1.1) (end 2.25 -1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start 2.25 -1.1) (end 2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start 2.25 1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start -1.3 -0.85) (end 1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -1.3 0.85) (end -1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.75 0) (end -0.35 0) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 -0.55) (end -0.35 0.55) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 -0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 0.25 -0.4) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 0.75 0) (end 0.25 0) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 1.3 -0.85) (end 1.3 0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 1.3 0.85) (end -1.3 0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-
-            (fp_line (start -2.26 -0.95) (end -2.26 0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.26 -0.95) (end 1.4 -0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.26 0.95) (end 1.4 0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.25 -1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start -2.25 -1.1) (end 2.25 -1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start 2.25 -1.1) (end 2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start 2.25 1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start -1.3 -0.85) (end 1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -1.3 0.85) (end -1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.75 0) (end -0.35 0) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 -0.55) (end -0.35 0.55) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 -0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 0.25 -0.4) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 0.75 0) (end 0.25 0) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 1.3 -0.85) (end 1.3 0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 1.3 0.85) (end -1.3 0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (pad "1" thru_hole rect (at -1.4 0 75) (size 1.2 1.2) (drill 0.3) (layers *.Cu *.Mask) (zone_connect 2) (net 30 "R3"))
-            (pad "2" thru_hole rect (at 1.4 0 75) (size 1.2 1.2) (drill 0.3) (layers *.Cu *.Mask) (zone_connect 2) (net 15 "middle_home"))
+        (via
+            (at 180.87359550000002 115.7207523)
+            (size 0.8)
+            (drill 0.4)
+            (layers "F.Cu" "B.Cu")
+            (net 17)
         )
     
 
-        (footprint "Diode_SMD:Nexperia_CFP3_SOD-123W"
-            (at 216.2381509 116.4575973 150)
-            (descr "Nexperia CFP3 (SOD-123W), https://assets.nexperia.com/documents/outline-drawing/SOD123W.pdf")
-            (tags "CFP3 SOD-123W")
-            (attr smd)
-            (fp_text reference "D21" (at 0 -2 150) (layer "F.SilkS") hide
-                (effects (font (size 1 1) (thickness 0.15)))
-            )
-            (fp_text value "Nexperia_CFP3_SOD-123W" (at 0 2 150) (layer "F.Fab") hide
-                (effects (font (size 1 1) (thickness 0.15)))
-            )
-            (fp_line (start -2.26 -0.95) (end -2.26 0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.26 -0.95) (end 1.4 -0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.26 0.95) (end 1.4 0.95) (stroke (width 0.12) (type solid)) (layer "F.SilkS"))
-            (fp_line (start -2.25 -1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start -2.25 -1.1) (end 2.25 -1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start 2.25 -1.1) (end 2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start 2.25 1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
-            (fp_line (start -1.3 -0.85) (end 1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -1.3 0.85) (end -1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.75 0) (end -0.35 0) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 -0.55) (end -0.35 0.55) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 -0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 0.25 -0.4) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 0.75 0) (end 0.25 0) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 1.3 -0.85) (end 1.3 0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
-            (fp_line (start 1.3 0.85) (end -1.3 0.85) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
+        (via
+            (at 205.95706199999998 127.2649656)
+            (size 0.8)
+            (drill 0.4)
+            (layers "F.Cu" "B.Cu")
+            (net 21)
+        )
+    
 
-            (fp_line (start -2.26 -0.95) (end -2.26 0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.26 -0.95) (end 1.4 -0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.26 0.95) (end 1.4 0.95) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
-            (fp_line (start -2.25 -1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start -2.25 -1.1) (end 2.25 -1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start 2.25 -1.1) (end 2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start 2.25 1.1) (end -2.25 1.1) (stroke (width 0.05) (type solid)) (layer "B.CrtYd"))
-            (fp_line (start -1.3 -0.85) (end 1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -1.3 0.85) (end -1.3 -0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.75 0) (end -0.35 0) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 -0.55) (end -0.35 0.55) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 -0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start -0.35 0) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 0.25 -0.4) (end 0.25 0.4) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 0.75 0) (end 0.25 0) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 1.3 -0.85) (end 1.3 0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (fp_line (start 1.3 0.85) (end -1.3 0.85) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
-            (pad "1" thru_hole rect (at -1.4 0 150) (size 1.2 1.2) (drill 0.3) (layers *.Cu *.Mask) (zone_connect 2) (net 30 "R3"))
-            (pad "2" thru_hole rect (at 1.4 0 150) (size 1.2 1.2) (drill 0.3) (layers *.Cu *.Mask) (zone_connect 2) (net 26 "far_home"))
+  
+    (module SmdDiode (layer F.Cu) (tedit 5B24D78E)
+
+
+        (at 107.5 103.5 90)
+
+        
+        (fp_text reference "D1" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+        (fp_text value "" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+        
+        
+        (fp_line (start 0.25 0) (end 0.75 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 0.4) (end -0.35 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 -0.4) (end 0.25 0.4) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end 0.25 -0.4) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 0.55) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 -0.55) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.75 0) (end -0.35 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 0) (end 0.75 0) (layer B.SilkS) (width 0.1))
+        (fp_line (start 0.25 0.4) (end -0.35 0) (layer B.SilkS) (width 0.1))
+        (fp_line (start 0.25 -0.4) (end 0.25 0.4) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end 0.25 -0.4) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 0.55) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 -0.55) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
+    
+        
+        (pad 1 smd rect (at -1.65 0 90) (size 0.9 1.2) (layers F.Cu F.Paste F.Mask) (net 27 "R0"))
+        (pad 2 smd rect (at 1.65 0 90) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 2 "outer_bottom"))
+        (pad 1 smd rect (at -1.65 0 90) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 27 "R0"))
+        (pad 2 smd rect (at 1.65 0 90) (size 0.9 1.2) (layers F.Cu F.Paste F.Mask) (net 2 "outer_bottom"))
+    )
+  
+    
+
+  
+    (module SmdDiode (layer F.Cu) (tedit 5B24D78E)
+
+
+        (at 107.5 84.5 90)
+
+        
+        (fp_text reference "D2" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+        (fp_text value "" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+        
+        
+        (fp_line (start 0.25 0) (end 0.75 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 0.4) (end -0.35 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 -0.4) (end 0.25 0.4) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end 0.25 -0.4) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 0.55) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 -0.55) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.75 0) (end -0.35 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 0) (end 0.75 0) (layer B.SilkS) (width 0.1))
+        (fp_line (start 0.25 0.4) (end -0.35 0) (layer B.SilkS) (width 0.1))
+        (fp_line (start 0.25 -0.4) (end 0.25 0.4) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end 0.25 -0.4) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 0.55) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 -0.55) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
+    
+        
+        (pad 1 smd rect (at -1.65 0 90) (size 0.9 1.2) (layers F.Cu F.Paste F.Mask) (net 28 "R1"))
+        (pad 2 smd rect (at 1.65 0 90) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 3 "outer_home"))
+        (pad 1 smd rect (at -1.65 0 90) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 28 "R1"))
+        (pad 2 smd rect (at 1.65 0 90) (size 0.9 1.2) (layers F.Cu F.Paste F.Mask) (net 3 "outer_home"))
+    )
+  
+    
+
+  
+    (module SmdDiode (layer F.Cu) (tedit 5B24D78E)
+
+
+        (at 107.5 65.5 90)
+
+        
+        (fp_text reference "D3" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+        (fp_text value "" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+        
+        
+        (fp_line (start 0.25 0) (end 0.75 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 0.4) (end -0.35 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 -0.4) (end 0.25 0.4) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end 0.25 -0.4) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 0.55) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 -0.55) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.75 0) (end -0.35 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 0) (end 0.75 0) (layer B.SilkS) (width 0.1))
+        (fp_line (start 0.25 0.4) (end -0.35 0) (layer B.SilkS) (width 0.1))
+        (fp_line (start 0.25 -0.4) (end 0.25 0.4) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end 0.25 -0.4) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 0.55) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 -0.55) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
+    
+        
+        (pad 1 smd rect (at -1.65 0 90) (size 0.9 1.2) (layers F.Cu F.Paste F.Mask) (net 29 "R2"))
+        (pad 2 smd rect (at 1.65 0 90) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 4 "outer_top"))
+        (pad 1 smd rect (at -1.65 0 90) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 29 "R2"))
+        (pad 2 smd rect (at 1.65 0 90) (size 0.9 1.2) (layers F.Cu F.Paste F.Mask) (net 4 "outer_top"))
+    )
+  
+    
+
+  
+    (module SmdDiode (layer F.Cu) (tedit 5B24D78E)
+
+
+        (at 126.5 103.5 90)
+
+        
+        (fp_text reference "D4" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+        (fp_text value "" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+        
+        
+        (fp_line (start 0.25 0) (end 0.75 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 0.4) (end -0.35 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 -0.4) (end 0.25 0.4) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end 0.25 -0.4) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 0.55) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 -0.55) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.75 0) (end -0.35 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 0) (end 0.75 0) (layer B.SilkS) (width 0.1))
+        (fp_line (start 0.25 0.4) (end -0.35 0) (layer B.SilkS) (width 0.1))
+        (fp_line (start 0.25 -0.4) (end 0.25 0.4) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end 0.25 -0.4) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 0.55) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 -0.55) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
+    
+        
+        (pad 1 smd rect (at -1.65 0 90) (size 0.9 1.2) (layers F.Cu F.Paste F.Mask) (net 27 "R0"))
+        (pad 2 smd rect (at 1.65 0 90) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 6 "pinky_bottom"))
+        (pad 1 smd rect (at -1.65 0 90) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 27 "R0"))
+        (pad 2 smd rect (at 1.65 0 90) (size 0.9 1.2) (layers F.Cu F.Paste F.Mask) (net 6 "pinky_bottom"))
+    )
+  
+    
+
+  
+    (module SmdDiode (layer F.Cu) (tedit 5B24D78E)
+
+
+        (at 126.5 84.5 90)
+
+        
+        (fp_text reference "D5" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+        (fp_text value "" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+        
+        
+        (fp_line (start 0.25 0) (end 0.75 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 0.4) (end -0.35 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 -0.4) (end 0.25 0.4) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end 0.25 -0.4) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 0.55) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 -0.55) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.75 0) (end -0.35 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 0) (end 0.75 0) (layer B.SilkS) (width 0.1))
+        (fp_line (start 0.25 0.4) (end -0.35 0) (layer B.SilkS) (width 0.1))
+        (fp_line (start 0.25 -0.4) (end 0.25 0.4) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end 0.25 -0.4) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 0.55) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 -0.55) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
+    
+        
+        (pad 1 smd rect (at -1.65 0 90) (size 0.9 1.2) (layers F.Cu F.Paste F.Mask) (net 28 "R1"))
+        (pad 2 smd rect (at 1.65 0 90) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 7 "pinky_home"))
+        (pad 1 smd rect (at -1.65 0 90) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 28 "R1"))
+        (pad 2 smd rect (at 1.65 0 90) (size 0.9 1.2) (layers F.Cu F.Paste F.Mask) (net 7 "pinky_home"))
+    )
+  
+    
+
+  
+    (module SmdDiode (layer F.Cu) (tedit 5B24D78E)
+
+
+        (at 126.5 65.5 90)
+
+        
+        (fp_text reference "D6" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+        (fp_text value "" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+        
+        
+        (fp_line (start 0.25 0) (end 0.75 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 0.4) (end -0.35 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 -0.4) (end 0.25 0.4) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end 0.25 -0.4) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 0.55) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 -0.55) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.75 0) (end -0.35 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 0) (end 0.75 0) (layer B.SilkS) (width 0.1))
+        (fp_line (start 0.25 0.4) (end -0.35 0) (layer B.SilkS) (width 0.1))
+        (fp_line (start 0.25 -0.4) (end 0.25 0.4) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end 0.25 -0.4) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 0.55) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 -0.55) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
+    
+        
+        (pad 1 smd rect (at -1.65 0 90) (size 0.9 1.2) (layers F.Cu F.Paste F.Mask) (net 29 "R2"))
+        (pad 2 smd rect (at 1.65 0 90) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 8 "pinky_top"))
+        (pad 1 smd rect (at -1.65 0 90) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 29 "R2"))
+        (pad 2 smd rect (at 1.65 0 90) (size 0.9 1.2) (layers F.Cu F.Paste F.Mask) (net 8 "pinky_top"))
+    )
+  
+    
+
+  
+    (module SmdDiode (layer F.Cu) (tedit 5B24D78E)
+
+
+        (at 145.5 98.75 90)
+
+        
+        (fp_text reference "D7" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+        (fp_text value "" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+        
+        
+        (fp_line (start 0.25 0) (end 0.75 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 0.4) (end -0.35 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 -0.4) (end 0.25 0.4) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end 0.25 -0.4) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 0.55) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 -0.55) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.75 0) (end -0.35 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 0) (end 0.75 0) (layer B.SilkS) (width 0.1))
+        (fp_line (start 0.25 0.4) (end -0.35 0) (layer B.SilkS) (width 0.1))
+        (fp_line (start 0.25 -0.4) (end 0.25 0.4) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end 0.25 -0.4) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 0.55) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 -0.55) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
+    
+        
+        (pad 1 smd rect (at -1.65 0 90) (size 0.9 1.2) (layers F.Cu F.Paste F.Mask) (net 27 "R0"))
+        (pad 2 smd rect (at 1.65 0 90) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 10 "ring_bottom"))
+        (pad 1 smd rect (at -1.65 0 90) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 27 "R0"))
+        (pad 2 smd rect (at 1.65 0 90) (size 0.9 1.2) (layers F.Cu F.Paste F.Mask) (net 10 "ring_bottom"))
+    )
+  
+    
+
+  
+    (module SmdDiode (layer F.Cu) (tedit 5B24D78E)
+
+
+        (at 145.5 79.75 90)
+
+        
+        (fp_text reference "D8" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+        (fp_text value "" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+        
+        
+        (fp_line (start 0.25 0) (end 0.75 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 0.4) (end -0.35 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 -0.4) (end 0.25 0.4) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end 0.25 -0.4) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 0.55) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 -0.55) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.75 0) (end -0.35 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 0) (end 0.75 0) (layer B.SilkS) (width 0.1))
+        (fp_line (start 0.25 0.4) (end -0.35 0) (layer B.SilkS) (width 0.1))
+        (fp_line (start 0.25 -0.4) (end 0.25 0.4) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end 0.25 -0.4) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 0.55) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 -0.55) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
+    
+        
+        (pad 1 smd rect (at -1.65 0 90) (size 0.9 1.2) (layers F.Cu F.Paste F.Mask) (net 28 "R1"))
+        (pad 2 smd rect (at 1.65 0 90) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 11 "ring_home"))
+        (pad 1 smd rect (at -1.65 0 90) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 28 "R1"))
+        (pad 2 smd rect (at 1.65 0 90) (size 0.9 1.2) (layers F.Cu F.Paste F.Mask) (net 11 "ring_home"))
+    )
+  
+    
+
+  
+    (module SmdDiode (layer F.Cu) (tedit 5B24D78E)
+
+
+        (at 145.5 60.75 90)
+
+        
+        (fp_text reference "D9" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+        (fp_text value "" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+        
+        
+        (fp_line (start 0.25 0) (end 0.75 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 0.4) (end -0.35 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 -0.4) (end 0.25 0.4) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end 0.25 -0.4) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 0.55) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 -0.55) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.75 0) (end -0.35 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 0) (end 0.75 0) (layer B.SilkS) (width 0.1))
+        (fp_line (start 0.25 0.4) (end -0.35 0) (layer B.SilkS) (width 0.1))
+        (fp_line (start 0.25 -0.4) (end 0.25 0.4) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end 0.25 -0.4) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 0.55) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 -0.55) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
+    
+        
+        (pad 1 smd rect (at -1.65 0 90) (size 0.9 1.2) (layers F.Cu F.Paste F.Mask) (net 29 "R2"))
+        (pad 2 smd rect (at 1.65 0 90) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 12 "ring_top"))
+        (pad 1 smd rect (at -1.65 0 90) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 29 "R2"))
+        (pad 2 smd rect (at 1.65 0 90) (size 0.9 1.2) (layers F.Cu F.Paste F.Mask) (net 12 "ring_top"))
+    )
+  
+    
+
+  
+    (module SmdDiode (layer F.Cu) (tedit 5B24D78E)
+
+
+        (at 164.5 96.375 90)
+
+        
+        (fp_text reference "D10" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+        (fp_text value "" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+        
+        
+        (fp_line (start 0.25 0) (end 0.75 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 0.4) (end -0.35 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 -0.4) (end 0.25 0.4) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end 0.25 -0.4) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 0.55) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 -0.55) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.75 0) (end -0.35 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 0) (end 0.75 0) (layer B.SilkS) (width 0.1))
+        (fp_line (start 0.25 0.4) (end -0.35 0) (layer B.SilkS) (width 0.1))
+        (fp_line (start 0.25 -0.4) (end 0.25 0.4) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end 0.25 -0.4) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 0.55) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 -0.55) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
+    
+        
+        (pad 1 smd rect (at -1.65 0 90) (size 0.9 1.2) (layers F.Cu F.Paste F.Mask) (net 27 "R0"))
+        (pad 2 smd rect (at 1.65 0 90) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 14 "middle_bottom"))
+        (pad 1 smd rect (at -1.65 0 90) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 27 "R0"))
+        (pad 2 smd rect (at 1.65 0 90) (size 0.9 1.2) (layers F.Cu F.Paste F.Mask) (net 14 "middle_bottom"))
+    )
+  
+    
+
+  
+    (module SmdDiode (layer F.Cu) (tedit 5B24D78E)
+
+
+        (at 164.5 77.375 90)
+
+        
+        (fp_text reference "D11" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+        (fp_text value "" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+        
+        
+        (fp_line (start 0.25 0) (end 0.75 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 0.4) (end -0.35 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 -0.4) (end 0.25 0.4) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end 0.25 -0.4) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 0.55) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 -0.55) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.75 0) (end -0.35 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 0) (end 0.75 0) (layer B.SilkS) (width 0.1))
+        (fp_line (start 0.25 0.4) (end -0.35 0) (layer B.SilkS) (width 0.1))
+        (fp_line (start 0.25 -0.4) (end 0.25 0.4) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end 0.25 -0.4) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 0.55) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 -0.55) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
+    
+        
+        (pad 1 smd rect (at -1.65 0 90) (size 0.9 1.2) (layers F.Cu F.Paste F.Mask) (net 28 "R1"))
+        (pad 2 smd rect (at 1.65 0 90) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 15 "middle_home"))
+        (pad 1 smd rect (at -1.65 0 90) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 28 "R1"))
+        (pad 2 smd rect (at 1.65 0 90) (size 0.9 1.2) (layers F.Cu F.Paste F.Mask) (net 15 "middle_home"))
+    )
+  
+    
+
+  
+    (module SmdDiode (layer F.Cu) (tedit 5B24D78E)
+
+
+        (at 164.5 58.375 90)
+
+        
+        (fp_text reference "D12" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+        (fp_text value "" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+        
+        
+        (fp_line (start 0.25 0) (end 0.75 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 0.4) (end -0.35 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 -0.4) (end 0.25 0.4) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end 0.25 -0.4) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 0.55) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 -0.55) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.75 0) (end -0.35 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 0) (end 0.75 0) (layer B.SilkS) (width 0.1))
+        (fp_line (start 0.25 0.4) (end -0.35 0) (layer B.SilkS) (width 0.1))
+        (fp_line (start 0.25 -0.4) (end 0.25 0.4) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end 0.25 -0.4) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 0.55) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 -0.55) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
+    
+        
+        (pad 1 smd rect (at -1.65 0 90) (size 0.9 1.2) (layers F.Cu F.Paste F.Mask) (net 29 "R2"))
+        (pad 2 smd rect (at 1.65 0 90) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 16 "middle_top"))
+        (pad 1 smd rect (at -1.65 0 90) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 29 "R2"))
+        (pad 2 smd rect (at 1.65 0 90) (size 0.9 1.2) (layers F.Cu F.Paste F.Mask) (net 16 "middle_top"))
+    )
+  
+    
+
+  
+    (module SmdDiode (layer F.Cu) (tedit 5B24D78E)
+
+
+        (at 183.5 98.75 90)
+
+        
+        (fp_text reference "D13" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+        (fp_text value "" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+        
+        
+        (fp_line (start 0.25 0) (end 0.75 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 0.4) (end -0.35 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 -0.4) (end 0.25 0.4) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end 0.25 -0.4) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 0.55) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 -0.55) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.75 0) (end -0.35 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 0) (end 0.75 0) (layer B.SilkS) (width 0.1))
+        (fp_line (start 0.25 0.4) (end -0.35 0) (layer B.SilkS) (width 0.1))
+        (fp_line (start 0.25 -0.4) (end 0.25 0.4) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end 0.25 -0.4) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 0.55) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 -0.55) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
+    
+        
+        (pad 1 smd rect (at -1.65 0 90) (size 0.9 1.2) (layers F.Cu F.Paste F.Mask) (net 27 "R0"))
+        (pad 2 smd rect (at 1.65 0 90) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 18 "index_bottom"))
+        (pad 1 smd rect (at -1.65 0 90) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 27 "R0"))
+        (pad 2 smd rect (at 1.65 0 90) (size 0.9 1.2) (layers F.Cu F.Paste F.Mask) (net 18 "index_bottom"))
+    )
+  
+    
+
+  
+    (module SmdDiode (layer F.Cu) (tedit 5B24D78E)
+
+
+        (at 183.5 79.75 90)
+
+        
+        (fp_text reference "D14" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+        (fp_text value "" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+        
+        
+        (fp_line (start 0.25 0) (end 0.75 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 0.4) (end -0.35 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 -0.4) (end 0.25 0.4) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end 0.25 -0.4) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 0.55) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 -0.55) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.75 0) (end -0.35 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 0) (end 0.75 0) (layer B.SilkS) (width 0.1))
+        (fp_line (start 0.25 0.4) (end -0.35 0) (layer B.SilkS) (width 0.1))
+        (fp_line (start 0.25 -0.4) (end 0.25 0.4) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end 0.25 -0.4) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 0.55) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 -0.55) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
+    
+        
+        (pad 1 smd rect (at -1.65 0 90) (size 0.9 1.2) (layers F.Cu F.Paste F.Mask) (net 28 "R1"))
+        (pad 2 smd rect (at 1.65 0 90) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 19 "index_home"))
+        (pad 1 smd rect (at -1.65 0 90) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 28 "R1"))
+        (pad 2 smd rect (at 1.65 0 90) (size 0.9 1.2) (layers F.Cu F.Paste F.Mask) (net 19 "index_home"))
+    )
+  
+    
+
+  
+    (module SmdDiode (layer F.Cu) (tedit 5B24D78E)
+
+
+        (at 183.5 60.75 90)
+
+        
+        (fp_text reference "D15" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+        (fp_text value "" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+        
+        
+        (fp_line (start 0.25 0) (end 0.75 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 0.4) (end -0.35 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 -0.4) (end 0.25 0.4) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end 0.25 -0.4) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 0.55) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 -0.55) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.75 0) (end -0.35 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 0) (end 0.75 0) (layer B.SilkS) (width 0.1))
+        (fp_line (start 0.25 0.4) (end -0.35 0) (layer B.SilkS) (width 0.1))
+        (fp_line (start 0.25 -0.4) (end 0.25 0.4) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end 0.25 -0.4) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 0.55) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 -0.55) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
+    
+        
+        (pad 1 smd rect (at -1.65 0 90) (size 0.9 1.2) (layers F.Cu F.Paste F.Mask) (net 29 "R2"))
+        (pad 2 smd rect (at 1.65 0 90) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 20 "index_top"))
+        (pad 1 smd rect (at -1.65 0 90) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 29 "R2"))
+        (pad 2 smd rect (at 1.65 0 90) (size 0.9 1.2) (layers F.Cu F.Paste F.Mask) (net 20 "index_top"))
+    )
+  
+    
+
+  
+    (module SmdDiode (layer F.Cu) (tedit 5B24D78E)
+
+
+        (at 202.5 101.125 90)
+
+        
+        (fp_text reference "D16" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+        (fp_text value "" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+        
+        
+        (fp_line (start 0.25 0) (end 0.75 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 0.4) (end -0.35 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 -0.4) (end 0.25 0.4) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end 0.25 -0.4) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 0.55) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 -0.55) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.75 0) (end -0.35 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 0) (end 0.75 0) (layer B.SilkS) (width 0.1))
+        (fp_line (start 0.25 0.4) (end -0.35 0) (layer B.SilkS) (width 0.1))
+        (fp_line (start 0.25 -0.4) (end 0.25 0.4) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end 0.25 -0.4) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 0.55) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 -0.55) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
+    
+        
+        (pad 1 smd rect (at -1.65 0 90) (size 0.9 1.2) (layers F.Cu F.Paste F.Mask) (net 27 "R0"))
+        (pad 2 smd rect (at 1.65 0 90) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 22 "inner_bottom"))
+        (pad 1 smd rect (at -1.65 0 90) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 27 "R0"))
+        (pad 2 smd rect (at 1.65 0 90) (size 0.9 1.2) (layers F.Cu F.Paste F.Mask) (net 22 "inner_bottom"))
+    )
+  
+    
+
+  
+    (module SmdDiode (layer F.Cu) (tedit 5B24D78E)
+
+
+        (at 202.5 82.125 90)
+
+        
+        (fp_text reference "D17" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+        (fp_text value "" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+        
+        
+        (fp_line (start 0.25 0) (end 0.75 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 0.4) (end -0.35 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 -0.4) (end 0.25 0.4) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end 0.25 -0.4) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 0.55) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 -0.55) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.75 0) (end -0.35 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 0) (end 0.75 0) (layer B.SilkS) (width 0.1))
+        (fp_line (start 0.25 0.4) (end -0.35 0) (layer B.SilkS) (width 0.1))
+        (fp_line (start 0.25 -0.4) (end 0.25 0.4) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end 0.25 -0.4) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 0.55) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 -0.55) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
+    
+        
+        (pad 1 smd rect (at -1.65 0 90) (size 0.9 1.2) (layers F.Cu F.Paste F.Mask) (net 28 "R1"))
+        (pad 2 smd rect (at 1.65 0 90) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 23 "inner_home"))
+        (pad 1 smd rect (at -1.65 0 90) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 28 "R1"))
+        (pad 2 smd rect (at 1.65 0 90) (size 0.9 1.2) (layers F.Cu F.Paste F.Mask) (net 23 "inner_home"))
+    )
+  
+    
+
+  
+    (module SmdDiode (layer F.Cu) (tedit 5B24D78E)
+
+
+        (at 202.5 63.125 90)
+
+        
+        (fp_text reference "D18" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+        (fp_text value "" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+        
+        
+        (fp_line (start 0.25 0) (end 0.75 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 0.4) (end -0.35 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 -0.4) (end 0.25 0.4) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end 0.25 -0.4) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 0.55) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 -0.55) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.75 0) (end -0.35 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 0) (end 0.75 0) (layer B.SilkS) (width 0.1))
+        (fp_line (start 0.25 0.4) (end -0.35 0) (layer B.SilkS) (width 0.1))
+        (fp_line (start 0.25 -0.4) (end 0.25 0.4) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end 0.25 -0.4) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 0.55) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 -0.55) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
+    
+        
+        (pad 1 smd rect (at -1.65 0 90) (size 0.9 1.2) (layers F.Cu F.Paste F.Mask) (net 29 "R2"))
+        (pad 2 smd rect (at 1.65 0 90) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 24 "inner_top"))
+        (pad 1 smd rect (at -1.65 0 90) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 29 "R2"))
+        (pad 2 smd rect (at 1.65 0 90) (size 0.9 1.2) (layers F.Cu F.Paste F.Mask) (net 24 "inner_top"))
+    )
+  
+    
+
+  
+    (module SmdDiode (layer F.Cu) (tedit 5B24D78E)
+
+
+        (at 174 118.25 90)
+
+        
+        (fp_text reference "D19" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+        (fp_text value "" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+        
+        
+        (fp_line (start 0.25 0) (end 0.75 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 0.4) (end -0.35 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 -0.4) (end 0.25 0.4) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end 0.25 -0.4) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 0.55) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 -0.55) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.75 0) (end -0.35 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 0) (end 0.75 0) (layer B.SilkS) (width 0.1))
+        (fp_line (start 0.25 0.4) (end -0.35 0) (layer B.SilkS) (width 0.1))
+        (fp_line (start 0.25 -0.4) (end 0.25 0.4) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end 0.25 -0.4) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 0.55) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 -0.55) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
+    
+        
+        (pad 1 smd rect (at -1.65 0 90) (size 0.9 1.2) (layers F.Cu F.Paste F.Mask) (net 30 "R3"))
+        (pad 2 smd rect (at 1.65 0 90) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 25 "near_home"))
+        (pad 1 smd rect (at -1.65 0 90) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 30 "R3"))
+        (pad 2 smd rect (at 1.65 0 90) (size 0.9 1.2) (layers F.Cu F.Paste F.Mask) (net 25 "near_home"))
+    )
+  
+    
+
+  
+    (module SmdDiode (layer F.Cu) (tedit 5B24D78E)
+
+
+        (at 193.9736533 122.8543688 75)
+
+        
+        (fp_text reference "D20" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+        (fp_text value "" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+        
+        
+        (fp_line (start 0.25 0) (end 0.75 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 0.4) (end -0.35 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 -0.4) (end 0.25 0.4) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end 0.25 -0.4) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 0.55) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 -0.55) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.75 0) (end -0.35 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 0) (end 0.75 0) (layer B.SilkS) (width 0.1))
+        (fp_line (start 0.25 0.4) (end -0.35 0) (layer B.SilkS) (width 0.1))
+        (fp_line (start 0.25 -0.4) (end 0.25 0.4) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end 0.25 -0.4) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 0.55) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 -0.55) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
+    
+        
+        (pad 1 smd rect (at -1.65 0 75) (size 0.9 1.2) (layers F.Cu F.Paste F.Mask) (net 30 "R3"))
+        (pad 2 smd rect (at 1.65 0 75) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 15 "middle_home"))
+        (pad 1 smd rect (at -1.65 0 75) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 30 "R3"))
+        (pad 2 smd rect (at 1.65 0 75) (size 0.9 1.2) (layers F.Cu F.Paste F.Mask) (net 15 "middle_home"))
+    )
+  
+    
+
+  
+    (module SmdDiode (layer F.Cu) (tedit 5B24D78E)
+
+
+        (at 216.2381509 116.4575973 150)
+
+        
+        (fp_text reference "D21" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+        (fp_text value "" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+        
+        
+        (fp_line (start 0.25 0) (end 0.75 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 0.4) (end -0.35 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 -0.4) (end 0.25 0.4) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end 0.25 -0.4) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 0.55) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 -0.55) (layer F.SilkS) (width 0.1))
+        (fp_line (start -0.75 0) (end -0.35 0) (layer F.SilkS) (width 0.1))
+        (fp_line (start 0.25 0) (end 0.75 0) (layer B.SilkS) (width 0.1))
+        (fp_line (start 0.25 0.4) (end -0.35 0) (layer B.SilkS) (width 0.1))
+        (fp_line (start 0.25 -0.4) (end 0.25 0.4) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end 0.25 -0.4) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 0.55) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.35 0) (end -0.35 -0.55) (layer B.SilkS) (width 0.1))
+        (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
+    
+        
+        (pad 1 smd rect (at -1.65 0 150) (size 0.9 1.2) (layers F.Cu F.Paste F.Mask) (net 30 "R3"))
+        (pad 2 smd rect (at 1.65 0 150) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 26 "far_home"))
+        (pad 1 smd rect (at -1.65 0 150) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 30 "R3"))
+        (pad 2 smd rect (at 1.65 0 150) (size 0.9 1.2) (layers F.Cu F.Paste F.Mask) (net 26 "far_home"))
+    )
+  
+    
+
+        (via
+            (at 107.5 100.5)
+            (size 0.8)
+            (drill 0.4)
+            (layers "F.Cu" "B.Cu")
+            (net 2)
+        )
+    
+
+        (via
+            (at 107.5 81.5)
+            (size 0.8)
+            (drill 0.4)
+            (layers "F.Cu" "B.Cu")
+            (net 3)
+        )
+    
+
+        (via
+            (at 107.5 62.5)
+            (size 0.8)
+            (drill 0.4)
+            (layers "F.Cu" "B.Cu")
+            (net 4)
+        )
+    
+
+        (via
+            (at 126.5 100.5)
+            (size 0.8)
+            (drill 0.4)
+            (layers "F.Cu" "B.Cu")
+            (net 6)
+        )
+    
+
+        (via
+            (at 126.5 81.5)
+            (size 0.8)
+            (drill 0.4)
+            (layers "F.Cu" "B.Cu")
+            (net 7)
+        )
+    
+
+        (via
+            (at 126.5 62.5)
+            (size 0.8)
+            (drill 0.4)
+            (layers "F.Cu" "B.Cu")
+            (net 8)
+        )
+    
+
+        (via
+            (at 145.5 95.75)
+            (size 0.8)
+            (drill 0.4)
+            (layers "F.Cu" "B.Cu")
+            (net 10)
+        )
+    
+
+        (via
+            (at 145.5 76.75)
+            (size 0.8)
+            (drill 0.4)
+            (layers "F.Cu" "B.Cu")
+            (net 11)
+        )
+    
+
+        (via
+            (at 145.5 57.75)
+            (size 0.8)
+            (drill 0.4)
+            (layers "F.Cu" "B.Cu")
+            (net 12)
+        )
+    
+
+        (via
+            (at 164.5 93.375)
+            (size 0.8)
+            (drill 0.4)
+            (layers "F.Cu" "B.Cu")
+            (net 14)
+        )
+    
+
+        (via
+            (at 164.5 74.375)
+            (size 0.8)
+            (drill 0.4)
+            (layers "F.Cu" "B.Cu")
+            (net 15)
+        )
+    
+
+        (via
+            (at 164.5 55.375)
+            (size 0.8)
+            (drill 0.4)
+            (layers "F.Cu" "B.Cu")
+            (net 16)
+        )
+    
+
+        (via
+            (at 183.5 95.75)
+            (size 0.8)
+            (drill 0.4)
+            (layers "F.Cu" "B.Cu")
+            (net 18)
+        )
+    
+
+        (via
+            (at 183.5 76.75)
+            (size 0.8)
+            (drill 0.4)
+            (layers "F.Cu" "B.Cu")
+            (net 19)
+        )
+    
+
+        (via
+            (at 183.5 57.75)
+            (size 0.8)
+            (drill 0.4)
+            (layers "F.Cu" "B.Cu")
+            (net 20)
+        )
+    
+
+        (via
+            (at 202.5 98.125)
+            (size 0.8)
+            (drill 0.4)
+            (layers "F.Cu" "B.Cu")
+            (net 22)
+        )
+    
+
+        (via
+            (at 202.5 79.125)
+            (size 0.8)
+            (drill 0.4)
+            (layers "F.Cu" "B.Cu")
+            (net 23)
+        )
+    
+
+        (via
+            (at 202.5 60.125)
+            (size 0.8)
+            (drill 0.4)
+            (layers "F.Cu" "B.Cu")
+            (net 24)
+        )
+    
+
+        (via
+            (at 174 115.25)
+            (size 0.8)
+            (drill 0.4)
+            (layers "F.Cu" "B.Cu")
+            (net 25)
+        )
+    
+
+        (via
+            (at 194.7501105 119.95659140000001)
+            (size 0.8)
+            (drill 0.4)
+            (layers "F.Cu" "B.Cu")
+            (net 15)
+        )
+    
+
+        (via
+            (at 213.64007469999999 114.9575973)
+            (size 0.8)
+            (drill 0.4)
+            (layers "F.Cu" "B.Cu")
+            (net 26)
         )
     
 
