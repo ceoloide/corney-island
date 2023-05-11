@@ -343,7 +343,7 @@ pcbs:
                     include_tht: false
                 adjust:
                     shift: [0.5 kcow + 0.5, -3.5]
-                    rotate: 9
+                    rotate: 90
             
             mcu:
                 what: promicro_pretty
