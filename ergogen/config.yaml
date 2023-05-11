@@ -311,8 +311,16 @@ pcbs:
                     from: "{{column_net}}"
                     to: "{{colrow}}"
             
+            column_vias:
+                what: via
+                where: [key]
+                params:
+                    net: "{{column_net}}"
+                adjust:
+                    shift: [-7, 0]
+
             diodes:
-                what: diode
+                what: smd_diode
                 where: [key]
                 params:
                     from: "{{colrow}}"
@@ -320,6 +328,14 @@ pcbs:
                 adjust:
                     shift: [0.5 kcow + 0.5, -3.5]
                     rotate: 90
+    
+            diode_vias:
+                what: via
+                where: [key]
+                params:
+                    net: "{{colrow}}"
+                adjust:
+                    shift: [7.5, -0.5]
             
             mcu:
                 what: promicro_pretty
