@@ -17,5 +17,9 @@ runs:
       for board in ${{ inputs.boards }};
       do
         echo Processing $board;
+        if [ -e $GITHUB_WORKSPACE/ergogen/output/pcbs/${board}.dsn ]; then
+          echo Cleaning up $GITHUB_WORKSPACE/ergogen/output/pcbs/${board}.dsn
+          rm -f $GITHUB_WORKSPACE/ergogen/output/pcbs/${board}.dsn
+        fi
         /usr/lib/python2.7/dist-packages/kicad-automation/pcbnew_automation/export_dsn.py $GITHUB_WORKSPACE/ergogen/output/pcbs/${board}.kicad_pcb $GITHUB_WORKSPACE/ergogen/output/pcbs/${board}.dsn
       done

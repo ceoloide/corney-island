@@ -17,5 +17,9 @@ runs:
       for board in ${{ inputs.boards }};
       do
         echo Processing $board
+        if [ -e $GITHUB_WORKSPACE/ergogen/output/pcbs/${board}_routed.kicad_pcb ]; then
+          echo Cleaning up $GITHUB_WORKSPACE/ergogen/output/pcbs/${board}_routed.kicad_pcb
+          rm -f $GITHUB_WORKSPACE/ergogen/output/pcbs/${board}_routed.kicad_pcb
+        fi
         /usr/lib/python2.7/dist-packages/kicad-automation/pcbnew_automation/import_ses.py $GITHUB_WORKSPACE/ergogen/output/pcbs/${board}.kicad_pcb $GITHUB_WORKSPACE/ergogen/output/pcbs/${board}.ses --output-file $GITHUB_WORKSPACE/ergogen/output/pcbs/${board}_routed.kicad_pcb;
       done
