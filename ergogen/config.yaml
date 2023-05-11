@@ -320,22 +320,15 @@ pcbs:
                     shift: [-7, 0]
 
             diodes:
-                what: smd_diode
+                what: combo_diode
                 where: [key]
                 params:
                     from: "{{colrow}}"
                     to: "{{row_net}}"
+                    include_tht: false
                 adjust:
                     shift: [0.5 kcow + 0.5, -3.5]
-                    rotate: 90
-    
-            diode_vias:
-                what: via
-                where: [key]
-                params:
-                    net: "{{colrow}}"
-                adjust:
-                    shift: [7.5, -0.5]
+                    rotate: 9
             
             mcu:
                 what: promicro_pretty
