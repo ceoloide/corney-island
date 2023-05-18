@@ -1,16 +1,41 @@
-vars:
-  version: &kb_version 'Corney Island v0.1'
+meta:
+  engine: 4.0.2
+  name: corney-island
+  version: 0.1
+  ref: &kb_ref 'Corney Island v0.1'
+  author: ceoloide
+  url: https://github.com/ceoloide/corney-island
+
+presets:
+    # These presets provide different layout options
+    # Select a preset in the `units` section below
+    # Note: The appropriate switch footprint will still need to be set in the `pcb` section
+    mx:
+        # Key and keycap measures
+        kx: u  # spacing between key centers (X-axis)
+        ky: u  # spacing between key centers (X-axis)
+        ks: 19  # horizontal space between columns (default: 19)
+        kp: 19  # vertical padding between keys (deafult: 19)
+        kcow: 14  # key cutout hole width (cherry: 14, choc: 13.8)
+        kcoh: 14  # key cutout hole height (cherry: 14, choc: 13.8)
+        keycw: 18  # keycap width (cherry: 18, choc: 17.5)
+        keych: 18  # keycap height (cherry: 18, choc: 16.5) 
+    choc:
+        # Key and keycap measures
+        kx: cx  # spacing between key centers (X-axis)
+        ky: cy  # spacing between key centers (X-axis)
+        ks: 18.5  # horizontal space between columns (default: 19)
+        kp: 17.5  # vertical padding between keys (deafult: 19)
+        kcow: 13.8  # key cutout hole width (cherry: 14, choc: 13.8)
+        kcoh: 13.8  # key cutout hole height (cherry: 14, choc: 13.8)
+        keycw: 17.5  # keycap width (cherry: 18, choc: 17.5)
+        keych: 16.5  # keycap height (cherry: 18, choc: 16.5)
 
 units:
-  # Key and keycap measures
-  kx: u  # spacing between key centers (X-axis)
-  ky: u  # spacing between key centers (X-axis)
-  ks: 19  # horizontal space between columns (default: 19)
-  kp: 19  # vertical padding between keys (deafult: 19)
-  kcow: 14  # key cutout hole width (cherry: 14, choc: 13.8)
-  kcoh: 14  # key cutout hole height (cherry: 14, choc: 13.8)
-  keycw: 18  # keycap width (cherry: 18, choc: 17.5)
-  keych: 18  # keycap height (cherry: 18, choc: 16.5)
+  # The following statements will make the content of the preset
+  # available in the units context
+  $extends: presets.mx
+ 
   hand_rotation: 0
 
   # Physical measures

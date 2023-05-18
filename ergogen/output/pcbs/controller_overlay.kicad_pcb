@@ -5,8 +5,8 @@
   (page A3)
   (title_block
     (title controller_overlay)
-    (rev v1.0.0)
-    (company Unknown)
+    (rev 0.1)
+    (company ceoloide)
   )
 
   (general
