@@ -2,45 +2,45 @@ meta:
   engine: 4.0.2
   name: corney-island
   version: 0.1
-  ref: &kb_ref 'Corney Island v0.1'
+  ref: &kb_ref "Corney Island v0.1"
   author: ceoloide
   url: https://github.com/ceoloide/corney-island
 
 presets:
-    # These presets provide different layout options
-    # Select a preset in the `units` section below
-    # Note: The appropriate switch footprint will still need to be set in the `pcb` section
-    mx:
-        # Key and keycap measures
-        kx: u  # spacing between key centers (X-axis)
-        ky: u  # spacing between key centers (X-axis)
-        ks: 19  # horizontal space between columns (default: 19)
-        kp: 19  # vertical padding between keys (deafult: 19)
-        kcow: 14  # key cutout hole width (cherry: 14, choc: 13.8)
-        kcoh: 14  # key cutout hole height (cherry: 14, choc: 13.8)
-        keycw: 18  # keycap width (cherry: 18, choc: 17.5)
-        keych: 18  # keycap height (cherry: 18, choc: 16.5) 
-    choc:
-        # Key and keycap measures
-        kx: cx  # spacing between key centers (X-axis)
-        ky: cy  # spacing between key centers (X-axis)
-        ks: 18.5  # horizontal space between columns (default: 19)
-        kp: 17.5  # vertical padding between keys (deafult: 19)
-        kcow: 13.8  # key cutout hole width (cherry: 14, choc: 13.8)
-        kcoh: 13.8  # key cutout hole height (cherry: 14, choc: 13.8)
-        keycw: 17.5  # keycap width (cherry: 18, choc: 17.5)
-        keych: 16.5  # keycap height (cherry: 18, choc: 16.5)
+  # These presets provide different layout options
+  # Select a preset in the `units` section below
+  # Note: The appropriate switch footprint will still need to be set in the `pcb` section
+  mx:
+    # Key and keycap measures
+    kx: u # spacing between key centers (X-axis)
+    ky: u # spacing between key centers (X-axis)
+    ks: 19 # horizontal space between columns (default: 19)
+    kp: 19 # vertical padding between keys (deafult: 19)
+    kcow: 14 # key cutout hole width (cherry: 14, choc: 13.8)
+    kcoh: 14 # key cutout hole height (cherry: 14, choc: 13.8)
+    keycw: 18 # keycap width (cherry: 18, choc: 17.5)
+    keych: 18 # keycap height (cherry: 18, choc: 16.5)
+  choc:
+    # Key and keycap measures
+    kx: cx # spacing between key centers (X-axis)
+    ky: cy # spacing between key centers (X-axis)
+    ks: 18.5 # horizontal space between columns (default: 19)
+    kp: 17.5 # vertical padding between keys (deafult: 19)
+    kcow: 13.8 # key cutout hole width (cherry: 14, choc: 13.8)
+    kcoh: 13.8 # key cutout hole height (cherry: 14, choc: 13.8)
+    keycw: 17.5 # keycap width (cherry: 18, choc: 17.5)
+    keych: 16.5 # keycap height (cherry: 18, choc: 16.5)
 
 units:
   # The following statements will make the content of the preset
   # available in the units context
   $extends: presets.mx
- 
+
   hand_rotation: 0
 
   # Physical measures
-  screw_radius: 1.1  # M2 screws
-  spacer_radius: 2.05  # M2 standoffs
+  screw_radius: 1.1 # M2 screws
+  spacer_radius: 2.05 # M2 standoffs
   fillet_radius: 0.5
 
   # Thumb splay
@@ -49,7 +49,6 @@ units:
 
 points:
   zones:
-
     # Main key matrix
     matrix:
       key:
@@ -58,37 +57,37 @@ points:
         tags: key
       anchor:
         rotate: hand_rotation
-        shift: [100, -100]  # Fix KiCad placement
+        shift: [100, -100] # Fix KiCad placement
       columns:
         outer:
-            key:
-                column_net: C0
+          key:
+            column_net: C0
         pinky:
-            key:
-                column_net: C1
+          key:
+            column_net: C1
         ring:
-            key:
-                stagger: 0.25 kp
-                column_net: C2
+          key:
+            stagger: 0.25 kp
+            column_net: C2
         middle:
-            key:
-                stagger: 0.125 kp
-                column_net: C3
+          key:
+            stagger: 0.125 kp
+            column_net: C3
         index:
-            key:
-                stagger: -0.125 kp
-                column_net: C4
+          key:
+            stagger: -0.125 kp
+            column_net: C4
         inner:
-            key:
-                stagger: -0.125 kp
-                column_net: C5
+          key:
+            stagger: -0.125 kp
+            column_net: C5
       rows:
         bottom:
-            row_net: R0
+          row_net: R0
         home:
-            row_net: R1
+          row_net: R1
         top:
-            row_net: R2
+          row_net: R2
 
     # Thumb cluster
     thumbfan:
@@ -101,22 +100,22 @@ points:
         shift: [-0.5 ks, -kp -0.5]
       columns:
         near:
-            key:
-                column_net: C3
+          key:
+            column_net: C3
         middle:
-            key:
-                splay: splay_thumb_middle
-                origin: [-0.5 ks, -0.5 kp]
-                column_net: C4
+          key:
+            splay: splay_thumb_middle
+            origin: [-0.5 ks, -0.5 kp]
+            column_net: C4
         far:
-            key:
-                splay: splay_thumb_far
-                origin: [0.5 ks, -0.55 kp]
-                rotate: 90
-                column_net: C5
+          key:
+            splay: splay_thumb_far
+            origin: [0.5 ks, -0.55 kp]
+            rotate: 90
+            column_net: C5
       rows:
         home:
-            row_net: R3
+          row_net: R3
 
 outlines:
   _switch_cutouts:
@@ -125,300 +124,300 @@ outlines:
       size: [kcow, kcoh]
 
   _backplate_additional_outline:
-    -   what: rectangle
-        where:
-            - matrix_inner_top
-        size: [20, 3.5 kp]
-        adjust:
-            shift: [ks + (20 - ks) / 2, -1.25 kp -0.125 kp]
-        operation: stack
-    -   what: rectangle
-        adjust: 
-            ref: thumbfan_far_home
-        size: [1.5 ks, 1.75 kp]
-        operation: subtract
+    - what: rectangle
+      where:
+        - matrix_inner_top
+      size: [20, 3.5 kp]
+      adjust:
+        shift: [ks + (20 - ks) / 2, -1.25 kp -0.125 kp]
+      operation: stack
+    - what: rectangle
+      adjust:
+        ref: thumbfan_far_home
+      size: [1.5 ks, 1.75 kp]
+      operation: subtract
 
   _matrix_outline:
-    -   what: rectangle
-        where:
-            - matrix_outer_top
-            - matrix_outer_home
-            - matrix_outer_bottom
-            - matrix_pinky_top
-            - matrix_pinky_home
-            - matrix_pinky_bottom
-            - matrix_ring_top
-            - matrix_ring_home
-            - matrix_ring_bottom
-            - matrix_middle_top
-            - matrix_middle_home
-            - matrix_middle_bottom
-            - matrix_index_top
-            - matrix_index_home
-            - matrix_index_bottom
-            - matrix_inner_top
-            - matrix_inner_home
-            - matrix_inner_bottom
-        size: [ks, kp]
+    - what: rectangle
+      where:
+        - matrix_outer_top
+        - matrix_outer_home
+        - matrix_outer_bottom
+        - matrix_pinky_top
+        - matrix_pinky_home
+        - matrix_pinky_bottom
+        - matrix_ring_top
+        - matrix_ring_home
+        - matrix_ring_bottom
+        - matrix_middle_top
+        - matrix_middle_home
+        - matrix_middle_bottom
+        - matrix_index_top
+        - matrix_index_home
+        - matrix_index_bottom
+        - matrix_inner_top
+        - matrix_inner_home
+        - matrix_inner_bottom
+      size: [ks, kp]
 
   _plate_outline:
-    -   what: outline
-        name: _matrix_outline
-    -   what: rectangle
-        adjust: 
-            ref: thumbfan_far_home
-            shift: [0, 0.275 kp]
-        size: [1.5 ks, 1.5 kp]
-    -   what: rectangle
-        adjust: 
-            ref: matrix_ring_bottom
-            shift: [0, -0.5 kp]
-        size: [3 ks, 0.5 kp]
-    -   what: polygon
-        points:
-            -   ref: matrix_pinky_bottom
-                shift: [1.5 ks, -0.5 kp]
-            -   ref: thumbfan_near_home
-                shift: [-0.5 ks, -0.5 kp]
-            -   ref: thumbfan_far_home
-                shift: [-0.75 ks, 0.5 kp]
-            -   ref: thumbfan_far_home
-                shift: [0.75 ks, 0.5 kp]
-            -   ref: thumbfan_near_home
-                shift: [-0.5 ks, 0.75 kp]
+    - what: outline
+      name: _matrix_outline
+    - what: rectangle
+      adjust:
+        ref: thumbfan_far_home
+        shift: [0, 0.275 kp]
+      size: [1.5 ks, 1.5 kp]
+    - what: rectangle
+      adjust:
+        ref: matrix_ring_bottom
+        shift: [0, -0.5 kp]
+      size: [3 ks, 0.5 kp]
+    - what: polygon
+      points:
+        - ref: matrix_pinky_bottom
+          shift: [1.5 ks, -0.5 kp]
+        - ref: thumbfan_near_home
+          shift: [-0.5 ks, -0.5 kp]
+        - ref: thumbfan_far_home
+          shift: [-0.75 ks, 0.5 kp]
+        - ref: thumbfan_far_home
+          shift: [0.75 ks, 0.5 kp]
+        - ref: thumbfan_near_home
+          shift: [-0.5 ks, 0.75 kp]
 
   _screws:
-    -   &circle
-        what: circle
-        radius: screw_radius
-        adjust:
-            ref: matrix_pinky_top
-            shift: [-0.5 ks, -0.5 kp]
-    -   <<: *circle
-        adjust:
-            ref: matrix_pinky_home
-            shift: [-0.5 ks, -0.5 kp]
-    -   <<: *circle
-        adjust:
-            ref: matrix_inner_top
-            shift: [-0.5 ks, -0.5 kp + 1.4]
-    -   <<: *circle
-        adjust:
-            ref: thumbfan_near_home
-            shift: [-0.7 ks -0.2, 7.1]
-    -   <<: *circle
-        adjust:
-            ref: thumbfan_far_home
-            shift: [0, 0.5 kp + 2]
+    - &circle
+      what: circle
+      radius: screw_radius
+      adjust:
+        ref: matrix_pinky_top
+        shift: [-0.5 ks, -0.5 kp]
+    - <<: *circle
+      adjust:
+        ref: matrix_pinky_home
+        shift: [-0.5 ks, -0.5 kp]
+    - <<: *circle
+      adjust:
+        ref: matrix_inner_top
+        shift: [-0.5 ks, -0.5 kp + 1.4]
+    - <<: *circle
+      adjust:
+        ref: thumbfan_near_home
+        shift: [-0.7 ks -0.2, 7.1]
+    - <<: *circle
+      adjust:
+        ref: thumbfan_far_home
+        shift: [0, 0.5 kp + 2]
 
   _controller_overlay_screws:
-    -   <<: *circle
-        adjust:
-        -   ref: thumbfan_far_home
-            shift: [0.9 ks, 0.65 kp]
-    -   <<: *circle
-        adjust:
-        -   ref: thumbfan_far_home
-            shift: [0.9 ks, -0.25 kp]
+    - <<: *circle
+      adjust:
+        - ref: thumbfan_far_home
+          shift: [0.9 ks, 0.65 kp]
+    - <<: *circle
+      adjust:
+        - ref: thumbfan_far_home
+          shift: [0.9 ks, -0.25 kp]
 
   _spacers:
-    -   &bigCircle
-        what: circle
-        radius: spacer_radius
-        adjust:
-            ref: matrix_pinky_top
-            shift: [-0.5 ks, -0.5 kp]
-    -   <<: *bigCircle
-        adjust:
-            ref: matrix_pinky_home
-            shift: [-0.5 ks, -0.5 kp]
-    -   <<: *bigCircle
-        adjust:
-            ref: matrix_inner_top
-            shift: [-0.5 ks, -0.5 kp + 1.4]
-    -   <<: *bigCircle
-        adjust:
-            ref: thumbfan_near_home
-            shift: [-0.7 ks -0.2, 7.1]
-    -   <<: *bigCircle
-        adjust:
-            ref: thumbfan_far_home
-            shift: [0, 0.5 kp + 2]
+    - &bigCircle
+      what: circle
+      radius: spacer_radius
+      adjust:
+        ref: matrix_pinky_top
+        shift: [-0.5 ks, -0.5 kp]
+    - <<: *bigCircle
+      adjust:
+        ref: matrix_pinky_home
+        shift: [-0.5 ks, -0.5 kp]
+    - <<: *bigCircle
+      adjust:
+        ref: matrix_inner_top
+        shift: [-0.5 ks, -0.5 kp + 1.4]
+    - <<: *bigCircle
+      adjust:
+        ref: thumbfan_near_home
+        shift: [-0.7 ks -0.2, 7.1]
+    - <<: *bigCircle
+      adjust:
+        ref: thumbfan_far_home
+        shift: [0, 0.5 kp + 2]
 
   _keycap_outlines:
-    -   what: rectangle
-        fillet: 2
-        where: true
-        size: [keycw, keych]
+    - what: rectangle
+      fillet: 2
+      where: true
+      size: [keycw, keych]
 
   _backplate_outline:
-    -   what: outline
-        name: _plate_outline
-    -   what: outline
-        name: _backplate_additional_outline
-        operation: add
+    - what: outline
+      name: _plate_outline
+    - what: outline
+      name: _backplate_additional_outline
+      operation: add
 
   backplate:
-    -   what: outline
-        name: _backplate_outline
-        fillet: fillet_radius
-    -   what: outline
-        name: _screws
-        operation: subtract
+    - what: outline
+      name: _backplate_outline
+      fillet: fillet_radius
+    - what: outline
+      name: _screws
+      operation: subtract
 
   pcb:
-    -   what: outline
-        name: backplate
-    -   what: outline
-        name: _spacers
-        operation: subtract
-    -   what: outline
-        name: _controller_overlay_screws
-        operation: subtract
-  
+    - what: outline
+      name: backplate
+    - what: outline
+      name: _spacers
+      operation: subtract
+    - what: outline
+      name: _controller_overlay_screws
+      operation: subtract
+
   frontplate:
-    -   what: outline
-        name: _plate_outline
-        fillet: fillet_radius
-    -   what: outline
-        name: _switch_cutouts
-        operation: subtract
-    -   what: outline
-        name: _screws
-        operation: subtract
+    - what: outline
+      name: _plate_outline
+      fillet: fillet_radius
+    - what: outline
+      name: _switch_cutouts
+      operation: subtract
+    - what: outline
+      name: _screws
+      operation: subtract
 
   controller_overlay:
-    -   what: outline
-        name: _backplate_additional_outline
-        fillet: fillet_radius
-    -   what: outline
-        name: _controller_overlay_screws
-        operation: subtract
+    - what: outline
+      name: _backplate_additional_outline
+      fillet: fillet_radius
+    - what: outline
+      name: _controller_overlay_screws
+      operation: subtract
 
   _debug:
-    -   what: outline
-        name: frontplate
-        operation: stack
-    -   what: outline
-        name: controller_overlay
-        operation: stack
+    - what: outline
+      name: frontplate
+      operation: stack
+    - what: outline
+      name: controller_overlay
+      operation: stack
 
   preview:
-    -   what: outline
-        name: backplate
-    -   what: outline
-        name: pcb
-        operation: stack
-    -   what: outline
-        name: frontplate
-        operation: stack
-    -   what: outline
-        name: controller_overlay
-        operation: stack
-    -   what: outline
-        name: _keycap_outlines
-        operation: stack
+    - what: outline
+      name: backplate
+    - what: outline
+      name: pcb
+      operation: stack
+    - what: outline
+      name: frontplate
+      operation: stack
+    - what: outline
+      name: controller_overlay
+      operation: stack
+    - what: outline
+      name: _keycap_outlines
+      operation: stack
 
 pcbs:
-    backplate:
-        outlines:
-            main:
-                outline: backplate
-    
-    frontplate:
-        outlines:
-            main:
-                outline: frontplate
-    
-    controller_overlay:
-        outlines:
-            main:
-                outline: controller_overlay
+  backplate:
+    outlines:
+      main:
+        outline: backplate
 
-    corney_island:
-        outlines:
-            main:
-                outline: pcb
+  frontplate:
+    outlines:
+      main:
+        outline: frontplate
 
-        footprints:
-            key_switches:
-                what: mx
-                where: [key]
-                params:
-                    reverse: true
-                    hotswap: true
-                    keycaps: false
-                    from: "{{column_net}}"
-                    to: "{{colrow}}"
-            
-            column_vias:
-                what: via
-                where: [key]
-                params:
-                    net: "{{column_net}}"
-                adjust:
-                    shift: [-7, 0]
+  controller_overlay:
+    outlines:
+      main:
+        outline: controller_overlay
 
-            diodes:
-                what: combo_diode
-                where: [key]
-                params:
-                    from: "{{colrow}}"
-                    to: "{{row_net}}"
-                    include_tht: false
-                adjust:
-                    shift: [0.5 kcow + 0.5, -3.5]
-                    rotate: 90
-            
-            mcu:
-                what: promicro_pretty
-                where: matrix_inner_top
-                params:
-                    P0: data
-                    P21: C0
-                    P20: C1
-                    P19: C2
-                    P18: C3
-                    P15: C4
-                    P14: C5
-                    P2: SDA
-                    P3: SCL
-                    P4: R0
-                    P5: R1
-                    P6: R2
-                    P7: R3
-                adjust:
-                    shift: [19.7, 0.5 kp -0.125 kp - 19.3]
-                    rotate: -90
+  corney_island:
+    outlines:
+      main:
+        outline: pcb
 
-            oled:
-                what: oled
-                where: matrix_inner_top
-                params:
-                    SDA: SDA
-                    SCL: SCL
-                adjust:
-                    shift: [0.5 ks + 4.16, 0.5 kp -0.125 kp - 19.3 - 22.65]
-                    rotate: 90
+    footprints:
+      key_switches:
+        what: mx
+        where: [key]
+        params:
+          reverse: true
+          hotswap: true
+          keycaps: false
+          from: "{{column_net}}"
+          to: "{{colrow}}"
 
-            reset_switch:
-                what: reset_switch
-                where: matrix_inner_top
-                params:
-                    from: RST
-                    to: GND
-                adjust:
-                    shift: [0.5 ks + 18, 0.5 kp -0.125 kp - 19.3 - 20.65]
-                    rotate: -90
+      column_vias:
+        what: via
+        where: [key]
+        params:
+          net: "{{column_net}}"
+        adjust:
+          shift: [-7, 0]
 
-            trrs:
-                what: trrs
-                where: matrix_inner_top
-                params:
-                    A: J1-PadA
-                    B: data
-                    C: GND
-                    D: VCC
-                adjust:
-                    shift: [0.5 ks + 19.2, 0.5 kp -0.125 kp - 19.3 - 30.75]
-                    rotate: -90
+      diodes:
+        what: combo_diode
+        where: [key]
+        params:
+          from: "{{colrow}}"
+          to: "{{row_net}}"
+          include_tht: false
+        adjust:
+          shift: [0.5 kcow + 0.5, -3.5]
+          rotate: 90
+
+      mcu:
+        what: promicro_pretty
+        where: matrix_inner_top
+        params:
+          P0: data
+          P21: C0
+          P20: C1
+          P19: C2
+          P18: C3
+          P15: C4
+          P14: C5
+          P2: SDA
+          P3: SCL
+          P4: R0
+          P5: R1
+          P6: R2
+          P7: R3
+        adjust:
+          shift: [19.7, 0.5 kp -0.125 kp - 19.3]
+          rotate: -90
+
+      oled:
+        what: oled
+        where: matrix_inner_top
+        params:
+          SDA: SDA
+          SCL: SCL
+        adjust:
+          shift: [0.5 ks + 4.16, 0.5 kp -0.125 kp - 19.3 - 22.65]
+          rotate: 90
+
+      reset_switch:
+        what: reset_switch
+        where: matrix_inner_top
+        params:
+          from: RST
+          to: GND
+        adjust:
+          shift: [0.5 ks + 18, 0.5 kp -0.125 kp - 19.3 - 20.65]
+          rotate: -90
+
+      trrs:
+        what: trrs
+        where: matrix_inner_top
+        params:
+          A: J1-PadA
+          B: data
+          C: GND
+          D: VCC
+        adjust:
+          shift: [0.5 ks + 19.2, 0.5 kp -0.125 kp - 19.3 - 30.75]
+          rotate: -90
