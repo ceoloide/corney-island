@@ -1,6 +1,7 @@
 {
     "scripts": {
-        "gen": "ergogen ergogen/ --output ergogen/output --clear --debug"
+        "build": "ergogen ergogen/ --output ergogen/output --clear",
+        "debug": "ergogen ergogen/ --output ergogen/output --clear --debug"
     },
     "dependencies": {
         "ergogen": "github:ergogen/ergogen"

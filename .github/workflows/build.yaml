@@ -20,7 +20,7 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Generate unrouted PCBs with Ergogen (definition in package.json)
-        run: npm run gen
+        run: npm run build
       - name: Export DSN 
         uses: ./.github/actions/export-dsn
         with:
