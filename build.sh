@@ -8,7 +8,7 @@ container_args="-w /board -v $(pwd):/board --rm"
 rm -rf ergogen/output
 
 # Generate unrouted PCBs with Ergogen (definition in package.json)
-npm run gen
+npm run debug
 
 # Define the boards to autoroute and export, and the plates
 boards="corney_island"
