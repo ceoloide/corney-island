@@ -5,6 +5,9 @@ meta:
   ref: &kb_ref "Corney Island v0.1"
   author: ceoloide
   url: https://github.com/ceoloide/corney-island
+  footprint: &switch_footprint "choc"
+  switch:
+    $extends: presets.choc_mx_spacing
 
 presets:
   # These presets provide different layout options
@@ -13,28 +16,43 @@ presets:
   mx:
     # Key and keycap measures
     kx: u # spacing between key centers (X-axis)
-    ky: u # spacing between key centers (X-axis)
+    ky: u # spacing between key centers (Y-axis)
     ks: 19 # horizontal space between columns (default: 19)
     kp: 19 # vertical padding between keys (deafult: 19)
     kcow: 14 # key cutout hole width (cherry: 14, choc: 13.8)
     kcoh: 14 # key cutout hole height (cherry: 14, choc: 13.8)
     keycw: 18 # keycap width (cherry: 18, choc: 17.5)
     keych: 18 # keycap height (cherry: 18, choc: 16.5)
-  choc_v1:
+    led_pos_x: 0 # Led X position relative to the switch center
+    led_pos_y: -4.75 # Led Y position relative to the switch center
+    led_cut_w: 3.6 # Led cutout width
+    led_cut_h: 3.1 # Led cutout height
+  choc:
     # Key and keycap measures
     kx: cx # spacing between key centers (X-axis)
-    ky: cy # spacing between key centers (X-axis)
+    ky: cy # spacing between key centers (Y-axis)
     ks: 18.5 # horizontal space between columns (default: 19)
     kp: 17.5 # vertical padding between keys (deafult: 19)
     kcow: 13.8 # key cutout hole width (cherry: 14, choc: 13.8)
     kcoh: 13.8 # key cutout hole height (cherry: 14, choc: 13.8)
     keycw: 17.5 # keycap width (cherry: 18, choc: 17.5)
     keych: 16.5 # keycap height (cherry: 18, choc: 16.5)
+    led_pos_x: 0 # Led X position relative to the switch center
+    led_pos_y: 5.5 # Led Y position relative to the switch center
+    led_cut_w: 3.5 # Led cutout width
+    led_cut_h: 4.5 # Led cutout height
+  choc_mx_spacing:
+    # Key and keycap measures
+    $extends: presets.choc
+    kx: u # spacing between key centers (X-axis)
+    ky: u # spacing between key centers (Y-axis)
+    ks: 19 # horizontal space between columns (default: 19)
+    kp: 19 # vertical padding between keys (deafult: 19)
 
 units:
   # The following statements will make the content of the preset
   # available in the units context
-  $extends: presets.mx
+  $extends: meta.switch
 
   hand_rotation: 0
 
@@ -327,7 +345,7 @@ pcbs:
 
     footprints:
       key_switches:
-        what: mx
+        what: *switch_footprint
         where: [key]
         params:
           reverse: true
