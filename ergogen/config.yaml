@@ -27,6 +27,7 @@ presets:
     led_pos_y: -4.75 # Led Y position relative to the switch center
     led_cut_w: 3.6 # Led cutout width
     led_cut_h: 3.1 # Led cutout height
+    switch_rotation: 0 # Hotswap north, led south
   choc:
     # Key and keycap measures
     kx: cx # spacing between key centers (X-axis)
@@ -41,6 +42,7 @@ presets:
     led_pos_y: 5.5 # Led Y position relative to the switch center
     led_cut_w: 3.5 # Led cutout width
     led_cut_h: 4.5 # Led cutout height
+    switch_rotation: 180 # Hotswap south, led north
   choc_mx_spacing:
     # Key and keycap measures
     $extends: presets.choc
@@ -363,6 +365,8 @@ pcbs:
           keycaps: false
           from: "{{column_net}}"
           to: "{{colrow}}"
+        adjust:
+          rotate: switch_rotation
 
       column_vias:
         what: via
