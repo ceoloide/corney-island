@@ -5,9 +5,9 @@ meta:
   ref: &kb_ref "Corney Island v0.1"
   author: ceoloide
   url: https://github.com/ceoloide/corney-island
-  footprint: &switch_footprint "choc"
+  footprint: &switch_footprint "mx"
   switch:
-    $extends: presets.choc_mx_spacing
+    $extends: presets.mx
 
 presets:
   # These presets provide different layout options
@@ -145,6 +145,13 @@ outlines:
       where: true
       size: [kcow, kcoh]
 
+  _key_led_cutouts:
+    - what: rectangle
+      where: true
+      size: [led_cut_w, led_cut_h]
+      adjust:
+        shift: [led_pos_x, led_pos_y]
+
   _backplate_additional_outline:
     - what: rectangle
       where:
@@ -277,6 +284,9 @@ outlines:
       operation: subtract
     - what: outline
       name: _controller_overlay_screws
+      operation: subtract
+    - what: outline
+      name: _key_led_cutouts
       operation: subtract
 
   frontplate:
