@@ -20,7 +20,7 @@ presets:
     kcoh: 14 # key cutout hole height (cherry: 14, choc: 13.8)
     keycw: 18 # keycap width (cherry: 18, choc: 17.5)
     keych: 18 # keycap height (cherry: 18, choc: 16.5)
-  choc:
+  choc_v1:
     # Key and keycap measures
     kx: cx # spacing between key centers (X-axis)
     ky: cy # spacing between key centers (X-axis)
@@ -54,7 +54,9 @@ points:
       key:
         padding: kp
         spread: ks
-        tags: key
+        tags: 
+          - key
+          - matrix_key
       anchor:
         rotate: hand_rotation
         shift: [100, -100] # Fix KiCad placement
@@ -94,7 +96,9 @@ points:
       key:
         padding: kp
         spread: ks
-        tags: key
+        tags:
+          - key
+          - thumb_key
       anchor:
         ref: matrix_index_bottom
         shift: [-0.5 ks, -kp -0.5]
@@ -139,25 +143,7 @@ outlines:
 
   _matrix_outline:
     - what: rectangle
-      where:
-        - matrix_outer_top
-        - matrix_outer_home
-        - matrix_outer_bottom
-        - matrix_pinky_top
-        - matrix_pinky_home
-        - matrix_pinky_bottom
-        - matrix_ring_top
-        - matrix_ring_home
-        - matrix_ring_bottom
-        - matrix_middle_top
-        - matrix_middle_home
-        - matrix_middle_bottom
-        - matrix_index_top
-        - matrix_index_home
-        - matrix_index_bottom
-        - matrix_inner_top
-        - matrix_inner_home
-        - matrix_inner_bottom
+      where: [matrix_key]
       size: [ks, kp]
 
   _plate_outline:
