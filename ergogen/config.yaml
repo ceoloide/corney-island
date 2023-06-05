@@ -250,15 +250,15 @@ outlines:
     - <<: *bigCircle
       adjust:
         ref: matrix_inner_top
-        shift: [-0.5 ks, -0.5 kp + 1.4]
+        shift: [-0.5 ks -0.032, -0.5 kp + 1.139]
     - <<: *bigCircle
       adjust:
         ref: thumbfan_near_home
-        shift: [-0.7 ks -0.2, 7.1]
+        shift: [-0.5 ks -4.343, 7.135]
     - <<: *bigCircle
       adjust:
         ref: thumbfan_far_home
-        shift: [0, 0.5 kp + 2]
+        shift: [0, 0.5 kp + 2.631]
 
   _keycap_outlines:
     - what: rectangle
