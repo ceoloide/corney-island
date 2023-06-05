@@ -224,7 +224,7 @@ outlines:
     - <<: *circle
       adjust:
         ref: thumbfan_far_home
-        shift: [0, 0.5 kp + 2.631]
+        shift: [0, 0.5 kp + 2]
 
   _spacers:
     - &bigCircle
@@ -253,12 +253,12 @@ outlines:
   _controller_overlay_screws:
     - <<: *circle
       adjust:
-        - ref: thumbfan_far_home
-          shift: [0.9 ks, 0.65 kp]
+        - ref: matrix_inner_bottom
+          shift: [0.67 ks + 0.032, -0.15 kp - 0.001]
     - <<: *circle
       adjust:
-        - ref: thumbfan_far_home
-          shift: [0.9 ks, -0.25 kp]
+        - ref: matrix_inner_bottom
+          shift: [1.45 ks - 0.356, -0.6 ks + 0.03]
 
   _keycap_outlines:
     - what: rectangle

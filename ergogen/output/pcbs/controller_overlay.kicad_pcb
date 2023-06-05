@@ -113,8 +113,8 @@
 (gr_arc (start 205 53) (end 205 52.5) (angle -90) (layer Edge.Cuts) (width 0.15))
 (gr_arc (start 205 101.616755039875) (end 204.5 101.616755039875) (angle -59.999999891584196) (layer Edge.Cuts) (width 0.15))
 (gr_arc (start 224 112.58641018336651) (end 223.75 113.01942288336652) (angle -120.0000001084203) (layer Edge.Cuts) (width 0.15))
-(gr_circle (center 207.6013921 100.4051232) (end 208.7013921 100.4051232) (layer Edge.Cuts) (width 0.15))
-(gr_circle (center 222.4104265 108.9551232) (end 223.5104265 108.9551232) (layer Edge.Cuts) (width 0.15))
+(gr_circle (center 207.762 100.476) (end 208.862 100.476) (layer Edge.Cuts) (width 0.15))
+(gr_circle (center 222.194 108.995) (end 223.29399999999998 108.995) (layer Edge.Cuts) (width 0.15))
             
 )
 
