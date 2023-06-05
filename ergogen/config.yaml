@@ -114,14 +114,15 @@ points:
     # Thumb cluster
     thumbfan:
       key:
-        padding: kp
-        spread: ks
+        padding: 0
+        spread: 0
+        stagger: 0
         tags:
           - key
           - thumb_key
       anchor:
-        ref: matrix_index_bottom
-        shift: [-0.5 ks, -kp -0.5]
+        ref: matrix_middle_bottom
+        shift: [0.5 ks, -kp -3]
       columns:
         near:
           key:
@@ -129,14 +130,16 @@ points:
         middle:
           key:
             splay: splay_thumb_middle
-            origin: [-0.5 ks, -0.5 kp]
             column_net: C4
+            stagger: -2.750
+            spread: ks + 2
         far:
           key:
             splay: splay_thumb_far
-            origin: [0.5 ks, -0.55 kp]
             rotate: 90
             column_net: C5
+            stagger: 2.122
+            spread: ks + 3.463
       rows:
         home:
           row_net: R3
