@@ -408,7 +408,7 @@ pcbs:
           P6: R2
           P7: R3
         adjust:
-          shift: [19.7, 0.5 kp -0.125 kp - 19.3]
+          shift: [19.704, 0.5 kp -0.125 kp -19.3 -0.340]
           rotate: -90
 
       oled:
@@ -418,17 +418,17 @@ pcbs:
           SDA: SDA
           SCL: SCL
         adjust:
-          shift: [0.5 ks + 4.16, 0.5 kp -0.125 kp - 19.3 - 22.65]
+          shift: [0.5 ks + 4.161, 0.5 kp -0.125 kp - 19.3 - 22.65 - 0.398]
           rotate: 90
 
       reset_switch:
         what: reset_switch
         where: matrix_inner_top
         params:
-          from: RST
-          to: GND
+          from: GND
+          to: RST
         adjust:
-          shift: [0.5 ks + 18, 0.5 kp -0.125 kp - 19.3 - 20.65]
+          shift: [0.5 ks + 18 - 0.183, 0.5 kp -0.125 kp - 19.3 - 20.65 - 0.301]
           rotate: -90
 
       trrs:
@@ -440,5 +440,5 @@ pcbs:
           C: GND
           D: VCC
         adjust:
-          shift: [0.5 ks + 19.2, 0.5 kp -0.125 kp - 19.3 - 30.75]
+          shift: [0.5 ks + 19.2 + 0.41, 0.5 kp -0.125 kp - 19.3 - 30.75 -0.26]
           rotate: -90
