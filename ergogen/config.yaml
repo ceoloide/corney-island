@@ -105,11 +105,11 @@ points:
             column_net: C5
       rows:
         bottom:
-          row_net: R0
+          row_net: R2
         home:
           row_net: R1
         top:
-          row_net: R2
+          row_net: R0
 
     # Thumb cluster
     thumbfan:
@@ -387,7 +387,7 @@ pcbs:
           to: "{{row_net}}"
           include_tht: false
         adjust:
-          shift: [0.5 kcow + 0.8, -3.5]
+          shift: [0.5 kcow + 0.8 - 0.173, -1.5]
           rotate: 90
 
       mcu:
@@ -407,6 +407,7 @@ pcbs:
           P5: R1
           P6: R2
           P7: R3
+          P1: LED
         adjust:
           shift: [19.704, 0.5 kp -0.125 kp -19.3 -0.340]
           rotate: -90
