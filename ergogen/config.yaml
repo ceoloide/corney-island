@@ -25,8 +25,9 @@ presets:
     keych: 18 # keycap height (cherry: 18, choc: 16.5)
     led_pos_x: 0 # Led X position relative to the switch center
     led_pos_y: -4.75 # Led Y position relative to the switch center
-    led_cut_w: 3.6 # Led cutout width
-    led_cut_h: 3.1 # Led cutout height
+    led_rotation: 0 # Led rotation
+    vertical_diode_shift: -1.5 # How much to shift to avoid overlap
+    diode_rotation: 0 # Diode rotation
     switch_rotation: 0 # Hotswap north, led south
   choc:
     # Key and keycap measures
@@ -40,8 +41,8 @@ presets:
     keych: 16.5 # keycap height (cherry: 18, choc: 16.5)
     led_pos_x: 0 # Led X position relative to the switch center
     led_pos_y: 5.5 # Led Y position relative to the switch center
-    led_cut_w: 3.5 # Led cutout width
-    led_cut_h: 4.5 # Led cutout height
+    led_rotation: 180 # Led rotation
+    vertical_diode_shift: 1.5 # How much to shift to avoid overlap
     switch_rotation: 180 # Hotswap south, led north
   choc_mx_spacing:
     # Key and keycap measures
@@ -222,13 +223,6 @@ outlines:
       where: true
       size: [kcow, kcoh]
 
-  _key_led_cutouts:
-    - what: rectangle
-      where: true
-      size: [led_cut_w, led_cut_h]
-      adjust:
-        shift: [led_pos_x, led_pos_y]
-
   _backplate_additional_outline:
     - what: rectangle
       where:
@@ -362,9 +356,6 @@ outlines:
     - what: outline
       name: _controller_overlay_screws
       operation: subtract
-    # - what: outline
-    #   name: _key_led_cutouts
-    #   operation: subtract
 
   frontplate:
     - what: outline
@@ -451,8 +442,7 @@ pcbs:
           to: "{{row_net}}"
           include_tht: false
         adjust:
-          shift: [0.5 kcow + 0.8 - 0.173, -1.5]
-          rotate: 90
+          shift: [0.5 kcow + 0.8 - 0.173, vertical_diode_shift]
       
       per_key_leds:
         what: sk6812mini-e
@@ -465,6 +455,7 @@ pcbs:
           reverse: true
         adjust:
           shift: [led_pos_x, led_pos_y]
+          rotate: led_rotation
 
       mcu:
         what: promicro_pretty
