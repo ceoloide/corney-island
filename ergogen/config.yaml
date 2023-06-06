@@ -443,6 +443,7 @@ pcbs:
           include_tht: false
         adjust:
           shift: [0.5 kcow + 0.8 - 0.173, vertical_diode_shift]
+          rotate: 90
       
       per_key_leds:
         what: sk6812mini-e
