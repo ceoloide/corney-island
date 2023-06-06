@@ -123,19 +123,40 @@
 (net 28 "R1")
 (net 29 "R0")
 (net 30 "R3")
-(net 31 "RAW")
-(net 32 "GND")
-(net 33 "RST")
-(net 34 "VCC")
-(net 35 "P16")
-(net 36 "P10")
-(net 37 "LED")
-(net 38 "data")
-(net 39 "SDA")
-(net 40 "SCL")
-(net 41 "P8")
-(net 42 "P9")
-(net 43 "J1-PadA")
+(net 31 "VCC")
+(net 32 "LED_21")
+(net 33 "GND")
+(net 34 "LED_20")
+(net 35 "LED_19")
+(net 36 "LED_18")
+(net 37 "LED_17")
+(net 38 "LED_16")
+(net 39 "LED_15")
+(net 40 "LED_13")
+(net 41 "LED_12")
+(net 42 "LED_14")
+(net 43 "LED_11")
+(net 44 "LED_10")
+(net 45 "LED_9")
+(net 46 "LED_8")
+(net 47 "LED_6")
+(net 48 "LED_5")
+(net 49 "LED_7")
+(net 50 "LED_3")
+(net 51 "LED_2")
+(net 52 "LED_1")
+(net 53 "LED")
+(net 54 "LED_4")
+(net 55 "RAW")
+(net 56 "RST")
+(net 57 "P16")
+(net 58 "P10")
+(net 59 "data")
+(net 60 "SDA")
+(net 61 "SCL")
+(net 62 "P8")
+(net 63 "P9")
+(net 64 "J1-PadA")
             
   (net_class Default "This is the default net class."
     (clearance 0.2)
@@ -175,13 +196,34 @@
 (add_net "R1")
 (add_net "R0")
 (add_net "R3")
-(add_net "RAW")
-(add_net "GND")
-(add_net "RST")
 (add_net "VCC")
+(add_net "LED_21")
+(add_net "GND")
+(add_net "LED_20")
+(add_net "LED_19")
+(add_net "LED_18")
+(add_net "LED_17")
+(add_net "LED_16")
+(add_net "LED_15")
+(add_net "LED_13")
+(add_net "LED_12")
+(add_net "LED_14")
+(add_net "LED_11")
+(add_net "LED_10")
+(add_net "LED_9")
+(add_net "LED_8")
+(add_net "LED_6")
+(add_net "LED_5")
+(add_net "LED_7")
+(add_net "LED_3")
+(add_net "LED_2")
+(add_net "LED_1")
+(add_net "LED")
+(add_net "LED_4")
+(add_net "RAW")
+(add_net "RST")
 (add_net "P16")
 (add_net "P10")
-(add_net "LED")
 (add_net "data")
 (add_net "SDA")
 (add_net "SCL")
@@ -1157,195 +1199,6 @@
         )
         
 
-        (via
-            (at 93 100)
-            (size 0.8)
-            (drill 0.4)
-            (layers "F.Cu" "B.Cu")
-            (net 1)
-        )
-    
-
-        (via
-            (at 93 81)
-            (size 0.8)
-            (drill 0.4)
-            (layers "F.Cu" "B.Cu")
-            (net 1)
-        )
-    
-
-        (via
-            (at 93 62)
-            (size 0.8)
-            (drill 0.4)
-            (layers "F.Cu" "B.Cu")
-            (net 1)
-        )
-    
-
-        (via
-            (at 112 100)
-            (size 0.8)
-            (drill 0.4)
-            (layers "F.Cu" "B.Cu")
-            (net 5)
-        )
-    
-
-        (via
-            (at 112 81)
-            (size 0.8)
-            (drill 0.4)
-            (layers "F.Cu" "B.Cu")
-            (net 5)
-        )
-    
-
-        (via
-            (at 112 62)
-            (size 0.8)
-            (drill 0.4)
-            (layers "F.Cu" "B.Cu")
-            (net 5)
-        )
-    
-
-        (via
-            (at 131 95.25)
-            (size 0.8)
-            (drill 0.4)
-            (layers "F.Cu" "B.Cu")
-            (net 9)
-        )
-    
-
-        (via
-            (at 131 76.25)
-            (size 0.8)
-            (drill 0.4)
-            (layers "F.Cu" "B.Cu")
-            (net 9)
-        )
-    
-
-        (via
-            (at 131 57.25)
-            (size 0.8)
-            (drill 0.4)
-            (layers "F.Cu" "B.Cu")
-            (net 9)
-        )
-    
-
-        (via
-            (at 150 92.875)
-            (size 0.8)
-            (drill 0.4)
-            (layers "F.Cu" "B.Cu")
-            (net 13)
-        )
-    
-
-        (via
-            (at 150 73.875)
-            (size 0.8)
-            (drill 0.4)
-            (layers "F.Cu" "B.Cu")
-            (net 13)
-        )
-    
-
-        (via
-            (at 150 54.875)
-            (size 0.8)
-            (drill 0.4)
-            (layers "F.Cu" "B.Cu")
-            (net 13)
-        )
-    
-
-        (via
-            (at 169 95.25)
-            (size 0.8)
-            (drill 0.4)
-            (layers "F.Cu" "B.Cu")
-            (net 17)
-        )
-    
-
-        (via
-            (at 169 76.25)
-            (size 0.8)
-            (drill 0.4)
-            (layers "F.Cu" "B.Cu")
-            (net 17)
-        )
-    
-
-        (via
-            (at 169 57.25)
-            (size 0.8)
-            (drill 0.4)
-            (layers "F.Cu" "B.Cu")
-            (net 17)
-        )
-    
-
-        (via
-            (at 188 97.625)
-            (size 0.8)
-            (drill 0.4)
-            (layers "F.Cu" "B.Cu")
-            (net 21)
-        )
-    
-
-        (via
-            (at 188 78.625)
-            (size 0.8)
-            (drill 0.4)
-            (layers "F.Cu" "B.Cu")
-            (net 21)
-        )
-    
-
-        (via
-            (at 188 59.625)
-            (size 0.8)
-            (drill 0.4)
-            (layers "F.Cu" "B.Cu")
-            (net 21)
-        )
-    
-
-        (via
-            (at 159.5 114.875)
-            (size 0.8)
-            (drill 0.4)
-            (layers "F.Cu" "B.Cu")
-            (net 13)
-        )
-    
-
-        (via
-            (at 180.7385192 115.8132667)
-            (size 0.8)
-            (drill 0.4)
-            (layers "F.Cu" "B.Cu")
-            (net 17)
-        )
-    
-
-        (via
-            (at 206.2468058 127.4513354)
-            (size 0.8)
-            (drill 0.4)
-            (layers "F.Cu" "B.Cu")
-            (net 21)
-        )
-    
-
     (module ComboDiode (layer F.Cu) (tedit 5B24D78E)
         (at 107.627 101.5 90)
         (attr virtual)
@@ -2081,6 +1934,1182 @@
     )
     
 
+      
+      (module YS-SK6812MINI-E (layer F.Cu) (tedit 5F70BC98)
+      (at 100 104.75 0)
+
+      (fp_text reference "LED1" (at 0.2 11.2) (layer F.SilkS) hide
+        (effects (font (size 1 1) (thickness 0.15)))
+      )
+      (fp_text value YS-SK6812MINI-E (at -0.6 -9.8) (layer F.Fab)
+        (effects (font (size 1 1) (thickness 0.15)))
+      )
+  
+      (fp_line (start -1.6 -1.4) (end 1.6 -1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 1.4) (end 1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 -1.4) (end -1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 -1.4) (end 1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 -1.05) (end -2.94 -1.05) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 -1.05) (end -2.94 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 -0.37) (end -1.6 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 0.35) (end -2.94 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 1.03) (end -1.6 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 0.35) (end -2.94 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 1.03) (end 2.94 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 0.35) (end 1.6 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 1.03) (end 2.94 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 -0.37) (end 2.94 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 -1.05) (end 1.6 -1.05) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 -0.37) (end 2.94 -1.05) (layer Dwgs.User) (width 0.12))
+    
+      
+      (fp_line (start -1.6 0.7) (end -0.8 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -3.9 1.85) (end 3.9 1.85) (layer F.SilkS) (width 0.12))
+      (fp_line (start 3.9 -1.85) (end -3.9 -1.85) (layer F.SilkS) (width 0.12))
+      (fp_line (start -3.9 0.25) (end -3.9 1.85) (layer B.SilkS) (width 0.12))
+      (pad 1 smd rect (at -2.75 -0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 31 "VCC"))
+      (pad 2 smd rect (at -2.75 0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 32 "LED_21"))
+      (pad 4 smd rect (at 2.75 -0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 34 "LED_20"))
+      (pad 3 smd rect (at 2.75 0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 33 "GND"))
+    
+    
+    (fp_line (start -1.6 -0.7) (end -0.8 -1.4) (layer Dwgs.User) (width 0.12))
+    (fp_line (start 3.9 1.85) (end -3.9 1.85) (layer B.SilkS) (width 0.12))
+    (fp_line (start -3.9 -1.85) (end 3.9 -1.85) (layer B.SilkS) (width 0.12))
+    (fp_line (start -3.9 -0.25) (end -3.9 -1.85) (layer B.SilkS) (width 0.12))
+    (pad 3 smd rect (at 2.75 -0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 33 "GND"))
+    (pad 4 smd rect (at 2.75 0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 34 "LED_20"))
+    (pad 2 smd rect (at -2.75 -0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 32 "LED_21"))
+    (pad 1 smd rect (at -2.75 0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 31 "VCC"))
+    
+      
+      (fp_line (start -1.8 -1.55) (end -1.8 1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start -1.8 1.55) (end 1.8 1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start 1.8 1.55) (end 1.8 -1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start 1.8 -1.55) (end -1.8 -1.55) (layer Edge.Cuts) (width 0.12))
+    )
+    
+
+      
+      (module YS-SK6812MINI-E (layer F.Cu) (tedit 5F70BC98)
+      (at 100 85.75 0)
+
+      (fp_text reference "LED2" (at 0.2 11.2) (layer F.SilkS) hide
+        (effects (font (size 1 1) (thickness 0.15)))
+      )
+      (fp_text value YS-SK6812MINI-E (at -0.6 -9.8) (layer F.Fab)
+        (effects (font (size 1 1) (thickness 0.15)))
+      )
+  
+      (fp_line (start -1.6 -1.4) (end 1.6 -1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 1.4) (end 1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 -1.4) (end -1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 -1.4) (end 1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 -1.05) (end -2.94 -1.05) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 -1.05) (end -2.94 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 -0.37) (end -1.6 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 0.35) (end -2.94 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 1.03) (end -1.6 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 0.35) (end -2.94 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 1.03) (end 2.94 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 0.35) (end 1.6 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 1.03) (end 2.94 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 -0.37) (end 2.94 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 -1.05) (end 1.6 -1.05) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 -0.37) (end 2.94 -1.05) (layer Dwgs.User) (width 0.12))
+    
+      
+      (fp_line (start -1.6 0.7) (end -0.8 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -3.9 1.85) (end 3.9 1.85) (layer F.SilkS) (width 0.12))
+      (fp_line (start 3.9 -1.85) (end -3.9 -1.85) (layer F.SilkS) (width 0.12))
+      (fp_line (start -3.9 0.25) (end -3.9 1.85) (layer B.SilkS) (width 0.12))
+      (pad 1 smd rect (at -2.75 -0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 31 "VCC"))
+      (pad 2 smd rect (at -2.75 0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 34 "LED_20"))
+      (pad 4 smd rect (at 2.75 -0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 35 "LED_19"))
+      (pad 3 smd rect (at 2.75 0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 33 "GND"))
+    
+    
+    (fp_line (start -1.6 -0.7) (end -0.8 -1.4) (layer Dwgs.User) (width 0.12))
+    (fp_line (start 3.9 1.85) (end -3.9 1.85) (layer B.SilkS) (width 0.12))
+    (fp_line (start -3.9 -1.85) (end 3.9 -1.85) (layer B.SilkS) (width 0.12))
+    (fp_line (start -3.9 -0.25) (end -3.9 -1.85) (layer B.SilkS) (width 0.12))
+    (pad 3 smd rect (at 2.75 -0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 33 "GND"))
+    (pad 4 smd rect (at 2.75 0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 35 "LED_19"))
+    (pad 2 smd rect (at -2.75 -0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 34 "LED_20"))
+    (pad 1 smd rect (at -2.75 0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 31 "VCC"))
+    
+      
+      (fp_line (start -1.8 -1.55) (end -1.8 1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start -1.8 1.55) (end 1.8 1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start 1.8 1.55) (end 1.8 -1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start 1.8 -1.55) (end -1.8 -1.55) (layer Edge.Cuts) (width 0.12))
+    )
+    
+
+      
+      (module YS-SK6812MINI-E (layer F.Cu) (tedit 5F70BC98)
+      (at 100 66.75 0)
+
+      (fp_text reference "LED3" (at 0.2 11.2) (layer F.SilkS) hide
+        (effects (font (size 1 1) (thickness 0.15)))
+      )
+      (fp_text value YS-SK6812MINI-E (at -0.6 -9.8) (layer F.Fab)
+        (effects (font (size 1 1) (thickness 0.15)))
+      )
+  
+      (fp_line (start -1.6 -1.4) (end 1.6 -1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 1.4) (end 1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 -1.4) (end -1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 -1.4) (end 1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 -1.05) (end -2.94 -1.05) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 -1.05) (end -2.94 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 -0.37) (end -1.6 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 0.35) (end -2.94 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 1.03) (end -1.6 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 0.35) (end -2.94 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 1.03) (end 2.94 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 0.35) (end 1.6 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 1.03) (end 2.94 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 -0.37) (end 2.94 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 -1.05) (end 1.6 -1.05) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 -0.37) (end 2.94 -1.05) (layer Dwgs.User) (width 0.12))
+    
+      
+      (fp_line (start -1.6 0.7) (end -0.8 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -3.9 1.85) (end 3.9 1.85) (layer F.SilkS) (width 0.12))
+      (fp_line (start 3.9 -1.85) (end -3.9 -1.85) (layer F.SilkS) (width 0.12))
+      (fp_line (start -3.9 0.25) (end -3.9 1.85) (layer B.SilkS) (width 0.12))
+      (pad 1 smd rect (at -2.75 -0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 31 "VCC"))
+      (pad 2 smd rect (at -2.75 0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 35 "LED_19"))
+      (pad 4 smd rect (at 2.75 -0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 36 "LED_18"))
+      (pad 3 smd rect (at 2.75 0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 33 "GND"))
+    
+    
+    (fp_line (start -1.6 -0.7) (end -0.8 -1.4) (layer Dwgs.User) (width 0.12))
+    (fp_line (start 3.9 1.85) (end -3.9 1.85) (layer B.SilkS) (width 0.12))
+    (fp_line (start -3.9 -1.85) (end 3.9 -1.85) (layer B.SilkS) (width 0.12))
+    (fp_line (start -3.9 -0.25) (end -3.9 -1.85) (layer B.SilkS) (width 0.12))
+    (pad 3 smd rect (at 2.75 -0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 33 "GND"))
+    (pad 4 smd rect (at 2.75 0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 36 "LED_18"))
+    (pad 2 smd rect (at -2.75 -0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 35 "LED_19"))
+    (pad 1 smd rect (at -2.75 0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 31 "VCC"))
+    
+      
+      (fp_line (start -1.8 -1.55) (end -1.8 1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start -1.8 1.55) (end 1.8 1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start 1.8 1.55) (end 1.8 -1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start 1.8 -1.55) (end -1.8 -1.55) (layer Edge.Cuts) (width 0.12))
+    )
+    
+
+      
+      (module YS-SK6812MINI-E (layer F.Cu) (tedit 5F70BC98)
+      (at 119 104.75 0)
+
+      (fp_text reference "LED4" (at 0.2 11.2) (layer F.SilkS) hide
+        (effects (font (size 1 1) (thickness 0.15)))
+      )
+      (fp_text value YS-SK6812MINI-E (at -0.6 -9.8) (layer F.Fab)
+        (effects (font (size 1 1) (thickness 0.15)))
+      )
+  
+      (fp_line (start -1.6 -1.4) (end 1.6 -1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 1.4) (end 1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 -1.4) (end -1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 -1.4) (end 1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 -1.05) (end -2.94 -1.05) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 -1.05) (end -2.94 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 -0.37) (end -1.6 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 0.35) (end -2.94 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 1.03) (end -1.6 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 0.35) (end -2.94 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 1.03) (end 2.94 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 0.35) (end 1.6 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 1.03) (end 2.94 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 -0.37) (end 2.94 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 -1.05) (end 1.6 -1.05) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 -0.37) (end 2.94 -1.05) (layer Dwgs.User) (width 0.12))
+    
+      
+      (fp_line (start -1.6 0.7) (end -0.8 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -3.9 1.85) (end 3.9 1.85) (layer F.SilkS) (width 0.12))
+      (fp_line (start 3.9 -1.85) (end -3.9 -1.85) (layer F.SilkS) (width 0.12))
+      (fp_line (start -3.9 0.25) (end -3.9 1.85) (layer B.SilkS) (width 0.12))
+      (pad 1 smd rect (at -2.75 -0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 31 "VCC"))
+      (pad 2 smd rect (at -2.75 0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 36 "LED_18"))
+      (pad 4 smd rect (at 2.75 -0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 37 "LED_17"))
+      (pad 3 smd rect (at 2.75 0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 33 "GND"))
+    
+    
+    (fp_line (start -1.6 -0.7) (end -0.8 -1.4) (layer Dwgs.User) (width 0.12))
+    (fp_line (start 3.9 1.85) (end -3.9 1.85) (layer B.SilkS) (width 0.12))
+    (fp_line (start -3.9 -1.85) (end 3.9 -1.85) (layer B.SilkS) (width 0.12))
+    (fp_line (start -3.9 -0.25) (end -3.9 -1.85) (layer B.SilkS) (width 0.12))
+    (pad 3 smd rect (at 2.75 -0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 33 "GND"))
+    (pad 4 smd rect (at 2.75 0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 37 "LED_17"))
+    (pad 2 smd rect (at -2.75 -0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 36 "LED_18"))
+    (pad 1 smd rect (at -2.75 0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 31 "VCC"))
+    
+      
+      (fp_line (start -1.8 -1.55) (end -1.8 1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start -1.8 1.55) (end 1.8 1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start 1.8 1.55) (end 1.8 -1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start 1.8 -1.55) (end -1.8 -1.55) (layer Edge.Cuts) (width 0.12))
+    )
+    
+
+      
+      (module YS-SK6812MINI-E (layer F.Cu) (tedit 5F70BC98)
+      (at 119 85.75 0)
+
+      (fp_text reference "LED5" (at 0.2 11.2) (layer F.SilkS) hide
+        (effects (font (size 1 1) (thickness 0.15)))
+      )
+      (fp_text value YS-SK6812MINI-E (at -0.6 -9.8) (layer F.Fab)
+        (effects (font (size 1 1) (thickness 0.15)))
+      )
+  
+      (fp_line (start -1.6 -1.4) (end 1.6 -1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 1.4) (end 1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 -1.4) (end -1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 -1.4) (end 1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 -1.05) (end -2.94 -1.05) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 -1.05) (end -2.94 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 -0.37) (end -1.6 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 0.35) (end -2.94 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 1.03) (end -1.6 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 0.35) (end -2.94 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 1.03) (end 2.94 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 0.35) (end 1.6 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 1.03) (end 2.94 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 -0.37) (end 2.94 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 -1.05) (end 1.6 -1.05) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 -0.37) (end 2.94 -1.05) (layer Dwgs.User) (width 0.12))
+    
+      
+      (fp_line (start -1.6 0.7) (end -0.8 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -3.9 1.85) (end 3.9 1.85) (layer F.SilkS) (width 0.12))
+      (fp_line (start 3.9 -1.85) (end -3.9 -1.85) (layer F.SilkS) (width 0.12))
+      (fp_line (start -3.9 0.25) (end -3.9 1.85) (layer B.SilkS) (width 0.12))
+      (pad 1 smd rect (at -2.75 -0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 31 "VCC"))
+      (pad 2 smd rect (at -2.75 0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 37 "LED_17"))
+      (pad 4 smd rect (at 2.75 -0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 38 "LED_16"))
+      (pad 3 smd rect (at 2.75 0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 33 "GND"))
+    
+    
+    (fp_line (start -1.6 -0.7) (end -0.8 -1.4) (layer Dwgs.User) (width 0.12))
+    (fp_line (start 3.9 1.85) (end -3.9 1.85) (layer B.SilkS) (width 0.12))
+    (fp_line (start -3.9 -1.85) (end 3.9 -1.85) (layer B.SilkS) (width 0.12))
+    (fp_line (start -3.9 -0.25) (end -3.9 -1.85) (layer B.SilkS) (width 0.12))
+    (pad 3 smd rect (at 2.75 -0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 33 "GND"))
+    (pad 4 smd rect (at 2.75 0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 38 "LED_16"))
+    (pad 2 smd rect (at -2.75 -0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 37 "LED_17"))
+    (pad 1 smd rect (at -2.75 0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 31 "VCC"))
+    
+      
+      (fp_line (start -1.8 -1.55) (end -1.8 1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start -1.8 1.55) (end 1.8 1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start 1.8 1.55) (end 1.8 -1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start 1.8 -1.55) (end -1.8 -1.55) (layer Edge.Cuts) (width 0.12))
+    )
+    
+
+      
+      (module YS-SK6812MINI-E (layer F.Cu) (tedit 5F70BC98)
+      (at 119 66.75 0)
+
+      (fp_text reference "LED6" (at 0.2 11.2) (layer F.SilkS) hide
+        (effects (font (size 1 1) (thickness 0.15)))
+      )
+      (fp_text value YS-SK6812MINI-E (at -0.6 -9.8) (layer F.Fab)
+        (effects (font (size 1 1) (thickness 0.15)))
+      )
+  
+      (fp_line (start -1.6 -1.4) (end 1.6 -1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 1.4) (end 1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 -1.4) (end -1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 -1.4) (end 1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 -1.05) (end -2.94 -1.05) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 -1.05) (end -2.94 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 -0.37) (end -1.6 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 0.35) (end -2.94 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 1.03) (end -1.6 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 0.35) (end -2.94 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 1.03) (end 2.94 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 0.35) (end 1.6 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 1.03) (end 2.94 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 -0.37) (end 2.94 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 -1.05) (end 1.6 -1.05) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 -0.37) (end 2.94 -1.05) (layer Dwgs.User) (width 0.12))
+    
+      
+      (fp_line (start -1.6 0.7) (end -0.8 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -3.9 1.85) (end 3.9 1.85) (layer F.SilkS) (width 0.12))
+      (fp_line (start 3.9 -1.85) (end -3.9 -1.85) (layer F.SilkS) (width 0.12))
+      (fp_line (start -3.9 0.25) (end -3.9 1.85) (layer B.SilkS) (width 0.12))
+      (pad 1 smd rect (at -2.75 -0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 31 "VCC"))
+      (pad 2 smd rect (at -2.75 0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 38 "LED_16"))
+      (pad 4 smd rect (at 2.75 -0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 39 "LED_15"))
+      (pad 3 smd rect (at 2.75 0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 33 "GND"))
+    
+    
+    (fp_line (start -1.6 -0.7) (end -0.8 -1.4) (layer Dwgs.User) (width 0.12))
+    (fp_line (start 3.9 1.85) (end -3.9 1.85) (layer B.SilkS) (width 0.12))
+    (fp_line (start -3.9 -1.85) (end 3.9 -1.85) (layer B.SilkS) (width 0.12))
+    (fp_line (start -3.9 -0.25) (end -3.9 -1.85) (layer B.SilkS) (width 0.12))
+    (pad 3 smd rect (at 2.75 -0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 33 "GND"))
+    (pad 4 smd rect (at 2.75 0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 39 "LED_15"))
+    (pad 2 smd rect (at -2.75 -0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 38 "LED_16"))
+    (pad 1 smd rect (at -2.75 0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 31 "VCC"))
+    
+      
+      (fp_line (start -1.8 -1.55) (end -1.8 1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start -1.8 1.55) (end 1.8 1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start 1.8 1.55) (end 1.8 -1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start 1.8 -1.55) (end -1.8 -1.55) (layer Edge.Cuts) (width 0.12))
+    )
+    
+
+      
+      (module YS-SK6812MINI-E (layer F.Cu) (tedit 5F70BC98)
+      (at 138 100 0)
+
+      (fp_text reference "LED7" (at 0.2 11.2) (layer F.SilkS) hide
+        (effects (font (size 1 1) (thickness 0.15)))
+      )
+      (fp_text value YS-SK6812MINI-E (at -0.6 -9.8) (layer F.Fab)
+        (effects (font (size 1 1) (thickness 0.15)))
+      )
+  
+      (fp_line (start -1.6 -1.4) (end 1.6 -1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 1.4) (end 1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 -1.4) (end -1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 -1.4) (end 1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 -1.05) (end -2.94 -1.05) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 -1.05) (end -2.94 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 -0.37) (end -1.6 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 0.35) (end -2.94 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 1.03) (end -1.6 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 0.35) (end -2.94 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 1.03) (end 2.94 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 0.35) (end 1.6 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 1.03) (end 2.94 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 -0.37) (end 2.94 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 -1.05) (end 1.6 -1.05) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 -0.37) (end 2.94 -1.05) (layer Dwgs.User) (width 0.12))
+    
+      
+      (fp_line (start -1.6 0.7) (end -0.8 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -3.9 1.85) (end 3.9 1.85) (layer F.SilkS) (width 0.12))
+      (fp_line (start 3.9 -1.85) (end -3.9 -1.85) (layer F.SilkS) (width 0.12))
+      (fp_line (start -3.9 0.25) (end -3.9 1.85) (layer B.SilkS) (width 0.12))
+      (pad 1 smd rect (at -2.75 -0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 31 "VCC"))
+      (pad 2 smd rect (at -2.75 0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 40 "LED_13"))
+      (pad 4 smd rect (at 2.75 -0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 41 "LED_12"))
+      (pad 3 smd rect (at 2.75 0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 33 "GND"))
+    
+    
+    (fp_line (start -1.6 -0.7) (end -0.8 -1.4) (layer Dwgs.User) (width 0.12))
+    (fp_line (start 3.9 1.85) (end -3.9 1.85) (layer B.SilkS) (width 0.12))
+    (fp_line (start -3.9 -1.85) (end 3.9 -1.85) (layer B.SilkS) (width 0.12))
+    (fp_line (start -3.9 -0.25) (end -3.9 -1.85) (layer B.SilkS) (width 0.12))
+    (pad 3 smd rect (at 2.75 -0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 33 "GND"))
+    (pad 4 smd rect (at 2.75 0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 41 "LED_12"))
+    (pad 2 smd rect (at -2.75 -0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 40 "LED_13"))
+    (pad 1 smd rect (at -2.75 0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 31 "VCC"))
+    
+      
+      (fp_line (start -1.8 -1.55) (end -1.8 1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start -1.8 1.55) (end 1.8 1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start 1.8 1.55) (end 1.8 -1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start 1.8 -1.55) (end -1.8 -1.55) (layer Edge.Cuts) (width 0.12))
+    )
+    
+
+      
+      (module YS-SK6812MINI-E (layer F.Cu) (tedit 5F70BC98)
+      (at 138 81 0)
+
+      (fp_text reference "LED8" (at 0.2 11.2) (layer F.SilkS) hide
+        (effects (font (size 1 1) (thickness 0.15)))
+      )
+      (fp_text value YS-SK6812MINI-E (at -0.6 -9.8) (layer F.Fab)
+        (effects (font (size 1 1) (thickness 0.15)))
+      )
+  
+      (fp_line (start -1.6 -1.4) (end 1.6 -1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 1.4) (end 1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 -1.4) (end -1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 -1.4) (end 1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 -1.05) (end -2.94 -1.05) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 -1.05) (end -2.94 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 -0.37) (end -1.6 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 0.35) (end -2.94 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 1.03) (end -1.6 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 0.35) (end -2.94 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 1.03) (end 2.94 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 0.35) (end 1.6 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 1.03) (end 2.94 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 -0.37) (end 2.94 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 -1.05) (end 1.6 -1.05) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 -0.37) (end 2.94 -1.05) (layer Dwgs.User) (width 0.12))
+    
+      
+      (fp_line (start -1.6 0.7) (end -0.8 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -3.9 1.85) (end 3.9 1.85) (layer F.SilkS) (width 0.12))
+      (fp_line (start 3.9 -1.85) (end -3.9 -1.85) (layer F.SilkS) (width 0.12))
+      (fp_line (start -3.9 0.25) (end -3.9 1.85) (layer B.SilkS) (width 0.12))
+      (pad 1 smd rect (at -2.75 -0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 31 "VCC"))
+      (pad 2 smd rect (at -2.75 0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 42 "LED_14"))
+      (pad 4 smd rect (at 2.75 -0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 40 "LED_13"))
+      (pad 3 smd rect (at 2.75 0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 33 "GND"))
+    
+    
+    (fp_line (start -1.6 -0.7) (end -0.8 -1.4) (layer Dwgs.User) (width 0.12))
+    (fp_line (start 3.9 1.85) (end -3.9 1.85) (layer B.SilkS) (width 0.12))
+    (fp_line (start -3.9 -1.85) (end 3.9 -1.85) (layer B.SilkS) (width 0.12))
+    (fp_line (start -3.9 -0.25) (end -3.9 -1.85) (layer B.SilkS) (width 0.12))
+    (pad 3 smd rect (at 2.75 -0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 33 "GND"))
+    (pad 4 smd rect (at 2.75 0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 40 "LED_13"))
+    (pad 2 smd rect (at -2.75 -0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 42 "LED_14"))
+    (pad 1 smd rect (at -2.75 0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 31 "VCC"))
+    
+      
+      (fp_line (start -1.8 -1.55) (end -1.8 1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start -1.8 1.55) (end 1.8 1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start 1.8 1.55) (end 1.8 -1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start 1.8 -1.55) (end -1.8 -1.55) (layer Edge.Cuts) (width 0.12))
+    )
+    
+
+      
+      (module YS-SK6812MINI-E (layer F.Cu) (tedit 5F70BC98)
+      (at 138 62 0)
+
+      (fp_text reference "LED9" (at 0.2 11.2) (layer F.SilkS) hide
+        (effects (font (size 1 1) (thickness 0.15)))
+      )
+      (fp_text value YS-SK6812MINI-E (at -0.6 -9.8) (layer F.Fab)
+        (effects (font (size 1 1) (thickness 0.15)))
+      )
+  
+      (fp_line (start -1.6 -1.4) (end 1.6 -1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 1.4) (end 1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 -1.4) (end -1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 -1.4) (end 1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 -1.05) (end -2.94 -1.05) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 -1.05) (end -2.94 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 -0.37) (end -1.6 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 0.35) (end -2.94 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 1.03) (end -1.6 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 0.35) (end -2.94 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 1.03) (end 2.94 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 0.35) (end 1.6 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 1.03) (end 2.94 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 -0.37) (end 2.94 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 -1.05) (end 1.6 -1.05) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 -0.37) (end 2.94 -1.05) (layer Dwgs.User) (width 0.12))
+    
+      
+      (fp_line (start -1.6 0.7) (end -0.8 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -3.9 1.85) (end 3.9 1.85) (layer F.SilkS) (width 0.12))
+      (fp_line (start 3.9 -1.85) (end -3.9 -1.85) (layer F.SilkS) (width 0.12))
+      (fp_line (start -3.9 0.25) (end -3.9 1.85) (layer B.SilkS) (width 0.12))
+      (pad 1 smd rect (at -2.75 -0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 31 "VCC"))
+      (pad 2 smd rect (at -2.75 0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 39 "LED_15"))
+      (pad 4 smd rect (at 2.75 -0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 42 "LED_14"))
+      (pad 3 smd rect (at 2.75 0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 33 "GND"))
+    
+    
+    (fp_line (start -1.6 -0.7) (end -0.8 -1.4) (layer Dwgs.User) (width 0.12))
+    (fp_line (start 3.9 1.85) (end -3.9 1.85) (layer B.SilkS) (width 0.12))
+    (fp_line (start -3.9 -1.85) (end 3.9 -1.85) (layer B.SilkS) (width 0.12))
+    (fp_line (start -3.9 -0.25) (end -3.9 -1.85) (layer B.SilkS) (width 0.12))
+    (pad 3 smd rect (at 2.75 -0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 33 "GND"))
+    (pad 4 smd rect (at 2.75 0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 42 "LED_14"))
+    (pad 2 smd rect (at -2.75 -0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 39 "LED_15"))
+    (pad 1 smd rect (at -2.75 0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 31 "VCC"))
+    
+      
+      (fp_line (start -1.8 -1.55) (end -1.8 1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start -1.8 1.55) (end 1.8 1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start 1.8 1.55) (end 1.8 -1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start 1.8 -1.55) (end -1.8 -1.55) (layer Edge.Cuts) (width 0.12))
+    )
+    
+
+      
+      (module YS-SK6812MINI-E (layer F.Cu) (tedit 5F70BC98)
+      (at 157 97.625 0)
+
+      (fp_text reference "LED10" (at 0.2 11.2) (layer F.SilkS) hide
+        (effects (font (size 1 1) (thickness 0.15)))
+      )
+      (fp_text value YS-SK6812MINI-E (at -0.6 -9.8) (layer F.Fab)
+        (effects (font (size 1 1) (thickness 0.15)))
+      )
+  
+      (fp_line (start -1.6 -1.4) (end 1.6 -1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 1.4) (end 1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 -1.4) (end -1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 -1.4) (end 1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 -1.05) (end -2.94 -1.05) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 -1.05) (end -2.94 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 -0.37) (end -1.6 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 0.35) (end -2.94 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 1.03) (end -1.6 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 0.35) (end -2.94 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 1.03) (end 2.94 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 0.35) (end 1.6 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 1.03) (end 2.94 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 -0.37) (end 2.94 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 -1.05) (end 1.6 -1.05) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 -0.37) (end 2.94 -1.05) (layer Dwgs.User) (width 0.12))
+    
+      
+      (fp_line (start -1.6 0.7) (end -0.8 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -3.9 1.85) (end 3.9 1.85) (layer F.SilkS) (width 0.12))
+      (fp_line (start 3.9 -1.85) (end -3.9 -1.85) (layer F.SilkS) (width 0.12))
+      (fp_line (start -3.9 0.25) (end -3.9 1.85) (layer B.SilkS) (width 0.12))
+      (pad 1 smd rect (at -2.75 -0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 31 "VCC"))
+      (pad 2 smd rect (at -2.75 0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 43 "LED_11"))
+      (pad 4 smd rect (at 2.75 -0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 44 "LED_10"))
+      (pad 3 smd rect (at 2.75 0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 33 "GND"))
+    
+    
+    (fp_line (start -1.6 -0.7) (end -0.8 -1.4) (layer Dwgs.User) (width 0.12))
+    (fp_line (start 3.9 1.85) (end -3.9 1.85) (layer B.SilkS) (width 0.12))
+    (fp_line (start -3.9 -1.85) (end 3.9 -1.85) (layer B.SilkS) (width 0.12))
+    (fp_line (start -3.9 -0.25) (end -3.9 -1.85) (layer B.SilkS) (width 0.12))
+    (pad 3 smd rect (at 2.75 -0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 33 "GND"))
+    (pad 4 smd rect (at 2.75 0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 44 "LED_10"))
+    (pad 2 smd rect (at -2.75 -0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 43 "LED_11"))
+    (pad 1 smd rect (at -2.75 0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 31 "VCC"))
+    
+      
+      (fp_line (start -1.8 -1.55) (end -1.8 1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start -1.8 1.55) (end 1.8 1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start 1.8 1.55) (end 1.8 -1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start 1.8 -1.55) (end -1.8 -1.55) (layer Edge.Cuts) (width 0.12))
+    )
+    
+
+      
+      (module YS-SK6812MINI-E (layer F.Cu) (tedit 5F70BC98)
+      (at 157 78.625 0)
+
+      (fp_text reference "LED11" (at 0.2 11.2) (layer F.SilkS) hide
+        (effects (font (size 1 1) (thickness 0.15)))
+      )
+      (fp_text value YS-SK6812MINI-E (at -0.6 -9.8) (layer F.Fab)
+        (effects (font (size 1 1) (thickness 0.15)))
+      )
+  
+      (fp_line (start -1.6 -1.4) (end 1.6 -1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 1.4) (end 1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 -1.4) (end -1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 -1.4) (end 1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 -1.05) (end -2.94 -1.05) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 -1.05) (end -2.94 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 -0.37) (end -1.6 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 0.35) (end -2.94 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 1.03) (end -1.6 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 0.35) (end -2.94 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 1.03) (end 2.94 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 0.35) (end 1.6 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 1.03) (end 2.94 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 -0.37) (end 2.94 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 -1.05) (end 1.6 -1.05) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 -0.37) (end 2.94 -1.05) (layer Dwgs.User) (width 0.12))
+    
+      
+      (fp_line (start -1.6 0.7) (end -0.8 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -3.9 1.85) (end 3.9 1.85) (layer F.SilkS) (width 0.12))
+      (fp_line (start 3.9 -1.85) (end -3.9 -1.85) (layer F.SilkS) (width 0.12))
+      (fp_line (start -3.9 0.25) (end -3.9 1.85) (layer B.SilkS) (width 0.12))
+      (pad 1 smd rect (at -2.75 -0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 31 "VCC"))
+      (pad 2 smd rect (at -2.75 0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 44 "LED_10"))
+      (pad 4 smd rect (at 2.75 -0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 45 "LED_9"))
+      (pad 3 smd rect (at 2.75 0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 33 "GND"))
+    
+    
+    (fp_line (start -1.6 -0.7) (end -0.8 -1.4) (layer Dwgs.User) (width 0.12))
+    (fp_line (start 3.9 1.85) (end -3.9 1.85) (layer B.SilkS) (width 0.12))
+    (fp_line (start -3.9 -1.85) (end 3.9 -1.85) (layer B.SilkS) (width 0.12))
+    (fp_line (start -3.9 -0.25) (end -3.9 -1.85) (layer B.SilkS) (width 0.12))
+    (pad 3 smd rect (at 2.75 -0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 33 "GND"))
+    (pad 4 smd rect (at 2.75 0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 45 "LED_9"))
+    (pad 2 smd rect (at -2.75 -0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 44 "LED_10"))
+    (pad 1 smd rect (at -2.75 0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 31 "VCC"))
+    
+      
+      (fp_line (start -1.8 -1.55) (end -1.8 1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start -1.8 1.55) (end 1.8 1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start 1.8 1.55) (end 1.8 -1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start 1.8 -1.55) (end -1.8 -1.55) (layer Edge.Cuts) (width 0.12))
+    )
+    
+
+      
+      (module YS-SK6812MINI-E (layer F.Cu) (tedit 5F70BC98)
+      (at 157 59.625 0)
+
+      (fp_text reference "LED12" (at 0.2 11.2) (layer F.SilkS) hide
+        (effects (font (size 1 1) (thickness 0.15)))
+      )
+      (fp_text value YS-SK6812MINI-E (at -0.6 -9.8) (layer F.Fab)
+        (effects (font (size 1 1) (thickness 0.15)))
+      )
+  
+      (fp_line (start -1.6 -1.4) (end 1.6 -1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 1.4) (end 1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 -1.4) (end -1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 -1.4) (end 1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 -1.05) (end -2.94 -1.05) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 -1.05) (end -2.94 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 -0.37) (end -1.6 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 0.35) (end -2.94 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 1.03) (end -1.6 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 0.35) (end -2.94 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 1.03) (end 2.94 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 0.35) (end 1.6 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 1.03) (end 2.94 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 -0.37) (end 2.94 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 -1.05) (end 1.6 -1.05) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 -0.37) (end 2.94 -1.05) (layer Dwgs.User) (width 0.12))
+    
+      
+      (fp_line (start -1.6 0.7) (end -0.8 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -3.9 1.85) (end 3.9 1.85) (layer F.SilkS) (width 0.12))
+      (fp_line (start 3.9 -1.85) (end -3.9 -1.85) (layer F.SilkS) (width 0.12))
+      (fp_line (start -3.9 0.25) (end -3.9 1.85) (layer B.SilkS) (width 0.12))
+      (pad 1 smd rect (at -2.75 -0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 31 "VCC"))
+      (pad 2 smd rect (at -2.75 0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 45 "LED_9"))
+      (pad 4 smd rect (at 2.75 -0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 46 "LED_8"))
+      (pad 3 smd rect (at 2.75 0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 33 "GND"))
+    
+    
+    (fp_line (start -1.6 -0.7) (end -0.8 -1.4) (layer Dwgs.User) (width 0.12))
+    (fp_line (start 3.9 1.85) (end -3.9 1.85) (layer B.SilkS) (width 0.12))
+    (fp_line (start -3.9 -1.85) (end 3.9 -1.85) (layer B.SilkS) (width 0.12))
+    (fp_line (start -3.9 -0.25) (end -3.9 -1.85) (layer B.SilkS) (width 0.12))
+    (pad 3 smd rect (at 2.75 -0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 33 "GND"))
+    (pad 4 smd rect (at 2.75 0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 46 "LED_8"))
+    (pad 2 smd rect (at -2.75 -0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 45 "LED_9"))
+    (pad 1 smd rect (at -2.75 0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 31 "VCC"))
+    
+      
+      (fp_line (start -1.8 -1.55) (end -1.8 1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start -1.8 1.55) (end 1.8 1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start 1.8 1.55) (end 1.8 -1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start 1.8 -1.55) (end -1.8 -1.55) (layer Edge.Cuts) (width 0.12))
+    )
+    
+
+      
+      (module YS-SK6812MINI-E (layer F.Cu) (tedit 5F70BC98)
+      (at 176 100 0)
+
+      (fp_text reference "LED13" (at 0.2 11.2) (layer F.SilkS) hide
+        (effects (font (size 1 1) (thickness 0.15)))
+      )
+      (fp_text value YS-SK6812MINI-E (at -0.6 -9.8) (layer F.Fab)
+        (effects (font (size 1 1) (thickness 0.15)))
+      )
+  
+      (fp_line (start -1.6 -1.4) (end 1.6 -1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 1.4) (end 1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 -1.4) (end -1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 -1.4) (end 1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 -1.05) (end -2.94 -1.05) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 -1.05) (end -2.94 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 -0.37) (end -1.6 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 0.35) (end -2.94 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 1.03) (end -1.6 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 0.35) (end -2.94 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 1.03) (end 2.94 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 0.35) (end 1.6 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 1.03) (end 2.94 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 -0.37) (end 2.94 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 -1.05) (end 1.6 -1.05) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 -0.37) (end 2.94 -1.05) (layer Dwgs.User) (width 0.12))
+    
+      
+      (fp_line (start -1.6 0.7) (end -0.8 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -3.9 1.85) (end 3.9 1.85) (layer F.SilkS) (width 0.12))
+      (fp_line (start 3.9 -1.85) (end -3.9 -1.85) (layer F.SilkS) (width 0.12))
+      (fp_line (start -3.9 0.25) (end -3.9 1.85) (layer B.SilkS) (width 0.12))
+      (pad 1 smd rect (at -2.75 -0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 31 "VCC"))
+      (pad 2 smd rect (at -2.75 0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 47 "LED_6"))
+      (pad 4 smd rect (at 2.75 -0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 48 "LED_5"))
+      (pad 3 smd rect (at 2.75 0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 33 "GND"))
+    
+    
+    (fp_line (start -1.6 -0.7) (end -0.8 -1.4) (layer Dwgs.User) (width 0.12))
+    (fp_line (start 3.9 1.85) (end -3.9 1.85) (layer B.SilkS) (width 0.12))
+    (fp_line (start -3.9 -1.85) (end 3.9 -1.85) (layer B.SilkS) (width 0.12))
+    (fp_line (start -3.9 -0.25) (end -3.9 -1.85) (layer B.SilkS) (width 0.12))
+    (pad 3 smd rect (at 2.75 -0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 33 "GND"))
+    (pad 4 smd rect (at 2.75 0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 48 "LED_5"))
+    (pad 2 smd rect (at -2.75 -0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 47 "LED_6"))
+    (pad 1 smd rect (at -2.75 0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 31 "VCC"))
+    
+      
+      (fp_line (start -1.8 -1.55) (end -1.8 1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start -1.8 1.55) (end 1.8 1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start 1.8 1.55) (end 1.8 -1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start 1.8 -1.55) (end -1.8 -1.55) (layer Edge.Cuts) (width 0.12))
+    )
+    
+
+      
+      (module YS-SK6812MINI-E (layer F.Cu) (tedit 5F70BC98)
+      (at 176 81 0)
+
+      (fp_text reference "LED14" (at 0.2 11.2) (layer F.SilkS) hide
+        (effects (font (size 1 1) (thickness 0.15)))
+      )
+      (fp_text value YS-SK6812MINI-E (at -0.6 -9.8) (layer F.Fab)
+        (effects (font (size 1 1) (thickness 0.15)))
+      )
+  
+      (fp_line (start -1.6 -1.4) (end 1.6 -1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 1.4) (end 1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 -1.4) (end -1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 -1.4) (end 1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 -1.05) (end -2.94 -1.05) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 -1.05) (end -2.94 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 -0.37) (end -1.6 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 0.35) (end -2.94 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 1.03) (end -1.6 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 0.35) (end -2.94 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 1.03) (end 2.94 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 0.35) (end 1.6 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 1.03) (end 2.94 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 -0.37) (end 2.94 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 -1.05) (end 1.6 -1.05) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 -0.37) (end 2.94 -1.05) (layer Dwgs.User) (width 0.12))
+    
+      
+      (fp_line (start -1.6 0.7) (end -0.8 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -3.9 1.85) (end 3.9 1.85) (layer F.SilkS) (width 0.12))
+      (fp_line (start 3.9 -1.85) (end -3.9 -1.85) (layer F.SilkS) (width 0.12))
+      (fp_line (start -3.9 0.25) (end -3.9 1.85) (layer B.SilkS) (width 0.12))
+      (pad 1 smd rect (at -2.75 -0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 31 "VCC"))
+      (pad 2 smd rect (at -2.75 0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 49 "LED_7"))
+      (pad 4 smd rect (at 2.75 -0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 47 "LED_6"))
+      (pad 3 smd rect (at 2.75 0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 33 "GND"))
+    
+    
+    (fp_line (start -1.6 -0.7) (end -0.8 -1.4) (layer Dwgs.User) (width 0.12))
+    (fp_line (start 3.9 1.85) (end -3.9 1.85) (layer B.SilkS) (width 0.12))
+    (fp_line (start -3.9 -1.85) (end 3.9 -1.85) (layer B.SilkS) (width 0.12))
+    (fp_line (start -3.9 -0.25) (end -3.9 -1.85) (layer B.SilkS) (width 0.12))
+    (pad 3 smd rect (at 2.75 -0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 33 "GND"))
+    (pad 4 smd rect (at 2.75 0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 47 "LED_6"))
+    (pad 2 smd rect (at -2.75 -0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 49 "LED_7"))
+    (pad 1 smd rect (at -2.75 0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 31 "VCC"))
+    
+      
+      (fp_line (start -1.8 -1.55) (end -1.8 1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start -1.8 1.55) (end 1.8 1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start 1.8 1.55) (end 1.8 -1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start 1.8 -1.55) (end -1.8 -1.55) (layer Edge.Cuts) (width 0.12))
+    )
+    
+
+      
+      (module YS-SK6812MINI-E (layer F.Cu) (tedit 5F70BC98)
+      (at 176 62 0)
+
+      (fp_text reference "LED15" (at 0.2 11.2) (layer F.SilkS) hide
+        (effects (font (size 1 1) (thickness 0.15)))
+      )
+      (fp_text value YS-SK6812MINI-E (at -0.6 -9.8) (layer F.Fab)
+        (effects (font (size 1 1) (thickness 0.15)))
+      )
+  
+      (fp_line (start -1.6 -1.4) (end 1.6 -1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 1.4) (end 1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 -1.4) (end -1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 -1.4) (end 1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 -1.05) (end -2.94 -1.05) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 -1.05) (end -2.94 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 -0.37) (end -1.6 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 0.35) (end -2.94 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 1.03) (end -1.6 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 0.35) (end -2.94 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 1.03) (end 2.94 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 0.35) (end 1.6 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 1.03) (end 2.94 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 -0.37) (end 2.94 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 -1.05) (end 1.6 -1.05) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 -0.37) (end 2.94 -1.05) (layer Dwgs.User) (width 0.12))
+    
+      
+      (fp_line (start -1.6 0.7) (end -0.8 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -3.9 1.85) (end 3.9 1.85) (layer F.SilkS) (width 0.12))
+      (fp_line (start 3.9 -1.85) (end -3.9 -1.85) (layer F.SilkS) (width 0.12))
+      (fp_line (start -3.9 0.25) (end -3.9 1.85) (layer B.SilkS) (width 0.12))
+      (pad 1 smd rect (at -2.75 -0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 31 "VCC"))
+      (pad 2 smd rect (at -2.75 0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 46 "LED_8"))
+      (pad 4 smd rect (at 2.75 -0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 49 "LED_7"))
+      (pad 3 smd rect (at 2.75 0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 33 "GND"))
+    
+    
+    (fp_line (start -1.6 -0.7) (end -0.8 -1.4) (layer Dwgs.User) (width 0.12))
+    (fp_line (start 3.9 1.85) (end -3.9 1.85) (layer B.SilkS) (width 0.12))
+    (fp_line (start -3.9 -1.85) (end 3.9 -1.85) (layer B.SilkS) (width 0.12))
+    (fp_line (start -3.9 -0.25) (end -3.9 -1.85) (layer B.SilkS) (width 0.12))
+    (pad 3 smd rect (at 2.75 -0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 33 "GND"))
+    (pad 4 smd rect (at 2.75 0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 49 "LED_7"))
+    (pad 2 smd rect (at -2.75 -0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 46 "LED_8"))
+    (pad 1 smd rect (at -2.75 0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 31 "VCC"))
+    
+      
+      (fp_line (start -1.8 -1.55) (end -1.8 1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start -1.8 1.55) (end 1.8 1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start 1.8 1.55) (end 1.8 -1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start 1.8 -1.55) (end -1.8 -1.55) (layer Edge.Cuts) (width 0.12))
+    )
+    
+
+      
+      (module YS-SK6812MINI-E (layer F.Cu) (tedit 5F70BC98)
+      (at 195 102.375 0)
+
+      (fp_text reference "LED16" (at 0.2 11.2) (layer F.SilkS) hide
+        (effects (font (size 1 1) (thickness 0.15)))
+      )
+      (fp_text value YS-SK6812MINI-E (at -0.6 -9.8) (layer F.Fab)
+        (effects (font (size 1 1) (thickness 0.15)))
+      )
+  
+      (fp_line (start -1.6 -1.4) (end 1.6 -1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 1.4) (end 1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 -1.4) (end -1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 -1.4) (end 1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 -1.05) (end -2.94 -1.05) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 -1.05) (end -2.94 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 -0.37) (end -1.6 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 0.35) (end -2.94 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 1.03) (end -1.6 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 0.35) (end -2.94 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 1.03) (end 2.94 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 0.35) (end 1.6 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 1.03) (end 2.94 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 -0.37) (end 2.94 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 -1.05) (end 1.6 -1.05) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 -0.37) (end 2.94 -1.05) (layer Dwgs.User) (width 0.12))
+    
+      
+      (fp_line (start -1.6 0.7) (end -0.8 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -3.9 1.85) (end 3.9 1.85) (layer F.SilkS) (width 0.12))
+      (fp_line (start 3.9 -1.85) (end -3.9 -1.85) (layer F.SilkS) (width 0.12))
+      (fp_line (start -3.9 0.25) (end -3.9 1.85) (layer B.SilkS) (width 0.12))
+      (pad 1 smd rect (at -2.75 -0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 31 "VCC"))
+      (pad 2 smd rect (at -2.75 0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 50 "LED_3"))
+      (pad 4 smd rect (at 2.75 -0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 51 "LED_2"))
+      (pad 3 smd rect (at 2.75 0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 33 "GND"))
+    
+    
+    (fp_line (start -1.6 -0.7) (end -0.8 -1.4) (layer Dwgs.User) (width 0.12))
+    (fp_line (start 3.9 1.85) (end -3.9 1.85) (layer B.SilkS) (width 0.12))
+    (fp_line (start -3.9 -1.85) (end 3.9 -1.85) (layer B.SilkS) (width 0.12))
+    (fp_line (start -3.9 -0.25) (end -3.9 -1.85) (layer B.SilkS) (width 0.12))
+    (pad 3 smd rect (at 2.75 -0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 33 "GND"))
+    (pad 4 smd rect (at 2.75 0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 51 "LED_2"))
+    (pad 2 smd rect (at -2.75 -0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 50 "LED_3"))
+    (pad 1 smd rect (at -2.75 0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 31 "VCC"))
+    
+      
+      (fp_line (start -1.8 -1.55) (end -1.8 1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start -1.8 1.55) (end 1.8 1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start 1.8 1.55) (end 1.8 -1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start 1.8 -1.55) (end -1.8 -1.55) (layer Edge.Cuts) (width 0.12))
+    )
+    
+
+      
+      (module YS-SK6812MINI-E (layer F.Cu) (tedit 5F70BC98)
+      (at 195 83.375 0)
+
+      (fp_text reference "LED17" (at 0.2 11.2) (layer F.SilkS) hide
+        (effects (font (size 1 1) (thickness 0.15)))
+      )
+      (fp_text value YS-SK6812MINI-E (at -0.6 -9.8) (layer F.Fab)
+        (effects (font (size 1 1) (thickness 0.15)))
+      )
+  
+      (fp_line (start -1.6 -1.4) (end 1.6 -1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 1.4) (end 1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 -1.4) (end -1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 -1.4) (end 1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 -1.05) (end -2.94 -1.05) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 -1.05) (end -2.94 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 -0.37) (end -1.6 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 0.35) (end -2.94 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 1.03) (end -1.6 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 0.35) (end -2.94 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 1.03) (end 2.94 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 0.35) (end 1.6 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 1.03) (end 2.94 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 -0.37) (end 2.94 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 -1.05) (end 1.6 -1.05) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 -0.37) (end 2.94 -1.05) (layer Dwgs.User) (width 0.12))
+    
+      
+      (fp_line (start -1.6 0.7) (end -0.8 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -3.9 1.85) (end 3.9 1.85) (layer F.SilkS) (width 0.12))
+      (fp_line (start 3.9 -1.85) (end -3.9 -1.85) (layer F.SilkS) (width 0.12))
+      (fp_line (start -3.9 0.25) (end -3.9 1.85) (layer B.SilkS) (width 0.12))
+      (pad 1 smd rect (at -2.75 -0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 31 "VCC"))
+      (pad 2 smd rect (at -2.75 0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 51 "LED_2"))
+      (pad 4 smd rect (at 2.75 -0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 52 "LED_1"))
+      (pad 3 smd rect (at 2.75 0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 33 "GND"))
+    
+    
+    (fp_line (start -1.6 -0.7) (end -0.8 -1.4) (layer Dwgs.User) (width 0.12))
+    (fp_line (start 3.9 1.85) (end -3.9 1.85) (layer B.SilkS) (width 0.12))
+    (fp_line (start -3.9 -1.85) (end 3.9 -1.85) (layer B.SilkS) (width 0.12))
+    (fp_line (start -3.9 -0.25) (end -3.9 -1.85) (layer B.SilkS) (width 0.12))
+    (pad 3 smd rect (at 2.75 -0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 33 "GND"))
+    (pad 4 smd rect (at 2.75 0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 52 "LED_1"))
+    (pad 2 smd rect (at -2.75 -0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 51 "LED_2"))
+    (pad 1 smd rect (at -2.75 0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 31 "VCC"))
+    
+      
+      (fp_line (start -1.8 -1.55) (end -1.8 1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start -1.8 1.55) (end 1.8 1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start 1.8 1.55) (end 1.8 -1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start 1.8 -1.55) (end -1.8 -1.55) (layer Edge.Cuts) (width 0.12))
+    )
+    
+
+      
+      (module YS-SK6812MINI-E (layer F.Cu) (tedit 5F70BC98)
+      (at 195 64.375 0)
+
+      (fp_text reference "LED18" (at 0.2 11.2) (layer F.SilkS) hide
+        (effects (font (size 1 1) (thickness 0.15)))
+      )
+      (fp_text value YS-SK6812MINI-E (at -0.6 -9.8) (layer F.Fab)
+        (effects (font (size 1 1) (thickness 0.15)))
+      )
+  
+      (fp_line (start -1.6 -1.4) (end 1.6 -1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 1.4) (end 1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 -1.4) (end -1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 -1.4) (end 1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 -1.05) (end -2.94 -1.05) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 -1.05) (end -2.94 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 -0.37) (end -1.6 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 0.35) (end -2.94 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 1.03) (end -1.6 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 0.35) (end -2.94 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 1.03) (end 2.94 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 0.35) (end 1.6 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 1.03) (end 2.94 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 -0.37) (end 2.94 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 -1.05) (end 1.6 -1.05) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 -0.37) (end 2.94 -1.05) (layer Dwgs.User) (width 0.12))
+    
+      
+      (fp_line (start -1.6 0.7) (end -0.8 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -3.9 1.85) (end 3.9 1.85) (layer F.SilkS) (width 0.12))
+      (fp_line (start 3.9 -1.85) (end -3.9 -1.85) (layer F.SilkS) (width 0.12))
+      (fp_line (start -3.9 0.25) (end -3.9 1.85) (layer B.SilkS) (width 0.12))
+      (pad 1 smd rect (at -2.75 -0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 31 "VCC"))
+      (pad 2 smd rect (at -2.75 0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 52 "LED_1"))
+      (pad 4 smd rect (at 2.75 -0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 53 "LED"))
+      (pad 3 smd rect (at 2.75 0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 33 "GND"))
+    
+    
+    (fp_line (start -1.6 -0.7) (end -0.8 -1.4) (layer Dwgs.User) (width 0.12))
+    (fp_line (start 3.9 1.85) (end -3.9 1.85) (layer B.SilkS) (width 0.12))
+    (fp_line (start -3.9 -1.85) (end 3.9 -1.85) (layer B.SilkS) (width 0.12))
+    (fp_line (start -3.9 -0.25) (end -3.9 -1.85) (layer B.SilkS) (width 0.12))
+    (pad 3 smd rect (at 2.75 -0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 33 "GND"))
+    (pad 4 smd rect (at 2.75 0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 53 "LED"))
+    (pad 2 smd rect (at -2.75 -0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 52 "LED_1"))
+    (pad 1 smd rect (at -2.75 0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 31 "VCC"))
+    
+      
+      (fp_line (start -1.8 -1.55) (end -1.8 1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start -1.8 1.55) (end 1.8 1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start 1.8 1.55) (end 1.8 -1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start 1.8 -1.55) (end -1.8 -1.55) (layer Edge.Cuts) (width 0.12))
+    )
+    
+
+      
+      (module YS-SK6812MINI-E (layer F.Cu) (tedit 5F70BC98)
+      (at 166.5 119.625 0)
+
+      (fp_text reference "LED19" (at 0.2 11.2) (layer F.SilkS) hide
+        (effects (font (size 1 1) (thickness 0.15)))
+      )
+      (fp_text value YS-SK6812MINI-E (at -0.6 -9.8) (layer F.Fab)
+        (effects (font (size 1 1) (thickness 0.15)))
+      )
+  
+      (fp_line (start -1.6 -1.4) (end 1.6 -1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 1.4) (end 1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 -1.4) (end -1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 -1.4) (end 1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 -1.05) (end -2.94 -1.05) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 -1.05) (end -2.94 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 -0.37) (end -1.6 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 0.35) (end -2.94 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 1.03) (end -1.6 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 0.35) (end -2.94 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 1.03) (end 2.94 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 0.35) (end 1.6 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 1.03) (end 2.94 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 -0.37) (end 2.94 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 -1.05) (end 1.6 -1.05) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 -0.37) (end 2.94 -1.05) (layer Dwgs.User) (width 0.12))
+    
+      
+      (fp_line (start -1.6 0.7) (end -0.8 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -3.9 1.85) (end 3.9 1.85) (layer F.SilkS) (width 0.12))
+      (fp_line (start 3.9 -1.85) (end -3.9 -1.85) (layer F.SilkS) (width 0.12))
+      (fp_line (start -3.9 0.25) (end -3.9 1.85) (layer B.SilkS) (width 0.12))
+      (pad 1 smd rect (at -2.75 -0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 31 "VCC"))
+      (pad 2 smd rect (at -2.75 0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 41 "LED_12"))
+      (pad 4 smd rect (at 2.75 -0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 43 "LED_11"))
+      (pad 3 smd rect (at 2.75 0.7 0) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 33 "GND"))
+    
+    
+    (fp_line (start -1.6 -0.7) (end -0.8 -1.4) (layer Dwgs.User) (width 0.12))
+    (fp_line (start 3.9 1.85) (end -3.9 1.85) (layer B.SilkS) (width 0.12))
+    (fp_line (start -3.9 -1.85) (end 3.9 -1.85) (layer B.SilkS) (width 0.12))
+    (fp_line (start -3.9 -0.25) (end -3.9 -1.85) (layer B.SilkS) (width 0.12))
+    (pad 3 smd rect (at 2.75 -0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 33 "GND"))
+    (pad 4 smd rect (at 2.75 0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 43 "LED_11"))
+    (pad 2 smd rect (at -2.75 -0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 41 "LED_12"))
+    (pad 1 smd rect (at -2.75 0.7 0) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 31 "VCC"))
+    
+      
+      (fp_line (start -1.8 -1.55) (end -1.8 1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start -1.8 1.55) (end 1.8 1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start 1.8 1.55) (end 1.8 -1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start 1.8 -1.55) (end -1.8 -1.55) (layer Edge.Cuts) (width 0.12))
+    )
+    
+
+      
+      (module YS-SK6812MINI-E (layer F.Cu) (tedit 5F70BC98)
+      (at 186.2706095 122.21314770000001 -15)
+
+      (fp_text reference "LED20" (at 0.2 11.2) (layer F.SilkS) hide
+        (effects (font (size 1 1) (thickness 0.15)))
+      )
+      (fp_text value YS-SK6812MINI-E (at -0.6 -9.8) (layer F.Fab)
+        (effects (font (size 1 1) (thickness 0.15)))
+      )
+  
+      (fp_line (start -1.6 -1.4) (end 1.6 -1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 1.4) (end 1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 -1.4) (end -1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 -1.4) (end 1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 -1.05) (end -2.94 -1.05) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 -1.05) (end -2.94 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 -0.37) (end -1.6 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 0.35) (end -2.94 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 1.03) (end -1.6 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 0.35) (end -2.94 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 1.03) (end 2.94 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 0.35) (end 1.6 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 1.03) (end 2.94 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 -0.37) (end 2.94 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 -1.05) (end 1.6 -1.05) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 -0.37) (end 2.94 -1.05) (layer Dwgs.User) (width 0.12))
+    
+      
+      (fp_line (start -1.6 0.7) (end -0.8 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -3.9 1.85) (end 3.9 1.85) (layer F.SilkS) (width 0.12))
+      (fp_line (start 3.9 -1.85) (end -3.9 -1.85) (layer F.SilkS) (width 0.12))
+      (fp_line (start -3.9 0.25) (end -3.9 1.85) (layer B.SilkS) (width 0.12))
+      (pad 1 smd rect (at -2.75 -0.7 -15) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 31 "VCC"))
+      (pad 2 smd rect (at -2.75 0.7 -15) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 48 "LED_5"))
+      (pad 4 smd rect (at 2.75 -0.7 -15) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 54 "LED_4"))
+      (pad 3 smd rect (at 2.75 0.7 -15) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 33 "GND"))
+    
+    
+    (fp_line (start -1.6 -0.7) (end -0.8 -1.4) (layer Dwgs.User) (width 0.12))
+    (fp_line (start 3.9 1.85) (end -3.9 1.85) (layer B.SilkS) (width 0.12))
+    (fp_line (start -3.9 -1.85) (end 3.9 -1.85) (layer B.SilkS) (width 0.12))
+    (fp_line (start -3.9 -0.25) (end -3.9 -1.85) (layer B.SilkS) (width 0.12))
+    (pad 3 smd rect (at 2.75 -0.7 -15) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 33 "GND"))
+    (pad 4 smd rect (at 2.75 0.7 -15) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 54 "LED_4"))
+    (pad 2 smd rect (at -2.75 -0.7 -15) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 48 "LED_5"))
+    (pad 1 smd rect (at -2.75 0.7 -15) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 31 "VCC"))
+    
+      
+      (fp_line (start -1.8 -1.55) (end -1.8 1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start -1.8 1.55) (end 1.8 1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start 1.8 1.55) (end 1.8 -1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start 1.8 -1.55) (end -1.8 -1.55) (layer Edge.Cuts) (width 0.12))
+    )
+    
+
+      
+      (module YS-SK6812MINI-E (layer F.Cu) (tedit 5F70BC98)
+      (at 213.86042650000002 123.7641576 60)
+
+      (fp_text reference "LED21" (at 0.2 11.2) (layer F.SilkS) hide
+        (effects (font (size 1 1) (thickness 0.15)))
+      )
+      (fp_text value YS-SK6812MINI-E (at -0.6 -9.8) (layer F.Fab)
+        (effects (font (size 1 1) (thickness 0.15)))
+      )
+  
+      (fp_line (start -1.6 -1.4) (end 1.6 -1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 1.4) (end 1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 -1.4) (end -1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 -1.4) (end 1.6 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 -1.05) (end -2.94 -1.05) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 -1.05) (end -2.94 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 -0.37) (end -1.6 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -1.6 0.35) (end -2.94 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 1.03) (end -1.6 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -2.94 0.35) (end -2.94 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 1.03) (end 2.94 1.03) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 0.35) (end 1.6 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 1.03) (end 2.94 0.35) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 1.6 -0.37) (end 2.94 -0.37) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 -1.05) (end 1.6 -1.05) (layer Dwgs.User) (width 0.12))
+      (fp_line (start 2.94 -0.37) (end 2.94 -1.05) (layer Dwgs.User) (width 0.12))
+    
+      
+      (fp_line (start -1.6 0.7) (end -0.8 1.4) (layer Dwgs.User) (width 0.12))
+      (fp_line (start -3.9 1.85) (end 3.9 1.85) (layer F.SilkS) (width 0.12))
+      (fp_line (start 3.9 -1.85) (end -3.9 -1.85) (layer F.SilkS) (width 0.12))
+      (fp_line (start -3.9 0.25) (end -3.9 1.85) (layer B.SilkS) (width 0.12))
+      (pad 1 smd rect (at -2.75 -0.7 60) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 31 "VCC"))
+      (pad 2 smd rect (at -2.75 0.7 60) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 54 "LED_4"))
+      (pad 4 smd rect (at 2.75 -0.7 60) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 50 "LED_3"))
+      (pad 3 smd rect (at 2.75 0.7 60) (size 1.7 1) (layers F.Cu F.Paste F.Mask) (net 33 "GND"))
+    
+    
+    (fp_line (start -1.6 -0.7) (end -0.8 -1.4) (layer Dwgs.User) (width 0.12))
+    (fp_line (start 3.9 1.85) (end -3.9 1.85) (layer B.SilkS) (width 0.12))
+    (fp_line (start -3.9 -1.85) (end 3.9 -1.85) (layer B.SilkS) (width 0.12))
+    (fp_line (start -3.9 -0.25) (end -3.9 -1.85) (layer B.SilkS) (width 0.12))
+    (pad 3 smd rect (at 2.75 -0.7 60) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 33 "GND"))
+    (pad 4 smd rect (at 2.75 0.7 60) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 50 "LED_3"))
+    (pad 2 smd rect (at -2.75 -0.7 60) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 54 "LED_4"))
+    (pad 1 smd rect (at -2.75 0.7 60) (size 1.7 1) (layers B.Cu B.Paste B.Mask) (net 31 "VCC"))
+    
+      
+      (fp_line (start -1.8 -1.55) (end -1.8 1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start -1.8 1.55) (end 1.8 1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start 1.8 1.55) (end 1.8 -1.55) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start 1.8 -1.55) (end -1.8 -1.55) (layer Edge.Cuts) (width 0.12))
+    )
+    
+
             (module ProMicro (layer F.Cu) (tedit 6135B927)
             (at 214.704 72.14 -90)
 
@@ -2236,7 +3265,7 @@
                 (xy 0.6 -0.4) (xy -0.6 -0.4) (xy -0.6 -0.2) (xy 0 0.4) (xy 0.6 -0.2)
             ) (width 0))
                 ))
-                (pad 24 smd custom (at -13.97 4.826 90) (size 1.2 0.5) (layers F.Cu F.Mask) (net 37 "LED")
+                (pad 24 smd custom (at -13.97 4.826 90) (size 1.2 0.5) (layers F.Cu F.Mask) (net 53 "LED")
                 (clearance 0.1) (zone_connect 0)
                 (options (clearance outline) (anchor rect))
                 (primitives
@@ -2266,7 +3295,7 @@
                     (xy 0.6 -0.4) (xy -0.6 -0.4) (xy -0.6 -0.2) (xy 0 0.4) (xy 0.6 -0.2)
             ) (width 0))
                 ))
-                (pad 23 smd custom (at -11.43 4.826 90) (size 1.2 0.5) (layers F.Cu F.Mask) (net 38 "data")
+                (pad 23 smd custom (at -11.43 4.826 90) (size 1.2 0.5) (layers F.Cu F.Mask) (net 59 "data")
                 (clearance 0.1) (zone_connect 0)
                 (options (clearance outline) (anchor rect))
                 (primitives
@@ -2287,7 +3316,7 @@
                     (xy 0.6 -0.4) (xy -0.6 -0.4) (xy -0.6 -0.2) (xy 0 0.4) (xy 0.6 -0.2)
             ) (width 0))
                 ))
-                (pad 22 smd custom (at -8.89 4.826 90) (size 1.2 0.5) (layers F.Cu F.Mask) (net 32 "GND")
+                (pad 22 smd custom (at -8.89 4.826 90) (size 1.2 0.5) (layers F.Cu F.Mask) (net 33 "GND")
                 (clearance 0.1) (zone_connect 0)
                 (options (clearance outline) (anchor rect))
                 (primitives
@@ -2308,7 +3337,7 @@
                     (xy 0.6 -0.4) (xy -0.6 -0.4) (xy -0.6 -0.2) (xy 0 0.4) (xy 0.6 -0.2)
             ) (width 0))
                 ))
-                (pad 21 smd custom (at -6.35 4.826 90) (size 1.2 0.5) (layers F.Cu F.Mask) (net 32 "GND")
+                (pad 21 smd custom (at -6.35 4.826 90) (size 1.2 0.5) (layers F.Cu F.Mask) (net 33 "GND")
                 (clearance 0.1) (zone_connect 0)
                 (options (clearance outline) (anchor rect))
                 (primitives
@@ -2329,7 +3358,7 @@
                     (xy 0.6 -0.4) (xy -0.6 -0.4) (xy -0.6 -0.2) (xy 0 0.4) (xy 0.6 -0.2)
             ) (width 0))
                 ))
-                (pad 20 smd custom (at -3.81 4.826 90) (size 1.2 0.5) (layers F.Cu F.Mask) (net 39 "SDA")
+                (pad 20 smd custom (at -3.81 4.826 90) (size 1.2 0.5) (layers F.Cu F.Mask) (net 60 "SDA")
                 (clearance 0.1) (zone_connect 0)
                 (options (clearance outline) (anchor rect))
                 (primitives
@@ -2350,7 +3379,7 @@
                     (xy 0.6 -0.4) (xy -0.6 -0.4) (xy -0.6 -0.2) (xy 0 0.4) (xy 0.6 -0.2)
             ) (width 0))
                 ))
-                (pad 19 smd custom (at -1.27 4.826 90) (size 1.2 0.5) (layers F.Cu F.Mask) (net 40 "SCL")
+                (pad 19 smd custom (at -1.27 4.826 90) (size 1.2 0.5) (layers F.Cu F.Mask) (net 61 "SCL")
                 (clearance 0.1) (zone_connect 0)
                 (options (clearance outline) (anchor rect))
                 (primitives
@@ -2455,7 +3484,7 @@
                     (xy 0.6 -0.4) (xy -0.6 -0.4) (xy -0.6 -0.2) (xy 0 0.4) (xy 0.6 -0.2)
             ) (width 0))
                 ))
-                (pad 14 smd custom (at 11.43 4.826 90) (size 1.2 0.5) (layers F.Cu F.Mask) (net 41 "P8")
+                (pad 14 smd custom (at 11.43 4.826 90) (size 1.2 0.5) (layers F.Cu F.Mask) (net 62 "P8")
                 (clearance 0.1) (zone_connect 0)
                 (options (clearance outline) (anchor rect))
                 (primitives
@@ -2476,7 +3505,7 @@
                     (xy 0.6 -0.4) (xy -0.6 -0.4) (xy -0.6 -0.2) (xy 0 0.4) (xy 0.6 -0.2)
             ) (width 0))
                 ))
-                (pad 13 smd custom (at 13.97 4.826 90) (size 1.2 0.5) (layers F.Cu F.Mask) (net 42 "P9")
+                (pad 13 smd custom (at 13.97 4.826 90) (size 1.2 0.5) (layers F.Cu F.Mask) (net 63 "P9")
                 (clearance 0.1) (zone_connect 0)
                 (options (clearance outline) (anchor rect))
                 (primitives
@@ -2484,7 +3513,7 @@
                     (xy 0.6 0) (xy -0.6 0) (xy -0.6 -1) (xy 0 -0.4) (xy 0.6 -1)
             ) (width 0))
                 ))
-                (pad 1 smd custom (at -13.97 -4.826 -90) (size 1.2 0.5) (layers F.Cu F.Mask) (net 31 "RAW")
+                (pad 1 smd custom (at -13.97 -4.826 -90) (size 1.2 0.5) (layers F.Cu F.Mask) (net 55 "RAW")
                 (clearance 0.1) (zone_connect 0)
                 (options (clearance outline) (anchor rect))
                 (primitives
@@ -2492,7 +3521,7 @@
                     (xy 0.6 0) (xy -0.6 0) (xy -0.6 -1) (xy 0 -0.4) (xy 0.6 -1)
             ) (width 0))
                 ))
-                (pad 3 smd custom (at -8.89 -4.826 -90) (size 1.2 0.5) (layers F.Cu F.Mask) (net 33 "RST")
+                (pad 3 smd custom (at -8.89 -4.826 -90) (size 1.2 0.5) (layers F.Cu F.Mask) (net 56 "RST")
                 (clearance 0.1) (zone_connect 0)
                 (options (clearance outline) (anchor rect))
                 (primitives
@@ -2526,7 +3555,7 @@
                 (options (clearance outline) (anchor rect))
                 (primitives
                 ))
-                (pad 2 smd custom (at -11.43 -4.826 -90) (size 1.2 0.5) (layers F.Cu F.Mask) (net 32 "GND")
+                (pad 2 smd custom (at -11.43 -4.826 -90) (size 1.2 0.5) (layers F.Cu F.Mask) (net 33 "GND")
                 (clearance 0.1) (zone_connect 0)
                 (options (clearance outline) (anchor rect))
                 (primitives
@@ -2539,7 +3568,7 @@
                 (options (clearance outline) (anchor rect))
                 (primitives
                 ))
-                (pad 4 smd custom (at -6.35 -4.826 -90) (size 1.2 0.5) (layers F.Cu F.Mask) (net 34 "VCC")
+                (pad 4 smd custom (at -6.35 -4.826 -90) (size 1.2 0.5) (layers F.Cu F.Mask) (net 31 "VCC")
                 (clearance 0.1) (zone_connect 0)
                 (options (clearance outline) (anchor rect))
                 (primitives
@@ -2610,7 +3639,7 @@
                 (options (clearance outline) (anchor rect))
                 (primitives
                 ))
-                (pad 12 smd custom (at 13.97 -4.826 -90) (size 1.2 0.5) (layers F.Cu F.Mask) (net 36 "P10")
+                (pad 12 smd custom (at 13.97 -4.826 -90) (size 1.2 0.5) (layers F.Cu F.Mask) (net 58 "P10")
                 (clearance 0.1) (zone_connect 0)
                 (options (clearance outline) (anchor rect))
                 (primitives
@@ -2715,7 +3744,7 @@
                     (xy 0.6 -0.4) (xy -0.6 -0.4) (xy -0.6 -0.2) (xy 0 0.4) (xy 0.6 -0.2)
             ) (width 0))
                 ))
-                (pad 11 smd custom (at 11.43 -4.826 -90) (size 1.2 0.5) (layers F.Cu F.Mask) (net 35 "P16")
+                (pad 11 smd custom (at 11.43 -4.826 -90) (size 1.2 0.5) (layers F.Cu F.Mask) (net 57 "P16")
                 (clearance 0.1) (zone_connect 0)
                 (options (clearance outline) (anchor rect))
                 (primitives
@@ -2741,7 +3770,7 @@
                 (options (clearance outline) (anchor rect))
                 (primitives
                 ))
-                (pad 1 smd custom (at -13.97 4.826 90) (size 1.2 0.5) (layers B.Cu B.Mask) (net 31 "RAW")
+                (pad 1 smd custom (at -13.97 4.826 90) (size 1.2 0.5) (layers B.Cu B.Mask) (net 55 "RAW")
                 (clearance 0.1) (zone_connect 0)
                 (options (clearance outline) (anchor rect))
                 (primitives
@@ -2791,7 +3820,7 @@
                     (xy 0.6 -0.4) (xy -0.6 -0.4) (xy -0.6 -0.2) (xy 0 0.4) (xy 0.6 -0.2)
             ) (width 0))
                 ))
-                (pad 3 smd custom (at -8.89 4.826 90) (size 1.2 0.5) (layers B.Cu B.Mask) (net 33 "RST")
+                (pad 3 smd custom (at -8.89 4.826 90) (size 1.2 0.5) (layers B.Cu B.Mask) (net 56 "RST")
                 (clearance 0.1) (zone_connect 0)
                 (options (clearance outline) (anchor rect))
                 (primitives
@@ -2812,7 +3841,7 @@
                     (xy 0.6 -0.4) (xy -0.6 -0.4) (xy -0.6 -0.2) (xy 0 0.4) (xy 0.6 -0.2)
             ) (width 0))
                 ))
-                (pad 4 smd custom (at -6.35 4.826 90) (size 1.2 0.5) (layers B.Cu B.Mask) (net 34 "VCC")
+                (pad 4 smd custom (at -6.35 4.826 90) (size 1.2 0.5) (layers B.Cu B.Mask) (net 31 "VCC")
                 (clearance 0.1) (zone_connect 0)
                 (options (clearance outline) (anchor rect))
                 (primitives
@@ -2959,7 +3988,7 @@
                     (xy 0.6 -0.4) (xy -0.6 -0.4) (xy -0.6 -0.2) (xy 0 0.4) (xy 0.6 -0.2)
             ) (width 0))
                 ))
-                (pad 11 smd custom (at 11.43 4.826 90) (size 1.2 0.5) (layers B.Cu B.Mask) (net 35 "P16")
+                (pad 11 smd custom (at 11.43 4.826 90) (size 1.2 0.5) (layers B.Cu B.Mask) (net 57 "P16")
                 (clearance 0.1) (zone_connect 0)
                 (options (clearance outline) (anchor rect))
                 (primitives
@@ -2980,7 +4009,7 @@
                     (xy 0.6 -0.4) (xy -0.6 -0.4) (xy -0.6 -0.2) (xy 0 0.4) (xy 0.6 -0.2)
             ) (width 0))
                 ))
-                (pad 12 smd custom (at 13.97 4.826 90) (size 1.2 0.5) (layers B.Cu B.Mask) (net 36 "P10")
+                (pad 12 smd custom (at 13.97 4.826 90) (size 1.2 0.5) (layers B.Cu B.Mask) (net 58 "P10")
                 (clearance 0.1) (zone_connect 0)
                 (options (clearance outline) (anchor rect))
                 (primitives
@@ -3001,7 +4030,7 @@
                     (xy 0.6 -0.4) (xy -0.6 -0.4) (xy -0.6 -0.2) (xy 0 0.4) (xy 0.6 -0.2)
             ) (width 0))
                 ))
-                (pad 24 smd custom (at -13.97 -4.826 -90) (size 1.2 0.5) (layers B.Cu B.Mask) (net 37 "LED")
+                (pad 24 smd custom (at -13.97 -4.826 -90) (size 1.2 0.5) (layers B.Cu B.Mask) (net 53 "LED")
                 (clearance 0.1) (zone_connect 0)
                 (options (clearance outline) (anchor rect))
                 (primitives
@@ -3009,7 +4038,7 @@
                     (xy 0.6 0) (xy -0.6 0) (xy -0.6 -1) (xy 0 -0.4) (xy 0.6 -1)
             ) (width 0))
                 ))
-                (pad 23 smd custom (at -11.43 -4.826 -90) (size 1.2 0.5) (layers B.Cu B.Mask) (net 38 "data")
+                (pad 23 smd custom (at -11.43 -4.826 -90) (size 1.2 0.5) (layers B.Cu B.Mask) (net 59 "data")
                 (clearance 0.1) (zone_connect 0)
                 (options (clearance outline) (anchor rect))
                 (primitives
@@ -3030,7 +4059,7 @@
                     (xy 0.6 -0.4) (xy -0.6 -0.4) (xy -0.6 -0.2) (xy 0 0.4) (xy 0.6 -0.2)
             ) (width 0))
                 ))
-                (pad 22 smd custom (at -8.89 -4.826 -90) (size 1.2 0.5) (layers B.Cu B.Mask) (net 32 "GND")
+                (pad 22 smd custom (at -8.89 -4.826 -90) (size 1.2 0.5) (layers B.Cu B.Mask) (net 33 "GND")
                 (clearance 0.1) (zone_connect 0)
                 (options (clearance outline) (anchor rect))
                 (primitives
@@ -3051,7 +4080,7 @@
                     (xy 0.6 -0.4) (xy -0.6 -0.4) (xy -0.6 -0.2) (xy 0 0.4) (xy 0.6 -0.2)
             ) (width 0))
                 ))
-                (pad 21 smd custom (at -6.35 -4.826 -90) (size 1.2 0.5) (layers B.Cu B.Mask) (net 32 "GND")
+                (pad 21 smd custom (at -6.35 -4.826 -90) (size 1.2 0.5) (layers B.Cu B.Mask) (net 33 "GND")
                 (clearance 0.1) (zone_connect 0)
                 (options (clearance outline) (anchor rect))
                 (primitives
@@ -3072,7 +4101,7 @@
                     (xy 0.6 -0.4) (xy -0.6 -0.4) (xy -0.6 -0.2) (xy 0 0.4) (xy 0.6 -0.2)
             ) (width 0))
                 ))
-                (pad 20 smd custom (at -3.81 -4.826 -90) (size 1.2 0.5) (layers B.Cu B.Mask) (net 39 "SDA")
+                (pad 20 smd custom (at -3.81 -4.826 -90) (size 1.2 0.5) (layers B.Cu B.Mask) (net 60 "SDA")
                 (clearance 0.1) (zone_connect 0)
                 (options (clearance outline) (anchor rect))
                 (primitives
@@ -3093,7 +4122,7 @@
                     (xy 0.6 -0.4) (xy -0.6 -0.4) (xy -0.6 -0.2) (xy 0 0.4) (xy 0.6 -0.2)
             ) (width 0))
                 ))
-                (pad 19 smd custom (at -1.27 -4.826 -90) (size 1.2 0.5) (layers B.Cu B.Mask) (net 40 "SCL")
+                (pad 19 smd custom (at -1.27 -4.826 -90) (size 1.2 0.5) (layers B.Cu B.Mask) (net 61 "SCL")
                 (clearance 0.1) (zone_connect 0)
                 (options (clearance outline) (anchor rect))
                 (primitives
@@ -3198,7 +4227,7 @@
                     (xy 0.6 -0.4) (xy -0.6 -0.4) (xy -0.6 -0.2) (xy 0 0.4) (xy 0.6 -0.2)
             ) (width 0))
                 ))
-                (pad 14 smd custom (at 11.43 -4.826 -90) (size 1.2 0.5) (layers B.Cu B.Mask) (net 41 "P8")
+                (pad 14 smd custom (at 11.43 -4.826 -90) (size 1.2 0.5) (layers B.Cu B.Mask) (net 62 "P8")
                 (clearance 0.1) (zone_connect 0)
                 (options (clearance outline) (anchor rect))
                 (primitives
@@ -3219,7 +4248,7 @@
                     (xy 0.6 -0.4) (xy -0.6 -0.4) (xy -0.6 -0.2) (xy 0 0.4) (xy 0.6 -0.2)
             ) (width 0))
                 ))
-                (pad 13 smd custom (at 13.97 -4.826 -90) (size 1.2 0.5) (layers B.Cu B.Mask) (net 42 "P9")
+                (pad 13 smd custom (at 13.97 -4.826 -90) (size 1.2 0.5) (layers B.Cu B.Mask) (net 63 "P9")
                 (clearance 0.1) (zone_connect 0)
                 (options (clearance outline) (anchor rect))
                 (primitives
@@ -3389,17 +4418,17 @@
 
 
 
-            (via (at 215.466 60.71) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net 32))
-            (via (at 213.942 60.71) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net 38))
-            (via (at 213.942 58.17) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net 37))
-            (via (at 215.466 58.17) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net 31))
-            (via (at 213.942 63.25) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net 32))
-            (via (at 215.466 63.25) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net 33))
-            (via (at 213.942 65.79) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net 32))
-            (via (at 215.466 65.79) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net 34))
-            (via (at 213.942 68.33) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net 39))
+            (via (at 215.466 60.71) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net 33))
+            (via (at 213.942 60.71) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net 59))
+            (via (at 213.942 58.17) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net 53))
+            (via (at 215.466 58.17) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net 55))
+            (via (at 213.942 63.25) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net 33))
+            (via (at 215.466 63.25) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net 56))
+            (via (at 213.942 65.79) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net 33))
+            (via (at 215.466 65.79) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net 31))
+            (via (at 213.942 68.33) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net 60))
             (via (at 215.466 68.33) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net 1))
-            (via (at 213.942 70.87) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net 40))
+            (via (at 213.942 70.87) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net 61))
             (via (at 215.466 70.87) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net 5))
             (via (at 213.942 73.41) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net 29))
             (via (at 215.466 73.41) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net 9))
@@ -3409,10 +4438,10 @@
             (via (at 215.466 78.49) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net 17))
             (via (at 213.942 81.03) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net 30))
             (via (at 215.466 81.03) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net 21))
-            (via (at 213.942 83.57) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net 41))
-            (via (at 215.466 83.57) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net 35))
-            (via (at 213.942 86.11) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net 42))
-            (via (at 215.466 86.11) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net 36))
+            (via (at 213.942 83.57) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net 62))
+            (via (at 215.466 83.57) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net 57))
+            (via (at 213.942 86.11) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net 63))
+            (via (at 215.466 86.11) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net 58))
         
 
         (module lib:OLED_headers (layer F.Cu) (tedit 5E1ADAC2)
@@ -3424,13 +4453,13 @@
 
         
         (pad 4 thru_hole oval (at 1.6 2.18 360) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask)
-        (net 39 "SDA"))
+        (net 60 "SDA"))
         (pad 3 thru_hole oval (at 1.6 4.72 360) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask)
-        (net 40 "SCL"))
+        (net 61 "SCL"))
         (pad 2 thru_hole oval (at 1.6 7.26 360) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask)
-        (net 34 "VCC"))
+        (net 31 "VCC"))
         (pad 1 thru_hole rect (at 1.6 9.8 360) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask)
-        (net 32 "GND"))
+        (net 33 "GND"))
         )
         
 
@@ -3462,8 +4491,8 @@
         (fp_line (start 3 -1.75) (end 3 -1.5) (layer F.SilkS) (width 0.15))
 
         
-        (pad 2 thru_hole circle (at -3.25 0 -90) (size 2 2) (drill 1.3) (layers *.Cu *.Mask F.SilkS) (net 32 "GND"))
-        (pad 1 thru_hole circle (at 3.25 0 -90) (size 2 2) (drill 1.3) (layers *.Cu *.Mask F.SilkS) (net 33 "RST"))
+        (pad 2 thru_hole circle (at -3.25 0 -90) (size 2 2) (drill 1.3) (layers *.Cu *.Mask F.SilkS) (net 33 "GND"))
+        (pad 1 thru_hole circle (at 3.25 0 -90) (size 2 2) (drill 1.3) (layers *.Cu *.Mask F.SilkS) (net 56 "RST"))
     )
     
 
@@ -3491,10 +4520,10 @@
         (pad "" np_thru_hole circle (at -2.3 1.6) (size 1.5 1.5) (drill 1.5) (layers *.Cu *.Mask))
       
         
-        (pad 1 thru_hole oval (at -4.6 11.3 -90) (size 1.6 2.2) (drill oval 0.9 1.5) (layers *.Cu *.Mask) (net 43 "J1-PadA"))
-        (pad 2 thru_hole oval (at 0 10.2 -90) (size 1.6 2.2) (drill oval 0.9 1.5) (layers *.Cu *.Mask) (net 38 "data"))
-        (pad 3 thru_hole oval (at 0 6.2 -90) (size 1.6 2.2) (drill oval 0.9 1.5) (layers *.Cu *.Mask) (net 32 "GND"))
-        (pad 4 thru_hole oval (at 0 3.2 -90) (size 1.6 2.2) (drill oval 0.9 1.5) (layers *.Cu *.Mask) (net 34 "VCC"))
+        (pad 1 thru_hole oval (at -4.6 11.3 -90) (size 1.6 2.2) (drill oval 0.9 1.5) (layers *.Cu *.Mask) (net 64 "J1-PadA"))
+        (pad 2 thru_hole oval (at 0 10.2 -90) (size 1.6 2.2) (drill oval 0.9 1.5) (layers *.Cu *.Mask) (net 59 "data"))
+        (pad 3 thru_hole oval (at 0 6.2 -90) (size 1.6 2.2) (drill oval 0.9 1.5) (layers *.Cu *.Mask) (net 33 "GND"))
+        (pad 4 thru_hole oval (at 0 3.2 -90) (size 1.6 2.2) (drill oval 0.9 1.5) (layers *.Cu *.Mask) (net 31 "VCC"))
       )
       
             (gr_line (start 91 109.5) (end 147.226056907563 109.5) (angle 90) (layer Edge.Cuts) (width 0.15))
@@ -3540,90 +4569,6 @@
 (gr_circle (center 199.2410516 115.3236576) (end 201.2910516 115.3236576) (layer Edge.Cuts) (width 0.15))
 (gr_circle (center 207.762 100.476) (end 208.862 100.476) (layer Edge.Cuts) (width 0.15))
 (gr_circle (center 222.194 108.995) (end 223.29399999999998 108.995) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 98.2 106.3) (end 101.8 106.3) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 101.8 106.3) (end 101.8 103.2) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 101.8 103.2) (end 98.2 103.2) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 98.2 103.2) (end 98.2 106.3) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 98.2 87.3) (end 101.8 87.3) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 101.8 87.3) (end 101.8 84.2) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 101.8 84.2) (end 98.2 84.2) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 98.2 84.2) (end 98.2 87.3) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 98.2 68.3) (end 101.8 68.3) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 101.8 68.3) (end 101.8 65.2) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 101.8 65.2) (end 98.2 65.2) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 98.2 65.2) (end 98.2 68.3) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 117.2 106.3) (end 120.8 106.3) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 120.8 106.3) (end 120.8 103.2) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 120.8 103.2) (end 117.2 103.2) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 117.2 103.2) (end 117.2 106.3) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 117.2 87.3) (end 120.8 87.3) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 120.8 87.3) (end 120.8 84.2) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 120.8 84.2) (end 117.2 84.2) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 117.2 84.2) (end 117.2 87.3) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 117.2 68.3) (end 120.8 68.3) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 120.8 68.3) (end 120.8 65.2) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 120.8 65.2) (end 117.2 65.2) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 117.2 65.2) (end 117.2 68.3) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 136.2 101.55) (end 139.79999999999998 101.55) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 139.79999999999998 101.55) (end 139.79999999999998 98.45) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 139.79999999999998 98.45) (end 136.2 98.45) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 136.2 98.45) (end 136.2 101.55) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 136.2 82.55) (end 139.79999999999998 82.55) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 139.79999999999998 82.55) (end 139.79999999999998 79.45) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 139.79999999999998 79.45) (end 136.2 79.45) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 136.2 79.45) (end 136.2 82.55) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 136.2 63.55) (end 139.79999999999998 63.55) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 139.79999999999998 63.55) (end 139.79999999999998 60.449999999999996) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 139.79999999999998 60.449999999999996) (end 136.2 60.449999999999996) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 136.2 60.449999999999996) (end 136.2 63.55) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 155.2 99.175) (end 158.79999999999998 99.175) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 158.79999999999998 99.175) (end 158.79999999999998 96.075) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 158.79999999999998 96.075) (end 155.2 96.075) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 155.2 96.075) (end 155.2 99.175) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 155.2 80.175) (end 158.79999999999998 80.175) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 158.79999999999998 80.175) (end 158.79999999999998 77.075) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 158.79999999999998 77.075) (end 155.2 77.075) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 155.2 77.075) (end 155.2 80.175) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 155.2 61.175) (end 158.79999999999998 61.175) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 158.79999999999998 61.175) (end 158.79999999999998 58.074999999999996) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 158.79999999999998 58.074999999999996) (end 155.2 58.074999999999996) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 155.2 58.074999999999996) (end 155.2 61.175) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 174.2 101.55) (end 177.79999999999998 101.55) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 177.79999999999998 101.55) (end 177.79999999999998 98.45) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 177.79999999999998 98.45) (end 174.2 98.45) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 174.2 98.45) (end 174.2 101.55) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 174.2 82.55) (end 177.79999999999998 82.55) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 177.79999999999998 82.55) (end 177.79999999999998 79.45) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 177.79999999999998 79.45) (end 174.2 79.45) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 174.2 79.45) (end 174.2 82.55) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 174.2 63.55) (end 177.79999999999998 63.55) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 177.79999999999998 63.55) (end 177.79999999999998 60.449999999999996) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 177.79999999999998 60.449999999999996) (end 174.2 60.449999999999996) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 174.2 60.449999999999996) (end 174.2 63.55) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 193.2 103.925) (end 196.79999999999998 103.925) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 196.79999999999998 103.925) (end 196.79999999999998 100.825) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 196.79999999999998 100.825) (end 193.2 100.825) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 193.2 100.825) (end 193.2 103.925) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 193.2 84.925) (end 196.79999999999998 84.925) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 196.79999999999998 84.925) (end 196.79999999999998 81.825) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 196.79999999999998 81.825) (end 193.2 81.825) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 193.2 81.825) (end 193.2 84.925) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 193.2 65.925) (end 196.79999999999998 65.925) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 196.79999999999998 65.925) (end 196.79999999999998 62.824999999999996) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 196.79999999999998 62.824999999999996) (end 193.2 62.824999999999996) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 193.2 62.824999999999996) (end 193.2 65.925) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 164.7 121.175) (end 168.29999999999998 121.175) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 168.29999999999998 121.175) (end 168.29999999999998 118.075) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 168.29999999999998 118.075) (end 164.7 118.075) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 164.7 118.075) (end 164.7 121.175) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 184.1307735 123.2444584) (end 187.6081065 124.176207) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 187.6081065 124.176207) (end 188.41044549999998 121.181837) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 188.41044549999998 121.181837) (end 184.9331125 120.25008840000001) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 184.9331125 120.25008840000001) (end 184.1307735 123.2444584) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 214.3027659 126.0980033) (end 216.1027659 122.9803119) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 216.1027659 122.9803119) (end 213.4180871 121.4303119) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 213.4180871 121.4303119) (end 211.6180871 124.5480033) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 211.6180871 124.5480033) (end 214.3027659 126.0980033) (angle 90) (layer Edge.Cuts) (width 0.15))
             
 )
 

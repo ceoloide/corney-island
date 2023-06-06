@@ -84,25 +84,85 @@ points:
         outer:
           key:
             column_net: C0
+          rows:
+            top.key:
+              led_prev: LED_18
+              led_next: LED_19
+            home.key:
+              led_prev: LED_19
+              led_next: LED_20
+            bottom.key:
+              led_prev: LED_20
+              led_next: LED_21
         pinky:
           key:
             column_net: C1
+          rows:
+            top.key:
+              led_prev: LED_15
+              led_next: LED_16
+            home.key:
+              led_prev: LED_16
+              led_next: LED_17
+            bottom.key:
+              led_prev: LED_17
+              led_next: LED_18
         ring:
           key:
             stagger: 0.25 kp
             column_net: C2
+          rows:
+            top.key:
+              led_prev: LED_14
+              led_next: LED_15
+            home.key:
+              led_prev: LED_13
+              led_next: LED_14
+            bottom.key:
+              led_prev: LED_12
+              led_next: LED_13
         middle:
           key:
             stagger: 0.125 kp
             column_net: C3
+          rows:
+            top.key:
+              led_prev: LED_8
+              led_next: LED_9
+            home.key:
+              led_prev: LED_9
+              led_next: LED_10
+            bottom.key:
+              led_prev: LED_10
+              led_next: LED_11
         index:
           key:
             stagger: -0.125 kp
             column_net: C4
+          rows:
+            top.key:
+              led_prev: LED_7
+              led_next: LED_8
+            home.key:
+              led_prev: LED_6
+              led_next: LED_7
+            bottom.key:
+              led_prev: LED_5
+              led_next: LED_6
         inner:
           key:
             stagger: -0.125 kp
             column_net: C5
+          rows:
+            top.key:
+              led_prev: LED
+              led_next: LED_1
+            home.key:
+              led_prev: LED_1
+              led_next: LED_2
+            bottom.key:
+              led_prev: LED_2
+              led_next: LED_3
       rows:
         bottom:
           row_net: R2
@@ -127,12 +187,20 @@ points:
         near:
           key:
             column_net: C3
+          rows:
+            home.key:
+              led_prev: LED_11
+              led_next: LED_12
         middle:
           key:
             splay: splay_thumb_middle
             column_net: C4
             stagger: -2.750
             spread: ks + 2
+          rows:
+            home.key:
+              led_prev: LED_4
+              led_next: LED_5
         far:
           key:
             splay: splay_thumb_far
@@ -140,6 +208,10 @@ points:
             column_net: C5
             stagger: 2.122
             spread: ks + 3.463
+          rows:
+            home.key:
+              led_prev: LED_3
+              led_next: LED_4
       rows:
         home:
           row_net: R3
@@ -290,9 +362,9 @@ outlines:
     - what: outline
       name: _controller_overlay_screws
       operation: subtract
-    - what: outline
-      name: _key_led_cutouts
-      operation: subtract
+    # - what: outline
+    #   name: _key_led_cutouts
+    #   operation: subtract
 
   frontplate:
     - what: outline
@@ -371,14 +443,6 @@ pcbs:
         adjust:
           rotate: switch_rotation
 
-      column_vias:
-        what: via
-        where: [key]
-        params:
-          net: "{{column_net}}"
-        adjust:
-          shift: [-7, 0]
-
       diodes:
         what: combo_diode
         where: [key]
@@ -389,6 +453,18 @@ pcbs:
         adjust:
           shift: [0.5 kcow + 0.8 - 0.173, -1.5]
           rotate: 90
+      
+      per_key_leds:
+        what: sk6812mini-e
+        where: [key]
+        params:
+          P1: VCC
+          P2: "{{key.led_next}}" #DOUT
+          P3: GND
+          P4: "{{key.led_prev}}" #DIN
+          reverse: true
+        adjust:
+          shift: [led_pos_x, led_pos_y]
 
       mcu:
         what: promicro_pretty
