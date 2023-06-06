@@ -512,10 +512,12 @@ pcbs:
         what: trrs
         where: matrix_inner_top
         params:
-          A: J1-PadA
+          A: data
           B: data
           C: GND
           D: VCC
+          reverse: true
+          symmetric: true
         adjust:
           shift: [0.5 ks + 19.2 + 0.41, 0.5 kp -0.125 kp - 19.3 - 30.75 -0.26]
           rotate: -90
