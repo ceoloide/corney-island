@@ -512,8 +512,8 @@ pcbs:
         what: trrs
         where: matrix_inner_top
         params:
-          A: data
-          B: data
+          A: data # Tip and first ring can be together
+          B: data # Tip and first ring can be together
           C: GND
           D: VCC
           reverse: true
