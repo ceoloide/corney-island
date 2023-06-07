@@ -43,7 +43,7 @@ module.exports = {
       (fp_line (start -1.6 0.7) (end -0.8 1.4) (layer Dwgs.User) (width 0.12))
       (fp_line (start -3.9 1.85) (end 3.9 1.85) (layer F.SilkS) (width 0.12))
       (fp_line (start 3.9 -1.85) (end -3.9 -1.85) (layer F.SilkS) (width 0.12))
-      (fp_line (start -3.9 0.25) (end -3.9 1.85) (layer B.SilkS) (width 0.12))
+      (fp_line (start -3.9 0.25) (end -3.9 1.85) (layer F.SilkS) (width 0.12))
       (pad 1 smd rect (at -2.65 -0.7 ${p.rot}) (size 1.5 1) (layers F.Cu F.Paste F.Mask) ${p.P1.str})
       (pad 2 smd rect (at -2.65 0.7 ${p.rot}) (size 1.5 1) (layers F.Cu F.Paste F.Mask) ${p.P2.str})
       (pad 4 smd rect (at 2.65 -0.7 ${p.rot}) (size 1.5 1) (layers F.Cu F.Paste F.Mask) ${p.P4.str})
