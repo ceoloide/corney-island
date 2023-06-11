@@ -341,12 +341,23 @@ module.exports = {
         ))
     `
     const nice_view_standard = `
-      (fp_rect (start 7 1.3) (end -6.68 -34.7)
-        (width 0.12) (layer "Dwgs.User"))
-      (fp_rect (start 7 1.3) (end -6.68 -34.7)
-        (width 0.12) (layer "F.Fab"))       
     `
     const nice_view_front = `
+      (fp_text user "GND" (at 2.54 -6.24 90 ) (layer "F.SilkS")
+          (effects (font (size 1 1) (thickness 0.15)) (justify right))
+      )
+      (fp_text user "MOSI/SDA" (at -5.1 -10.64 90 ) (layer "F.SilkS")
+          (effects (font (size 1 1) (thickness 0.15)) (justify right))
+      )
+      (fp_text user "VCC" (at 0 -6.14 90 ) (layer "F.SilkS")
+          (effects (font (size 1 1) (thickness 0.15)) (justify right))
+      )
+      (fp_text user "CS" (at 5.1 -5.14 90 ) (layer "F.SilkS")
+          (effects (font (size 1 1) (thickness 0.15)) (justify right))
+      )
+      (fp_text user "SCK/SCL" (at -2.54 -9.94 90 ) (layer "F.SilkS")
+          (effects (font (size 1 1) (thickness 0.15)) (justify right))
+      )
       (pad 4 thru_hole circle (at -5.08 0) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask") ${p.P4.str})
       (pad 3 thru_hole circle (at -2.54 0) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask") ${p.P3.str})
       (pad 2 thru_hole circle (at 0 0) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask") ${p.P2.str})
