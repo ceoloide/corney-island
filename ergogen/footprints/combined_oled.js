@@ -12,7 +12,7 @@ module.exports = {
   },
   body: p => {
     const standard_opening = `
-      (module "combined_oled" (layer F.Cu)
+      (module "combined_oled" (layer F.Cu) (tedit 5B24D78E)
       ${p.at /* parametric position */}
 
       (fp_text reference "${p.ref}" (at 0 5.6) (layer F.SilkS) ${p.ref_hide}
