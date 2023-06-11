@@ -486,7 +486,7 @@ pcbs:
         params:
           P3: SCL
           P4: SDA
-          oled: 128x32
+          oled: both
           reverse: false
           side: F
         adjust:
