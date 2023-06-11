@@ -341,10 +341,6 @@ module.exports = {
         ))
     `
     const nice_view_standard = `
-      (fp_rect (start 7 1.3) (end -6.68 -34.7)
-        (layer "Dwgs.User") (width 0.12))
-      (fp_rect (start 7 1.3) (end -6.68 -34.7)
-        (layer "F.Fab") (width 0.12))       
     `
     const nice_view_front = `
       (fp_text user "GND" (at 2.54 -6.24 90 ) (layer "F.SilkS")
