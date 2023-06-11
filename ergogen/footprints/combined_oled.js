@@ -341,6 +341,10 @@ module.exports = {
         ))
     `
     const nice_view_standard = `
+      (fp_rect (start 7 1.3) (end -6.68 -34.7)
+        (width 0.12) (layer "Dwgs.User"))
+      (fp_rect (start 7 1.3) (end -6.68 -34.7)
+        (width 0.12) (layer "F.Fab"))       
     `
     const nice_view_front = `
       (pad 4 thru_hole circle (at -5.08 0) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask") ${p.P4.str})
