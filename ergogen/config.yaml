@@ -486,8 +486,8 @@ pcbs:
         params:
           P3: SCL
           P4: SDA
-          oled: both
-          reverse: true
+          oled: nice_view
+          reverse: false
         adjust:
           shift: [0.5 ks + 10.147, 0.5 kp -0.125 kp - 19.3 - 22.65 - 0.398 + 3.652]
 
