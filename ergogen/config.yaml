@@ -479,16 +479,17 @@ pcbs:
         adjust:
           shift: [19.704, 0.5 kp -0.125 kp -19.3 -0.340]
           rotate: -90
-
+      
       oled:
-        what: oled
+        what: combined_oled
         where: matrix_inner_top
         params:
-          SDA: SDA
-          SCL: SCL
+          P3: SCL
+          P4: SDA
+          oled: both
+          reverse: true
         adjust:
-          shift: [0.5 ks + 4.161, 0.5 kp -0.125 kp - 19.3 - 22.65 - 0.398]
-          rotate: 90
+          shift: [0.5 ks + 10.147, 0.5 kp -0.125 kp - 19.3 - 22.65 - 0.398 + 3.652]
 
       reset_switch:
         what: reset_switch
