@@ -112,7 +112,7 @@ module.exports = {
         (effects (font (size 1 1) (thickness 0.15)) (justify right))
       )
       (pad "" smd custom (at -3.81 0.254 180) (size 0.1 0.1) (layers "F.Cu" "F.Mask")
-        (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45)
+        (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
           (gr_poly
@@ -126,7 +126,7 @@ module.exports = {
             (width 0))
         ))
       (pad "" smd custom (at -3.81 0.254 180) (size 0.1 0.1) (layers "B.Cu" "B.Mask")
-        (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45)
+        (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
           (gr_poly
@@ -141,7 +141,7 @@ module.exports = {
         ))
       (pad "" thru_hole circle (at -3.81 2.062) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask"))
       (pad "" smd custom (at -1.27 0.254 180) (size 0.1 0.1) (layers "F.Cu" "F.Mask")
-        (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45)
+        (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
           (gr_poly
@@ -155,7 +155,7 @@ module.exports = {
             (width 0))
         ))
       (pad "" smd custom (at -1.27 0.254 180) (size 0.1 0.1) (layers "B.Cu" "B.Mask")
-        (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45)
+        (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
           (gr_poly
@@ -170,7 +170,7 @@ module.exports = {
         ))
       (pad "" thru_hole circle (at -1.27 2.062) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask"))
       (pad "" smd custom (at 1.27 0.254 180) (size 0.1 0.1) (layers "F.Cu" "F.Mask")
-        (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45)
+        (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
           (gr_poly
@@ -184,7 +184,7 @@ module.exports = {
             (width 0))
         ))
       (pad "" smd custom (at 1.27 0.254 180) (size 0.1 0.1) (layers "B.Cu" "B.Mask")
-        (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45)
+        (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
           (gr_poly
@@ -199,7 +199,7 @@ module.exports = {
         ))
       (pad "" thru_hole circle (at 1.27 2.062) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask"))
       (pad "" smd custom (at 3.81 0.254 180) (size 0.1 0.1) (layers "F.Cu" "F.Mask")
-        (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45)
+        (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
           (gr_poly
@@ -213,7 +213,7 @@ module.exports = {
             (width 0))
         ))
       (pad "" smd custom (at 3.81 0.254 180) (size 0.1 0.1) (layers "B.Cu" "B.Mask")
-        (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45)
+        (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
           (gr_poly
@@ -228,7 +228,7 @@ module.exports = {
         ))
       (pad "" thru_hole circle (at 3.81 2.062) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask"))
       (pad 1 smd custom (at -3.81 -0.762 180) (size 1.2 0.5) (layers "B.Cu" "B.Mask") ${p.P1.str}
-        (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45)
+        (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
           (gr_poly
@@ -242,7 +242,7 @@ module.exports = {
             (width 0))
         ))
       (pad 1 smd custom (at 3.81 -0.762 180) (size 1.2 0.5) (layers "F.Cu" "F.Mask") ${p.P1.str}
-        (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45)
+        (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
           (gr_poly
@@ -256,7 +256,7 @@ module.exports = {
             (width 0))
         ))
       (pad 2 smd custom (at -1.27 -0.762 180) (size 1.2 0.5) (layers "B.Cu" "B.Mask") ${p.P2.str}
-        (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45)
+        (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
           (gr_poly
@@ -270,7 +270,7 @@ module.exports = {
             (width 0))
         ))
       (pad 2 smd custom (at 1.27 -0.762 180) (size 1.2 0.5) (layers "F.Cu" "F.Mask") ${p.P2.str}
-        (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45)
+        (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
           (gr_poly
@@ -284,7 +284,7 @@ module.exports = {
             (width 0))
         ))
       (pad 3 smd custom (at -1.27 -0.762 180) (size 1.2 0.5) (layers "F.Cu" "F.Mask") ${p.P3.str}
-        (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45)
+        (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
           (gr_poly
@@ -298,7 +298,7 @@ module.exports = {
             (width 0))
         ))
       (pad 3 smd custom (at 1.27 -0.762 180) (size 1.2 0.5) (layers "B.Cu" "B.Mask") ${p.P3.str}
-        (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45)
+        (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
           (gr_poly
@@ -312,7 +312,7 @@ module.exports = {
             (width 0))
         ))
       (pad 4 smd custom (at -3.81 -0.762 180) (size 1.2 0.5) (layers "F.Cu" "F.Mask") ${p.P4.str}
-        (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45)
+        (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
           (gr_poly
@@ -326,7 +326,7 @@ module.exports = {
             (width 0))
         ))
       (pad 4 smd custom (at 3.81 -0.762 180) (size 1.2 0.5) (layers "B.Cu" "B.Mask") ${p.P4.str}
-        (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45)
+        (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
           (gr_poly
@@ -442,7 +442,7 @@ module.exports = {
       (fp_line (start 5.08 -1.748) (end 5.08 -0.8763)
         (width 0.2) (layer "B.Cu"))
       (pad "" smd custom (at -5.08 -1.748 180) (size 0.1 0.1) (layers "F.Cu" "F.Mask")
-        (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45)
+        (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
           (gr_poly
@@ -456,7 +456,7 @@ module.exports = {
             (width 0))
         ))
       (pad "" smd custom (at -5.08 -1.748 180) (size 0.1 0.1) (layers "B.Cu" "B.Mask")
-        (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45)
+        (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
           (gr_poly
@@ -471,7 +471,7 @@ module.exports = {
         ))
       (pad "" thru_hole circle (at -5.08 0) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask"))
       (pad "" smd custom (at -2.54 -1.748 180) (size 0.1 0.1) (layers "F.Cu" "F.Mask")
-        (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45)
+        (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
           (gr_poly
@@ -485,7 +485,7 @@ module.exports = {
             (width 0))
         ))
       (pad "" smd custom (at -2.54 -1.748 180) (size 0.1 0.1) (layers "B.Cu" "B.Mask")
-        (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45)
+        (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
           (gr_poly
@@ -500,7 +500,7 @@ module.exports = {
         ))
       (pad "" thru_hole circle (at -2.54 0) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask"))
       (pad "" smd custom (at 0 -1.748 180) (size 0.1 0.1) (layers "F.Cu" "F.Mask")
-        (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45)
+        (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
           (gr_poly
@@ -514,7 +514,7 @@ module.exports = {
             (width 0))
         ))
       (pad "" smd custom (at 0 -1.748 180) (size 0.1 0.1) (layers "B.Cu" "B.Mask")
-        (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45)
+        (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
           (gr_poly
@@ -529,7 +529,7 @@ module.exports = {
         ))
       (pad "" thru_hole circle (at 0 0) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask"))
       (pad "" smd custom (at 2.54 -1.748 180) (size 0.1 0.1) (layers "F.Cu" "F.Mask")
-        (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45)
+        (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
           (gr_poly
@@ -543,7 +543,7 @@ module.exports = {
             (width 0))
         ))
       (pad "" smd custom (at 2.54 -1.748 180) (size 0.1 0.1) (layers "B.Cu" "B.Mask")
-        (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45)
+        (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
           (gr_poly
@@ -558,7 +558,7 @@ module.exports = {
         ))
       (pad "" thru_hole circle (at 2.54 0) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask"))
       (pad "" smd custom (at 5.08 -1.748 180) (size 0.1 0.1) (layers "F.Cu" "F.Mask")
-        (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45)
+        (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
           (gr_poly
@@ -572,7 +572,7 @@ module.exports = {
             (width 0))
         ))
       (pad "" smd custom (at 5.08 -1.748 180) (size 0.1 0.1) (layers "B.Cu" "B.Mask")
-        (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45)
+        (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
           (gr_poly
@@ -587,7 +587,7 @@ module.exports = {
         ))
       (pad "" thru_hole circle (at 5.08 0) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask"))
       (pad 5 smd custom (at -5.08 -2.764 180) (size 1.2 0.5) (layers "B.Cu" "B.Mask") ${p.P5.str}
-        (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45)
+        (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
           (gr_poly
@@ -601,7 +601,7 @@ module.exports = {
             (width 0))
         ))
       (pad 1 smd custom (at 2.54 -2.764 180) (size 1.2 0.5) (layers "F.Cu" "F.Mask") ${p.P1.str}
-        (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45)
+        (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
           (gr_poly
@@ -615,7 +615,7 @@ module.exports = {
             (width 0))
         ))
       (pad 1 smd custom (at -2.54 -2.764 180) (size 1.2 0.5) (layers "B.Cu" "B.Mask") ${p.P1.str}
-        (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45)
+        (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
           (gr_poly
@@ -629,7 +629,7 @@ module.exports = {
             (width 0))
         ))
       (pad 2 smd custom (at 0 -2.764 180) (size 1.2 0.5) (layers "F.Cu" "F.Mask") ${p.P2.str}
-        (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45)
+        (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
           (gr_poly
@@ -643,7 +643,7 @@ module.exports = {
             (width 0))
         ))
       (pad 3 smd custom (at -2.54 -2.764 180) (size 1.2 0.5) (layers "F.Cu" "F.Mask") ${p.P3.str}
-        (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45)
+        (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
           (gr_poly
@@ -657,7 +657,7 @@ module.exports = {
             (width 0))
         ))
       (pad 2 smd custom (at 0 -2.764 180) (size 1.2 0.5) (layers "B.Cu" "B.Mask") ${p.P2.str}
-        (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45)
+        (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
           (gr_poly
@@ -671,7 +671,7 @@ module.exports = {
             (width 0))
         ))
       (pad 4 smd custom (at -5.08 -2.764 180) (size 1.2 0.5) (layers "F.Cu" "F.Mask") ${p.P4.str}
-        (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45)
+        (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
           (gr_poly
@@ -685,7 +685,7 @@ module.exports = {
             (width 0))
         ))
       (pad 3 smd custom (at 2.54 -2.764 180) (size 1.2 0.5) (layers "B.Cu" "B.Mask") ${p.P3.str}
-        (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45)
+        (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
           (gr_poly
@@ -699,7 +699,7 @@ module.exports = {
             (width 0))
         ))
       (pad 4 smd custom (at 5.08 -2.764 180) (size 1.2 0.5) (layers "B.Cu" "B.Mask") ${p.P4.str}
-        (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45)
+        (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
           (gr_poly
@@ -713,7 +713,7 @@ module.exports = {
             (width 0))
         ))
       (pad 5 smd custom (at 5.08 -2.764 180) (size 1.2 0.5) (layers "F.Cu" "F.Mask") ${p.P5.str}
-        (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45)
+        (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
           (gr_poly
