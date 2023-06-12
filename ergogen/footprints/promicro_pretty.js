@@ -6,28 +6,32 @@
 module.exports = {
     params: {
         designator: 'MCU',
-        RAW: {type: 'net', value: 'RAW'},
-        GND: {type: 'net', value: 'GND'},
-        RST: {type: 'net', value: 'RST'},
-        VCC: {type: 'net', value: 'VCC'},
-        P21: {type: 'net', value: 'P21'},
-        P20: {type: 'net', value: 'P20'},
-        P19: {type: 'net', value: 'P19'},
-        P18: {type: 'net', value: 'P18'},
-        P15: {type: 'net', value: 'P15'},
-        P14: {type: 'net', value: 'P14'},
-        P16: {type: 'net', value: 'P16'},
-        P10: {type: 'net', value: 'P10'},
-        P1: {type: 'net', value: 'P1'},
-        P0: {type: 'net', value: 'P0'},
-        P2: {type: 'net', value: 'P2'},
-        P3: {type: 'net', value: 'P3'},
-        P4: {type: 'net', value: 'P4'},
-        P5: {type: 'net', value: 'P5'},
-        P6: {type: 'net', value: 'P6'},
-        P7: {type: 'net', value: 'P7'},
-        P8: {type: 'net', value: 'P8'},
-        P9: {type: 'net', value: 'P9'}
+        // Left side pins when MCU faces up
+        P1: {type: 'net', value: 'P1'},     // D1 - Serial TX
+        P0: {type: 'net', value: 'P0'},     // D0 - Serial RX
+        // GND Pin
+        // GND Pin
+        P2: {type: 'net', value: 'SDA'},    // D2 - I2C SDA
+        P3: {type: 'net', value: 'SCL'},    // D3 - I2C SCL
+        P4: {type: 'net', value: 'P4'},     // D4 - A6
+        P5: {type: 'net', value: 'P5'},     // Arduino: D5 (PWM) -> Elite C: D12 (PWM)
+        P6: {type: 'net', value: 'P6'},     // D6 - A7 (PWM)
+        P7: {type: 'net', value: 'P7'},     // D7
+        P8: {type: 'net', value: 'P8'},     // D8 - A8
+        P9: {type: 'net', value: 'P9'},     // D9 - A9 (PWM)
+        // Right side pins when MCU faces up
+        RAW: {type: 'net', value: 'RAW'},   // RAW
+        GND: {type: 'net', value: 'GND'},   // GND
+        RST: {type: 'net', value: 'RST'},   // RST
+        VCC: {type: 'net', value: 'VCC'},   // VCC
+        P21: {type: 'net', value: 'P21'},   // D21 - A3
+        P20: {type: 'net', value: 'P20'},   // D20 - A2
+        P19: {type: 'net', value: 'P19'},   // D19 - A1
+        P18: {type: 'net', value: 'P18'},   // D18 - A0
+        P15: {type: 'net', value: 'SCLK'},  // D15 - SCLK
+        P14: {type: 'net', value: 'MISO'},  // D14 - MISO
+        P16: {type: 'net', value: 'MOSI'},  // D16 - MOSI
+        P10: {type: 'net', value: 'P10'},   // D10 - A10 (PWM)
     },
     body: p => {
         return `
@@ -720,7 +724,7 @@ module.exports = {
                     (xy 0.6 -0.4) (xy -0.6 -0.4) (xy -0.6 -0.2) (xy 0 0.4) (xy 0.6 -0.2)
             ) (width 0))
                 ))
-                (pad 2 smd custom (at -11.43 4.826 ${p.rot + 180}) (size 1.2 0.5) (layers B.Cu B.Mask)
+                (pad 2 smd custom (at -11.43 4.826 ${p.rot + 180}) (size 1.2 0.5) (layers B.Cu B.Mask) ${p.GND.str}
                 (clearance 0.1) (zone_connect 0)
                 (options (clearance outline) (anchor rect))
                 (primitives
