@@ -463,19 +463,18 @@ pcbs:
         where: matrix_inner_top
         params:
           P0: data
+          P1: LED
           P21: C0
           P20: C1
           P19: C2
           P18: C3
           P15: C4
           P14: C5
-          P2: SDA
-          P3: SCL
-          P4: R0
-          P5: R1
-          P6: R2
-          P7: R3
-          P1: LED
+          P4: CS
+          P5: R0
+          P6: R1
+          P7: R2
+          P8: R3
         adjust:
           shift: [19.704, 0.5 kp -0.125 kp -19.3 -0.340]
           rotate: -90
@@ -484,9 +483,7 @@ pcbs:
         what: combined_oled
         where: matrix_inner_top
         params:
-          P3: SCL
-          P4: SDA
-          oled: both
+          oled: 128x32
           reverse: true
         adjust:
           shift: [0.5 ks + 10.147, 0.5 kp -0.125 kp - 19.3 - 22.65 - 0.398 + 3.652]
