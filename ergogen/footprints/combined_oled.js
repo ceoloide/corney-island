@@ -3,10 +3,10 @@ module.exports = {
     designator: 'LED',
     P1: {type: 'net', value: 'GND'},
     P2: {type: 'net', value: 'VCC'},
-    P3: {type: 'net', value: 'SCK_SCL'},
-    P4: {type: 'net', value: 'MOSI_SDA'},
+    P3: {type: 'net', value: 'SCL'},  // SCK / SCL
+    P4: {type: 'net', value: 'SDA'},  // MOSI / SDA
     P5: {type: 'net', value: 'CS'},
-    oled: 'both', // Any of 128x32, nice_view, both
+    oled: 'both', // Any of 128x32 (SSD1306), nice_view, both
     reverse: true,
     side: 'F',
   },
@@ -15,10 +15,10 @@ module.exports = {
       (module "combined_oled" (layer F.Cu) (tedit 5B24D78E)
       ${p.at /* parametric position */}
 
-      (fp_text reference "${p.ref}" (at 0 5.6) (layer F.SilkS) ${p.ref_hide}
+      (fp_text reference "${p.ref}" (at 0 5.6 ${p.rot}) (layer F.SilkS) ${p.ref_hide}
         (effects (font (size 1 1) (thickness 0.15)))
       )
-      (fp_text value "combined_oled" (at 0 -14.1) (layer F.Fab)
+      (fp_text value "combined_oled" (at 0 -14.1 ${p.rot}) (layer F.Fab)
         (effects (font (size 1 1) (thickness 0.15)))
       )
     `
@@ -45,73 +45,73 @@ module.exports = {
         (width 0.12) (layer "Dwgs.User"))
     `
     const oled_front = `
-      (fp_text user "VCC" (at 1.27 -4.138 90 ) (layer "F.SilkS")
+      (fp_text user "VCC" (at 1.27 -4.138 ${90 + p.rot}) (layer "F.SilkS")
           (effects (font (size 1 1) (thickness 0.15)) (justify right))
       )
-      (fp_text user "SCL" (at -1.27 -4.064 90 ) (layer "F.SilkS")
+      (fp_text user "SCL" (at -1.27 -4.064 ${90 + p.rot}) (layer "F.SilkS")
           (effects (font (size 1 1) (thickness 0.15)) (justify right))
       )
-      (fp_text user "SDA" (at -3.81 -4.064 90 ) (layer "F.SilkS")
+      (fp_text user "SDA" (at -3.81 -4.064 ${90 + p.rot}) (layer "F.SilkS")
           (effects (font (size 1 1) (thickness 0.15)) (justify right))
       )
-      (fp_text user "GND" (at 3.81 -4.238 90 ) (layer "F.SilkS")
+      (fp_text user "GND" (at 3.81 -4.238 ${90 + p.rot}) (layer "F.SilkS")
           (effects (font (size 1 1) (thickness 0.15)) (justify right))
       )
-      (pad 4 thru_hole circle (at -3.81 2.062) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask") ${p.P4.str})
-      (pad 3 thru_hole circle (at -1.27 2.062) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask") ${p.P3.str})
-      (pad 2 thru_hole circle (at 1.27 2.062) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask") ${p.P2.str})
-      (pad 1 thru_hole circle (at 3.81 2.062) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask") ${p.P1.str})
+      (pad 4 thru_hole circle (at -3.81 2.062 ${p.rot}) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask") ${p.P4.str})
+      (pad 3 thru_hole circle (at -1.27 2.062 ${p.rot}) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask") ${p.P3.str})
+      (pad 2 thru_hole circle (at 1.27 2.062 ${p.rot}) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask") ${p.P2.str})
+      (pad 1 thru_hole circle (at 3.81 2.062 ${p.rot}) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask") ${p.P1.str})
     `
     const oled_back = `
-      (fp_text user "SCL" (at 1.2 -4.138 270 ) (layer "B.SilkS")
+      (fp_text user "SCL" (at 1.2 -4.138 ${270 + p.rot}) (layer "B.SilkS")
           (effects (font (size 1 1) (thickness 0.15)) (justify right mirror))
       )
-      (fp_text user "SDA" (at 3.74 -4.064 270 ) (layer "B.SilkS")
+      (fp_text user "SDA" (at 3.74 -4.064 ${270 + p.rot}) (layer "B.SilkS")
           (effects (font (size 1 1) (thickness 0.15)) (justify right mirror))
       )
-      (fp_text user "VCC" (at -1.34 -4.238 270 ) (layer "B.SilkS")
+      (fp_text user "VCC" (at -1.34 -4.238 ${270 + p.rot}) (layer "B.SilkS")
           (effects (font (size 1 1) (thickness 0.15)) (justify right mirror))
       )
-      (fp_text user "GND" (at -3.9 -4.318 270 ) (layer "B.SilkS")
+      (fp_text user "GND" (at -3.9 -4.318 ${270 + p.rot}) (layer "B.SilkS")
           (effects (font (size 1 1) (thickness 0.15)) (justify right mirror))
       )
-      (pad 1 thru_hole circle (at -3.81 2.062) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask") ${p.P1.str})
-      (pad 2 thru_hole circle (at -1.27 2.062) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask") ${p.P2.str})
-      (pad 3 thru_hole circle (at 1.27 2.062) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask") ${p.P3.str})
-      (pad 4 thru_hole circle (at 3.81 2.062) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask") ${p.P4.str})
+      (pad 1 thru_hole circle (at -3.81 2.062 ${p.rot}) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask") ${p.P1.str})
+      (pad 2 thru_hole circle (at -1.27 2.062 ${p.rot}) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask") ${p.P2.str})
+      (pad 3 thru_hole circle (at 1.27 2.062 ${p.rot}) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask") ${p.P3.str})
+      (pad 4 thru_hole circle (at 3.81 2.062 ${p.rot}) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask") ${p.P4.str})
     `
     const oled_reversible_pads = `
-      (pad "" thru_hole circle (at -3.81 2.062) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask"))
-      (pad "" thru_hole circle (at -1.27 2.062) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask"))
-      (pad "" thru_hole circle (at 1.27 2.062) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask"))
-      (pad "" thru_hole circle (at 3.81 2.062) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask"))
+      (pad "" thru_hole circle (at -3.81 2.062 ${p.rot}) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask"))
+      (pad "" thru_hole circle (at -1.27 2.062 ${p.rot}) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask"))
+      (pad "" thru_hole circle (at 1.27 2.062 ${p.rot}) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask"))
+      (pad "" thru_hole circle (at 3.81 2.062 ${p.rot}) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask"))
     `
     const oled_reversible_solder_bridges = `
-      (fp_text user "SCL" (at 1.2 -4.138 270 ) (layer "B.SilkS")
+      (fp_text user "SCL" (at 1.2 -4.138 ${270 + p.rot}) (layer "B.SilkS")
         (effects (font (size 1 1) (thickness 0.15)) (justify right mirror))
       )
-      (fp_text user "SDA" (at 3.74 -4.064 270 ) (layer "B.SilkS")
+      (fp_text user "SDA" (at 3.74 -4.064 ${270 + p.rot}) (layer "B.SilkS")
         (effects (font (size 1 1) (thickness 0.15)) (justify right mirror))
       )
-      (fp_text user "VCC" (at -1.34 -4.238 270 ) (layer "B.SilkS")
+      (fp_text user "VCC" (at -1.34 -4.238 ${270 + p.rot}) (layer "B.SilkS")
         (effects (font (size 1 1) (thickness 0.15)) (justify right mirror))
       )
-      (fp_text user "GND" (at -3.9 -4.318 270 ) (layer "B.SilkS")
+      (fp_text user "GND" (at -3.9 -4.318 ${270 + p.rot}) (layer "B.SilkS")
         (effects (font (size 1 1) (thickness 0.15)) (justify right mirror))
       )
-      (fp_text user "VCC" (at 1.27 -4.138 90 ) (layer "F.SilkS")
+      (fp_text user "VCC" (at 1.27 -4.138 ${90 + p.rot}) (layer "F.SilkS")
         (effects (font (size 1 1) (thickness 0.15)) (justify right))
       )
-      (fp_text user "SCL" (at -1.27 -4.064 90 ) (layer "F.SilkS")
+      (fp_text user "SCL" (at -1.27 -4.064 ${90 + p.rot}) (layer "F.SilkS")
         (effects (font (size 1 1) (thickness 0.15)) (justify right))
       )
-      (fp_text user "SDA" (at -3.81 -4.064 90 ) (layer "F.SilkS")
+      (fp_text user "SDA" (at -3.81 -4.064 ${90 + p.rot}) (layer "F.SilkS")
         (effects (font (size 1 1) (thickness 0.15)) (justify right))
       )
-      (fp_text user "GND" (at 3.81 -4.238 90 ) (layer "F.SilkS")
+      (fp_text user "GND" (at 3.81 -4.238 ${90 + p.rot}) (layer "F.SilkS")
         (effects (font (size 1 1) (thickness 0.15)) (justify right))
       )
-      (pad "" smd custom (at -3.81 0.254 180) (size 0.1 0.1) (layers "F.Cu" "F.Mask")
+      (pad "" smd custom (at -3.81 0.254 ${180 + p.rot}) (size 0.1 0.1) (layers "F.Cu" "F.Mask")
         (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
@@ -125,7 +125,7 @@ module.exports = {
             )
             (width 0))
         ))
-      (pad "" smd custom (at -3.81 0.254 180) (size 0.1 0.1) (layers "B.Cu" "B.Mask")
+      (pad "" smd custom (at -3.81 0.254 ${180 + p.rot}) (size 0.1 0.1) (layers "B.Cu" "B.Mask")
         (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
@@ -139,8 +139,8 @@ module.exports = {
             )
             (width 0))
         ))
-      (pad "" thru_hole circle (at -3.81 2.062) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask"))
-      (pad "" smd custom (at -1.27 0.254 180) (size 0.1 0.1) (layers "F.Cu" "F.Mask")
+      (pad "" thru_hole circle (at -3.81 2.062 ${p.rot}) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask"))
+      (pad "" smd custom (at -1.27 0.254 ${180 + p.rot}) (size 0.1 0.1) (layers "F.Cu" "F.Mask")
         (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
@@ -154,7 +154,7 @@ module.exports = {
             )
             (width 0))
         ))
-      (pad "" smd custom (at -1.27 0.254 180) (size 0.1 0.1) (layers "B.Cu" "B.Mask")
+      (pad "" smd custom (at -1.27 0.254 ${180 + p.rot}) (size 0.1 0.1) (layers "B.Cu" "B.Mask")
         (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
@@ -168,8 +168,8 @@ module.exports = {
             )
             (width 0))
         ))
-      (pad "" thru_hole circle (at -1.27 2.062) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask"))
-      (pad "" smd custom (at 1.27 0.254 180) (size 0.1 0.1) (layers "F.Cu" "F.Mask")
+      (pad "" thru_hole circle (at -1.27 2.062 ${p.rot}) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask"))
+      (pad "" smd custom (at 1.27 0.254 ${180 + p.rot}) (size 0.1 0.1) (layers "F.Cu" "F.Mask")
         (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
@@ -183,7 +183,7 @@ module.exports = {
             )
             (width 0))
         ))
-      (pad "" smd custom (at 1.27 0.254 180) (size 0.1 0.1) (layers "B.Cu" "B.Mask")
+      (pad "" smd custom (at 1.27 0.254 ${180 + p.rot}) (size 0.1 0.1) (layers "B.Cu" "B.Mask")
         (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
@@ -197,8 +197,8 @@ module.exports = {
             )
             (width 0))
         ))
-      (pad "" thru_hole circle (at 1.27 2.062) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask"))
-      (pad "" smd custom (at 3.81 0.254 180) (size 0.1 0.1) (layers "F.Cu" "F.Mask")
+      (pad "" thru_hole circle (at 1.27 2.062 ${p.rot}) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask"))
+      (pad "" smd custom (at 3.81 0.254 ${180 + p.rot}) (size 0.1 0.1) (layers "F.Cu" "F.Mask")
         (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
@@ -212,7 +212,7 @@ module.exports = {
             )
             (width 0))
         ))
-      (pad "" smd custom (at 3.81 0.254 180) (size 0.1 0.1) (layers "B.Cu" "B.Mask")
+      (pad "" smd custom (at 3.81 0.254 ${180 + p.rot}) (size 0.1 0.1) (layers "B.Cu" "B.Mask")
         (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
@@ -226,8 +226,8 @@ module.exports = {
             )
             (width 0))
         ))
-      (pad "" thru_hole circle (at 3.81 2.062) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask"))
-      (pad 1 smd custom (at -3.81 -0.762 180) (size 1.2 0.5) (layers "B.Cu" "B.Mask") ${p.P1.str}
+      (pad "" thru_hole circle (at 3.81 2.062 ${p.rot}) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask"))
+      (pad 1 smd custom (at -3.81 -0.762 ${180 + p.rot}) (size 1.2 0.5) (layers "B.Cu" "B.Mask") ${p.P1.str}
         (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
@@ -241,7 +241,7 @@ module.exports = {
             )
             (width 0))
         ))
-      (pad 1 smd custom (at 3.81 -0.762 180) (size 1.2 0.5) (layers "F.Cu" "F.Mask") ${p.P1.str}
+      (pad 1 smd custom (at 3.81 -0.762 ${180 + p.rot}) (size 1.2 0.5) (layers "F.Cu" "F.Mask") ${p.P1.str}
         (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
@@ -255,7 +255,7 @@ module.exports = {
             )
             (width 0))
         ))
-      (pad 2 smd custom (at -1.27 -0.762 180) (size 1.2 0.5) (layers "B.Cu" "B.Mask") ${p.P2.str}
+      (pad 2 smd custom (at -1.27 -0.762 ${180 + p.rot}) (size 1.2 0.5) (layers "B.Cu" "B.Mask") ${p.P2.str}
         (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
@@ -269,7 +269,7 @@ module.exports = {
             )
             (width 0))
         ))
-      (pad 2 smd custom (at 1.27 -0.762 180) (size 1.2 0.5) (layers "F.Cu" "F.Mask") ${p.P2.str}
+      (pad 2 smd custom (at 1.27 -0.762 ${180 + p.rot}) (size 1.2 0.5) (layers "F.Cu" "F.Mask") ${p.P2.str}
         (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
@@ -283,7 +283,7 @@ module.exports = {
             )
             (width 0))
         ))
-      (pad 3 smd custom (at -1.27 -0.762 180) (size 1.2 0.5) (layers "F.Cu" "F.Mask") ${p.P3.str}
+      (pad 3 smd custom (at -1.27 -0.762 ${180 + p.rot}) (size 1.2 0.5) (layers "F.Cu" "F.Mask") ${p.P3.str}
         (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
@@ -297,7 +297,7 @@ module.exports = {
             )
             (width 0))
         ))
-      (pad 3 smd custom (at 1.27 -0.762 180) (size 1.2 0.5) (layers "B.Cu" "B.Mask") ${p.P3.str}
+      (pad 3 smd custom (at 1.27 -0.762 ${180 + p.rot}) (size 1.2 0.5) (layers "B.Cu" "B.Mask") ${p.P3.str}
         (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
@@ -311,7 +311,7 @@ module.exports = {
             )
             (width 0))
         ))
-      (pad 4 smd custom (at -3.81 -0.762 180) (size 1.2 0.5) (layers "F.Cu" "F.Mask") ${p.P4.str}
+      (pad 4 smd custom (at -3.81 -0.762 ${180 + p.rot}) (size 1.2 0.5) (layers "F.Cu" "F.Mask") ${p.P4.str}
         (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
@@ -325,7 +325,7 @@ module.exports = {
             )
             (width 0))
         ))
-      (pad 4 smd custom (at 3.81 -0.762 180) (size 1.2 0.5) (layers "B.Cu" "B.Mask") ${p.P4.str}
+      (pad 4 smd custom (at 3.81 -0.762 ${180 + p.rot}) (size 1.2 0.5) (layers "B.Cu" "B.Mask") ${p.P4.str}
         (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
@@ -343,78 +343,78 @@ module.exports = {
     const nice_view_standard = `
     `
     const nice_view_front = `
-      (fp_text user "GND" (at 2.54 -6.24 90 ) (layer "F.SilkS")
+      (fp_text user "GND" (at 2.54 -6.24 ${90 + p.rot}) (layer "F.SilkS")
           (effects (font (size 1 1) (thickness 0.15)) (justify right))
       )
-      (fp_text user "MOSI/SDA" (at -5.1 -10.64 90 ) (layer "F.SilkS")
+      (fp_text user "MOSI/SDA" (at -5.1 -10.64 ${90 + p.rot}) (layer "F.SilkS")
           (effects (font (size 1 1) (thickness 0.15)) (justify right))
       )
-      (fp_text user "VCC" (at 0 -6.14 90 ) (layer "F.SilkS")
+      (fp_text user "VCC" (at 0 -6.14 ${90 + p.rot}) (layer "F.SilkS")
           (effects (font (size 1 1) (thickness 0.15)) (justify right))
       )
-      (fp_text user "CS" (at 5.1 -5.14 90 ) (layer "F.SilkS")
+      (fp_text user "CS" (at 5.1 -5.14 ${90 + p.rot}) (layer "F.SilkS")
           (effects (font (size 1 1) (thickness 0.15)) (justify right))
       )
-      (fp_text user "SCK/SCL" (at -2.54 -9.94 90 ) (layer "F.SilkS")
+      (fp_text user "SCK/SCL" (at -2.54 -9.94 ${90 + p.rot}) (layer "F.SilkS")
           (effects (font (size 1 1) (thickness 0.15)) (justify right))
       )
-      (pad 4 thru_hole circle (at -5.08 0) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask") ${p.P4.str})
-      (pad 3 thru_hole circle (at -2.54 0) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask") ${p.P3.str})
-      (pad 2 thru_hole circle (at 0 0) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask") ${p.P2.str})
-      (pad 1 thru_hole circle (at 2.54 0) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask") ${p.P1.str})
-      (pad 5 thru_hole circle (at 5.08 0) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask") ${p.P5.str})
+      (pad 4 thru_hole circle (at -5.08 0 ${p.rot}) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask") ${p.P4.str})
+      (pad 3 thru_hole circle (at -2.54 0 ${p.rot}) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask") ${p.P3.str})
+      (pad 2 thru_hole circle (at 0 0 ${p.rot}) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask") ${p.P2.str})
+      (pad 1 thru_hole circle (at 2.54 0 ${p.rot}) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask") ${p.P1.str})
+      (pad 5 thru_hole circle (at 5.08 0 ${p.rot}) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask") ${p.P5.str})
     `
     const nice_view_back = `
-      (fp_text user "CS" (at -5.17 -5.14 -90 ) (layer "B.SilkS")
+      (fp_text user "CS" (at -5.17 -5.14 ${-90 + p.rot}) (layer "B.SilkS")
           (effects (font (size 1 1) (thickness 0.15)) (justify right mirror))
       )
-      (fp_text user "MOSI/SDA" (at 5.03 -10.64 -90 ) (layer "B.SilkS")
+      (fp_text user "MOSI/SDA" (at 5.03 -10.64 ${-90 + p.rot}) (layer "B.SilkS")
           (effects (font (size 1 1) (thickness 0.15)) (justify right mirror))
       )
-      (fp_text user "VCC" (at -0.07 -6.14 -90 ) (layer "B.SilkS")
+      (fp_text user "VCC" (at -0.07 -6.14 ${-90 + p.rot}) (layer "B.SilkS")
           (effects (font (size 1 1) (thickness 0.15)) (justify right mirror))
       )
-      (fp_text user "SCK/SCL" (at 2.47 -9.94 -90 ) (layer "B.SilkS")
+      (fp_text user "SCK/SCL" (at 2.47 -9.94 ${-90 + p.rot}) (layer "B.SilkS")
           (effects (font (size 1 1) (thickness 0.15)) (justify right mirror))
       )
-      (fp_text user "GND" (at -2.61 -6.24 -90 ) (layer "B.SilkS")
+      (fp_text user "GND" (at -2.61 -6.24 ${-90 + p.rot}) (layer "B.SilkS")
           (effects (font (size 1 1) (thickness 0.15)) (justify right mirror))
       )
-      (pad 5 thru_hole circle (at -5.08 0) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask") ${p.P5.str})
-      (pad 1 thru_hole circle (at -2.54 0) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask") ${p.P1.str})
-      (pad 2 thru_hole circle (at 0 0) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask") ${p.P2.str})
-      (pad 3 thru_hole circle (at 2.54 0) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask") ${p.P3.str})
-      (pad 4 thru_hole circle (at 5.08 0) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask") ${p.P4.str})
+      (pad 5 thru_hole circle (at -5.08 0 ${p.rot}) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask") ${p.P5.str})
+      (pad 1 thru_hole circle (at -2.54 0 ${p.rot}) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask") ${p.P1.str})
+      (pad 2 thru_hole circle (at 0 0 ${p.rot}) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask") ${p.P2.str})
+      (pad 3 thru_hole circle (at 2.54 0 ${p.rot}) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask") ${p.P3.str})
+      (pad 4 thru_hole circle (at 5.08 0 ${p.rot}) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask") ${p.P4.str})
     `
     const nice_view_reversible = `
-      (fp_text user "CS" (at -5.17 -5.14 -90 ) (layer "B.SilkS")
+      (fp_text user "CS" (at -5.17 -5.14 ${-90 + p.rot}) (layer "B.SilkS")
           (effects (font (size 1 1) (thickness 0.15)) (justify right mirror))
       )
-      (fp_text user "MOSI/SDA" (at 5.03 -10.64 -90 ) (layer "B.SilkS")
+      (fp_text user "MOSI/SDA" (at 5.03 -10.64 ${-90 + p.rot}) (layer "B.SilkS")
           (effects (font (size 1 1) (thickness 0.15)) (justify right mirror))
       )
-      (fp_text user "VCC" (at -0.07 -6.14 -90 ) (layer "B.SilkS")
+      (fp_text user "VCC" (at -0.07 -6.14 ${-90 + p.rot}) (layer "B.SilkS")
           (effects (font (size 1 1) (thickness 0.15)) (justify right mirror))
       )
-      (fp_text user "SCK/SCL" (at 2.47 -9.94 -90 ) (layer "B.SilkS")
+      (fp_text user "SCK/SCL" (at 2.47 -9.94 ${-90 + p.rot}) (layer "B.SilkS")
           (effects (font (size 1 1) (thickness 0.15)) (justify right mirror))
       )
-      (fp_text user "GND" (at -2.61 -6.24 -90 ) (layer "B.SilkS")
+      (fp_text user "GND" (at -2.61 -6.24 ${-90 + p.rot}) (layer "B.SilkS")
           (effects (font (size 1 1) (thickness 0.15)) (justify right mirror))
       )
-      (fp_text user "GND" (at 2.54 -6.24 90 ) (layer "F.SilkS")
+      (fp_text user "GND" (at 2.54 -6.24 ${90 + p.rot}) (layer "F.SilkS")
           (effects (font (size 1 1) (thickness 0.15)) (justify right))
       )
-      (fp_text user "MOSI/SDA" (at -5.1 -10.64 90 ) (layer "F.SilkS")
+      (fp_text user "MOSI/SDA" (at -5.1 -10.64 ${90 + p.rot}) (layer "F.SilkS")
           (effects (font (size 1 1) (thickness 0.15)) (justify right))
       )
-      (fp_text user "VCC" (at 0 -6.14 90 ) (layer "F.SilkS")
+      (fp_text user "VCC" (at 0 -6.14 ${90 + p.rot}) (layer "F.SilkS")
           (effects (font (size 1 1) (thickness 0.15)) (justify right))
       )
-      (fp_text user "CS" (at 5.1 -5.14 90 ) (layer "F.SilkS")
+      (fp_text user "CS" (at 5.1 -5.14 ${90 + p.rot}) (layer "F.SilkS")
           (effects (font (size 1 1) (thickness 0.15)) (justify right))
       )
-      (fp_text user "SCK/SCL" (at -2.54 -9.94 90 ) (layer "F.SilkS")
+      (fp_text user "SCK/SCL" (at -2.54 -9.94 ${90 + p.rot}) (layer "F.SilkS")
           (effects (font (size 1 1) (thickness 0.15)) (justify right))
       )
       (fp_line (start -5.08 -1.748) (end -5.08 -0.8763)
@@ -437,7 +437,7 @@ module.exports = {
         (width 0.2) (layer "B.Cu"))
       (fp_line (start 5.08 -1.748) (end 5.08 -0.8763)
         (width 0.2) (layer "B.Cu"))
-      (pad "" smd custom (at -5.08 -1.748 180) (size 0.1 0.1) (layers "F.Cu" "F.Mask")
+      (pad "" smd custom (at -5.08 -1.748 ${180 + p.rot}) (size 0.1 0.1) (layers "F.Cu" "F.Mask")
         (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
@@ -451,7 +451,7 @@ module.exports = {
             )
             (width 0))
         ))
-      (pad "" smd custom (at -5.08 -1.748 180) (size 0.1 0.1) (layers "B.Cu" "B.Mask")
+      (pad "" smd custom (at -5.08 -1.748 ${180 + p.rot}) (size 0.1 0.1) (layers "B.Cu" "B.Mask")
         (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
@@ -465,8 +465,8 @@ module.exports = {
             )
             (width 0))
         ))
-      (pad "" thru_hole circle (at -5.08 0) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask"))
-      (pad "" smd custom (at -2.54 -1.748 180) (size 0.1 0.1) (layers "F.Cu" "F.Mask")
+      (pad "" thru_hole circle (at -5.08 0 ${p.rot}) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask"))
+      (pad "" smd custom (at -2.54 -1.748 ${180 + p.rot}) (size 0.1 0.1) (layers "F.Cu" "F.Mask")
         (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
@@ -480,7 +480,7 @@ module.exports = {
             )
             (width 0))
         ))
-      (pad "" smd custom (at -2.54 -1.748 180) (size 0.1 0.1) (layers "B.Cu" "B.Mask")
+      (pad "" smd custom (at -2.54 -1.748 ${180 + p.rot}) (size 0.1 0.1) (layers "B.Cu" "B.Mask")
         (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
@@ -494,8 +494,8 @@ module.exports = {
             )
             (width 0))
         ))
-      (pad "" thru_hole circle (at -2.54 0) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask"))
-      (pad "" smd custom (at 0 -1.748 180) (size 0.1 0.1) (layers "F.Cu" "F.Mask")
+      (pad "" thru_hole circle (at -2.54 0 ${p.rot}) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask"))
+      (pad "" smd custom (at 0 -1.748 ${180 + p.rot}) (size 0.1 0.1) (layers "F.Cu" "F.Mask")
         (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
@@ -509,7 +509,7 @@ module.exports = {
             )
             (width 0))
         ))
-      (pad "" smd custom (at 0 -1.748 180) (size 0.1 0.1) (layers "B.Cu" "B.Mask")
+      (pad "" smd custom (at 0 -1.748 ${180 + p.rot}) (size 0.1 0.1) (layers "B.Cu" "B.Mask")
         (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
@@ -523,8 +523,8 @@ module.exports = {
             )
             (width 0))
         ))
-      (pad "" thru_hole circle (at 0 0) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask"))
-      (pad "" smd custom (at 2.54 -1.748 180) (size 0.1 0.1) (layers "F.Cu" "F.Mask")
+      (pad "" thru_hole circle (at 0 0 ${p.rot}) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask"))
+      (pad "" smd custom (at 2.54 -1.748 ${180 + p.rot}) (size 0.1 0.1) (layers "F.Cu" "F.Mask")
         (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
@@ -538,7 +538,7 @@ module.exports = {
             )
             (width 0))
         ))
-      (pad "" smd custom (at 2.54 -1.748 180) (size 0.1 0.1) (layers "B.Cu" "B.Mask")
+      (pad "" smd custom (at 2.54 -1.748 ${180 + p.rot}) (size 0.1 0.1) (layers "B.Cu" "B.Mask")
         (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
@@ -552,8 +552,8 @@ module.exports = {
             )
             (width 0))
         ))
-      (pad "" thru_hole circle (at 2.54 0) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask"))
-      (pad "" smd custom (at 5.08 -1.748 180) (size 0.1 0.1) (layers "F.Cu" "F.Mask")
+      (pad "" thru_hole circle (at 2.54 0 ${p.rot}) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask"))
+      (pad "" smd custom (at 5.08 -1.748 ${180 + p.rot}) (size 0.1 0.1) (layers "F.Cu" "F.Mask")
         (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
@@ -567,7 +567,7 @@ module.exports = {
             )
             (width 0))
         ))
-      (pad "" smd custom (at 5.08 -1.748 180) (size 0.1 0.1) (layers "B.Cu" "B.Mask")
+      (pad "" smd custom (at 5.08 -1.748 ${180 + p.rot}) (size 0.1 0.1) (layers "B.Cu" "B.Mask")
         (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
@@ -581,8 +581,8 @@ module.exports = {
             )
             (width 0))
         ))
-      (pad "" thru_hole circle (at 5.08 0) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask"))
-      (pad 5 smd custom (at -5.08 -2.764 180) (size 1.2 0.5) (layers "B.Cu" "B.Mask") ${p.P5.str}
+      (pad "" thru_hole circle (at 5.08 0 ${p.rot}) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask"))
+      (pad 5 smd custom (at -5.08 -2.764 ${180 + p.rot}) (size 1.2 0.5) (layers "B.Cu" "B.Mask") ${p.P5.str}
         (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
@@ -596,7 +596,7 @@ module.exports = {
             )
             (width 0))
         ))
-      (pad 1 smd custom (at 2.54 -2.764 180) (size 1.2 0.5) (layers "F.Cu" "F.Mask") ${p.P1.str}
+      (pad 1 smd custom (at 2.54 -2.764 ${180 + p.rot}) (size 1.2 0.5) (layers "F.Cu" "F.Mask") ${p.P1.str}
         (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
@@ -610,7 +610,7 @@ module.exports = {
             )
             (width 0))
         ))
-      (pad 1 smd custom (at -2.54 -2.764 180) (size 1.2 0.5) (layers "B.Cu" "B.Mask") ${p.P1.str}
+      (pad 1 smd custom (at -2.54 -2.764 ${180 + p.rot}) (size 1.2 0.5) (layers "B.Cu" "B.Mask") ${p.P1.str}
         (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
@@ -624,7 +624,7 @@ module.exports = {
             )
             (width 0))
         ))
-      (pad 2 smd custom (at 0 -2.764 180) (size 1.2 0.5) (layers "F.Cu" "F.Mask") ${p.P2.str}
+      (pad 2 smd custom (at 0 -2.764 ${180 + p.rot}) (size 1.2 0.5) (layers "F.Cu" "F.Mask") ${p.P2.str}
         (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
@@ -638,7 +638,7 @@ module.exports = {
             )
             (width 0))
         ))
-      (pad 3 smd custom (at -2.54 -2.764 180) (size 1.2 0.5) (layers "F.Cu" "F.Mask") ${p.P3.str}
+      (pad 3 smd custom (at -2.54 -2.764 ${180 + p.rot}) (size 1.2 0.5) (layers "F.Cu" "F.Mask") ${p.P3.str}
         (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
@@ -652,7 +652,7 @@ module.exports = {
             )
             (width 0))
         ))
-      (pad 2 smd custom (at 0 -2.764 180) (size 1.2 0.5) (layers "B.Cu" "B.Mask") ${p.P2.str}
+      (pad 2 smd custom (at 0 -2.764 ${180 + p.rot}) (size 1.2 0.5) (layers "B.Cu" "B.Mask") ${p.P2.str}
         (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
@@ -666,7 +666,7 @@ module.exports = {
             )
             (width 0))
         ))
-      (pad 4 smd custom (at -5.08 -2.764 180) (size 1.2 0.5) (layers "F.Cu" "F.Mask") ${p.P4.str}
+      (pad 4 smd custom (at -5.08 -2.764 ${180 + p.rot}) (size 1.2 0.5) (layers "F.Cu" "F.Mask") ${p.P4.str}
         (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
@@ -680,7 +680,7 @@ module.exports = {
             )
             (width 0))
         ))
-      (pad 3 smd custom (at 2.54 -2.764 180) (size 1.2 0.5) (layers "B.Cu" "B.Mask") ${p.P3.str}
+      (pad 3 smd custom (at 2.54 -2.764 ${180 + p.rot}) (size 1.2 0.5) (layers "B.Cu" "B.Mask") ${p.P3.str}
         (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
@@ -694,7 +694,7 @@ module.exports = {
             )
             (width 0))
         ))
-      (pad 4 smd custom (at 5.08 -2.764 180) (size 1.2 0.5) (layers "B.Cu" "B.Mask") ${p.P4.str}
+      (pad 4 smd custom (at 5.08 -2.764 ${180 + p.rot}) (size 1.2 0.5) (layers "B.Cu" "B.Mask") ${p.P4.str}
         (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
@@ -708,7 +708,7 @@ module.exports = {
             )
             (width 0))
         ))
-      (pad 5 smd custom (at 5.08 -2.764 180) (size 1.2 0.5) (layers "F.Cu" "F.Mask") ${p.P5.str}
+      (pad 5 smd custom (at 5.08 -2.764 ${180 + p.rot}) (size 1.2 0.5) (layers "F.Cu" "F.Mask") ${p.P5.str}
         (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
