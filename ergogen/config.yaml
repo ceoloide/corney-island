@@ -101,10 +101,14 @@ points:
           rows:
             top.key:
               led_prev: LED_15
-              led_next: LED_16
+              led_next: ULED_1
+              underglow_prev: ULED_1
+              underglow_next: LED_16
             home.key:
               led_prev: LED_16
-              led_next: LED_17
+              led_next: ULED_0
+              underglow_prev: ULED_0
+              underglow_next: LED_17
             bottom.key:
               led_prev: LED_17
               led_next: LED_18
@@ -129,27 +133,35 @@ points:
           rows:
             top.key:
               led_prev: LED_8
-              led_next: LED_9
+              led_next: ULED_2
+              underglow_prev: ULED_2
+              underglow_next: LED_9
             home.key:
               led_prev: LED_9
               led_next: LED_10
             bottom.key:
               led_prev: LED_10
-              led_next: LED_11
+              led_next: ULED_3
+              underglow_prev: 
+              underglow_next: LED_11
         index:
           key:
             stagger: -0.125 kp
             column_net: C4
           rows:
             top.key:
-              led_prev: LED_7
+              led_prev: ULED_6
               led_next: LED_8
+              underglow_prev: LED_7
+              underglow_next: ULED_6
             home.key:
               led_prev: LED_6
               led_next: LED_7
             bottom.key:
-              led_prev: LED_5
+              led_prev: ULED_5
               led_next: LED_6
+              underglow_prev: LED_5
+              underglow_next: ULED_5
         inner:
           key:
             stagger: -0.125 kp
@@ -457,6 +469,25 @@ pcbs:
         adjust:
           shift: [led_pos_x, led_pos_y]
           rotate: led_rotation
+      
+      underglow_leds:
+        what: sk6812mini-e
+        where:
+          - matrix_pinky_top
+          - matrix_pinky_home
+          - matrix_middle_top
+          - matrix_middle_bottom
+          - matrix_index_top
+          - matrix_index_bottom
+        params:
+          P1: VCC
+          P2: "{{key.underglow_next}}" #DOUT
+          P3: GND
+          P4: "{{key.underglow_prev}}" #DIN
+          reverse: true
+          flip: true
+        adjust:
+          shift: [0, -0.5 kp]
 
       mcu:
         what: promicro_pretty
