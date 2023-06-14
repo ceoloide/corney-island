@@ -41,7 +41,7 @@ presets:
     keych: 16.5 # keycap height (cherry: 18, choc: 16.5)
     led_pos_x: 0 # Led X position relative to the switch center
     led_pos_y: 5.5 # Led Y position relative to the switch center
-    led_rotation: 180 # Led rotation
+    led_rotation: 0 # Led rotation
     vertical_diode_shift: 1.5 # How much to shift to avoid overlap
     switch_rotation: 180 # Hotswap south, led north
   choc_mx_spacing:
@@ -465,7 +465,8 @@ pcbs:
           P2: "{{key.led_next}}" #DOUT
           P3: GND
           P4: "{{key.led_prev}}" #DIN
-          reverse: true
+          reversible: true
+          reverse_mount: true
         adjust:
           shift: [led_pos_x, led_pos_y]
           rotate: led_rotation
@@ -484,8 +485,8 @@ pcbs:
           P2: "{{key.underglow_next}}" #DOUT
           P3: GND
           P4: "{{key.underglow_prev}}" #DIN
-          reverse: true
-          flip: true
+          reversible: true
+          reverse_mount: false
         adjust:
           shift: [0, -0.5 kp]
 
