@@ -11,16 +11,13 @@ module.exports = {
   },
   body: p => {
     const standard_opening = `
-      (module YS-SK6812MINI-E (layer F.Cu) (tedit 5F70BC98)
-      ${p.at /* parametric position */}
+      (module "YS-SK6812MINI-E" (layer ${p.side}.Cu) (tedit 5F70BC98)
+        ${p.at /* parametric position */}
 
-        (fp_text reference "${p.ref}" (at 0.2 11.2) (layer F.SilkS) ${p.ref_hide}
+        (fp_text reference "${p.ref}" (at 0.2 11.2) (layer ${p.side}.SilkS) ${p.ref_hide}
           (effects (font (size 1 1) (thickness 0.15)))
         )
-        (fp_text value YS-SK6812MINI-E (at -0.6 -9.8) (layer F.Fab)
-          (effects (font (size 1 1) (thickness 0.15)))
-        )
-  
+        
         (fp_line (start -1.6 -1.4) (end 1.6 -1.4) (layer Dwgs.User) (width 0.12))
         (fp_line (start -1.6 1.4) (end 1.6 1.4) (layer Dwgs.User) (width 0.12))
         (fp_line (start -1.6 -1.4) (end -1.6 1.4) (layer Dwgs.User) (width 0.12))
