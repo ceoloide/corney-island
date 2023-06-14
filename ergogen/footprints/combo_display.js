@@ -6,19 +6,16 @@ module.exports = {
     P3: {type: 'net', value: 'SCL'},  // SCK / SCL
     P4: {type: 'net', value: 'SDA'},  // MOSI / SDA
     P5: {type: 'net', value: 'CS'},
-    oled: 'both', // Any of 128x32 (SSD1306), nice_view, both
+    oled: 'both', // Any of ssd1306, nice_view, both
     reverse: true,
     side: 'F',
   },
   body: p => {
     const standard_opening = `
-      (module "combined_oled" (layer F.Cu) (tedit 5B24D78E)
+    (module "combo_display" (layer ${p.side}.Cu) (tedit 5B24D78E)
       ${p.at /* parametric position */}
-
-      (fp_text reference "${p.ref}" (at 0 5.6 ${p.rot}) (layer F.SilkS) ${p.ref_hide}
-        (effects (font (size 1 1) (thickness 0.15)))
-      )
-      (fp_text value "combined_oled" (at 0 -14.1 ${p.rot}) (layer F.Fab)
+      (descr "Solder-jumper reversible footprint for both nice!view (SPI) and SSD1306 (I2C) displays")
+      (fp_text reference "${p.ref}" (at 0 5.6 ${p.rot}) (layer ${p.side}.SilkS) ${p.ref_hide}
         (effects (font (size 1 1) (thickness 0.15)))
       )
     `
@@ -783,7 +780,7 @@ module.exports = {
 
     let final = standard_opening;
 
-    if(p.oled == "128x32"){
+    if(p.oled == "ssd1306"){
       final += oled_standard;
       if(p.reverse) {
         final += oled_reversible_pads;

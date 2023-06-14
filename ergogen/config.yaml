@@ -480,10 +480,10 @@ pcbs:
           rotate: -90
       
       oled:
-        what: combined_oled
+        what: combo_display
         where: matrix_inner_top
         params:
-          oled: 128x32
+          oled: ssd1306
           reverse: true
         adjust:
           shift: [0.5 ks + 10.147, 0.5 kp -0.125 kp - 19.3 - 22.65 - 0.398 + 3.652]
