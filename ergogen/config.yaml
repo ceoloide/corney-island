@@ -26,6 +26,7 @@ presets:
     led_pos_x: 0 # Led X position relative to the switch center
     led_pos_y: -4.75 # Led Y position relative to the switch center
     led_rotation: 0 # Led rotation
+    vertical_underglow_shift: -0.5 kp # How much to shift underglow leds tied to keys
     vertical_diode_shift: -1.5 # How much to shift to avoid overlap
     diode_rotation: 0 # Diode rotation
     switch_rotation: 0 # Hotswap north, led south
@@ -42,6 +43,7 @@ presets:
     led_pos_x: 0 # Led X position relative to the switch center
     led_pos_y: 4.7 # Led Y position relative to the switch center
     led_rotation: 0 # Led rotation
+    vertical_underglow_shift: 7.8  # How much to shift underglow leds tied to keys
     vertical_diode_shift: 1.5 # How much to shift to avoid overlap
     diode_rotation: -180 # Diode rotation
     switch_rotation: 180 # Hotswap south, led north
@@ -489,7 +491,7 @@ pcbs:
           reversible: true
           reverse_mount: false
         adjust:
-          shift: [0, -0.5 kp]
+          shift: [0, vertical_underglow_shift]
 
       mcu:
         what: promicro_pretty
