@@ -5,9 +5,9 @@ meta:
   ref: &kb_ref "Corney Island v0.1"
   author: ceoloide
   url: https://github.com/ceoloide/corney-island
-  footprint: &switch_footprint "mx"
+  footprint: &switch_footprint "choc"
   switch:
-    $extends: presets.mx
+    $extends: presets.choc_v1
 
 presets:
   # These presets provide different layout options
@@ -29,22 +29,22 @@ presets:
     vertical_diode_shift: -1.5 # How much to shift to avoid overlap
     diode_rotation: 0 # Diode rotation
     switch_rotation: 0 # Hotswap north, led south
-  choc:
+  choc_v1:
     # Key and keycap measures
     kx: cx # spacing between key centers (X-axis)
     ky: cy # spacing between key centers (Y-axis)
     ks: 18.5 # horizontal space between columns (default: 19)
     kp: 17.5 # vertical padding between keys (deafult: 19)
-    kcow: 13.8 # key cutout hole width (cherry: 14, choc: 13.8)
-    kcoh: 13.8 # key cutout hole height (cherry: 14, choc: 13.8)
+    kcow: 13.8 # key cutout hole width (cherry, choc v2: 14, choc v1: 13.8)
+    kcoh: 13.8 # key cutout hole height (cherry, choc v2: 14, choc v1: 13.8)
     keycw: 17.5 # keycap width (cherry: 18, choc: 17.5)
     keych: 16.5 # keycap height (cherry: 18, choc: 16.5)
     led_pos_x: 0 # Led X position relative to the switch center
-    led_pos_y: 5.5 # Led Y position relative to the switch center
+    led_pos_y: 4.7 # Led Y position relative to the switch center
     led_rotation: 0 # Led rotation
     vertical_diode_shift: 1.5 # How much to shift to avoid overlap
     switch_rotation: 180 # Hotswap south, led north
-  choc_mx_spacing:
+  choc_v1_mx_spacing:
     # Key and keycap measures
     $extends: presets.choc
     kx: u # spacing between key centers (X-axis)
