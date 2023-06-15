@@ -37,8 +37,8 @@ module.exports = {
     `
     const front_reversed = `
         (fp_line (start -1.6 0.7) (end -0.8 1.4) (layer Dwgs.User) (width 0.12))
-        (fp_line (start -3.9 1.85) (end -2.3 1.85) (layer F.SilkS) (width 0.12))
-        (fp_line (start -3.9 0.25) (end -3.9 1.85) (layer F.SilkS) (width 0.12))
+        (fp_line (start -3.8 1.6) (end -2.2 1.6) (layer F.SilkS) (width 0.12))
+        (fp_line (start -3.8 0) (end -3.8 1.6) (layer F.SilkS) (width 0.12))
         (pad 4 smd rect (at -2.65 -0.7 ${p.rot}) (size 1.5 1) (layers F.Cu F.Paste F.Mask) ${p.P4.str})
         (pad 3 smd rect (at -2.65 0.7 ${p.rot}) (size 1.5 1) (layers F.Cu F.Paste F.Mask) ${p.P3.str})
         (pad 1 smd rect (at 2.65 -0.7 ${p.rot}) (size 1.5 1) (layers F.Cu F.Paste F.Mask) ${p.P1.str})
@@ -46,8 +46,8 @@ module.exports = {
         `
     const front = `
         (fp_line (start 1.6 0.7) (end 0.8 1.4) (layer Dwgs.User) (width 0.12))
-        (fp_line (start 3.9 1.85) (end 2.3 1.85) (layer F.SilkS) (width 0.12))
-        (fp_line (start 3.9 0.25) (end 3.9 1.85) (layer F.SilkS) (width 0.12))
+        (fp_line (start 3.8 1.6) (end 2.2 1.6) (layer F.SilkS) (width 0.12))
+        (fp_line (start 3.8 0) (end 3.8 1.6) (layer F.SilkS) (width 0.12))
         (pad 1 smd rect (at -2.65 -0.7 ${p.rot}) (size 1.5 1) (layers F.Cu F.Paste F.Mask) ${p.P1.str})
         (pad 2 smd rect (at -2.65 0.7 ${p.rot}) (size 1.5 1) (layers F.Cu F.Paste F.Mask) ${p.P2.str})
         (pad 4 smd rect (at 2.65 -0.7 ${p.rot}) (size 1.5 1) (layers F.Cu F.Paste F.Mask) ${p.P4.str})
@@ -55,8 +55,8 @@ module.exports = {
     `
     const back_reversed = `
       (fp_line (start -1.6 -0.7) (end -0.8 -1.4) (layer Dwgs.User) (width 0.12))
-      (fp_line (start -3.9 -1.85) (end -2.3 -1.85) (layer B.SilkS) (width 0.12))
-      (fp_line (start -3.9 -0.25) (end -3.9 -1.85) (layer B.SilkS) (width 0.12))
+      (fp_line (start -3.8 -1.6) (end -2.2 -1.6) (layer B.SilkS) (width 0.12))
+      (fp_line (start -3.8 0) (end -3.8 -1.6) (layer B.SilkS) (width 0.12))
       (pad 2 smd rect (at 2.65 -0.7 ${p.rot}) (size 1.5 1) (layers B.Cu B.Paste B.Mask) ${p.P2.str})
       (pad 1 smd rect (at 2.65 0.7 ${p.rot}) (size 1.5 1) (layers B.Cu B.Paste B.Mask) ${p.P1.str})
       (pad 3 smd rect (at -2.65 -0.7 ${p.rot}) (size 1.5 1) (layers B.Cu B.Paste B.Mask) ${p.P3.str})
@@ -64,8 +64,8 @@ module.exports = {
       `
     const back = `
       (fp_line (start 1.6 -0.7) (end 0.8 -1.4) (layer Dwgs.User) (width 0.12))
-      (fp_line (start 3.9 -1.85) (end 2.3 -1.85) (layer B.SilkS) (width 0.12))
-      (fp_line (start 3.9 -0.25) (end 3.9 -1.85) (layer B.SilkS) (width 0.12))
+      (fp_line (start 3.8 -1.6) (end 2.2 -1.6) (layer B.SilkS) (width 0.12))
+      (fp_line (start 3.8 0) (end 3.8 -1.6) (layer B.SilkS) (width 0.12))
       (pad 3 smd rect (at 2.65 -0.7 ${p.rot}) (size 1.5 1) (layers B.Cu B.Paste B.Mask) ${p.P3.str})
       (pad 4 smd rect (at 2.65 0.7 ${p.rot}) (size 1.5 1) (layers B.Cu B.Paste B.Mask) ${p.P4.str})
       (pad 2 smd rect (at -2.65 -0.7 ${p.rot}) (size 1.5 1) (layers B.Cu B.Paste B.Mask) ${p.P2.str})
