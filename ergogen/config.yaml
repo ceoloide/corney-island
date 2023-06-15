@@ -43,6 +43,7 @@ presets:
     led_pos_y: 4.7 # Led Y position relative to the switch center
     led_rotation: 0 # Led rotation
     vertical_diode_shift: 1.5 # How much to shift to avoid overlap
+    diode_rotation: -180 # Diode rotation
     switch_rotation: 180 # Hotswap south, led north
   choc_v1_mx_spacing:
     # Key and keycap measures
@@ -455,7 +456,7 @@ pcbs:
           include_tht: false
         adjust:
           shift: [0.5 kcow + 0.8 - 0.173, vertical_diode_shift]
-          rotate: 90
+          rotate: 90 + diode_rotation
       
       per_key_leds:
         what: sk6812mini-e
