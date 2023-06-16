@@ -244,7 +244,7 @@ outlines:
         - matrix_inner_top
       size: [20, 3.5 kp]
       adjust:
-        shift: [ks + (20 - ks) / 2, -1.25 kp -0.125 kp]
+        shift: [ks + (20 - ks) / 2, -1.375 kp]
       operation: stack
     - what: rectangle
       adjust:
@@ -297,7 +297,7 @@ outlines:
     - <<: *circle
       adjust:
         ref: matrix_inner_top
-        shift: [-0.5 ks -0.032, -0.5 kp + 1.139]
+        shift: [-0.5 ks -0.032, -0.5 kp +1.139]
     - <<: *circle
       adjust:
         ref: thumbfan_near_home
@@ -305,7 +305,7 @@ outlines:
     - <<: *circle
       adjust:
         ref: thumbfan_far_home
-        shift: [0, 0.5 kp + 2]
+        shift: [0, 0.5 kp +2.631]
 
   _spacers:
     - &bigCircle
@@ -321,7 +321,7 @@ outlines:
     - <<: *bigCircle
       adjust:
         ref: matrix_inner_top
-        shift: [-0.5 ks -0.032, -0.5 kp + 1.139]
+        shift: [-0.5 ks -0.032, -0.5 kp +1.139]
     - <<: *bigCircle
       adjust:
         ref: thumbfan_near_home
@@ -329,17 +329,17 @@ outlines:
     - <<: *bigCircle
       adjust:
         ref: thumbfan_far_home
-        shift: [0, 0.5 kp + 2.631]
+        shift: [0, 0.5 kp +2.631]
 
   _controller_overlay_screws:
     - <<: *circle
       adjust:
         - ref: matrix_inner_bottom
-          shift: [0.67 ks + 0.032, -0.15 kp - 0.001]
+          shift: [0.67 ks + 0.032, -0.15 kp -0.001]
     - <<: *circle
       adjust:
         - ref: matrix_inner_bottom
-          shift: [1.45 ks - 0.356, -0.6 ks + 0.03]
+          shift: [1.45 ks - 0.356, -0.6 ks +0.03]
 
   _keycap_outlines:
     - what: rectangle
@@ -457,7 +457,7 @@ pcbs:
           to: "{{row_net}}"
           include_tht: false
         adjust:
-          shift: [0.5 kcow + 0.8 - 0.173, vertical_diode_shift]
+          shift: [0.5 kcow + 0.627, vertical_diode_shift]
           rotate: 90 + diode_rotation
       
       per_key_leds:
@@ -511,7 +511,7 @@ pcbs:
           P7: R2
           P8: R3
         adjust:
-          shift: [19.704, 0.5 kp -0.125 kp -19.3 -0.340]
+          shift: [19.704, 0.375 kp -19.64]
           rotate: -90
       
       oled:
@@ -521,7 +521,7 @@ pcbs:
           oled: ssd1306
           reverse: true
         adjust:
-          shift: [0.5 ks + 10.147, 0.5 kp -0.125 kp - 19.3 - 22.65 - 0.398 + 3.652]
+          shift: [0.5 ks + 10.147, 0.375 kp -38.696]
 
       reset_switch:
         what: reset_switch
@@ -530,7 +530,7 @@ pcbs:
           from: GND
           to: RST
         adjust:
-          shift: [0.5 ks + 18 - 0.183, 0.5 kp -0.125 kp - 19.3 - 20.65 - 0.301]
+          shift: [0.5 ks + 17.817, 0.375 kp -40.251]
           rotate: -90
 
       trrs:
@@ -544,5 +544,5 @@ pcbs:
           reverse: true
           symmetric: true
         adjust:
-          shift: [0.5 ks + 19.2 + 0.41, 0.5 kp -0.125 kp - 19.3 - 30.75 -0.26]
+          shift: [0.5 ks +19.61, 0.375 kp -50.31]
           rotate: -90
