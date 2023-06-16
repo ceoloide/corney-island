@@ -3,10 +3,10 @@ module.exports = {
       designator: 'SW',
       side: 'F',
       reversible: false,
-      P1: {type: 'net', value: 'SCK'},
-      P2: {type: 'net', value: 'VCC'},
-      P3: {type: 'net', value: 'GND'},
-      MP: {type: 'net', value: 'GND'},
+      P1: {type: 'net', value: 'MP'},
+      P2: {type: 'net', value: 'BAT+'},
+      P3: {type: 'net', value: 'RAW'},
+      MP: {type: 'net', value: 'MP'},
   },
   body: p => {
     const standard_opening = `
@@ -54,18 +54,18 @@ module.exports = {
       (pad "MP" smd roundrect (at 3.7 1.15 ${270 + p.rot}) (size 0.7 1.1) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.15) ${p.MP.str})
     `
     const back = `
-    (fp_line (start -3.55 -0.65) (end -3.55 0.65) (width 0.12) (layer "B.SilkS"))
-    (fp_line (start -3.05 -1.55) (end 3.05 -1.55) (width 0.12) (layer "B.SilkS"))
-    (fp_line (start -2.7 1.55) (end -3.05 1.55) (width 0.12) (layer "B.SilkS"))
-    (fp_line (start 3.05 1.55) (end 2.7 1.55) (width 0.12) (layer "B.SilkS"))
-    (fp_line (start 3.55 0.65) (end 3.55 -0.65) (width 0.12) (layer "B.SilkS"))
-    (pad 3 smd roundrect (at 2.25 2 ${180 + p.rot}) (size 0.6 1.25) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.15) ${p.P3.str})
-    (pad 2 smd roundrect (at -0.75 2 ${180 + p.rot}) (size 0.6 1.25) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.15) ${p.P2.str})
-    (pad 1 smd roundrect (at -2.25 2 ${180 + p.rot}) (size 0.6 1.25) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.15) ${p.P1.str})
-    (pad "MP" smd roundrect (at -3.7 -1.15 ${270 + p.rot}) (size 0.7 1.1) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.15) ${p.MP.str})
-    (pad "MP" smd roundrect (at -3.7 1.15 ${270 + p.rot}) (size 0.7 1.1) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.15) ${p.MP.str})
-    (pad "MP" smd roundrect (at 3.7 -1.15 ${270 + p.rot}) (size 0.7 1.1) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.15) ${p.MP.str})
-    (pad "MP" smd roundrect (at 3.7 1.15 ${270 + p.rot}) (size 0.7 1.1) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.15) ${p.MP.str})
+      (fp_line (start -3.55 -0.65) (end -3.55 0.65) (width 0.12) (layer "B.SilkS"))
+      (fp_line (start -3.05 -1.55) (end 3.05 -1.55) (width 0.12) (layer "B.SilkS"))
+      (fp_line (start -2.7 1.55) (end -3.05 1.55) (width 0.12) (layer "B.SilkS"))
+      (fp_line (start 3.05 1.55) (end 2.7 1.55) (width 0.12) (layer "B.SilkS"))
+      (fp_line (start 3.55 0.65) (end 3.55 -0.65) (width 0.12) (layer "B.SilkS"))
+      (pad 3 smd roundrect (at 2.25 2 ${180 + p.rot}) (size 0.6 1.25) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.15) ${p.P3.str})
+      (pad 2 smd roundrect (at -0.75 2 ${180 + p.rot}) (size 0.6 1.25) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.15) ${p.P2.str})
+      (pad 1 smd roundrect (at -2.25 2 ${180 + p.rot}) (size 0.6 1.25) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.15) ${p.P1.str})
+      (pad "MP" smd roundrect (at -3.7 -1.15 ${270 + p.rot}) (size 0.7 1.1) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.15) ${p.MP.str})
+      (pad "MP" smd roundrect (at -3.7 1.15 ${270 + p.rot}) (size 0.7 1.1) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.15) ${p.MP.str})
+      (pad "MP" smd roundrect (at 3.7 -1.15 ${270 + p.rot}) (size 0.7 1.1) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.15) ${p.MP.str})
+      (pad "MP" smd roundrect (at 3.7 1.15 ${270 + p.rot}) (size 0.7 1.1) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.15) ${p.MP.str})
     `
     
     const standard_closing = `
