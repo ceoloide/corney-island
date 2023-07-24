@@ -43,7 +43,7 @@ presets:
     led_pos_x: 0 # Led X position relative to the switch center
     led_pos_y: 4.7 # Led Y position relative to the switch center
     led_rotation: 0 # Led rotation
-    vertical_underglow_shift: 7.8  # How much to shift underglow leds tied to keys
+    vertical_underglow_shift: -kp + 7.8  # How much to shift underglow leds tied to keys
     vertical_diode_shift: 1.5 # How much to shift to avoid overlap
     diode_rotation: -180 # Diode rotation
     switch_rotation: 180 # Hotswap south, led north
@@ -389,27 +389,27 @@ outlines:
     - what: polygon
       points:
         - ref: matrix_outer_top
-          shift: [-8.92, 9.01]
+          shift: [-ks * 0.47 +0.01, kp * 0.475 -0.015]
         - ref: matrix_ring_top
-          shift: [-8.92, 4.261]
+          shift: [-ks * 0.47 +0.01, kp * 0.225 -0.014]
         - ref: matrix_ring_top
-          shift: [-8.92, 9.01]
+          shift: [-ks * 0.47 +0.01, kp * 0.475 -0.015]
         - ref: matrix_middle_top
-          shift: [-8.92, 6.635]
+          shift: [-ks * 0.47 +0.01, kp * 0.35 -0.015]
         - ref: matrix_middle_top
-          shift: [-8.92, 8.887]
+          shift: [-ks * 0.47 +0.01, kp * 0.468 -0.005]
         - ref: matrix_middle_top
-          shift: [9.082, 8.887]
+          shift: [ks * 0.478, kp * 0.468 -0.005]
         - ref: matrix_middle_top
-          shift: [9.082, 6.635]
+          shift: [ks * 0.478, kp * 0.35 -0.015]
         - ref: matrix_index_top
-          shift: [9.081, 9.01]
+          shift: [ks * 0.478, kp * 0.475 -0.015]
         - ref: matrix_index_top
-          shift: [9.081, 6.512]
+          shift: [ks * 0.478, kp * 0.34 +0.052]
         - ref: matrix_inner_top
-          shift: [9.082, 8.887]
+          shift: [ks * 0.478, kp * 0.468 -0.005]
         - ref: matrix_inner_top
-          shift: [9.082, 8.887]
+          shift: [ks * 0.478, kp * 0.468 -0.005]
         - ref: plate_additional_outline_top
         - ref: plate_additional_outline_bottom_left
         - ref: plate_additional_outline_bottom_right
@@ -418,7 +418,7 @@ outlines:
         - ref: plate_outline_bottom_2
         - ref: plate_outline_bottom_1
         - ref: matrix_outer_bottom
-          shift: [-8.918, -9.240]
+          shift: [-ks * 0.47 +0.012, -kp * 0.485 -0.025]
   _plate_outline:
     - what: outline
       name: _matrix_outline
@@ -447,7 +447,7 @@ outlines:
     - <<: *circle
       adjust:
         ref: thumbfan_near_home
-        shift: [-0.5 ks -4.343, 7.135]
+        shift: [-0.5 ks -4.343, kp * 0.375 +0.01]
     - <<: *circle
       adjust:
         ref: thumbfan_far_home
@@ -470,7 +470,7 @@ outlines:
     - <<: *bigCircle
       adjust:
         ref: thumbfan_near_home
-        shift: [-0.5 ks -4.343, 7.135]
+        shift: [-0.5 ks -4.343, kp * 0.375 +0.01]
     - <<: *bigCircle
       adjust:
         ref: thumbfan_far_home
