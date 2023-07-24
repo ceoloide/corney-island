@@ -372,8 +372,12 @@ outlines:
   _keycap_outlines:
     - what: rectangle
       fillet: 2
-      where: true
+      where: [key]
       size: [keycw, keych]
+    - what: rectangle
+      fillet: 2
+      where: [key_1_5u]
+      size: [keycw*1.5, keych]
   _switch_cutouts:
     - what: rectangle
       where: /key/
