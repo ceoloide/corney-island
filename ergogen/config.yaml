@@ -1,5 +1,5 @@
 meta:
-  engine: 4.0.4
+  engine: 4.0.5
   name: corney-island
   version: 0.1
   ref: &kb_ref "Corney Island v0.1"
@@ -68,8 +68,8 @@ units:
   fillet_radius: 0.5
 
   # Thumb splay
-  splay_thumb_middle: -15
-  splay_thumb_far: -15
+  splay_thumb_middle: 15
+  splay_thumb_far: 15
 
 points:
   zones:
@@ -209,7 +209,7 @@ points:
               led_next: LED_12
         middle:
           key:
-            splay: splay_thumb_middle
+            splay: -splay_thumb_middle
             column_net: C4
             stagger: -2.750
             spread: ks + 2
@@ -219,11 +219,13 @@ points:
               led_next: LED_5
         far:
           key:
-            splay: splay_thumb_far
+            splay: -splay_thumb_far
             rotate: 90
             column_net: C5
             stagger: 2.122
             spread: ks + 3.463
+            tags:
+              - key_1_5u
           rows:
             home.key:
               led_prev: LED_3
@@ -232,57 +234,201 @@ points:
         home:
           row_net: R3
 
+    # Helper points
+    plate_outline_bottom_1:
+      key:
+        tags:
+          - helper
+        name: plate_outline_bottom_1
+      anchor:
+        - ref: matrix_ring_bottom
+          shift: [8.830, -13.990]
+    plate_outline_bottom_2:
+      key:
+        tags:
+          - helper
+        name: plate_outline_bottom_2
+      anchor:
+        - ref: thumbfan_near_home
+          shift: [-8.940, -9.075]
+    plate_outline_bottom_3:
+      key:
+        tags:
+          - helper
+        name: plate_outline_bottom_3
+      anchor: 
+        - ref: thumbfan_far_home
+          shift: [-13.803,9.016]
+          affect: ['x','y']
+    plate_outline_bottom_4:
+      key:
+        tags:
+          - helper
+        name: plate_outline_bottom_4
+      anchor: 
+        - ref: thumbfan_far_home
+          shift: [-13.803, -9.097]
+          affect: ['x','y']
+
+    mcu_cover_top_left:
+      key:
+        tags:
+          - helper
+        name: mcu_cover_top_left
+      anchor:
+        - ref: matrix_inner_top
+          shift: [10.113,6.635]
+    mcu_cover_top_right:
+      key:
+        tags:
+          - helper
+        name: mcu_cover_top_right
+      anchor:
+        - ref: mcu_cover_top_left
+          shift: [19.72,0]
+    mcu_cover_bottom_right:
+      key:
+        tags:
+          - helper
+        name: mcu_cover_bottom_right
+      anchor:
+        - ref: mcu_cover_top_right
+          shift: [0,-60.461]
+          rotate: (splay_thumb_middle + splay_thumb_far) * 2
+    mcu_cover_bottom_left:
+      key:
+        tags:
+          - helper
+        name: mcu_cover_bottom_left
+      anchor:
+        - aggregate:
+            method: intersect
+            parts:
+              - ref: mcu_cover_top_left
+              - ref: mcu_cover_bottom_right
+
+    plate_additional_outline_top:
+      key:
+        tags:
+          - helper
+        name: plate_additional_outline_top
+      anchor:
+        - ref: mcu_cover_top_left
+          shift: [-1.03,0]
+    plate_additional_outline_bottom_right:
+      key:
+        tags:
+          - helper
+        name: plate_additional_outline_bottom_right
+      anchor:
+        - ref: mcu_cover_bottom_right
+          shift: [-0.63,0]
+    plate_additional_outline_bottom_left:
+      key:
+        tags:
+          - helper
+        name: plate_additional_outline_bottom_left
+      anchor:
+        - aggregate:
+            method: intersect
+            parts:
+              - ref: plate_additional_outline_top
+              - ref: plate_additional_outline_bottom_right
+
 outlines:
-  _switch_cutouts:
+  _debug_points:
     - what: rectangle
       where: true
-      size: [kcow, kcoh]
-
-  _backplate_additional_outline:
+      size: [6,0.01]
     - what: rectangle
-      where:
-        - matrix_inner_top
-      size: [20, 3.5 kp]
+      where: true
+      size: [0.01,4]
+    - what: circle
+      where: true
+      radius: 0.4
       adjust:
-        shift: [ks + (20 - ks) / 2, -1.375 kp]
+        shift: [3,0]
+    - what: circle
+      where: true
+      radius: 0.4
+      adjust:
+        shift: [0,2]
+    - what: rectangle
+      where: [key]
+      size: [kx, ky]
       operation: stack
     - what: rectangle
-      adjust:
-        ref: thumbfan_far_home
-      size: [1.5 ks, 1.75 kp]
-      operation: subtract
-
-  _matrix_outline:
+      where: [key_1_5u]
+      size: [kx*1.5, ky]
+      operation: stack
     - what: rectangle
-      where: [matrix_key]
-      size: [ks, kp]
-
+      where: /key/
+      size: [kcow, kcoh]
+      operation: stack
+    - what: circle
+      where: [screw]
+      radius: 2
+      operation: stack
+  _keycap_outlines:
+    - what: rectangle
+      fillet: 2
+      where: true
+      size: [keycw, keych]
+  _switch_cutouts:
+    - what: rectangle
+      where: /key/
+      size: [kcow, kcoh]
+  _backplate_additional_outline:
+    - what: polygon
+      points:
+        - ref: mcu_cover_top_left
+        - ref: mcu_cover_top_right
+        - ref: mcu_cover_bottom_right
+        - ref: mcu_cover_bottom_left
+  _matrix_outline:
+    - what: polygon
+      points:
+        - ref: matrix_outer_top
+          shift: [-8.92, 9.01]
+        - ref: matrix_ring_top
+          shift: [-8.92, 4.261]
+        - ref: matrix_ring_top
+          shift: [-8.92, 9.01]
+        - ref: matrix_middle_top
+          shift: [-8.92, 6.635]
+        - ref: matrix_middle_top
+          shift: [-8.92, 8.887]
+        - ref: matrix_middle_top
+          shift: [9.082, 8.887]
+        - ref: matrix_middle_top
+          shift: [9.082, 6.635]
+        - ref: matrix_index_top
+          shift: [9.081, 9.01]
+        - ref: matrix_index_top
+          shift: [9.081, 6.512]
+        - ref: matrix_inner_top
+          shift: [9.082, 8.887]
+        - ref: matrix_inner_top
+          shift: [9.082, 8.887]
+        - ref: plate_additional_outline_top
+        - ref: plate_additional_outline_bottom_left
+        - ref: plate_additional_outline_bottom_right
+        - ref: plate_outline_bottom_4
+        - ref: plate_outline_bottom_3
+        - ref: plate_outline_bottom_2
+        - ref: plate_outline_bottom_1
+        - ref: matrix_outer_bottom
+          shift: [-8.918, -9.240]
   _plate_outline:
     - what: outline
       name: _matrix_outline
-    - what: rectangle
-      adjust:
-        ref: thumbfan_far_home
-        shift: [0, 0.275 kp]
-      size: [1.5 ks, 1.5 kp]
-    - what: rectangle
-      adjust:
-        ref: matrix_ring_bottom
-        shift: [0, -0.5 kp]
-      size: [3 ks, 0.5 kp]
     - what: polygon
       points:
-        - ref: matrix_pinky_bottom
-          shift: [1.5 ks, -0.5 kp]
-        - ref: thumbfan_near_home
-          shift: [-0.5 ks, -0.5 kp]
-        - ref: thumbfan_far_home
-          shift: [-0.75 ks, 0.5 kp]
-        - ref: thumbfan_far_home
-          shift: [0.75 ks, 0.5 kp]
-        - ref: thumbfan_near_home
-          shift: [-0.5 ks, 0.75 kp]
-
+        - ref: plate_additional_outline_top
+        - ref: mcu_cover_top_right
+        - ref: mcu_cover_bottom_right
+        - ref: plate_additional_outline_bottom_right
+        - ref: plate_additional_outline_bottom_left
   _screws:
     - &circle
       what: circle
@@ -306,7 +452,6 @@ outlines:
       adjust:
         ref: thumbfan_far_home
         shift: [0, 0.5 kp +2.631]
-
   _spacers:
     - &bigCircle
       what: circle
@@ -330,7 +475,6 @@ outlines:
       adjust:
         ref: thumbfan_far_home
         shift: [0, 0.5 kp +2.631]
-
   _controller_overlay_screws:
     - <<: *circle
       adjust:
@@ -340,20 +484,12 @@ outlines:
       adjust:
         - ref: matrix_inner_bottom
           shift: [1.45 ks - 0.356, -0.6 ks +0.03]
-
-  _keycap_outlines:
-    - what: rectangle
-      fillet: 2
-      where: true
-      size: [keycw, keych]
-
   _backplate_outline:
     - what: outline
       name: _plate_outline
     - what: outline
       name: _backplate_additional_outline
       operation: add
-
   backplate:
     - what: outline
       name: _backplate_outline
@@ -361,7 +497,6 @@ outlines:
     - what: outline
       name: _screws
       operation: subtract
-
   pcb:
     - what: outline
       name: backplate
@@ -371,10 +506,9 @@ outlines:
     - what: outline
       name: _controller_overlay_screws
       operation: subtract
-
   frontplate:
     - what: outline
-      name: _plate_outline
+      name: _matrix_outline
       fillet: fillet_radius
     - what: outline
       name: _switch_cutouts
@@ -382,7 +516,6 @@ outlines:
     - what: outline
       name: _screws
       operation: subtract
-
   controller_overlay:
     - what: outline
       name: _backplate_additional_outline
@@ -390,15 +523,6 @@ outlines:
     - what: outline
       name: _controller_overlay_screws
       operation: subtract
-
-  _debug:
-    - what: outline
-      name: frontplate
-      operation: stack
-    - what: outline
-      name: controller_overlay
-      operation: stack
-
   preview:
     - what: outline
       name: backplate
@@ -439,7 +563,7 @@ pcbs:
     footprints:
       key_switches:
         what: *switch_footprint
-        where: [key]
+        where: /key/
         params:
           reverse: true
           hotswap: true
@@ -451,7 +575,7 @@ pcbs:
 
       diodes:
         what: combo_diode
-        where: [key]
+        where: /key/
         params:
           from: "{{colrow}}"
           to: "{{row_net}}"
@@ -462,7 +586,7 @@ pcbs:
       
       per_key_leds:
         what: sk6812mini-e
-        where: [key]
+        where: /key/
         params:
           P1: VCC
           P2: "{{key.led_next}}" #DOUT
