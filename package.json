@@ -4,6 +4,6 @@
         "debug": "ergogen ergogen/ --output ergogen/output --clear --debug"
     },
     "dependencies": {
-        "ergogen": "github:ergogen/ergogen"
+        "ergogen": "github:ergogen/ergogen#develop"
     }
 }
