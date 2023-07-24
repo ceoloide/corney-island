@@ -1,5 +1,5 @@
 meta:
-  engine: 4.0.5
+  engine: 4.0.4
   name: corney-island
   version: 0.1
   ref: &kb_ref "Corney Island v0.1"
@@ -242,7 +242,7 @@ points:
         name: plate_outline_bottom_1
       anchor:
         - ref: matrix_ring_bottom
-          shift: [8.830, -13.990]
+          shift: [ks * 0.465 + 0.005, -kp * 0.74 + 0.07]
     plate_outline_bottom_2:
       key:
         tags:
@@ -250,7 +250,7 @@ points:
         name: plate_outline_bottom_2
       anchor:
         - ref: thumbfan_near_home
-          shift: [-8.940, -9.075]
+          shift: [-ks * 0.47 - 0.01, -kp * 0.475 - 0.05]
     plate_outline_bottom_3:
       key:
         tags:
@@ -258,7 +258,7 @@ points:
         name: plate_outline_bottom_3
       anchor: 
         - ref: thumbfan_far_home
-          shift: [-13.803,9.016]
+          shift: [-ks * 0.725 - 0.028,kp * 0.475 - 0.009]
           affect: ['x','y']
     plate_outline_bottom_4:
       key:
@@ -267,7 +267,7 @@ points:
         name: plate_outline_bottom_4
       anchor: 
         - ref: thumbfan_far_home
-          shift: [-13.803, -9.097]
+          shift: [-ks * 0.725 - 0.028,-kp * 0.48 + 0.023]
           affect: ['x','y']
 
     mcu_cover_top_left:
@@ -277,7 +277,7 @@ points:
         name: mcu_cover_top_left
       anchor:
         - ref: matrix_inner_top
-          shift: [10.113,6.635]
+          shift: [ks * 0.53 + 0.043,kp * 0.35 - 0.015]
     mcu_cover_top_right:
       key:
         tags:
@@ -285,7 +285,7 @@ points:
         name: mcu_cover_top_right
       anchor:
         - ref: mcu_cover_top_left
-          shift: [19.72,0]
+          shift: [ks + 0.72,0]
     mcu_cover_bottom_right:
       key:
         tags:
@@ -293,7 +293,7 @@ points:
         name: mcu_cover_bottom_right
       anchor:
         - ref: mcu_cover_top_right
-          shift: [0,-60.461]
+          shift: [0,-kp * 3.2 + 0.339]
           rotate: (splay_thumb_middle + splay_thumb_far) * 2
     mcu_cover_bottom_left:
       key:
