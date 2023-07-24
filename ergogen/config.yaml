@@ -481,8 +481,8 @@ pcbs:
           - matrix_pinky_home
           - matrix_middle_top
           - matrix_middle_bottom
-          - matrix_index_top
-          - matrix_index_bottom
+          - matrix_inner_top
+          - matrix_inner_bottom
         params:
           P1: VCC
           P2: "{{key.underglow_next}}" #DOUT
