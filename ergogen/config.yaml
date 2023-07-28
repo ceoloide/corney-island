@@ -236,70 +236,54 @@ points:
 
     # Helper points
     plate_outline_bottom_1:
-      key:
-        tags:
-          - helper
-        name: plate_outline_bottom_1
+      key.tags:
+        - helper
       anchor:
         - ref: matrix_ring_bottom
           shift: [ks * 0.465 + 0.005, -kp * 0.74 + 0.07]
     plate_outline_bottom_2:
-      key:
-        tags:
-          - helper
-        name: plate_outline_bottom_2
+      key.tags:
+        - helper
       anchor:
         - ref: thumbfan_near_home
           shift: [-ks * 0.47 - 0.01, -kp * 0.475 - 0.05]
     plate_outline_bottom_3:
-      key:
-        tags:
-          - helper
-        name: plate_outline_bottom_3
+      key.tags:
+        - helper
       anchor: 
         - ref: thumbfan_far_home
           shift: [-ks * 0.725 - 0.028,kp * 0.475 - 0.009]
           affect: ['x','y']
     plate_outline_bottom_4:
-      key:
-        tags:
-          - helper
-        name: plate_outline_bottom_4
+      key.tags:
+        - helper
       anchor: 
         - ref: thumbfan_far_home
           shift: [-ks * 0.725 - 0.028,-kp * 0.48 + 0.023]
           affect: ['x','y']
 
     mcu_cover_top_left:
-      key:
-        tags:
-          - helper
-        name: mcu_cover_top_left
+      key.tags:
+        - helper
       anchor:
         - ref: matrix_inner_top
           shift: [ks * 0.53 + 0.043,kp * 0.35 - 0.015]
     mcu_cover_top_right:
-      key:
-        tags:
-          - helper
-        name: mcu_cover_top_right
+      key.tags:
+        - helper
       anchor:
         - ref: mcu_cover_top_left
           shift: [ks + 0.72,0]
     mcu_cover_bottom_right:
-      key:
-        tags:
-          - helper
-        name: mcu_cover_bottom_right
+      key.tags:
+        - helper
       anchor:
         - ref: mcu_cover_top_right
           shift: [0,-kp * 3.2 + 0.339]
           rotate: (splay_thumb_middle + splay_thumb_far) * 2
     mcu_cover_bottom_left:
-      key:
-        tags:
-          - helper
-        name: mcu_cover_bottom_left
+      key.tags:
+        - helper
       anchor:
         - aggregate:
             method: intersect
@@ -308,26 +292,20 @@ points:
               - ref: mcu_cover_bottom_right
 
     plate_additional_outline_top:
-      key:
-        tags:
-          - helper
-        name: plate_additional_outline_top
+      key.tags:
+        - helper
       anchor:
         - ref: mcu_cover_top_left
           shift: [-1.03,0]
     plate_additional_outline_bottom_right:
-      key:
-        tags:
-          - helper
-        name: plate_additional_outline_bottom_right
+      key.tags:
+        - helper
       anchor:
         - ref: mcu_cover_bottom_right
           shift: [-0.63,0]
     plate_additional_outline_bottom_left:
-      key:
-        tags:
-          - helper
-        name: plate_additional_outline_bottom_left
+      key.tags:
+        - helper
       anchor:
         - aggregate:
             method: intersect
