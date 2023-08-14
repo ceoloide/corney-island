@@ -7,7 +7,7 @@ module.exports = {
     P4: {type: 'net', value: 'SDA'},  // MOSI / SDA
     P5: {type: 'net', value: 'CS'},
     oled: 'both', // Any of ssd1306, nice_view, both
-    reverse: true,
+    reversible: true,
     side: 'F',
   },
   body: p => {
@@ -782,7 +782,7 @@ module.exports = {
 
     if(p.oled == "ssd1306"){
       final += oled_standard;
-      if(p.reverse) {
+      if(p.reversible) {
         final += oled_reversible_pads;
         final += oled_reversible_solder_bridges;
       } else {
@@ -795,7 +795,7 @@ module.exports = {
       }
     } else if(p.oled == "nice_view"){
       final += nice_view_standard;
-      if(p.reverse) {
+      if(p.reversible) {
         final += nice_view_reversible;
       } else {
         if(p.side == "F") {
@@ -808,7 +808,7 @@ module.exports = {
     } else if(p.oled == "both"){
       final += oled_standard;
       final += nice_view_standard;
-      if(p.reverse) {
+      if(p.reversible) {
         final += oled_reversible_pads;
         final += nice_view_reversible;
         final += both_connections;
