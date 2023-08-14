@@ -4,7 +4,7 @@ meta:
   version: 0.1
   ref: &kb_ref "Corney Island v0.1"
   author: ceoloide
-  url: https://github.com/ceoloide/corney-island
+  url: &kb_url https://github.com/ceoloide/corney-island
   footprint: &switch_footprint "mx"
   switch:
     $extends: presets.mx
@@ -64,7 +64,9 @@ units:
 
   # Physical measures
   screw_radius: 1.1 # M2 screws
-  spacer_radius: 2.05 # M2 standoffs
+  screw_diameter: screw_radius * 2
+  spacer_radius: 2.15 # M2 standoffs
+  spacer_diameter: spacer_radius * 2
   fillet_radius: 0.5
 
   # Thumb splay
@@ -313,6 +315,56 @@ points:
               - ref: plate_additional_outline_top
               - ref: plate_additional_outline_bottom_right
 
+    screw_pcb_left_top:
+      key.tags:
+        - helper
+        - screw
+      anchor:
+        - ref: matrix_pinky_top
+          shift: [-0.5 ks, -0.5 kp]
+    screw_pcb_left_bottom:
+      key.tags:
+        - helper
+        - screw
+      anchor:
+        - ref: matrix_pinky_home
+          shift: [-0.5 ks, -0.5 kp]
+    screw_pcb_right_top:
+      key.tags:
+        - helper
+        - screw
+      anchor:
+        - ref: matrix_inner_top
+          shift: [-0.5 ks -0.032, -0.5 kp +1.139]
+    screw_pcb_thumbfan_left:
+      key.tags:
+        - helper
+        - screw
+      anchor:
+        - ref: thumbfan_near_home
+          shift: [-0.5 ks -4.343, kp * 0.375 +0.01]
+    screw_pcb_thumbfan_right:
+      key.tags:
+        - helper
+        - screw
+      anchor:
+        - ref: thumbfan_far_home
+          shift: [0, 0.5 kp +2.631]
+    screw_mcu_cover_left:
+      key.tags:
+        - helper
+        - screw
+      anchor:
+        - ref: matrix_inner_bottom
+          shift: [0.67 ks + 0.032, -0.15 kp -0.001]
+    screw_mcu_cover_right:
+      key.tags:
+        - helper
+        - screw
+      anchor:
+        - ref: matrix_inner_bottom
+          shift: [1.45 ks - 0.356, -0.6 ks +0.03]
+
 outlines:
   _debug_points:
     - what: rectangle
@@ -412,60 +464,17 @@ outlines:
         - ref: plate_additional_outline_bottom_right
         - ref: plate_additional_outline_bottom_left
   _screws:
-    - &circle
-      what: circle
+    - what: circle
+      where: /screw_pcb/
       radius: screw_radius
-      adjust:
-        ref: matrix_pinky_top
-        shift: [-0.5 ks, -0.5 kp]
-    - <<: *circle
-      adjust:
-        ref: matrix_pinky_home
-        shift: [-0.5 ks, -0.5 kp]
-    - <<: *circle
-      adjust:
-        ref: matrix_inner_top
-        shift: [-0.5 ks -0.032, -0.5 kp +1.139]
-    - <<: *circle
-      adjust:
-        ref: thumbfan_near_home
-        shift: [-0.5 ks -4.343, kp * 0.375 +0.01]
-    - <<: *circle
-      adjust:
-        ref: thumbfan_far_home
-        shift: [0, 0.5 kp +2.631]
   _spacers:
-    - &bigCircle
-      what: circle
+    - what: circle
+      where: /screw_pcb/
       radius: spacer_radius
-      adjust:
-        ref: matrix_pinky_top
-        shift: [-0.5 ks, -0.5 kp]
-    - <<: *bigCircle
-      adjust:
-        ref: matrix_pinky_home
-        shift: [-0.5 ks, -0.5 kp]
-    - <<: *bigCircle
-      adjust:
-        ref: matrix_inner_top
-        shift: [-0.5 ks -0.032, -0.5 kp +1.139]
-    - <<: *bigCircle
-      adjust:
-        ref: thumbfan_near_home
-        shift: [-0.5 ks -4.343, kp * 0.375 +0.01]
-    - <<: *bigCircle
-      adjust:
-        ref: thumbfan_far_home
-        shift: [0, 0.5 kp +2.631]
   _controller_overlay_screws:
-    - <<: *circle
-      adjust:
-        - ref: matrix_inner_bottom
-          shift: [0.67 ks + 0.032, -0.15 kp -0.001]
-    - <<: *circle
-      adjust:
-        - ref: matrix_inner_bottom
-          shift: [1.45 ks - 0.356, -0.6 ks +0.03]
+    - what: circle
+      where: /screw_mcu/
+      radius: screw_radius
   _backplate_outline:
     - what: outline
       name: _plate_outline
@@ -479,29 +488,39 @@ outlines:
     - what: outline
       name: _screws
       operation: subtract
+  _pcb_outline:
+    - what: outline
+      name: _backplate_outline
+      fillet: fillet_radius
   pcb:
     - what: outline
-      name: backplate
+      name: _pcb_outline
     - what: outline
       name: _spacers
       operation: subtract
     - what: outline
       name: _controller_overlay_screws
       operation: subtract
-  frontplate:
+  _frontplate_outline:
     - what: outline
       name: _matrix_outline
       fillet: fillet_radius
     - what: outline
       name: _switch_cutouts
       operation: subtract
+  frontplate:
+    - what: outline
+      name: _frontplate_outline
     - what: outline
       name: _screws
       operation: subtract
-  controller_overlay:
+  _controller_overlay_outline:
     - what: outline
       name: _backplate_additional_outline
       fillet: fillet_radius
+  controller_overlay:
+    - what: outline
+      name: _controller_overlay_outline
     - what: outline
       name: _controller_overlay_screws
       operation: subtract
@@ -526,23 +545,65 @@ pcbs:
     outlines:
       main:
         outline: backplate
+    footprints:
+      m2_screws:
+        what: screw_hole
+        where: /screw_pcb/
+        params:
+          size: screw_diameter
+          drill: screw_diameter
 
   frontplate:
     outlines:
       main:
         outline: frontplate
+    footprints:
+      m2_screws:
+        what: screw_hole
+        where: /screw_pcb/
+        params:
+          size: screw_diameter
+          drill: screw_diameter
 
   controller_overlay:
     outlines:
       main:
         outline: controller_overlay
+    footprints:
+      m2_screws:
+        what: screw_hole
+        where: /screw_mcu/
+        params:
+          size: screw_diameter
+          drill: screw_diameter
 
   corney_island:
     outlines:
       main:
-        outline: pcb
+        outline: _pcb_outline
+      screws:
+        outline: _screws
+        layer: Edge.Cuts
+      mcu_screws:
+        outline: _controller_overlay_screws
+        layer: Edge.Cuts
+        
 
     footprints:
+      # m2_spacers:
+      #   what: screw_hole
+      #   where: /screw_pcb/
+      #   params:
+      #     size: spacer_diameter
+      #     drill: spacer_diameter
+
+      # m2_holes:
+      #   what: screw_hole
+      #   where: /screw_mcu/
+      #   params:
+      #     size: screw_diameter
+      #     drill: screw_diameter
+
       key_switches:
         what: *switch_footprint
         where: /key/
@@ -562,6 +623,7 @@ pcbs:
           from: "{{colrow}}"
           to: "{{row_net}}"
           include_tht: false
+          reversible: true
         adjust:
           shift: [0.5 kcow + 0.627, vertical_diode_shift]
           rotate: 90 + diode_rotation
@@ -625,7 +687,7 @@ pcbs:
         where: matrix_inner_top
         params:
           oled: ssd1306
-          reverse: true
+          reversible: true
         adjust:
           shift: [0.5 ks + 10.147, 0.375 kp -38.696]
 
