@@ -105,6 +105,40 @@
   )
 
             
+  (module "Screw_Hole" (layer F.Cu) (tedit 5F1B9159)
+      (at 109.5 71.5 0)
+      (fp_text reference "H1" (at 0 2.55) (layer F.SilkS) hide (effects (font (size 1 1) (thickness 0.15))))
+      (pad "" np_thru_hole circle (at 0 0) (size 2.2 2.2) (drill 2.2) (layers *.Cu *.Mask))
+  )
+  
+
+  (module "Screw_Hole" (layer F.Cu) (tedit 5F1B9159)
+      (at 109.5 90.5 0)
+      (fp_text reference "H2" (at 0 2.55) (layer F.SilkS) hide (effects (font (size 1 1) (thickness 0.15))))
+      (pad "" np_thru_hole circle (at 0 0) (size 2.2 2.2) (drill 2.2) (layers *.Cu *.Mask))
+  )
+  
+
+  (module "Screw_Hole" (layer F.Cu) (tedit 5F1B9159)
+      (at 185.468 67.986 0)
+      (fp_text reference "H3" (at 0 2.55) (layer F.SilkS) hide (effects (font (size 1 1) (thickness 0.15))))
+      (pad "" np_thru_hole circle (at 0 0) (size 2.2 2.2) (drill 2.2) (layers *.Cu *.Mask))
+  )
+  
+
+  (module "Screw_Hole" (layer F.Cu) (tedit 5F1B9159)
+      (at 152.657 107.74 0)
+      (fp_text reference "H4" (at 0 2.55) (layer F.SilkS) hide (effects (font (size 1 1) (thickness 0.15))))
+      (pad "" np_thru_hole circle (at 0 0) (size 2.2 2.2) (drill 2.2) (layers *.Cu *.Mask))
+  )
+  
+
+  (module "Screw_Hole" (layer F.Cu) (tedit 5F1B9159)
+      (at 199.2410516 115.3236576 60)
+      (fp_text reference "H5" (at 0 2.55) (layer F.SilkS) hide (effects (font (size 1 1) (thickness 0.15))))
+      (pad "" np_thru_hole circle (at 0 0) (size 2.2 2.2) (drill 2.2) (layers *.Cu *.Mask))
+  )
+  
             (gr_line (start 91.08198222285509 108.74001780012622) (end 91.08001777794281 53.49000464193523) (angle 90) (layer Edge.Cuts) (width 0.15))
 (gr_line (start 91.58000462794281 52.98998684198348) (end 128.58001314999998 52.98901315754868) (angle 90) (layer Edge.Cuts) (width 0.15))
 (gr_line (start 129.08 52.48901315754736) (end 129.08 48.74) (angle 90) (layer Edge.Cuts) (width 0.15))
