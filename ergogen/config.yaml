@@ -147,7 +147,7 @@ points:
             bottom.key:
               led_prev: LED_10
               led_next: ULED_3
-              underglow_prev: 
+              underglow_prev: ULED_3
               underglow_next: LED_11
         index:
           key:
@@ -581,6 +581,9 @@ pcbs:
     outlines:
       main:
         outline: _pcb_outline
+      keycaps:
+        outline: _keycap_outlines
+        layer: Dwgs.User
       screws:
         outline: _screws
         layer: Edge.Cuts
@@ -616,7 +619,7 @@ pcbs:
         adjust:
           rotate: switch_rotation
 
-      diodes:
+      diodes_b:
         what: combo_diode
         where: /key/
         params:
