@@ -92,27 +92,27 @@ points:
             column_net: C0
           rows:
             top.key:
-              led_prev: LED_18
-              led_next: LED_19
+              led_prev: LED_20
+              led_next: LED_21
             home.key:
               led_prev: LED_19
               led_next: LED_20
             bottom.key:
-              led_prev: LED_20
-              led_next: LED_21
+              led_prev: LED_18
+              led_next: LED_19
         pinky:
           key:
             column_net: C1
           rows:
             top.key:
               led_prev: LED_15
-              led_next: ULED_1
-              underglow_prev: ULED_1
+              led_next: ULED_5
+              underglow_prev: ULED_5
               underglow_next: LED_16
             home.key:
               led_prev: LED_16
-              led_next: ULED_0
-              underglow_prev: ULED_0
+              led_next: ULED_6
+              underglow_prev: ULED_6
               underglow_next: LED_17
             bottom.key:
               led_prev: LED_17
@@ -138,16 +138,16 @@ points:
           rows:
             top.key:
               led_prev: LED_8
-              led_next: ULED_2
-              underglow_prev: ULED_2
+              led_next: ULED_3
+              underglow_prev: ULED_3
               underglow_next: LED_9
             home.key:
               led_prev: LED_9
               led_next: LED_10
             bottom.key:
               led_prev: LED_10
-              led_next: ULED_3
-              underglow_prev: ULED_3
+              led_next: ULED_4
+              underglow_prev: ULED_4
               underglow_next: LED_11
         index:
           key:
@@ -155,18 +155,14 @@ points:
             column_net: C4
           rows:
             top.key:
-              led_prev: ULED_6
+              led_prev: LED_7
               led_next: LED_8
-              underglow_prev: LED_7
-              underglow_next: ULED_6
             home.key:
               led_prev: LED_6
               led_next: LED_7
             bottom.key:
-              led_prev: ULED_5
+              led_prev: LED_5
               led_next: LED_6
-              underglow_prev: LED_5
-              underglow_next: ULED_5
         inner:
           key:
             stagger: -0.125 kp
@@ -175,12 +171,16 @@ points:
             top.key:
               led_prev: LED
               led_next: LED_1
+              underglow_prev: LED_1
+              underglow_next: ULED_1
             home.key:
-              led_prev: LED_1
+              led_prev: ULED_1
               led_next: LED_2
             bottom.key:
               led_prev: LED_2
-              led_next: LED_3
+              led_next: ULED_2
+              underglow_prev: ULED_2
+              underglow_next: LED_3
       rows:
         bottom:
           row_net: R2
