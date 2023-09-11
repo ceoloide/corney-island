@@ -6,7 +6,7 @@ module.exports = {
         to: undefined
     },
     body: p => `
-    (module kbd:ResetSW (layer F.Cu) (tedit 5B9559E6) (tstamp 61905781)
+    (module corne_reset_switch (layer F.Cu) (tedit 5B9559E6) (tstamp 61905781)
 
         (descr "Two pin through hole Tactile Switch, the same as on the Corne")
         (tags "Tactile Switch")
