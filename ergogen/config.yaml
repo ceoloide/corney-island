@@ -626,9 +626,25 @@ pcbs:
           from: "{{colrow}}"
           to: "{{row_net}}"
           include_tht: false
-          reversible: true
+          reversible: false
+          side: B
         adjust:
-          shift: [0.5 kcow + 0.627, vertical_diode_shift]
+          # shift: [0.5 kcow + 0.627, vertical_diode_shift]
+          shift: [7,1.325]
+          rotate: 90 + diode_rotation
+
+      diodes_f:
+        what: combo_diode
+        where: /key/
+        params:
+          from: "{{colrow}}"
+          to: "{{row_net}}"
+          include_tht: false
+          reversible: false
+          side: F
+        adjust:
+          # shift: [0.5 kcow + 0.627, vertical_diode_shift]
+          shift: [-7,1.325]
           rotate: 90 + diode_rotation
       
       per_key_leds:
