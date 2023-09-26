@@ -43,5 +43,5 @@ ergogen/output/source
 node_modules
 
 # gerbers
-ergogen/output/gerbers/*
-!ergogen/output/gerbers/*.zip
+ergogen/output/gerbers/*/*
+!ergogen/output/gerbers/*/*.zip

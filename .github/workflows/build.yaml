@@ -4,6 +4,7 @@ on:
     paths:
       - 'ergogen/footprints/*.js'
       - 'ergogen/config.yaml'
+      - 'kibot/*.yaml'
       - '.github/workflows/*.yaml'
       - '.github/actions/*/action.yaml'
       - 'package.json'
