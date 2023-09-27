@@ -27,7 +27,8 @@ presets:
     led_pos_y: -4.75 # Led Y position relative to the switch center
     led_rotation: 0 # Led rotation
     vertical_underglow_shift: -0.5 kp # How much to shift underglow leds tied to keys
-    vertical_diode_shift: -1.5 # How much to shift to avoid overlap
+    vertical_diode_shift: 1.325 # How much to shift to avoid overlap
+    horizontal_diode_shift: 7
     diode_rotation: 0 # Diode rotation
     switch_rotation: 0 # Hotswap north, led south
   choc_v1:
@@ -45,6 +46,7 @@ presets:
     led_rotation: 0 # Led rotation
     vertical_underglow_shift: -kp + 7.8  # How much to shift underglow leds tied to keys
     vertical_diode_shift: 1.5 # How much to shift to avoid overlap
+    horizontal_diode_shift: 0.5 kcow + 0.627
     diode_rotation: -180 # Diode rotation
     switch_rotation: 180 # Hotswap south, led north
   choc_v1_mx_spacing:
@@ -629,8 +631,7 @@ pcbs:
           reversible: false
           side: B
         adjust:
-          # shift: [0.5 kcow + 0.627, vertical_diode_shift]
-          shift: [7,1.325]
+          shift: [horizontal_diode_shift,vertical_diode_shift]
           rotate: 90 + diode_rotation
 
       diodes_f:
@@ -643,8 +644,7 @@ pcbs:
           reversible: false
           side: F
         adjust:
-          # shift: [0.5 kcow + 0.627, vertical_diode_shift]
-          shift: [-7,1.325]
+          shift: [-1 * horizontal_diode_shift,vertical_diode_shift]
           rotate: 90 + diode_rotation
       
       per_key_leds:
