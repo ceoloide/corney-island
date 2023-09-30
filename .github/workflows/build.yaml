@@ -11,7 +11,7 @@ on:
 
 name: Build
 jobs:
-  generate:
+  board:
     runs-on: ubuntu-latest
     name: Generate
     steps:
@@ -33,7 +33,7 @@ jobs:
       - name: Run KiBot to generate images, gerbers for the plate files
         uses: ./.github/actions/kibot
         with:
-          boards: frontplate,backplate,controller_overlay,corney_island 
+          boards: frontplate backplate controller_overlay corney_island 
       - name: Export DSN file for Freerouting
         uses: ./.github/actions/export-dsn
         with:
