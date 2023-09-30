@@ -6,8 +6,8 @@ inputs:
     required: true
 runs:
   using: 'docker'
-  image: 'docker://ghcr.io/inti-cmnb/kicad7_auto@latest'
-  entrypoint: '/bin/sh'
+  image: 'docker://ghcr.io/inti-cmnb/kicad7_auto:latest'
+  entrypoint: '/bin/bash'
   args:
     - '-c'
     # GH actions set $HOME to a weird location and we have to move Kicad settings there first
