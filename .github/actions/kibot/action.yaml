@@ -1,0 +1,19 @@
+name: 'Run KiBot'
+description: 'Run KiBot automation to generate images and gerbers'
+inputs:
+  boards:
+    description: 'KiCad PCB names'
+    required: true
+runs:
+  using: 'docker'
+  image: 'docker://ghcr.io/inti-cmnb/kicad7_auto@latest'
+  entrypoint: '/bin/sh'
+  args:
+    - '-c'
+    # GH actions set $HOME to a weird location and we have to move Kicad settings there first
+    - |
+      for board in ${{ inputs.boards }};
+      do
+        echo Processing $board;
+        kibot -b ergogen/output/pcbs/${board}.kicad_pcb -c $GITHUB_WORKSPACE/kibot/boards.kibot.yaml
+      done

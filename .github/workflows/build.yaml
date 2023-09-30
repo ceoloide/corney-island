@@ -30,28 +30,28 @@ jobs:
         run: npm install
       - name: Generate unrouted PCBs with Ergogen (definition in package.json)
         run: npm run build
-      - name: Export DSN 
+      - name: Run KiBot to generate images, gerbers for the plate files
+        uses: ./.github/actions/kibot
+        with:
+          boards: frontplate,backplate,controller_overlay,corney_island 
+      - name: Export DSN file for Freerouting
         uses: ./.github/actions/export-dsn
         with:
           boards: corney_island
-      - name: Autoroute PCB
-        uses: ./.github/actions/autoroute
-        with:
-          boards: corney_island
-      - name: Import SES
-        uses: ./.github/actions/import-ses
-        with:
-          boards: corney_island
-      - name: DRC check
-        uses: ./.github/actions/run-drc
-        with:
-          boards: corney_island
-      - name: Export Gerbers
-        uses: ./.github/actions/export-gerbers
-        with:
-          boards: corney_island
+      # - name: Autoroute PCB
+      #   uses: ./.github/actions/autoroute
+      #   with:
+      #     boards: corney_island
+      # - name: Import SES
+      #   uses: ./.github/actions/import-ses
+      #   with:
+      #     boards: corney_island
+      # - name: DRC check
+      #   uses: ./.github/actions/run-drc
+      #   with:
+      #     boards: corney_island
       - name: Persist output
         uses: actions/upload-artifact@v3
         with:
-          name: corney_island
+          name: corney_island_unrouted
           path: ergogen/output

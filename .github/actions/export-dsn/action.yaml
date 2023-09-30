@@ -2,18 +2,16 @@ name: 'Export DSN'
 description: 'Export Specctra DSN from a Kicad PCB'
 inputs:
   boards:
-    description: 'Board names'
+    description: 'KiCad PCB names'
     required: true
 runs:
   using: 'docker'
-  image: 'docker://soundmonster/kicad-automation-scripts:latest'
+  image: 'docker://ghcr.io/inti-cmnb/kicad7_auto@latest'
   entrypoint: '/bin/sh'
   args:
     - '-c'
     # GH actions set $HOME to a weird location and we have to move Kicad settings there first
     - |
-      mkdir -p $HOME/.config/kicad;
-      cp /root/.config/kicad/* $HOME/.config/kicad;
       for board in ${{ inputs.boards }};
       do
         echo Processing $board;
@@ -21,5 +19,5 @@ runs:
           echo Cleaning up $GITHUB_WORKSPACE/ergogen/output/pcbs/${board}.dsn
           rm -f $GITHUB_WORKSPACE/ergogen/output/pcbs/${board}.dsn
         fi
-        /usr/lib/python2.7/dist-packages/kicad-automation/pcbnew_automation/export_dsn.py $GITHUB_WORKSPACE/ergogen/output/pcbs/${board}.kicad_pcb $GITHUB_WORKSPACE/ergogen/output/pcbs/${board}.dsn
+        $GITHUB_WORKSPACE/kibot/export_dsn.py -b $GITHUB_WORKSPACE/ergogen/output/pcbs/${board}.kicad_pcb -o $GITHUB_WORKSPACE/ergogen/output/pcbs/${board}.dsn 
       done
