@@ -34,6 +34,7 @@ do
     if [ -e ergogen/output/pcbs/${board}.kicad_pcb ]; then
         echo Export DSN 
         ${container_cmd} run ${container_args} ghcr.io/inti-cmnb/kicad7_auto:latest kibot/export_dsn.py -b ergogen/output/pcbs/${board}.kicad_pcb -o ergogen/output/pcbs/${board}.dsn    
+        ${container_cmd} run ${container_args} ghcr.io/inti-cmnb/kicad7_auto:1.6.2 kibot -b ergogen/output/pcbs/${board}.kicad_pcb -c kibot/boards.kibot.yaml
     fi
     # if [ -e ergogen/output/pcbs/${board}.dsn ]; then
     #     echo Autoroute PCB
