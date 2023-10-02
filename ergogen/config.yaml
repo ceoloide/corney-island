@@ -681,7 +681,7 @@ pcbs:
           shift: [0, vertical_underglow_shift]
 
       mcu:
-        what: promicro_pretty
+        what: infused-kim/nice_nano_pretty
         where: matrix_inner_top
         params:
           P0: data
@@ -697,9 +697,12 @@ pcbs:
           P6: R1
           P7: R2
           P8: R3
+          traces: false
+          show_instructions: false
+          show_silk_labels: false
+          show_via_labels: true
         adjust:
-          shift: [19.704, 0.375 kp -19.64]
-          rotate: -90
+          shift: [19.704, 0.375 kp -18.37]
       
       oled:
         what: combo_display
