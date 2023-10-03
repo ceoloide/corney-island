@@ -7,9 +7,45 @@ module.exports = {
     P4: undefined,
     reversible: false,
     reverse_mount: true, // True = per-key, False = underglow
+    add_traces_vias: true, // Only valid if reversible is True
+    gnd_trace_width: 0.5,
+    pwr_trace_width: 0.5,
     side: 'B',
   },
   body: p => {
+    const get_at_coordinates = () => {
+        const pattern = /\(at (-?[\d\.]*) (-?[\d\.]*) (-?[\d\.]*)\)/;
+        const matches = p.at.match(pattern);
+        if (matches && matches.length == 4) {
+            return [parseFloat(matches[1]), parseFloat(matches[2]), parseFloat(matches[3])];
+        } else {
+            return null;
+        }
+    }
+
+    const adjust_point = (x, y) => {
+        const at_l = get_at_coordinates();
+        if(at_l == null) {
+            throw new Error(
+            `Could not get x and y coordinates from p.at: ${p.at}`
+            );
+        }
+        const at_x = at_l[0];
+        const at_y = at_l[1];
+        const at_angle = at_l[2];
+        const adj_x = at_x + x;
+        const adj_y = at_y + y;
+
+        const radians = (Math.PI / 180) * at_angle,
+            cos = Math.cos(radians),
+            sin = Math.sin(radians),
+            nx = (cos * (adj_x - at_x)) + (sin * (adj_y - at_y)) + at_x,
+            ny = (cos * (adj_y - at_y)) - (sin * (adj_x - at_x)) + at_y;
+
+        const point_str = `${nx.toFixed(2)} ${ny.toFixed(2)}`;
+        return point_str;
+    }
+    
     const standard_opening = `
       (module "YS-SK6812MINI-E" (layer ${p.side}.Cu) (tedit 5F70BC98)
         ${p.at /* parametric position */}
@@ -78,6 +114,64 @@ module.exports = {
       (fp_line (start 1.8 -1.55) (end -1.8 -1.55) (layer Edge.Cuts) (width 0.12))
     )
     `
+    
+    const traces_vias_straight = `
+    ${'' /* VCC Trace */}
+    (segment (start ${ adjust_point(-2.65, 0.7)}) (end ${ adjust_point(-4, 0.7)}) (width ${p.pwr_trace_width}) (layer "F.Cu") (net ${p.P1.index}))
+    (via (at ${ adjust_point(-4, 0.7)}) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net ${p.P1.index}))
+    (segment (start ${ adjust_point(-3.65, -0.7)}) (end ${ adjust_point(-2.65, -0.7)}) (width ${p.pwr_trace_width}) (layer "B.Cu") (net ${p.P1.index}))
+    (segment (start ${ adjust_point(-4, 0.7)}) (end ${ adjust_point(-4, -0.35)}) (width ${p.pwr_trace_width}) (layer "B.Cu") (net ${p.P1.index}))
+    (segment (start ${ adjust_point(-4, -0.35)}) (end ${ adjust_point(-3.65, -0.7)}) (width ${p.pwr_trace_width}) (layer "B.Cu") (net ${p.P1.index}))
+    ${'' /* Data signal out trace */}
+    (segment (start ${ adjust_point(-2.65, -0.7)}) (end ${ adjust_point(-5, -0.7)}) (width 0.25) (layer "F.Cu") (net ${p.P2.index}))
+    (via (at ${ adjust_point(-5, -0.7)}) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net ${p.P2.index}))
+    (segment (start ${ adjust_point(-4.300305, 1.425)}) (end ${ adjust_point(-3.375, 1.425)}) (width 0.25) (layer "B.Cu") (net ${p.P2.index}))
+    (segment (start ${ adjust_point(-5, -0.7)}) (end ${ adjust_point(-5, 0.725305)}) (width 0.25) (layer "B.Cu") (net ${p.P2.index}))
+    (segment (start ${ adjust_point(-3.375, 1.425)}) (end ${ adjust_point(-2.65, 0.7)}) (width 0.25) (layer "B.Cu") (net ${p.P2.index}))
+    (segment (start ${ adjust_point(-5, 0.725305)}) (end ${ adjust_point(-4.300305, 1.425)}) (width 0.25) (layer "B.Cu") (net ${p.P2.index}))
+    ${'' /* GND Trace */}
+    (segment (start ${ adjust_point(4, 0.7)}) (end ${ adjust_point(4, -0.35)}) (width ${p.gnd_trace_width}) (layer "F.Cu") (net ${p.P3.index}))
+    (segment (start ${ adjust_point(4, -0.35)}) (end ${ adjust_point(3.65, -0.7)}) (width ${p.gnd_trace_width}) (layer "F.Cu") (net ${p.P3.index}))
+    (segment (start ${ adjust_point(3.65, -0.7)}) (end ${ adjust_point(2.65, -0.7)}) (width ${p.gnd_trace_width}) (layer "F.Cu") (net ${p.P3.index}))
+    (via (at ${ adjust_point(4, 0.7)}) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net ${p.P3.index}))
+    (segment (start ${ adjust_point(2.65, 0.7)}) (end ${ adjust_point(4, 0.7)}) (width ${p.gnd_trace_width}) (layer "B.Cu") (net ${p.P3.index}))
+    ${'' /* Data signal in trace */}
+    (segment (start ${ adjust_point(5, 0.725305)}) (end ${ adjust_point(4.300305, 1.425)}) (width 0.25) (layer "F.Cu") (net ${p.P4.index}))
+    (segment (start ${ adjust_point(4.300305, 1.425)}) (end ${ adjust_point(3.375, 1.425)}) (width 0.25) (layer "F.Cu") (net ${p.P4.index}))
+    (segment (start ${ adjust_point(5, -0.7)}) (end ${ adjust_point(5, 0.725305)}) (width 0.25) (layer "F.Cu") (net ${p.P4.index}))
+    (segment (start ${ adjust_point(3.375, 1.425)}) (end ${ adjust_point(2.65, 0.7)}) (width 0.25) (layer "F.Cu") (net ${p.P4.index}))
+    (via (at ${ adjust_point(5, -0.7)}) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net ${p.P4.index}))
+    (segment (start ${ adjust_point(2.65, -0.7)}) (end ${ adjust_point(5, -0.7)}) (width 0.25) (layer "B.Cu") (net ${p.P4.index}))
+    `
+    
+    const traces_vias_reversed = `
+    ${'' /* VCC Trace */}
+    (segment (start ${ adjust_point(-3.15, -0.7)}) (end ${ adjust_point(-2.65, -0.7)}) (width ${p.pwr_trace_width}) (layer "F.Cu") (net ${p.P1.index}))
+    (segment (start ${ adjust_point(-4, 0.15)}) (end ${ adjust_point(-3.15, -0.7)}) (width ${p.pwr_trace_width}) (layer "F.Cu") (net ${p.P1.index}))
+    (segment (start ${ adjust_point(-4, 0.7)}) (end ${ adjust_point(-4, 0.15)}) (width ${p.pwr_trace_width}) (layer "F.Cu") (net ${p.P1.index}))
+    (via (at ${ adjust_point(-4, 0.7)}) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net ${p.P1.index}))
+    (segment (start ${ adjust_point(-2.65, 0.7)}) (end ${ adjust_point(-4, 0.7)}) (width ${p.pwr_trace_width}) (layer "B.Cu") (net ${p.P1.index}))
+    ${'' /* Data signal out trace */}
+    (segment (start ${ adjust_point(-4.300305, 1.425)}) (end ${ adjust_point(-3.375, 1.425)}) (width 0.25) (layer "F.Cu") (net ${p.P2.index}))
+    (segment (start ${ adjust_point(-5, -0.7)}) (end ${ adjust_point(-5, 0.725305)}) (width 0.25) (layer "F.Cu") (net ${p.P2.index}))
+    (segment (start ${ adjust_point(-3.375, 1.425)}) (end ${ adjust_point(-2.65, 0.7)}) (width 0.25) (layer "F.Cu") (net ${p.P2.index}))
+    (segment (start ${ adjust_point(-5, 0.725305)}) (end ${ adjust_point(-4.300305, 1.425)}) (width 0.25) (layer "F.Cu") (net ${p.P2.index}))
+    (via (at ${ adjust_point(-5, -0.7)}) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net ${p.P2.index}))
+    (segment (start ${ adjust_point(-2.65, -0.7)}) (end ${ adjust_point(-5, -0.7)}) (width 0.25) (layer "B.Cu") (net ${p.P2.index}))
+    ${'' /* GND Trace */}
+    (segment (start ${ adjust_point(2.65, 0.7)}) (end ${ adjust_point(4, 0.7)}) (width ${p.gnd_trace_width}) (layer "F.Cu") (net ${p.P3.index}))
+    (via (at ${ adjust_point(4, 0.7)}) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net ${p.P3.index}))
+    (segment (start ${ adjust_point(4, -0.35)}) (end ${ adjust_point(3.65, -0.7)}) (width ${p.gnd_trace_width}) (layer "B.Cu") (net ${p.P3.index}))
+    (segment (start ${ adjust_point(4, 0.7)}) (end ${ adjust_point(4, -0.35)}) (width ${p.gnd_trace_width}) (layer "B.Cu") (net ${p.P3.index}))
+    (segment (start ${ adjust_point(3.65, -0.7)}) (end ${ adjust_point(2.65, -0.7)}) (width ${p.gnd_trace_width}) (layer "B.Cu") (net ${p.P3.index}))
+    ${'' /* Data signal in trace */}
+    (segment (start ${ adjust_point(2.65, -0.7)}) (end ${ adjust_point(5, -0.7)}) (width 0.25) (layer "F.Cu") (net ${p.P4.index}))
+    (via (at ${ adjust_point(5, -0.7)}) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net ${p.P4.index}))
+    (segment (start ${ adjust_point(5, -0.7)}) (end ${ adjust_point(5, 0.725305)}) (width 0.25) (layer "B.Cu") (net ${p.P4.index}))
+    (segment (start ${ adjust_point(4.300305, 1.425)}) (end ${ adjust_point(3.375, 1.425)}) (width 0.25) (layer "B.Cu") (net ${p.P4.index}))
+    (segment (start ${ adjust_point(3.375, 1.425)}) (end ${ adjust_point(2.65, 0.7)}) (width 0.25) (layer "B.Cu") (net ${p.P4.index}))
+    (segment (start ${ adjust_point(5, 0.725305)}) (end ${ adjust_point(4.300305, 1.425)}) (width 0.25) (layer "B.Cu") (net ${p.P4.index}))
+    `
 
     let final = standard_opening;
 
@@ -98,6 +192,13 @@ module.exports = {
 
     final += standard_closing;
 
+    if(p.reversible && p.add_traces_vias) {
+      if(p.reverse_mount) {
+        final += traces_vias_straight;
+      } else {
+        final += traces_vias_reversed;
+      }
+    }  
     return final;
   }
 }

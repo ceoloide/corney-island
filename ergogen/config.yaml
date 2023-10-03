@@ -657,6 +657,7 @@ pcbs:
           P4: "{{key.led_prev}}" #DIN
           reversible: true
           reverse_mount: true
+          add_traces_vias: true
         adjust:
           shift: [led_pos_x, led_pos_y]
           rotate: led_rotation
@@ -677,6 +678,7 @@ pcbs:
           P4: "{{key.underglow_prev}}" #DIN
           reversible: true
           reverse_mount: false
+          add_traces_vias: true
         adjust:
           shift: [0, vertical_underglow_shift]
 
