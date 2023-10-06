@@ -3,6 +3,7 @@
 
 # Freerouting
 freerouting/freerouting-*.jar
+logs/freerouting.log
 
 # Temporary files
 *.000
