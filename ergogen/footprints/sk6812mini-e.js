@@ -10,6 +10,7 @@ module.exports = {
     add_traces_vias: true, // Only valid if reversible is True
     gnd_trace_width: 0.5,
     pwr_trace_width: 0.5,
+    signal_trace_width: 0.25,
     side: 'B',
   },
   body: p => {
@@ -47,10 +48,10 @@ module.exports = {
     }
     
     const standard_opening = `
-      (module "YS-SK6812MINI-E" (layer ${p.side}.Cu) (tedit 5F70BC98)
+      (module "ceoloide:YS-SK6812MINI-E (${p.reverse_mount ? "per-key" : "underglow"})" (layer ${p.side}.Cu) (tedit 5F70BC98)
         ${p.at /* parametric position */}
 
-        (fp_text reference "${p.ref}" (at 0.2 11.2) (layer ${p.side}.SilkS) ${p.ref_hide}
+        (fp_text reference "${p.ref}" (at -4.75 0 90) (layer ${p.side}.SilkS) ${p.ref_hide}
           (effects (font (size 1 1) (thickness 0.15)))
         )
 
@@ -90,87 +91,222 @@ module.exports = {
         (pad 3 smd rect (at 2.65 0.7 ${p.rot}) (size 1.5 1) (layers F.Cu F.Paste F.Mask) ${p.P3.str})
     `
     const back_reversed = `
-      (fp_line (start -1.6 -0.7) (end -0.8 -1.4) (layer Dwgs.User) (width 0.12))
-      (fp_line (start -3.8 -1.6) (end -2.2 -1.6) (layer B.SilkS) (width 0.12))
-      (fp_line (start -3.8 0) (end -3.8 -1.6) (layer B.SilkS) (width 0.12))
-      (pad 2 smd rect (at 2.65 -0.7 ${p.rot}) (size 1.5 1) (layers B.Cu B.Paste B.Mask) ${p.P2.str})
-      (pad 1 smd rect (at 2.65 0.7 ${p.rot}) (size 1.5 1) (layers B.Cu B.Paste B.Mask) ${p.P1.str})
-      (pad 3 smd rect (at -2.65 -0.7 ${p.rot}) (size 1.5 1) (layers B.Cu B.Paste B.Mask) ${p.P3.str})
-      (pad 4 smd rect (at -2.65 0.7 ${p.rot}) (size 1.5 1) (layers B.Cu B.Paste B.Mask) ${p.P4.str})
+        (fp_line (start -1.6 -0.7) (end -0.8 -1.4) (layer Dwgs.User) (width 0.12))
+        (fp_line (start -3.8 -1.6) (end -2.2 -1.6) (layer B.SilkS) (width 0.12))
+        (fp_line (start -3.8 0) (end -3.8 -1.6) (layer B.SilkS) (width 0.12))
+        (pad 2 smd rect (at 2.65 -0.7 ${p.rot}) (size 1.5 1) (layers B.Cu B.Paste B.Mask) ${p.P2.str})
+        (pad 1 smd rect (at 2.65 0.7 ${p.rot}) (size 1.5 1) (layers B.Cu B.Paste B.Mask) ${p.P1.str})
+        (pad 3 smd rect (at -2.65 -0.7 ${p.rot}) (size 1.5 1) (layers B.Cu B.Paste B.Mask) ${p.P3.str})
+        (pad 4 smd rect (at -2.65 0.7 ${p.rot}) (size 1.5 1) (layers B.Cu B.Paste B.Mask) ${p.P4.str})
       `
     const back = `
-      (fp_line (start 1.6 -0.7) (end 0.8 -1.4) (layer Dwgs.User) (width 0.12))
-      (fp_line (start 3.8 -1.6) (end 2.2 -1.6) (layer B.SilkS) (width 0.12))
-      (fp_line (start 3.8 0) (end 3.8 -1.6) (layer B.SilkS) (width 0.12))
-      (pad 3 smd rect (at 2.65 -0.7 ${p.rot}) (size 1.5 1) (layers B.Cu B.Paste B.Mask) ${p.P3.str})
-      (pad 4 smd rect (at 2.65 0.7 ${p.rot}) (size 1.5 1) (layers B.Cu B.Paste B.Mask) ${p.P4.str})
-      (pad 2 smd rect (at -2.65 -0.7 ${p.rot}) (size 1.5 1) (layers B.Cu B.Paste B.Mask) ${p.P2.str})
-      (pad 1 smd rect (at -2.65 0.7 ${p.rot}) (size 1.5 1) (layers B.Cu B.Paste B.Mask) ${p.P1.str})
+        (fp_line (start 1.6 -0.7) (end 0.8 -1.4) (layer Dwgs.User) (width 0.12))
+        (fp_line (start 3.8 -1.6) (end 2.2 -1.6) (layer B.SilkS) (width 0.12))
+        (fp_line (start 3.8 0) (end 3.8 -1.6) (layer B.SilkS) (width 0.12))
+        (pad 3 smd rect (at 2.65 -0.7 ${p.rot}) (size 1.5 1) (layers B.Cu B.Paste B.Mask) ${p.P3.str})
+        (pad 4 smd rect (at 2.65 0.7 ${p.rot}) (size 1.5 1) (layers B.Cu B.Paste B.Mask) ${p.P4.str})
+        (pad 2 smd rect (at -2.65 -0.7 ${p.rot}) (size 1.5 1) (layers B.Cu B.Paste B.Mask) ${p.P2.str})
+        (pad 1 smd rect (at -2.65 0.7 ${p.rot}) (size 1.5 1) (layers B.Cu B.Paste B.Mask) ${p.P1.str})
     `
     const standard_closing = `
-      (fp_line (start -1.8 -1.55) (end -1.8 1.55) (layer Edge.Cuts) (width 0.12))
-      (fp_line (start -1.8 1.55) (end 1.8 1.55) (layer Edge.Cuts) (width 0.12))
-      (fp_line (start 1.8 1.55) (end 1.8 -1.55) (layer Edge.Cuts) (width 0.12))
-      (fp_line (start 1.8 -1.55) (end -1.8 -1.55) (layer Edge.Cuts) (width 0.12))
-    )
+        (fp_line (start -1.8 -1.55) (end -1.8 1.55) (layer Edge.Cuts) (width 0.12))
+        (fp_line (start -1.8 1.55) (end 1.8 1.55) (layer Edge.Cuts) (width 0.12))
+        (fp_line (start 1.8 1.55) (end 1.8 -1.55) (layer Edge.Cuts) (width 0.12))
+        (fp_line (start 1.8 -1.55) (end -1.8 -1.55) (layer Edge.Cuts) (width 0.12))
+      )
     `
     
-    const traces_vias_straight = `
-    ${'' /* VCC Trace */}
-    (segment (start ${ adjust_point(-2.65, 0.7)}) (end ${ adjust_point(-4, 0.7)}) (width ${p.pwr_trace_width}) (layer "F.Cu") (net ${p.P1.index}))
-    (via (at ${ adjust_point(-4, 0.7)}) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net ${p.P1.index}))
-    (segment (start ${ adjust_point(-3.65, -0.7)}) (end ${ adjust_point(-2.65, -0.7)}) (width ${p.pwr_trace_width}) (layer "B.Cu") (net ${p.P1.index}))
-    (segment (start ${ adjust_point(-4, 0.7)}) (end ${ adjust_point(-4, -0.35)}) (width ${p.pwr_trace_width}) (layer "B.Cu") (net ${p.P1.index}))
-    (segment (start ${ adjust_point(-4, -0.35)}) (end ${ adjust_point(-3.65, -0.7)}) (width ${p.pwr_trace_width}) (layer "B.Cu") (net ${p.P1.index}))
-    ${'' /* Data signal out trace */}
-    (segment (start ${ adjust_point(-2.65, -0.7)}) (end ${ adjust_point(-5, -0.7)}) (width 0.25) (layer "F.Cu") (net ${p.P2.index}))
-    (via (at ${ adjust_point(-5, -0.7)}) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net ${p.P2.index}))
-    (segment (start ${ adjust_point(-4.300305, 1.425)}) (end ${ adjust_point(-3.375, 1.425)}) (width 0.25) (layer "B.Cu") (net ${p.P2.index}))
-    (segment (start ${ adjust_point(-5, -0.7)}) (end ${ adjust_point(-5, 0.725305)}) (width 0.25) (layer "B.Cu") (net ${p.P2.index}))
-    (segment (start ${ adjust_point(-3.375, 1.425)}) (end ${ adjust_point(-2.65, 0.7)}) (width 0.25) (layer "B.Cu") (net ${p.P2.index}))
-    (segment (start ${ adjust_point(-5, 0.725305)}) (end ${ adjust_point(-4.300305, 1.425)}) (width 0.25) (layer "B.Cu") (net ${p.P2.index}))
-    ${'' /* GND Trace */}
-    (segment (start ${ adjust_point(4, 0.7)}) (end ${ adjust_point(4, -0.35)}) (width ${p.gnd_trace_width}) (layer "F.Cu") (net ${p.P3.index}))
-    (segment (start ${ adjust_point(4, -0.35)}) (end ${ adjust_point(3.65, -0.7)}) (width ${p.gnd_trace_width}) (layer "F.Cu") (net ${p.P3.index}))
-    (segment (start ${ adjust_point(3.65, -0.7)}) (end ${ adjust_point(2.65, -0.7)}) (width ${p.gnd_trace_width}) (layer "F.Cu") (net ${p.P3.index}))
-    (via (at ${ adjust_point(4, 0.7)}) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net ${p.P3.index}))
-    (segment (start ${ adjust_point(2.65, 0.7)}) (end ${ adjust_point(4, 0.7)}) (width ${p.gnd_trace_width}) (layer "B.Cu") (net ${p.P3.index}))
-    ${'' /* Data signal in trace */}
-    (segment (start ${ adjust_point(5, 0.725305)}) (end ${ adjust_point(4.300305, 1.425)}) (width 0.25) (layer "F.Cu") (net ${p.P4.index}))
-    (segment (start ${ adjust_point(4.300305, 1.425)}) (end ${ adjust_point(3.375, 1.425)}) (width 0.25) (layer "F.Cu") (net ${p.P4.index}))
-    (segment (start ${ adjust_point(5, -0.7)}) (end ${ adjust_point(5, 0.725305)}) (width 0.25) (layer "F.Cu") (net ${p.P4.index}))
-    (segment (start ${ adjust_point(3.375, 1.425)}) (end ${ adjust_point(2.65, 0.7)}) (width 0.25) (layer "F.Cu") (net ${p.P4.index}))
-    (via (at ${ adjust_point(5, -0.7)}) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net ${p.P4.index}))
-    (segment (start ${ adjust_point(2.65, -0.7)}) (end ${ adjust_point(5, -0.7)}) (width 0.25) (layer "B.Cu") (net ${p.P4.index}))
-    `
+    /*
+    (net 1 "VCC")
+    (net 2 "ULED_4")
+    (net 3 "GND")
+    (net 4 "LED_10")
+    
+    (segment (start ${ adjust_point(2.65, -0.7)}) (end ${ adjust_point(3.808, -0.7)}) (width ${p._trace_width}) (layer "F.Cu") (net 1))
+    (segment (start ${ adjust_point(3.808, -0.7)}) (end ${ adjust_point(4.053502, -0.454498)}) (width ${p._trace_width}) (layer "F.Cu") (net 1))
+    (segment (start ${ adjust_point(4.053502, -0.454498)}) (end ${ adjust_point(4.053502, 0.7)}) (width ${p._trace_width}) (layer "F.Cu") (net 1))
+    (via (at ${ adjust_point(4.053502, 0.7)}) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net 1))
+    (segment (start ${ adjust_point(4.053502, 0.7)}) (end ${ adjust_point(2.65, 0.7)}) (width ${p._trace_width}) (layer "B.Cu") (net 1))
+
+    (segment (start ${ adjust_point(2.65, 0.7)}) (end ${ adjust_point(3.431, 1.481)}) (width ${p._trace_width}) (layer "F.Cu") (net 2))
+    (segment (start ${ adjust_point(5.08, 0.778003)}) (end ${ adjust_point(5.08, -0.7)}) (width ${p._trace_width}) (layer "F.Cu") (net 2))
+    (segment (start ${ adjust_point(4.377003, 1.481)}) (end ${ adjust_point(5.08, 0.778003)}) (width ${p._trace_width}) (layer "F.Cu") (net 2))
+    (segment (start ${ adjust_point(3.431, 1.481)}) (end ${ adjust_point(4.377003, 1.481)}) (width ${p._trace_width}) (layer "F.Cu") (net 2))
+    (via (at ${ adjust_point(5.08, -0.7)}) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net 2))
+    (segment (start ${ adjust_point(5.08, -0.7)}) (end ${ adjust_point(2.65, -0.7)}) (width ${p._trace_width}) (layer "B.Cu") (net 2))
+
+    (segment (start ${ adjust_point(-4.053502, 0.454498)}) (end ${ adjust_point(-4.053502, -0.7)}) (width ${p._trace_width}) (layer "F.Cu") (net 3))
+    (segment (start ${ adjust_point(-3.808, 0.7)}) (end ${ adjust_point(-4.053502, 0.454498)}) (width ${p._trace_width}) (layer "F.Cu") (net 3))
+    (segment (start ${ adjust_point(-2.65, 0.7)}) (end ${ adjust_point(-3.808, 0.7)}) (width ${p._trace_width}) (layer "F.Cu") (net 3))
+    (via (at ${ adjust_point(-4.053502, -0.7)}) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net 3))
+    (segment (start ${ adjust_point(-4.053502, -0.7)}) (end ${ adjust_point(-2.65, -0.7)}) (width ${p._trace_width}) (layer "B.Cu") (net 3))
+
+    (segment (start ${ adjust_point(-2.65, -0.7)}) (end ${ adjust_point(-3.431, -1.481)}) (width ${p._trace_width}) (layer "F.Cu") (net 4))
+    (segment (start ${ adjust_point(-4.377003, -1.481)}) (end ${ adjust_point(-5.08, -0.778003)}) (width ${p._trace_width}) (layer "F.Cu") (net 4))
+    (segment (start ${ adjust_point(-5.08, -0.778003)}) (end ${ adjust_point(-5.08, 0.7)}) (width ${p._trace_width}) (layer "F.Cu") (net 4))
+    (segment (start ${ adjust_point(-3.431, -1.481)}) (end ${ adjust_point(-4.377003, -1.481)}) (width ${p._trace_width}) (layer "F.Cu") (net 4))
+    (via (at ${ adjust_point(-5.08, 0.7)}) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net 4))
+    (segment (start ${ adjust_point(-5.08, 0.7)}) (end ${ adjust_point(-2.65, 0.7)}) (width ${p._trace_width}) (layer "B.Cu") (net 4))
+    */
     
     const traces_vias_reversed = `
-    ${'' /* VCC Trace */}
-    (segment (start ${ adjust_point(-3.15, -0.7)}) (end ${ adjust_point(-2.65, -0.7)}) (width ${p.pwr_trace_width}) (layer "F.Cu") (net ${p.P1.index}))
-    (segment (start ${ adjust_point(-4, 0.15)}) (end ${ adjust_point(-3.15, -0.7)}) (width ${p.pwr_trace_width}) (layer "F.Cu") (net ${p.P1.index}))
-    (segment (start ${ adjust_point(-4, 0.7)}) (end ${ adjust_point(-4, 0.15)}) (width ${p.pwr_trace_width}) (layer "F.Cu") (net ${p.P1.index}))
-    (via (at ${ adjust_point(-4, 0.7)}) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net ${p.P1.index}))
-    (segment (start ${ adjust_point(-2.65, 0.7)}) (end ${ adjust_point(-4, 0.7)}) (width ${p.pwr_trace_width}) (layer "B.Cu") (net ${p.P1.index}))
-    ${'' /* Data signal out trace */}
-    (segment (start ${ adjust_point(-4.300305, 1.425)}) (end ${ adjust_point(-3.375, 1.425)}) (width 0.25) (layer "F.Cu") (net ${p.P2.index}))
-    (segment (start ${ adjust_point(-5, -0.7)}) (end ${ adjust_point(-5, 0.725305)}) (width 0.25) (layer "F.Cu") (net ${p.P2.index}))
-    (segment (start ${ adjust_point(-3.375, 1.425)}) (end ${ adjust_point(-2.65, 0.7)}) (width 0.25) (layer "F.Cu") (net ${p.P2.index}))
-    (segment (start ${ adjust_point(-5, 0.725305)}) (end ${ adjust_point(-4.300305, 1.425)}) (width 0.25) (layer "F.Cu") (net ${p.P2.index}))
-    (via (at ${ adjust_point(-5, -0.7)}) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net ${p.P2.index}))
-    (segment (start ${ adjust_point(-2.65, -0.7)}) (end ${ adjust_point(-5, -0.7)}) (width 0.25) (layer "B.Cu") (net ${p.P2.index}))
-    ${'' /* GND Trace */}
-    (segment (start ${ adjust_point(2.65, 0.7)}) (end ${ adjust_point(4, 0.7)}) (width ${p.gnd_trace_width}) (layer "F.Cu") (net ${p.P3.index}))
-    (via (at ${ adjust_point(4, 0.7)}) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net ${p.P3.index}))
-    (segment (start ${ adjust_point(4, -0.35)}) (end ${ adjust_point(3.65, -0.7)}) (width ${p.gnd_trace_width}) (layer "B.Cu") (net ${p.P3.index}))
-    (segment (start ${ adjust_point(4, 0.7)}) (end ${ adjust_point(4, -0.35)}) (width ${p.gnd_trace_width}) (layer "B.Cu") (net ${p.P3.index}))
-    (segment (start ${ adjust_point(3.65, -0.7)}) (end ${ adjust_point(2.65, -0.7)}) (width ${p.gnd_trace_width}) (layer "B.Cu") (net ${p.P3.index}))
-    ${'' /* Data signal in trace */}
-    (segment (start ${ adjust_point(2.65, -0.7)}) (end ${ adjust_point(5, -0.7)}) (width 0.25) (layer "F.Cu") (net ${p.P4.index}))
-    (via (at ${ adjust_point(5, -0.7)}) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net ${p.P4.index}))
-    (segment (start ${ adjust_point(5, -0.7)}) (end ${ adjust_point(5, 0.725305)}) (width 0.25) (layer "B.Cu") (net ${p.P4.index}))
-    (segment (start ${ adjust_point(4.300305, 1.425)}) (end ${ adjust_point(3.375, 1.425)}) (width 0.25) (layer "B.Cu") (net ${p.P4.index}))
-    (segment (start ${ adjust_point(3.375, 1.425)}) (end ${ adjust_point(2.65, 0.7)}) (width 0.25) (layer "B.Cu") (net ${p.P4.index}))
-    (segment (start ${ adjust_point(5, 0.725305)}) (end ${ adjust_point(4.300305, 1.425)}) (width 0.25) (layer "B.Cu") (net ${p.P4.index}))
+      ${'' /* VCC Trace */}
+      (segment (start ${ adjust_point(2.65, -0.7)}) (end ${ adjust_point(3.808, -0.7)}) (width ${p.pwr_trace_width}) (layer "F.Cu") (net ${p.P1.index}))
+      (segment (start ${ adjust_point(3.808, -0.7)}) (end ${ adjust_point(4.053502, -0.454498)}) (width ${p.pwr_trace_width}) (layer "F.Cu") (net ${p.P1.index}))
+      (segment (start ${ adjust_point(4.053502, -0.454498)}) (end ${ adjust_point(4.053502, 0.7)}) (width ${p.pwr_trace_width}) (layer "F.Cu") (net ${p.P1.index}))
+      (via (at ${ adjust_point(4.053502, 0.7)}) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net ${p.P1.index}))
+      (segment (start ${ adjust_point(4.053502, 0.7)}) (end ${ adjust_point(2.65, 0.7)}) (width ${p.pwr_trace_width}) (layer "B.Cu") (net ${p.P1.index}))
+      ${'' /* Data signal out trace */}
+      (segment (start ${ adjust_point(2.65, 0.7)}) (end ${ adjust_point(3.431, 1.481)}) (width ${p.signal_trace_width}) (layer "F.Cu") (net ${p.P2.index}))
+      (segment (start ${ adjust_point(5.08, 0.778003)}) (end ${ adjust_point(5.08, -0.7)}) (width ${p.signal_trace_width}) (layer "F.Cu") (net ${p.P2.index}))
+      (segment (start ${ adjust_point(4.377003, 1.481)}) (end ${ adjust_point(5.08, 0.778003)}) (width ${p.signal_trace_width}) (layer "F.Cu") (net ${p.P2.index}))
+      (segment (start ${ adjust_point(3.431, 1.481)}) (end ${ adjust_point(4.377003, 1.481)}) (width ${p.signal_trace_width}) (layer "F.Cu") (net ${p.P2.index}))
+      (via (at ${ adjust_point(5.08, -0.7)}) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net ${p.P2.index}))
+      (segment (start ${ adjust_point(5.08, -0.7)}) (end ${ adjust_point(2.65, -0.7)}) (width ${p.signal_trace_width}) (layer "B.Cu") (net ${p.P2.index}))
+      ${'' /* GND Trace */}
+      (segment (start ${ adjust_point(-4.053502, 0.454498)}) (end ${ adjust_point(-4.053502, -0.7)}) (width ${p.gnd_trace_width}) (layer "F.Cu") (net ${p.P3.index}))
+      (segment (start ${ adjust_point(-3.808, 0.7)}) (end ${ adjust_point(-4.053502, 0.454498)}) (width ${p.gnd_trace_width}) (layer "F.Cu") (net ${p.P3.index}))
+      (segment (start ${ adjust_point(-2.65, 0.7)}) (end ${ adjust_point(-3.808, 0.7)}) (width ${p.gnd_trace_width}) (layer "F.Cu") (net ${p.P3.index}))
+      (via (at ${ adjust_point(-4.053502, -0.7)}) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net ${p.P3.index}))
+      (segment (start ${ adjust_point(-4.053502, -0.7)}) (end ${ adjust_point(-2.65, -0.7)}) (width ${p.gnd_trace_width}) (layer "B.Cu") (net ${p.P3.index}))
+      ${'' /* Data signal in trace */}
+      (segment (start ${ adjust_point(-2.65, -0.7)}) (end ${ adjust_point(-3.431, -1.481)}) (width ${p.signal_trace_width}) (layer "F.Cu") (net ${p.P4.index}))
+      (segment (start ${ adjust_point(-4.377003, -1.481)}) (end ${ adjust_point(-5.08, -0.778003)}) (width ${p.signal_trace_width}) (layer "F.Cu") (net ${p.P4.index}))
+      (segment (start ${ adjust_point(-5.08, -0.778003)}) (end ${ adjust_point(-5.08, 0.7)}) (width ${p.signal_trace_width}) (layer "F.Cu") (net ${p.P4.index}))
+      (segment (start ${ adjust_point(-3.431, -1.481)}) (end ${ adjust_point(-4.377003, -1.481)}) (width ${p.signal_trace_width}) (layer "F.Cu") (net ${p.P4.index}))
+      (via (at ${ adjust_point(-5.08, 0.7)}) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net ${p.P4.index}))
+      (segment (start ${ adjust_point(-5.08, 0.7)}) (end ${ adjust_point(-2.65, 0.7)}) (width ${p.signal_trace_width}) (layer "B.Cu") (net ${p.P4.index}))
+    `
+    /*
+    (net 0 "")
+    (net 1 "VCC")
+    (net 2 "ULED_4")
+    (net 3 "GND")
+    (net 4 "LED_10")
+    (segment (start ${ adjust_point(3.43, -1.475)}) (end ${ adjust_point(4.38, -1.475)}) (width ${p._trace_width}) (layer "F.Cu") (net 1))
+    (segment (start ${ adjust_point(4.38, -1.475)}) (end ${ adjust_point(5.08, -0.765)}) (width ${p._trace_width}) (layer "F.Cu") (net 1))
+    (segment (start ${ adjust_point(5.08, -0.765)}) (end ${ adjust_point(5.08, 0.715)}) (width ${p._trace_width}) (layer "F.Cu") (net 1))
+    (segment (start ${ adjust_point(2.65, -0.695)}) (end ${ adjust_point(3.43, -1.475)}) (width ${p._trace_width}) (layer "F.Cu") (net 1))
+    (via (at ${ adjust_point(5.08, 0.715)}) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net 1))
+    (segment (start ${ adjust_point(5.08, 0.715)}) (end ${ adjust_point(2.65, 0.715)}) (width ${p._trace_width}) (layer "B.Cu") (net 1))
+
+    (segment (start ${ adjust_point(4.05, 0.465)}) (end ${ adjust_point(4.05, -0.695)}) (width ${p._trace_width}) (layer "F.Cu") (net 2))
+    (segment (start ${ adjust_point(2.65, 0.715)}) (end ${ adjust_point(3.81, 0.715)}) (width ${p._trace_width}) (layer "F.Cu") (net 2))
+    (segment (start ${ adjust_point(3.81, 0.715)}) (end ${ adjust_point(4.05, 0.465)}) (width ${p._trace_width}) (layer "F.Cu") (net 2))
+    (via (at ${ adjust_point(4.05, -0.695)}) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net 2))
+    (segment (start ${ adjust_point(4.05, -0.695)}) (end ${ adjust_point(2.65, -0.695)}) (width ${p._trace_width}) (layer "B.Cu") (net 2))
+
+    (segment (start ${ adjust_point(-2.65, 0.715)}) (end ${ adjust_point(-3.43, 1.495)}) (width ${p._trace_width}) (layer "F.Cu") (net 3))
+    (segment (start ${ adjust_point(-4.38, 1.495)}) (end ${ adjust_point(-5.08, 0.785)}) (width ${p._trace_width}) (layer "F.Cu") (net 3))
+    (segment (start ${ adjust_point(-5.08, 0.785)}) (end ${ adjust_point(-5.08, -0.695)}) (width ${p._trace_width}) (layer "F.Cu") (net 3))
+    (segment (start ${ adjust_point(-3.43, 1.495)}) (end ${ adjust_point(-4.38, 1.495)}) (width ${p._trace_width}) (layer "F.Cu") (net 3))
+    (via (at ${ adjust_point(-5.08, -0.695)}) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net 3))
+    (segment (start ${ adjust_point(-5.08, -0.695)}) (end ${ adjust_point(-2.65, -0.695)}) (width ${p._trace_width}) (layer "B.Cu") (net 3))
+
+    (segment (start ${ adjust_point(-3.81, -0.695)}) (end ${ adjust_point(-4.05, -0.445)}) (width ${p._trace_width}) (layer "F.Cu") (net 4))
+    (segment (start ${ adjust_point(-2.65, -0.695)}) (end ${ adjust_point(-3.81, -0.695)}) (width ${p._trace_width}) (layer "F.Cu") (net 4))
+    (segment (start ${ adjust_point(-4.05, -0.445)}) (end ${ adjust_point(-4.05, 0.715)}) (width ${p._trace_width}) (layer "F.Cu") (net 4))
+    (via (at ${ adjust_point(-4.05, 0.715)}) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net 4))
+    (segment (start ${ adjust_point(-4.05, 0.715)}) (end ${ adjust_point(-2.65, 0.715)}) (width ${p._trace_width}) (layer "B.Cu") (net 4))
+    */
+    const traces_vias_straight = `
+      ${'' /* VCC Trace */}
+      (segment (start ${ adjust_point(2.65, -0.7)}) (end ${ adjust_point(3.808, -0.7)}) (width ${p.pwr_trace_width}) (layer "B.Cu") (net ${p.P1.index}))
+      (segment (start ${ adjust_point(3.808, -0.7)}) (end ${ adjust_point(4.053502, -0.454498)}) (width ${p.pwr_trace_width}) (layer "B.Cu") (net ${p.P1.index}))
+      (segment (start ${ adjust_point(4.053502, -0.454498)}) (end ${ adjust_point(4.053502, 0.7)}) (width ${p.pwr_trace_width}) (layer "B.Cu") (net ${p.P1.index}))
+      (via (at ${ adjust_point(4.053502, 0.7)}) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net ${p.P1.index}))
+      (segment (start ${ adjust_point(4.053502, 0.7)}) (end ${ adjust_point(2.65, 0.7)}) (width ${p.pwr_trace_width}) (layer "F.Cu") (net ${p.P1.index}))
+      ${'' /* Data signal out trace */}
+      (segment (start ${ adjust_point(2.65, 0.7)}) (end ${ adjust_point(3.431, 1.481)}) (width ${p.signal_trace_width}) (layer "B.Cu") (net ${p.P2.index}))
+      (segment (start ${ adjust_point(5.08, 0.778003)}) (end ${ adjust_point(5.08, -0.7)}) (width ${p.signal_trace_width}) (layer "B.Cu") (net ${p.P2.index}))
+      (segment (start ${ adjust_point(4.377003, 1.481)}) (end ${ adjust_point(5.08, 0.778003)}) (width ${p.signal_trace_width}) (layer "B.Cu") (net ${p.P2.index}))
+      (segment (start ${ adjust_point(3.431, 1.481)}) (end ${ adjust_point(4.377003, 1.481)}) (width ${p.signal_trace_width}) (layer "B.Cu") (net ${p.P2.index}))
+      (via (at ${ adjust_point(5.08, -0.7)}) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net ${p.P2.index}))
+      (segment (start ${ adjust_point(5.08, -0.7)}) (end ${ adjust_point(2.65, -0.7)}) (width ${p.signal_trace_width}) (layer "F.Cu") (net ${p.P2.index}))
+      ${'' /* GND Trace */}
+      (segment (start ${ adjust_point(-4.053502, 0.454498)}) (end ${ adjust_point(-4.053502, -0.7)}) (width ${p.gnd_trace_width}) (layer "B.Cu") (net ${p.P3.index}))
+      (segment (start ${ adjust_point(-3.808, 0.7)}) (end ${ adjust_point(-4.053502, 0.454498)}) (width ${p.gnd_trace_width}) (layer "B.Cu") (net ${p.P3.index}))
+      (segment (start ${ adjust_point(-2.65, 0.7)}) (end ${ adjust_point(-3.808, 0.7)}) (width ${p.gnd_trace_width}) (layer "B.Cu") (net ${p.P3.index}))
+      (via (at ${ adjust_point(-4.053502, -0.7)}) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net ${p.P3.index}))
+      (segment (start ${ adjust_point(-4.053502, -0.7)}) (end ${ adjust_point(-2.65, -0.7)}) (width ${p.gnd_trace_width}) (layer "F.Cu") (net ${p.P3.index}))
+      ${'' /* Data signal in trace */}
+      (segment (start ${ adjust_point(-2.65, -0.7)}) (end ${ adjust_point(-3.431, -1.481)}) (width ${p.signal_trace_width}) (layer "B.Cu") (net ${p.P4.index}))
+      (segment (start ${ adjust_point(-4.377003, -1.481)}) (end ${ adjust_point(-5.08, -0.778003)}) (width ${p.signal_trace_width}) (layer "B.Cu") (net ${p.P4.index}))
+      (segment (start ${ adjust_point(-5.08, -0.778003)}) (end ${ adjust_point(-5.08, 0.7)}) (width ${p.signal_trace_width}) (layer "B.Cu") (net ${p.P4.index}))
+      (segment (start ${ adjust_point(-3.431, -1.481)}) (end ${ adjust_point(-4.377003, -1.481)}) (width ${p.signal_trace_width}) (layer "B.Cu") (net ${p.P4.index}))
+      (via (at ${ adjust_point(-5.08, 0.7)}) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net ${p.P4.index}))
+      (segment (start ${ adjust_point(-5.08, 0.7)}) (end ${ adjust_point(-2.65, 0.7)}) (width ${p.signal_trace_width}) (layer "F.Cu") (net ${p.P4.index}))
+    `
+
+    const courtyard_front = `
+        (fp_poly
+          (pts
+            (xy 1.6 -1.05)
+            (xy 2.94 -1.05)
+            (xy 2.94 -0.37)
+            (xy 1.6 -0.37)
+            (xy 1.6 0.35)
+            (xy 2.94 0.35)
+            (xy 2.94 1.03)
+            (xy 1.6 1.03)
+            (xy 1.6 1.4)
+            (xy -1.6 1.4)
+            (xy -1.6 1.03)
+            (xy -2.94 1.03)
+            (xy -2.94 0.35)
+            (xy -1.6 0.35)
+            (xy -1.6 -0.37)
+            (xy -2.94 -0.37)
+            (xy -2.94 -1.05)
+            (xy -1.6 -1.05)
+            (xy -1.6 -1.4)
+            (xy 1.6 -1.4)
+          )
+          (width 0.1) (fill none) (layer "B.CrtYd"))
+    `
+
+    const courtyard_back = `
+        (fp_poly
+          (pts
+            (xy 1.6 -1.05)
+            (xy 2.94 -1.05)
+            (xy 2.94 -0.37)
+            (xy 1.6 -0.37)
+            (xy 1.6 0.35)
+            (xy 2.94 0.35)
+            (xy 2.94 1.03)
+            (xy 1.6 1.03)
+            (xy 1.6 1.4)
+            (xy -1.6 1.4)
+            (xy -1.6 1.03)
+            (xy -2.94 1.03)
+            (xy -2.94 0.35)
+            (xy -1.6 0.35)
+            (xy -1.6 -0.37)
+            (xy -2.94 -0.37)
+            (xy -2.94 -1.05)
+            (xy -1.6 -1.05)
+            (xy -1.6 -1.4)
+            (xy 1.6 -1.4)
+          )
+          (width 0.1) (fill none) (layer "B.CrtYd"))
+    `
+
+    const keepout = `
+      (zone (net 0) (net_name "") (layers "F&B.Cu") (hatch edge 0.3)
+        (connect_pads (clearance 0))
+        (min_thickness 0.25)
+        (keepout (tracks not_allowed) (vias not_allowed) (copperpour not_allowed))
+        (fill (thermal_gap 0.5) (thermal_bridge_width 0.5))
+        (polygon
+          (pts
+            (xy ${ adjust_point(-2.15, -2.00)})
+            (xy ${ adjust_point(2.15, -2.00)})
+            (xy ${ adjust_point(2.15, 2.00)})
+            (xy ${ adjust_point(-2.15, 2.00)})
+          )
+        )
+      )
     `
 
     let final = standard_opening;
@@ -181,6 +317,7 @@ module.exports = {
       } else {
         final += front;
       }
+      final += courtyard_front;
     }
     if(p.side == "B" || p.reversible) {
       if(p.reverse_mount) {
@@ -188,17 +325,20 @@ module.exports = {
       } else {
         final += back;
       }
+      final += courtyard_back;
     }
 
     final += standard_closing;
+    final += keepout;
 
     if(p.reversible && p.add_traces_vias) {
       if(p.reverse_mount) {
-        final += traces_vias_straight;
-      } else {
         final += traces_vias_reversed;
+      } else {
+        final += traces_vias_straight;
       }
-    }  
+    }
+
     return final;
   }
 }
