@@ -211,7 +211,7 @@ points:
             home.key:
               led_prev: LED_11
               led_next: LED_12
-        middle:
+        mid:
           key:
             splay: -splay_thumb_middle
             column_net: C4
@@ -646,7 +646,130 @@ pcbs:
         adjust:
           shift: [-1 * horizontal_diode_shift,vertical_diode_shift]
           rotate: 90 + diode_rotation
+  
+      routes_inter_switch_column_net_1:
+        what: router
+        where: ["/matrix_[^_]+_top/", "/matrix_[^_]+_home/"]
+        params:
+          locked: false
+          routes:
+            - "B(-7.085,-2.54)(-7.085,16.46)"  # net: {{column_net}}
+          net: "{{column_net}}"    
+    
+      routes_inter_switch_column_net_2:
+        what: router
+        where: /matrix_middle_bottom/
+        params:
+          locked: false
+          routes:
+            - "B(2.415,19.46)(-7.085,9.96)(-7.085,-2.54)"  # net: {{column_net}}
+          net: "{{column_net}}"
+
+      routes_inter_switch_column_net_3:
+        what: router
+        where: /matrix_index_bottom/
+        params:
+          locked: false
+          routes:
+            - "B(-7.085,-2.54)(-7.085,5.689)(5.31382,18.08782)"  # net: {{column_net}}
+          net: "{{column_net}}"
       
+      routes_inter_switch_column_net_4:
+        what: router
+        where: /matrix_inner_bottom/
+        params:
+          locked: false
+          routes:
+            - "B(-7.085,-2.54)(-7.085,8.35548)(-1.17721,14.26326)(0.84826,14.26326)(2.88,16.295)(2.88,24.14453)(6.99908,28.26361)"  # net: {{column_net}}
+          net: "{{column_net}}"
+     
+      routes_inter_switch_row_net_1:
+        what: router
+        where: /matrix_outer_.*/
+        params:
+          locked: false
+          routes:
+            - "F(12,0.325)(11.205,1.12)(6.08,1.12)(6.06,1.14)"  # net: {{row_net}}
+          net: "{{row_net}}"
+      
+      routes_inter_switch_row_net_2:
+        what: router
+        where: /matrix_pinky_.*/
+        params:
+          locked: false
+          routes:
+            - "F(12,-4.425)(6.435,1.14)(6.06,1.14)"  # net: {{row_net}}
+          net: "{{row_net}}"
+      
+      routes_inter_switch_row_net_3:
+        what: router
+        where: /matrix_ring_.*/
+        params:
+          locked: false
+          routes:
+            - "F(6.06,1.14)(8.81,1.14)(12,-2.05)"  # net: {{row_net}}
+          net: "{{row_net}}"
+      
+      routes_inter_switch_row_net_4:
+        what: router
+        where: ["/matrix_middle_.*/", "/matrix_index_.*/"]
+        params:
+          locked: false
+          routes:
+            - "F(4.8291,2.3709)(5.1582,2.7)(12,2.7)"  # net: {{row_net}}
+          net: "{{row_net}}"
+  
+      routes_inter_switch_row_net_5:
+        what: router
+        where: /thumbfan_near_home/
+        params:
+          locked: false
+          routes:
+            - "F(14.1544,1.25219)(6.17219,1.25219)(6.06,1.14)"  # net: {{row_net}}
+          net: "{{row_net}}"
+
+      routes_inter_switch_row_net_6:
+        what: router
+        where: /thumbfan_mid_home/
+        params:
+          locked: false
+          routes:
+            - "F(20.96519,4.7236)(15.0242,6.31548)(6.06,1.14)"  # net: {{row_net}}
+          net: "{{row_net}}"
+
+      routes_switch_hotswap_column_net:
+        what: router
+        where: /key/
+        params:
+          locked: false
+          routes:
+            - "F(7.085,-2.54)(7.085,-4.67813)(4.42113,-7.342)(-6.867,-7.342)(-7.7705,-6.4385)(-7.7705,-4.495)V(-7.7705,-3.2255)(-7.085,-2.54)"  # net: {{column_net}}
+          net: "{{column_net}}"
+        adjust:
+          rotate: switch_rotation
+
+      routes_switch_hotswap_colrow_net:
+        what: router
+        where: /key/
+        params:
+          locked: false
+          routes:
+            - "B(7,-2.975)(7,-3.922)(5.842,-5.08)(4.357,-6.565)(4.17,-6.565)V(3.774,-6.961)(-3.961,-6.961)(-5.842,-5.08)(-7,-3.922)(-7,-2.975)"  # net: {{colrow}}
+          net: "{{colrow}}"
+        adjust:
+          rotate: switch_rotation
+
+      routes_switch_diode_row_net:
+        what: router
+        where: /key/
+        params:
+          locked: false
+          routes:
+            - "B(7,0.325)(6.185,1.14)(6.06,1.14)V(4.8291,2.3709)(-4.9541,2.3709)(-7,0.325)"  # net: {{row_net}}
+          net: "{{row_net}}"
+        adjust:
+          rotate: switch_rotation
+          
       per_key_leds:
         what: sk6812mini-e
         where: /key/
@@ -658,6 +781,8 @@ pcbs:
           reversible: true
           reverse_mount: true
           add_traces_vias: true
+          gnd_trace_width: 0.25
+          pwr_trace_width: 0.25
         adjust:
           shift: [led_pos_x, led_pos_y]
           rotate: led_rotation
@@ -679,6 +804,8 @@ pcbs:
           reversible: true
           reverse_mount: false
           add_traces_vias: true
+          gnd_trace_width: 0.25
+          pwr_trace_width: 0.25
         adjust:
           shift: [0, vertical_underglow_shift]
 
@@ -699,14 +826,14 @@ pcbs:
           P6: R1
           P7: R2
           P8: R3
-          traces: false
+          traces: true
           show_instructions: false
-          show_silk_labels: false
+          show_silk_labels: true
           show_via_labels: true
         adjust:
           shift: [19.704, 0.375 kp -18.37]
       
-      oled:
+      display:
         what: combo_display
         where: matrix_inner_top
         params:
