@@ -671,7 +671,7 @@ pcbs:
         params:
           locked: false
           routes:
-            - "B(-7.085,-2.54)(-7.085,5.689)(5.31382,18.08782)"  # net: {{column_net}}
+            - "B(5.31382,18.08782)(-7.085,5.689)(-7.085,-2.54)"  # net: {{column_net}}
           net: "{{column_net}}"
       
       routes_inter_switch_column_net_4:
@@ -680,7 +680,7 @@ pcbs:
         params:
           locked: false
           routes:
-            - "B(-7.085,-2.54)(-7.085,9.2253)(-2.29734,14.01297)(2.73797,14.01297)(6.96877,18.24377)(6.96877,28.24611)"  # net: {{column_net}}
+            - "B(-7.085,-2.54)(-7.085,10.01444)(-3.2852,13.81424)(2.53924,13.81424)(6.96877,18.24377)(6.96877,28.24611)"  # net: {{column_net}}
           net: "{{column_net}}"
      
       routes_inter_switch_row_net_1:
@@ -698,7 +698,7 @@ pcbs:
         params:
           locked: false
           routes:
-            - "F(12,-4.425)(6.435,1.14)(6.06,1.14)"  # net: {{row_net}}
+            - "F(12,-4.425)(12,-4.172)(6.698,1.13)(6.08,1.13)"  # net: {{row_net}}
           net: "{{row_net}}"
       
       routes_inter_switch_row_net_3:
@@ -716,7 +716,7 @@ pcbs:
         params:
           locked: false
           routes:
-            - "F(4.8291,2.3709)(5.1582,2.7)(12,2.7)"  # net: {{row_net}}
+            - "F(12,2.7)(7.69,2.7)(6.1,1.11)"  # net: {{row_net}}
           net: "{{row_net}}"
   
       routes_inter_switch_row_net_5:
@@ -743,7 +743,7 @@ pcbs:
         params:
           locked: false
           routes:
-            - "F(7.085,-2.54)(7.085,-4.67813)(4.42113,-7.342)(-6.867,-7.342)(-7.7705,-6.4385)(-7.7705,-4.495)V(-7.7705,-3.2255)(-7.085,-2.54)"  # net: {{column_net}}
+            - "B(-7.085,-2.54)(-7.85,-3.305)(-7.85,-4.52)V(-7.85,-6.359)(-6.74,-7.469)(4.3555,-7.469)(7.085,-4.7395)(7.085,-2.54)"  # net: {{column_net}}
           net: "{{column_net}}"
         adjust:
           rotate: switch_rotation
@@ -754,7 +754,9 @@ pcbs:
         params:
           locked: false
           routes:
-            - "B(7,-2.975)(7,-3.922)(5.842,-5.08)(4.357,-6.565)(4.17,-6.565)V(3.774,-6.961)(-3.961,-6.961)(-5.842,-5.08)(-7,-3.922)(-7,-2.975)"  # net: {{colrow}}
+            - "B(7,-2.975)(7,-3.922)(5.842,-5.08)(4.242,-6.68)(4.04,-6.68)V"  # net: {{colrow}}
+            - "F(3.759,-6.961)(-3.961,-6.961)(-5.842,-5.08)(-7,-3.922)(-7,-2.975)"  # net: {{colrow}}
+            - "F(4.04,-6.68)(3.759,-6.961)"  # net: {{colrow}}
           net: "{{colrow}}"
         adjust:
           rotate: switch_rotation
@@ -765,7 +767,7 @@ pcbs:
         params:
           locked: false
           routes:
-            - "B(7,0.325)(6.185,1.14)(6.06,1.14)V(4.8291,2.3709)(-4.9541,2.3709)(-7,0.325)"  # net: {{row_net}}
+            - "B(7,0.325)(6.195,1.13)(6.08,1.13)V(5.9801,1.2299)(3.8399,1.2299)(2.4,-0.21)(2.4,-0.95579)(0.91579,-2.44)(0.02,-2.44)(-0.91579,-2.44)(-2.3729,-0.98289)(-2.3729,-0.21)(-2.3729,-0.1971)(-3.7999,1.2299)(-6.0951,1.2299)(-7,0.325)"  # net: {{row_net}}  
           net: "{{row_net}}"
         adjust:
           rotate: switch_rotation
@@ -808,6 +810,59 @@ pcbs:
           pwr_trace_width: 0.25
         adjust:
           shift: [0, vertical_underglow_shift]
+          rotate: 180
+
+      routes_underglow_leds_din:
+        what: router
+        where:
+          - matrix_pinky_top
+          - matrix_pinky_home
+          - matrix_middle_top
+          - matrix_middle_bottom
+          - matrix_inner_top
+          - matrix_inner_bottom
+        params:
+          locked: false
+          routes:
+            - "B(-2.7,5.45)(-2.7,6.72678)(-2.05178,7.37)(3.755,7.37)(4.95,8.57)(4.95,10.2)"  # net: "{{key.underglow_prev}}"
+          net: "{{key.underglow_prev}}"
+        adjust:
+          rotate: switch_rotation
+
+      routes_underglow_leds_vcc:
+        what: router
+        where:
+          - matrix_pinky_top
+          - matrix_pinky_home
+          - matrix_middle_top
+          - matrix_middle_bottom
+          - matrix_inner_top
+          - matrix_inner_bottom
+        params:
+          locked: false
+          routes:
+            - "F(-4.06,8.795)(-5.74,8.795)V(-5.74,5.13833)(-4.65167,4.05)(-4.06,4.05)"  # net: VCC
+          net: VCC
+        adjust:
+          rotate: switch_rotation
+
+      routes_underglow_leds_gnd:
+        what: router
+        where:
+          - matrix_pinky_top
+          - matrix_pinky_home
+          - matrix_middle_top
+          - matrix_middle_bottom
+          - matrix_inner_top
+          - matrix_inner_bottom
+        params:
+          locked: false
+          routes:
+            - "F(5.749,10.986)(3.486,10.986)(2.7,10.2)"  # net: GND
+            - "(5.75,10.985)VB(5.75,4.045)V(4.06,4.045)"  # net: GND
+          net: GND
+        adjust:
+          rotate: switch_rotation
 
       mcu:
         what: infused-kim/nice_nano_pretty
@@ -862,6 +917,44 @@ pcbs:
           D: VCC
           reverse: true
           symmetric: true
+        adjust:
+          shift: [0.5 ks +19.61, 0.375 kp -50.31]
+          rotate: -90
+
+      routes_trrs_gnd:
+        what: router
+        where: matrix_inner_top
+        params:
+          locked: false
+          routes:
+            - "B(-4.6,6.2)(-0,6.2)"  # net: GND
+            - "B(-4.6,6.2)(-6.809,3.991)(-6.809,1.793)"  # net: GND
+          net: GND
+        adjust:
+          shift: [0.5 ks +19.61, 0.375 kp -50.31]
+          rotate: -90
+
+      routes_trrs_vcc:
+        what: router
+        where: matrix_inner_top
+        params:
+          locked: false
+          routes:
+            - "B(-4.6,3.2)(-0,3.2)"  # net: VCC
+          net: VCC
+        adjust:
+          shift: [0.5 ks +19.61, 0.375 kp -50.31]
+          rotate: -90
+
+      routes_trrs_data:
+        what: router
+        where: matrix_inner_top
+        params:
+          locked: false
+          routes:
+            - "B(-4.6,10.2)(-0,10.2)"  # net: data
+            - "B(-4.6,11.3)(-0,11.3)"  # net: data
+          net: data
         adjust:
           shift: [0.5 ks +19.61, 0.375 kp -50.31]
           rotate: -90
