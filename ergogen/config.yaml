@@ -850,7 +850,7 @@ pcbs:
           to: RST
         adjust:
           shift: [0.5 ks + 17.817, 0.375 kp -40.251]
-          rotate: -90
+          rotate: 90
 
       trrs:
         what: trrs
