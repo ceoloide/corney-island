@@ -4,11 +4,23 @@ container_cmd=docker
 # at the repo root (when running the script from there)
 container_args="-w /board -v $(pwd):/board --rm"
 
+# Preserve manually routed files
+if [ -e ergogen/output/pcbs/*_manually_routed.kicad_pcb ]; then
+    mkdir ergogen/tmp
+    mv ergogen/output/pcbs/*_manually_routed* ergogen/tmp
+fi
+
 # Cleanup the output folder or KiCad will error out
 rm -rf ergogen/output
 
 # Generate unrouted PCBs with Ergogen (definition in package.json)
 npm run debug
+
+# Restore manually routed files
+if [ -e ergogen/tmp/*_manually_routed.kicad_pcb ]; then
+    mv ergogen/tmp/*_manually_routed* ergogen/output/pcbs 
+    rm -r ergogen/tmp
+fi
 
 # Define the boards to autoroute and export, and the plates
 boards="corney_island"
@@ -34,6 +46,9 @@ done
 for board in ${boards}
 do
     echo "\n\n>>>>>> Processing $board <<<<<<\n\n"
+    if [ -e ergogen/output/pcbs/${board}_manually_routed.kicad_pcb ]; then
+        ${container_cmd} run ${container_args} ghcr.io/inti-cmnb/kicad7_auto:latest kibot -b ergogen/output/pcbs/${board}_manually_routed.kicad_pcb -c kibot/boards.kibot.yaml
+    fi
     ${container_cmd} run ${container_args} soundmonster/kicad-automation-scripts:latest /bin/sh -c "mkdir -p $HOME/.config/kicad; cp /root/.config/kicad/* $HOME/.config/kicad"
     if [ -e ergogen/output/pcbs/${board}.kicad_pcb ]; then
         echo Export DSN 
