@@ -868,7 +868,7 @@ pcbs:
         what: infused-kim/nice_nano_pretty
         where: matrix_inner_top
         params:
-          P0: data
+          P0: DAT
           P1: LED
           P21: C0
           P20: C1
@@ -881,6 +881,8 @@ pcbs:
           P6: R1
           P7: R2
           P8: R3
+          P16: SCL
+          P10: SDA
           traces: true
           show_instructions: false
           show_silk_labels: true
@@ -911,8 +913,8 @@ pcbs:
         what: trrs
         where: matrix_inner_top
         params:
-          A: data # Tip and first ring can be together
-          B: data # Tip and first ring can be together
+          A: DAT # Tip and first ring can be together
+          B: DAT # Tip and first ring can be together
           C: GND
           D: VCC
           reverse: true
