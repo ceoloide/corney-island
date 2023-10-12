@@ -26,9 +26,9 @@
     )
   )
   (rule
-    (width 250.0)
-    (clear 200.2)
-    (clear 125.0 (type smd_to_turn_gap))
+    (width 254.0)
+    (clear 254.0)
+    (clear 127.0 (type smd_to_turn_gap))
     (clear 50.0 (type smd_smd))
   )
   (padstack "Via[0-1]_800:400_um"
@@ -79,7 +79,6 @@
     )
   )
   (class Power
-    VCC GND RAW
     (clearance_class Power)
     (via_rule Power)
     (rule
