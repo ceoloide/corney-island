@@ -187,7 +187,6 @@
 (net 92 "MCU1_11")
 (net 93 "MCU1_13")
 (net 94 "MCU1_12")
-(net 95 "data")
             
   (net_class Default "This is the default net class."
     (clearance 0.2)
@@ -291,7 +290,6 @@
 (add_net "MCU1_11")
 (add_net "MCU1_13")
 (add_net "MCU1_12")
-(add_net "data")
   )
 
             
@@ -8954,8 +8952,8 @@
 
 (segment (start 220.91 98.21) (end 220.91 102.81) (width 0.25) (layer B.Cu) (net 32))
 
-(segment (start 213.91 98.21) (end 213.91 102.81) (width 0.25) (layer B.Cu) (net 95))
-(segment (start 212.81 98.21) (end 212.81 102.81) (width 0.25) (layer B.Cu) (net 95))
+(segment (start 213.91 98.21) (end 213.91 102.81) (width 0.25) (layer B.Cu) (net 66))
+(segment (start 212.81 98.21) (end 212.81 102.81) (width 0.25) (layer B.Cu) (net 66))
 
             (gr_line (start 91.08198222285509 108.74001780012622) (end 91.08001777794281 53.49000464193523) (angle 90) (layer Edge.Cuts) (width 0.15))
 (gr_line (start 91.58000462794281 52.98998684198348) (end 128.58001314999998 52.98901315754868) (angle 90) (layer Edge.Cuts) (width 0.15))

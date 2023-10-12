@@ -954,9 +954,9 @@ pcbs:
         params:
           locked: false
           routes:
-            - "B(-4.6,10.2)(-0,10.2)"  # net: data
-            - "B(-4.6,11.3)(-0,11.3)"  # net: data
-          net: data
+            - "B(-4.6,10.2)(-0,10.2)"  # net: DAT
+            - "B(-4.6,11.3)(-0,11.3)"  # net: DAT
+          net: DAT
         adjust:
           shift: [0.5 ks +19.61, 0.375 kp -50.31]
           rotate: -90
