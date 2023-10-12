@@ -8955,6 +8955,11 @@
 (segment (start 213.91 98.21) (end 213.91 102.81) (width 0.25) (layer B.Cu) (net 66))
 (segment (start 212.81 98.21) (end 212.81 102.81) (width 0.25) (layer B.Cu) (net 66))
 
+
+      (gr_text "JLCJLCJLCJLC" (at 214.5 55.625 0) (layer F.SilkS)
+        (effects (font (size 1 1) (thickness 0.15)))
+      )
+    
             (gr_line (start 91.08198222285509 108.74001780012622) (end 91.08001777794281 53.49000464193523) (angle 90) (layer Edge.Cuts) (width 0.15))
 (gr_line (start 91.58000462794281 52.98998684198348) (end 128.58001314999998 52.98901315754868) (angle 90) (layer Edge.Cuts) (width 0.15))
 (gr_line (start 129.08 52.48901315754736) (end 129.08 48.74) (angle 90) (layer Edge.Cuts) (width 0.15))

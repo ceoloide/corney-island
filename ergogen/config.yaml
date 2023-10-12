@@ -960,3 +960,11 @@ pcbs:
         adjust:
           shift: [0.5 ks +19.61, 0.375 kp -50.31]
           rotate: -90
+      
+      jlcpcb_order_number_text:
+        what: infused-kim/text
+        where: matrix_inner_top
+        params:
+          text: JLCJLCJLCJLC
+        adjust:
+          shift: [19.5,4]
