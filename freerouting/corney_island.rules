@@ -45,17 +45,11 @@
   (via 
     "Via[0-1]_800:400_um-kicad_default" "Via[0-1]_800:400_um" "kicad_default"
   )
-  (via 
-    "Via[0-1]_800:400_um-Power" "Via[0-1]_800:400_um" Power
-  )
   (via_rule
     default "Via[0-1]_800:400_um"
   )
   (via_rule
     "kicad_default" "Via[0-1]_800:400_um-kicad_default"
-  )
-  (via_rule
-    Power "Via[0-1]_800:400_um-Power"
   )
   (class default
     (clearance_class default)
@@ -81,16 +75,6 @@
     "MCU1_12" "VCC" "GND" "RAW" 
     (clearance_class "kicad_default")
     (via_rule kicad_default)
-    (rule
-      (width 250.0)
-    )
-    (circuit 
-      (use_layer F.Cu B.Cu)
-    )
-  )
-  (class Power
-    (clearance_class Power)
-    (via_rule Power)
     (rule
       (width 250.0)
     )
