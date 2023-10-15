@@ -40,10 +40,10 @@ jobs:
         uses: ./.github/actions/export-dsn
         with:
           boards: corney_island
-      # - name: Autoroute PCB
-      #   uses: ./.github/actions/autoroute
-      #   with:
-      #     boards: corney_island
+      - name: Autoroute PCB
+        uses: ./.github/actions/autoroute
+        with:
+          boards: corney_island
       # - name: Import SES
       #   uses: ./.github/actions/import-ses
       #   with:
