@@ -13,7 +13,7 @@
     (start_ripup_costs 100)
     (start_pass_no 18)
     (layer_rule F.Cu
-      (active off)
+      (active on)
       (preferred_direction horizontal)
       (preferred_direction_trace_costs 1.0)
       (against_preferred_direction_trace_costs 2.5)
