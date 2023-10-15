@@ -93,101 +93,7 @@
   )
 
             (net 0 "")
-(net 1 "C0")
-(net 2 "outer_bottom")
-(net 3 "outer_home")
-(net 4 "outer_top")
-(net 5 "C1")
-(net 6 "pinky_bottom")
-(net 7 "pinky_home")
-(net 8 "pinky_top")
-(net 9 "C2")
-(net 10 "ring_bottom")
-(net 11 "ring_home")
-(net 12 "ring_top")
-(net 13 "C3")
-(net 14 "middle_bottom")
-(net 15 "middle_home")
-(net 16 "middle_top")
-(net 17 "C4")
-(net 18 "index_bottom")
-(net 19 "index_home")
-(net 20 "index_top")
-(net 21 "C5")
-(net 22 "inner_bottom")
-(net 23 "inner_home")
-(net 24 "inner_top")
-(net 25 "near_home")
-(net 26 "mid_home")
-(net 27 "far_home")
-(net 28 "R2")
-(net 29 "R1")
-(net 30 "R0")
-(net 31 "R3")
-(net 32 "VCC")
-(net 33 "LED_19")
-(net 34 "GND")
-(net 35 "LED_18")
-(net 36 "LED_20")
-(net 37 "LED_21")
-(net 38 "LED_17")
-(net 39 "ULED_6")
-(net 40 "LED_16")
-(net 41 "ULED_5")
-(net 42 "LED_15")
-(net 43 "LED_13")
-(net 44 "LED_12")
-(net 45 "LED_14")
-(net 46 "ULED_4")
-(net 47 "LED_10")
-(net 48 "LED_9")
-(net 49 "ULED_3")
-(net 50 "LED_8")
-(net 51 "LED_6")
-(net 52 "LED_5")
-(net 53 "LED_7")
-(net 54 "ULED_2")
-(net 55 "LED_2")
-(net 56 "ULED_1")
-(net 57 "LED_1")
-(net 58 "LED")
-(net 59 "LED_11")
-(net 60 "LED_4")
-(net 61 "LED_3")
-(net 62 "RAW")
-(net 63 "RST")
-(net 64 "SCL")
-(net 65 "SDA")
-(net 66 "DAT")
-(net 67 "P2")
-(net 68 "P3")
-(net 69 "CS")
-(net 70 "P9")
-(net 71 "MCU1_24")
-(net 72 "MCU1_1")
-(net 73 "MCU1_23")
-(net 74 "MCU1_2")
-(net 75 "MCU1_22")
-(net 76 "MCU1_3")
-(net 77 "MCU1_21")
-(net 78 "MCU1_4")
-(net 79 "MCU1_20")
-(net 80 "MCU1_5")
-(net 81 "MCU1_19")
-(net 82 "MCU1_6")
-(net 83 "MCU1_18")
-(net 84 "MCU1_7")
-(net 85 "MCU1_17")
-(net 86 "MCU1_8")
-(net 87 "MCU1_16")
-(net 88 "MCU1_9")
-(net 89 "MCU1_15")
-(net 90 "MCU1_10")
-(net 91 "MCU1_14")
-(net 92 "MCU1_11")
-(net 93 "MCU1_13")
-(net 94 "MCU1_12")
-            
+"C0" "outer_bottom" "outer_home" "outer_top" "C1" "pinky_bottom" "pinky_home" "pinky_top" "C2" "ring_bottom" "ring_home" "ring_top" "C3" "middle_bottom" "middle_home" "middle_top" "C4" "index_bottom" "index_home" "index_top" "C5" "inner_bottom" "inner_home" "inner_top" "near_home" "mid_home" "far_home" "R2" "R1" "R0" "R3" "VCC" "LED_19" "GND" "LED_18" "LED_20" "LED_21" "LED_17" "ULED_6" "LED_16" "ULED_5" "LED_15" "LED_13" "LED_12" "LED_14" "ULED_4" "LED_10" "LED_9" "ULED_3" "LED_8" "LED_6" "LED_5" "LED_7" "ULED_2" "LED_2" "ULED_1" "LED_1" "LED" "LED_11" "LED_4" "LED_3" "RAW" "RST" "SCL" "SDA" "DAT" "P2" "P3" "CS" "P9" "MCU1_24" "MCU1_1" "MCU1_23" "MCU1_2" "MCU1_22" "MCU1_3" "MCU1_21" "MCU1_4" "MCU1_20" "MCU1_5" "MCU1_19" "MCU1_6" "MCU1_18" "MCU1_7" "MCU1_17" "MCU1_8" "MCU1_16" "MCU1_9" "MCU1_15" "MCU1_10" "MCU1_14" "MCU1_11" "MCU1_13" "MCU1_12"             
   (net_class Default "This is the default net class."
     (clearance 0.2)
     (trace_width 0.25)
@@ -6965,16 +6871,14 @@
           (pad 1 thru_hole circle (at 3.262 -12.7) (size 0.8 0.8) (drill 0.4) (layers *.Cu *.Mask) (net 62 "RAW"))
 
           
-          (pad 24 smd custom (at -5.5 -12.7) (size 0.2 0.2) (layers F.Cu F.Mask) (net 71 "MCU1_24")
-            (zone_connect 2)
+          (pad 24 smd custom (at -5.5 -12.7) (size 0.2 0.2) (layers F.Cu F.Mask) "MCU1_24"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
                 (xy -0.5 -0.625) (xy -0.25 -0.625) (xy 0.25 0) (xy -0.25 0.625) (xy -0.5 0.625)
             ) (width 0))
           ))
-          (pad 124 smd custom (at -4.775 -12.7) (size 0.2 0.2) (layers F.Cu F.Mask) (net 58 "LED")
-            (zone_connect 2)
+          (pad 124 smd custom (at -4.775 -12.7) (size 0.2 0.2) (layers F.Cu F.Mask) "LED"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -6983,16 +6887,14 @@
           ))
 
           
-          (pad 1 smd custom (at 4.775 -12.7 180) (size 0.2 0.2) (layers F.Cu F.Mask) (net 62 "RAW")
-            (zone_connect 2)
+          (pad 1 smd custom (at 4.775 -12.7 180) (size 0.2 0.2) (layers F.Cu F.Mask) "RAW"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
                 (xy -0.65 -0.625) (xy 0.5 -0.625) (xy 0.5 0.625) (xy -0.65 0.625) (xy -0.15 0)
             ) (width 0))
           ))
-          (pad 1 smd custom (at 5.5 -12.7 180) (size 0.2 0.2) (layers F.Cu F.Mask) (net 72 "MCU1_1")
-            (zone_connect 2)
+          (pad 1 smd custom (at 5.5 -12.7 180) (size 0.2 0.2) (layers F.Cu F.Mask) "MCU1_1"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -7001,8 +6903,7 @@
           ))
 
           
-          (pad 24 smd custom (at -5.5 -12.7) (size 0.2 0.2) (layers B.Cu B.Mask) (net 71 "MCU1_24")
-            (zone_connect 2)
+          (pad 24 smd custom (at -5.5 -12.7) (size 0.2 0.2) (layers B.Cu B.Mask) "MCU1_24"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -7010,8 +6911,7 @@
             ) (width 0))
           ))
 
-          (pad 1 smd custom (at -4.775 -12.7) (size 0.2 0.2) (layers B.Cu B.Mask) (net 62 "RAW")
-            (zone_connect 2)
+          (pad 1 smd custom (at -4.775 -12.7) (size 0.2 0.2) (layers B.Cu B.Mask) "RAW"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -7020,16 +6920,14 @@
           ))
 
           
-          (pad 124 smd custom (at 4.775 -12.7 180) (size 0.2 0.2) (layers B.Cu B.Mask) (net 58 "LED")
-            (zone_connect 2)
+          (pad 124 smd custom (at 4.775 -12.7 180) (size 0.2 0.2) (layers B.Cu B.Mask) "LED"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
                 (xy -0.65 0.625) (xy 0.5 0.625) (xy 0.5 -0.625) (xy -0.65 -0.625) (xy -0.15 0)
             ) (width 0))
           ))
-          (pad 1 smd custom (at 5.5 -12.7 180) (size 0.2 0.2) (layers B.Cu B.Mask) (net 72 "MCU1_1")
-            (zone_connect 2)
+          (pad 1 smd custom (at 5.5 -12.7 180) (size 0.2 0.2) (layers B.Cu B.Mask) "MCU1_1"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -7079,16 +6977,14 @@
           (pad 2 thru_hole circle (at 3.262 -10.16) (size 0.8 0.8) (drill 0.4) (layers *.Cu *.Mask) (net 34 "GND"))
 
           
-          (pad 23 smd custom (at -5.5 -10.16) (size 0.2 0.2) (layers F.Cu F.Mask) (net 73 "MCU1_23")
-            (zone_connect 2)
+          (pad 23 smd custom (at -5.5 -10.16) (size 0.2 0.2) (layers F.Cu F.Mask) "MCU1_23"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
                 (xy -0.5 -0.625) (xy -0.25 -0.625) (xy 0.25 0) (xy -0.25 0.625) (xy -0.5 0.625)
             ) (width 0))
           ))
-          (pad 123 smd custom (at -4.775 -10.16) (size 0.2 0.2) (layers F.Cu F.Mask) (net 66 "DAT")
-            (zone_connect 2)
+          (pad 123 smd custom (at -4.775 -10.16) (size 0.2 0.2) (layers F.Cu F.Mask) "DAT"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -7097,16 +6993,14 @@
           ))
 
           
-          (pad 2 smd custom (at 4.775 -10.16 180) (size 0.2 0.2) (layers F.Cu F.Mask) (net 34 "GND")
-            (zone_connect 2)
+          (pad 2 smd custom (at 4.775 -10.16 180) (size 0.2 0.2) (layers F.Cu F.Mask) "GND"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
                 (xy -0.65 -0.625) (xy 0.5 -0.625) (xy 0.5 0.625) (xy -0.65 0.625) (xy -0.15 0)
             ) (width 0))
           ))
-          (pad 2 smd custom (at 5.5 -10.16 180) (size 0.2 0.2) (layers F.Cu F.Mask) (net 74 "MCU1_2")
-            (zone_connect 2)
+          (pad 2 smd custom (at 5.5 -10.16 180) (size 0.2 0.2) (layers F.Cu F.Mask) "MCU1_2"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -7115,8 +7009,7 @@
           ))
 
           
-          (pad 23 smd custom (at -5.5 -10.16) (size 0.2 0.2) (layers B.Cu B.Mask) (net 73 "MCU1_23")
-            (zone_connect 2)
+          (pad 23 smd custom (at -5.5 -10.16) (size 0.2 0.2) (layers B.Cu B.Mask) "MCU1_23"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -7124,8 +7017,7 @@
             ) (width 0))
           ))
 
-          (pad 2 smd custom (at -4.775 -10.16) (size 0.2 0.2) (layers B.Cu B.Mask) (net 34 "GND")
-            (zone_connect 2)
+          (pad 2 smd custom (at -4.775 -10.16) (size 0.2 0.2) (layers B.Cu B.Mask) "GND"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -7134,16 +7026,14 @@
           ))
 
           
-          (pad 123 smd custom (at 4.775 -10.16 180) (size 0.2 0.2) (layers B.Cu B.Mask) (net 66 "DAT")
-            (zone_connect 2)
+          (pad 123 smd custom (at 4.775 -10.16 180) (size 0.2 0.2) (layers B.Cu B.Mask) "DAT"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
                 (xy -0.65 0.625) (xy 0.5 0.625) (xy 0.5 -0.625) (xy -0.65 -0.625) (xy -0.15 0)
             ) (width 0))
           ))
-          (pad 2 smd custom (at 5.5 -10.16 180) (size 0.2 0.2) (layers B.Cu B.Mask) (net 74 "MCU1_2")
-            (zone_connect 2)
+          (pad 2 smd custom (at 5.5 -10.16 180) (size 0.2 0.2) (layers B.Cu B.Mask) "MCU1_2"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -7193,16 +7083,14 @@
           (pad 3 thru_hole circle (at 3.262 -7.619999999999999) (size 0.8 0.8) (drill 0.4) (layers *.Cu *.Mask) (net 63 "RST"))
 
           
-          (pad 22 smd custom (at -5.5 -7.619999999999999) (size 0.2 0.2) (layers F.Cu F.Mask) (net 75 "MCU1_22")
-            (zone_connect 2)
+          (pad 22 smd custom (at -5.5 -7.619999999999999) (size 0.2 0.2) (layers F.Cu F.Mask) "MCU1_22"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
                 (xy -0.5 -0.625) (xy -0.25 -0.625) (xy 0.25 0) (xy -0.25 0.625) (xy -0.5 0.625)
             ) (width 0))
           ))
-          (pad 122 smd custom (at -4.775 -7.619999999999999) (size 0.2 0.2) (layers F.Cu F.Mask) (net 34 "GND")
-            (zone_connect 2)
+          (pad 122 smd custom (at -4.775 -7.619999999999999) (size 0.2 0.2) (layers F.Cu F.Mask) "GND"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -7211,16 +7099,14 @@
           ))
 
           
-          (pad 3 smd custom (at 4.775 -7.619999999999999 180) (size 0.2 0.2) (layers F.Cu F.Mask) (net 63 "RST")
-            (zone_connect 2)
+          (pad 3 smd custom (at 4.775 -7.619999999999999 180) (size 0.2 0.2) (layers F.Cu F.Mask) "RST"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
                 (xy -0.65 -0.625) (xy 0.5 -0.625) (xy 0.5 0.625) (xy -0.65 0.625) (xy -0.15 0)
             ) (width 0))
           ))
-          (pad 3 smd custom (at 5.5 -7.619999999999999 180) (size 0.2 0.2) (layers F.Cu F.Mask) (net 76 "MCU1_3")
-            (zone_connect 2)
+          (pad 3 smd custom (at 5.5 -7.619999999999999 180) (size 0.2 0.2) (layers F.Cu F.Mask) "MCU1_3"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -7229,8 +7115,7 @@
           ))
 
           
-          (pad 22 smd custom (at -5.5 -7.619999999999999) (size 0.2 0.2) (layers B.Cu B.Mask) (net 75 "MCU1_22")
-            (zone_connect 2)
+          (pad 22 smd custom (at -5.5 -7.619999999999999) (size 0.2 0.2) (layers B.Cu B.Mask) "MCU1_22"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -7238,8 +7123,7 @@
             ) (width 0))
           ))
 
-          (pad 3 smd custom (at -4.775 -7.619999999999999) (size 0.2 0.2) (layers B.Cu B.Mask) (net 63 "RST")
-            (zone_connect 2)
+          (pad 3 smd custom (at -4.775 -7.619999999999999) (size 0.2 0.2) (layers B.Cu B.Mask) "RST"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -7248,16 +7132,14 @@
           ))
 
           
-          (pad 122 smd custom (at 4.775 -7.619999999999999 180) (size 0.2 0.2) (layers B.Cu B.Mask) (net 34 "GND")
-            (zone_connect 2)
+          (pad 122 smd custom (at 4.775 -7.619999999999999 180) (size 0.2 0.2) (layers B.Cu B.Mask) "GND"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
                 (xy -0.65 0.625) (xy 0.5 0.625) (xy 0.5 -0.625) (xy -0.65 -0.625) (xy -0.15 0)
             ) (width 0))
           ))
-          (pad 3 smd custom (at 5.5 -7.619999999999999 180) (size 0.2 0.2) (layers B.Cu B.Mask) (net 76 "MCU1_3")
-            (zone_connect 2)
+          (pad 3 smd custom (at 5.5 -7.619999999999999 180) (size 0.2 0.2) (layers B.Cu B.Mask) "MCU1_3"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -7307,16 +7189,14 @@
           (pad 4 thru_hole circle (at 3.262 -5.079999999999999) (size 0.8 0.8) (drill 0.4) (layers *.Cu *.Mask) (net 32 "VCC"))
 
           
-          (pad 21 smd custom (at -5.5 -5.079999999999999) (size 0.2 0.2) (layers F.Cu F.Mask) (net 77 "MCU1_21")
-            (zone_connect 2)
+          (pad 21 smd custom (at -5.5 -5.079999999999999) (size 0.2 0.2) (layers F.Cu F.Mask) "MCU1_21"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
                 (xy -0.5 -0.625) (xy -0.25 -0.625) (xy 0.25 0) (xy -0.25 0.625) (xy -0.5 0.625)
             ) (width 0))
           ))
-          (pad 121 smd custom (at -4.775 -5.079999999999999) (size 0.2 0.2) (layers F.Cu F.Mask) (net 34 "GND")
-            (zone_connect 2)
+          (pad 121 smd custom (at -4.775 -5.079999999999999) (size 0.2 0.2) (layers F.Cu F.Mask) "GND"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -7325,16 +7205,14 @@
           ))
 
           
-          (pad 4 smd custom (at 4.775 -5.079999999999999 180) (size 0.2 0.2) (layers F.Cu F.Mask) (net 32 "VCC")
-            (zone_connect 2)
+          (pad 4 smd custom (at 4.775 -5.079999999999999 180) (size 0.2 0.2) (layers F.Cu F.Mask) "VCC"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
                 (xy -0.65 -0.625) (xy 0.5 -0.625) (xy 0.5 0.625) (xy -0.65 0.625) (xy -0.15 0)
             ) (width 0))
           ))
-          (pad 4 smd custom (at 5.5 -5.079999999999999 180) (size 0.2 0.2) (layers F.Cu F.Mask) (net 78 "MCU1_4")
-            (zone_connect 2)
+          (pad 4 smd custom (at 5.5 -5.079999999999999 180) (size 0.2 0.2) (layers F.Cu F.Mask) "MCU1_4"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -7343,8 +7221,7 @@
           ))
 
           
-          (pad 21 smd custom (at -5.5 -5.079999999999999) (size 0.2 0.2) (layers B.Cu B.Mask) (net 77 "MCU1_21")
-            (zone_connect 2)
+          (pad 21 smd custom (at -5.5 -5.079999999999999) (size 0.2 0.2) (layers B.Cu B.Mask) "MCU1_21"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -7352,8 +7229,7 @@
             ) (width 0))
           ))
 
-          (pad 4 smd custom (at -4.775 -5.079999999999999) (size 0.2 0.2) (layers B.Cu B.Mask) (net 32 "VCC")
-            (zone_connect 2)
+          (pad 4 smd custom (at -4.775 -5.079999999999999) (size 0.2 0.2) (layers B.Cu B.Mask) "VCC"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -7362,16 +7238,14 @@
           ))
 
           
-          (pad 121 smd custom (at 4.775 -5.079999999999999 180) (size 0.2 0.2) (layers B.Cu B.Mask) (net 34 "GND")
-            (zone_connect 2)
+          (pad 121 smd custom (at 4.775 -5.079999999999999 180) (size 0.2 0.2) (layers B.Cu B.Mask) "GND"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
                 (xy -0.65 0.625) (xy 0.5 0.625) (xy 0.5 -0.625) (xy -0.65 -0.625) (xy -0.15 0)
             ) (width 0))
           ))
-          (pad 4 smd custom (at 5.5 -5.079999999999999 180) (size 0.2 0.2) (layers B.Cu B.Mask) (net 78 "MCU1_4")
-            (zone_connect 2)
+          (pad 4 smd custom (at 5.5 -5.079999999999999 180) (size 0.2 0.2) (layers B.Cu B.Mask) "MCU1_4"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -7421,16 +7295,14 @@
           (pad 5 thru_hole circle (at 3.262 -2.539999999999999) (size 0.8 0.8) (drill 0.4) (layers *.Cu *.Mask) (net 1 "C0"))
 
           
-          (pad 20 smd custom (at -5.5 -2.539999999999999) (size 0.2 0.2) (layers F.Cu F.Mask) (net 79 "MCU1_20")
-            (zone_connect 2)
+          (pad 20 smd custom (at -5.5 -2.539999999999999) (size 0.2 0.2) (layers F.Cu F.Mask) "MCU1_20"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
                 (xy -0.5 -0.625) (xy -0.25 -0.625) (xy 0.25 0) (xy -0.25 0.625) (xy -0.5 0.625)
             ) (width 0))
           ))
-          (pad 120 smd custom (at -4.775 -2.539999999999999) (size 0.2 0.2) (layers F.Cu F.Mask) (net 67 "P2")
-            (zone_connect 2)
+          (pad 120 smd custom (at -4.775 -2.539999999999999) (size 0.2 0.2) (layers F.Cu F.Mask) "P2"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -7439,16 +7311,14 @@
           ))
 
           
-          (pad 5 smd custom (at 4.775 -2.539999999999999 180) (size 0.2 0.2) (layers F.Cu F.Mask) (net 1 "C0")
-            (zone_connect 2)
+          (pad 5 smd custom (at 4.775 -2.539999999999999 180) (size 0.2 0.2) (layers F.Cu F.Mask) "C0"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
                 (xy -0.65 -0.625) (xy 0.5 -0.625) (xy 0.5 0.625) (xy -0.65 0.625) (xy -0.15 0)
             ) (width 0))
           ))
-          (pad 5 smd custom (at 5.5 -2.539999999999999 180) (size 0.2 0.2) (layers F.Cu F.Mask) (net 80 "MCU1_5")
-            (zone_connect 2)
+          (pad 5 smd custom (at 5.5 -2.539999999999999 180) (size 0.2 0.2) (layers F.Cu F.Mask) "MCU1_5"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -7457,8 +7327,7 @@
           ))
 
           
-          (pad 20 smd custom (at -5.5 -2.539999999999999) (size 0.2 0.2) (layers B.Cu B.Mask) (net 79 "MCU1_20")
-            (zone_connect 2)
+          (pad 20 smd custom (at -5.5 -2.539999999999999) (size 0.2 0.2) (layers B.Cu B.Mask) "MCU1_20"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -7466,8 +7335,7 @@
             ) (width 0))
           ))
 
-          (pad 5 smd custom (at -4.775 -2.539999999999999) (size 0.2 0.2) (layers B.Cu B.Mask) (net 1 "C0")
-            (zone_connect 2)
+          (pad 5 smd custom (at -4.775 -2.539999999999999) (size 0.2 0.2) (layers B.Cu B.Mask) "C0"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -7476,16 +7344,14 @@
           ))
 
           
-          (pad 120 smd custom (at 4.775 -2.539999999999999 180) (size 0.2 0.2) (layers B.Cu B.Mask) (net 67 "P2")
-            (zone_connect 2)
+          (pad 120 smd custom (at 4.775 -2.539999999999999 180) (size 0.2 0.2) (layers B.Cu B.Mask) "P2"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
                 (xy -0.65 0.625) (xy 0.5 0.625) (xy 0.5 -0.625) (xy -0.65 -0.625) (xy -0.15 0)
             ) (width 0))
           ))
-          (pad 5 smd custom (at 5.5 -2.539999999999999 180) (size 0.2 0.2) (layers B.Cu B.Mask) (net 80 "MCU1_5")
-            (zone_connect 2)
+          (pad 5 smd custom (at 5.5 -2.539999999999999 180) (size 0.2 0.2) (layers B.Cu B.Mask) "MCU1_5"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -7535,16 +7401,14 @@
           (pad 6 thru_hole circle (at 3.262 0) (size 0.8 0.8) (drill 0.4) (layers *.Cu *.Mask) (net 5 "C1"))
 
           
-          (pad 19 smd custom (at -5.5 0) (size 0.2 0.2) (layers F.Cu F.Mask) (net 81 "MCU1_19")
-            (zone_connect 2)
+          (pad 19 smd custom (at -5.5 0) (size 0.2 0.2) (layers F.Cu F.Mask) "MCU1_19"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
                 (xy -0.5 -0.625) (xy -0.25 -0.625) (xy 0.25 0) (xy -0.25 0.625) (xy -0.5 0.625)
             ) (width 0))
           ))
-          (pad 119 smd custom (at -4.775 0) (size 0.2 0.2) (layers F.Cu F.Mask) (net 68 "P3")
-            (zone_connect 2)
+          (pad 119 smd custom (at -4.775 0) (size 0.2 0.2) (layers F.Cu F.Mask) "P3"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -7553,16 +7417,14 @@
           ))
 
           
-          (pad 6 smd custom (at 4.775 0 180) (size 0.2 0.2) (layers F.Cu F.Mask) (net 5 "C1")
-            (zone_connect 2)
+          (pad 6 smd custom (at 4.775 0 180) (size 0.2 0.2) (layers F.Cu F.Mask) "C1"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
                 (xy -0.65 -0.625) (xy 0.5 -0.625) (xy 0.5 0.625) (xy -0.65 0.625) (xy -0.15 0)
             ) (width 0))
           ))
-          (pad 6 smd custom (at 5.5 0 180) (size 0.2 0.2) (layers F.Cu F.Mask) (net 82 "MCU1_6")
-            (zone_connect 2)
+          (pad 6 smd custom (at 5.5 0 180) (size 0.2 0.2) (layers F.Cu F.Mask) "MCU1_6"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -7571,8 +7433,7 @@
           ))
 
           
-          (pad 19 smd custom (at -5.5 0) (size 0.2 0.2) (layers B.Cu B.Mask) (net 81 "MCU1_19")
-            (zone_connect 2)
+          (pad 19 smd custom (at -5.5 0) (size 0.2 0.2) (layers B.Cu B.Mask) "MCU1_19"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -7580,8 +7441,7 @@
             ) (width 0))
           ))
 
-          (pad 6 smd custom (at -4.775 0) (size 0.2 0.2) (layers B.Cu B.Mask) (net 5 "C1")
-            (zone_connect 2)
+          (pad 6 smd custom (at -4.775 0) (size 0.2 0.2) (layers B.Cu B.Mask) "C1"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -7590,16 +7450,14 @@
           ))
 
           
-          (pad 119 smd custom (at 4.775 0 180) (size 0.2 0.2) (layers B.Cu B.Mask) (net 68 "P3")
-            (zone_connect 2)
+          (pad 119 smd custom (at 4.775 0 180) (size 0.2 0.2) (layers B.Cu B.Mask) "P3"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
                 (xy -0.65 0.625) (xy 0.5 0.625) (xy 0.5 -0.625) (xy -0.65 -0.625) (xy -0.15 0)
             ) (width 0))
           ))
-          (pad 6 smd custom (at 5.5 0 180) (size 0.2 0.2) (layers B.Cu B.Mask) (net 82 "MCU1_6")
-            (zone_connect 2)
+          (pad 6 smd custom (at 5.5 0 180) (size 0.2 0.2) (layers B.Cu B.Mask) "MCU1_6"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -7649,16 +7507,14 @@
           (pad 7 thru_hole circle (at 3.262 2.540000000000001) (size 0.8 0.8) (drill 0.4) (layers *.Cu *.Mask) (net 9 "C2"))
 
           
-          (pad 18 smd custom (at -5.5 2.540000000000001) (size 0.2 0.2) (layers F.Cu F.Mask) (net 83 "MCU1_18")
-            (zone_connect 2)
+          (pad 18 smd custom (at -5.5 2.540000000000001) (size 0.2 0.2) (layers F.Cu F.Mask) "MCU1_18"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
                 (xy -0.5 -0.625) (xy -0.25 -0.625) (xy 0.25 0) (xy -0.25 0.625) (xy -0.5 0.625)
             ) (width 0))
           ))
-          (pad 118 smd custom (at -4.775 2.540000000000001) (size 0.2 0.2) (layers F.Cu F.Mask) (net 69 "CS")
-            (zone_connect 2)
+          (pad 118 smd custom (at -4.775 2.540000000000001) (size 0.2 0.2) (layers F.Cu F.Mask) "CS"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -7667,16 +7523,14 @@
           ))
 
           
-          (pad 7 smd custom (at 4.775 2.540000000000001 180) (size 0.2 0.2) (layers F.Cu F.Mask) (net 9 "C2")
-            (zone_connect 2)
+          (pad 7 smd custom (at 4.775 2.540000000000001 180) (size 0.2 0.2) (layers F.Cu F.Mask) "C2"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
                 (xy -0.65 -0.625) (xy 0.5 -0.625) (xy 0.5 0.625) (xy -0.65 0.625) (xy -0.15 0)
             ) (width 0))
           ))
-          (pad 7 smd custom (at 5.5 2.540000000000001 180) (size 0.2 0.2) (layers F.Cu F.Mask) (net 84 "MCU1_7")
-            (zone_connect 2)
+          (pad 7 smd custom (at 5.5 2.540000000000001 180) (size 0.2 0.2) (layers F.Cu F.Mask) "MCU1_7"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -7685,8 +7539,7 @@
           ))
 
           
-          (pad 18 smd custom (at -5.5 2.540000000000001) (size 0.2 0.2) (layers B.Cu B.Mask) (net 83 "MCU1_18")
-            (zone_connect 2)
+          (pad 18 smd custom (at -5.5 2.540000000000001) (size 0.2 0.2) (layers B.Cu B.Mask) "MCU1_18"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -7694,8 +7547,7 @@
             ) (width 0))
           ))
 
-          (pad 7 smd custom (at -4.775 2.540000000000001) (size 0.2 0.2) (layers B.Cu B.Mask) (net 9 "C2")
-            (zone_connect 2)
+          (pad 7 smd custom (at -4.775 2.540000000000001) (size 0.2 0.2) (layers B.Cu B.Mask) "C2"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -7704,16 +7556,14 @@
           ))
 
           
-          (pad 118 smd custom (at 4.775 2.540000000000001 180) (size 0.2 0.2) (layers B.Cu B.Mask) (net 69 "CS")
-            (zone_connect 2)
+          (pad 118 smd custom (at 4.775 2.540000000000001 180) (size 0.2 0.2) (layers B.Cu B.Mask) "CS"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
                 (xy -0.65 0.625) (xy 0.5 0.625) (xy 0.5 -0.625) (xy -0.65 -0.625) (xy -0.15 0)
             ) (width 0))
           ))
-          (pad 7 smd custom (at 5.5 2.540000000000001 180) (size 0.2 0.2) (layers B.Cu B.Mask) (net 84 "MCU1_7")
-            (zone_connect 2)
+          (pad 7 smd custom (at 5.5 2.540000000000001 180) (size 0.2 0.2) (layers B.Cu B.Mask) "MCU1_7"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -7763,16 +7613,14 @@
           (pad 8 thru_hole circle (at 3.262 5.080000000000002) (size 0.8 0.8) (drill 0.4) (layers *.Cu *.Mask) (net 13 "C3"))
 
           
-          (pad 17 smd custom (at -5.5 5.080000000000002) (size 0.2 0.2) (layers F.Cu F.Mask) (net 85 "MCU1_17")
-            (zone_connect 2)
+          (pad 17 smd custom (at -5.5 5.080000000000002) (size 0.2 0.2) (layers F.Cu F.Mask) "MCU1_17"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
                 (xy -0.5 -0.625) (xy -0.25 -0.625) (xy 0.25 0) (xy -0.25 0.625) (xy -0.5 0.625)
             ) (width 0))
           ))
-          (pad 117 smd custom (at -4.775 5.080000000000002) (size 0.2 0.2) (layers F.Cu F.Mask) (net 30 "R0")
-            (zone_connect 2)
+          (pad 117 smd custom (at -4.775 5.080000000000002) (size 0.2 0.2) (layers F.Cu F.Mask) "R0"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -7781,16 +7629,14 @@
           ))
 
           
-          (pad 8 smd custom (at 4.775 5.080000000000002 180) (size 0.2 0.2) (layers F.Cu F.Mask) (net 13 "C3")
-            (zone_connect 2)
+          (pad 8 smd custom (at 4.775 5.080000000000002 180) (size 0.2 0.2) (layers F.Cu F.Mask) "C3"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
                 (xy -0.65 -0.625) (xy 0.5 -0.625) (xy 0.5 0.625) (xy -0.65 0.625) (xy -0.15 0)
             ) (width 0))
           ))
-          (pad 8 smd custom (at 5.5 5.080000000000002 180) (size 0.2 0.2) (layers F.Cu F.Mask) (net 86 "MCU1_8")
-            (zone_connect 2)
+          (pad 8 smd custom (at 5.5 5.080000000000002 180) (size 0.2 0.2) (layers F.Cu F.Mask) "MCU1_8"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -7799,8 +7645,7 @@
           ))
 
           
-          (pad 17 smd custom (at -5.5 5.080000000000002) (size 0.2 0.2) (layers B.Cu B.Mask) (net 85 "MCU1_17")
-            (zone_connect 2)
+          (pad 17 smd custom (at -5.5 5.080000000000002) (size 0.2 0.2) (layers B.Cu B.Mask) "MCU1_17"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -7808,8 +7653,7 @@
             ) (width 0))
           ))
 
-          (pad 8 smd custom (at -4.775 5.080000000000002) (size 0.2 0.2) (layers B.Cu B.Mask) (net 13 "C3")
-            (zone_connect 2)
+          (pad 8 smd custom (at -4.775 5.080000000000002) (size 0.2 0.2) (layers B.Cu B.Mask) "C3"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -7818,16 +7662,14 @@
           ))
 
           
-          (pad 117 smd custom (at 4.775 5.080000000000002 180) (size 0.2 0.2) (layers B.Cu B.Mask) (net 30 "R0")
-            (zone_connect 2)
+          (pad 117 smd custom (at 4.775 5.080000000000002 180) (size 0.2 0.2) (layers B.Cu B.Mask) "R0"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
                 (xy -0.65 0.625) (xy 0.5 0.625) (xy 0.5 -0.625) (xy -0.65 -0.625) (xy -0.15 0)
             ) (width 0))
           ))
-          (pad 8 smd custom (at 5.5 5.080000000000002 180) (size 0.2 0.2) (layers B.Cu B.Mask) (net 86 "MCU1_8")
-            (zone_connect 2)
+          (pad 8 smd custom (at 5.5 5.080000000000002 180) (size 0.2 0.2) (layers B.Cu B.Mask) "MCU1_8"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -7877,16 +7719,14 @@
           (pad 9 thru_hole circle (at 3.262 7.620000000000001) (size 0.8 0.8) (drill 0.4) (layers *.Cu *.Mask) (net 17 "C4"))
 
           
-          (pad 16 smd custom (at -5.5 7.620000000000001) (size 0.2 0.2) (layers F.Cu F.Mask) (net 87 "MCU1_16")
-            (zone_connect 2)
+          (pad 16 smd custom (at -5.5 7.620000000000001) (size 0.2 0.2) (layers F.Cu F.Mask) "MCU1_16"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
                 (xy -0.5 -0.625) (xy -0.25 -0.625) (xy 0.25 0) (xy -0.25 0.625) (xy -0.5 0.625)
             ) (width 0))
           ))
-          (pad 116 smd custom (at -4.775 7.620000000000001) (size 0.2 0.2) (layers F.Cu F.Mask) (net 29 "R1")
-            (zone_connect 2)
+          (pad 116 smd custom (at -4.775 7.620000000000001) (size 0.2 0.2) (layers F.Cu F.Mask) "R1"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -7895,16 +7735,14 @@
           ))
 
           
-          (pad 9 smd custom (at 4.775 7.620000000000001 180) (size 0.2 0.2) (layers F.Cu F.Mask) (net 17 "C4")
-            (zone_connect 2)
+          (pad 9 smd custom (at 4.775 7.620000000000001 180) (size 0.2 0.2) (layers F.Cu F.Mask) "C4"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
                 (xy -0.65 -0.625) (xy 0.5 -0.625) (xy 0.5 0.625) (xy -0.65 0.625) (xy -0.15 0)
             ) (width 0))
           ))
-          (pad 9 smd custom (at 5.5 7.620000000000001 180) (size 0.2 0.2) (layers F.Cu F.Mask) (net 88 "MCU1_9")
-            (zone_connect 2)
+          (pad 9 smd custom (at 5.5 7.620000000000001 180) (size 0.2 0.2) (layers F.Cu F.Mask) "MCU1_9"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -7913,8 +7751,7 @@
           ))
 
           
-          (pad 16 smd custom (at -5.5 7.620000000000001) (size 0.2 0.2) (layers B.Cu B.Mask) (net 87 "MCU1_16")
-            (zone_connect 2)
+          (pad 16 smd custom (at -5.5 7.620000000000001) (size 0.2 0.2) (layers B.Cu B.Mask) "MCU1_16"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -7922,8 +7759,7 @@
             ) (width 0))
           ))
 
-          (pad 9 smd custom (at -4.775 7.620000000000001) (size 0.2 0.2) (layers B.Cu B.Mask) (net 17 "C4")
-            (zone_connect 2)
+          (pad 9 smd custom (at -4.775 7.620000000000001) (size 0.2 0.2) (layers B.Cu B.Mask) "C4"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -7932,16 +7768,14 @@
           ))
 
           
-          (pad 116 smd custom (at 4.775 7.620000000000001 180) (size 0.2 0.2) (layers B.Cu B.Mask) (net 29 "R1")
-            (zone_connect 2)
+          (pad 116 smd custom (at 4.775 7.620000000000001 180) (size 0.2 0.2) (layers B.Cu B.Mask) "R1"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
                 (xy -0.65 0.625) (xy 0.5 0.625) (xy 0.5 -0.625) (xy -0.65 -0.625) (xy -0.15 0)
             ) (width 0))
           ))
-          (pad 9 smd custom (at 5.5 7.620000000000001 180) (size 0.2 0.2) (layers B.Cu B.Mask) (net 88 "MCU1_9")
-            (zone_connect 2)
+          (pad 9 smd custom (at 5.5 7.620000000000001 180) (size 0.2 0.2) (layers B.Cu B.Mask) "MCU1_9"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -7991,16 +7825,14 @@
           (pad 10 thru_hole circle (at 3.262 10.16) (size 0.8 0.8) (drill 0.4) (layers *.Cu *.Mask) (net 21 "C5"))
 
           
-          (pad 15 smd custom (at -5.5 10.16) (size 0.2 0.2) (layers F.Cu F.Mask) (net 89 "MCU1_15")
-            (zone_connect 2)
+          (pad 15 smd custom (at -5.5 10.16) (size 0.2 0.2) (layers F.Cu F.Mask) "MCU1_15"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
                 (xy -0.5 -0.625) (xy -0.25 -0.625) (xy 0.25 0) (xy -0.25 0.625) (xy -0.5 0.625)
             ) (width 0))
           ))
-          (pad 115 smd custom (at -4.775 10.16) (size 0.2 0.2) (layers F.Cu F.Mask) (net 28 "R2")
-            (zone_connect 2)
+          (pad 115 smd custom (at -4.775 10.16) (size 0.2 0.2) (layers F.Cu F.Mask) "R2"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -8009,16 +7841,14 @@
           ))
 
           
-          (pad 10 smd custom (at 4.775 10.16 180) (size 0.2 0.2) (layers F.Cu F.Mask) (net 21 "C5")
-            (zone_connect 2)
+          (pad 10 smd custom (at 4.775 10.16 180) (size 0.2 0.2) (layers F.Cu F.Mask) "C5"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
                 (xy -0.65 -0.625) (xy 0.5 -0.625) (xy 0.5 0.625) (xy -0.65 0.625) (xy -0.15 0)
             ) (width 0))
           ))
-          (pad 10 smd custom (at 5.5 10.16 180) (size 0.2 0.2) (layers F.Cu F.Mask) (net 90 "MCU1_10")
-            (zone_connect 2)
+          (pad 10 smd custom (at 5.5 10.16 180) (size 0.2 0.2) (layers F.Cu F.Mask) "MCU1_10"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -8027,8 +7857,7 @@
           ))
 
           
-          (pad 15 smd custom (at -5.5 10.16) (size 0.2 0.2) (layers B.Cu B.Mask) (net 89 "MCU1_15")
-            (zone_connect 2)
+          (pad 15 smd custom (at -5.5 10.16) (size 0.2 0.2) (layers B.Cu B.Mask) "MCU1_15"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -8036,8 +7865,7 @@
             ) (width 0))
           ))
 
-          (pad 10 smd custom (at -4.775 10.16) (size 0.2 0.2) (layers B.Cu B.Mask) (net 21 "C5")
-            (zone_connect 2)
+          (pad 10 smd custom (at -4.775 10.16) (size 0.2 0.2) (layers B.Cu B.Mask) "C5"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -8046,16 +7874,14 @@
           ))
 
           
-          (pad 115 smd custom (at 4.775 10.16 180) (size 0.2 0.2) (layers B.Cu B.Mask) (net 28 "R2")
-            (zone_connect 2)
+          (pad 115 smd custom (at 4.775 10.16 180) (size 0.2 0.2) (layers B.Cu B.Mask) "R2"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
                 (xy -0.65 0.625) (xy 0.5 0.625) (xy 0.5 -0.625) (xy -0.65 -0.625) (xy -0.15 0)
             ) (width 0))
           ))
-          (pad 10 smd custom (at 5.5 10.16 180) (size 0.2 0.2) (layers B.Cu B.Mask) (net 90 "MCU1_10")
-            (zone_connect 2)
+          (pad 10 smd custom (at 5.5 10.16 180) (size 0.2 0.2) (layers B.Cu B.Mask) "MCU1_10"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -8105,16 +7931,14 @@
           (pad 11 thru_hole circle (at 3.262 12.7) (size 0.8 0.8) (drill 0.4) (layers *.Cu *.Mask) (net 64 "SCL"))
 
           
-          (pad 14 smd custom (at -5.5 12.7) (size 0.2 0.2) (layers F.Cu F.Mask) (net 91 "MCU1_14")
-            (zone_connect 2)
+          (pad 14 smd custom (at -5.5 12.7) (size 0.2 0.2) (layers F.Cu F.Mask) "MCU1_14"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
                 (xy -0.5 -0.625) (xy -0.25 -0.625) (xy 0.25 0) (xy -0.25 0.625) (xy -0.5 0.625)
             ) (width 0))
           ))
-          (pad 114 smd custom (at -4.775 12.7) (size 0.2 0.2) (layers F.Cu F.Mask) (net 31 "R3")
-            (zone_connect 2)
+          (pad 114 smd custom (at -4.775 12.7) (size 0.2 0.2) (layers F.Cu F.Mask) "R3"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -8123,16 +7947,14 @@
           ))
 
           
-          (pad 11 smd custom (at 4.775 12.7 180) (size 0.2 0.2) (layers F.Cu F.Mask) (net 64 "SCL")
-            (zone_connect 2)
+          (pad 11 smd custom (at 4.775 12.7 180) (size 0.2 0.2) (layers F.Cu F.Mask) "SCL"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
                 (xy -0.65 -0.625) (xy 0.5 -0.625) (xy 0.5 0.625) (xy -0.65 0.625) (xy -0.15 0)
             ) (width 0))
           ))
-          (pad 11 smd custom (at 5.5 12.7 180) (size 0.2 0.2) (layers F.Cu F.Mask) (net 92 "MCU1_11")
-            (zone_connect 2)
+          (pad 11 smd custom (at 5.5 12.7 180) (size 0.2 0.2) (layers F.Cu F.Mask) "MCU1_11"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -8141,8 +7963,7 @@
           ))
 
           
-          (pad 14 smd custom (at -5.5 12.7) (size 0.2 0.2) (layers B.Cu B.Mask) (net 91 "MCU1_14")
-            (zone_connect 2)
+          (pad 14 smd custom (at -5.5 12.7) (size 0.2 0.2) (layers B.Cu B.Mask) "MCU1_14"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -8150,8 +7971,7 @@
             ) (width 0))
           ))
 
-          (pad 11 smd custom (at -4.775 12.7) (size 0.2 0.2) (layers B.Cu B.Mask) (net 64 "SCL")
-            (zone_connect 2)
+          (pad 11 smd custom (at -4.775 12.7) (size 0.2 0.2) (layers B.Cu B.Mask) "SCL"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -8160,16 +7980,14 @@
           ))
 
           
-          (pad 114 smd custom (at 4.775 12.7 180) (size 0.2 0.2) (layers B.Cu B.Mask) (net 31 "R3")
-            (zone_connect 2)
+          (pad 114 smd custom (at 4.775 12.7 180) (size 0.2 0.2) (layers B.Cu B.Mask) "R3"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
                 (xy -0.65 0.625) (xy 0.5 0.625) (xy 0.5 -0.625) (xy -0.65 -0.625) (xy -0.15 0)
             ) (width 0))
           ))
-          (pad 11 smd custom (at 5.5 12.7 180) (size 0.2 0.2) (layers B.Cu B.Mask) (net 92 "MCU1_11")
-            (zone_connect 2)
+          (pad 11 smd custom (at 5.5 12.7 180) (size 0.2 0.2) (layers B.Cu B.Mask) "MCU1_11"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -8219,16 +8037,14 @@
           (pad 12 thru_hole circle (at 3.262 15.240000000000002) (size 0.8 0.8) (drill 0.4) (layers *.Cu *.Mask) (net 65 "SDA"))
 
           
-          (pad 13 smd custom (at -5.5 15.240000000000002) (size 0.2 0.2) (layers F.Cu F.Mask) (net 93 "MCU1_13")
-            (zone_connect 2)
+          (pad 13 smd custom (at -5.5 15.240000000000002) (size 0.2 0.2) (layers F.Cu F.Mask) "MCU1_13"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
                 (xy -0.5 -0.625) (xy -0.25 -0.625) (xy 0.25 0) (xy -0.25 0.625) (xy -0.5 0.625)
             ) (width 0))
           ))
-          (pad 113 smd custom (at -4.775 15.240000000000002) (size 0.2 0.2) (layers F.Cu F.Mask) (net 70 "P9")
-            (zone_connect 2)
+          (pad 113 smd custom (at -4.775 15.240000000000002) (size 0.2 0.2) (layers F.Cu F.Mask) "P9"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -8237,16 +8053,14 @@
           ))
 
           
-          (pad 12 smd custom (at 4.775 15.240000000000002 180) (size 0.2 0.2) (layers F.Cu F.Mask) (net 65 "SDA")
-            (zone_connect 2)
+          (pad 12 smd custom (at 4.775 15.240000000000002 180) (size 0.2 0.2) (layers F.Cu F.Mask) "SDA"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
                 (xy -0.65 -0.625) (xy 0.5 -0.625) (xy 0.5 0.625) (xy -0.65 0.625) (xy -0.15 0)
             ) (width 0))
           ))
-          (pad 12 smd custom (at 5.5 15.240000000000002 180) (size 0.2 0.2) (layers F.Cu F.Mask) (net 94 "MCU1_12")
-            (zone_connect 2)
+          (pad 12 smd custom (at 5.5 15.240000000000002 180) (size 0.2 0.2) (layers F.Cu F.Mask) "MCU1_12"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -8255,8 +8069,7 @@
           ))
 
           
-          (pad 13 smd custom (at -5.5 15.240000000000002) (size 0.2 0.2) (layers B.Cu B.Mask) (net 93 "MCU1_13")
-            (zone_connect 2)
+          (pad 13 smd custom (at -5.5 15.240000000000002) (size 0.2 0.2) (layers B.Cu B.Mask) "MCU1_13"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -8264,8 +8077,7 @@
             ) (width 0))
           ))
 
-          (pad 12 smd custom (at -4.775 15.240000000000002) (size 0.2 0.2) (layers B.Cu B.Mask) (net 65 "SDA")
-            (zone_connect 2)
+          (pad 12 smd custom (at -4.775 15.240000000000002) (size 0.2 0.2) (layers B.Cu B.Mask) "SDA"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -8274,16 +8086,14 @@
           ))
 
           
-          (pad 113 smd custom (at 4.775 15.240000000000002 180) (size 0.2 0.2) (layers B.Cu B.Mask) (net 70 "P9")
-            (zone_connect 2)
+          (pad 113 smd custom (at 4.775 15.240000000000002 180) (size 0.2 0.2) (layers B.Cu B.Mask) "P9"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
                 (xy -0.65 0.625) (xy 0.5 0.625) (xy 0.5 -0.625) (xy -0.65 -0.625) (xy -0.15 0)
             ) (width 0))
           ))
-          (pad 12 smd custom (at 5.5 15.240000000000002 180) (size 0.2 0.2) (layers B.Cu B.Mask) (net 94 "MCU1_12")
-            (zone_connect 2)
+          (pad 12 smd custom (at 5.5 15.240000000000002 180) (size 0.2 0.2) (layers B.Cu B.Mask) "MCU1_12"             (zone_connect 2)
             (options (clearance outline) (anchor rect))
             (primitives
               (gr_poly (pts
@@ -8752,8 +8562,7 @@
             )
             (width 0))
         ))
-      (pad 31 smd custom (at -3.81 -0.762 180) (size 1.2 0.5) (layers "B.Cu" "B.Mask") (net 34 "GND")
-        (clearance 0.1) (zone_connect 0)
+      (pad 31 smd custom (at -3.81 -0.762 180) (size 1.2 0.5) (layers "B.Cu" "B.Mask") "GND"         (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
           (gr_poly
@@ -8766,8 +8575,7 @@
             )
             (width 0))
         ))
-      (pad 41 smd custom (at 3.81 -0.762 180) (size 1.2 0.5) (layers "F.Cu" "F.Mask") (net 34 "GND")
-        (clearance 0.1) (zone_connect 0)
+      (pad 41 smd custom (at 3.81 -0.762 180) (size 1.2 0.5) (layers "F.Cu" "F.Mask") "GND"         (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
           (gr_poly
@@ -8780,8 +8588,7 @@
             )
             (width 0))
         ))
-      (pad 32 smd custom (at -1.27 -0.762 180) (size 1.2 0.5) (layers "B.Cu" "B.Mask") (net 32 "VCC")
-        (clearance 0.1) (zone_connect 0)
+      (pad 32 smd custom (at -1.27 -0.762 180) (size 1.2 0.5) (layers "B.Cu" "B.Mask") "VCC"         (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
           (gr_poly
@@ -8794,8 +8601,7 @@
             )
             (width 0))
         ))
-      (pad 42 smd custom (at 1.27 -0.762 180) (size 1.2 0.5) (layers "F.Cu" "F.Mask") (net 32 "VCC")
-        (clearance 0.1) (zone_connect 0)
+      (pad 42 smd custom (at 1.27 -0.762 180) (size 1.2 0.5) (layers "F.Cu" "F.Mask") "VCC"         (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
           (gr_poly
@@ -8808,8 +8614,7 @@
             )
             (width 0))
         ))
-      (pad 33 smd custom (at -1.27 -0.762 180) (size 1.2 0.5) (layers "F.Cu" "F.Mask") (net 64 "SCL")
-        (clearance 0.1) (zone_connect 0)
+      (pad 33 smd custom (at -1.27 -0.762 180) (size 1.2 0.5) (layers "F.Cu" "F.Mask") "SCL"         (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
           (gr_poly
@@ -8822,8 +8627,7 @@
             )
             (width 0))
         ))
-      (pad 43 smd custom (at 1.27 -0.762 180) (size 1.2 0.5) (layers "B.Cu" "B.Mask") (net 64 "SCL")
-        (clearance 0.1) (zone_connect 0)
+      (pad 43 smd custom (at 1.27 -0.762 180) (size 1.2 0.5) (layers "B.Cu" "B.Mask") "SCL"         (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
           (gr_poly
@@ -8836,8 +8640,7 @@
             )
             (width 0))
         ))
-      (pad 34 smd custom (at -3.81 -0.762 180) (size 1.2 0.5) (layers "F.Cu" "F.Mask") (net 65 "SDA")
-        (clearance 0.1) (zone_connect 0)
+      (pad 34 smd custom (at -3.81 -0.762 180) (size 1.2 0.5) (layers "F.Cu" "F.Mask") "SDA"         (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
           (gr_poly
@@ -8850,8 +8653,7 @@
             )
             (width 0))
         ))
-      (pad 44 smd custom (at 3.81 -0.762 180) (size 1.2 0.5) (layers "B.Cu" "B.Mask") (net 65 "SDA")
-        (clearance 0.1) (zone_connect 0)
+      (pad 44 smd custom (at 3.81 -0.762 180) (size 1.2 0.5) (layers "B.Cu" "B.Mask") "SDA"         (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
           (gr_poly

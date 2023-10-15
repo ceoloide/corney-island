@@ -11,7 +11,7 @@
     (via_costs 50)
     (plane_via_costs 5)
     (start_ripup_costs 100)
-    (start_pass_no 18)
+    (start_pass_no 1001)
     (layer_rule F.Cu
       (active on)
       (preferred_direction horizontal)
@@ -26,9 +26,9 @@
     )
   )
   (rule
-    (width 254.0)
-    (clear 254.0)
-    (clear 127.0 (type smd_to_turn_gap))
+    (width 250.0)
+    (clear 200.2)
+    (clear 125.0 (type smd_to_turn_gap))
     (clear 50.0 (type smd_smd))
   )
   (padstack "Via[0-1]_800:400_um"
@@ -69,6 +69,17 @@
     )
   )
   (class "kicad_default"
+    "C0" "outer_bottom" "outer_home" "outer_top" "C1" "pinky_bottom" "pinky_home"
+    "pinky_top" "C2" "ring_bottom" "ring_home" "ring_top" "C3" "middle_bottom"
+    "middle_home" "middle_top" "C4" "index_bottom" "index_home" "index_top" "C5"
+    "inner_bottom" "inner_home" "inner_top" "near_home" "mid_home" "far_home" "R2" "R1"
+    "R0" "R3" "LED_19" "LED_18" "LED_20" "LED_21" "LED_17" "ULED_6" "LED_16""ULED_5"
+    "LED_15" "LED_13" "LED_12" "LED_14" "ULED_4" "LED_10" "LED_9" "ULED_3" "LED_8" "LED_6"
+    "LED_5" "LED_7" "ULED_2" "LED_2" "ULED_1" "LED_1" "LED" "LED_11" "LED_4" "LED_3" "RST"
+    "SCL" "SDA" "DAT" "P2" "P3" "CS" "P9" "MCU1_24" "MCU1_1" "MCU1_23" "MCU1_2" "MCU1_22"
+    "MCU1_3" "MCU1_21" "MCU1_4" "MCU1_20" "MCU1_5" "MCU1_19" "MCU1_6" "MCU1_18" "MCU1_7"
+    "MCU1_17" "MCU1_8" "MCU1_16" "MCU1_9" "MCU1_15" "MCU1_10" "MCU1_14" "MCU1_11" "MCU1_13"
+    "MCU1_12" "VCC" "GND" "RAW" 
     (clearance_class "kicad_default")
     (via_rule kicad_default)
     (rule
@@ -82,7 +93,7 @@
     (clearance_class Power)
     (via_rule Power)
     (rule
-      (width 500.0)
+      (width 250.0)
     )
     (circuit 
       (use_layer F.Cu B.Cu)
