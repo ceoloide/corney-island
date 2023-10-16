@@ -204,7 +204,7 @@ module.exports = {
             (xy -1.6 -1.4)
             (xy 1.6 -1.4)
           )
-          (width 0.1) (fill none) (layer "B.CrtYd"))
+          (width 0.1) (layer "B.CrtYd"))
     `
 
     const courtyard_back = `
@@ -231,7 +231,7 @@ module.exports = {
             (xy -1.6 -1.4)
             (xy 1.6 -1.4)
           )
-          (width 0.1) (fill none) (layer "B.CrtYd"))
+          (width 0.1) (layer "B.CrtYd"))
     `
 
     const keepout = `
