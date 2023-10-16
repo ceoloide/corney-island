@@ -1,6 +1,6 @@
 module.exports = {
   params: {
-    designator: 'LED',
+    designator: 'DISP',
     P1: {type: 'net', value: 'GND'},
     P2: {type: 'net', value: 'VCC'},
     P3: {type: 'net', value: 'SCL'},  // SCK / SCL
@@ -10,6 +10,9 @@ module.exports = {
     reversible: true,
     side: 'F',
     add_traces_vias: true, // Only valid if reversible is True
+    gnd_trace_width: 0.25,
+    pwr_trace_width: 0.25,
+    signal_trace_width: 0.25,
   },
   body: p => {
 
@@ -42,7 +45,7 @@ module.exports = {
             nx = (cos * (adj_x - at_x)) + (sin * (adj_y - at_y)) + at_x,
             ny = (cos * (adj_y - at_y)) - (sin * (adj_x - at_x)) + at_y;
 
-        const point_str = `${nx.toFixed(2)} ${ny.toFixed(2)}`;
+        const point_str = `${nx.toFixed(3)} ${ny.toFixed(3)}`;
         return point_str;
     }
     
@@ -140,24 +143,12 @@ module.exports = {
       (pad 4 thru_hole circle (at 3.81 2.062 ${p.rot}) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask") ${p.P4.str})
     `
     const oled_reversible_pads = `
-      (pad "" thru_hole circle (at -3.81 2.062 ${p.rot}) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask"))
-      (pad "" thru_hole circle (at -1.27 2.062 ${p.rot}) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask"))
-      (pad "" thru_hole circle (at 1.27 2.062 ${p.rot}) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask"))
-      (pad "" thru_hole circle (at 3.81 2.062 ${p.rot}) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask"))
+      (pad 4 thru_hole circle (at -3.81 2.062 ${p.rot}) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask") ${socket_nets[3]})
+      (pad 3 thru_hole circle (at -1.27 2.062 ${p.rot}) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask") ${socket_nets[2]})
+      (pad 2 thru_hole circle (at 1.27 2.062 ${p.rot}) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask") ${socket_nets[1]})
+      (pad 1 thru_hole circle (at 3.81 2.062 ${p.rot}) (size 1.7526 1.7526) (drill 1.0922) (layers "*.Cu" "*.Mask") ${socket_nets[0]})
     `
     const oled_reversible_solder_bridges = `
-      (fp_text user "SCL" (at 1.2 -1.37 ${270 + p.rot}) (layer "B.SilkS")
-        (effects (font (size 1 1) (thickness 0.15)) (justify right mirror))
-      )
-      (fp_text user "SDA" (at 3.74 -1.26 ${270 + p.rot}) (layer "B.SilkS")
-        (effects (font (size 1 1) (thickness 0.15)) (justify right mirror))
-      )
-      (fp_text user "VCC" (at -1.34 -1.37 ${270 + p.rot}) (layer "B.SilkS")
-        (effects (font (size 1 1) (thickness 0.15)) (justify right mirror))
-      )
-      (fp_text user "GND" (at -3.9 -1.26 ${270 + p.rot}) (layer "B.SilkS")
-        (effects (font (size 1 1) (thickness 0.15)) (justify right mirror))
-      )
       (fp_text user "VCC" (at 1.27 -4.138 ${90 + p.rot}) (layer "F.SilkS")
         (effects (font (size 1 1) (thickness 0.15)) (justify right))
       )
@@ -169,6 +160,18 @@ module.exports = {
       )
       (fp_text user "GND" (at 3.81 -4.238 ${90 + p.rot}) (layer "F.SilkS")
         (effects (font (size 1 1) (thickness 0.15)) (justify right))
+      )
+      (fp_text user "SCL" (at 1.2 -1.37 ${270 + p.rot}) (layer "B.SilkS")
+        (effects (font (size 1 1) (thickness 0.15)) (justify right mirror))
+      )
+      (fp_text user "SDA" (at 3.74 -1.26 ${270 + p.rot}) (layer "B.SilkS")
+        (effects (font (size 1 1) (thickness 0.15)) (justify right mirror))
+      )
+      (fp_text user "VCC" (at -1.34 -1.37 ${270 + p.rot}) (layer "B.SilkS")
+        (effects (font (size 1 1) (thickness 0.15)) (justify right mirror))
+      )
+      (fp_text user "GND" (at -3.9 -1.26 ${270 + p.rot}) (layer "B.SilkS")
+        (effects (font (size 1 1) (thickness 0.15)) (justify right mirror))
       )
       (pad 11 smd custom (at -3.81 0.254 ${180 + p.rot}) (size 0.1 0.1) (layers "F.Cu" "F.Mask")
         (clearance 0.1) (zone_connect 0)
@@ -183,7 +186,7 @@ module.exports = {
               (xy 0.6 -0.2)
             )
             (width 0))
-        ))
+        ) ${jumpers_front_bottom[3]})
       (pad 21 smd custom (at -3.81 0.254 ${180 + p.rot}) (size 0.1 0.1) (layers "B.Cu" "B.Mask")
         (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
@@ -197,7 +200,7 @@ module.exports = {
               (xy 0.6 -0.2)
             )
             (width 0))
-        ))
+        ) ${jumpers_back_bottom[1]})
       (pad 12 smd custom (at -1.27 0.254 ${180 + p.rot}) (size 0.1 0.1) (layers "F.Cu" "F.Mask")
         (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
@@ -211,7 +214,7 @@ module.exports = {
               (xy 0.6 -0.2)
             )
             (width 0))
-        ))
+        ) ${jumpers_front_bottom[2]})
       (pad 22 smd custom (at -1.27 0.254 ${180 + p.rot}) (size 0.1 0.1) (layers "B.Cu" "B.Mask")
         (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
@@ -225,7 +228,7 @@ module.exports = {
               (xy 0.6 -0.2)
             )
             (width 0))
-        ))
+        ) ${jumpers_back_bottom[2]})
       (pad 13 smd custom (at 1.27 0.254 ${180 + p.rot}) (size 0.1 0.1) (layers "F.Cu" "F.Mask")
         (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
@@ -239,7 +242,7 @@ module.exports = {
               (xy 0.6 -0.2)
             )
             (width 0))
-        ))
+        ) ${jumpers_front_bottom[1]})
       (pad 23 smd custom (at 1.27 0.254 ${180 + p.rot}) (size 0.1 0.1) (layers "B.Cu" "B.Mask")
         (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
@@ -253,7 +256,7 @@ module.exports = {
               (xy 0.6 -0.2)
             )
             (width 0))
-        ))
+        ) ${jumpers_back_bottom[3]})
       (pad 14 smd custom (at 3.81 0.254 ${180 + p.rot}) (size 0.1 0.1) (layers "F.Cu" "F.Mask")
         (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
@@ -267,7 +270,7 @@ module.exports = {
               (xy 0.6 -0.2)
             )
             (width 0))
-        ))
+        ) ${jumpers_front_bottom[0]})
       (pad 24 smd custom (at 3.81 0.254 ${180 + p.rot}) (size 0.1 0.1) (layers "B.Cu" "B.Mask")
         (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
@@ -281,8 +284,8 @@ module.exports = {
               (xy 0.6 -0.2)
             )
             (width 0))
-        ))
-      (pad 31 smd custom (at -3.81 -0.762 ${180 + p.rot}) (size 1.2 0.5) (layers "B.Cu" "B.Mask") ${p.P1.str}
+        ) ${jumpers_back_bottom[4]})
+      (pad 31 smd custom (at 3.81 -0.762 ${180 + p.rot}) (size 1.2 0.5) (layers "F.Cu" "F.Mask") ${p.P1.str}
         (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
@@ -296,7 +299,7 @@ module.exports = {
             )
             (width 0))
         ))
-      (pad 41 smd custom (at 3.81 -0.762 ${180 + p.rot}) (size 1.2 0.5) (layers "F.Cu" "F.Mask") ${p.P1.str}
+      (pad 41 smd custom (at -3.81 -0.762 ${180 + p.rot}) (size 1.2 0.5) (layers "B.Cu" "B.Mask") ${p.P1.str}
         (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
@@ -310,7 +313,7 @@ module.exports = {
             )
             (width 0))
         ))
-      (pad 32 smd custom (at -1.27 -0.762 ${180 + p.rot}) (size 1.2 0.5) (layers "B.Cu" "B.Mask") ${p.P2.str}
+      (pad 32 smd custom (at 1.27 -0.762 ${180 + p.rot}) (size 1.2 0.5) (layers "F.Cu" "F.Mask") ${p.P2.str}
         (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
@@ -324,7 +327,7 @@ module.exports = {
             )
             (width 0))
         ))
-      (pad 42 smd custom (at 1.27 -0.762 ${180 + p.rot}) (size 1.2 0.5) (layers "F.Cu" "F.Mask") ${p.P2.str}
+      (pad 42 smd custom (at -1.27 -0.762 ${180 + p.rot}) (size 1.2 0.5) (layers "B.Cu" "B.Mask") ${p.P2.str}
         (clearance 0.1) (zone_connect 0)
         (options (clearance outline) (anchor rect))
         (primitives
@@ -836,15 +839,21 @@ module.exports = {
     )
     `
 
-    const oled_traces = `
-      (segment (start ${ adjust_point(-3.81, 0.254)}) (end ${ adjust_point(-3.81, 2.062)}) (width 0.2) (layer "F.Cu") (net 0))
-      (segment (start ${ adjust_point(1.27, 0.254)}) (end ${ adjust_point(1.27, 2.062)}) (width 0.2) (layer "F.Cu") (net 0))
-      (segment (start ${ adjust_point(3.81, 0.254)}) (end ${ adjust_point(3.81, 2.062)}) (width 0.2) (layer "F.Cu") (net 0))
-      (segment (start ${ adjust_point(-1.27, 0.254)}) (end ${ adjust_point(-1.27, 2.062)}) (width 0.2) (layer "F.Cu") (net 0))
-      (segment (start ${ adjust_point(-1.27, 0.254)}) (end ${ adjust_point(-1.27, 2.062)}) (width 0.2) (layer "B.Cu") (net 0))
-      (segment (start ${ adjust_point(-3.81, 0.254)}) (end ${ adjust_point(-3.81, 2.062)}) (width 0.2) (layer "B.Cu") (net 0))
-      (segment (start ${ adjust_point(1.27, 0.254)}) (end ${ adjust_point(1.27, 2.062)}) (width 0.2) (layer "B.Cu") (net 0))
-      (segment (start ${ adjust_point(3.81, 0.254)}) (end ${ adjust_point(3.81, 2.062)}) (width 0.2) (layer "B.Cu") (net 0))
+    const oled_reversible_traces = ` 
+    (segment (start ${ adjust_point(-3.81, 0.256)}) (end ${ adjust_point(-3.81, 2.066)}) (width ${p.signal_trace_width}) (layer "F.Cu") (net ${p.local_net("4").index}))
+    (segment (start ${ adjust_point(-1.27, 0.256)}) (end ${ adjust_point(-1.27, 2.066)}) (width ${p.signal_trace_width}) (layer "F.Cu") (net ${p.local_net("3").index}))
+    (segment (start ${ adjust_point(1.27, 0.256)}) (end ${ adjust_point(1.27, 2.066)}) (width ${p.pwr_trace_width}) (layer "F.Cu") (net ${p.local_net("2").index}))
+    (segment (start ${ adjust_point(3.81, 0.256)}) (end ${ adjust_point(3.81, 2.066)}) (width ${p.gnd_trace_width}) (layer "F.Cu") (net ${p.local_net("1").index}))
+    (segment (start ${ adjust_point(-3.81, 0.256)}) (end ${ adjust_point(-3.81, 2.066)}) (width ${p.signal_trace_width}) (layer "B.Cu") (net ${p.local_net("4").index}))
+    (segment (start ${ adjust_point(-1.27, 0.256)}) (end ${ adjust_point(-1.27, 2.066)}) (width ${p.signal_trace_width}) (layer "B.Cu") (net ${p.local_net("3").index}))
+    (segment (start ${ adjust_point(1.27, 0.256)}) (end ${ adjust_point(1.27, 2.066)}) (width ${p.pwr_trace_width}) (layer "B.Cu") (net ${p.local_net("2").index}))
+    (segment (start ${ adjust_point(3.81, 0.256)}) (end ${ adjust_point(3.81, 2.066)}) (width ${p.gnd_trace_width}) (layer "B.Cu") (net ${p.local_net("1").index}))
+    `
+
+    const nice_view_reversible_traces = ` 
+    `
+
+    const both_reversible_traces = ` 
     `
 
     let final = standard_opening;
@@ -897,7 +906,11 @@ module.exports = {
 
     if(p.reversible && p.add_traces_vias) {
       if(p.oled == "ssd1306") {
-        final += oled_traces;
+        final += oled_reversible_traces;
+      } else if(p.oled == "nice_view") {
+        final += nice_view_reversible_traces;
+      } else if(p.oled == "both") {
+        final += both_reversible_traces;
       }
     }  
 

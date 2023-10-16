@@ -72,7 +72,7 @@
     "SCL" "SDA" "DAT" "P2" "P3" "CS" "P9" "MCU1_24" "MCU1_1" "MCU1_23" "MCU1_2" "MCU1_22"
     "MCU1_3" "MCU1_21" "MCU1_4" "MCU1_20" "MCU1_5" "MCU1_19" "MCU1_6" "MCU1_18" "MCU1_7"
     "MCU1_17" "MCU1_8" "MCU1_16" "MCU1_9" "MCU1_15" "MCU1_10" "MCU1_14" "MCU1_11" "MCU1_13"
-    "MCU1_12" "VCC" "GND" "RAW" 
+    "MCU1_12" "VCC" "GND" "RAW" "DISP1_1" "DISP1_2" "DISP1_3" "DISP1_4" "DISP1_5"
     (clearance_class "kicad_default")
     (via_rule kicad_default)
     (rule
