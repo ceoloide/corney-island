@@ -46,6 +46,33 @@ module.exports = {
         return point_str;
     }
     
+    let dst_nets = [
+      p.P1.str, // GND
+      p.P2.str, // VCC
+      p.P3.str, // SCL / SCK
+      p.P4.str, // SDA / MOSI
+      p.P5.str, // CS
+    ];
+    local_nets = [
+      p.local_net("1").str,
+      p.local_net("2").str,
+      p.local_net("3").str,
+      p.local_net("4").str,
+      p.local_net("5").str,
+    ];
+
+    let socket_nets = dst_nets;
+    if(p.reversible) {
+      socket_nets = local_nets;
+    } else if(p.side == 'B') {
+      socket_nets = dst_nets.slice().reverse();
+    }
+    
+    let jumpers_front_top = dst_nets;
+    let jumpers_front_bottom = local_nets;
+    let jumpers_back_top = dst_nets;
+    let jumpers_back_bottom = local_nets.slice().reverse();
+    
     const standard_opening = `
     (module "combo_display" (layer ${p.side}.Cu) (tedit 5B24D78E)
       ${p.at /* parametric position */}
