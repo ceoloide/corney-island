@@ -1,9 +1,14 @@
 # For PCBs designed using KiCad: https://www.kicad.org/
 # Format documentation: https://kicad.org/help/file-formats/
 
+# Kibot
+kibot_errors.filter
+*-drc.txt
+
 # Freerouting
 freerouting/freerouting-*.jar
 logs/freerouting.log
+logs
 
 # Temporary files
 *.000
