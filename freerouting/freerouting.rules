@@ -4,7 +4,7 @@
   )
   (autoroute_settings
     (fanout off)
-    (app.freerouting.autoroute on)
+    (autoroute on)
     (postroute on)
     (vias on)
     (via_costs 50)
@@ -15,18 +15,19 @@
       (active on)
       (preferred_direction horizontal)
       (preferred_direction_trace_costs 1.0)
-      (against_preferred_direction_trace_costs 2.5)
+      (against_preferred_direction_trace_costs 1.0)
     )
     (layer_rule B.Cu
       (active on)
       (preferred_direction vertical)
       (preferred_direction_trace_costs 1.0)
-      (against_preferred_direction_trace_costs 1.7)
+      (against_preferred_direction_trace_costs 1.0)
     )
   )
   (rule
-    (width 250.0)
-    (clear 200.2)
+    (width 150.0)
+    (clear 200.1)
+    (clear 200.1 (type default_smd))
     (clear 125.0 (type smd_to_turn_gap))
     (clear 50.0 (type smd_smd))
   )
@@ -45,17 +46,23 @@
   (via 
     "Via[0-1]_800:400_um-kicad_default" "Via[0-1]_800:400_um" "kicad_default"
   )
+  (via 
+    "Via[0-1]_800:400_um-power_ground" "Via[0-1]_800:400_um" "power_ground"
+  )
   (via_rule
     default "Via[0-1]_800:400_um"
   )
   (via_rule
     "kicad_default" "Via[0-1]_800:400_um-kicad_default"
   )
+  (via_rule
+    "power_ground" "Via[0-1]_800:400_um-power_ground"
+  )
   (class default
     (clearance_class default)
     (via_rule default)
     (rule
-      (width 250.0)
+      (width 150.0)
     )
     (circuit 
       (use_layer F.Cu B.Cu)
@@ -72,7 +79,18 @@
     "SCL" "SDA" "DAT" "P2" "P3" "CS" "P9" "MCU1_24" "MCU1_1" "MCU1_23" "MCU1_2" "MCU1_22"
     "MCU1_3" "MCU1_21" "MCU1_4" "MCU1_20" "MCU1_5" "MCU1_19" "MCU1_6" "MCU1_18" "MCU1_7"
     "MCU1_17" "MCU1_8" "MCU1_16" "MCU1_9" "MCU1_15" "MCU1_10" "MCU1_14" "MCU1_11" "MCU1_13"
-    "MCU1_12" "VCC" "GND" "RAW" "DISP1_1" "DISP1_2" "DISP1_3" "DISP1_4" "DISP1_5"
+    "MCU1_12" "DISP1_1" "DISP1_2" "DISP1_3" "DISP1_4" "DISP1_5"
+    (clearance_class "kicad_default")
+    (via_rule kicad_default)
+    (rule
+      (width 150.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class "power_ground"
+    "VCC" "GND" "RAW"
     (clearance_class "kicad_default")
     (via_rule kicad_default)
     (rule
