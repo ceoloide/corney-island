@@ -70,6 +70,9 @@ units:
   spacer_radius: 2.15 # M2 standoffs
   spacer_diameter: spacer_radius * 2
   fillet_radius: 0.5
+  pwr_trace_width: 0.25
+  gnd_trace_width: 0.25
+  signal_trace_width: 0.15
 
   # Thumb splay
   splay_thumb_middle: 15
@@ -678,9 +681,9 @@ pcbs:
           reversible: true
           reverse_mount: true
           add_traces_vias: true
-          gnd_trace_width: 0.25
-          pwr_trace_width: 0.25
-          signal_trace_width: 0.15
+          gnd_trace_width: gnd_trace_width
+          pwr_trace_width: pwr_trace_width
+          signal_trace_width: signal_trace_width
         adjust:
           shift: [led_pos_x, led_pos_y]
           rotate: led_rotation
@@ -702,9 +705,9 @@ pcbs:
           reversible: true
           reverse_mount: false
           add_traces_vias: true
-          gnd_trace_width: 0.25
-          pwr_trace_width: 0.25
-          signal_trace_width: 0.15
+          gnd_trace_width: gnd_trace_width
+          pwr_trace_width: pwr_trace_width
+          signal_trace_width: signal_trace_width
         adjust:
           shift: [0, vertical_underglow_shift]
           rotate: 180
@@ -815,6 +818,7 @@ pcbs:
           routes:
             - "B(-7.085,-2.54)(-7.085,16.46)"  # net: {{column_net}}
           net: "{{column_net}}"    
+          width: signal_trace_width
     
       routes_inter_switch_column_net_2:
         what: router
@@ -824,6 +828,7 @@ pcbs:
           routes:
             - "B(2.415,19.46)(-7.085,9.96)(-7.085,-2.54)"  # net: {{column_net}}
           net: "{{column_net}}"
+          width: signal_trace_width
 
       routes_inter_switch_column_net_3:
         what: router
@@ -833,6 +838,7 @@ pcbs:
           routes:
             - "B(5.31382,18.08782)(-7.085,5.689)(-7.085,-2.54)"  # net: {{column_net}}
           net: "{{column_net}}"
+          width: signal_trace_width
       
       routes_inter_switch_column_net_4:
         what: router
@@ -842,6 +848,7 @@ pcbs:
           routes:
             - "B(-7.085,-2.54)(-7.085,10.01444)(-3.2852,13.81424)(2.53924,13.81424)(6.96877,18.24377)(6.96877,28.24611)"  # net: {{column_net}}
           net: "{{column_net}}"
+          width: signal_trace_width
      
       routes_inter_switch_row_net_1:
         what: router
@@ -851,6 +858,7 @@ pcbs:
           routes:
             - "F(12,0.325)(11.205,1.12)(6.08,1.12)(6.06,1.14)"  # net: {{row_net}}
           net: "{{row_net}}"
+          width: signal_trace_width
       
       routes_inter_switch_row_net_2:
         what: router
@@ -860,6 +868,7 @@ pcbs:
           routes:
             - "F(12,-4.425)(12,-4.172)(6.698,1.13)(6.08,1.13)"  # net: {{row_net}}
           net: "{{row_net}}"
+          width: signal_trace_width
       
       routes_inter_switch_row_net_3:
         what: router
@@ -869,6 +878,7 @@ pcbs:
           routes:
             - "F(6.06,1.14)(8.81,1.14)(12,-2.05)"  # net: {{row_net}}
           net: "{{row_net}}"
+          width: signal_trace_width
       
       routes_inter_switch_row_net_4:
         what: router
@@ -878,6 +888,7 @@ pcbs:
           routes:
             - "F(12,2.7)(7.69,2.7)(6.1,1.11)"  # net: {{row_net}}
           net: "{{row_net}}"
+          width: signal_trace_width
   
       routes_inter_switch_row_net_5:
         what: router
@@ -887,6 +898,7 @@ pcbs:
           routes:
             - "F(14.1544,1.25219)(6.17219,1.25219)(6.06,1.14)"  # net: {{row_net}}
           net: "{{row_net}}"
+          width: signal_trace_width
 
       routes_inter_switch_row_net_6:
         what: router
@@ -896,6 +908,7 @@ pcbs:
           routes:
             - "F(20.96519,4.7236)(15.0242,6.31548)(6.06,1.14)"  # net: {{row_net}}
           net: "{{row_net}}"
+          width: signal_trace_width
 
       routes_trrs_gnd:
         what: router
@@ -906,6 +919,7 @@ pcbs:
             - "B(-4.6,6.2)(-0,6.2)"  # net: GND
             - "B(-4.6,6.2)(-6.809,3.991)(-6.809,1.793)"  # net: GND
           net: GND
+          width: gnd_trace_width
         adjust:
           shift: [0.5 ks +19.61, 0.375 kp -50.31]
           rotate: -90
@@ -918,6 +932,7 @@ pcbs:
           routes:
             - "B(-4.6,3.2)(-0,3.2)"  # net: VCC
           net: VCC
+          width: pwr_trace_width
         adjust:
           shift: [0.5 ks +19.61, 0.375 kp -50.31]
           rotate: -90
@@ -931,6 +946,7 @@ pcbs:
             - "B(-4.6,10.2)(-0,10.2)"  # net: DAT
             - "B(-4.6,11.3)(-0,11.3)"  # net: DAT
           net: DAT
+          width: signal_trace_width
         adjust:
           shift: [0.5 ks +19.61, 0.375 kp -50.31]
           rotate: -90
@@ -949,6 +965,7 @@ pcbs:
           routes:
             - "B(-2.7,5.45)(-2.7,6.72678)(-2.05178,7.37)(3.755,7.37)(4.95,8.57)(4.95,10.2)"  # net: "{{key.underglow_prev}}"
           net: "{{key.underglow_prev}}"
+          width: signal_trace_width
         adjust:
           rotate: switch_rotation
 
@@ -966,6 +983,7 @@ pcbs:
           routes:
             - "F(-4.06,8.795)(-5.74,8.795)V(-5.74,5.13833)(-4.65167,4.05)(-4.06,4.05)"  # net: VCC
           net: VCC
+          width: pwr_trace_width
         adjust:
           rotate: switch_rotation
 
@@ -984,5 +1002,6 @@ pcbs:
             - "F(5.749,10.986)(3.486,10.986)(2.7,10.2)"  # net: GND
             - "(5.75,10.985)VB(5.75,4.045)V(4.06,4.045)"  # net: GND
           net: GND
+          width: gnd_trace_width
         adjust:
           rotate: switch_rotation
