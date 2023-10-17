@@ -18,5 +18,5 @@ runs:
           echo Cleaning up ergogen/output/pcbs/${board}.ses
           rm -f ergogen/output/pcbs/${board}.ses
         fi
-        java -jar /opt/freerouting_cli.jar -de ergogen/output/pcbs/${board}.dsn -do ergogen/output/pcbs/${board}.ses
+        java -jar /opt/freerouting_cli.jar -de ergogen/output/pcbs/${board}.dsn -do ergogen/output/pcbs/${board}.ses -dr freerouting/freerouting.rules -mp 35
       done
