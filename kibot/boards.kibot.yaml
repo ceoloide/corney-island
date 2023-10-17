@@ -9,11 +9,23 @@ preflight:
   filters:
     - filter: 'Ignore library warnings'
       error: 'lib_footprint_issues'
+    - filter: 'Copper edge clearance should be >=0.200 but board defaults to 0.500'
+      error: 'copper_edge_clearance'
+      regex:  'actual 0.[2-9][0-9]+ mm'
+    - filter: 'Ignore Default track width issues, board defaults to 0.250 but JLCPCB min is 0.127'
+      error: 'track_width'
+      regex:  'min width 0.2000 mm; actual 0.1[2-9][07-9]0 mm'
+    - filter: 'Hotswap reversible switch footprint has holes overlapping'
+      error: 'hole_near_hole'
+    - filter: 'Hotswap reversible switch footprint has pad overlapping with hole'
+      error: 'hole_clearance'
+    - filter: 'Hotswap reversible switch footprint has pad overlapping with hole'
+      error: 'solder_mask_bridge'
+    - filter: 'Jumpers on the MCU are supposed to short different nets'
+      error: 'shorting_items'
 
 global:
   filters:
-    - number: 58
-      regex: 'copper_edge_clearance'
     - number: 8
       regex: 'Unable to find KiCad configuration file'
     - number: 10
@@ -22,6 +34,18 @@ global:
       regex: 'Unable to find KiCad 3D models'
     - number: 58
       regex: 'KiCad project file not found|Missing KiCad main config file'
+    - number: 58
+      regex: 'copper_edge_clearance'
+    - number: 58
+      regex: 'track_width'
+    - number: 58
+      regex: 'hole_near_hole'
+    - number: 58
+      regex: 'hole_clearance'
+    - number: 58
+      regex: 'shorting_items'
+    - number: 58
+      regex: 'solder_mask_bridge'
 
 import:
   - ./default.kibot.yaml
