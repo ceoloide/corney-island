@@ -41,7 +41,7 @@ jobs:
         uses: ./.github/actions/kibot
         with:
           boards: corney_island 
-          config: plates
+          config: default
       - name: Export DSN file for Freerouting
         uses: ./.github/actions/export-dsn
         with:
