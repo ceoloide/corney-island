@@ -634,41 +634,6 @@ pcbs:
         adjust:
           shift: [-1 * horizontal_diode_shift,vertical_diode_shift]
           rotate: 90 + diode_rotation
-
-      routes_switch_hotswap_column_net:
-        what: router
-        where: /key/
-        params:
-          locked: false
-          routes:
-            - "B(-7.085,-2.54)(-7.85,-3.305)(-7.85,-4.52)V(-7.85,-6.359)(-6.74,-7.469)(4.3555,-7.469)(7.085,-4.7395)(7.085,-2.54)"  # net: {{column_net}}
-          net: "{{column_net}}"
-        adjust:
-          rotate: switch_rotation
-
-      routes_switch_hotswap_colrow_net:
-        what: router
-        where: /key/
-        params:
-          locked: false
-          routes:
-            - "B(7,-2.975)(7,-3.922)(5.842,-5.08)(4.242,-6.68)(4.04,-6.68)V"  # net: {{colrow}}
-            - "F(3.759,-6.961)(-3.961,-6.961)(-5.842,-5.08)(-7,-3.922)(-7,-2.975)"  # net: {{colrow}}
-            - "F(4.04,-6.68)(3.759,-6.961)"  # net: {{colrow}}
-          net: "{{colrow}}"
-        adjust:
-          rotate: switch_rotation
-
-      routes_switch_diode_row_net:
-        what: router
-        where: /key/
-        params:
-          locked: false
-          routes:
-            - "B(7,0.325)(6.195,1.13)(6.08,1.13)V(5.9801,1.2299)(3.8399,1.2299)(2.4,-0.21)(2.4,-0.95579)(0.91579,-2.44)(0.02,-2.44)(-0.91579,-2.44)(-2.3729,-0.98289)(-2.3729,-0.21)(-2.3729,-0.1971)(-3.7999,1.2299)(-6.0951,1.2299)(-7,0.325)"  # net: {{row_net}}  
-          net: "{{row_net}}"
-        adjust:
-          rotate: switch_rotation
           
       per_key_leds:
         what: sk6812mini-e
@@ -809,6 +774,44 @@ pcbs:
       #   params:
       #     size: screw_diameter
       #     drill: screw_diameter
+
+      routes_switch_hotswap_column_net:
+        what: router
+        where: /key/
+        params:
+          locked: false
+          routes:
+            - "B(-7.085,-2.54)(-7.85,-3.305)(-7.85,-4.52)V(-7.85,-6.359)(-6.74,-7.469)(4.3555,-7.469)(7.085,-4.7395)(7.085,-2.54)"  # net: {{column_net}}
+          net: "{{column_net}}"
+          width: signal_trace_width
+        adjust:
+          rotate: switch_rotation
+
+      routes_switch_hotswap_colrow_net:
+        what: router
+        where: /key/
+        params:
+          locked: false
+          routes:
+            - "B(7,-2.975)(7,-3.922)(5.842,-5.08)(4.242,-6.68)(4.04,-6.68)V"  # net: {{colrow}}
+            - "F(3.759,-6.961)(-3.961,-6.961)(-5.842,-5.08)(-7,-3.922)(-7,-2.975)"  # net: {{colrow}}
+            - "F(4.04,-6.68)(3.759,-6.961)"  # net: {{colrow}}
+          net: "{{colrow}}"
+          width: signal_trace_width
+        adjust:
+          rotate: switch_rotation
+
+      routes_switch_diode_row_net:
+        what: router
+        where: /key/
+        params:
+          locked: false
+          routes:
+            - "B(7,0.325)(6.195,1.13)(6.08,1.13)V(5.9801,1.2299)(3.8399,1.2299)(2.4,-0.21)(2.4,-0.95579)(0.91579,-2.44)(0.02,-2.44)(-0.91579,-2.44)(-2.3729,-0.98289)(-2.3729,-0.21)(-2.3729,-0.1971)(-3.7999,1.2299)(-6.0951,1.2299)(-7,0.325)"  # net: {{row_net}}  
+          net: "{{row_net}}"
+          width: signal_trace_width
+        adjust:
+          rotate: switch_rotation
   
       routes_inter_switch_column_net_1:
         what: router
