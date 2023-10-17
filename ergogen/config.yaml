@@ -593,22 +593,7 @@ pcbs:
         outline: _controller_overlay_screws
         layer: Edge.Cuts
         
-
-    footprints:
-      # m2_spacers:
-      #   what: screw_hole
-      #   where: /screw_pcb/
-      #   params:
-      #     size: spacer_diameter
-      #     drill: spacer_diameter
-
-      # m2_holes:
-      #   what: screw_hole
-      #   where: /screw_mcu/
-      #   params:
-      #     size: screw_diameter
-      #     drill: screw_diameter
-
+    footprints: &baseboard
       key_switches:
         what: *switch_footprint
         where: /key/
@@ -681,6 +666,146 @@ pcbs:
           net: "{{row_net}}"
         adjust:
           rotate: switch_rotation
+          
+      per_key_leds:
+        what: sk6812mini-e
+        where: /key/
+        params:
+          P1: VCC
+          P2: "{{key.led_next}}" #DOUT
+          P3: GND
+          P4: "{{key.led_prev}}" #DIN
+          reversible: true
+          reverse_mount: true
+          add_traces_vias: true
+          gnd_trace_width: 0.25
+          pwr_trace_width: 0.25
+          signal_trace_width: 0.15
+        adjust:
+          shift: [led_pos_x, led_pos_y]
+          rotate: led_rotation
+      
+      underglow_leds:
+        what: sk6812mini-e
+        where:
+          - matrix_pinky_top
+          - matrix_pinky_home
+          - matrix_middle_top
+          - matrix_middle_bottom
+          - matrix_inner_top
+          - matrix_inner_bottom
+        params:
+          P1: VCC
+          P2: "{{key.underglow_next}}" #DOUT
+          P3: GND
+          P4: "{{key.underglow_prev}}" #DIN
+          reversible: true
+          reverse_mount: false
+          add_traces_vias: true
+          gnd_trace_width: 0.25
+          pwr_trace_width: 0.25
+          signal_trace_width: 0.15
+        adjust:
+          shift: [0, vertical_underglow_shift]
+          rotate: 180
+
+      mcu:
+        what: infused-kim/nice_nano_pretty
+        where: matrix_inner_top
+        params:
+          P0: DAT
+          P1: LED
+          P21: C0
+          P20: C1
+          P19: C2
+          P18: C3
+          P15: C4
+          P14: C5
+          P4: CS
+          P5: R0
+          P6: R1
+          P7: R2
+          P8: R3
+          P16: SCL
+          P10: SDA
+          traces: true
+          show_instructions: false
+          show_silk_labels: true
+          show_via_labels: true
+        adjust:
+          shift: [19.704, 0.375 kp -18.37]
+      
+      display:
+        what: combo_display
+        where: matrix_inner_top
+        params:
+          oled: ssd1306
+          reversible: true
+        adjust:
+          shift: [0.5 ks + 10.147, 0.375 kp -38.696]
+
+      reset_switch:
+        what: reset_switch
+        where: matrix_inner_top
+        params:
+          from: GND
+          to: RST
+        adjust:
+          shift: [0.5 ks + 17.817, 0.375 kp -40.251]
+          rotate: 90
+
+      trrs:
+        what: trrs
+        where: matrix_inner_top
+        params:
+          A: DAT # Tip and first ring can be together
+          B: DAT # Tip and first ring can be together
+          C: GND
+          D: VCC
+          reverse: true
+          symmetric: true
+        adjust:
+          shift: [0.5 ks +19.61, 0.375 kp -50.31]
+          rotate: -90
+      
+      jlcpcb_order_number_text:
+        what: infused-kim/text
+        where: matrix_inner_top
+        params:
+          text: JLCJLCJLCJLC
+        adjust:
+          shift: [19.5,4]
+  
+  corney_island_mx_partially_routed:
+    outlines:
+      main:
+        outline: _pcb_outline
+      keycaps:
+        outline: _keycap_outlines
+        layer: Dwgs.User
+      screws:
+        outline: _screws
+        layer: Edge.Cuts
+      mcu_screws:
+        outline: _controller_overlay_screws
+        layer: Edge.Cuts
+        
+    footprints:
+      <<: *baseboard
+
+      # m2_spacers:
+      #   what: screw_hole
+      #   where: /screw_pcb/
+      #   params:
+      #     size: spacer_diameter
+      #     drill: spacer_diameter
+
+      # m2_holes:
+      #   what: screw_hole
+      #   where: /screw_mcu/
+      #   params:
+      #     size: screw_diameter
+      #     drill: screw_diameter
   
       routes_inter_switch_column_net_1:
         what: router
@@ -771,46 +896,44 @@ pcbs:
           routes:
             - "F(20.96519,4.7236)(15.0242,6.31548)(6.06,1.14)"  # net: {{row_net}}
           net: "{{row_net}}"
-          
-      per_key_leds:
-        what: sk6812mini-e
-        where: /key/
+
+      routes_trrs_gnd:
+        what: router
+        where: matrix_inner_top
         params:
-          P1: VCC
-          P2: "{{key.led_next}}" #DOUT
-          P3: GND
-          P4: "{{key.led_prev}}" #DIN
-          reversible: true
-          reverse_mount: true
-          add_traces_vias: true
-          gnd_trace_width: 0.25
-          pwr_trace_width: 0.25
+          locked: false
+          routes:
+            - "B(-4.6,6.2)(-0,6.2)"  # net: GND
+            - "B(-4.6,6.2)(-6.809,3.991)(-6.809,1.793)"  # net: GND
+          net: GND
         adjust:
-          shift: [led_pos_x, led_pos_y]
-          rotate: led_rotation
-      
-      underglow_leds:
-        what: sk6812mini-e
-        where:
-          - matrix_pinky_top
-          - matrix_pinky_home
-          - matrix_middle_top
-          - matrix_middle_bottom
-          - matrix_inner_top
-          - matrix_inner_bottom
+          shift: [0.5 ks +19.61, 0.375 kp -50.31]
+          rotate: -90
+
+      routes_trrs_vcc:
+        what: router
+        where: matrix_inner_top
         params:
-          P1: VCC
-          P2: "{{key.underglow_next}}" #DOUT
-          P3: GND
-          P4: "{{key.underglow_prev}}" #DIN
-          reversible: true
-          reverse_mount: false
-          add_traces_vias: true
-          gnd_trace_width: 0.25
-          pwr_trace_width: 0.25
+          locked: false
+          routes:
+            - "B(-4.6,3.2)(-0,3.2)"  # net: VCC
+          net: VCC
         adjust:
-          shift: [0, vertical_underglow_shift]
-          rotate: 180
+          shift: [0.5 ks +19.61, 0.375 kp -50.31]
+          rotate: -90
+
+      routes_trrs_data:
+        what: router
+        where: matrix_inner_top
+        params:
+          locked: false
+          routes:
+            - "B(-4.6,10.2)(-0,10.2)"  # net: DAT
+            - "B(-4.6,11.3)(-0,11.3)"  # net: DAT
+          net: DAT
+        adjust:
+          shift: [0.5 ks +19.61, 0.375 kp -50.31]
+          rotate: -90
 
       routes_underglow_leds_din:
         what: router
@@ -863,108 +986,3 @@ pcbs:
           net: GND
         adjust:
           rotate: switch_rotation
-
-      mcu:
-        what: infused-kim/nice_nano_pretty
-        where: matrix_inner_top
-        params:
-          P0: DAT
-          P1: LED
-          P21: C0
-          P20: C1
-          P19: C2
-          P18: C3
-          P15: C4
-          P14: C5
-          P4: CS
-          P5: R0
-          P6: R1
-          P7: R2
-          P8: R3
-          P16: SCL
-          P10: SDA
-          traces: true
-          show_instructions: false
-          show_silk_labels: true
-          show_via_labels: true
-        adjust:
-          shift: [19.704, 0.375 kp -18.37]
-      
-      display:
-        what: combo_display
-        where: matrix_inner_top
-        params:
-          oled: ssd1306
-          reversible: true
-        adjust:
-          shift: [0.5 ks + 10.147, 0.375 kp -38.696]
-
-      reset_switch:
-        what: reset_switch
-        where: matrix_inner_top
-        params:
-          from: GND
-          to: RST
-        adjust:
-          shift: [0.5 ks + 17.817, 0.375 kp -40.251]
-          rotate: 90
-
-      trrs:
-        what: trrs
-        where: matrix_inner_top
-        params:
-          A: DAT # Tip and first ring can be together
-          B: DAT # Tip and first ring can be together
-          C: GND
-          D: VCC
-          reverse: true
-          symmetric: true
-        adjust:
-          shift: [0.5 ks +19.61, 0.375 kp -50.31]
-          rotate: -90
-
-      routes_trrs_gnd:
-        what: router
-        where: matrix_inner_top
-        params:
-          locked: false
-          routes:
-            - "B(-4.6,6.2)(-0,6.2)"  # net: GND
-            - "B(-4.6,6.2)(-6.809,3.991)(-6.809,1.793)"  # net: GND
-          net: GND
-        adjust:
-          shift: [0.5 ks +19.61, 0.375 kp -50.31]
-          rotate: -90
-
-      routes_trrs_vcc:
-        what: router
-        where: matrix_inner_top
-        params:
-          locked: false
-          routes:
-            - "B(-4.6,3.2)(-0,3.2)"  # net: VCC
-          net: VCC
-        adjust:
-          shift: [0.5 ks +19.61, 0.375 kp -50.31]
-          rotate: -90
-
-      routes_trrs_data:
-        what: router
-        where: matrix_inner_top
-        params:
-          locked: false
-          routes:
-            - "B(-4.6,10.2)(-0,10.2)"  # net: DAT
-            - "B(-4.6,11.3)(-0,11.3)"  # net: DAT
-          net: DAT
-        adjust:
-          shift: [0.5 ks +19.61, 0.375 kp -50.31]
-          rotate: -90
-      
-      jlcpcb_order_number_text:
-        what: infused-kim/text
-        where: matrix_inner_top
-        params:
-          text: JLCJLCJLCJLC
-        adjust:
-          shift: [19.5,4]
