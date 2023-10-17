@@ -36,10 +36,12 @@ jobs:
         uses: ./.github/actions/kibot
         with:
           boards: frontplate backplate controller_overlay
+          config: default
       - name: Run KiBot to generate images, gerbers for the unrouted board
         uses: ./.github/actions/kibot
         with:
           boards: corney_island 
+          config: plates
       - name: Export DSN file for Freerouting
         uses: ./.github/actions/export-dsn
         with:
@@ -56,6 +58,7 @@ jobs:
         uses: ./.github/actions/kibot
         with:
           boards: corney_island_autorouted
+          config: boards
       - name: Persist output
         uses: actions/upload-artifact@v3
         with:

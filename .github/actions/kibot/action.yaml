@@ -4,6 +4,9 @@ inputs:
   boards:
     description: 'KiCad PCB names'
     required: true
+  config:
+    description: 'KiBot config file'
+    required: true
 runs:
   using: 'docker'
   image: 'docker://ghcr.io/inti-cmnb/kicad7_auto:latest'
@@ -15,5 +18,5 @@ runs:
       for board in ${{ inputs.boards }};
       do
         echo Processing $board;
-        kibot -b $GITHUB_WORKSPACE/ergogen/output/pcbs/${board}.kicad_pcb -c $GITHUB_WORKSPACE/kibot/boards.kibot.yaml
+        kibot -b $GITHUB_WORKSPACE/ergogen/output/pcbs/${board}.kicad_pcb -c $GITHUB_WORKSPACE/kibot/${{ inputs.config }}.kibot.yaml
       done
