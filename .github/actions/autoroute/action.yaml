@@ -7,6 +7,7 @@ inputs:
 runs:
   using: 'docker'
   image: 'docker://nixos/nix'
+  entrypoint: '/bin/bash'
   args:
     - '-c'
     - |
@@ -17,5 +18,5 @@ runs:
           echo Cleaning up ergogen/output/pcbs/${board}.ses
           rm -f ergogen/output/pcbs/${board}.ses
         fi
-        nix-shell --argstr board ${board} shell.nix
+        nix-shell --argstr board ${board} ./shell.nix
       done
