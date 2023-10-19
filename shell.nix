@@ -1,5 +1,9 @@
 { pkgs ? import <nixpkgs> {}
 , board ? ""
+, dsn_path ? "ergogen/output/pcbs/${board}.dsn"
+, rules_path ? "freerouting/freerouting.rules"
+, output_path ? "ergogen/output/pcbs/${board}.ses" 
+, max_passes ? "35"
 }:
 with pkgs;
 let
@@ -13,6 +17,6 @@ mkShell {
     xvfb_run
   ];
   shellHook = ''
-    xvfb-run -a freerouting -de ergogen/output/pcbs/${board}.dsn -dr freerouting/freerouting.rules -do -de ergogen/output/pcbs/${board}.ses -mp 35 -dct 1 -da
+    xvfb-run -a freerouting -de ${dsn_path} -dr ${rules_path} -do ${output_path} -mp ${max_passes} -dct 1 -da
   '';
 }
