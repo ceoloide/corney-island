@@ -23,10 +23,10 @@ jobs:
         uses: ScribeMD/docker-cache@0.3.3
         with:
           key: docker-${{ runner.os }}
-      - name: Use Node.js 17
+      - name: Use Node.js 18
         uses: actions/setup-node@v3
         with:
-          node-version: 17.x
+          node-version: 18.x
           cache: 'npm'
       - name: Install dependencies
         run: npm install
