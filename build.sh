@@ -4,6 +4,10 @@ container_cmd=docker
 # at the repo root (when running the script from there)
 container_args="-w /board -v $(pwd):/board --rm"
 
+# Define the boards to autoroute and export, and the plates
+boards="corney_island"
+plates="backplate frontplate controller_overlay"
+
 # Preserve manually routed files
 if [ -e ergogen/output/pcbs/*_manually_routed.kicad_pcb ]; then
     mkdir ergogen/tmp
@@ -22,16 +26,6 @@ if [ -e ergogen/tmp/*_manually_routed.kicad_pcb ]; then
     rm -r ergogen/tmp
 fi
 
-# Define the boards to autoroute and export, and the plates
-boards="corney_island"
-plates="backplate frontplate controller_overlay"
-
-# Define the fabrication profile and additional flags
-fab=jlcpcb
-flags=--no-assembly
-
-# Define the pcbdraw style
-pcbdraw_style=set-black-hasl
 
 if [ ! -e freerouting/freerouting-1.8.0.jar ]; then
     curl https://github.com/freerouting/freerouting/releases/download/v1.8.0/freerouting-1.8.0.jar -L -o freerouting/freerouting-1.8.0.jar
