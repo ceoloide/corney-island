@@ -91,8 +91,8 @@
   )
   (class "power_ground"
     "VCC" "GND" "RAW"
-    (clearance_class "power_ground")
-    (via_rule "power_ground")
+    (clearance_class "kicad_default")
+    (via_rule "kicad_default")
     (rule
       (width 250.0)
     )
