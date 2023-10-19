@@ -646,6 +646,8 @@ pcbs:
           reversible: true
           reverse_mount: true
           add_traces_vias: true
+          add_keepout: false
+          add_courtyard: false
           gnd_trace_width: gnd_trace_width
           pwr_trace_width: pwr_trace_width
           signal_trace_width: signal_trace_width
@@ -670,6 +672,8 @@ pcbs:
           reversible: true
           reverse_mount: false
           add_traces_vias: true
+          add_keepout: false
+          add_courtyard: false
           gnd_trace_width: gnd_trace_width
           pwr_trace_width: pwr_trace_width
           signal_trace_width: signal_trace_width
