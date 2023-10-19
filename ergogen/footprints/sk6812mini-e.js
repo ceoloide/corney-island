@@ -8,6 +8,8 @@ module.exports = {
     reversible: false,
     reverse_mount: true, // True = per-key, False = underglow
     add_traces_vias: true, // Only valid if reversible is True
+    add_courtyard: true,
+    add_keepout: true,
     gnd_trace_width: 0.5, // Max 0.8 to avoid clearance errors
     pwr_trace_width: 0.5, // Max 0.8 to avoid clearance errors
     signal_trace_width: 0.25,
@@ -261,7 +263,9 @@ module.exports = {
         final += marks_straight;
         final += front;
       }
-      final += courtyard_front;
+      if(p.add_courtyard) {
+        final += courtyard_front;
+      }
     }
     if(p.side == "B" || p.reversible) {
       if(p.reverse_mount) {
@@ -271,12 +275,15 @@ module.exports = {
         final += marks_straight;
         final += back;
       }
-      final += courtyard_back;
+      if(p.add_courtyard) {
+        final += courtyard_back;
+      }
     }
 
     final += standard_closing;
-    final += keepout;
-
+    if(p.add_keepout) {
+      final += keepout;
+    }
     if(p.reversible && p.add_traces_vias) {
       if(p.reverse_mount) {
         final += traces_vias_reversed;
