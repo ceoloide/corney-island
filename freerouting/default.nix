@@ -10,10 +10,10 @@ in
 , gradle_7
 }:
 stdenv.mkDerivation rec {
-  pname = "freerouting";
+  name = "freerouting";
   src = fetchFromGitHub {
       owner = "freerouting";
-      repo = pname;
+      repo = name;
       rev = "89dce17"; # HEAD on Oct 19, 2023
       hash = "sha256-mhyn3UOAtP5ahrOieW4AE0WhcL5furlJyCp2WaeqGYI=";
   };
@@ -34,7 +34,7 @@ stdenv.mkDerivation rec {
     mkdir -pv $out/share/java $out/bin
     cp build/libs/freerouting-executable.jar $out/share/java/freerouting.jar
     makeWrapper ${openjdk17}/bin/java $out/bin/freerouting \
-      --add-flags "-jar $out/share/java/freerouting.jar"
+      --add-flags "-jar $out/share/java/freerouting.jar" 
     runHook postInstall
   '';
 }
