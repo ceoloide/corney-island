@@ -4,26 +4,37 @@ let
   pkgs = import <nixpkgs> {};
 in
 { stdenv ? pkgs.stdenv
-, fetchurl ? pkgs.fetchurl
+, fetchFromGitHub ? pkgs.fetchFromGitHub
 , makeWrapper ? pkgs.makeWrapper
-, jre ? pkgs.jdk17
+, openjdk17
+, gradle_7
 }:
 stdenv.mkDerivation rec {
-  name = "freerouting";
-  version = "1.7.0";
-  src = fetchurl {
-      url = "https://github.com/freerouting/freerouting/releases/download/v${version}/${name}-${version}.jar";
-      sha256 = "sha256-5sXbM3kqAPmXmbERO7n14VdnMfiFsGnaiFBSBSj3748="; # v1.7.0
-      # sha256 = "sha256-e1CAN82BEfl2VYQP2wFKxi9Ly+DN0rJE3Ifn1Kf5LBI="; # v1.8.0
+  pname = "freerouting";
+  src = fetchFromGitHub {
+      owner = "freerouting";
+      repo = pname;
+      rev = "89dce17"; # HEAD on Oct 19, 2023
+      hash = "sha256-mhyn3UOAtP5ahrOieW4AE0WhcL5furlJyCp2WaeqGYI=";
   };
-  # I fetch the JAR file directly, so no archives to unpack.
-  dontUnpack = true;
-  nativeBuildInputs = [ makeWrapper ];
-  installPhase = ''
-    mkdir -pv $out/share/java $out/bin
-    cp ${src} $out/share/java/${name}-${version}.jar
+  nativeBuildInputs = [ makeWrapper gradle_7 openjdk17 ];
   
-    makeWrapper ${jre}/bin/java $out/bin/freerouting \
-      --add-flags "-jar $out/share/java/${name}-${version}.jar"
-    '';
+  JDK_HOME = "${openjdk17.home}";
+  JAVA_HOME = "${openjdk17.home}";
+  GRADLE_USER_HOME = "$(mktemp -d)";
+
+  buildPhase = ''
+    runHook preBuild
+    ./gradlew --no-daemon assemble
+    runHook postBuild
+  '';
+
+  installPhase = ''
+    runHook preInstall
+    mkdir -pv $out/share/java $out/bin
+    cp build/libs/freerouting-executable.jar $out/share/java/freerouting.jar
+    makeWrapper ${openjdk17}/bin/java $out/bin/freerouting \
+      --add-flags "-jar $out/share/java/freerouting.jar"
+    runHook postInstall
+  '';
 }
