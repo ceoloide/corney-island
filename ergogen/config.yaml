@@ -699,13 +699,13 @@ pcbs:
           P18: C3
           P15: C4
           P14: C5
+          P2: SDA
+          P3: SCL
           P4: CS
           P5: R0
           P6: R1
           P7: R2
           P8: R3
-          P16: SCL
-          P10: SDA
           traces: true
           show_instructions: false
           show_silk_labels: true
