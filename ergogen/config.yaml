@@ -590,7 +590,7 @@ pcbs:
         outline: _keycap_outlines
         layer: Dwgs.User
       screws:
-        outline: _screws
+        outline: _spacers
         layer: Edge.Cuts
       mcu_screws:
         outline: _controller_overlay_screws
