@@ -10,9 +10,11 @@ module.exports = {
     add_traces_vias: true, // Only valid if reversible is True
     add_courtyard: true,
     add_keepout: true,
-    gnd_trace_width: 0.5, // Max 0.8 to avoid clearance errors
-    pwr_trace_width: 0.5, // Max 0.8 to avoid clearance errors
-    signal_trace_width: 0.25,
+    gnd_trace_width: 0.25, // Max 0.8 to avoid clearance errors
+    pwr_trace_width: 0.25, // Max 0.8 to avoid clearance errors
+    signal_trace_width: 0.15,
+    via_size: 0.8, // JLCPC min is 0.5 for 1-2 layer boards, KiCad defaults to 0.8
+    via_drill: 0.4, // JLCPC min is 0.3 for 1-2 layer boards, KiCad defaults to 0.4
     side: 'B',
   },
   body: p => {
@@ -129,11 +131,11 @@ module.exports = {
       (segment (start ${ adjust_point(3.4, -0.7)}) (end ${ adjust_point(4.06, -0.105916)}) (width ${p.pwr_trace_width}) (layer "F.Cu") (net ${p.P1.index}))
       (segment (start ${ adjust_point(4.06, -0.105916)}) (end ${ adjust_point(4.06, 0.7)}) (width ${p.pwr_trace_width}) (layer "F.Cu") (net ${p.P1.index}))
       (segment (start ${ adjust_point(2.7, -0.7)}) (end ${ adjust_point(3.4, -0.7)}) (width ${p.pwr_trace_width}) (layer "F.Cu") (net ${p.P1.index}))
-      (via (at ${ adjust_point(4.06, 0.7)}) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net ${p.P1.index}))
+      (via (at ${ adjust_point(4.06, 0.7)}) (size ${p.via_size}) (drill ${p.via_drill}) (layers "F.Cu" "B.Cu") (net ${p.P1.index}))
       (segment (start ${ adjust_point(2.7, 0.7)}) (end ${ adjust_point(4.06, 0.7)}) (width ${p.pwr_trace_width}) (layer "B.Cu") (net ${p.P1.index}))
       ${'' /* Data signal out trace */}
       (segment (start ${ adjust_point(4.95, -0.7)}) (end ${ adjust_point(2.7, -0.7)}) (width ${p.signal_trace_width}) (layer "B.Cu") (net ${p.P2.index}))
-      (via (at ${ adjust_point(4.95, -0.7)}) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net ${p.P2.index}))
+      (via (at ${ adjust_point(4.95, -0.7)}) (size ${p.via_size}) (drill ${p.via_drill}) (layers "F.Cu" "B.Cu") (net ${p.P2.index}))
       (segment (start ${ adjust_point(2.7, 0.7)}) (end ${ adjust_point(3.481, 1.485)}) (width ${p.signal_trace_width}) (layer "F.Cu") (net ${p.P2.index}))
       (segment (start ${ adjust_point(3.481, 1.485)}) (end ${ adjust_point(4.529, 1.485)}) (width ${p.signal_trace_width}) (layer "F.Cu") (net ${p.P2.index}))
       (segment (start ${ adjust_point(4.95, 1.06)}) (end ${ adjust_point(4.95, -0.7)}) (width ${p.signal_trace_width}) (layer "F.Cu") (net ${p.P2.index}))
@@ -142,11 +144,11 @@ module.exports = {
       (segment (start ${ adjust_point(-3.4, -0.7)}) (end ${ adjust_point(-4.06, -0.105916)}) (width ${p.gnd_trace_width}) (layer "B.Cu") (net ${p.P3.index}))
       (segment (start ${ adjust_point(-4.06, -0.105916)}) (end ${ adjust_point(-4.06, 0.7)}) (width ${p.gnd_trace_width}) (layer "B.Cu") (net ${p.P3.index}))
       (segment (start ${ adjust_point(-2.7, -0.7)}) (end ${ adjust_point(-3.4, -0.7)}) (width ${p.gnd_trace_width}) (layer "B.Cu") (net ${p.P3.index}))
-      (via (at ${ adjust_point(-4.06, 0.7)}) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net ${p.P3.index}))
+      (via (at ${ adjust_point(-4.06, 0.7)}) (size ${p.via_size}) (drill ${p.via_drill}) (layers "F.Cu" "B.Cu") (net ${p.P3.index}))
       (segment (start ${ adjust_point(-2.7, 0.7)}) (end ${ adjust_point(-4.06, 0.7)}) (width ${p.gnd_trace_width}) (layer "F.Cu") (net ${p.P3.index}))
       ${'' /* Data signal in trace */}
       (segment (start ${ adjust_point(-4.95, -0.7)}) (end ${ adjust_point(-2.7, -0.7)}) (width ${p.signal_trace_width}) (layer "F.Cu") (net ${p.P4.index}))
-      (via (at ${ adjust_point(-4.95, -0.7)}) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net ${p.P4.index}))
+      (via (at ${ adjust_point(-4.95, -0.7)}) (size ${p.via_size}) (drill ${p.via_drill}) (layers "F.Cu" "B.Cu") (net ${p.P4.index}))
       (segment (start ${ adjust_point(-2.7, 0.7)}) (end ${ adjust_point(-3.481, 1.485)}) (width ${p.signal_trace_width}) (layer "B.Cu") (net ${p.P4.index}))
       (segment (start ${ adjust_point(-3.481, 1.485)}) (end ${ adjust_point(-4.529, 1.485)}) (width ${p.signal_trace_width}) (layer "B.Cu") (net ${p.P4.index}))
       (segment (start ${ adjust_point(-4.95, 1.06)}) (end ${ adjust_point(-4.95, -0.7)}) (width ${p.signal_trace_width}) (layer "B.Cu") (net ${p.P4.index}))
@@ -158,11 +160,11 @@ module.exports = {
     (segment (start ${ adjust_point(3.4, -0.7)}) (end ${ adjust_point(4.06, -0.105916)}) (width ${p.pwr_trace_width}) (layer "B.Cu") (net ${p.P1.index}))
     (segment (start ${ adjust_point(4.06, -0.105916)}) (end ${ adjust_point(4.06, 0.7)}) (width ${p.pwr_trace_width}) (layer "B.Cu") (net ${p.P1.index}))
     (segment (start ${ adjust_point(2.7, -0.7)}) (end ${ adjust_point(3.4, -0.7)}) (width ${p.pwr_trace_width}) (layer "B.Cu") (net ${p.P1.index}))
-    (via (at ${ adjust_point(4.06, 0.7)}) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net ${p.P1.index}))
+    (via (at ${ adjust_point(4.06, 0.7)}) (size ${p.via_size}) (drill ${p.via_drill}) (layers "F.Cu" "B.Cu") (net ${p.P1.index}))
     (segment (start ${ adjust_point(2.7, 0.7)}) (end ${ adjust_point(4.06, 0.7)}) (width ${p.pwr_trace_width}) (layer "F.Cu") (net ${p.P1.index}))
     ${'' /* Data signal out trace */}
     (segment (start ${ adjust_point(4.95, -0.7)}) (end ${ adjust_point(2.7, -0.7)}) (width ${p.signal_trace_width}) (layer "F.Cu") (net ${p.P2.index}))
-    (via (at ${ adjust_point(4.95, -0.7)}) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net ${p.P2.index}))
+    (via (at ${ adjust_point(4.95, -0.7)}) (size ${p.via_size}) (drill ${p.via_drill}) (layers "F.Cu" "B.Cu") (net ${p.P2.index}))
     (segment (start ${ adjust_point(2.7, 0.7)}) (end ${ adjust_point(3.481, 1.485)}) (width ${p.signal_trace_width}) (layer "B.Cu") (net ${p.P2.index}))
     (segment (start ${ adjust_point(3.481, 1.485)}) (end ${ adjust_point(4.529, 1.485)}) (width ${p.signal_trace_width}) (layer "B.Cu") (net ${p.P2.index}))
     (segment (start ${ adjust_point(4.95, 1.06)}) (end ${ adjust_point(4.95, -0.7)}) (width ${p.signal_trace_width}) (layer "B.Cu") (net ${p.P2.index}))
@@ -171,11 +173,11 @@ module.exports = {
     (segment (start ${ adjust_point(-3.4, -0.7)}) (end ${ adjust_point(-4.06, -0.105916)}) (width ${p.gnd_trace_width}) (layer "F.Cu") (net ${p.P3.index}))
     (segment (start ${ adjust_point(-4.06, -0.105916)}) (end ${ adjust_point(-4.06, 0.7)}) (width ${p.gnd_trace_width}) (layer "F.Cu") (net ${p.P3.index}))
     (segment (start ${ adjust_point(-2.7, -0.7)}) (end ${ adjust_point(-3.4, -0.7)}) (width ${p.gnd_trace_width}) (layer "F.Cu") (net ${p.P3.index}))
-    (via (at ${ adjust_point(-4.06, 0.7)}) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net ${p.P3.index}))
+    (via (at ${ adjust_point(-4.06, 0.7)}) (size ${p.via_size}) (drill ${p.via_drill}) (layers "F.Cu" "B.Cu") (net ${p.P3.index}))
     (segment (start ${ adjust_point(-2.7, 0.7)}) (end ${ adjust_point(-4.06, 0.7)}) (width ${p.gnd_trace_width}) (layer "B.Cu") (net ${p.P3.index}))
     ${'' /* Data signal in trace */}
     (segment (start ${ adjust_point(-4.95, -0.7)}) (end ${ adjust_point(-2.7, -0.7)}) (width ${p.signal_trace_width}) (layer "B.Cu") (net ${p.P4.index}))
-    (via (at ${ adjust_point(-4.95, -0.7)}) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net ${p.P4.index}))
+    (via (at ${ adjust_point(-4.95, -0.7)}) (size ${p.via_size}) (drill ${p.via_drill}) (layers "F.Cu" "B.Cu") (net ${p.P4.index}))
     (segment (start ${ adjust_point(-2.7, 0.7)}) (end ${ adjust_point(-3.481, 1.485)}) (width ${p.signal_trace_width}) (layer "F.Cu") (net ${p.P4.index}))
     (segment (start ${ adjust_point(-3.481, 1.485)}) (end ${ adjust_point(-4.529, 1.485)}) (width ${p.signal_trace_width}) (layer "F.Cu") (net ${p.P4.index}))
     (segment (start ${ adjust_point(-4.95, 1.06)}) (end ${ adjust_point(-4.95, -0.7)}) (width ${p.signal_trace_width}) (layer "F.Cu") (net ${p.P4.index}))
