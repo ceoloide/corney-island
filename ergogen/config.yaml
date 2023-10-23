@@ -73,6 +73,8 @@ units:
   pwr_trace_width: 0.25
   gnd_trace_width: 0.25
   signal_trace_width: 0.15
+  via_size: 0.5 # JLCPCB minimum for 1-2 layer boards
+  via_drill: 0.3 # JLCPCB minimum for 1-2 layer boards
 
   # Thumb splay
   splay_thumb_middle: 15
@@ -582,8 +584,8 @@ pcbs:
           size: screw_diameter
           drill: screw_diameter
 
-  corney_island:
-    outlines:
+  _corney_island_baseline:
+    outlines: &basepcb_outlines
       main:
         outline: _pcb_outline
       keycaps:
@@ -596,7 +598,7 @@ pcbs:
         outline: _controller_overlay_screws
         layer: Edge.Cuts
         
-    footprints: &baseboard
+    footprints: &basepcb_footprints
       key_switches:
         what: *switch_footprint
         where: /key/
@@ -651,6 +653,8 @@ pcbs:
           gnd_trace_width: gnd_trace_width
           pwr_trace_width: pwr_trace_width
           signal_trace_width: signal_trace_width
+          via_size: via_size
+          via_drill: via_drill
         adjust:
           shift: [led_pos_x, led_pos_y]
           rotate: led_rotation
@@ -677,6 +681,8 @@ pcbs:
           gnd_trace_width: gnd_trace_width
           pwr_trace_width: pwr_trace_width
           signal_trace_width: signal_trace_width
+          via_size: via_size
+          via_drill: via_drill
         adjust:
           shift: [0, vertical_underglow_shift]
           rotate: 180
@@ -707,6 +713,21 @@ pcbs:
         adjust:
           shift: [19.704, 0.375 kp -18.37]
       
+      jlcpcb_order_number_text:
+        what: infused-kim/text
+        where: matrix_inner_top
+        params:
+          text: JLCJLCJLCJLC
+        adjust:
+          shift: [19.5,4]
+  
+  corney_island:
+    outlines:
+      <<: *basepcb_outlines
+        
+    footprints:
+      <<: *basepcb_footprints
+
       display:
         what: combo_display
         where: matrix_inner_top
@@ -738,31 +759,13 @@ pcbs:
         adjust:
           shift: [0.5 ks +19.61, 0.375 kp -50.31]
           rotate: -90
-      
-      jlcpcb_order_number_text:
-        what: infused-kim/text
-        where: matrix_inner_top
-        params:
-          text: JLCJLCJLCJLC
-        adjust:
-          shift: [19.5,4]
-  
+
   corney_island_mx_partially_routed:
     outlines:
-      main:
-        outline: _pcb_outline
-      keycaps:
-        outline: _keycap_outlines
-        layer: Dwgs.User
-      screws:
-        outline: _screws
-        layer: Edge.Cuts
-      mcu_screws:
-        outline: _controller_overlay_screws
-        layer: Edge.Cuts
+      <<: *basepcb_outlines
         
     footprints:
-      <<: *baseboard
+      <<: *basepcb_footprints
 
       # m2_spacers:
       #   what: screw_hole
