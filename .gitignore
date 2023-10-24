@@ -44,6 +44,7 @@ fp-info-cache
 
 # ergogen
 ergogen/output/outlines/_*.*
+ergogen/output/pcbs/_*.*
 ergogen/output/outlines/*.yaml
 ergogen/output/points
 ergogen/output/source
