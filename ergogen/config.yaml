@@ -99,95 +99,83 @@ points:
             column_net: C0
           rows:
             top.key:
-              led_prev: LED_20
-              led_next: LED_21
+              led_prev: LED_18
+              led_next: LED_19
             home.key:
               led_prev: LED_19
               led_next: LED_20
             bottom.key:
-              led_prev: LED_18
-              led_next: LED_19
+              led_prev: LED_20
+              led_next: LED_21
         pinky:
           key:
             column_net: C1
           rows:
             top.key:
-              led_prev: LED_15
-              led_next: ULED_5
-              underglow_prev: ULED_5
-              underglow_next: LED_16
-            home.key:
-              led_prev: LED_16
-              led_next: ULED_6
-              underglow_prev: ULED_6
-              underglow_next: LED_17
-            bottom.key:
               led_prev: LED_17
               led_next: LED_18
+            home.key:
+              led_prev: LED_16
+              led_next: LED_17
+            bottom.key:
+              led_prev: LED_15
+              led_next: LED_16
         ring:
           key:
             stagger: 0.25 kp
             column_net: C2
           rows:
             top.key:
-              led_prev: LED_14
-              led_next: LED_15
+              led_prev: LED_12
+              led_next: LED_13
             home.key:
               led_prev: LED_13
               led_next: LED_14
             bottom.key:
-              led_prev: LED_12
-              led_next: LED_13
+              led_prev: LED_14
+              led_next: LED_15
         middle:
           key:
             stagger: 0.125 kp
             column_net: C3
           rows:
             top.key:
-              led_prev: LED_8
-              led_next: ULED_3
-              underglow_prev: ULED_3
-              underglow_next: LED_9
+              led_prev: LED_11
+              led_next: LED_12
             home.key:
+              led_prev: LED_10
+              led_next: LED_11
+            bottom.key:
               led_prev: LED_9
               led_next: LED_10
-            bottom.key:
-              led_prev: LED_10
-              led_next: ULED_4
-              underglow_prev: ULED_4
-              underglow_next: LED_11
         index:
           key:
             stagger: -0.125 kp
             column_net: C4
           rows:
             top.key:
-              led_prev: LED_7
-              led_next: LED_8
+              led_prev: LED_4
+              led_next: LED_5
             home.key:
-              led_prev: LED_6
-              led_next: LED_7
-            bottom.key:
               led_prev: LED_5
               led_next: LED_6
+            bottom.key:
+              led_prev: LED_6
+              led_next: LED_7
         inner:
           key:
             stagger: -0.125 kp
             column_net: C5
           rows:
             top.key:
-              led_prev: LED
-              led_next: LED_1
-              underglow_prev: LED_1
-              underglow_next: ULED_1
+              led_prev: LED_3
+              led_next: LED_4
             home.key:
-              led_prev: ULED_1
-              led_next: LED_2
-            bottom.key:
               led_prev: LED_2
-              led_next: ULED_2
-              underglow_prev: ULED_2
-              underglow_next: LED_3
+              led_next: LED_3
+            bottom.key:
+              led_prev: LED_1
+              led_next: LED_2
       rows:
         bottom:
           row_net: R2
@@ -214,8 +202,8 @@ points:
             column_net: C3
           rows:
             home.key:
-              led_prev: LED_11
-              led_next: LED_12
+              led_prev: LED_8
+              led_next: LED_9
         mid:
           key:
             splay: -splay_thumb_middle
@@ -224,8 +212,8 @@ points:
             spread: ks + 2
           rows:
             home.key:
-              led_prev: LED_4
-              led_next: LED_5
+              led_prev: LED_7
+              led_next: LED_8
         far:
           key:
             splay: -splay_thumb_far
@@ -237,13 +225,79 @@ points:
               - key_1_5u
           rows:
             home.key:
-              led_prev: LED_3
-              led_next: LED_4
+              led_prev: ULED_6
+              led_next: LED_1
       rows:
         home:
           row_net: R3
 
     # Helper points
+    underglow_led_1:
+      key:
+        tags:
+          - helper
+          - underglow
+        din: LED
+        dout: ULED_1
+      anchor:
+        - ref: matrix_inner_top
+          shift: [0, vertical_underglow_shift]
+
+    underglow_led_2:
+      key:
+        tags:
+          - helper
+          - underglow
+        din: ULED_1
+        dout: ULED_2
+      anchor:
+        - ref: matrix_middle_top
+          shift: [0, vertical_underglow_shift]
+
+    underglow_led_3:
+      key:
+        tags:
+          - helper
+          - underglow
+        din: ULED_2
+        dout: ULED_3
+      anchor:
+        - ref: matrix_pinky_top
+          shift: [0, vertical_underglow_shift]
+
+    underglow_led_4:
+      key:
+        tags:
+          - helper
+          - underglow
+        din: ULED_3
+        dout: ULED_4
+      anchor:
+        - ref: matrix_pinky_home
+          shift: [0, vertical_underglow_shift]
+
+    underglow_led_5:
+      key:
+        tags:
+          - helper
+          - underglow
+        din: ULED_4
+        dout: ULED_5
+      anchor:
+        - ref: matrix_middle_bottom
+          shift: [0, vertical_underglow_shift]
+
+    underglow_led_6:
+      key:
+        tags:
+          - helper
+          - underglow
+        din: ULED_5
+        dout: ULED_6
+      anchor:
+        - ref: matrix_inner_bottom
+          shift: [0, vertical_underglow_shift]
+
     plate_outline_bottom_1:
       key.tags:
         - helper
@@ -636,56 +690,6 @@ pcbs:
         adjust:
           shift: [-1 * horizontal_diode_shift,vertical_diode_shift]
           rotate: 90 + diode_rotation
-          
-      per_key_leds:
-        what: sk6812mini-e
-        where: /key/
-        params:
-          P1: VCC
-          P2: "{{key.led_next}}" #DOUT
-          P3: GND
-          P4: "{{key.led_prev}}" #DIN
-          reversible: true
-          reverse_mount: true
-          add_traces_vias: true
-          add_keepout: false
-          add_courtyard: false
-          gnd_trace_width: gnd_trace_width
-          pwr_trace_width: pwr_trace_width
-          signal_trace_width: signal_trace_width
-          via_size: via_size
-          via_drill: via_drill
-        adjust:
-          shift: [led_pos_x, led_pos_y]
-          rotate: led_rotation
-      
-      underglow_leds:
-        what: sk6812mini-e
-        where:
-          - matrix_pinky_top
-          - matrix_pinky_home
-          - matrix_middle_top
-          - matrix_middle_bottom
-          - matrix_inner_top
-          - matrix_inner_bottom
-        params:
-          P1: VCC
-          P2: "{{key.underglow_next}}" #DOUT
-          P3: GND
-          P4: "{{key.underglow_prev}}" #DIN
-          reversible: true
-          reverse_mount: false
-          add_traces_vias: true
-          add_keepout: false
-          add_courtyard: false
-          gnd_trace_width: gnd_trace_width
-          pwr_trace_width: pwr_trace_width
-          signal_trace_width: signal_trace_width
-          via_size: via_size
-          via_drill: via_drill
-        adjust:
-          shift: [0, vertical_underglow_shift]
-          rotate: 180
 
       mcu:
         what: infused-kim/nice_nano_pretty
@@ -759,6 +763,49 @@ pcbs:
         adjust:
           shift: [0.5 ks +19.61, 0.375 kp -50.31]
           rotate: -90
+          
+      per_key_leds:
+        what: sk6812mini-e
+        where: /key/
+        params:
+          P1: VCC
+          P2: "{{key.led_next}}" #DOUT
+          P3: GND
+          P4: "{{key.led_prev}}" #DIN
+          reversible: true
+          reverse_mount: true
+          add_traces_vias: true
+          add_keepout: false
+          add_courtyard: false
+          gnd_trace_width: gnd_trace_width
+          pwr_trace_width: pwr_trace_width
+          signal_trace_width: signal_trace_width
+          via_size: via_size
+          via_drill: via_drill
+        adjust:
+          shift: [led_pos_x, led_pos_y]
+          rotate: led_rotation
+      
+      underglow_leds:
+        what: sk6812mini-e
+        where: [underglow]
+        params:
+          P1: VCC
+          P2: "{{key.dout}}" #DOUT
+          P3: GND
+          P4: "{{key.din}}" #DIN
+          reversible: true
+          reverse_mount: false
+          add_traces_vias: true
+          add_keepout: false
+          add_courtyard: false
+          gnd_trace_width: gnd_trace_width
+          pwr_trace_width: pwr_trace_width
+          signal_trace_width: signal_trace_width
+          via_size: via_size
+          via_drill: via_drill
+        adjust:
+          rotate: 180
 
   corney_island_mx_partially_routed:
     outlines:
