@@ -807,6 +807,53 @@ pcbs:
         adjust:
           rotate: 180
 
+  corney_island_wireless:
+    outlines:
+      <<: *basepcb_outlines
+        
+    footprints:
+      <<: *basepcb_footprints
+      
+      display:
+        what: combo_display
+        where: matrix_inner_top
+        params:
+          oled: nice_view
+          reversible: true
+        adjust:
+          shift: [0.5 ks + 10.147, 0.375 kp -40.758]
+      
+      on_off_switch:
+        what: infused-kim/switch_power
+        where: matrix_inner_top
+        params:
+          reverse: true
+          from: BAT_P
+          to: RAW
+        adjust:
+          shift: [0.5 ks + 18.5, 0.375 kp -46.75]
+      
+      reset_switch:
+        what: infused-kim/switch_reset
+        where: matrix_inner_top
+        params:
+          reverse: true
+          from: GND
+          to: RST
+        adjust:
+          shift: [0.5 ks + 18.5, 0.375 kp -38.75]
+      
+      battery_connector:
+        what: jst_battery_connector
+        where: matrix_inner_top
+        params:
+          reversible: true
+          BAT_P: BAT_P
+          BAT_N: GND
+        adjust:
+          shift: [0.5 ks + 12.0, 0.375 kp -44.00]
+          rotate: -90
+
   corney_island_mx_partially_routed:
     outlines:
       <<: *basepcb_outlines
