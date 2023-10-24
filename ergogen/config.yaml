@@ -791,9 +791,9 @@ pcbs:
         where: [underglow]
         params:
           P1: VCC
-          P2: "{{key.dout}}" #DOUT
+          P2: "{{zone.key.dout}}" #DOUT
           P3: GND
-          P4: "{{key.din}}" #DIN
+          P4: "{{zone.key.din}}" #DIN
           reversible: true
           reverse_mount: false
           add_traces_vias: true
