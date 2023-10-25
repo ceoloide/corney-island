@@ -108,7 +108,7 @@
     )
   )
   (class "power_ground"
-    "VCC" "GND" "RAW"
+    "VCC" "GND" "RAW" "BAT_P"
     (clearance_class "kicad_default")
     (via_rule "kicad_default")
     (rule
