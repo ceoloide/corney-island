@@ -6,8 +6,8 @@ inputs:
     required: true
 runs:
   using: 'docker'
-  image: 'docker://nixos/nix'
-  entrypoint: '/bin/bash'
+  image: 'docker://soundmonster/freerouting_cli:v0.1.0'
+  entrypoint: '/bin/sh'
   args:
     - '-c'
     - |
@@ -18,5 +18,5 @@ runs:
           echo Cleaning up ergogen/output/pcbs/${board}.ses
           rm -f ergogen/output/pcbs/${board}.ses
         fi
-        nix-shell --argstr board ${board} ./shell.nix
+        java -jar /opt/freerouting_cli.jar -de ergogen/output/pcbs/${board}.dsn -do ergogen/output/pcbs/${board}.ses -dr freerouting/freerouting.rules -mp 20
       done
