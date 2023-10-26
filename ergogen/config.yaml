@@ -73,8 +73,8 @@ units:
   pwr_trace_width: 0.25
   gnd_trace_width: 0.25
   signal_trace_width: 0.15
-  via_size: 0.5 # JLCPCB minimum for 1-2 layer boards
-  via_drill: 0.3 # JLCPCB minimum for 1-2 layer boards
+  via_size: 0.56 # JLCPCB min 0.56 | KiCad default 0.8
+  via_drill: 0.3 # JLCPCB min 0.3 | KiCad default 0.4
 
   # Thumb splay
   splay_thumb_middle: 15
