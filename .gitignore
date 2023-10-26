@@ -7,8 +7,7 @@ kibot_errors.filter
 
 # Freerouting
 freerouting/freerouting-*.jar
-logs/freerouting.log
-logs
+freerouting/freerouting.log
 
 # Temporary files
 *.000
@@ -27,6 +26,7 @@ _autosave-*
 *-save.kicad_pcb
 fp-info-cache
 *.pro
+logs
 
 # Netlist files (exported from Eeschema)
 *.net
