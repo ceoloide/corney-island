@@ -26,55 +26,38 @@
   )
   (rule
     (width 150.0)
-    (clear 200.1)
-    (clear 200.1 (type default_smd))
-    (clear 125.0 (type smd_to_turn_gap))
-    (clear 50.0 (type smd_smd))
+    (clearance 200.2)
+    (clearance 75.0 (type smd_to_turn_gap))
+    (clearance 50.0 (type smd))
+    (clearance 200.2 (type "kicad_default"))
+    (clearance 200.2 (type "power_ground"))
   )
-  (padstack "Via[0-1]_800:400_um"
+  (padstack "Via[0-1]_560:300_um"
     (shape
-      (circle F.Cu 800.0 0.0 0.0)
+      (circle F.Cu 560.0 0.0 0.0)
     )
     (shape
-      (circle B.Cu 800.0 0.0 0.0)
-    )
-    (attach off)
-  )
-  (padstack "Via[0-1]_500:300_um"
-    (shape
-      (circle F.Cu 500.0 0.0 0.0)
-    )
-    (shape
-      (circle B.Cu 500.0 0.0 0.0)
+      (circle B.Cu 560.0 0.0 0.0)
     )
     (attach off)
   )
   (via 
-    "Via[0-1]_800:400_um" "Via[0-1]_800:400_um" default
+    "Via[0-1]_560:300_um" "Via[0-1]_560:300_um" default
   )
   (via 
-    "Via[0-1]_800:400_um-kicad_default" "Via[0-1]_800:400_um" "kicad_default"
+    "Via[0-1]_560:300_um-kicad_default" "Via[0-1]_560:300_um" "kicad_default"
   )
   (via 
-    "Via[0-1]_800:400_um-power_ground" "Via[0-1]_800:400_um" "power_ground"
-  )
-  (via 
-    "Via[0-1]_500:300_um" "Via[0-1]_500:300_um" default
-  )
-  (via 
-    "Via[0-1]_500:300_um-kicad_default" "Via[0-1]_500:300_um" "kicad_default"
-  )
-  (via 
-    "Via[0-1]_500:300_um-power_ground" "Via[0-1]_500:300_um" "power_ground"
+    "Via[0-1]_560:300_um-power_ground" "Via[0-1]_560:300_um" "power_ground"
   )
   (via_rule
-    default "Via[0-1]_500:300_um"
+    default "Via[0-1]_560:300_um"
   )
   (via_rule
-    "kicad_default" "Via[0-1]_500:300_um-kicad_default"
+    "kicad_default" "Via[0-1]_560:300_um-kicad_default"
   )
   (via_rule
-    "power_ground" "Via[0-1]_500:300_um-power_ground"
+    "power_ground" "Via[0-1]_560:300_um-power_ground"
   )
   (class default
     (clearance_class default)
@@ -87,19 +70,20 @@
     )
   )
   (class "kicad_default"
-    "C0" "outer_bottom" "outer_home" "outer_top" "C1" "pinky_bottom" "pinky_home"
-    "pinky_top" "C2" "ring_bottom" "ring_home" "ring_top" "C3" "middle_bottom"
-    "middle_home" "middle_top" "C4" "index_bottom" "index_home" "index_top" "C5"
-    "inner_bottom" "inner_home" "inner_top" "near_home" "mid_home" "far_home" "R2" "R1"
-    "R0" "R3" "LED_19" "LED_18" "LED_20" "LED_21" "LED_17" "ULED_6" "LED_16""ULED_5"
-    "LED_15" "LED_13" "LED_12" "LED_14" "ULED_4" "LED_10" "LED_9" "ULED_3" "LED_8" "LED_6"
-    "LED_5" "LED_7" "ULED_2" "LED_2" "ULED_1" "LED_1" "LED" "LED_11" "LED_4" "LED_3" "RST"
-    "SCL" "SDA" "DAT" "P2" "P3" "CS" "P9" "MCU1_24" "MCU1_1" "MCU1_23" "MCU1_2" "MCU1_22"
-    "MCU1_3" "MCU1_21" "MCU1_4" "MCU1_20" "MCU1_5" "MCU1_19" "MCU1_6" "MCU1_18" "MCU1_7"
-    "MCU1_17" "MCU1_8" "MCU1_16" "MCU1_9" "MCU1_15" "MCU1_10" "MCU1_14" "MCU1_11" "MCU1_13"
-    "MCU1_12" "DISP1_1" "DISP1_2" "DISP1_3" "DISP1_4" "DISP1_5"
+    C0 "outer_bottom" "outer_home" "outer_top" C1 "pinky_bottom" "pinky_home" "pinky_top"
+    C2 "ring_bottom" "ring_home" "ring_top" C3 "middle_bottom" "middle_home" "middle_top"
+    C4 "index_bottom" "index_home" "index_top" C5 "inner_bottom" "inner_home" "inner_top"
+    "near_home" "mid_home" "far_home" R2 R1 R0 R3 RST
+    P16 P10 LED DAT SDA SCL CS P9
+    "MCU1_24" "MCU1_1" "MCU1_23" "MCU1_2" "MCU1_22" "MCU1_3" "MCU1_21" "MCU1_4"
+    "MCU1_20" "MCU1_5" "MCU1_19" "MCU1_6" "MCU1_18" "MCU1_7" "MCU1_17" "MCU1_8"
+    "MCU1_16" "MCU1_9" "MCU1_15" "MCU1_10" "MCU1_14" "MCU1_11" "MCU1_13" "MCU1_12"
+    "DISP1_1" "DISP1_2" "DISP1_3" "DISP1_4" "LED_21" "LED_20" "LED_19" "LED_18"
+    "LED_16" "LED_15" "LED_17" "LED_14" "LED_13" "LED_12" "LED_10" "LED_9"
+    "LED_11" "LED_7" "LED_6" "LED_5" "LED_4" "LED_2" "LED_1" "LED_3"
+    "LED_8" "ULED_6" "ULED_1" "ULED_2" "ULED_3" "ULED_4" "ULED_5"
     (clearance_class "kicad_default")
-    (via_rule kicad_default)
+    (via_rule "kicad_default")
     (rule
       (width 150.0)
     )
@@ -108,9 +92,9 @@
     )
   )
   (class "power_ground"
-    "VCC" "GND" "RAW" "BAT_P"
-    (clearance_class "kicad_default")
-    (via_rule "kicad_default")
+    RAW GND VCC
+    (clearance_class "power_ground")
+    (via_rule "power_ground")
     (rule
       (width 250.0)
     )
