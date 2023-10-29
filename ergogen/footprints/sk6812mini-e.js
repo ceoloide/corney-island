@@ -52,7 +52,8 @@ module.exports = {
     }
     
     const standard_opening = `
-      (module "ceoloide:YS-SK6812MINI-E (${p.reverse_mount ? "per-key" : "underglow"})" (layer ${p.side}.Cu) (tedit 5F70BC98)
+      (module "ceoloide:YS-SK6812MINI-E (${p.reverse_mount ? "per-key" : "underglow"}${p.reversible ? ", reversible" : "single-side"})" 
+        (layer ${p.side}.Cu) (tedit 5F70BC98)
         ${p.at /* parametric position */}
 
         (fp_text reference "${p.ref}" (at -4.75 0 90) (layer ${p.side}.SilkS) ${p.ref_hide}
