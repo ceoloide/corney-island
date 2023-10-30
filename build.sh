@@ -17,6 +17,14 @@ fi
 # Cleanup the output folder or KiCad will error out
 rm -rf ergogen/output
 
+# Cleanup Freerouting log outpus
+if [ -e freerouting/freerouting.log ]; then
+    rm freerouting/freerouting.log
+fi
+if [ -e logs/freerouting.log ]; then
+    rm logs/freerouting.log
+fi
+
 # Generate unrouted PCBs with Ergogen (definition in package.json)
 npm run debug
 
@@ -27,8 +35,8 @@ if [ -e ergogen/tmp/*_manually_routed.kicad_pcb ]; then
 fi
 
 
-if [ ! -e freerouting/freerouting-1.8.0.jar ]; then
-    curl https://github.com/freerouting/freerouting/releases/download/v1.8.0/freerouting-1.8.0.jar -L -o freerouting/freerouting-1.8.0.jar
+if [ ! -e freerouting/freerouting-1.9.0.jar ]; then
+    curl https://github.com/freerouting/freerouting/releases/download/v1.9.0/freerouting-1.9.0.jar -L -o freerouting/freerouting-1.9.0.jar
 fi
 
 for plate in ${plates}
@@ -51,9 +59,9 @@ do
     fi
     if [ -e ergogen/output/pcbs/${board}.dsn ]; then
         echo Autoroute PCB
-        # java -jar freerouting/freerouting-1.8.0.jar -de ergogen/output/pcbs/${board}.dsn -do ergogen/output/pcbs/${board}.ses -dr freerouting/freerouting.rules
-        # ${container_cmd} run ${container_args} soundmonster/freerouting_cli:v0.1.0 java -jar /opt/freerouting_cli.jar -de ergogen/output/pcbs/${board}.dsn -do ergogen/output/pcbs/${board}.ses -dr freerouting/freerouting.rules -mp 30
-        ${container_cmd} run ${container_args} nixos/nix nix-shell --argstr board ${board}
+        java -Dlog4j.configurationFile=file:./freerouting/log4j2.xml -jar freerouting/freerouting-1.9.0.jar -de ergogen/output/pcbs/${board}.dsn -do ergogen/output/pcbs/${board}.ses -dr freerouting/freerouting.rules -mp 30
+        # ${container_cmd} run ${container_args} soundmonster/freerouting_cli:v0.1.0 java -Dlog4j.configurationFile=file:./freerouting/log4j2.xml -jar /opt/freerouting_cli.jar -de ergogen/output/pcbs/${board}.dsn -do ergogen/output/pcbs/${board}.ses -dr freerouting/freerouting.rules -mp 30
+        # ${container_cmd} run ${container_args} nixos/nix nix-shell --argstr board ${board}
     fi
     if [ -e ergogen/output/pcbs/${board}.ses ]; then
         echo "Import SES"
