@@ -7,7 +7,7 @@ module.exports = {
     },
     body: p => {
         const standard_opening = `
-            (footprint "JST_PH_S2B-PH-K" (layer ${p.side}.Cu) (tedit 6135B927)
+            (module "JST_PH_S2B-PH-K" (layer ${p.side}.Cu) (tedit 6135B927)
                 ${p.at /* parametric position */}
 
                 (descr "JST PH series connector, S2B-PH-K (http://www.jst-mfg.com/product/pdf/eng/ePH.pdf)")
