@@ -503,8 +503,6 @@ outlines:
           shift: [ks * 0.478, kp * 0.34 +0.052]
         - ref: matrix_inner_top
           shift: [ks * 0.478, kp * 0.468 -0.005]
-        - ref: matrix_inner_top
-          shift: [ks * 0.478, kp * 0.468 -0.005]
         - ref: plate_additional_outline_top
         - ref: plate_additional_outline_bottom_left
         - ref: plate_additional_outline_bottom_right
