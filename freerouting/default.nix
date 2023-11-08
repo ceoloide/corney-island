@@ -14,8 +14,8 @@ stdenv.mkDerivation rec {
   src = fetchFromGitHub {
       owner = "freerouting";
       repo = name;
-      rev = "89dce17"; # HEAD on Oct 19, 2023
-      hash = "sha256-mhyn3UOAtP5ahrOieW4AE0WhcL5furlJyCp2WaeqGYI=";
+      rev = "dae9ece"; # v1.9.0
+      hash = "sha256-i3Eys6+1zrrup7pMHrtVeyJiUMwsogpKT1VgK/58oSQ=";
   };
   nativeBuildInputs = [ makeWrapper gradle_7 openjdk17 ];
   
