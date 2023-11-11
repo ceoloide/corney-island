@@ -839,7 +839,8 @@ pcbs:
           from: GND
           to: RST
         adjust:
-          shift: [0.5 ks + 18.5, 0.375 kp -38.75]
+          shift: [11.65, 0.24 kp]
+          rotate: 90
       
       battery_connector:
         what: jst_battery_connector
