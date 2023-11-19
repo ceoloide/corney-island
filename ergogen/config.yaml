@@ -5,9 +5,12 @@ meta:
   ref: &kb_ref "Corney Island v0.1"
   author: ceoloide
   url: &kb_url https://github.com/ceoloide/corney-island
+  # footprint: &switch_footprint "infused-kim/choc"
   footprint: &switch_footprint "mx"
   switch:
     $extends: presets.mx
+    # $extends: presets.choc_v1
+    # $extends: presets.choc_v1_mx_spacing
 
 presets:
   # These presets provide different layout options
@@ -657,7 +660,10 @@ pcbs:
         params:
           reverse: true
           hotswap: true
-          keycaps: false
+          # The following parameters are specific to infused-kim/choc
+          # outer_pad_width_front: 1.6
+          # outer_pad_width_back: 1.6
+          # show_keycaps: false
           from: "{{column_net}}"
           to: "{{colrow}}"
         adjust:
@@ -717,11 +723,11 @@ pcbs:
       
       jlcpcb_order_number_text:
         what: infused-kim/text
-        where: matrix_inner_top
+        where: matrix_ring_bottom
         params:
           text: JLCJLCJLCJLC
         adjust:
-          shift: [19.5,4]
+          shift: [0, -0.65 kp]
   
   corney_island:
     outlines:
@@ -829,7 +835,8 @@ pcbs:
           from: BAT_P
           to: RAW
         adjust:
-          shift: [0.5 ks + 18.5, 0.375 kp -46.75]
+          shift: [19.704, 0.245 kp]
+          rotate: 90
       
       reset_switch:
         what: infused-kim/switch_reset
@@ -850,5 +857,5 @@ pcbs:
           BAT_P: BAT_P
           BAT_N: GND
         adjust:
-          shift: [0.5 ks + 12.0, 0.375 kp -44.00]
+          shift: [0.5 ks + 17.0, 0.375 kp -46.25]
           rotate: -90
