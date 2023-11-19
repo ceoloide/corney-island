@@ -36,6 +36,7 @@ logs
 *.ses
 
 # Exported BOM files
+!log4j2.xml
 *.xml
 *.csv
 
