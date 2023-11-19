@@ -42,24 +42,24 @@ jobs:
       - name: Run KiBot to generate images, gerbers for the unrouted board
         uses: ./.github/actions/kibot
         with:
-          boards: corney_island 
+          boards: corney_island corney_island_wireless 
           config: default
       - name: Export DSN file for Freerouting
         uses: ./.github/actions/export-dsn
         with:
-          boards: corney_island
+          boards: corney_island corney_island_wireless
       - name: Autoroute PCB
         uses: ./.github/actions/autoroute
         with:
-          boards: corney_island
+          boards: corney_island corney_island_wireless
       - name: Import SES
         uses: ./.github/actions/import-ses
         with:
-          boards: corney_island
+          boards: corney_island corney_island_wireless
       - name: Run KiBot to generate images, gerbers for the autorouted board
         uses: ./.github/actions/kibot
         with:
-          boards: corney_island_autorouted
+          boards: corney_island_autorouted corney_island_wireless_autorouted
           config: boards
       - name: Persist output
         uses: actions/upload-artifact@v3
