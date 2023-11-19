@@ -152,7 +152,7 @@ module.exports = {
                     (width 0))
                 )
                 ${local_nets[1]})
-            (pad 1 smd custom (at -1 2.816 ${180 + p.rot}) (size 1.2 0.5) (layers "F.Cu" "F.Mask") ${p.BAT_P.str}
+            (pad 1 smd custom (at -1 2.816 ${180 + p.rot}) (size 1.2 0.5) (layers "F.Cu" "F.Mask") ${p.BAT_N.str}
                 (clearance 0.1) (zone_connect 0)
                 (options (clearance outline) (anchor rect))
                 (primitives
@@ -166,7 +166,7 @@ module.exports = {
                     )
                     (width 0))
                 ) )
-            (pad 1 smd custom (at 1 2.816 ${180 + p.rot}) (size 1.2 0.5) (layers "B.Cu" "B.Mask") ${p.BAT_P.str}
+            (pad 1 smd custom (at 1 2.816 ${180 + p.rot}) (size 1.2 0.5) (layers "B.Cu" "B.Mask") ${p.BAT_N.str}
                 (clearance 0.1) (zone_connect 0)
                 (options (clearance outline) (anchor rect))
                 (primitives
@@ -180,7 +180,7 @@ module.exports = {
                     )
                     (width 0))
                 ) )
-            (pad 2 smd custom (at -1 2.816 ${180 + p.rot}) (size 1.2 0.5) (layers "B.Cu" "B.Mask") ${p.BAT_N.str}
+            (pad 2 smd custom (at -1 2.816 ${180 + p.rot}) (size 1.2 0.5) (layers "B.Cu" "B.Mask") ${p.BAT_P.str}
                 (clearance 0.1) (zone_connect 0)
                 (options (clearance outline) (anchor rect))
                 (primitives
@@ -194,7 +194,7 @@ module.exports = {
                     )
                     (width 0))
                 ) )
-            (pad 2 smd custom (at 1 2.816 ${180 + p.rot}) (size 1.2 0.5) (layers "F.Cu" "F.Mask") ${p.BAT_N.str}
+            (pad 2 smd custom (at 1 2.816 ${180 + p.rot}) (size 1.2 0.5) (layers "F.Cu" "F.Mask") ${p.BAT_P.str}
                 (clearance 0.1) (zone_connect 0)
                 (options (clearance outline) (anchor rect))
                 (primitives
