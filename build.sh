@@ -62,9 +62,9 @@ do
         # java -Dlog4j.configurationFile=file:./freerouting/log4j2.xml -jar freerouting/freerouting-cli.jar -de ergogen/output/pcbs/${board}.dsn -do ergogen/output/pcbs/${board}.ses -dr freerouting/freerouting.rules -mp 20
         # java -Dlog4j.configurationFile=file:./freerouting/log4j2.xml -jar freerouting/freerouting-1.6.5.jar -de ergogen/output/pcbs/${board}.dsn -do ergogen/output/pcbs/${board}.ses -dr freerouting/freerouting.rules -mp 20
         # java -Dlog4j.configurationFile=file:./freerouting/log4j2.xml -jar freerouting/freerouting-1.7.0.jar -de ergogen/output/pcbs/${board}.dsn -do ergogen/output/pcbs/${board}.ses -dr freerouting/freerouting.rules -mp 20
-        # java -Dlog4j.configurationFile=file:./freerouting/log4j2.xml -jar freerouting/freerouting-1.8.0.jar -de ergogen/output/pcbs/${board}.dsn -do ergogen/output/pcbs/${board}.ses -dr freerouting/freerouting.rules -mp 20 -dst 1
-        java -Dlog4j.configurationFile=file:./freerouting/log4j2.xml -jar freerouting/freerouting-1.9.0.jar -de ergogen/output/pcbs/${board}.dsn -do ergogen/output/pcbs/${board}.ses -dr freerouting/${board}.rules -mp 20 -dst 1
-        # java -Dlog4j.configurationFile=file:./freerouting/log4j2.xml -jar freerouting/freerouting-test.jar -de ergogen/output/pcbs/${board}.dsn -do ergogen/output/pcbs/${board}.ses -dr freerouting/freerouting.rules -mp 20 -dst 1
+        # java -Dlog4j.configurationFile=file:./freerouting/log4j2.xml -jar freerouting/freerouting-1.8.0.jar -de ergogen/output/pcbs/${board}.dsn -do ergogen/output/pcbs/${board}.ses -dr freerouting/freerouting.rules -mp 20 -dct 1
+        java -Dlog4j.configurationFile=file:./freerouting/log4j2.xml -jar freerouting/freerouting-1.9.0.jar -de ergogen/output/pcbs/${board}.dsn -do ergogen/output/pcbs/${board}.ses -dr freerouting/${board}.rules -mp 20 -dct 1
+        # java -Dlog4j.configurationFile=file:./freerouting/log4j2.xml -jar freerouting/freerouting-test.jar -de ergogen/output/pcbs/${board}.dsn -do ergogen/output/pcbs/${board}.ses -dr freerouting/freerouting.rules -mp 20 -dct 1
         # ${container_cmd} run ${container_args} soundmonster/freerouting_cli:v0.1.0 java -Dlog4j.configurationFile=file:./freerouting/log4j2.xml -jar /opt/freerouting_cli.jar -de ergogen/output/pcbs/${board}.dsn -do ergogen/output/pcbs/${board}.ses -dr freerouting/freerouting.rules -mp 20
         # ${container_cmd} run ${container_args} nixos/nix nix-shell --argstr board ${board}
     fi
