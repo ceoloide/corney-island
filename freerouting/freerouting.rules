@@ -92,9 +92,9 @@
     )
   )
   (class "power_ground"
-    RAW GND VCC
-    (clearance_class "power_ground")
-    (via_rule "power_ground")
+    RAW GND VCC "BAT_P" "JST_1" "JST_2"
+    (clearance_class "kicad_default")
+    (via_rule "kicad_default")
     (rule
       (width 250.0)
     )
