@@ -122,7 +122,7 @@ module.exports = {
                     )
                     (width 0))
                 )
-                ${local_nets[1]})
+                ${local_nets[0]})
             (pad 22 smd custom (at 1 1.8 ${180 + p.rot}) (size 0.1 0.1) (layers "F.Cu" "F.Mask")
                 (clearance 0.1) (zone_connect 0)
                 (options (clearance outline) (anchor rect))
