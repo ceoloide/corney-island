@@ -36,8 +36,8 @@ logs
 *.ses
 
 # Exported BOM files
-!log4j2.xml
 *.xml
+!log4j2.xml
 *.csv
 
 # MacOS
