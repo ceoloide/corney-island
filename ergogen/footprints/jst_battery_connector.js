@@ -1,5 +1,6 @@
 module.exports = {
     params: {
+        designator: 'JST',
         side: 'F',
         reversible: false,
         BAT_P: { type: 'net', value: 'BAT_P' },
@@ -11,8 +12,8 @@ module.exports = {
     body: p => {
 
         let local_nets = [
-            p.local_net("B_POS").str,
-            p.local_net("B_NEG").str,
+            p.local_net("1").str,
+            p.local_net("2").str,
         ];
         const standard_opening = `
             (module "JST_PH_S2B-PH-K" (layer ${p.side}.Cu) (tedit 6135B927)
