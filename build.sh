@@ -76,3 +76,8 @@ do
         ${container_cmd} run ${container_args} ghcr.io/inti-cmnb/kicad7_auto:latest kibot -b ergogen/output/pcbs/${board}_autorouted.kicad_pcb -c kibot/boards.kibot.yaml
     fi
 done
+
+# Docker runs as root and causes issues with file ownership
+sudo chown $USER -R ergogen
+sudo chown $USER -R freerouting
+sudo chown $USER -R logs
