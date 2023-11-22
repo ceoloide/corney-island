@@ -818,14 +818,17 @@ pcbs:
     footprints:
       <<: *basepcb_footprints
       
-      display:
-        what: combo_display
+      nice_view:
+        what: infused-kim/nice_view
         where: matrix_inner_top
         params:
-          oled: nice_view
-          reversible: true
+          reverse: true
+          MOSI: SDA
+          SCK: SCL
+          show_labels: false
+          jumpers_at_bottom: false
         adjust:
-          shift: [0.5 ks + 10.147, 0.375 kp -40.758]
+          shift: [0.5 ks + 10.147, 0.375 kp -40.758 +16.7]
       
       on_off_switch:
         what: infused-kim/switch_power
