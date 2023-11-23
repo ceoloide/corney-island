@@ -15,8 +15,14 @@ RUN     apt-get update  && \
 	wget https://github.com/INTI-CMNB/KiDiff/releases/download/v2.4.7/kidiff_2.4.7-1_all.deb && \
 	wget https://github.com/INTI-CMNB/KiBot/releases/download/v1.6.3/kibot_1.6.3-1_all.deb && \
 	apt -y install --no-install-recommends ./*.deb && \
-	sed -i 's/<policy domain="coder" rights="none" pattern="PDF" \/>/<!-- <policy domain="coder" rights="none" pattern="PDF" \/> -->/g' /etc/ImageMagick-6/policy.xml && \
-	sed -i 's/<policy domain="coder" rights="none" pattern="PS" \/>/<!-- <policy domain="coder" rights="none" pattern="PS" \/> -->/g' /etc/ImageMagick-6/policy.xml && \
+	apt -y install --no-install-recommends nodejs npm xvfb && \
+	npm install -g https://github.com/ergogen/ergogen#develop && \
+	apt -y install openjdk-17-jre && \
+	wget http://www.repo.hu/projects/freerouting_cli/releases-jar/freerouting_cli-1.tar.gz && \
+  tar xvf freerouting_cli-1.tar.gz && \
+	cp /freerouting_cli/lib/freerouting_cli.jar /opt/freerouting_cli.jar && \
+	wget https://github.com/freerouting/freerouting/releases/download/v1.9.0/freerouting-1.9.0.jar && \
+	mv freerouting-1.9.0.jar /opt/freerouting-1.9.0.jar && \
 	apt-get -y remove wget && \
 	apt-get -y autoremove && \
 	rm /*.deb && \
