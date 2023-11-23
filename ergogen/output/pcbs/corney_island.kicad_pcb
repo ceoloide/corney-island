@@ -1999,16 +1999,6 @@
           (fp_line (start -3.81 -16.51) (end -3.81 -18.034) (layer Dwgs.User) (width 0.15))
           (fp_line (start -3.81 -18.034) (end 3.556 -18.034) (layer Dwgs.User) (width 0.15))
 
-          
-          (fp_line (start 8.89 16.51) (end 8.89 -14.03) (layer F.CrtYd) (width 0.15))
-          (fp_line (start 8.89 -14.03) (end -8.89 -14.03) (layer F.CrtYd) (width 0.15))
-          (fp_line (start -8.89 -14.03) (end -8.89 16.51) (layer F.CrtYd) (width 0.15))
-          (fp_line (start -8.89 16.51) (end 8.89 16.51) (layer F.CrtYd) (width 0.15))
-          (fp_line (start -8.89 16.51) (end -8.89 -14.03) (layer B.CrtYd) (width 0.15))
-          (fp_line (start -8.89 -14.03) (end 8.89 -14.03) (layer B.CrtYd) (width 0.15))
-          (fp_line (start 8.89 -14.03) (end 8.89 16.51) (layer B.CrtYd) (width 0.15))
-          (fp_line (start 8.89 16.51) (end -8.89 16.51) (layer B.CrtYd) (width 0.15))
-
 
           
           (fp_line (start -8.89 -16.51) (end 8.89 -16.51) (layer F.Fab) (width 0.12))
@@ -3666,7 +3656,7 @@
         
     
 
-      (gr_text "JLCJLCJLCJLC" (at 214.5 55.625 0) (layer F.SilkS)
+      (gr_text "JLCJLCJLCJLC" (at 138 107.6 0) (layer F.SilkS)
         (effects (font (size 1 1) (thickness 0.15)))
       )
     
@@ -4033,7 +4023,8 @@
         )
       
 
-      (module "ceoloide:YS-SK6812MINI-E (per-key)" (layer B.Cu) (tedit 5F70BC98)
+      (module "ceoloide:YS-SK6812MINI-E (per-key, reversible)" 
+        (layer B.Cu) (tedit 5F70BC98)
         (at 100 104.75 180)
 
         (fp_text reference "LED1" (at -4.75 0 90) (layer B.SilkS) hide
@@ -4115,7 +4106,8 @@
       (segment (start 104.529 103.265) (end 104.950 103.690) (width 0.15) (layer "B.Cu") (net 75))
     
 
-      (module "ceoloide:YS-SK6812MINI-E (per-key)" (layer B.Cu) (tedit 5F70BC98)
+      (module "ceoloide:YS-SK6812MINI-E (per-key, reversible)" 
+        (layer B.Cu) (tedit 5F70BC98)
         (at 100 85.75 180)
 
         (fp_text reference "LED2" (at -4.75 0 90) (layer B.SilkS) hide
@@ -4197,7 +4189,8 @@
       (segment (start 104.529 84.265) (end 104.950 84.690) (width 0.15) (layer "B.Cu") (net 76))
     
 
-      (module "ceoloide:YS-SK6812MINI-E (per-key)" (layer B.Cu) (tedit 5F70BC98)
+      (module "ceoloide:YS-SK6812MINI-E (per-key, reversible)" 
+        (layer B.Cu) (tedit 5F70BC98)
         (at 100 66.75 180)
 
         (fp_text reference "LED3" (at -4.75 0 90) (layer B.SilkS) hide
@@ -4279,7 +4272,8 @@
       (segment (start 104.529 65.265) (end 104.950 65.690) (width 0.15) (layer "B.Cu") (net 77))
     
 
-      (module "ceoloide:YS-SK6812MINI-E (per-key)" (layer B.Cu) (tedit 5F70BC98)
+      (module "ceoloide:YS-SK6812MINI-E (per-key, reversible)" 
+        (layer B.Cu) (tedit 5F70BC98)
         (at 119 104.75 180)
 
         (fp_text reference "LED4" (at -4.75 0 90) (layer B.SilkS) hide
@@ -4361,7 +4355,8 @@
       (segment (start 123.529 103.265) (end 123.950 103.690) (width 0.15) (layer "B.Cu") (net 79))
     
 
-      (module "ceoloide:YS-SK6812MINI-E (per-key)" (layer B.Cu) (tedit 5F70BC98)
+      (module "ceoloide:YS-SK6812MINI-E (per-key, reversible)" 
+        (layer B.Cu) (tedit 5F70BC98)
         (at 119 85.75 180)
 
         (fp_text reference "LED5" (at -4.75 0 90) (layer B.SilkS) hide
@@ -4443,7 +4438,8 @@
       (segment (start 123.529 84.265) (end 123.950 84.690) (width 0.15) (layer "B.Cu") (net 78))
     
 
-      (module "ceoloide:YS-SK6812MINI-E (per-key)" (layer B.Cu) (tedit 5F70BC98)
+      (module "ceoloide:YS-SK6812MINI-E (per-key, reversible)" 
+        (layer B.Cu) (tedit 5F70BC98)
         (at 119 66.75 180)
 
         (fp_text reference "LED6" (at -4.75 0 90) (layer B.SilkS) hide
@@ -4525,7 +4521,8 @@
       (segment (start 123.529 65.265) (end 123.950 65.690) (width 0.15) (layer "B.Cu") (net 80))
     
 
-      (module "ceoloide:YS-SK6812MINI-E (per-key)" (layer B.Cu) (tedit 5F70BC98)
+      (module "ceoloide:YS-SK6812MINI-E (per-key, reversible)" 
+        (layer B.Cu) (tedit 5F70BC98)
         (at 138 100 180)
 
         (fp_text reference "LED7" (at -4.75 0 90) (layer B.SilkS) hide
@@ -4607,7 +4604,8 @@
       (segment (start 142.529 98.515) (end 142.950 98.940) (width 0.15) (layer "B.Cu") (net 81))
     
 
-      (module "ceoloide:YS-SK6812MINI-E (per-key)" (layer B.Cu) (tedit 5F70BC98)
+      (module "ceoloide:YS-SK6812MINI-E (per-key, reversible)" 
+        (layer B.Cu) (tedit 5F70BC98)
         (at 138 81 180)
 
         (fp_text reference "LED8" (at -4.75 0 90) (layer B.SilkS) hide
@@ -4689,7 +4687,8 @@
       (segment (start 142.529 79.515) (end 142.950 79.940) (width 0.15) (layer "B.Cu") (net 82))
     
 
-      (module "ceoloide:YS-SK6812MINI-E (per-key)" (layer B.Cu) (tedit 5F70BC98)
+      (module "ceoloide:YS-SK6812MINI-E (per-key, reversible)" 
+        (layer B.Cu) (tedit 5F70BC98)
         (at 138 62 180)
 
         (fp_text reference "LED9" (at -4.75 0 90) (layer B.SilkS) hide
@@ -4771,7 +4770,8 @@
       (segment (start 142.529 60.515) (end 142.950 60.940) (width 0.15) (layer "B.Cu") (net 83))
     
 
-      (module "ceoloide:YS-SK6812MINI-E (per-key)" (layer B.Cu) (tedit 5F70BC98)
+      (module "ceoloide:YS-SK6812MINI-E (per-key, reversible)" 
+        (layer B.Cu) (tedit 5F70BC98)
         (at 157 97.625 180)
 
         (fp_text reference "LED10" (at -4.75 0 90) (layer B.SilkS) hide
@@ -4853,7 +4853,8 @@
       (segment (start 161.529 96.140) (end 161.950 96.565) (width 0.15) (layer "B.Cu") (net 85))
     
 
-      (module "ceoloide:YS-SK6812MINI-E (per-key)" (layer B.Cu) (tedit 5F70BC98)
+      (module "ceoloide:YS-SK6812MINI-E (per-key, reversible)" 
+        (layer B.Cu) (tedit 5F70BC98)
         (at 157 78.625 180)
 
         (fp_text reference "LED11" (at -4.75 0 90) (layer B.SilkS) hide
@@ -4935,7 +4936,8 @@
       (segment (start 161.529 77.140) (end 161.950 77.565) (width 0.15) (layer "B.Cu") (net 84))
     
 
-      (module "ceoloide:YS-SK6812MINI-E (per-key)" (layer B.Cu) (tedit 5F70BC98)
+      (module "ceoloide:YS-SK6812MINI-E (per-key, reversible)" 
+        (layer B.Cu) (tedit 5F70BC98)
         (at 157 59.625 180)
 
         (fp_text reference "LED12" (at -4.75 0 90) (layer B.SilkS) hide
@@ -5017,7 +5019,8 @@
       (segment (start 161.529 58.140) (end 161.950 58.565) (width 0.15) (layer "B.Cu") (net 86))
     
 
-      (module "ceoloide:YS-SK6812MINI-E (per-key)" (layer B.Cu) (tedit 5F70BC98)
+      (module "ceoloide:YS-SK6812MINI-E (per-key, reversible)" 
+        (layer B.Cu) (tedit 5F70BC98)
         (at 176 100 180)
 
         (fp_text reference "LED13" (at -4.75 0 90) (layer B.SilkS) hide
@@ -5099,7 +5102,8 @@
       (segment (start 180.529 98.515) (end 180.950 98.940) (width 0.15) (layer "B.Cu") (net 88))
     
 
-      (module "ceoloide:YS-SK6812MINI-E (per-key)" (layer B.Cu) (tedit 5F70BC98)
+      (module "ceoloide:YS-SK6812MINI-E (per-key, reversible)" 
+        (layer B.Cu) (tedit 5F70BC98)
         (at 176 81 180)
 
         (fp_text reference "LED14" (at -4.75 0 90) (layer B.SilkS) hide
@@ -5181,7 +5185,8 @@
       (segment (start 180.529 79.515) (end 180.950 79.940) (width 0.15) (layer "B.Cu") (net 89))
     
 
-      (module "ceoloide:YS-SK6812MINI-E (per-key)" (layer B.Cu) (tedit 5F70BC98)
+      (module "ceoloide:YS-SK6812MINI-E (per-key, reversible)" 
+        (layer B.Cu) (tedit 5F70BC98)
         (at 176 62 180)
 
         (fp_text reference "LED15" (at -4.75 0 90) (layer B.SilkS) hide
@@ -5263,7 +5268,8 @@
       (segment (start 180.529 60.515) (end 180.950 60.940) (width 0.15) (layer "B.Cu") (net 90))
     
 
-      (module "ceoloide:YS-SK6812MINI-E (per-key)" (layer B.Cu) (tedit 5F70BC98)
+      (module "ceoloide:YS-SK6812MINI-E (per-key, reversible)" 
+        (layer B.Cu) (tedit 5F70BC98)
         (at 195 102.375 180)
 
         (fp_text reference "LED16" (at -4.75 0 90) (layer B.SilkS) hide
@@ -5345,7 +5351,8 @@
       (segment (start 199.529 100.890) (end 199.950 101.315) (width 0.15) (layer "B.Cu") (net 92))
     
 
-      (module "ceoloide:YS-SK6812MINI-E (per-key)" (layer B.Cu) (tedit 5F70BC98)
+      (module "ceoloide:YS-SK6812MINI-E (per-key, reversible)" 
+        (layer B.Cu) (tedit 5F70BC98)
         (at 195 83.375 180)
 
         (fp_text reference "LED17" (at -4.75 0 90) (layer B.SilkS) hide
@@ -5427,7 +5434,8 @@
       (segment (start 199.529 81.890) (end 199.950 82.315) (width 0.15) (layer "B.Cu") (net 91))
     
 
-      (module "ceoloide:YS-SK6812MINI-E (per-key)" (layer B.Cu) (tedit 5F70BC98)
+      (module "ceoloide:YS-SK6812MINI-E (per-key, reversible)" 
+        (layer B.Cu) (tedit 5F70BC98)
         (at 195 64.375 180)
 
         (fp_text reference "LED18" (at -4.75 0 90) (layer B.SilkS) hide
@@ -5509,7 +5517,8 @@
       (segment (start 199.529 62.890) (end 199.950 63.315) (width 0.15) (layer "B.Cu") (net 93))
     
 
-      (module "ceoloide:YS-SK6812MINI-E (per-key)" (layer B.Cu) (tedit 5F70BC98)
+      (module "ceoloide:YS-SK6812MINI-E (per-key, reversible)" 
+        (layer B.Cu) (tedit 5F70BC98)
         (at 166.5 119.625 180)
 
         (fp_text reference "LED19" (at -4.75 0 90) (layer B.SilkS) hide
@@ -5591,7 +5600,8 @@
       (segment (start 171.029 118.140) (end 171.450 118.565) (width 0.15) (layer "B.Cu") (net 94))
     
 
-      (module "ceoloide:YS-SK6812MINI-E (per-key)" (layer B.Cu) (tedit 5F70BC98)
+      (module "ceoloide:YS-SK6812MINI-E (per-key, reversible)" 
+        (layer B.Cu) (tedit 5F70BC98)
         (at 186.2706095 122.21314770000001 165)
 
         (fp_text reference "LED20" (at -4.75 0 90) (layer B.SilkS) hide
@@ -5673,7 +5683,8 @@
       (segment (start 191.030 121.951) (end 191.326 122.470) (width 0.15) (layer "B.Cu") (net 87))
     
 
-      (module "ceoloide:YS-SK6812MINI-E (per-key)" (layer B.Cu) (tedit 5F70BC98)
+      (module "ceoloide:YS-SK6812MINI-E (per-key, reversible)" 
+        (layer B.Cu) (tedit 5F70BC98)
         (at 213.86042650000002 123.7641576 240)
 
         (fp_text reference "LED21" (at -4.75 0 90) (layer B.SilkS) hide
@@ -5755,7 +5766,8 @@
       (segment (start 214.839 119.099) (end 215.417 118.947) (width 0.15) (layer "B.Cu") (net 95))
     
 
-      (module "ceoloide:YS-SK6812MINI-E (underglow)" (layer B.Cu) (tedit 5F70BC98)
+      (module "ceoloide:YS-SK6812MINI-E (underglow, reversible)" 
+        (layer B.Cu) (tedit 5F70BC98)
         (at 195 69.125 180)
 
         (fp_text reference "LED22" (at -4.75 0 90) (layer B.SilkS) hide
@@ -5833,7 +5845,8 @@
     (segment (start 199.529 67.640) (end 199.950 68.065) (width 0.15) (layer "F.Cu") (net 38))
     
 
-      (module "ceoloide:YS-SK6812MINI-E (underglow)" (layer B.Cu) (tedit 5F70BC98)
+      (module "ceoloide:YS-SK6812MINI-E (underglow, reversible)" 
+        (layer B.Cu) (tedit 5F70BC98)
         (at 157 64.375 180)
 
         (fp_text reference "LED23" (at -4.75 0 90) (layer B.SilkS) hide
@@ -5911,7 +5924,8 @@
     (segment (start 161.529 62.890) (end 161.950 63.315) (width 0.15) (layer "F.Cu") (net 96))
     
 
-      (module "ceoloide:YS-SK6812MINI-E (underglow)" (layer B.Cu) (tedit 5F70BC98)
+      (module "ceoloide:YS-SK6812MINI-E (underglow, reversible)" 
+        (layer B.Cu) (tedit 5F70BC98)
         (at 119 71.5 180)
 
         (fp_text reference "LED24" (at -4.75 0 90) (layer B.SilkS) hide
@@ -5989,7 +6003,8 @@
     (segment (start 123.529 70.015) (end 123.950 70.440) (width 0.15) (layer "F.Cu") (net 97))
     
 
-      (module "ceoloide:YS-SK6812MINI-E (underglow)" (layer B.Cu) (tedit 5F70BC98)
+      (module "ceoloide:YS-SK6812MINI-E (underglow, reversible)" 
+        (layer B.Cu) (tedit 5F70BC98)
         (at 119 90.5 180)
 
         (fp_text reference "LED25" (at -4.75 0 90) (layer B.SilkS) hide
@@ -6067,7 +6082,8 @@
     (segment (start 123.529 89.015) (end 123.950 89.440) (width 0.15) (layer "F.Cu") (net 98))
     
 
-      (module "ceoloide:YS-SK6812MINI-E (underglow)" (layer B.Cu) (tedit 5F70BC98)
+      (module "ceoloide:YS-SK6812MINI-E (underglow, reversible)" 
+        (layer B.Cu) (tedit 5F70BC98)
         (at 157 102.375 180)
 
         (fp_text reference "LED26" (at -4.75 0 90) (layer B.SilkS) hide
@@ -6145,7 +6161,8 @@
     (segment (start 161.529 100.890) (end 161.950 101.315) (width 0.15) (layer "F.Cu") (net 99))
     
 
-      (module "ceoloide:YS-SK6812MINI-E (underglow)" (layer B.Cu) (tedit 5F70BC98)
+      (module "ceoloide:YS-SK6812MINI-E (underglow, reversible)" 
+        (layer B.Cu) (tedit 5F70BC98)
         (at 195 107.125 180)
 
         (fp_text reference "LED27" (at -4.75 0 90) (layer B.SilkS) hide
