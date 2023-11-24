@@ -11,7 +11,7 @@ plates="backplate frontplate controller_overlay"
 # Define the KiCad Auto Docker image to use
 # kicad_auto_immge=ghcr.io/inti-cmnb/kicad7_auto:latest
 kicad_auto_image=ceoloide/kicad_auto:nightly
-freerouting_cli=ceoloide/kicad_auto:nightly
+freerouting_cli_image=ceoloide/kicad_auto:nightly
 
 # Preserve manually routed files
 if [ -e ergogen/output/pcbs/*_manually_routed.kicad_pcb ]; then
@@ -31,7 +31,7 @@ if [ -e logs/freerouting.log ]; then
 fi
 
 # Generate unrouted PCBs with Ergogen (definition in package.json)
-npm run debug
+npm run build
 
 # Restore manually routed files
 if [ -e ergogen/tmp/*_manually_routed.kicad_pcb ]; then
