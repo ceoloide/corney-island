@@ -51,7 +51,7 @@ do
         echo "Import SES"
         # ${container_cmd} run ${container_args} soundmonster/kicad-automation-scripts:latest /usr/lib/python2.7/dist-packages/kicad-automation/pcbnew_automation/import_ses.py ergogen/output/pcbs/${board}.kicad_pcb ergogen/output/pcbs/${board}.ses --output-file ergogen/output/pcbs/${board}_autorouted.kicad_pcb
         ${container_cmd} run ${container_args} ${kicad_auto_image} kibot/import_ses.py -b ergogen/output/pcbs/${board}.kicad_pcb -s ergogen/output/pcbs/${board}.ses -o ergogen/output/pcbs/${board}_autorouted.kicad_pcb
-        # sed -i -e 's/(version 20231007)/(version 20230101)/g' ergogen/output/pcbs/${board}_autorouted.kicad_pcb
+        sed -i -e 's/(version 20231007)/(version 20221018)/g' ergogen/output/pcbs/${board}_autorouted.kicad_pcb
     fi
     if [ -e ergogen/output/pcbs/${board}_autorouted.kicad_pcb ]; then
         ${container_cmd} run ${container_args} ${kicad_auto_image} kibot -b ergogen/output/pcbs/${board}_autorouted.kicad_pcb -c kibot/boards.kibot.yaml
