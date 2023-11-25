@@ -1,4 +1,4 @@
-FROM ghcr.io/inti-cmnb/kicad_debian:nightly
+FROM ghcr.io/inti-cmnb/kicad_debian:ki7
 LABEL Author="Marco Massarelli <marco.massarelli@gmail.com>"
 LABEL Description="KiCad (nightly) with the latest KiBot release and other dependencies"
 
