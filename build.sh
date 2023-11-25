@@ -9,7 +9,7 @@ boards="corney_island_wireless corney_island"
 plates="backplate frontplate controller_overlay"
 
 # Define the KiCad Auto Docker image to use
-kicad_auto_image="setsoft/kicad_auto:k7"
+kicad_auto_image="setsoft/kicad_auto:ki7"
 # kicad_auto_image="ceoloide/kicad_auto:nightly"
 # freerouting_cli_image="ceoloide/kicad_auto:nightly"
 freerouting_cli_image="soundmonster/freerouting_cli:v0.1.0"
