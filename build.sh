@@ -9,9 +9,10 @@ boards="corney_island_wireless corney_island"
 plates="backplate frontplate controller_overlay"
 
 # Define the KiCad Auto Docker image to use
-# kicad_auto_immge=ghcr.io/inti-cmnb/kicad7_auto:latest
-kicad_auto_image=ceoloide/kicad_auto:nightly
-freerouting_cli_image=ceoloide/kicad_auto:nightly
+kicad_auto_image="setsoft/kicad_auto:k7"
+# kicad_auto_image="ceoloide/kicad_auto:nightly"
+# freerouting_cli_image="ceoloide/kicad_auto:nightly"
+freerouting_cli_image="soundmonster/freerouting_cli:v0.1.0"
 
 # Preserve manually routed files
 if [ -e ergogen/output/pcbs/*_manually_routed.kicad_pcb ]; then
@@ -54,9 +55,8 @@ for board in ${boards}
 do
     echo "\n\n>>>>>> Processing $board <<<<<<\n\n"
     if [ -e ergogen/output/pcbs/${board}_manually_routed.kicad_pcb ]; then
-        ${container_cmd} run ${container_args} kicad_auto_image kibot -b ergogen/output/pcbs/${board}_manually_routed.kicad_pcb -c kibot/boards.kibot.yaml
+        ${container_cmd} run ${container_args} ${kicad_auto_image} kibot -b ergogen/output/pcbs/${board}_manually_routed.kicad_pcb -c kibot/boards.kibot.yaml
     fi
-    ${container_cmd} run ${container_args} soundmonster/kicad-automation-scripts:latest /bin/sh -c "mkdir -p $HOME/.config/kicad; cp /root/.config/kicad/* $HOME/.config/kicad"
     if [ -e ergogen/output/pcbs/${board}.kicad_pcb ]; then
         echo Export DSN 
         ${container_cmd} run ${container_args} ${kicad_auto_image} kibot/export_dsn.py -b ergogen/output/pcbs/${board}.kicad_pcb -o ergogen/output/pcbs/${board}.dsn    
@@ -75,9 +75,10 @@ do
     fi
     if [ -e ergogen/output/pcbs/${board}.ses ]; then
         echo "Import SES"
-        # ${container_cmd} run ${container_args} soundmonster/kicad-automation-scripts:latest /usr/lib/python2.7/dist-packages/kicad-automation/pcbnew_automation/import_ses.py ergogen/output/pcbs/${board}.kicad_pcb ergogen/output/pcbs/${board}.ses --output-file ergogen/output/pcbs/${board}_autorouted.kicad_pcb
-        ${container_cmd} run ${container_args} ${kicad_auto_image} kibot/import_ses.py -b ergogen/output/pcbs/${board}.kicad_pcb -s ergogen/output/pcbs/${board}.ses -o ergogen/output/pcbs/${board}_autorouted.kicad_pcb
-        sed -i -e 's/(version 20231007)/(version 20221018)/g' ergogen/output/${board}_autorouted.kicad_pcb
+        ${container_cmd} run ${container_args} soundmonster/kicad-automation-scripts:latest /bin/sh -c "mkdir -p $HOME/.config/kicad; cp /root/.config/kicad/* $HOME/.config/kicad"
+        ${container_cmd} run ${container_args} soundmonster/kicad-automation-scripts:latest /usr/lib/python2.7/dist-packages/kicad-automation/pcbnew_automation/import_ses.py ergogen/output/pcbs/${board}.kicad_pcb ergogen/output/pcbs/${board}.ses --output-file ergogen/output/pcbs/${board}_autorouted.kicad_pcb
+        # ${container_cmd} run ${container_args} ${kicad_auto_image} kibot/import_ses.py -b ergogen/output/pcbs/${board}.kicad_pcb -s ergogen/output/pcbs/${board}.ses -o ergogen/output/pcbs/${board}_autorouted.kicad_pcb
+        # sed -i -e 's/(version 20231007)/(version 20221018)/g' ergogen/output/${board}_autorouted.kicad_pcb
     fi
     if [ -e ergogen/output/pcbs/${board}_autorouted.kicad_pcb ]; then
         ${container_cmd} run ${container_args} ${kicad_auto_image} kibot -b ergogen/output/pcbs/${board}_autorouted.kicad_pcb -c kibot/boards.kibot.yaml
