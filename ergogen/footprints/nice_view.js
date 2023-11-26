@@ -72,9 +72,11 @@ module.exports = {
         (fp_text reference "${p.ref}" (at 0 20 ${p.rot}) (layer ${p.side}.SilkS) ${p.ref_hide}
           (effects (font (size 1 1) (thickness 0.15)))
         )
+        (fp_text user %R (at 0 20 ${p.rot}) (layer ${p.side}.Fab)
+          (effects (font (size 1 1) (thickness 0.15)))
+        )
         `
     const front = `
-        (fp_text user %R (at 0 20 ${p.rot}) (layer F.Fab)
         (fp_line (start -6.5 -18) (end 6.5 -18) (layer F.Fab) (width 0.15))
         (fp_line (start 6.5 18) (end -6.5 18) (layer F.Fab) (width 0.15))
         (fp_line (start -7 17.5) (end -7 -17.5) (layer F.Fab) (width 0.15))
@@ -91,9 +93,6 @@ module.exports = {
         (fp_line (start 6.88 18.45) (end -6.82 18.45) (layer F.CrtYd) (width 0.15))
         (fp_line (start -6.82 18.45) (end -6.82 14.9) (layer F.CrtYd) (width 0.15))
         (fp_line (start -6.82 14.9) (end 6.88 14.9) (layer F.CrtYd) (width 0.15))
-          (effects (font (size 1 1) (thickness 0.15)))
-        )
-
     `
 
     const front_jumpers = `
