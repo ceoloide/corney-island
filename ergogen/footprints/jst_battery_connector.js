@@ -2,9 +2,9 @@ module.exports = {
     params: {
         designator: 'JST',
         side: 'F',
-        reversible: false,
         BAT_P: { type: 'net', value: 'BAT_P' },
         BAT_N: { type: 'net', value: 'GND' },
+        reversible: false,
         traces: true,
         trace_width: 0.250,
         silkscreen: true,
