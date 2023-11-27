@@ -32,7 +32,7 @@ if [ -e logs/freerouting.log ]; then
 fi
 
 # Generate unrouted PCBs with Ergogen (definition in package.json)
-npm run build
+npm run debug
 
 # Restore manually routed files
 if [ -e ergogen/tmp/*_manually_routed.kicad_pcb ]; then
