@@ -3610,7 +3610,7 @@
     
 
       (module nice!view (layer F.Cu) (tedit 6448AF5B)
-        (at 214.647 73.258 0)
+        (at 214.647 73.75 0)
         (attr virtual)
         (fp_text reference "DISP1" (at 0 20 0) (layer F.SilkS) hide
           (effects (font (size 1 1) (thickness 0.15)))
