@@ -16,23 +16,58 @@ module.exports = {
     reversible: false,
     show_labels: true,
     jumpers_at_bottom: false,
+    traces: true,
+    trace_width: 0.15,
+    gnd_trace_width: 0.25,
   },
   body: p => {
+    const get_at_coordinates = () => {
+        const pattern = /\(at (-?[\d\.]*) (-?[\d\.]*) (-?[\d\.]*)\)/;
+        const matches = p.at.match(pattern);
+        if (matches && matches.length == 4) {
+            return [parseFloat(matches[1]), parseFloat(matches[2]), parseFloat(matches[3])];
+        } else {
+            return null;
+        }
+    }
+
+    const adjust_point = (x, y) => {
+        const at_l = get_at_coordinates();
+        if(at_l == null) {
+            throw new Error(
+            `Could not get x and y coordinates from p.at: ${p.at}`
+            );
+        }
+        const at_x = at_l[0];
+        const at_y = at_l[1];
+        const at_angle = at_l[2];
+        const adj_x = at_x + x;
+        const adj_y = at_y + y;
+
+        const radians = (Math.PI / 180) * at_angle,
+            cos = Math.cos(radians),
+            sin = Math.sin(radians),
+            nx = (cos * (adj_x - at_x)) + (sin * (adj_y - at_y)) + at_x,
+            ny = (cos * (adj_y - at_y)) - (sin * (adj_x - at_x)) + at_y;
+
+        const point_str = `${nx.toFixed(3)} ${ny.toFixed(3)}`;
+        return point_str;
+    }
 
     let dst_nets = [
-      p.CS.str,
-      p.GND.str,
-      p.VCC.str,
-      p.SCK.str,
-      p.MOSI.str,
+      p.CS,
+      p.GND,
+      p.VCC,
+      p.SCK,
+      p.MOSI,
     ];
 
     local_nets = [
-      p.local_net("1").str,
-      p.local_net("2").str,
-      p.VCC.str,
-      p.local_net("4").str,
-      p.local_net("5").str,
+      p.local_net("1"),
+      p.local_net("2"),
+      p.VCC,
+      p.local_net("4"),
+      p.local_net("5"),
     ];
 
     let socket_nets = dst_nets;
@@ -113,15 +148,15 @@ module.exports = {
         (fp_line (start 4.23 ${14.9 + jumpers_offset}) (end 4.23 ${12.9 + jumpers_offset}) (layer F.Fab) (width 0.15))
         (fp_line (start 4.23 ${12.9 + jumpers_offset}) (end 5.93 ${12.9 + jumpers_offset}) (layer F.Fab) (width 0.15))
 
-        (pad 14 smd rect (at -5.08 ${13.45 + jumpers_offset} ${90 + p.rot}) (size 0.6 1.2) (layers F.Cu F.Mask) ${ jumpers_front_top[0] })
-        (pad 15 smd rect (at -2.54 ${13.45 + jumpers_offset} ${90 + p.rot}) (size 0.6 1.2) (layers F.Cu F.Mask) ${ jumpers_front_top[1] })
-        (pad 16 smd rect (at 2.54 ${13.45 + jumpers_offset} ${90 + p.rot}) (size 0.6 1.2) (layers F.Cu F.Mask) ${ jumpers_front_top[3] })
-        (pad 17 smd rect (at 5.08 ${13.45 + jumpers_offset} ${90 + p.rot}) (size 0.6 1.2) (layers F.Cu F.Mask) ${ jumpers_front_top[4] })
+        (pad 14 smd rect (at -5.08 ${13.45 + jumpers_offset} ${90 + p.rot}) (size 0.6 1.2) (layers F.Cu F.Mask) ${ jumpers_front_top[0].str })
+        (pad 15 smd rect (at -2.54 ${13.45 + jumpers_offset} ${90 + p.rot}) (size 0.6 1.2) (layers F.Cu F.Mask) ${ jumpers_front_top[1].str })
+        (pad 16 smd rect (at 2.54 ${13.45 + jumpers_offset} ${90 + p.rot}) (size 0.6 1.2) (layers F.Cu F.Mask) ${ jumpers_front_top[3].str })
+        (pad 17 smd rect (at 5.08 ${13.45 + jumpers_offset} ${90 + p.rot}) (size 0.6 1.2) (layers F.Cu F.Mask) ${ jumpers_front_top[4].str})
 
-        (pad 10 smd rect (at -5.08 ${14.35 + jumpers_offset} ${90 + p.rot}) (size 0.6 1.2) (layers F.Cu F.Mask) ${ jumpers_front_bottom[0] })
-        (pad 11 smd rect (at -2.54 ${14.35 + jumpers_offset} ${90 + p.rot}) (size 0.6 1.2) (layers F.Cu F.Mask) ${ jumpers_front_bottom[1] })
-        (pad 12 smd rect (at 2.54 ${14.35 + jumpers_offset} ${90 + p.rot}) (size 0.6 1.2) (layers F.Cu F.Mask) ${ jumpers_front_bottom[3] })
-        (pad 13 smd rect (at 5.08 ${14.35 + jumpers_offset} ${90 + p.rot}) (size 0.6 1.2) (layers F.Cu F.Mask) ${ jumpers_front_bottom[4] })
+        (pad 10 smd rect (at -5.08 ${14.35 + jumpers_offset} ${90 + p.rot}) (size 0.6 1.2) (layers F.Cu F.Mask) ${ jumpers_front_bottom[0].str })
+        (pad 11 smd rect (at -2.54 ${14.35 + jumpers_offset} ${90 + p.rot}) (size 0.6 1.2) (layers F.Cu F.Mask) ${ jumpers_front_bottom[1].str })
+        (pad 12 smd rect (at 2.54 ${14.35 + jumpers_offset} ${90 + p.rot}) (size 0.6 1.2) (layers F.Cu F.Mask) ${ jumpers_front_bottom[3].str })
+        (pad 13 smd rect (at 5.08 ${14.35 + jumpers_offset} ${90 + p.rot}) (size 0.6 1.2) (layers F.Cu F.Mask) ${ jumpers_front_bottom[4].str })
     `
 
     const back = `
@@ -161,15 +196,15 @@ module.exports = {
         (fp_line (start 5.93 ${12.9 + jumpers_offset}) (end 4.23 ${12.9 + jumpers_offset}) (layer B.Fab) (width 0.15))
         (fp_line (start 4.23 ${12.9 + jumpers_offset}) (end 4.23 ${14.9 + jumpers_offset}) (layer B.Fab) (width 0.15))
 
-        (pad 24 smd rect (at 5.08 ${13.45 + jumpers_offset} ${270 + p.rot}) (size 0.6 1.2) (layers B.Cu B.Mask) ${ jumpers_back_top[0] })
-        (pad 25 smd rect (at 2.54 ${13.45 + jumpers_offset} ${270 + p.rot}) (size 0.6 1.2) (layers B.Cu B.Mask) ${ jumpers_back_top[1] })
-        (pad 26 smd rect (at -2.54 ${13.45 + jumpers_offset} ${270 + p.rot}) (size 0.6 1.2) (layers B.Cu B.Mask) ${ jumpers_back_top[3] })
-        (pad 27 smd rect (at -5.08 ${13.45 + jumpers_offset} ${270 + p.rot}) (size 0.6 1.2) (layers B.Cu B.Mask) ${ jumpers_back_top[4] })
+        (pad 24 smd rect (at 5.08 ${13.45 + jumpers_offset} ${270 + p.rot}) (size 0.6 1.2) (layers B.Cu B.Mask) ${ jumpers_back_top[0].str })
+        (pad 25 smd rect (at 2.54 ${13.45 + jumpers_offset} ${270 + p.rot}) (size 0.6 1.2) (layers B.Cu B.Mask) ${ jumpers_back_top[1].str })
+        (pad 26 smd rect (at -2.54 ${13.45 + jumpers_offset} ${270 + p.rot}) (size 0.6 1.2) (layers B.Cu B.Mask) ${ jumpers_back_top[3].str })
+        (pad 27 smd rect (at -5.08 ${13.45 + jumpers_offset} ${270 + p.rot}) (size 0.6 1.2) (layers B.Cu B.Mask) ${ jumpers_back_top[4].str })
 
-        (pad 20 smd rect (at 5.08 ${14.35 + jumpers_offset} ${270 + p.rot}) (size 0.6 1.2) (layers B.Cu B.Mask) ${ jumpers_back_bottom[0] })
-        (pad 21 smd rect (at 2.54 ${14.35 + jumpers_offset} ${270 + p.rot}) (size 0.6 1.2) (layers B.Cu B.Mask) ${ jumpers_back_bottom[1] })
-        (pad 22 smd rect (at -2.54 ${14.35 + jumpers_offset} ${270 + p.rot}) (size 0.6 1.2) (layers B.Cu B.Mask) ${ jumpers_back_bottom[3] })
-        (pad 23 smd rect (at -5.08 ${14.35 + jumpers_offset} ${270 + p.rot}) (size 0.6 1.2) (layers B.Cu B.Mask) ${ jumpers_back_bottom[4] })
+        (pad 20 smd rect (at 5.08 ${14.35 + jumpers_offset} ${270 + p.rot}) (size 0.6 1.2) (layers B.Cu B.Mask) ${ jumpers_back_bottom[0].str })
+        (pad 21 smd rect (at 2.54 ${14.35 + jumpers_offset} ${270 + p.rot}) (size 0.6 1.2) (layers B.Cu B.Mask) ${ jumpers_back_bottom[1].str })
+        (pad 22 smd rect (at -2.54 ${14.35 + jumpers_offset} ${270 + p.rot}) (size 0.6 1.2) (layers B.Cu B.Mask) ${ jumpers_back_bottom[3].str })
+        (pad 23 smd rect (at -5.08 ${14.35 + jumpers_offset} ${270 + p.rot}) (size 0.6 1.2) (layers B.Cu B.Mask) ${ jumpers_back_bottom[4].str })
     `
 
     const labels = `
@@ -206,17 +241,39 @@ module.exports = {
     `
 
     const bottom = `
-      (pad 1 thru_hole oval (at -5.08 16.7 ${270 + p.rot}) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask) ${ socket_nets[0] })
-      (pad 2 thru_hole oval (at -2.54 16.7 ${270 + p.rot}) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask) ${ socket_nets[1] })
-      (pad 3 thru_hole oval (at 0 16.7 ${270 + p.rot}) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask) ${ socket_nets[2] })
-      (pad 4 thru_hole oval (at 2.54 16.7 ${270 + p.rot}) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask) ${ socket_nets[3] })
-      (pad 5 thru_hole circle (at 5.08 16.7 ${270 + p.rot}) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask) ${ socket_nets[4] })
+      (pad 1 thru_hole oval (at -5.08 16.7 ${270 + p.rot}) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask) ${ socket_nets[0].str })
+      (pad 2 thru_hole oval (at -2.54 16.7 ${270 + p.rot}) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask) ${ socket_nets[1].str })
+      (pad 3 thru_hole oval (at 0 16.7 ${270 + p.rot}) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask) ${ socket_nets[2].str })
+      (pad 4 thru_hole oval (at 2.54 16.7 ${270 + p.rot}) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask) ${ socket_nets[3].str })
+      (pad 5 thru_hole circle (at 5.08 16.7 ${270 + p.rot}) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask) ${ socket_nets[4].str })
 
       (fp_line (start 5.4 13.4) (end 5.4 -11.9) (layer Dwgs.User) (width 0.15))
       (fp_line (start -5.4 13.4) (end -5.4 -11.9) (layer Dwgs.User) (width 0.15))
       (fp_line (start 5.4 -11.9) (end -5.4 -11.9) (layer Dwgs.User) (width 0.15))
       (fp_line (start -5.4 13.4) (end 5.4 13.4) (layer Dwgs.User) (width 0.15))
     )
+    `
+
+    const traces_bottom = `
+    (segment (start ${ adjust_point(-5.08, 16.7)}) (end ${ adjust_point(-5.08, 19.15)}) (width ${p.trace_width}) (layer "F.Cu") (net ${jumpers_front_bottom[0].index}))
+    (segment (start ${ adjust_point(-2.54, 16.7)}) (end ${ adjust_point(-2.54, 19.15)}) (width ${p.gnd_trace_width}) (layer "F.Cu") (net ${jumpers_front_bottom[1].index}))
+    (segment (start ${ adjust_point(2.54, 16.7)}) (end ${ adjust_point(2.54, 19.15)}) (width ${p.trace_width}) (layer "F.Cu") (net ${jumpers_front_bottom[3].index}))
+    (segment (start ${ adjust_point(5.08, 16.7)}) (end ${ adjust_point(5.08, 19.15)}) (width ${p.trace_width}) (layer "F.Cu") (net ${jumpers_front_bottom[4].index}))
+    (segment (start ${ adjust_point(-5.08, 16.7)}) (end ${ adjust_point(-5.08, 19.15)}) (width ${p.trace_width}) (layer "B.Cu") (net ${jumpers_back_bottom[0].index}))
+    (segment (start ${ adjust_point(-2.54, 16.7)}) (end ${ adjust_point(-2.54, 19.15)}) (width ${p.trace_width}) (layer "B.Cu") (net ${jumpers_back_bottom[1].index}))
+    (segment (start ${ adjust_point(2.54, 16.7)}) (end ${ adjust_point(2.54, 19.15)}) (width ${p.gnd_trace_width}) (layer "B.Cu") (net ${jumpers_back_bottom[3].index}))
+    (segment (start ${ adjust_point(5.08, 16.7)}) (end ${ adjust_point(5.08, 19.15)}) (width ${p.trace_width}) (layer "B.Cu") (net ${jumpers_back_bottom[4].index}))
+    `
+
+    const traces_top = `
+    (segment (start ${ adjust_point(-5.08, 16.7)}) (end ${ adjust_point(-5.08, 14.25)}) (width ${p.trace_width}) (layer "F.Cu") (net ${jumpers_front_top[0].index}))
+    (segment (start ${ adjust_point(-2.54, 16.7)}) (end ${ adjust_point(-2.54, 14.25)}) (width ${p.gnd_trace_width}) (layer "F.Cu") (net ${jumpers_front_top[1].index}))
+    (segment (start ${ adjust_point(2.54, 16.7)}) (end ${ adjust_point(2.54, 14.25)}) (width ${p.trace_width}) (layer "F.Cu") (net ${jumpers_front_top[3].index}))
+    (segment (start ${ adjust_point(5.08, 16.7)}) (end ${ adjust_point(5.08, 14.25)}) (width ${p.trace_width}) (layer "F.Cu") (net ${jumpers_front_top[4].index}))
+    (segment (start ${ adjust_point(-5.08, 16.7)}) (end ${ adjust_point(-5.08, 14.25)}) (width ${p.trace_width}) (layer "B.Cu") (net ${jumpers_back_top[0].index}))
+    (segment (start ${ adjust_point(-2.54, 16.7)}) (end ${ adjust_point(-2.54, 14.25)}) (width ${p.trace_width}) (layer "B.Cu") (net ${jumpers_back_top[1].index}))
+    (segment (start ${ adjust_point(2.54, 16.7)}) (end ${ adjust_point(2.54, 14.25)}) (width ${p.gnd_trace_width}) (layer "B.Cu") (net ${jumpers_back_top[3].index}))
+    (segment (start ${ adjust_point(5.08, 16.7)}) (end ${ adjust_point(5.08, 14.25)}) (width ${p.trace_width}) (layer "B.Cu") (net ${jumpers_back_top[4].index}))
     `
 
     let final = top;
@@ -238,6 +295,14 @@ module.exports = {
     }
 
     final += bottom;
+
+    if(p.traces && p.reversible) {
+      if(p.jumpers_at_bottom) {
+        final += traces_bottom;
+      } else {
+        final += traces_top;
+      }
+    }
 
     return final;
   }
