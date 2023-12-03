@@ -3719,6 +3719,15 @@
       (fp_line (start -5.4 13.4) (end 5.4 13.4) (layer Dwgs.User) (width 0.15))
     )
     
+    (segment (start 209.567 90.450) (end 209.567 92.900) (width 0.15) (layer "F.Cu") (net 42))
+    (segment (start 212.107 90.450) (end 212.107 92.900) (width 0.25) (layer "F.Cu") (net 33))
+    (segment (start 217.187 90.450) (end 217.187 92.900) (width 0.15) (layer "F.Cu") (net 41))
+    (segment (start 219.727 90.450) (end 219.727 92.900) (width 0.15) (layer "F.Cu") (net 40))
+    (segment (start 209.567 90.450) (end 209.567 92.900) (width 0.15) (layer "B.Cu") (net 42))
+    (segment (start 212.107 90.450) (end 212.107 92.900) (width 0.15) (layer "B.Cu") (net 33))
+    (segment (start 217.187 90.450) (end 217.187 92.900) (width 0.25) (layer "B.Cu") (net 41))
+    (segment (start 219.727 90.450) (end 219.727 92.900) (width 0.15) (layer "B.Cu") (net 40))
+    
 
         (module power_switch (layer F.Cu) (tedit 644556E6)
           (at 214.5 54.97 90)
