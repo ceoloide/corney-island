@@ -10,7 +10,7 @@ meta:
   switch:
     $extends: presets.mx
     # $extends: presets.choc_v1
-    # $extends: presets.choc_v1_mx_spacing
+    # $extends: presets.choc_v2
 
 presets:
   # These presets provide different layout options
@@ -52,13 +52,15 @@ presets:
     horizontal_diode_shift: -0.5 kcow - 0.85
     diode_rotation: -180 # Diode rotation
     switch_rotation: 180 # Hotswap south, led north
-  choc_v1_mx_spacing:
+  choc_v2:
     # Key and keycap measures
     $extends: presets.choc_v1
     kx: u # spacing between key centers (X-axis)
     ky: u # spacing between key centers (Y-axis)
     ks: 19 # horizontal space between columns (default: 19)
     kp: 19 # vertical padding between keys (deafult: 19)
+    keycw: 18 # keycap width (cherry: 18, choc: 17.5)
+    keych: 18 # keycap height (cherry: 18, choc: 16.5)
 
 units:
   # The following statements will make the content of the preset
@@ -660,12 +662,11 @@ pcbs:
         params:
           reverse: true
           hotswap: true
-          # The following parameters are specific to infused-kim/choc
-          # outer_pad_width_front: 1.6
-          # outer_pad_width_back: 1.6
-          # show_keycaps: false
           from: "{{column_net}}"
           to: "{{colrow}}"
+          # The following parameters are specific to choc_v2_hotswap
+          # outer_pad_width_front: 1.6
+          # outer_pad_width_back: 1.6
         adjust:
           rotate: switch_rotation
 
