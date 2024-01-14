@@ -71,10 +71,10 @@ module.exports = {
                 (fp_line (start 2.95 6.25) (end 2.95 -1.35) (width 0.1) (layer "F.Fab"))
         `
         const front_courtyard = `
-                (fp_line (start -3.45 -1.85) (end -3.45 8.5) (width 0.05) (layer "F.CrtYd"))
-                (fp_line (start -3.45 8.5) (end 3.45 8.5) (width 0.05) (layer "F.CrtYd"))
+                (fp_line (start -3.45 -1.85) (end -3.45 10.5) (width 0.05) (layer "F.CrtYd"))
+                (fp_line (start -3.45 10.5) (end 3.45 10.5) (width 0.05) (layer "F.CrtYd"))
                 (fp_line (start 3.45 -1.85) (end -3.45 -1.85) (width 0.05) (layer "F.CrtYd"))
-                (fp_line (start 3.45 8.5) (end 3.45 -1.85) (width 0.05) (layer "F.CrtYd"))
+                (fp_line (start 3.45 10.5) (end 3.45 -1.85) (width 0.05) (layer "F.CrtYd"))
         `
         const front_silkscreen = `
                 (fp_line (start -1.5 7.40) (end -0.5 7.40) (width 0.1) (layer "F.SilkS"))
@@ -100,10 +100,10 @@ module.exports = {
                 (fp_line (start 2.95 6.25) (end -2.95 6.25) (width 0.1) (layer "B.Fab"))
         `
         const back_courtyard = `
-                (fp_line (start -3.45 -1.85) (end -3.45 8.5) (width 0.05) (layer "B.CrtYd"))
-                (fp_line (start -3.45 8.5) (end 3.45 8.5) (width 0.05) (layer "B.CrtYd"))
+                (fp_line (start -3.45 -1.85) (end -3.45 10.5) (width 0.05) (layer "B.CrtYd"))
+                (fp_line (start -3.45 10.5) (end 3.45 10.5) (width 0.05) (layer "B.CrtYd"))
                 (fp_line (start 3.45 -1.85) (end -3.45 -1.85) (width 0.05) (layer "B.CrtYd"))
-                (fp_line (start 3.45 8.5) (end 3.45 -1.85) (width 0.05) (layer "B.CrtYd"))
+                (fp_line (start 3.45 10.5) (end 3.45 -1.85) (width 0.05) (layer "B.CrtYd"))
         `
         const back_silkscreen = `
                 (fp_line (start 1.5 7.40) (end 0.5 7.40) (width 0.1) (layer "B.SilkS"))
