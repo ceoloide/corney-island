@@ -56,7 +56,7 @@ module.exports = {
                 ${p.at /* parametric position */}
 
                 (descr "JST PH series connector, S2B-PH-K (http://www.jst-mfg.com/product/pdf/eng/ePH.pdf)")
-                (fp_text reference "${p.ref}" (at 1 -2.55 ${p.rot}) (layer "${p.side}.SilkS") ${p.ref_hide}
+                (fp_text reference "${p.ref}" (at 0 4.8 ${p.rot}) (layer "${p.side}.SilkS") ${p.ref_hide}
                     (effects (font (size 1 1) (thickness 0.15)))
                 )
             `
