@@ -861,5 +861,5 @@ pcbs:
           BAT_P: BAT_P
           BAT_N: GND
         adjust:
-          shift: [0.5 ks + 17.0, 0.375 kp -46.25]
+          shift: [0.5 ks + 7.75, 0.375 kp -45.25]
           rotate: -90
