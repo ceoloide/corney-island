@@ -77,9 +77,9 @@ module.exports = {
                 (fp_line (start 3.45 8.5) (end 3.45 -1.85) (width 0.05) (layer "F.CrtYd"))
         `
         const front_silkscreen = `
-                (fp_line (start -1.5 4.375) (end -0.5 4.375) (width 0.1) (layer "F.SilkS"))
-                (fp_line (start 1.5 4.375) (end 0.5 4.375) (width 0.1) (layer "F.SilkS"))
-                (fp_line (start 1 3.875) (end 1 4.875) (width 0.1) (layer "F.SilkS"))
+                (fp_line (start -1.5 7.40) (end -0.5 7.40) (width 0.1) (layer "F.SilkS"))
+                (fp_line (start 1.5 7.40) (end 0.5 7.40) (width 0.1) (layer "F.SilkS"))
+                (fp_line (start 1 6.90) (end 1 7.90) (width 0.1) (layer "F.SilkS"))
                 (fp_line (start -2.06 -1.46) (end -3.06 -1.46) (width 0.12) (layer "F.SilkS"))
                 (fp_line (start -3.06 -1.46) (end -3.06 -0.46) (width 0.12) (layer "F.SilkS"))
                 (fp_line (start 2.14 -1.46) (end 3.06 -1.46) (width 0.12) (layer "F.SilkS"))
@@ -106,9 +106,9 @@ module.exports = {
                 (fp_line (start 3.45 8.5) (end 3.45 -1.85) (width 0.05) (layer "B.CrtYd"))
         `
         const back_silkscreen = `
-                (fp_line (start 1.5 4.375) (end 0.5 4.375) (width 0.1) (layer "B.SilkS"))
-                (fp_line (start -1.5 4.375) (end -0.5 4.375) (width 0.1) (layer "B.SilkS"))
-                (fp_line (start -1 3.875) (end -1 4.875) (width 0.1) (layer "B.SilkS"))
+                (fp_line (start 1.5 7.40) (end 0.5 7.40) (width 0.1) (layer "B.SilkS"))
+                (fp_line (start -1.5 7.40) (end -0.5 7.40) (width 0.1) (layer "B.SilkS"))
+                (fp_line (start -1 6.90) (end -1 7.90) (width 0.1) (layer "B.SilkS"))
                 (fp_line (start -2.06 -1.46) (end -3.06 -1.46) (width 0.12) (layer "B.SilkS"))
                 (fp_line (start -3.06 -1.46) (end -3.06 -0.46) (width 0.12) (layer "B.SilkS"))
                 (fp_line (start 2.14 -1.46) (end 3.06 -1.46) (width 0.12) (layer "B.SilkS"))
