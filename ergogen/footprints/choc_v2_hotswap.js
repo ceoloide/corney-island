@@ -24,7 +24,7 @@
 //      if true, will add mx sized keycap box around the footprint (18mm)
 //    show_corner_marks: default is false
 //      if true, will add corner marks to indicate plate hole size and position
-//    include_stabilizer_pad: default is false
+//    include_stabilizer_pad: default is true
 //      if true, will add a corner pad for the stabilizer leg present in some
 //      Choc switches
 //    oval_stabilizer_pad: default is false
@@ -67,7 +67,7 @@ module.exports = {
         outer_pad_width_back: 2.6,
         show_keycaps: false,
         show_corner_marks: false,
-        include_stabilizer_pad: false,
+        include_stabilizer_pad: true,
         oval_stabilizer_pad: false,
         choc_v1_support: false,
         keycaps_x: 18,
