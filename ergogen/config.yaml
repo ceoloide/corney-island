@@ -645,17 +645,23 @@ pcbs:
     outlines: &basepcb_outlines
       main:
         outline: _pcb_outline
-      keycaps:
-        outline: _keycap_outlines
-        layer: Dwgs.User
-      screws:
-        outline: _spacers
-        layer: Edge.Cuts
-      mcu_screws:
-        outline: _controller_overlay_screws
-        layer: Edge.Cuts
+      # keycaps:
+      #   outline: _keycap_outlines
+      #   layer: Dwgs.User
         
     footprints: &basepcb_footprints
+      m2_screws:
+        what: screw_hole
+        where: /screw_mcu/
+        params:
+          size: screw_diameter
+          drill: screw_diameter
+      m2_spacers:
+        what: screw_hole
+        where: /screw_pcb/
+        params:
+          size: spacer_diameter
+          drill: spacer_diameter
       key_switches:
         what: *switch_footprint
         where: /key/
