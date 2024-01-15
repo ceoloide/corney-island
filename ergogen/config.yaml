@@ -836,7 +836,7 @@ pcbs:
           show_labels: false
           jumpers_at_bottom: true
         adjust:
-          shift: [0.5 ks + 10.147, 0.375 kp -21.25]
+          shift: [0.5 ks + 10.147, 0.375 kp -20.75]
       
       on_off_switch:
         what: infused-kim/switch_power
@@ -846,7 +846,7 @@ pcbs:
           from: BAT_P
           to: RAW
         adjust:
-          shift: [1.5 ks -0.5, 0.375 kp -46.75]
+          shift: [1.5 ks -0.5, 0.375 kp -46.50]
       
       reset_switch:
         what: infused-kim/switch_reset
@@ -856,7 +856,7 @@ pcbs:
           from: GND
           to: RST
         adjust:
-          shift: [19.704, 0.24 kp]
+          shift: [19.704, 0.24 kp + 0.20]
           rotate: 90
       
       battery_connector:
