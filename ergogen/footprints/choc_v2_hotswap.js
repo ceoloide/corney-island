@@ -27,6 +27,9 @@
 //    include_stabilizer_pad: default is false
 //      if true, will add a corner pad for the stabilizer leg present in some
 //      Choc switches
+//    oval_stabilizer_pad: default is false
+//      if false, will add an oval pad for the stabilizer leg, and a round one
+//      if true. Note that the datasheet calls for a round one.
 //    keycaps_x: default is 18
 //    keycaps_y: default is 18
 //      Allows you to adjust the width of the keycap outline. For example,
@@ -62,6 +65,7 @@ module.exports = {
         show_keycaps: false,
         show_corner_marks: false,
         include_stabilizer_pad: false,
+        oval_stabilizer_pad: false,
         keycaps_x: 18,
         keycaps_y: 18,
         from: undefined,
@@ -235,11 +239,17 @@ module.exports = {
         const solder_back = `
             (pad 1 thru_hole circle (at ${solder_offset_x_back}5 ${solder_offset_y}3.8 195) (size 2.032 2.032) (drill 1.27) (layers *.Cu *.Mask) ${p.to.str})  
         `
-        const corner_stab_front = `
+        const oval_corner_stab_front = `
             (pad "" thru_hole oval (at ${stab_offset_x_front}5.55 ${stab_offset_y}5 ${p.rot}) (size 2.2 1.5) (drill oval 1 0.3) (layers *.Cu *.SilkS *.Mask))
         `
-        const corner_stab_back = `
+        const oval_corner_stab_back = `
             (pad "" thru_hole oval (at ${stab_offset_x_back}5.55 ${stab_offset_y}5 ${p.rot}) (size 2.2 1.5) (drill oval 1 0.3) (layers *.Cu *.SilkS *.Mask))
+        `
+        const round_corner_stab_front = `
+            (pad "" np_thru_hole circle (at ${stab_offset_x_front}5.15 ${stab_offset_y}5 ${p.rot}) (size 1.6 1.6) (drill 1.6) (layers *.Cu *.SilkS *.Mask))
+        `
+        const round_corner_stab_back = `
+            (pad "" np_thru_hole circle (at ${stab_offset_x_back}5.15 ${stab_offset_y}5 ${p.rot}) (size 1.6 1.6) (drill 1.6) (layers *.Cu *.SilkS *.Mask))
         `
         
         const common_bottom = `
@@ -260,10 +270,18 @@ module.exports = {
         }
         if(p.include_stabilizer_pad){
             if(p.reverse || p.side == "F"){
-                final += corner_stab_front
+                if(p.oval_stabilizer_pad){
+                    final += oval_corner_stab_front
+                } else {
+                    final += round_corner_stab_front
+                }
             }
             if(p.reverse || p.side == "B"){
-                final += corner_stab_back
+                if(p.oval_stabilizer_pad){
+                    final += oval_corner_stab_back
+                } else {
+                    final += round_corner_stab_back
+                }
             }
         }
         if(p.hotswap){
