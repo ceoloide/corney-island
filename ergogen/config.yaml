@@ -5,8 +5,9 @@ meta:
   ref: &kb_ref "Corney Island v0.1"
   author: ceoloide
   url: &kb_url https://github.com/ceoloide/corney-island
-  # footprint: &switch_footprint "infused-kim/choc"
   footprint: &switch_footprint "mx"
+  # footprint: &switch_footprint "infused-kim/choc"
+  # footprint: &switch_footprint "choc_v2_hotswap"
   switch:
     $extends: presets.mx
     # $extends: presets.choc_v1
