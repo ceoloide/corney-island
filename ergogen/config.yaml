@@ -845,8 +845,7 @@ pcbs:
           from: BAT_P
           to: RAW
         adjust:
-          shift: [19.5, 0.245 kp]
-          rotate: 90
+          shift: [1.5 ks -0.5, 0.375 kp -46.75]
       
       reset_switch:
         what: infused-kim/switch_reset
@@ -866,6 +865,7 @@ pcbs:
           reversible: true
           BAT_P: BAT_P
           BAT_N: GND
+          courtyard: false
         adjust:
-          shift: [0.5 ks + 7.75, 0.375 kp -45.25]
+          shift: [0.5 ks + 7.25, 0.375 kp -45.25]
           rotate: 90
