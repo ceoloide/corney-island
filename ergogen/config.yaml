@@ -856,7 +856,7 @@ pcbs:
           from: GND
           to: RST
         adjust:
-          shift: [11.65, 0.24 kp]
+          shift: [19.704, 0.24 kp]
           rotate: 90
       
       battery_connector:
