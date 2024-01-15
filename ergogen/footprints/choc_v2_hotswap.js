@@ -30,6 +30,9 @@
 //    oval_stabilizer_pad: default is false
 //      if false, will add an oval pad for the stabilizer leg, and a round one
 //      if true. Note that the datasheet calls for a round one.
+//    choc_v1_support: default is false
+//      if true, will add lateral stabilizer holes that are required for
+//      Choc v1 footprints.
 //    keycaps_x: default is 18
 //    keycaps_y: default is 18
 //      Allows you to adjust the width of the keycap outline. For example,
@@ -66,6 +69,7 @@ module.exports = {
         show_corner_marks: false,
         include_stabilizer_pad: false,
         oval_stabilizer_pad: false,
+        choc_v1_support: false,
         keycaps_x: 18,
         keycaps_y: 18,
         from: undefined,
@@ -82,8 +86,9 @@ module.exports = {
 
             ${''/* middle shaft hole */}
             (pad "" np_thru_hole circle (at 0 0) (size 5 5) (drill 5) (layers *.Cu))
+        `
 
-            ${''/* stabilizer holes */}
+        const choc_v1_stabilizers = `
             (pad "" np_thru_hole circle (at 5.5 0) (size 1.9 1.9) (drill 1.9) (layers *.Cu))
             (pad "" np_thru_hole circle (at -5.5 0) (size 1.9 1.9) (drill 1.9) (layers *.Cu))
         `
@@ -257,6 +262,9 @@ module.exports = {
         `
 
         let final = common_top
+        if(p.choc_v1_support){
+            final += choc_v1_stabilizers
+        }
         if(p.show_corner_marks){
             if(p.reverse || p.side == "F"){
                 final += corner_marks_front
