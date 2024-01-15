@@ -1,6 +1,7 @@
 // Author: Ergogen + @infused-kim + @ceoloide improvements
 //
 // Kailh Choc PG1350 (v1) + Kailh Choc PG1353 (v2)
+// This includes support for LOFREE low profile POM switches (Ghost, Phantom, Wizard)
 //
 // Nets
 //    from: corresponds to pin 1
