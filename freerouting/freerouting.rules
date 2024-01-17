@@ -26,11 +26,12 @@
   )
   (rule
     (width 150.0)
-    (clearance 200.2)
+    (clearance 200.1)
     (clearance 75.0 (type smd_to_turn_gap))
+    (clearance 75.0 (type pad_to_turn_gap))
     (clearance 50.0 (type smd))
-    (clearance 200.2 (type "kicad_default"))
-    (clearance 200.2 (type "power_ground"))
+    (clearance 200.0 (type "kicad_default"))
+    (clearance 200.0 (type "power_ground"))
   )
   (padstack "Via[0-1]_560:300_um"
     (shape
@@ -86,6 +87,7 @@
     (via_rule "kicad_default")
     (rule
       (width 150.0)
+      (clearance 200.0)
     )
     (circuit 
       (use_layer F.Cu B.Cu)
@@ -97,6 +99,7 @@
     (via_rule "kicad_default")
     (rule
       (width 250.0)
+      (clearance 200.0)
     )
     (circuit 
       (use_layer F.Cu B.Cu)
