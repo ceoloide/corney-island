@@ -849,17 +849,17 @@ pcbs:
           shift: [1.5 ks -0.5, 0.375 kp -46.50]
       
       reset_switch:
-        what: infused-kim/switch_reset
+        what: reset_button
         where: matrix_inner_top
         params:
-          reverse: true
           from: GND
           to: RST
+          reversible: true
+          include_bosses: true
         adjust:
-          shift: [19.704, 0.24 kp + 0.20]
-          rotate: 90
+          shift: [19.704, 0.24 kp - 0.1]
       
-      battery_connector:
+      battery_connector:  
         what: jst_battery_connector
         where: matrix_inner_top
         params:
