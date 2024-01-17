@@ -1,7 +1,8 @@
 // Author: Ergogen + @infused-kim + @ceoloide improvements
 //
-// Kailh Choc PG1350 (v1) + Kailh Choc PG1353 (v2)
-// This includes support for LOFREE low profile POM switches (Ghost, Phantom, Wizard)
+// Description:
+//    Kailh Choc PG1350 (v1) + Kailh Choc PG1353 (v2) reversible and hotswappable footprint.
+//    This includes support for LOFREE low profile POM switches (Ghost, Phantom, Wizard)
 //
 // Nets
 //    from: corresponds to pin 1
@@ -55,6 +56,8 @@
 //  - Adjusted footprint to be Choc PG1353 (v2) compatible
 //  - Added option to hide corner marks, as they interfere with hotswap silkscreen
 //  - Added ability to specify board side
+//  - Added ability to include stabilizer pad
+//  - Added ability to use an oval stabilizer pad
 
 module.exports = {
     params: {
