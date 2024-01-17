@@ -116,7 +116,7 @@ module.exports = {
       if(p.include_bosses){
         final += bosses
       }
-      if(p.side == "F" || p.reverse) {
+      if(p.side == "F" || p.reversible) {
         final += pads_front
         if(p.silkscreen){
           final += silkscreen_front
@@ -125,7 +125,7 @@ module.exports = {
           final += courtyard_front
         }
       }
-      if(p.side == "B" || p.reverse) {
+      if(p.side == "B" || p.reversible) {
         final += pads_back
         if(p.silkscreen){
           final += silkscreen_back
