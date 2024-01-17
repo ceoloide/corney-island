@@ -40,7 +40,6 @@ module.exports = {
         (module sw_reset_side (layer ${p.side}.Cu) (tedit 64473C6F)
           ${p.at /* parametric position */}
           (attr smd)
-          )
           (fp_text value "reset_button" (at 0 2.5 ${p.rot}) (layer ${p.side}.Fab)
             (effects (font (size 1 1) (thickness 0.15)))
           )
