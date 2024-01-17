@@ -730,10 +730,11 @@ pcbs:
           shift: [19.704, 0.375 kp -18.37]
       
       jlcpcb_order_number_text:
-        what: infused-kim/text
+        what: text
         where: matrix_ring_bottom
         params:
           text: JLCJLCJLCJLC
+          reversible: true
         adjust:
           shift: [0, -0.65 kp]
   
