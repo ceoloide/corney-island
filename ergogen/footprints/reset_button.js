@@ -40,8 +40,6 @@ module.exports = {
         (module sw_reset_side (layer ${p.side}.Cu) (tedit 64473C6F)
           ${p.at /* parametric position */}
           (attr smd)
-          (fp_text reference "${p.ref}" (at 0 0 ${p.rot}) (layer ${p.side}.SilkS) ${p.ref_hide}
-            (effects (font (size 1 1) (thickness 0.15)))
           )
           (fp_text value "reset_button" (at 0 2.5 ${p.rot}) (layer ${p.side}.Fab)
             (effects (font (size 1 1) (thickness 0.15)))
@@ -109,7 +107,7 @@ module.exports = {
         (pad "" np_thru_hole circle (at 0 1.375 ${180 + p.rot}) (size 0.75 0.75) (drill 0.75) (layers "*.Cu" "*.Mask"))
       `
       const common_end = `
-        )
+      )
       `
 
       let final = common_start;
