@@ -1,8 +1,8 @@
 meta:
   engine: 4.0.4
   name: corney-island
-  version: 0.1
-  ref: &kb_ref "Corney Island v0.1"
+  version: 0.2
+  ref: &kb_ref "Corney Island v0.2"
   author: ceoloide
   url: &kb_url https://github.com/ceoloide/corney-island
   footprint: &switch_footprint "mx"
