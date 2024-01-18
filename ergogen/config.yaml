@@ -840,10 +840,10 @@ pcbs:
           shift: [0.5 ks + 10.147, 0.375 kp -20.75]
       
       on_off_switch:
-        what: infused-kim/switch_power
+        what: power_switch
         where: matrix_inner_top
         params:
-          reverse: true
+          reversible: true
           from: BAT_P
           to: RAW
         adjust:
