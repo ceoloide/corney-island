@@ -6,8 +6,7 @@ meta:
   author: ceoloide
   url: &kb_url https://github.com/ceoloide/corney-island
   footprint: &switch_footprint "mx"
-  # footprint: &switch_footprint "infused-kim/choc"
-  # footprint: &switch_footprint "choc_v2_hotswap"
+  # footprint: &switch_footprint "choc_v1_v2"
   switch:
     $extends: presets.mx
     # $extends: presets.choc_v1
@@ -671,9 +670,11 @@ pcbs:
           hotswap: true
           from: "{{column_net}}"
           to: "{{colrow}}"
-          # The following parameters are specific to choc_v2_hotswap
+          # The following parameters are specific to choc_v1_v2
           # outer_pad_width_front: 1.6
           # outer_pad_width_back: 1.6
+          # choc_v2_support: false
+          # choc_v1_support: false
         adjust:
           rotate: switch_rotation
 
