@@ -25,6 +25,9 @@
 //      if true it will include silkscreen markings
 //    courtyard: default is false
 //      if true it will include the part courtyard
+//    invert_behavior: default is false
+//      if true, pin 3 will connect to the "from" net, and if false it will connect to pin 1,
+//      effectively inverting the behavior of the switch.
 //
 // @ceoloide's improvements:
 //  - Added ability to set text on both sides
@@ -37,7 +40,7 @@ module.exports = {
     side: 'F',
     silkscreen: true,
     courtyard: false,
-    mirror_behavior: false,
+    invert_behavior: false,
     from: {type: 'net', value: 'BAT_P'},
     to: {type: 'net', value: 'RAW'},
   },
@@ -106,9 +109,9 @@ module.exports = {
         (pad "" smd rect (at -1.085 -3.65 ${90 + p.rot}) (size 1 0.8) (layers F.Cu F.Paste F.Mask))
         (pad "" smd rect (at -1.085 3.65 ${90 + p.rot}) (size 1 0.8) (layers F.Cu F.Paste F.Mask))
         (pad "" smd rect (at 1.125 3.65 ${90 + p.rot}) (size 1 0.8) (layers F.Cu F.Paste F.Mask))
-        (pad 1 smd rect (at -1.735 2.25 ${90 + p.rot}) (size 0.7 1.5) (layers F.Cu F.Paste F.Mask) ${p.from.str})
+        (pad 1 smd rect (at -1.735 2.25 ${90 + p.rot}) (size 0.7 1.5) (layers F.Cu F.Paste F.Mask) ${p.invert_behavior ? '' : p.from.str})
         (pad 2 smd rect (at -1.735 -0.75 ${90 + p.rot}) (size 0.7 1.5) (layers F.Cu F.Paste F.Mask) ${p.to.str})
-        (pad 3 smd rect (at -1.735 -2.25 ${90 + p.rot}) (size 0.7 1.5) (layers F.Cu F.Paste F.Mask))
+        (pad 3 smd rect (at -1.735 -2.25 ${90 + p.rot}) (size 0.7 1.5) (layers F.Cu F.Paste F.Mask) ${p.invert_behavior ? p.from.str : ''})
 
     `
     const pads_back = `
@@ -126,9 +129,9 @@ module.exports = {
         (pad "" smd rect (at 1.125 -3.65 ${270 + p.rot}) (size 1 0.8) (layers B.Cu B.Paste B.Mask))
         (pad "" smd rect (at -1.085 3.65 ${270 + p.rot}) (size 1 0.8) (layers B.Cu B.Paste B.Mask))
         (pad "" smd rect (at 1.125 3.65 ${270 + p.rot}) (size 1 0.8) (layers B.Cu B.Paste B.Mask))
-        (pad 1 smd rect (at -1.735 -2.25 ${270 + p.rot}) (size 0.7 1.5) (layers B.Cu B.Paste B.Mask))
+        (pad 1 smd rect (at -1.735 -2.25 ${270 + p.rot}) (size 0.7 1.5) (layers B.Cu B.Paste B.Mask) ${p.invert_behavior ? '' : p.from.str})
         (pad 2 smd rect (at -1.735 0.75 ${270 + p.rot}) (size 0.7 1.5) (layers B.Cu B.Paste B.Mask) ${p.to.str})
-        (pad 3 smd rect (at -1.735 2.25 ${270 + p.rot}) (size 0.7 1.5) (layers B.Cu B.Paste B.Mask) ${p.from.str})
+        (pad 3 smd rect (at -1.735 2.25 ${270 + p.rot}) (size 0.7 1.5) (layers B.Cu B.Paste B.Mask) ${p.invert_behavior ? p.from.str : ''})
       `
     const common_end = `
       (pad "" np_thru_hole circle (at 0.025 -1.5 ${90 + p.rot}) (size 0.9 0.9) (drill 0.9) (layers *.Cu *.Mask))
