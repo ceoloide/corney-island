@@ -27,7 +27,7 @@
 //      if true, will add corner marks to indicate plate hole size and position
 //    include_stabilizer_pad: default is true
 //      if true, will add a corner pad for the stabilizer leg present in some
-//      Choc switches
+//      Choc switches, unless choc_v2_support is false.
 //    oval_stabilizer_pad: default is false
 //      if false, will add an oval pad for the stabilizer leg, and a round one
 //      if true. Note that the datasheet calls for a round one.
@@ -36,7 +36,8 @@
 //      Choc v1 footprints.
 //    choc_v2_support: default is true
 //      if true, will make the central hole bigger to as required for
-//      Choc v2 footprints.
+//      Choc v2 footprints. If false it will also disable the corner stabilizer
+//      pad even if include_stabilizer_pad is true.
 //    keycaps_x: default is 18
 //    keycaps_y: default is 18
 //      Allows you to adjust the width of the keycap outline. For example,
@@ -222,8 +223,6 @@ module.exports = {
             (pad "" np_thru_hole circle (at -5 -3.75 195) (size 3 3) (drill 3) (layers *.Cu *.Mask))
         `
 
-       
-
         // If both hotswap and solder are enabled, move the solder holes
         // "down" to the opposite side of the switch.
         // Since switches can be rotated by 90 degrees, this won't be a
@@ -284,7 +283,7 @@ module.exports = {
         if(p.show_keycaps){
             final += keycap_marks
         }
-        if(p.include_stabilizer_pad){
+        if(p.include_stabilizer_pad && p.choc_v2_support){
             if(p.reverse || p.side == "F"){
                 if(p.oval_stabilizer_pad){
                     final += oval_corner_stab_front
