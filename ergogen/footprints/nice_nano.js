@@ -207,11 +207,12 @@ module.exports =  {
         // These are the silkscreen labels that will be printed on the PCB.
         // They tell us the orientation if the controller is placed with
         // the components down, on top of the PCB and the jumpers are
-        // soldered on the opposite side than the controller.
-        const net_silk_front_left = via_label_right
-        const net_silk_front_right = via_label_left
-        const net_silk_back_left = via_label_left
-        const net_silk_back_right = via_label_right
+        // soldered on the opposite side than the controller, when seen on
+        // the opposite side of the controller.
+        const net_silk_front_left = via_label_left
+        const net_silk_front_right = via_label_right
+        const net_silk_back_left = via_label_right
+        const net_silk_back_right = via_label_left
 
         let socket_row = `
           ${''/* Socket Holes */}
