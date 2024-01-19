@@ -20,7 +20,8 @@
 //    reversible: default is false
 //      if true, it will include pads on both Front and Back to make the footprint reversible
 //    side: default is F for Front
-//      the side on which to place the single-side footprint and designator, either F or B
+//      the side on which to place the single-side footprint and designator, either F (Front)
+//      or B (Back)
 //    silkscreen: default is true
 //      if true it will include silkscreen markings
 //    courtyard: default is false
