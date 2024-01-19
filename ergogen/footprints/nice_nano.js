@@ -1,4 +1,4 @@
-// Author: @infused-kim
+// Author: @infused-kim + @ceoloide improvements
 //
 // A reversible footprint for the nice!nano (or any pro-micro compatible
 // controller) that uses jumpers instead of two rows socket rows to achieve
@@ -7,12 +7,13 @@
 // This is a re-implementation of the promicro_pretty footprint made popular
 // by @benvallack.
 //
-// The following improvements have been made:
-//    1. It uses real traces instead of pads, which gets rid of hundreds of
-//       DRC errors.
-//    2. It leaves more space between the vias to allow easier routing through
-//       the middle of the footprint
+// @infused-kim's improvements:
+//  - It uses real traces instead of pads, which gets rid of hundreds of DRC errors.
+//  - It leaves more space between the vias to allow easier routing through the middle
+//    of the footprint
 //
+// @ceoloide's improvements:
+//  - Move vias closer to the pads 
 //
 // # Placement and jumper soldering:
 // The footprint is meant to be used with a nice!nano (or any other pro micro
@@ -29,10 +30,11 @@
 // components facing up or even at the bottom. You just need to make sure you
 // solder the jumpers on the correct side.
 //
-// Regardless, the silkscreen labels are displayed in location that match when
-// the controller is placed with the components facing down.
+// The silkscreen labels are displayed on the opposite side of the MCU, when
+// it's facing down. This is so that one can solder all components and jumpers
+// on the back side, and be able to read the correct labels to do tests.
 //
-// # Credits
+// # Further credits
 // This footprint was created from scratch, but is based on the ideas from
 // these footprints:
 // https://github.com/Albert-IV/ergogen-contrib/blob/main/src/footprints/promicro_pretty.js
