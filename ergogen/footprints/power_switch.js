@@ -40,7 +40,7 @@ module.exports = {
     side: 'F',
     silkscreen: true,
     courtyard: false,
-    invert_behavior: false,
+    invert_behavior: true,
     from: {type: 'net', value: 'BAT_P'},
     to: {type: 'net', value: 'RAW'},
   },
@@ -57,6 +57,12 @@ module.exports = {
         (fp_text reference "${p.ref}" (at -3.6 0 ${-90 + p.rot}) (layer F.SilkS) ${p.ref_hide}
           (effects (font (size 1 1) (thickness 0.15)))
         )
+        (fp_text user "ON" (at 0 ${p.invert_behavior ? '-' : ''}4.5 ${p.rot}) (layer "F.SilkS")
+          (effects (font (size 1 1) (thickness 0.15)) (justify ${p.invert_behavior ? 'bottom' : 'top'}))
+        )
+        (fp_text user "OFF" (at 0 ${p.invert_behavior ? '' : '-'}4.5 ${p.rot}) (layer "F.SilkS")
+          (effects (font (size 1 1) (thickness 0.15)) (justify ${p.invert_behavior ? 'top' : 'bottom'}))
+        )
         (fp_line (start 0.415 -3.45) (end -0.375 -3.45) (layer F.SilkS) (width 0.12))
         (fp_line (start -0.375 3.45) (end 0.415 3.45) (layer F.SilkS) (width 0.12))
         (fp_line (start -1.425 1.6) (end -1.425 -0.1) (layer F.SilkS) (width 0.12))
@@ -66,6 +72,12 @@ module.exports = {
     const silkscreen_back = `
         (fp_text user "${p.ref}" (at -3.5 0 ${90 + p.rot}) (layer B.SilkS) ${p.ref_hide}
           (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
+        )
+        (fp_text user "ON" (at 0 ${p.invert_behavior ? '-' : ''}4.5 ${p.rot}) (layer "B.SilkS")
+          (effects (font (size 1 1) (thickness 0.15)) (justify ${p.invert_behavior ? 'bottom' : 'top'} mirror))
+        )
+        (fp_text user "OFF" (at 0 ${p.invert_behavior ? '' : '-'}4.5 ${p.rot}) (layer "B.SilkS")
+          (effects (font (size 1 1) (thickness 0.15)) (justify ${p.invert_behavior ? 'top' : 'bottom'} mirror))
         )
         (fp_line (start -1.425 1.4) (end -1.425 1.6) (layer B.SilkS) (width 0.12))
         (fp_line (start 0.415 3.45) (end -0.375 3.45) (layer B.SilkS) (width 0.12))
