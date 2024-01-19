@@ -71,6 +71,8 @@ module.exports =  {
       show_instructions: true,
       show_silk_labels: true,
       show_via_labels: true,
+      via_size: 0.8, // JLCPC min is 0.56 for 1-2 layer boards, KiCad defaults to 0.8
+      via_drill: 0.4, // JLCPC min is 0.3 for 1-2 layer boards, KiCad defaults to 0.4
 
       RAW_label: '',
       GND_label: '',
@@ -221,7 +223,8 @@ module.exports =  {
           (pad ${socket_hole_num_right} thru_hole circle (at 7.62 ${-12.7 + row_offset_y}) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask) ${p.local_net(socket_hole_num_right).str})
 
           ${''/* Inside VIAS */}
-          (pad ${via_num_left} thru_hole circle (at -3.4 ${-12.7 + row_offset_y}) (size 0.8 0.8) (drill 0.4) (layers *.Cu *.Mask) ${net_left})          (pad ${via_num_right} thru_hole circle (at 3.4 ${-12.7 + row_offset_y}) (size 0.8 0.8) (drill 0.4) (layers *.Cu *.Mask) ${net_right})
+          (pad ${via_num_right} thru_hole circle (at 3.4 ${-12.7 + row_offset_y}) (size ${p.via_size} ${p.via_size}) (drill ${p.via_drill}) (layers *.Cu *.Mask) ${net_right})
+          (pad ${via_num_left} thru_hole circle (at -3.4 ${-12.7 + row_offset_y}) (size ${p.via_size} ${p.via_size}) (drill ${p.via_drill}) (layers *.Cu *.Mask) ${net_left})
 
           ${''/* Jumper Pads - Front Left */}
           (pad ${socket_hole_num_left} smd custom (at -5.5 ${-12.7 + row_offset_y}) (size 0.2 0.2) (layers F.Cu F.Mask) ${p.local_net(socket_hole_num_left).str}
