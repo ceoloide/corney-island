@@ -156,26 +156,25 @@ module.exports =  {
 
       const gen_traces_row = (row_num) => {
         const traces = `
-          (segment (start ${ adjust_point(4.775, -12.7 + (row_num * 2.54)) }) (end ${ adjust_point(3.262, -12.7 + (row_num * 2.54)) }) (width 0.25) (layer F.Cu) (net 1))
-          (segment (start ${ adjust_point(-4.335002, -12.7 + (row_num * 2.54)) }) (end ${ adjust_point(-3.610001, -11.974999 + (row_num * 2.54)) }) (width 0.25) (layer B.Cu) (net 1))
-          (segment (start ${ adjust_point(-4.775, -12.7 + (row_num * 2.54)) }) (end ${ adjust_point(-4.335002, -12.7 + (row_num * 2.54)) }) (width 0.25) (layer B.Cu) (net 1))
-          (segment (start ${ adjust_point(-3.610001, -11.974999 + (row_num * 2.54)) }) (end ${ adjust_point(-2.913999, -11.974999 + (row_num * 2.54)) }) (width 0.25) (layer B.Cu) (net 1))
-          (segment (start ${ adjust_point(-2.536999, -12.351999 + (row_num * 2.54)) }) (end ${ adjust_point(-2.536999, -12.363001 + (row_num * 2.54)) }) (width 0.25) (layer B.Cu) (net 1))
-          (segment (start ${ adjust_point(-2.913999, -11.974999 + (row_num * 2.54)) }) (end ${ adjust_point(-2.536999, -12.351999 + (row_num * 2.54)) }) (width 0.25) (layer B.Cu) (net 1))
-          (segment (start ${ adjust_point(-2.536999, -12.363001 + (row_num * 2.54)) }) (end ${ adjust_point(-2.45, -12.45 + (row_num * 2.54)) }) (width 0.25) (layer B.Cu) (net 1))
-          (segment (start ${ adjust_point(3.012, -12.45 + (row_num * 2.54)) }) (end ${ adjust_point(3.262, -12.7 + (row_num * 2.54)) }) (width 0.25) (layer B.Cu) (net 1))
-          (segment (start ${ adjust_point(-2.45, -12.45 + (row_num * 2.54)) }) (end ${ adjust_point(3.012, -12.45 + (row_num * 2.54)) }) (width 0.25) (layer B.Cu) (net 1))
-          (segment (start ${ adjust_point(-4.775, -12.7 + (row_num * 2.54)) }) (end ${ adjust_point(-3.262, -12.7 + (row_num * 2.54)) }) (width 0.25) (layer F.Cu) (net 13))
-          (segment (start ${ adjust_point(3.610001, -13.425001 + (row_num * 2.54)) }) (end ${ adjust_point(2.913999, -13.425001 + (row_num * 2.54)) }) (width 0.25) (layer B.Cu) (net 13))
-          (segment (start ${ adjust_point(4.335002, -12.7 + (row_num * 2.54)) }) (end ${ adjust_point(3.610001, -13.425001 + (row_num * 2.54)) }) (width 0.25) (layer B.Cu) (net 13))
-          (segment (start ${ adjust_point(4.775, -12.7 + (row_num * 2.54)) }) (end ${ adjust_point(4.335002, -12.7 + (row_num * 2.54)) }) (width 0.25) (layer B.Cu) (net 13))
-          (segment (start ${ adjust_point(2.913999, -13.425001 + (row_num * 2.54)) }) (end ${ adjust_point(2.438998, -12.95 + (row_num * 2.54)) }) (width 0.25) (layer B.Cu) (net 13))
-          (segment (start ${ adjust_point(-3.012, -12.95 + (row_num * 2.54)) }) (end ${ adjust_point(-3.262, -12.7 + (row_num * 2.54)) }) (width 0.25) (layer B.Cu) (net 13))
-          (segment (start ${ adjust_point(2.438998, -12.95 + (row_num * 2.54)) }) (end ${ adjust_point(-3.012, -12.95 + (row_num * 2.54)) }) (width 0.25) (layer B.Cu) (net 13))
+          (segment (start ${ adjust_point(4.775, -12.7 + (row_num * 2.54)) }) (end ${ adjust_point(3.4, -12.7 + (row_num * 2.54)) }) (width 0.25) (layer F.Cu) (net 1))
+          (segment (start ${ adjust_point(-4.775, -12.7 + (row_num * 2.54)) }) (end ${ adjust_point(-3.4, -12.7 + (row_num * 2.54)) }) (width 0.25) (layer F.Cu) (net 13))
+          
           (segment (start ${ adjust_point(-7.62, -12.7 + (row_num * 2.54)) }) (end ${ adjust_point(-5.5, -12.7 + (row_num * 2.54)) }) (width 0.25) (layer F.Cu) (net 23))
           (segment (start ${ adjust_point(-7.62, -12.7 + (row_num * 2.54)) }) (end ${ adjust_point(-5.5, -12.7 + (row_num * 2.54)) }) (width 0.25) (layer B.Cu) (net 23))
           (segment (start ${ adjust_point(5.5, -12.7 + (row_num * 2.54)) }) (end ${ adjust_point(7.62, -12.7 + (row_num * 2.54)) }) (width 0.25) (layer F.Cu) (net 24))
           (segment (start ${ adjust_point(7.62, -12.7 + (row_num * 2.54)) }) (end ${ adjust_point(5.5, -12.7 + (row_num * 2.54)) }) (width 0.25) (layer B.Cu) (net 24))
+          
+          (segment (start ${ adjust_point(-2.604695, 0.23 + (row_num * 2.54) - 12.7) }) (end ${ adjust_point(3.17, 0.23 + (row_num * 2.54) - 12.7) }) (width 0.25) (layer "B.Cu") (net 2))
+          (segment (start ${ adjust_point(-4.775, 0 + (row_num * 2.54) - 12.7) }) (end ${ adjust_point(-4.425305, 0 + (row_num * 2.54) - 12.7) }) (width 0.25) (layer "B.Cu") (net 2))
+          (segment (start ${ adjust_point(-3.700305, 0.725 + (row_num * 2.54) - 12.7) }) (end ${ adjust_point(-3.099695, 0.725 + (row_num * 2.54) - 12.7) }) (width 0.25) (layer "B.Cu") (net 2))
+          (segment (start ${ adjust_point(-4.425305, 0 + (row_num * 2.54) - 12.7) }) (end ${ adjust_point(-3.700305, 0.725 + (row_num * 2.54) - 12.7) }) (width 0.25) (layer "B.Cu") (net 2))
+          (segment (start ${ adjust_point(-3.099695, 0.725 + (row_num * 2.54) - 12.7) }) (end ${ adjust_point(-2.604695, 0.23 + (row_num * 2.54) - 12.7) }) (width 0.25) (layer "B.Cu") (net 2))
+
+          (segment (start ${ adjust_point(4.775, 0 + (row_num * 2.54) - 12.7) }) (end ${ adjust_point(4.425305, 0 + (row_num * 2.54) - 12.7) }) (width 0.25) (layer "B.Cu") (net 20))
+          (segment (start ${ adjust_point(2.594695, -0.22 + (row_num * 2.54) - 12.7) }) (end ${ adjust_point(-3.18, -0.22 + (row_num * 2.54) - 12.7) }) (width 0.25) (layer "B.Cu") (net 20))
+          (segment (start ${ adjust_point(4.425305, 0 + (row_num * 2.54) - 12.7) }) (end ${ adjust_point(3.700305, -0.725 + (row_num * 2.54) - 12.7) }) (width 0.25) (layer "B.Cu") (net 20))
+          (segment (start ${ adjust_point(3.700305, -0.725 + (row_num * 2.54) - 12.7) }) (end ${ adjust_point(3.099695, -0.725 + (row_num * 2.54) - 12.7) }) (width 0.25) (layer "B.Cu") (net 20))
+          (segment (start ${ adjust_point(3.099695, -0.725 + (row_num * 2.54) - 12.7) }) (end ${ adjust_point(2.594695, -0.22 + (row_num * 2.54) - 12.7) }) (width 0.25) (layer "B.Cu") (net 20))
         `
 
         return traces
@@ -220,8 +219,7 @@ module.exports =  {
           (pad ${socket_hole_num_right} thru_hole circle (at 7.62 ${-12.7 + row_offset_y}) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask) ${p.local_net(socket_hole_num_right).str})
 
           ${''/* Inside VIAS */}
-          (pad ${via_num_left} thru_hole circle (at -3.262 ${-12.7 + row_offset_y}) (size 0.8 0.8) (drill 0.4) (layers *.Cu *.Mask) ${net_left})
-          (pad ${via_num_right} thru_hole circle (at 3.262 ${-12.7 + row_offset_y}) (size 0.8 0.8) (drill 0.4) (layers *.Cu *.Mask) ${net_right})
+          (pad ${via_num_left} thru_hole circle (at -3.4 ${-12.7 + row_offset_y}) (size 0.8 0.8) (drill 0.4) (layers *.Cu *.Mask) ${net_left})          (pad ${via_num_right} thru_hole circle (at 3.4 ${-12.7 + row_offset_y}) (size 0.8 0.8) (drill 0.4) (layers *.Cu *.Mask) ${net_right})
 
           ${''/* Jumper Pads - Front Left */}
           (pad ${socket_hole_num_left} smd custom (at -5.5 ${-12.7 + row_offset_y}) (size 0.2 0.2) (layers F.Cu F.Mask) ${p.local_net(socket_hole_num_left).str}
