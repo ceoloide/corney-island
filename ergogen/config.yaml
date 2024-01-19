@@ -31,7 +31,7 @@ presets:
     led_rotation: 180 # Led rotation
     vertical_underglow_shift: -0.5 kp # How much to shift underglow leds tied to keys
     vertical_diode_shift: 1.325 # How much to shift to avoid overlap
-    horizontal_diode_shift: 7
+    horizontal_diode_shift: 7.4
     diode_rotation: 0 # Diode rotation
     switch_rotation: 0 # Hotswap north, led south
   choc_v1:
