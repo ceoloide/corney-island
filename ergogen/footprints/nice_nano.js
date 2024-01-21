@@ -14,6 +14,7 @@
 //
 // @ceoloide's improvements:
 //  - Move vias closer to the pads 
+//  - Add ability to use rectangular jumpers
 //
 // # Placement and jumper soldering:
 // The footprint is meant to be used with a nice!nano (or any other pro micro
@@ -71,6 +72,7 @@ module.exports =  {
       show_instructions: true,
       show_silk_labels: true,
       show_via_labels: true,
+      use_rectangular_jumpers: false,
       via_size: 0.8, // JLCPC min is 0.56 for 1-2 layer boards, KiCad defaults to 0.8
       via_drill: 0.4, // JLCPC min is 0.3 for 1-2 layer boards, KiCad defaults to 0.4
 
@@ -160,8 +162,8 @@ module.exports =  {
 
       const gen_traces_row = (row_num) => {
         const traces = `
-          (segment (start ${ adjust_point(4.775, -12.7 + (row_num * 2.54)) }) (end ${ adjust_point(3.4, -12.7 + (row_num * 2.54)) }) (width 0.25) (layer F.Cu) (net 1))
-          (segment (start ${ adjust_point(-4.775, -12.7 + (row_num * 2.54)) }) (end ${ adjust_point(-3.4, -12.7 + (row_num * 2.54)) }) (width 0.25) (layer F.Cu) (net 13))
+          (segment (start ${ adjust_point((p.use_rectangular_jumpers ? 4.58 : 4.775), -12.7 + (row_num * 2.54)) }) (end ${ adjust_point(3.4, -12.7 + (row_num * 2.54)) }) (width 0.25) (layer F.Cu) (net 1))
+          (segment (start ${ adjust_point((p.use_rectangular_jumpers ? -4.58 : -4.775), -12.7 + (row_num * 2.54)) }) (end ${ adjust_point(-3.4, -12.7 + (row_num * 2.54)) }) (width 0.25) (layer F.Cu) (net 13))
           
           (segment (start ${ adjust_point(-7.62, -12.7 + (row_num * 2.54)) }) (end ${ adjust_point(-5.5, -12.7 + (row_num * 2.54)) }) (width 0.25) (layer F.Cu) (net 23))
           (segment (start ${ adjust_point(-7.62, -12.7 + (row_num * 2.54)) }) (end ${ adjust_point(-5.5, -12.7 + (row_num * 2.54)) }) (width 0.25) (layer B.Cu) (net 23))
@@ -217,7 +219,7 @@ module.exports =  {
         const net_silk_back_left = via_label_right
         const net_silk_back_right = via_label_left
 
-        let socket_row = `
+        let socket_row_base = `
           ${''/* Socket Holes */}
           (pad ${socket_hole_num_left} thru_hole circle (at -7.62 ${-12.7 + row_offset_y}) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask) ${p.local_net(socket_hole_num_left).str})
           (pad ${socket_hole_num_right} thru_hole circle (at 7.62 ${-12.7 + row_offset_y}) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask) ${p.local_net(socket_hole_num_right).str})
@@ -225,7 +227,27 @@ module.exports =  {
           ${''/* Inside VIAS */}
           (pad ${via_num_right} thru_hole circle (at 3.4 ${-12.7 + row_offset_y}) (size ${p.via_size} ${p.via_size}) (drill ${p.via_drill}) (layers *.Cu *.Mask) ${net_right})
           (pad ${via_num_left} thru_hole circle (at -3.4 ${-12.7 + row_offset_y}) (size ${p.via_size} ${p.via_size}) (drill ${p.via_drill}) (layers *.Cu *.Mask) ${net_left})
+        `
 
+        let socket_row_rectangular_jumpers = `
+        ${''/* Jumper Pads - Front Left */}
+        (pad ${socket_hole_num_left} smd rect (at -5.48 ${-12.7 + row_offset_y}) (size 0.6 1.2) (layers F.Cu F.Mask) ${p.local_net(socket_hole_num_left).str})
+        (pad ${via_num_left} smd rect (at -4.58 ${-12.7 + row_offset_y}) (size 0.6 1.2) (layers F.Cu F.Mask) ${net_left})
+
+        ${''/* Jumper Pads - Front Right */}
+        (pad ${via_num_right} smd rect (at 4.58 ${-12.7 + row_offset_y}) (size 0.6 1.2) (layers F.Cu F.Mask) ${net_right})
+        (pad ${socket_hole_num_left} smd rect (at 5.48 ${-12.7 + row_offset_y}) (size 0.6 1.2) (layers F.Cu F.Mask) ${p.local_net(socket_hole_num_right).str})
+
+        ${''/* Jumper Pads - Back Left */}
+        (pad ${socket_hole_num_left} smd rect (at -5.48 ${-12.7 + row_offset_y}) (size 0.6 1.2) (layers B.Cu B.Mask) ${p.local_net(socket_hole_num_left).str})
+        (pad ${via_num_right} smd rect (at -4.58 ${-12.7 + row_offset_y}) (size 0.6 1.2) (layers B.Cu B.Mask) ${net_right})
+
+        ${''/* Jumper Pads - Back Right */}
+        (pad ${via_num_left} smd rect (at 4.58 ${-12.7 + row_offset_y}) (size 0.6 1.2) (layers B.Cu B.Mask) ${net_left})
+        (pad ${socket_hole_num_left} smd rect (at 5.48 ${-12.7 + row_offset_y}) (size 0.6 1.2) (layers B.Cu B.Mask) ${p.local_net(socket_hole_num_right).str})
+        `
+
+        let socket_row_chevron_jumpers = `
           ${''/* Jumper Pads - Front Left */}
           (pad ${socket_hole_num_left} smd custom (at -5.5 ${-12.7 + row_offset_y}) (size 0.2 0.2) (layers F.Cu F.Mask) ${p.local_net(socket_hole_num_left).str}
             (zone_connect 2)
@@ -299,7 +321,12 @@ module.exports =  {
             ) (width 0))
           ))
         `
-
+        let socket_row = socket_row_base
+        if(p.use_rectangular_jumpers){
+          socket_row += socket_row_rectangular_jumpers
+        } else {
+          socket_row += socket_row_chevron_jumpers
+        }
         if(show_silk_labels == true) {
           socket_row += `
 
