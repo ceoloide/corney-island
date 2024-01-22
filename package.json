@@ -6,7 +6,7 @@
         "watch:debug": "nodemon -e yaml,js -x \"npm run debug\" --ignore ergogen/output"
     },
     "dependencies": {
-        "ergogen": "github:ergogen/ergogen#develop",
+        "ergogen": "^4.0.5",
         "nodemon": "^3.0.1"
     },
     "nodemonConfig": {
