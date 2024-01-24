@@ -88,7 +88,7 @@ module.exports = {
     },
     body: p => {
         const common_top = `
-        (module PG1350 (layer F.Cu) (tedit 5DD50112)
+        (module "ceoloide/choc_v1_v2" (layer F.Cu) (tedit 5DD50112)
             ${p.at /* parametric position */}
             (attr virtual)
 
