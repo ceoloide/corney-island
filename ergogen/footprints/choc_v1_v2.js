@@ -9,8 +9,9 @@
 //    to: corresponds to pin 2
 //
 // Params
-//    reverse: default is false
-//      if true, will flip the footprint such that the pcb can be reversible
+//    reversible: default is false
+//      if true, the footprint will be placed on both sides so that the PCB can be
+//      reversible
 //    side: default is B for Back
 //      the side on which to place the single-side footprint and designator
 //    hotswap: default is true
@@ -67,7 +68,7 @@ module.exports = {
     params: {
         designator: 'S',
         side: 'B',
-        reverse: false,
+        reversible: false,
         hotswap: true,
         solder: false,
         outer_pad_width_front: 2.6,
@@ -188,7 +189,7 @@ module.exports = {
             (fp_arc (start 0.97 -2.17) (end 2.5 -2.17) (angle -90) (layer B.SilkS) (width 0.15))
 
             ${'' /* Left Pad*/}
-            ${p.reverse ? hotswap_back_pad_cutoff : hotswap_back_pad_full}
+            ${p.reversible ? hotswap_back_pad_cutoff : hotswap_back_pad_full}
 
             ${'' /* Right Pad (not cut off) */}
             (pad 2 smd rect (at ${8.275 - (2.6 - p.outer_pad_width_back)/2} -3.75 ${p.rot}) (size ${p.outer_pad_width_back} 2.6) (layers B.Cu B.Paste B.Mask) ${p.to.str})
@@ -214,7 +215,7 @@ module.exports = {
             (fp_arc (start -2.55 -6.75) (end -2.52 -6.2) (angle -90) (layer F.SilkS) (width 0.15))
 
             ${'' /* Right Pad (cut off) */}
-            ${p.reverse ? hotswap_front_pad_cutoff : hotswap_front_pad_full}
+            ${p.reversible ? hotswap_front_pad_cutoff : hotswap_front_pad_full}
 
             ${'' /* Left Pad (not cut off) */}
             (pad 2 smd rect (at ${-8.275 + (2.6 - p.outer_pad_width_front)/2} -3.75 ${p.rot}) (size ${p.outer_pad_width_front} 2.6) (layers F.Cu F.Paste F.Mask) ${p.to.str})
@@ -273,10 +274,10 @@ module.exports = {
             final += choc_v1_stabilizers
         }
         if(p.show_corner_marks){
-            if(p.reverse || p.side == "F"){
+            if(p.reversible || p.side == "F"){
                 final += corner_marks_front
             }
-            if(p.reverse || p.side == "B"){
+            if(p.reversible || p.side == "B"){
                 final += corner_marks_back
             }
         }
@@ -284,14 +285,14 @@ module.exports = {
             final += keycap_marks
         }
         if(p.include_stabilizer_pad && p.choc_v2_support){
-            if(p.reverse || p.side == "F"){
+            if(p.reversible || p.side == "F"){
                 if(p.oval_stabilizer_pad){
                     final += oval_corner_stab_front
                 } else {
                     final += round_corner_stab_front
                 }
             }
-            if(p.reverse || p.side == "B"){
+            if(p.reversible || p.side == "B"){
                 if(p.oval_stabilizer_pad){
                     final += oval_corner_stab_back
                 } else {
@@ -301,19 +302,19 @@ module.exports = {
         }
         if(p.hotswap){
             final += hotswap_common
-            if(p.reverse || p.side == "F"){
+            if(p.reversible || p.side == "F"){
                 final += hotswap_front
             }
-            if(p.reverse || p.side == "B"){
+            if(p.reversible || p.side == "B"){
                 final += hotswap_back
             }
         }
         if(p.solder){
             final += solder_common
-            if(p.reverse || p.side == "F"){
+            if(p.reversible || p.side == "F"){
                 final += solder_front
             }
-            if(p.reverse || p.side == "B"){
+            if(p.reversible || p.side == "B"){
                 final += solder_back
             }
         }
