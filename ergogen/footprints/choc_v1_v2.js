@@ -21,7 +21,9 @@
 //    outer_pad_width_front: default 2.6
 //    outer_pad_width_back: default 2.6
 //      Allow you to make the outer hotswap pads smaller to silence DRC
-//      warnings when the sockets are to close to the edge cuts.
+//      warnings when the sockets are too close to the edge cuts. It's not
+//      recommended to go below 1.6mm to ensure the hotswap socket can be
+//      properly soldered.
 //    show_keycaps: default is false
 //      if true, will add mx sized keycap box around the footprint (18mm)
 //    show_corner_marks: default is false
