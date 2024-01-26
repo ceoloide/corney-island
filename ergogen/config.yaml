@@ -671,6 +671,7 @@ pcbs:
           from: "{{column_net}}"
           to: "{{colrow}}"
           # The following parameters are specific to choc_v1_v2
+          # reversible: true
           # outer_pad_width_front: 1.6
           # outer_pad_width_back: 1.6
           # choc_v2_support: false
@@ -723,7 +724,7 @@ pcbs:
           P6: R1
           P7: R2
           P8: R3
-          traces: true
+          include_traces: true
           show_instructions: false
           show_silk_labels: true
           show_via_labels: true

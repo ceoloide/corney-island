@@ -7,16 +7,33 @@
 // This is a re-implementation of the promicro_pretty footprint made popular
 // by @benvallack.
 //
+// Params
+//    use_rectangular_jumpers: default is false
+//      if true, it will replace chevron-style jumpers with rectangual pads
+//    include_traces: default is true
+//      if true it will include traces that connect the jumper pads to the vias
+//      and the through-holes for the MCU
+//    via_size: default is 0.8
+//      allows to define the size of the via. Not recommended below 0.56 (JLCPCB minimum),
+//      or above 0.8 (KiCad default), to avoid overlap or DRC errors.
+//    via_drill: default is 0.4
+//      allows to define the size of the drill. Not recommended below 0.3 (JLCPCB minimum),
+//      or above 0.4 (KiCad default), to avoid overlap or DRC errors. 
+//    Pxx_label, VCC_label, RAW_label, GND_label, RST_label: default is ''
+//      allows to override the label for each pin
+//
 // @infused-kim's improvements:
-//  - It uses real traces instead of pads, which gets rid of hundreds of DRC errors.
-//  - It leaves more space between the vias to allow easier routing through the middle
+//  - Use real traces instead of pads, which gets rid of hundreds of DRC errors.
+//  - Leave more space between the vias to allow easier routing through the middle
 //    of the footprint
 //
 // @ceoloide's improvements:
-//  - Move vias closer to the pads 
-//  - Add ability to use rectangular jumpers
+//  - Move vias closer to the pads to clear up more space for silkscreen
+//  - Add ability to use rectangular jumpers instead of chevron-style
+//  - Add ability to control via size, to free up space for routing if needed
 //
-// # Placement and jumper soldering:
+// # Placement and soldering of jumpers
+//
 // The footprint is meant to be used with a nice!nano (or any other pro micro
 // compatible board) that is placed on the top side of the PCB with the
 // components facing down.
@@ -27,24 +44,27 @@
 // To make it work in this configuration, you solder the jumpers on the
 // OPPOSITE side.
 //
-// Due to the way how this footprint works, you can also place it with the
-// components facing up or even at the bottom. You just need to make sure you
-// solder the jumpers on the correct side.
-//
 // The silkscreen labels are displayed on the opposite side of the MCU, when
 // it's facing down. This is so that one can solder all components and jumpers
 // on the back side, and be able to read the correct labels to do tests.
 //
+// Due to the way how this footprint works, you can also place it with the
+// components facing up or even at the bottom. You just need to make sure you
+// solder the jumpers on the correct side. Remember that the silkscreen matches
+// what the jumpers enable for every through-hole.
+//
 // # Further credits
-// This footprint was created from scratch, but is based on the ideas from
+//
+// This footprint was created from scratch by @infused-kim, but is based on the ideas from
 // these footprints:
+//
 // https://github.com/Albert-IV/ergogen-contrib/blob/main/src/footprints/promicro_pretty.js
 // https://github.com/50an6xy06r6n/keyboard_reversible.pretty
 
 module.exports =  {
     params: {
       designator: 'MCU',
-      traces: true,
+      
       RAW: {type: 'net', value: 'RAW'},
       GND: {type: 'net', value: 'GND'},
       RST: {type: 'net', value: 'RST'},
@@ -69,12 +89,14 @@ module.exports =  {
       P8: {type: 'net', value: 'P8'},
       P9: {type: 'net', value: 'P9'},
 
+      use_rectangular_jumpers: false,
+      include_traces: true,
+      via_size: 0.8, // JLCPC min is 0.56 for 1-2 layer boards, KiCad defaults to 0.8
+      via_drill: 0.4, // JLCPC min is 0.3 for 1-2 layer boards, KiCad defaults to 0.4
+
       show_instructions: true,
       show_silk_labels: true,
       show_via_labels: true,
-      use_rectangular_jumpers: false,
-      via_size: 0.8, // JLCPC min is 0.56 for 1-2 layer boards, KiCad defaults to 0.8
-      via_drill: 0.4, // JLCPC min is 0.3 for 1-2 layer boards, KiCad defaults to 0.4
 
       RAW_label: '',
       GND_label: '',
@@ -468,7 +490,7 @@ module.exports =  {
         )
 
         ${''/* Traces */}
-        ${ p.traces ? traces : ''}
+        ${ p.include_traces ? traces : ''}
     `;
     }
   }
