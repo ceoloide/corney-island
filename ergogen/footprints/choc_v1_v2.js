@@ -4,6 +4,9 @@
 //    Kailh Choc PG1350 (v1) + Kailh Choc PG1353 (v2) reversible and hotswappable footprint.
 //    This includes support for LOFREE low profile POM switches (Ghost, Phantom, Wizard)
 //
+//    With the set defaults it will include support for choc v1 and v2 hotswap, single side
+//    (Back).
+//
 // Nets
 //    from: corresponds to pin 1
 //    to: corresponds to pin 2
