@@ -13,8 +13,8 @@ module.exports = {
     gnd_trace_width: 0.25, // Max 0.8 to avoid clearance errors
     pwr_trace_width: 0.25, // Max 0.8 to avoid clearance errors
     signal_trace_width: 0.15,
-    via_size: 0.8, // JLCPC min is 0.5 for 1-2 layer boards, KiCad defaults to 0.8
-    via_drill: 0.4, // JLCPC min is 0.3 for 1-2 layer boards, KiCad defaults to 0.4
+    via_size: 0.8, // JLCPCB min is 0.56 for 1-2 layer boards, KiCad defaults to 0.8
+    via_drill: 0.4, // JLCPCB min is 0.3 for 1-2 layer boards, KiCad defaults to 0.4
     side: 'B',
   },
   body: p => {
