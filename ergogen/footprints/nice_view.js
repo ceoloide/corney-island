@@ -142,7 +142,7 @@ module.exports = {
     }
 
     const top = `
-      (module nice!view (layer F.Cu) (tedit 6448AF5B)
+      (module "ceoloide/nice_view" (layer ${p.side}.Cu) (tedit 6448AF5B)
         ${p.at /* parametric position */}
         (attr virtual)
         (fp_text reference "${p.ref}" (at 0 20 ${p.rot}) (layer ${p.side}.SilkS) ${p.ref_hide}
@@ -250,34 +250,34 @@ module.exports = {
 
     const labels = `
         (fp_text user DA (at -5.08 ${12.5 + labels_offset} ${p.rot}) (layer F.SilkS)
-          (effects (font (size 1 0.7) (thickness 0.1)))
+          (effects (font (size 1 1) (thickness 0.15)))
         )
         (fp_text user CS (at 5.12 ${12.5 + labels_offset} ${p.rot}) (layer F.SilkS)
-          (effects (font (size 1 0.7) (thickness 0.1)))
+          (effects (font (size 1 1) (thickness 0.15)))
         )
         (fp_text user GND (at 2.62 ${12.5 + labels_offset} ${p.rot}) (layer F.SilkS)
-          (effects (font (size 1 0.7) (thickness 0.1)))
+          (effects (font (size 1 1) (thickness 0.15)))
         )
         (fp_text user VCC (at 0.15 ${14.4 + label_vcc_offset} ${p.rot}) (layer F.SilkS)
-          (effects (font (size 1 0.7) (thickness 0.1)))
+          (effects (font (size 1 1) (thickness 0.15)))
         )
         (fp_text user CL (at -2.48 ${12.5 + labels_offset} ${p.rot}) (layer F.SilkS)
-          (effects (font (size 1 0.7) (thickness 0.1)))
+          (effects (font (size 1 1) (thickness 0.15)))
         )
         (fp_text user CS (at -4.98 ${12.5 + labels_offset} ${p.rot}) (layer B.SilkS)
-          (effects (font (size 1 0.7) (thickness 0.1)) (justify mirror))
+          (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
         )
         (fp_text user VCC (at 0.15 ${14.4 + label_vcc_offset} ${p.rot}) (layer B.SilkS)
-          (effects (font (size 1 0.7) (thickness 0.1)) (justify mirror))
+          (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
         )
         (fp_text user DA (at 5.22 ${12.5 + labels_offset} ${p.rot}) (layer B.SilkS)
-          (effects (font (size 1 0.7) (thickness 0.1)) (justify mirror))
+          (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
         )
         (fp_text user CL (at 2.72 ${12.5 + labels_offset} ${p.rot}) (layer B.SilkS)
-          (effects (font (size 1 0.7) (thickness 0.1)) (justify mirror))
+          (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
         )
         (fp_text user GND (at -2.38 ${12.5 + labels_offset} ${p.rot}) (layer B.SilkS)
-          (effects (font (size 1 0.7) (thickness 0.1)) (justify mirror))
+          (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
         )
     `
 
