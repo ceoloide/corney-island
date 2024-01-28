@@ -6,7 +6,11 @@
 // Authors: @ergogen + @infused-kim improvements + @ceoloide improvements
 //
 // Description:
-//    Combined Thru-Hole and SMD diode footprint for SOD-123 package.
+//  Combined Thru-Hole and SMD diode footprint for SOD-123 package, like the Semtech 1N4148W
+//  component sold by Typeractive.xyz or LCSC.
+//
+// Datasheet:
+//  https://cdn.shopify.com/s/files/1/0618/5674/3655/files/Semtech-1N4148W.pdf?v=1670451309
 //
 // Params
 //    side: default is B for Back
