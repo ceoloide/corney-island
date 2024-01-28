@@ -1,47 +1,56 @@
-// Author: @infused-kim + @ceoloide improvements
+// Copyright (c) 2023 Marco Massarelli
+//
+// Licensed under CC BY-NC-SA 4.0. 
+// To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/
+//
+// Authors: @infused-kim + @ceoloide improvements
 //
 // Description:
-//   SMD side-operated on-off switch, compatible with Alps SSSS811101
-//   as sold on Typeractive.xyz. These switches are shorter than the height of hotswap
-//   sockets, so they can be mounted on the same side.
+//  SMD side-operated on-off switch, compatible with Alps SSSS811101 as sold on
+//  Typeractive.xyz and LCSC. These switches are shorter than the height of hotswap sockets,
+//  so they can be mounted on the same side.
 //
-//   Should be compatible with:
-//      - G-Switch MK-12C02-G015 (untested)
-//      - PCM12SMTR (untested)
+//  Should be compatible with:
+//    - G-Switch MK-12C02-G015 (untested)
+//    - PCM12SMTR (untested)
 //
 // Datasheet:
 //   https://cdn.shopify.com/s/files/1/0618/5674/3655/files/ALPS-SSSS811101.pdf?v=1670451309
 //
-// Nets
+// Nets:
 //    from: corresponds to pin 1 on the Front and 3 on the back
 //    to: corresponds to pin 2 on both sides
 //
-// Params
-//    reversible: default is false
-//      if true, it will include pads on both Front and Back to make the footprint reversible
+// Params:
 //    side: default is F for Front
 //      the side on which to place the single-side footprint and designator, either F (Front)
 //      or B (Back)
-//    silkscreen: default is true
-//      if true it will include silkscreen markings
-//    courtyard: default is false
-//      if true it will include the part courtyard
+//    reversible: default is false
+//      if true, it will include pads on both Front and Back to make the footprint reversible
 //    invert_behavior: default is false
 //      if true, pin 3 will connect to the "from" net, and if false it will connect to pin 1,
 //      effectively inverting the behavior of the switch.
+//    include_silkscreen: default is true
+//      if true it will include silkscreen markings, which is recommended to know which side
+//      connects Bat+ to RAW.
+//    include_courtyard: default is false
+//      if true it will include the courtyard around the component
 //
 // @ceoloide's improvements:
-//  - Added ability to set text on both sides
-//  - Added ability to adjust font thickness and size
+//  - Add ability to set text on both sides
+//  - Add ability to adjust font thickness and size
+//  - Add ability to invert switch behavior / pin connections
+//  - Invert behavior on opposite layer to maintain consistency
+//  - Add on/off silkscreen to aid operation
 
 module.exports = {
   params: {
     designator: 'SW',
-    reversible: false,
     side: 'F',
-    silkscreen: true,
-    courtyard: false,
+    reversible: false,
     invert_behavior: true,
+    include_silkscreen: true,
+    include_courtyard: false,
     from: {type: 'net', value: 'BAT_P'},
     to: {type: 'net', value: 'RAW'},
   },
@@ -155,19 +164,19 @@ module.exports = {
     let final = common_start;
     if(p.side == "F" || p.reversible) {
       final += pads_front
-      if(p.silkscreen){
+      if(p.include_silkscreen){
         final += silkscreen_front
       }
-      if(p.courtyard){
+      if(p.include_courtyard){
         final += courtyard_front
       }
     }
     if(p.side == "B" || p.reversible) {
       final += pads_back
-      if(p.silkscreen){
+      if(p.include_silkscreen){
         final += silkscreen_back
       }
-      if(p.courtyard){
+      if(p.include_courtyard){
         final += courtyard_back
       }
     }
