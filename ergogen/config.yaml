@@ -843,7 +843,7 @@ pcbs:
           shift: [0.5 ks + 10.147, 0.375 kp -20.75]
       
       on_off_switch:
-        what: power_switch
+        what: power_switch_smd_side
         where: matrix_inner_top
         params:
           from: BAT_P

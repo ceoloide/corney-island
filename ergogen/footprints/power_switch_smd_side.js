@@ -45,7 +45,7 @@
 
 module.exports = {
   params: {
-    designator: 'SW',
+    designator: 'PWR',
     side: 'F',
     reversible: false,
     invert_behavior: true,
@@ -56,7 +56,7 @@ module.exports = {
   },
   body: p => {
     const common_start = `
-      (module power_switch (layer ${p.side}.Cu) (tedit 64473C6F)
+      (module "ceoloide/power_switch_smd_side" (layer ${p.side}.Cu) (tedit 64473C6F)
         ${p.at /* parametric position */}
         (attr smd)
         (fp_text value "reset_button" (at 0 2.5 ${p.rot}) (layer ${p.side}.Fab)
