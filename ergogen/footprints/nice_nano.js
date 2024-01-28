@@ -11,6 +11,9 @@
 // This is a re-implementation of the promicro_pretty footprint made popular
 // by @benvallack.
 //
+// Pinout and schematics:
+//  https://nicekeyboards.com/docs/nice-nano/pinout-schematic
+//
 // Params
 //    use_rectangular_jumpers: default is false
 //      if true, it will replace chevron-style jumpers with rectangual pads
