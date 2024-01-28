@@ -1,8 +1,12 @@
+// Copyright (c) 2023 Marco Massarelli
+//
+// Licensed under CC BY-NC-SA 4.0. 
+// To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/
+//
 // Author: @infused-kim + @ceoloide improvements
 //
 // A reversible footprint for the nice!nano (or any pro-micro compatible
-// controller) that uses jumpers instead of two rows socket rows to achieve
-// reversablity.
+// controller) that uses jumpers instead of two socket rows to be reversible.
 //
 // This is a re-implementation of the promicro_pretty footprint made popular
 // by @benvallack.
@@ -65,39 +69,15 @@ module.exports =  {
     params: {
       designator: 'MCU',
       
-      RAW: {type: 'net', value: 'RAW'},
-      GND: {type: 'net', value: 'GND'},
-      RST: {type: 'net', value: 'RST'},
-      VCC: {type: 'net', value: 'VCC'},
-      P21: {type: 'net', value: 'P21'},
-      P20: {type: 'net', value: 'P20'},
-      P19: {type: 'net', value: 'P19'},
-      P18: {type: 'net', value: 'P18'},
-      P15: {type: 'net', value: 'P15'},
-      P14: {type: 'net', value: 'P14'},
-      P16: {type: 'net', value: 'P16'},
-      P10: {type: 'net', value: 'P10'},
-
-      P1: {type: 'net', value: 'P1'},
-      P0: {type: 'net', value: 'P0'},
-      P2: {type: 'net', value: 'P2'},
-      P3: {type: 'net', value: 'P3'},
-      P4: {type: 'net', value: 'P4'},
-      P5: {type: 'net', value: 'P5'},
-      P6: {type: 'net', value: 'P6'},
-      P7: {type: 'net', value: 'P7'},
-      P8: {type: 'net', value: 'P8'},
-      P9: {type: 'net', value: 'P9'},
-
       use_rectangular_jumpers: false,
       include_traces: true,
       via_size: 0.8, // JLCPC min is 0.56 for 1-2 layer boards, KiCad defaults to 0.8
       via_drill: 0.4, // JLCPC min is 0.3 for 1-2 layer boards, KiCad defaults to 0.4
-
+      
       show_instructions: true,
       show_silk_labels: true,
       show_via_labels: true,
-
+      
       RAW_label: '',
       GND_label: '',
       RST_label: '',
@@ -110,7 +90,7 @@ module.exports =  {
       P14_label: '',
       P16_label: '',
       P10_label: '',
-
+      
       P1_label: '',
       P0_label: '',
       P2_label: '',
@@ -121,12 +101,36 @@ module.exports =  {
       P7_label: '',
       P8_label: '',
       P9_label: '',
+      
+      RAW: {type: 'net', value: 'RAW'},
+      GND: {type: 'net', value: 'GND'},
+      RST: {type: 'net', value: 'RST'},
+      VCC: {type: 'net', value: 'VCC'},
+      P21: {type: 'net', value: 'P21'},
+      P20: {type: 'net', value: 'P20'},
+      P19: {type: 'net', value: 'P19'},
+      P18: {type: 'net', value: 'P18'},
+      P15: {type: 'net', value: 'P15'},
+      P14: {type: 'net', value: 'P14'},
+      P16: {type: 'net', value: 'P16'},
+      P10: {type: 'net', value: 'P10'},
+  
+      P1: {type: 'net', value: 'P1'},
+      P0: {type: 'net', value: 'P0'},
+      P2: {type: 'net', value: 'P2'},
+      P3: {type: 'net', value: 'P3'},
+      P4: {type: 'net', value: 'P4'},
+      P5: {type: 'net', value: 'P5'},
+      P6: {type: 'net', value: 'P6'},
+      P7: {type: 'net', value: 'P7'},
+      P8: {type: 'net', value: 'P8'},
+      P9: {type: 'net', value: 'P9'},
     },
     body: p => {
       const get_pin_net_name = (p, pin_name) => {
         return p[pin_name].name;
       };
-
+      
       const get_pin_net_str = (p, pin_name) => {
         return p[pin_name].str;
       };
@@ -425,7 +429,7 @@ module.exports =  {
       }
 
       const common_top = `
-        (module nice_nano (layer F.Cu) (tedit 6451A4F1)
+        (module "ceoloide/nice_nano" (layer F.Cu) (tedit 6451A4F1)
           (attr virtual)
           ${p.at /* parametric position */}
           (fp_text reference "${p.ref}" (at 0 -15) (layer F.SilkS) ${p.ref_hide}
