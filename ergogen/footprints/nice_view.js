@@ -1,24 +1,65 @@
-// Author: @infused-kim
+// Copyright (c) 2023 Marco Massarelli
+//
+// Licensed under CC BY-NC-SA 4.0. 
+// To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/
+//
+// Author: @infused-kim + @ceoloide improvements
 //
 // Description:
-// Reversible footprint for nice!view display. Includes an outline of the
-// display to make positioning easier.
+//  Reversible footprint for nice!view display. Includes an outline of the
+//  display to make positioning easier.
+//
+//  Note that because the center pin is VCC on both sides, there is no associated jumper pad
+//  in the reversible footprint.
+//
+//  In its default configuration, jumper pads are positioned above the pins, when the
+//  component is oriented verically and pointing upwards, or left of the pins, when oriented
+//  horizontally and oriented leftward. Jumper pads position can be inverted with a parameter.
+//
+// Pinout and schematics:
+//  https://nicekeyboards.com/docs/nice-view/pinout-schematic
+//
+// Params:
+//    side: default is F for Front
+//      the side on which to place the single-side footprint and designator, either F or B
+//    reversible: default is false
+//      if true, the footprint will be placed on both sides so that the PCB can be
+//      reversible
+//    include_traces: default is true
+//      if true it will include traces that connect the jumper pads to the vias
+//      and the through-holes for the MCU
+//    trace_width: default is 0.250mm
+//      allows to override the trace width that connects the jumper pads to the MOSI, SCK,
+//      and CS pins. Not recommended to go below 0.15mm (JLCPC min is 0.127mm).
+//    gnd_trace_width: default is 0.250mm
+//      allows to override the GND trace width. Not recommended to go below 0.25mm (JLCPC
+//      min is 0.127mm).
+//    invert_jumpers_position default is false
+//      allows to change the position of the jumper pads, from their default to the opposite
+//      side of the pins. See the description above for more details.
+//    include_labels default is true
+//      if true it will include the pin labels on the Silkscreen layer. The labels will match
+//      the *opposite* side of the board when the footprint is set to be reversible, since
+//      they are meant to match the solder jumpers behavior and aid testing.
+//
+// @ceoloide's improvements:
+//  - Added support for traces
 
 module.exports = {
   params: {
     designator: 'DISP',
     side: 'F',
+    reversible: false,
+    include_traces: true,
+    trace_width: 0.25,
+    gnd_trace_width: 0.25,
+    invert_jumpers_position: false,
+    include_labels: true,
     MOSI: {type: 'net', value: 'MOSI'},
     SCK: {type: 'net', value: 'SCK'},
     VCC: {type: 'net', value: 'VCC'},
     GND: {type: 'net', value: 'GND'},
     CS: {type: 'net', value: 'CS'},
-    reversible: false,
-    show_labels: true,
-    jumpers_at_bottom: false,
-    traces: true,
-    trace_width: 0.15,
-    gnd_trace_width: 0.25,
   },
   body: p => {
     const get_at_coordinates = () => {
@@ -88,7 +129,7 @@ module.exports = {
     let jumpers_back_top = dst_nets;
     let jumpers_back_bottom = local_nets.slice().reverse();
 
-    if(p.jumpers_at_bottom) {
+    if(p.invert_jumpers_position) {
       jumpers_offset = 5.7;
       jumpers_rot = 180;
       labels_offset = jumpers_offset + 2 + 1 + 0.1;
@@ -289,15 +330,15 @@ module.exports = {
       final += front_jumpers;
       final += back_jumpers;
 
-      if(p.show_labels) {
+      if(p.include_labels) {
         final += labels;
       }
     }
 
     final += bottom;
 
-    if(p.traces && p.reversible) {
-      if(p.jumpers_at_bottom) {
+    if(p.include_traces && p.reversible) {
+      if(p.invert_jumpers_position) {
         final += traces_bottom;
       } else {
         final += traces_top;
