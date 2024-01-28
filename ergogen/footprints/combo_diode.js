@@ -1,23 +1,42 @@
-// Author: Ergogen + @infused-kim improvements
+// Copyright (c) 2023 Marco Massarelli
+//
+// Licensed under CC BY-NC-SA 4.0. 
+// To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/
+//
+// Authors: @ergogen + @infused-kim improvements + @ceoloide improvements
+//
+// Description:
+//    Combined Thru-Hole and SMD diode footprint for SOD-123 package.
+//
+// Params
+//    side: default is B for Back
+//      the side on which to place the single-side footprint and designator, either F or B
+//    reversible: default is false
+//      if true, the footprint will be placed on both sides so that the PCB can be
+//      reversible
+//    include_tht: default is false
+//      if true it includes through-hole pads alongside SMD ones
 //
 // @infused-kim's improvements:
-//  - Added option to hide thru-holes
-//  - Added virtual attribute to silence DRC error
-
+//  - Add option to hide thru-holes
+//  - Add virtual attribute to silence DRC error
+//
+// @ceoloide's improvements:
+//  - Add single side support
 
 module.exports = {
     params: {
         designator: 'D',
-        include_tht: true,
         reversible: false,
         side: 'B',
+        include_tht: false,
         from: undefined,
         to: undefined
     },
     body: p => {
 
         const standard_opening = `
-        (module ComboDiode (layer ${p.side}.Cu) (tedit 5B24D78E)
+        (module "ceoloide/combo_diode" (layer ${p.side}.Cu) (tedit 5B24D78E)
             ${p.at /* parametric position */}
             (fp_text reference "${p.ref}" (at 0 0) (layer ${p.side}.SilkS) ${p.ref_hide} (effects (font (size 1.27 1.27) (thickness 0.15))))
         `
