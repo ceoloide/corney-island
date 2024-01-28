@@ -33,7 +33,7 @@
 
 module.exports = {
     params: {
-      designator: 'SW',
+      designator: 'RST',
       side: 'F',
       reversible: false,
       include_bosses: false,
@@ -44,10 +44,10 @@ module.exports = {
     },
     body: p => {
       const common_start = `
-        (module sw_reset_side (layer ${p.side}.Cu) (tedit 64473C6F)
+        (module "ceoloide/reset_button_smd_side" (layer ${p.side}.Cu) (tedit 64473C6F)
           ${p.at /* parametric position */}
           (attr smd)
-          (fp_text value "reset_button" (at 0 2.5 ${p.rot}) (layer ${p.side}.Fab)
+          (fp_text value "reset_button_smd_side" (at 0 2.5 ${p.rot}) (layer ${p.side}.Fab)
             (effects (font (size 1 1) (thickness 0.15)))
           )
           (fp_line (start -2.35 -1.75) (end -2.35 1.75) (width 0.1) (layer "Dwgs.User"))

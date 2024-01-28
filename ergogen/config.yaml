@@ -853,7 +853,7 @@ pcbs:
           shift: [1.5 ks -0.5, 0.375 kp -46.50]
       
       reset_switch:
-        what: reset_button
+        what: reset_switch_smd_side
         where: matrix_inner_top
         params:
           from: GND
