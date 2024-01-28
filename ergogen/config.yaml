@@ -782,7 +782,7 @@ pcbs:
           rotate: -90
           
       per_key_leds:
-        what: sk6812mini-e
+        what: led_sk6812mini-e
         where: /key/
         params:
           P1: VCC
@@ -791,20 +791,20 @@ pcbs:
           P4: "{{key.led_prev}}" #DIN
           reversible: true
           reverse_mount: true
-          add_traces_vias: true
-          add_keepout: false
-          add_courtyard: false
-          gnd_trace_width: gnd_trace_width
-          pwr_trace_width: pwr_trace_width
-          signal_trace_width: signal_trace_width
+          include_traces_vias: true
           via_size: via_size
           via_drill: via_drill
+          include_keepout: false
+          include_courtyard: false
+          signal_trace_width: signal_trace_width
+          gnd_trace_width: gnd_trace_width
+          vcc_trace_width: pwr_trace_width
         adjust:
           shift: [led_pos_x, led_pos_y]
           rotate: led_rotation
       
       underglow_leds:
-        what: sk6812mini-e
+        what: led_sk6812mini-e
         where: [underglow]
         params:
           P1: VCC
@@ -813,14 +813,14 @@ pcbs:
           P4: "{{zone.key.din}}" #DIN
           reversible: true
           reverse_mount: false
-          add_traces_vias: true
-          add_keepout: false
-          add_courtyard: false
-          gnd_trace_width: gnd_trace_width
-          pwr_trace_width: pwr_trace_width
-          signal_trace_width: signal_trace_width
+          include_traces_vias: true
           via_size: via_size
           via_drill: via_drill
+          include_keepout: false
+          include_courtyard: false
+          signal_trace_width: signal_trace_width
+          gnd_trace_width: gnd_trace_width
+          vcc_trace_width: pwr_trace_width
         adjust:
           rotate: 180
 

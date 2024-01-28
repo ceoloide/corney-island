@@ -1,21 +1,80 @@
+// Copyright (c) 2023 Marco Massarelli
+//
+// SPDX-License-Identifier: MIT
+//
+// To view a copy of this license, visit https://opensource.org/license/mit/
+//
+// Author: @ceoloide
+//
+// Description:
+//  Reversible footprint for "YS-SK6812mini-e" LEDs, to be used either as per-key lightning or
+//  underglow. The footprint allows many customizations, including pre-defined traces to
+//  simplify routing.
+//
+//  These LEDs are very tolerant of undervoltage, and are easy to solder thanks to the side
+//  legs.
+//
+// Datasheet:
+//  https://datasheet.lcsc.com/lcsc/2305101623_OPSCO-Optoelectronics-SK6812MINI-E_C5149201.pdf
+//
+// Nets:
+//    P1: corresponds to VCC pin
+//    P2: corresponds to Data-Out pin
+//    P3: corresponds to GND pin
+//    P4: corresponds to Data-In pin
+//
+// Params:
+//    side: default is B for Back
+//      the side on which to place the single-side footprint and designator, either F or B
+//    reversible: default is false
+//      if true, the footprint will be placed on both sides so that the PCB can be
+//      reversible
+//    reverse_mount: default is true (per-key LED)
+//      if true, the pads will be oriented so that the LED shines through ther PCB, i.e.
+//      when used for per-key LEDs. When set to false, the pads will match the datasheet
+//      and assume the LED shines away from the PCB, i.e. when used as underglow. Note that
+//      automated PCB assembly may not support both options depending on the component reel
+//    include_traces_vias: default is true
+//      if true it will include traces and vias to simplify routing when the footprint is
+//      made reversible
+//    signal_trace_width: default is 0.250mm
+//      allows to override the trace width that connects the DIN / DOUT pads. Not recommended
+//      to go below 0.15mm (JLCPC min is 0.127mm)
+//    gnd_trace_width: default is 0.250mm
+//      allows to override the GND trace width. Not recommended to go below 0.25mm (JLCPC
+//      min is 0.127mm). Do not exceed 0.8mm to avoid clearance errors
+//    vcc_trace_width: default is 0.250mm
+//      allows to override the VCC trace width. Not recommended to go below 0.25mm (JLCPC
+//      min is 0.127mm). Do not exceed 0.8mm to avoid clearance errors
+//    via_size: default is 0.8
+//      allows to define the size of the via. Not recommended below 0.56 (JLCPCB minimum),
+//      or above 0.8 (KiCad default), to avoid overlap or DRC errors
+//    via_drill: default is 0.4
+//      allows to define the size of the drill. Not recommended below 0.3 (JLCPCB minimum),
+//      or above 0.4 (KiCad default), to avoid overlap or DRC errors 
+//    include_courtyard: default is true
+//      if true it will include the part courtyard
+//    include_keepout: default is false
+//      if true it will include the part keepout area
+
 module.exports = {
   params: {
     designator: 'LED',
+    side: 'B',
+    reversible: false,
+    reverse_mount: true,
+    include_traces_vias: true,
+    signal_trace_width: 0.25,
+    gnd_trace_width: 0.25,
+    vcc_trace_width: 0.25,
+    via_size: 0.8,
+    via_drill: 0.4,
+    include_courtyard: true,
+    include_keepout: false,
     P1: {type: 'net', value: 'VCC'},
     P2: undefined,
     P3: {type: 'net', value: 'GND'},
     P4: undefined,
-    reversible: false,
-    reverse_mount: true, // True = per-key, False = underglow
-    add_traces_vias: true, // Only valid if reversible is True
-    add_courtyard: true,
-    add_keepout: true,
-    gnd_trace_width: 0.25, // Max 0.8 to avoid clearance errors
-    pwr_trace_width: 0.25, // Max 0.8 to avoid clearance errors
-    signal_trace_width: 0.15,
-    via_size: 0.8, // JLCPCB min is 0.56 for 1-2 layer boards, KiCad defaults to 0.8
-    via_drill: 0.4, // JLCPCB min is 0.3 for 1-2 layer boards, KiCad defaults to 0.4
-    side: 'B',
   },
   body: p => {
     const get_at_coordinates = () => {
@@ -129,11 +188,11 @@ module.exports = {
     
     const traces_vias_reversed = `
       ${'' /* VCC Trace */}
-      (segment (start ${ adjust_point(3.4, -0.7)}) (end ${ adjust_point(4.06, -0.105916)}) (width ${p.pwr_trace_width}) (layer "F.Cu") (net ${p.P1.index}))
-      (segment (start ${ adjust_point(4.06, -0.105916)}) (end ${ adjust_point(4.06, 0.7)}) (width ${p.pwr_trace_width}) (layer "F.Cu") (net ${p.P1.index}))
-      (segment (start ${ adjust_point(2.7, -0.7)}) (end ${ adjust_point(3.4, -0.7)}) (width ${p.pwr_trace_width}) (layer "F.Cu") (net ${p.P1.index}))
+      (segment (start ${ adjust_point(3.4, -0.7)}) (end ${ adjust_point(4.06, -0.105916)}) (width ${p.vcc_trace_width}) (layer "F.Cu") (net ${p.P1.index}))
+      (segment (start ${ adjust_point(4.06, -0.105916)}) (end ${ adjust_point(4.06, 0.7)}) (width ${p.vcc_trace_width}) (layer "F.Cu") (net ${p.P1.index}))
+      (segment (start ${ adjust_point(2.7, -0.7)}) (end ${ adjust_point(3.4, -0.7)}) (width ${p.vcc_trace_width}) (layer "F.Cu") (net ${p.P1.index}))
       (via (at ${ adjust_point(4.06, 0.7)}) (size ${p.via_size}) (drill ${p.via_drill}) (layers "F.Cu" "B.Cu") (net ${p.P1.index}))
-      (segment (start ${ adjust_point(2.7, 0.7)}) (end ${ adjust_point(4.06, 0.7)}) (width ${p.pwr_trace_width}) (layer "B.Cu") (net ${p.P1.index}))
+      (segment (start ${ adjust_point(2.7, 0.7)}) (end ${ adjust_point(4.06, 0.7)}) (width ${p.vcc_trace_width}) (layer "B.Cu") (net ${p.P1.index}))
       ${'' /* Data signal out trace */}
       (segment (start ${ adjust_point(4.95, -0.7)}) (end ${ adjust_point(2.7, -0.7)}) (width ${p.signal_trace_width}) (layer "B.Cu") (net ${p.P2.index}))
       (via (at ${ adjust_point(4.95, -0.7)}) (size ${p.via_size}) (drill ${p.via_drill}) (layers "F.Cu" "B.Cu") (net ${p.P2.index}))
@@ -158,11 +217,11 @@ module.exports = {
 
     const traces_vias_straight = `
     ${'' /* VCC Trace */}
-    (segment (start ${ adjust_point(3.4, -0.7)}) (end ${ adjust_point(4.06, -0.105916)}) (width ${p.pwr_trace_width}) (layer "B.Cu") (net ${p.P1.index}))
-    (segment (start ${ adjust_point(4.06, -0.105916)}) (end ${ adjust_point(4.06, 0.7)}) (width ${p.pwr_trace_width}) (layer "B.Cu") (net ${p.P1.index}))
-    (segment (start ${ adjust_point(2.7, -0.7)}) (end ${ adjust_point(3.4, -0.7)}) (width ${p.pwr_trace_width}) (layer "B.Cu") (net ${p.P1.index}))
+    (segment (start ${ adjust_point(3.4, -0.7)}) (end ${ adjust_point(4.06, -0.105916)}) (width ${p.vcc_trace_width}) (layer "B.Cu") (net ${p.P1.index}))
+    (segment (start ${ adjust_point(4.06, -0.105916)}) (end ${ adjust_point(4.06, 0.7)}) (width ${p.vcc_trace_width}) (layer "B.Cu") (net ${p.P1.index}))
+    (segment (start ${ adjust_point(2.7, -0.7)}) (end ${ adjust_point(3.4, -0.7)}) (width ${p.vcc_trace_width}) (layer "B.Cu") (net ${p.P1.index}))
     (via (at ${ adjust_point(4.06, 0.7)}) (size ${p.via_size}) (drill ${p.via_drill}) (layers "F.Cu" "B.Cu") (net ${p.P1.index}))
-    (segment (start ${ adjust_point(2.7, 0.7)}) (end ${ adjust_point(4.06, 0.7)}) (width ${p.pwr_trace_width}) (layer "F.Cu") (net ${p.P1.index}))
+    (segment (start ${ adjust_point(2.7, 0.7)}) (end ${ adjust_point(4.06, 0.7)}) (width ${p.vcc_trace_width}) (layer "F.Cu") (net ${p.P1.index}))
     ${'' /* Data signal out trace */}
     (segment (start ${ adjust_point(4.95, -0.7)}) (end ${ adjust_point(2.7, -0.7)}) (width ${p.signal_trace_width}) (layer "F.Cu") (net ${p.P2.index}))
     (via (at ${ adjust_point(4.95, -0.7)}) (size ${p.via_size}) (drill ${p.via_drill}) (layers "F.Cu" "B.Cu") (net ${p.P2.index}))
@@ -266,7 +325,7 @@ module.exports = {
         final += marks_straight;
         final += front;
       }
-      if(p.add_courtyard) {
+      if(p.include_courtyard) {
         final += courtyard_front;
       }
     }
@@ -278,16 +337,16 @@ module.exports = {
         final += marks_straight;
         final += back;
       }
-      if(p.add_courtyard) {
+      if(p.include_courtyard) {
         final += courtyard_back;
       }
     }
 
     final += standard_closing;
-    if(p.add_keepout) {
+    if(p.include_keepout) {
       final += keepout;
     }
-    if(p.reversible && p.add_traces_vias) {
+    if(p.reversible && p.include_traces_vias) {
       if(p.reverse_mount) {
         final += traces_vias_reversed;
       } else {
