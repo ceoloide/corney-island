@@ -846,9 +846,9 @@ pcbs:
         what: power_switch
         where: matrix_inner_top
         params:
-          reversible: true
           from: BAT_P
           to: RAW
+          reversible: true
         adjust:
           shift: [1.5 ks -0.5, 0.375 kp -46.50]
       
@@ -867,10 +867,10 @@ pcbs:
         what: jst_battery_connector
         where: matrix_inner_top
         params:
-          reversible: true
           BAT_P: BAT_P
           BAT_N: GND
-          courtyard: false
+          reversible: true
+          include_courtyard: false
         adjust:
           shift: [0.5 ks + 7.25, 0.375 kp -45.25]
           rotate: 90
