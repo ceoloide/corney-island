@@ -611,11 +611,11 @@ pcbs:
         outline: backplate
     footprints:
       m2_screws:
-        what: screw_hole
+        what: mounting_hole_npth
         where: /screw_pcb/
         params:
-          size: screw_diameter
-          drill: screw_diameter
+          hole_size: screw_diameter
+          hole_drill: screw_diameter
 
   frontplate:
     outlines:
@@ -623,11 +623,11 @@ pcbs:
         outline: frontplate
     footprints:
       m2_screws:
-        what: screw_hole
+        what: mounting_hole_npth
         where: /screw_pcb/
         params:
-          size: screw_diameter
-          drill: screw_diameter
+          hole_size: screw_diameter
+          hole_drill: screw_diameter
 
   controller_overlay:
     outlines:
@@ -635,11 +635,11 @@ pcbs:
         outline: controller_overlay
     footprints:
       m2_screws:
-        what: screw_hole
+        what: mounting_hole_npth
         where: /screw_mcu/
         params:
-          size: screw_diameter
-          drill: screw_diameter
+          hole_size: screw_diameter
+          hole_drill: screw_diameter
 
   _corney_island_baseline:
     outlines: &basepcb_outlines
@@ -651,17 +651,17 @@ pcbs:
         
     footprints: &basepcb_footprints
       m2_screws:
-        what: screw_hole
+        what: mounting_hole_npth
         where: /screw_mcu/
         params:
-          size: screw_diameter
-          drill: screw_diameter
+          hole_size: screw_diameter
+          hole_drill: screw_diameter
       m2_spacers:
-        what: screw_hole
+        what: mounting_hole_npth 
         where: /screw_pcb/
         params:
-          size: spacer_diameter
-          drill: spacer_diameter
+          hole_size: spacer_diameter
+          hole_drill: spacer_diameter
       key_switches:
         what: *switch_footprint
         where: /key/
