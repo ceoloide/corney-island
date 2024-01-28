@@ -5,16 +5,17 @@
 //
 // Author: @infused-kim + @ceoloide improvements
 //
-// A reversible footprint for the nice!nano (or any pro-micro compatible
-// controller) that uses jumpers instead of two socket rows to be reversible.
+// Description:
+//  A reversible footprint for the nice!nano (or any pro-micro compatible
+//  controller) that uses jumpers instead of two socket rows to be reversible.
 //
-// This is a re-implementation of the promicro_pretty footprint made popular
-// by @benvallack.
+//  This is a re-implementation of the promicro_pretty footprint made popular
+//  by @benvallack.
 //
 // Pinout and schematics:
 //  https://nicekeyboards.com/docs/nice-nano/pinout-schematic
 //
-// Params
+// Params:
 //    use_rectangular_jumpers: default is false
 //      if true, it will replace chevron-style jumpers with rectangual pads
 //    include_traces: default is true
