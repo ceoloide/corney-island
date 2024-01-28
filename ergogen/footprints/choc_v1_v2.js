@@ -1,4 +1,9 @@
-// Author: Ergogen + @infused-kim + @ceoloide improvements
+// Copyright (c) 2023 Marco Massarelli
+//
+// Licensed under CC BY-NC-SA 4.0. 
+// To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/
+//
+// Authors: @ergogen + @infused-kim improvements + @ceoloide improvements
 //
 // Description:
 //    Kailh Choc PG1350 (v1) + Kailh Choc PG1353 (v2) reversible and hotswappable footprint.
@@ -12,11 +17,11 @@
 //    to: corresponds to pin 2
 //
 // Params
+//    side: default is B for Back
+//      the side on which to place the single-side footprint and designator, either F or B
 //    reversible: default is false
 //      if true, the footprint will be placed on both sides so that the PCB can be
 //      reversible
-//    side: default is B for Back
-//      the side on which to place the single-side footprint and designator
 //    hotswap: default is true
 //      if true, will include holes and pads for Kailh choc hotswap sockets
 //    solder: default is false
@@ -49,9 +54,9 @@
 //      Allows you to adjust the width of the keycap outline. For example,
 //      to show a 1.5u outline for easier aligning.
 //
-// notes:
-// - hotswap and solder can be used together. The solder holes will then be
-// - added above the hotswap holes.
+// Notes:
+// - Hotswap and solder can be used together. The solder holes will then be
+//   added above the hotswap holes.
 //
 // @infused-kim's improvements:
 //  - Added hotswap socket outlines
