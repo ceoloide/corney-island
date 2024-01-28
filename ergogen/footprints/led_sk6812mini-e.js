@@ -111,12 +111,12 @@ module.exports = {
     }
     
     const standard_opening = `
-      (module "ceoloide:YS-SK6812MINI-E (${p.reverse_mount ? "per-key" : "underglow"}${p.reversible ? ", reversible" : "single-side"})" 
+      (module "ceoloide/led_SK6812mini-e (${p.reverse_mount ? "per-key" : "underglow"}${p.reversible ? ", reversible" : "single-side"})" 
         (layer ${p.side}.Cu) (tedit 5F70BC98)
         ${p.at /* parametric position */}
 
         (fp_text reference "${p.ref}" (at -4.75 0 90) (layer ${p.side}.SilkS) ${p.ref_hide}
-          (effects (font (size 1 1) (thickness 0.153)))
+          (effects (font (size 1 1) (thickness 0.15)))
         )
 
         (fp_line (start -1.6 -1.4) (end 1.6 -1.4) (layer Dwgs.User) (width 0.12))
