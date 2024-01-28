@@ -758,11 +758,12 @@ pcbs:
           shift: [0.5 ks + 10.147, 0.375 kp -38.696]
 
       reset_switch:
-        what: reset_switch
+        what: reset_switch_tht_top
         where: matrix_inner_top
         params:
           from: GND
           to: RST
+          reversible: true
         adjust:
           shift: [0.5 ks + 17.817, 0.375 kp -40.251]
           rotate: 90
