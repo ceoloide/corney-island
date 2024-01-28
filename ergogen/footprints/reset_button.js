@@ -1,37 +1,44 @@
+// Copyright (c) 2023 Marco Massarelli
+//
+// SPDX-License-Identifier: MIT
+//
+// To view a copy of this license, visit https://opensource.org/license/mit/
+//
 // Author: @ceoloide
 //
 // Description:
 //   SMD side-operated momentary switch, compatible with Panasonic EVQ-PU[A|C|J|L]02K
-//   as sold on Typeractive.xyz. These switches are shorter than the height of hotswap
+//   as sold on Typeractive.xyz and LCSC. These switches are shorter than the height of hotswap
 //   sockets, so they can be mounted on the same side.
 //
 // Datasheet:
 //   https://cdn.shopify.com/s/files/1/0618/5674/3655/files/PANASONIC-EVQPUC02K.pdf?v=1670451309
 //
-// Nets
+// Nets:
 //    from: corresponds to pin 1 and 3
 //    to: corresponds to pin 2 and 4
 //
-// Params
-//    reversible: default is false
-//      if true, it will include pads on both Front and Back to make the footprint reversible
+// Params:
 //    side: default is F for Front
 //      the side on which to place the single-side footprint and designator, either F or B
+//    reversible: default is false
+//      if true, it will include pads on both Front and Back to make the footprint reversible
 //    include_bosses: default is false
-//      if true it will include two mechanical NPTH for the switches that have them (C and L)
-//    silkscreen: default is true
+//      if true it will include two mechanical NPTH for the switches that have them (EVQ-PUC02K
+//      and EVQ-PUL02K)
+//    include_silkscreen: default is true
 //      if true it will include silkscreen markings
-//    courtyard: default is false
+//    include_courtyard: default is false
 //      if true it will include the part courtyard
 
 module.exports = {
     params: {
       designator: 'SW',
-      reversible: false,
       side: 'F',
+      reversible: false,
       include_bosses: false,
-      silkscreen: true,
-      courtyard: false,
+      include_silkscreen: true,
+      include_courtyard: false,
       from: {type: 'net', value: 'GND'},
       to: {type: 'net', value: 'RST'},
     },
@@ -115,19 +122,19 @@ module.exports = {
       }
       if(p.side == "F" || p.reversible) {
         final += pads_front
-        if(p.silkscreen){
+        if(p.include_silkscreen){
           final += silkscreen_front
         }
-        if(p.courtyard){
+        if(p.include_courtyard){
           final += courtyard_front
         }
       }
       if(p.side == "B" || p.reversible) {
         final += pads_back
-        if(p.silkscreen){
+        if(p.include_silkscreen){
           final += silkscreen_back
         }
-        if(p.courtyard){
+        if(p.include_courtyard){
           final += courtyard_back
         }
       }
