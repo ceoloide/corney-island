@@ -40,7 +40,7 @@ module.exports = {
     body: p => {
 
         const standard_opening = `
-        (module "ceoloide/combo_diode" (layer ${p.side}.Cu) (tedit 5B24D78E)
+        (module "ceoloide/combo_diode_sod123" (layer ${p.side}.Cu) (tedit 5B24D78E)
             ${p.at /* parametric position */}
             (fp_text reference "${p.ref}" (at 0 0) (layer ${p.side}.SilkS) ${p.ref_hide} (effects (font (size 1.27 1.27) (thickness 0.15))))
         `

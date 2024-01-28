@@ -680,7 +680,7 @@ pcbs:
           rotate: switch_rotation
 
       diodes_b:
-        what: combo_diode
+        what: combo_diode_sod123
         where: /key/
         params:
           from: "{{colrow}}"
@@ -693,7 +693,7 @@ pcbs:
           rotate: 90 + diode_rotation
 
       diodes_f:
-        what: combo_diode
+        what: combo_diode_sod123
         where: /key/
         params:
           from: "{{colrow}}"
