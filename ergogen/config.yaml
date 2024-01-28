@@ -864,7 +864,7 @@ pcbs:
           shift: [19.704, 0.24 kp - 0.1]
       
       battery_connector:  
-        what: jst_battery_connector
+        what: battery_connector_jst_ph_2
         where: matrix_inner_top
         params:
           BAT_P: BAT_P
