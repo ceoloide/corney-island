@@ -12,11 +12,11 @@
 //    With the set defaults it will include support for choc v1 and v2 hotswap, single side
 //    (Back).
 //
-// Nets
+// Nets:
 //    from: corresponds to pin 1
 //    to: corresponds to pin 2
 //
-// Params
+// Params:
 //    side: default is B for Back
 //      the side on which to place the single-side footprint and designator, either F or B
 //    reversible: default is false
@@ -59,20 +59,20 @@
 //   added above the hotswap holes.
 //
 // @infused-kim's improvements:
-//  - Added hotswap socket outlines
-//  - Moved switch corner marks from user layer to silk screen
-//  - Added option to adjust keycap size outlines (to show 1.5u outline)
-//  - Added option to add hotswap sockets and direct soldering holes at the
+//  - Add hotswap socket outlines
+//  - Move switch corner marks from user layer to silk screen
+//  - Add option to adjust keycap size outlines (to show 1.5u outline)
+//  - Add option to add hotswap sockets and direct soldering holes at the
 //    same time
-//  - Made hotswap pads not overlap holes to fix DRC errors
+//  - Make hotswap pads not overlap holes to fix DRC errors
 //  - Fixed DRC errors "Drilled holes co-located"
 //
 // @ceoloide's improvements:
 //  - Adjusted footprint to be Choc PG1353 (v2) compatible
-//  - Added option to hide corner marks, as they interfere with hotswap silkscreen
-//  - Added ability to specify board side
-//  - Added ability to include stabilizer pad
-//  - Added ability to use an oval stabilizer pad
+//  - Add option to hide corner marks, as they interfere with hotswap silkscreen
+//  - Add ability to specify board side
+//  - Add ability to include stabilizer pad
+//  - Add ability to use an oval stabilizer pad
 
 module.exports = {
     params: {
@@ -96,7 +96,7 @@ module.exports = {
     },
     body: p => {
         const common_top = `
-        (module "ceoloide/choc_v1_v2" (layer F.Cu) (tedit 5DD50112)
+        (module "ceoloide:choc_v1_v2" (layer F.Cu) (tedit 5DD50112)
             ${p.at /* parametric position */}
             (attr virtual)
 

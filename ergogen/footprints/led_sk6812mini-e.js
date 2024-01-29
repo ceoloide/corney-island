@@ -111,7 +111,7 @@ module.exports = {
     }
     
     const standard_opening = `
-      (module "ceoloide/led_SK6812mini-e (${p.reverse_mount ? "per-key" : "underglow"}${p.reversible ? ", reversible" : "single-side"})" 
+      (module "ceoloide:led_SK6812mini-e (${p.reverse_mount ? "per-key" : "underglow"}${p.reversible ? ", reversible" : "single-side"})" 
         (layer ${p.side}.Cu) (tedit 5F70BC98)
         ${p.at /* parametric position */}
 

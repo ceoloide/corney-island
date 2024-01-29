@@ -44,7 +44,7 @@ module.exports = {
     },
     body: p => {
       const common_start = `
-        (module "ceoloide/reset_button_smd_side" (layer ${p.side}.Cu) (tedit 64473C6F)
+        (module "ceoloide:reset_button_smd_side" (layer ${p.side}.Cu) (tedit 64473C6F)
           ${p.at /* parametric position */}
           (attr smd)
           (fp_text value "reset_button_smd_side" (at 0 2.5 ${p.rot}) (layer ${p.side}.Fab)

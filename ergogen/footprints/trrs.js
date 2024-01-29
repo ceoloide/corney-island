@@ -27,8 +27,8 @@
 //
 // Reversible & symmetrical
 //     _________________
-//    | ( A ) (C)   (D)|
-//    |                |
+//    | ( A ) (C)   (D)|_
+//    |                |_|
 //    |_( A )_(C)___(D)|
 //
 // Datasheet:
@@ -77,7 +77,7 @@ module.exports = {
     }
 
     const standard_opening = `
-      (module "ceoloide/${footprint_name}" (layer ${p.side}.Cu) (tedit 5970F8E5)
+      (module "ceoloide:${footprint_name}" (layer ${p.side}.Cu) (tedit 5970F8E5)
 
       ${p.at /* parametric position */}   
 

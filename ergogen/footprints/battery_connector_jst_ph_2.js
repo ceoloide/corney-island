@@ -40,7 +40,6 @@
 //      at least once in the development of a board to confirm sufficient clearance for the
 //      connector and wires.
 
-
 module.exports = {
     params: {
         designator: 'JST',

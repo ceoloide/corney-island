@@ -12,7 +12,7 @@
 // Datasheet:
 //  https://cdn.shopify.com/s/files/1/0618/5674/3655/files/Semtech-1N4148W.pdf?v=1670451309
 //
-// Params
+// Params:
 //    side: default is B for Back
 //      the side on which to place the single-side footprint and designator, either F or B
 //    reversible: default is false
@@ -31,8 +31,8 @@
 module.exports = {
     params: {
         designator: 'D',
-        reversible: false,
         side: 'B',
+        reversible: false,
         include_tht: false,
         from: undefined,
         to: undefined
@@ -40,7 +40,7 @@ module.exports = {
     body: p => {
 
         const standard_opening = `
-        (module "ceoloide/combo_diode_sod123" (layer ${p.side}.Cu) (tedit 5B24D78E)
+        (module "ceoloide:combo_diode_sod123" (layer ${p.side}.Cu) (tedit 5B24D78E)
             ${p.at /* parametric position */}
             (fp_text reference "${p.ref}" (at 0 0) (layer ${p.side}.SilkS) ${p.ref_hide} (effects (font (size 1.27 1.27) (thickness 0.15))))
         `

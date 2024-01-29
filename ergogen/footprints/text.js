@@ -10,7 +10,7 @@
 //  layer, and optionally make it reversible on the
 //  opposite side.
 //
-// Params
+// Params:
 //    reversible: default is false
 //      Adds a mirrored text on the opposite side of the board
 //    thickness: default is 0.15
