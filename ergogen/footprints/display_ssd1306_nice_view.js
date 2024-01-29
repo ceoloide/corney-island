@@ -1,18 +1,54 @@
+// Copyright (c) 2023 Marco Massarelli
+//
+// SPDX-License-Identifier: MIT
+//
+// To view a copy of this license, visit https://opensource.org/license/mit/
+//
+// Description:
+//  A combined reversible footprint for either SSD1306 OLED display, nice!view display, or
+//  both at the same time.
+//
+// Pinout and schematics for the nice!view:
+//  https://nicekeyboards.com/docs/nice-view/pinout-schematic
+//
+// Params:
+//    side: default is F for Front
+//      the side on which to place the single-side footprint and designator, either F or B.
+//    reversible: default is false
+//      if true, the footprint will be placed on both sides so that the PCB can be
+//      reversible.
+//    include_traces: default is true
+//      if true it will include traces that connect the jumper pads to the through-holes for
+//      the display.
+//    gnd_trace_width: default is 0.250mm
+//      allows to override the GND trace width. Not recommended to go below 0.25mm (JLCPC
+//      min is 0.127mm).
+//    vcc_trace_width: default is 0.250mm
+//      allows to override the VCC trace width. Not recommended to go below 0.25mm (JLCPC
+//      min is 0.127mm).
+//    signal_trace_width: default is 0.250mm
+//      allows to override the trace width that connects the jumper pads to the MOSI / SDA,
+//      SCK / SCL, and CS pins. Not recommended to go below 0.15mm (JLCPC min is 0.127mm).
+//    display_type: default is 'both'
+//      allows to chose what display to support in the footprint, and it can either be 'both'
+//      to have pins for both the nice!view or SSD1306 OLED displays, 'nice_view' to have the
+//      pins for the nice!view display only, or 'ssd1306' for the SSD1306 OLED display only.
+
 module.exports = {
   params: {
     designator: 'DISP',
+    side: 'F',
+    reversible: false,
+    include_traces_vias: true, // Only valid if reversible is True
+    gnd_trace_width: 0.25,
+    vcc_trace_width: 0.25,
+    signal_trace_width: 0.25,
+    display_type: 'both', // Any of ssd1306, nice_view, both
     P1: {type: 'net', value: 'GND'},
     P2: {type: 'net', value: 'VCC'},
     P3: {type: 'net', value: 'SCL'},  // SCK / SCL
     P4: {type: 'net', value: 'SDA'},  // MOSI / SDA
     P5: {type: 'net', value: 'CS'},
-    oled: 'both', // Any of ssd1306, nice_view, both
-    reversible: true,
-    side: 'F',
-    add_traces_vias: true, // Only valid if reversible is True
-    gnd_trace_width: 0.25,
-    pwr_trace_width: 0.25,
-    signal_trace_width: 0.25,
   },
   body: p => {
 
@@ -77,7 +113,7 @@ module.exports = {
     let jumpers_back_bottom = local_nets.slice().reverse();
     
     const standard_opening = `
-    (module "combo_display" (layer ${p.side}.Cu) (tedit 5B24D78E)
+    (module "ceoloide:display_ssd1306_nice_view" (layer ${p.side}.Cu) (tedit 5B24D78E)
       ${p.at /* parametric position */}
       (descr "Solder-jumper reversible footprint for both nice!view (SPI) and SSD1306 (I2C) displays")
       (fp_text reference "${p.ref}" (at 0 5.6 ${p.rot}) (layer ${p.side}.SilkS) ${p.ref_hide}
@@ -842,11 +878,11 @@ module.exports = {
     const oled_reversible_traces = ` 
     (segment (start ${ adjust_point(-3.81, 0.256)}) (end ${ adjust_point(-3.81, 2.066)}) (width ${p.signal_trace_width}) (layer "F.Cu") (net ${p.local_net("4").index}))
     (segment (start ${ adjust_point(-1.27, 0.256)}) (end ${ adjust_point(-1.27, 2.066)}) (width ${p.signal_trace_width}) (layer "F.Cu") (net ${p.local_net("3").index}))
-    (segment (start ${ adjust_point(1.27, 0.256)}) (end ${ adjust_point(1.27, 2.066)}) (width ${p.pwr_trace_width}) (layer "F.Cu") (net ${p.local_net("2").index}))
+    (segment (start ${ adjust_point(1.27, 0.256)}) (end ${ adjust_point(1.27, 2.066)}) (width ${p.vcc_trace_width}) (layer "F.Cu") (net ${p.local_net("2").index}))
     (segment (start ${ adjust_point(3.81, 0.256)}) (end ${ adjust_point(3.81, 2.066)}) (width ${p.gnd_trace_width}) (layer "F.Cu") (net ${p.local_net("1").index}))
     (segment (start ${ adjust_point(-3.81, 0.256)}) (end ${ adjust_point(-3.81, 2.066)}) (width ${p.signal_trace_width}) (layer "B.Cu") (net ${p.local_net("4").index}))
     (segment (start ${ adjust_point(-1.27, 0.256)}) (end ${ adjust_point(-1.27, 2.066)}) (width ${p.signal_trace_width}) (layer "B.Cu") (net ${p.local_net("3").index}))
-    (segment (start ${ adjust_point(1.27, 0.256)}) (end ${ adjust_point(1.27, 2.066)}) (width ${p.pwr_trace_width}) (layer "B.Cu") (net ${p.local_net("2").index}))
+    (segment (start ${ adjust_point(1.27, 0.256)}) (end ${ adjust_point(1.27, 2.066)}) (width ${p.vcc_trace_width}) (layer "B.Cu") (net ${p.local_net("2").index}))
     (segment (start ${ adjust_point(3.81, 0.256)}) (end ${ adjust_point(3.81, 2.066)}) (width ${p.gnd_trace_width}) (layer "B.Cu") (net ${p.local_net("1").index}))
     `
 
@@ -858,7 +894,7 @@ module.exports = {
 
     let final = standard_opening;
 
-    if(p.oled == "ssd1306"){
+    if(p.display_type == "ssd1306"){
       final += oled_standard;
       if(p.reversible) {
         final += oled_reversible_pads;
@@ -871,7 +907,7 @@ module.exports = {
           final += oled_back;
         }
       }
-    } else if(p.oled == "nice_view"){
+    } else if(p.display_type == "nice_view"){
       final += nice_view_standard;
       if(p.reversible) {
         final += nice_view_reversible;
@@ -883,7 +919,7 @@ module.exports = {
           final += nice_view_back;
         }
       }
-    } else if(p.oled == "both"){
+    } else if(p.display_type == "both"){
       final += oled_standard;
       final += nice_view_standard;
       if(p.reversible) {
@@ -904,12 +940,12 @@ module.exports = {
 
     final += standard_closing;
 
-    if(p.reversible && p.add_traces_vias) {
-      if(p.oled == "ssd1306") {
+    if(p.reversible && p.include_traces) {
+      if(p.display_type == "ssd1306") {
         final += oled_reversible_traces;
-      } else if(p.oled == "nice_view") {
+      } else if(p.display_type == "nice_view") {
         final += nice_view_reversible_traces;
-      } else if(p.oled == "both") {
+      } else if(p.display_type == "both") {
         final += both_reversible_traces;
       }
     }  

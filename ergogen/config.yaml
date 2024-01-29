@@ -749,10 +749,10 @@ pcbs:
       <<: *basepcb_footprints
 
       display:
-        what: combo_display
+        what: display_ssd1306_nice_view
         where: matrix_inner_top
         params:
-          oled: ssd1306
+          display_type: ssd1306
           reversible: true
         adjust:
           shift: [0.5 ks + 10.147, 0.375 kp -38.696]
