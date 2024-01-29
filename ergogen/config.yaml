@@ -6,7 +6,7 @@ meta:
   author: ceoloide
   url: &kb_url https://github.com/ceoloide/corney-island
   footprint: &switch_footprint "mx"
-  # footprint: &switch_footprint "choc_v1_v2"
+  # footprint: &switch_footprint "ceoloide/switch_choc_v1_v2"
   switch:
     $extends: presets.mx
     # $extends: presets.choc_v1
@@ -611,7 +611,7 @@ pcbs:
         outline: backplate
     footprints:
       m2_screws:
-        what: mounting_hole_npth
+        what: ceoloide/mounting_hole_npth
         where: /screw_pcb/
         params:
           hole_size: screw_diameter
@@ -623,7 +623,7 @@ pcbs:
         outline: frontplate
     footprints:
       m2_screws:
-        what: mounting_hole_npth
+        what: ceoloide/mounting_hole_npth
         where: /screw_pcb/
         params:
           hole_size: screw_diameter
@@ -635,7 +635,7 @@ pcbs:
         outline: controller_overlay
     footprints:
       m2_screws:
-        what: mounting_hole_npth
+        what: ceoloide/mounting_hole_npth
         where: /screw_mcu/
         params:
           hole_size: screw_diameter
@@ -651,13 +651,13 @@ pcbs:
         
     footprints: &basepcb_footprints
       m2_screws:
-        what: mounting_hole_npth
+        what: ceoloide/mounting_hole_npth
         where: /screw_mcu/
         params:
           hole_size: screw_diameter
           hole_drill: screw_diameter
       m2_spacers:
-        what: mounting_hole_npth 
+        what: ceoloide/mounting_hole_npth 
         where: /screw_pcb/
         params:
           hole_size: spacer_diameter
@@ -680,7 +680,7 @@ pcbs:
           rotate: switch_rotation
 
       diodes_b:
-        what: diode_tht_sod123
+        what: ceoloide/diode_tht_sod123
         where: /key/
         params:
           from: "{{colrow}}"
@@ -693,7 +693,7 @@ pcbs:
           rotate: 90 + diode_rotation
 
       diodes_f:
-        what: diode_tht_sod123
+        what: ceoloide/diode_tht_sod123
         where: /key/
         params:
           from: "{{colrow}}"
@@ -706,7 +706,7 @@ pcbs:
           rotate: 90 + diode_rotation
 
       mcu:
-        what: nice_nano
+        what: ceoloide/nice_nano
         where: matrix_inner_top
         params:
           P0: DAT
@@ -733,7 +733,7 @@ pcbs:
           shift: [19.704, 0.375 kp -18.37]
       
       jlcpcb_order_number_text:
-        what: text
+        what: ceoloide/text
         where: matrix_ring_bottom
         params:
           text: JLCJLCJLCJLC
@@ -749,7 +749,7 @@ pcbs:
       <<: *basepcb_footprints
 
       display:
-        what: display_ssd1306_nice_view
+        what: ceoloide/display_ssd1306_nice_view
         where: matrix_inner_top
         params:
           display_type: ssd1306
@@ -758,7 +758,7 @@ pcbs:
           shift: [0.5 ks + 10.147, 0.375 kp -38.696]
 
       reset_switch:
-        what: reset_switch_tht_top
+        what: ceoloide/reset_switch_tht_top
         where: matrix_inner_top
         params:
           from: GND
@@ -769,7 +769,7 @@ pcbs:
           rotate: 90
 
       trrs:
-        what: trrs
+        what: ceoloide/trrs_pj320a
         where: matrix_inner_top
         params:
           A: DAT # Tip and first ring can be together
@@ -782,7 +782,7 @@ pcbs:
           rotate: -90
           
       per_key_leds:
-        what: led_sk6812mini-e
+        what: ceoloide/led_sk6812mini-e
         where: /key/
         params:
           P1: VCC
@@ -804,7 +804,7 @@ pcbs:
           rotate: led_rotation
       
       underglow_leds:
-        what: led_sk6812mini-e
+        what: ceoloide/led_sk6812mini-e
         where: [underglow]
         params:
           P1: VCC
@@ -832,7 +832,7 @@ pcbs:
       <<: *basepcb_footprints
       
       nice_view:
-        what: nice_view
+        what: ceoloide/nice_view
         where: matrix_inner_top
         params:
           MOSI: SDA
@@ -844,7 +844,7 @@ pcbs:
           shift: [0.5 ks + 10.147, 0.375 kp -20.75]
       
       on_off_switch:
-        what: power_switch_smd_side
+        what: ceoloide/power_switch_smd_side
         where: matrix_inner_top
         params:
           from: BAT_P
@@ -854,7 +854,7 @@ pcbs:
           shift: [1.5 ks -0.5, 0.375 kp -46.50]
       
       reset_switch:
-        what: reset_switch_smd_side
+        what: ceoloide/reset_switch_smd_side
         where: matrix_inner_top
         params:
           from: GND
@@ -865,7 +865,7 @@ pcbs:
           shift: [19.704, 0.24 kp - 0.1]
       
       battery_connector:  
-        what: battery_connector_jst_ph_2
+        what: ceoloide/battery_connector_jst_ph_2
         where: matrix_inner_top
         params:
           BAT_P: BAT_P
