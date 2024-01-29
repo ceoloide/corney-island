@@ -28,12 +28,12 @@
 //    include_traces: default is true
 //      if true it will include traces that connect the jumper pads to the vias
 //      and the through-holes for the MCU
-//    trace_width: default is 0.250mm
-//      allows to override the trace width that connects the jumper pads to the MOSI, SCK,
-//      and CS pins. Not recommended to go below 0.15mm (JLCPC min is 0.127mm).
 //    gnd_trace_width: default is 0.250mm
 //      allows to override the GND trace width. Not recommended to go below 0.25mm (JLCPC
 //      min is 0.127mm).
+//    signal_trace_width: default is 0.250mm
+//      allows to override the trace width that connects the jumper pads to the MOSI, SCK,
+//      and CS pins. Not recommended to go below 0.15mm (JLCPC min is 0.127mm).
 //    invert_jumpers_position default is false
 //      allows to change the position of the jumper pads, from their default to the opposite
 //      side of the pins. See the description above for more details.
@@ -51,8 +51,8 @@ module.exports = {
     side: 'F',
     reversible: false,
     include_traces: true,
-    trace_width: 0.25,
     gnd_trace_width: 0.25,
+    signal_trace_width: 0.25,
     invert_jumpers_position: false,
     include_labels: true,
     MOSI: {type: 'net', value: 'MOSI'},
@@ -296,25 +296,25 @@ module.exports = {
     `
 
     const traces_bottom = `
-    (segment (start ${ adjust_point(-5.08, 16.7)}) (end ${ adjust_point(-5.08, 19.15)}) (width ${p.trace_width}) (layer "F.Cu") (net ${jumpers_front_bottom[0].index}))
+    (segment (start ${ adjust_point(-5.08, 16.7)}) (end ${ adjust_point(-5.08, 19.15)}) (width ${p.signal_trace_width}) (layer "F.Cu") (net ${jumpers_front_bottom[0].index}))
     (segment (start ${ adjust_point(-2.54, 16.7)}) (end ${ adjust_point(-2.54, 19.15)}) (width ${p.gnd_trace_width}) (layer "F.Cu") (net ${jumpers_front_bottom[1].index}))
-    (segment (start ${ adjust_point(2.54, 16.7)}) (end ${ adjust_point(2.54, 19.15)}) (width ${p.trace_width}) (layer "F.Cu") (net ${jumpers_front_bottom[3].index}))
-    (segment (start ${ adjust_point(5.08, 16.7)}) (end ${ adjust_point(5.08, 19.15)}) (width ${p.trace_width}) (layer "F.Cu") (net ${jumpers_front_bottom[4].index}))
-    (segment (start ${ adjust_point(-5.08, 16.7)}) (end ${ adjust_point(-5.08, 19.15)}) (width ${p.trace_width}) (layer "B.Cu") (net ${jumpers_back_bottom[0].index}))
-    (segment (start ${ adjust_point(-2.54, 16.7)}) (end ${ adjust_point(-2.54, 19.15)}) (width ${p.trace_width}) (layer "B.Cu") (net ${jumpers_back_bottom[1].index}))
+    (segment (start ${ adjust_point(2.54, 16.7)}) (end ${ adjust_point(2.54, 19.15)}) (width ${p.signal_trace_width}) (layer "F.Cu") (net ${jumpers_front_bottom[3].index}))
+    (segment (start ${ adjust_point(5.08, 16.7)}) (end ${ adjust_point(5.08, 19.15)}) (width ${p.signal_trace_width}) (layer "F.Cu") (net ${jumpers_front_bottom[4].index}))
+    (segment (start ${ adjust_point(-5.08, 16.7)}) (end ${ adjust_point(-5.08, 19.15)}) (width ${p.signal_trace_width}) (layer "B.Cu") (net ${jumpers_back_bottom[0].index}))
+    (segment (start ${ adjust_point(-2.54, 16.7)}) (end ${ adjust_point(-2.54, 19.15)}) (width ${p.signal_trace_width}) (layer "B.Cu") (net ${jumpers_back_bottom[1].index}))
     (segment (start ${ adjust_point(2.54, 16.7)}) (end ${ adjust_point(2.54, 19.15)}) (width ${p.gnd_trace_width}) (layer "B.Cu") (net ${jumpers_back_bottom[3].index}))
-    (segment (start ${ adjust_point(5.08, 16.7)}) (end ${ adjust_point(5.08, 19.15)}) (width ${p.trace_width}) (layer "B.Cu") (net ${jumpers_back_bottom[4].index}))
+    (segment (start ${ adjust_point(5.08, 16.7)}) (end ${ adjust_point(5.08, 19.15)}) (width ${p.signal_trace_width}) (layer "B.Cu") (net ${jumpers_back_bottom[4].index}))
     `
 
     const traces_top = `
-    (segment (start ${ adjust_point(-5.08, 16.7)}) (end ${ adjust_point(-5.08, 14.25)}) (width ${p.trace_width}) (layer "F.Cu") (net ${jumpers_front_top[0].index}))
+    (segment (start ${ adjust_point(-5.08, 16.7)}) (end ${ adjust_point(-5.08, 14.25)}) (width ${p.signal_trace_width}) (layer "F.Cu") (net ${jumpers_front_top[0].index}))
     (segment (start ${ adjust_point(-2.54, 16.7)}) (end ${ adjust_point(-2.54, 14.25)}) (width ${p.gnd_trace_width}) (layer "F.Cu") (net ${jumpers_front_top[1].index}))
-    (segment (start ${ adjust_point(2.54, 16.7)}) (end ${ adjust_point(2.54, 14.25)}) (width ${p.trace_width}) (layer "F.Cu") (net ${jumpers_front_top[3].index}))
-    (segment (start ${ adjust_point(5.08, 16.7)}) (end ${ adjust_point(5.08, 14.25)}) (width ${p.trace_width}) (layer "F.Cu") (net ${jumpers_front_top[4].index}))
-    (segment (start ${ adjust_point(-5.08, 16.7)}) (end ${ adjust_point(-5.08, 14.25)}) (width ${p.trace_width}) (layer "B.Cu") (net ${jumpers_back_top[0].index}))
-    (segment (start ${ adjust_point(-2.54, 16.7)}) (end ${ adjust_point(-2.54, 14.25)}) (width ${p.trace_width}) (layer "B.Cu") (net ${jumpers_back_top[1].index}))
+    (segment (start ${ adjust_point(2.54, 16.7)}) (end ${ adjust_point(2.54, 14.25)}) (width ${p.signal_trace_width}) (layer "F.Cu") (net ${jumpers_front_top[3].index}))
+    (segment (start ${ adjust_point(5.08, 16.7)}) (end ${ adjust_point(5.08, 14.25)}) (width ${p.signal_trace_width}) (layer "F.Cu") (net ${jumpers_front_top[4].index}))
+    (segment (start ${ adjust_point(-5.08, 16.7)}) (end ${ adjust_point(-5.08, 14.25)}) (width ${p.signal_trace_width}) (layer "B.Cu") (net ${jumpers_back_top[0].index}))
+    (segment (start ${ adjust_point(-2.54, 16.7)}) (end ${ adjust_point(-2.54, 14.25)}) (width ${p.signal_trace_width}) (layer "B.Cu") (net ${jumpers_back_top[1].index}))
     (segment (start ${ adjust_point(2.54, 16.7)}) (end ${ adjust_point(2.54, 14.25)}) (width ${p.gnd_trace_width}) (layer "B.Cu") (net ${jumpers_back_top[3].index}))
-    (segment (start ${ adjust_point(5.08, 16.7)}) (end ${ adjust_point(5.08, 14.25)}) (width ${p.trace_width}) (layer "B.Cu") (net ${jumpers_back_top[4].index}))
+    (segment (start ${ adjust_point(5.08, 16.7)}) (end ${ adjust_point(5.08, 14.25)}) (width ${p.signal_trace_width}) (layer "B.Cu") (net ${jumpers_back_top[4].index}))
     `
 
     let final = top;
