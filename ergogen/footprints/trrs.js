@@ -1,52 +1,73 @@
-// ceoloide:TRRS-PJ-320A-dual
+// Copyright (c) 2023 Marco Massarelli
 //
-// Normal footprint:
+// SPDX-License-Identifier: MIT
+//
+// To view a copy of this license, visit https://opensource.org/license/mit/
+//
+// Authors: @ergogen + @ceoloide improvements
+//
+// Description:
+//  A reversible "PJ-320A" TRRS footprint similar to the one used on
+//  the Corne keyboard, and available at LCSC. The footprint offers many
+//  customization options.
+//
+//  Normal / single side
 //     _________________
-//    |   (B)   (C) (D)|
-//    |                |
-//    | (A)            |
+//    |   (B)   (C) (D)|_
+//    |                | |
+//    | (A)            |_|
 //    |________________|
 // 
-// Reverse footprint:
+//  Reversible
 //     _________________
-//    |   (B)   (C) (D)|
-//    | (A)            |
-//    | (A)            |
+//    |   (B)   (C) (D)|_
+//    | (A)            | |
+//    | (A)            |_|
 //    |___(B)___(C)_(D)|
 //
-// Reverse & symmetric footprint:
+// Reversible & symmetrical
 //     _________________
-//    | (A)   (C)   (D)|
+//    | ( A ) (C)   (D)|
 //    |                |
-//    |_(A)___(C)___(D)|
+//    |_( A )_(C)___(D)|
 //
-// Nets
+// Datasheet:
+//  https://datasheet.lcsc.com/lcsc/2311241628_Hong-Cheng-HC-PJ-320A_C7501806.pdf
+//
+// Nets:
 //    A: corresponds to pin 1
 //    B: corresponds to pin 2
 //    C: corresponds to pin 3 (pin 2 symmetrical)
 //    D: corresponds to pin 4 (pin 3 symmetrical)
-// Params
+//
+// Params:
+//    side: default is F for Front
+//      the side on which to place the single-side footprint and designator, either F or B
 //    reversible: default is false
-//      if true, will flip the footprint such that the pcb can be reversible
+//      if true, the footprint will be placed on both sides so that the PCB can be
+//      reversible
 //    symmetric: default is false
-//      if true, will only work if reverse is also true
-//      this will cause the footprint to be symmetrical on each half
-//      pin B 1 and 2 must be identical if symmetric is true, as they will overlap
+//      if true, will only work if reversible is also true
+//      this will cause the footprint to be symmetrical on each half, however
+//      reducing the footprint to three pins, A, C, and D
+//
+// @ceoloide's improvements:
+//  - Add oval pad when symmetrical
 
 module.exports = {
   params: {
     designator: 'TRRS',
+    side: 'F',
+    reversible: false,
     symmetric: false,
     A: {type: 'net', value: 'A'},
     B: {type: 'net', value: 'B'},
     C: {type: 'net', value: 'C'},
     D: {type: 'net', value: 'D'},
-    reversible: false,
-    side: 'F',
   },
   body: p => {
 
-    let footprint_name = "TRRS-PJ-320A-dual"
+    let footprint_name = "trrs"
     if (p.reversible) {
       if (p.symmetric) {
         footprint_name += " (reversible, symmetric)"
@@ -56,7 +77,7 @@ module.exports = {
     }
 
     const standard_opening = `
-      (module "ceoloide:${footprint_name}" (layer ${p.side}.Cu) (tedit 5970F8E5)
+      (module "ceoloide/${footprint_name}" (layer ${p.side}.Cu) (tedit 5970F8E5)
 
       ${p.at /* parametric position */}   
 
