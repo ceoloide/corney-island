@@ -30,7 +30,7 @@ module.exports = {
   (module "ceoloide/mounting_hole_npth" (layer ${p.side}.Cu) (tedit 5F1B9159)
       ${p.at /* parametric position */}
       (fp_text reference "${p.ref}" (at 0 2.55) (layer ${p.side}.SilkS) ${p.ref_hide} (effects (font (size 1 1) (thickness 0.15))))
-      (pad "" np_thru_hole circle (at 0 0) (size ${p.size} ${p.size}) (drill ${p.drill}) (layers *.Cu *.Mask))
+      (pad "" np_thru_hole circle (at 0 0) (size ${p.hole_size} ${p.hole_size}) (drill ${p.hole_drill}) (layers *.Cu *.Mask))
   )
   `
 }
