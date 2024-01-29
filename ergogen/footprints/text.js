@@ -1,7 +1,14 @@
-// Author: @infused-kim + @ceoloide improvements
+// Copyright (c) 2023 Marco Massarelli
+//
+// Licensed under CC BY-NC-SA 4.0. 
+// To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/
+//
+// Authors: @infused-kim + @ceoloide improvements
 //
 // Description:
-//    Allows you to place text on the PCB
+//  Allows you to place text on the PCB's Silkscreen
+//  layer, and optionally make it reversible on the
+//  opposite side.
 //
 // Params
 //    reversible: default is false
@@ -14,8 +21,8 @@
 //      The text to display
 //
 // @ceoloide's improvements:
-//  - Added ability to set text on both sides
-//  - Added ability to adjust font thickness and size
+//  - Add ability to set text on both sides
+//  - Add ability to adjust font thickness and size
 
 module.exports = {
   params: {
