@@ -22,11 +22,11 @@ jobs:
         with:
           submodules: true
       - name: Docker Cache
-        uses: ScribeMD/docker-cache@0.3.3
+        uses: ScribeMD/docker-cache@0.3.7
         with:
           key: docker-${{ runner.os }}
       - name: Use Node.js 20
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 20.x
           cache: 'npm'
@@ -62,7 +62,7 @@ jobs:
           boards: corney_island_autorouted corney_island_wireless_autorouted
           config: boards
       - name: Persist output
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: corney_island
           path: ergogen/output
