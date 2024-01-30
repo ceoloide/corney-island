@@ -74,6 +74,7 @@ outputs:
       format: png
       style: oshpark-afterdark
       margin: 5
+      show_solderpaste: false
 
   - name: bottom_view
     comment: "Bottom view of the PCB"
