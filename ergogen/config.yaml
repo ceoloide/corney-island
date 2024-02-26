@@ -72,6 +72,8 @@ units:
   # Physical measures
   screw_radius: 1.1 # M2 screws
   screw_diameter: screw_radius * 2
+  screw_head_radius: 2.05
+  screw_head_diameter: screw_head_radius * 2
   spacer_radius: 2.15 # M2 standoffs
   spacer_diameter: spacer_radius * 2
   fillet_radius: 0.5
@@ -80,6 +82,13 @@ units:
   signal_trace_width: 0.15
   via_size: 0.56 # JLCPCB min 0.56 | KiCad default 0.8
   via_drill: 0.3 # JLCPCB min 0.3 | KiCad default 0.4
+
+  # Case variables
+  case_wall_thickness: 1.2
+  pcb_to_case_wall_tolerance: 0.25
+  bottom_plate_thickness: 1.0
+  top_plate_thickness: 1.6
+  internal_distance_between_plates: 4
 
   # Thumb splay
   splay_thumb_middle: 15
@@ -227,6 +236,8 @@ points:
             stagger: 2.122
             spread: ks + 3.463
             tags:
+              - key
+              - thumb_key
               - key_1_5u
           rows:
             home.key:
@@ -474,6 +485,22 @@ outlines:
       fillet: 2
       where: [key_1_5u]
       size: [keycw*1.5, keych]
+  _hex_outline:
+    - what: rectangle
+      where: [key]
+      size: [9.2376,16]
+      adjust:
+        rotate: 0
+    - what: rectangle
+      where: [key]
+      size: [9.2376,16]
+      adjust:
+        rotate: 60
+    - what: rectangle
+      where: [key]
+      size: [9.2376,16]
+      adjust:
+        rotate: -60
   _switch_cutouts:
     - what: rectangle
       where: /key/
@@ -531,6 +558,10 @@ outlines:
     - what: circle
       where: /screw_pcb/
       radius: screw_radius
+  _screw_heads:
+    - what: circle
+      where: /screw_pcb/
+      radius: screw_head_radius
   _spacers:
     - what: circle
       where: /screw_pcb/
@@ -545,6 +576,36 @@ outlines:
     - what: outline
       name: _backplate_additional_outline
       operation: add
+  _bottom_case_superlight_inner_outline:
+    - what: outline
+      name: _backplate_outline
+      expand:  -2 * case_wall_thickness
+      fillet: 0.5
+      joints: 1
+  _bottom_case_outer_outline:
+    - what: outline
+      name: _backplate_outline
+      expand: case_wall_thickness + pcb_to_case_wall_tolerance
+      fillet: 0.5
+      joints: 1
+  _bottom_case_inner_outline:
+    - what: outline
+      name: _backplate_outline
+      expand: pcb_to_case_wall_tolerance
+      fillet: 0.5
+      joints: 1
+  _bottom_case_walls:
+    - what: outline
+      name: _bottom_case_outer_outline
+    - what: outline
+      name: _bottom_case_inner_outline
+      operation: subtract
+  _mcu_wall_cutout:
+    - what: rectangle
+      where: matrix_inner_top
+      size: [8,40 + pcb_to_case_wall_tolerance * 2 + case_wall_thickness * 2]
+      adjust:
+        shift: [19.704 - 1.25 + pcb_to_case_wall_tolerance / 2 + case_wall_thickness, 0]
   backplate:
     - what: outline
       name: _backplate_outline
@@ -602,6 +663,15 @@ outlines:
       operation: stack
     - what: outline
       name: _keycap_outlines
+      operation: stack
+    - what: outline
+      name: _bottom_case_walls
+      operation: stack
+    - what: outline
+      name: _bottom_case_outer_outline
+      operation: stack
+    - what: outline
+      name: _bottom_case_superlight_inner_outline
       operation: stack
 
 pcbs:
@@ -875,3 +945,33 @@ pcbs:
         adjust:
           shift: [0.5 ks + 7.25, 0.375 kp -45.25]
           rotate: 90
+cases:
+  corney_island_bottom_tray:
+    - what: outline
+      name: _bottom_case_walls
+      extrude: bottom_plate_thickness + internal_distance_between_plates + top_plate_thickness
+      shift: [-75,0,0]
+    - what: outline
+      name: _mcu_wall_cutout
+      extrude: 2.2
+      shift: [-75, 0, bottom_plate_thickness]
+      operation: subtract
+    - what: outline
+      name: _bottom_case_outer_outline
+      extrude: bottom_plate_thickness
+      shift: [-75,0,0]
+    # - what: outline
+    #   name: _bottom_case_superlight_inner_outline
+    #   extrude: bottom_plate_thickness
+    #   shift: [-75,0,0]
+    #   operation: subtract
+    # - what: outline
+    #   name: _hex_outline
+    #   extrude: bottom_plate_thickness
+    #   shift: [-75,0,0]
+    #   operation: subtract
+    - what: outline
+      name: _screws
+      extrude: bottom_plate_thickness
+      shift: [-75,0,0]
+      operation: subtract
