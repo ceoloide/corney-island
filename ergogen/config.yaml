@@ -842,9 +842,9 @@ pcbs:
         what: ceoloide/trrs_pj320a
         where: matrix_inner_top
         params:
-          A: DAT # Tip and first ring can be together
-          C: GND
-          D: VCC
+          SL: GND
+          R2: DAT
+          TP: VCC # Tip and Ring 1 are joined together
           reversible: true
           symmetric: true
         adjust:

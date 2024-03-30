@@ -5,7 +5,7 @@
   (page A3)
   (title_block
     (title controller_overlay)
-    (rev 0.1)
+    (rev 0.2)
     (company ceoloide)
   )
 
@@ -105,17 +105,17 @@
   )
 
             
-  (module "Screw_Hole" (layer F.Cu) (tedit 5F1B9159)
+  (module "ceoloide:mounting_hole_npth" (layer F.Cu) (tedit 5F1B9159)
       (at 207.762 100.476 0)
-      (fp_text reference "H1" (at 0 2.55) (layer F.SilkS) hide (effects (font (size 1 1) (thickness 0.15))))
-      (pad "" np_thru_hole circle (at 0 0) (size 2.2 2.2) (drill 2.2) (layers *.Cu *.Mask))
+      (fp_text reference "MH1" (at 0 2.55 0) (layer F.SilkS) hide (effects (font (size 1 1) (thickness 0.15))))
+      (pad "" np_thru_hole circle (at 0 0 0) (size 2.2 2.2) (drill 2.2) (layers *.Cu *.Mask))
   )
   
 
-  (module "Screw_Hole" (layer F.Cu) (tedit 5F1B9159)
+  (module "ceoloide:mounting_hole_npth" (layer F.Cu) (tedit 5F1B9159)
       (at 222.194 108.995 0)
-      (fp_text reference "H2" (at 0 2.55) (layer F.SilkS) hide (effects (font (size 1 1) (thickness 0.15))))
-      (pad "" np_thru_hole circle (at 0 0) (size 2.2 2.2) (drill 2.2) (layers *.Cu *.Mask))
+      (fp_text reference "MH2" (at 0 2.55 0) (layer F.SilkS) hide (effects (font (size 1 1) (thickness 0.15))))
+      (pad "" np_thru_hole circle (at 0 0 0) (size 2.2 2.2) (drill 2.2) (layers *.Cu *.Mask))
   )
   
             (gr_line (start 205.113 101.77697755907997) (end 205.113 53.49) (angle 90) (layer Edge.Cuts) (width 0.15))
