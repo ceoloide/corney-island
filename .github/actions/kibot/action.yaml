@@ -9,14 +9,13 @@ inputs:
     required: true
 runs:
   using: 'docker'
-  image: 'docker://ghcr.io/inti-cmnb/kicad7_auto:latest'
+  image: 'docker://ghcr.io/inti-cmnb/kicad8_auto:latest'
   entrypoint: '/bin/bash'
   args:
     - '-c'
-    # GH actions set $HOME to a weird location and we have to move Kicad settings there first
     - |
       for board in ${{ inputs.boards }};
       do
-        echo Processing $board;
+        echo "Processing $board";
         kibot -b $GITHUB_WORKSPACE/ergogen/output/pcbs/${board}.kicad_pcb -c $GITHUB_WORKSPACE/kibot/${{ inputs.config }}.kibot.yaml
       done

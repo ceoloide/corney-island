@@ -6,18 +6,20 @@ inputs:
     required: true
 runs:
   using: 'docker'
-  image: 'docker://ghcr.io/inti-cmnb/kicad7_auto:latest'
+  image: 'docker://ghcr.io/inti-cmnb/kicad8_auto:latest'
   entrypoint: '/bin/bash'
   args:
     - '-c'
-    # GH actions set $HOME to a weird location and we have to move Kicad settings there first
     - |
       for board in ${{ inputs.boards }};
       do
-        echo Processing $board;
+        echo "Processing $board";
         if [ -e $GITHUB_WORKSPACE/ergogen/output/pcbs/${board}.dsn ]; then
-          echo Cleaning up $GITHUB_WORKSPACE/ergogen/output/pcbs/${board}.dsn
-          rm -f $GITHUB_WORKSPACE/ergogen/output/pcbs/${board}.dsn
+          echo "Cleaning up $GITHUB_WORKSPACE/ergogen/output/pcbs/${board}.dsn";
+          rm -f $GITHUB_WORKSPACE/ergogen/output/pcbs/${board}.dsn;
         fi
-        $GITHUB_WORKSPACE/kibot/export_dsn.py -b $GITHUB_WORKSPACE/ergogen/output/pcbs/${board}.kicad_pcb -o $GITHUB_WORKSPACE/ergogen/output/pcbs/${board}.dsn 
+        if [ -e ergogen/output/pcbs/${board}.kicad_pcb ]; then
+          echo "Export DSN";
+          $GITHUB_WORKSPACE/kibot/export_dsn.py -b $GITHUB_WORKSPACE/ergogen/output/pcbs/${board}.kicad_pcb -o $GITHUB_WORKSPACE/ergogen/output/pcbs/${board}.dsn 
+        fi
       done

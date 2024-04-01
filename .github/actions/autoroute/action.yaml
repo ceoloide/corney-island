@@ -13,10 +13,13 @@ runs:
     - |
       for board in ${{ inputs.boards }};
       do
-        echo Processing $board
+        echo "Processing $board";
         if [ -e ergogen/output/pcbs/${board}.ses ]; then
-          echo Cleaning up ergogen/output/pcbs/${board}.ses
-          rm -f ergogen/output/pcbs/${board}.ses
+          echo "Cleaning up ergogen/output/pcbs/${board}.ses";
+          rm -f ergogen/output/pcbs/${board}.ses;
         fi
-        java -jar /opt/freerouting_cli.jar -de ergogen/output/pcbs/${board}.dsn -do ergogen/output/pcbs/${board}.ses -dr freerouting/freerouting.rules -mp 20
+        if [ -e ergogen/output/pcbs/${board}.dsn ]; then
+          echo "Autoroute PCB";
+          java -jar /opt/freerouting_cli.jar -de ergogen/output/pcbs/${board}.dsn -do ergogen/output/pcbs/${board}.ses -dr freerouting/freerouting.rules -mp 20
+        fi
       done

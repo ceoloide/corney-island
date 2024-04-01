@@ -6,20 +6,20 @@ inputs:
     required: true
 runs:
   using: 'docker'
-  image: 'docker://soundmonster/kicad-automation-scripts:latest'
-  entrypoint: '/bin/sh'
+  image: 'docker://ghcr.io/inti-cmnb/kicad8_auto:latest'
+  entrypoint: '/bin/bash'
   args:
     - '-c'
-    # GH actions set $HOME to a weird location and we have to move Kicad settings there first
     - |
-      mkdir -p $HOME/.config/kicad ;
-      cp /root/.config/kicad/* $HOME/.config/kicad ;
       for board in ${{ inputs.boards }};
       do
-        echo Processing $board
+        echo "Processing $board";
         if [ -e $GITHUB_WORKSPACE/ergogen/output/pcbs/${board}_autorouted.kicad_pcb ]; then
-          echo Cleaning up $GITHUB_WORKSPACE/ergogen/output/pcbs/${board}_autorouted.kicad_pcb
-          rm -f $GITHUB_WORKSPACE/ergogen/output/pcbs/${board}_autorouted.kicad_pcb
+          echo "Cleaning up $GITHUB_WORKSPACE/ergogen/output/pcbs/${board}_autorouted.kicad_pcb";
+          rm -f $GITHUB_WORKSPACE/ergogen/output/pcbs/${board}_autorouted.kicad_pcb;
         fi
-        /usr/lib/python2.7/dist-packages/kicad-automation/pcbnew_automation/import_ses.py $GITHUB_WORKSPACE/ergogen/output/pcbs/${board}.kicad_pcb $GITHUB_WORKSPACE/ergogen/output/pcbs/${board}.ses --output-file $GITHUB_WORKSPACE/ergogen/output/pcbs/${board}_autorouted.kicad_pcb;
+        if [ -e $GITHUB_WORKSPACE/ergogen/output/pcbs/${board}.ses ]; then
+          echo "Import SES";
+          $GITHUB_WORKSPACE/kibot/import_ses.py -b $GITHUB_WORKSPACE/ergogen/output/pcbs/${board}.kicad_pcb -s $GITHUB_WORKSPACE/ergogen/output/pcbs/${board}.ses -o $GITHUB_WORKSPACE/ergogen/output/pcbs/${board}_autorouted.kicad_pcb
+        fi
       done
