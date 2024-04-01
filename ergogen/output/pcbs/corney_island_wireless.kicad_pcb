@@ -3094,6 +3094,9 @@
         (fp_text value "power_switch" (at 0 2.5 0) (layer F.Fab)
           (effects (font (size 1 1) (thickness 0.15)))
         )
+        (fp_text reference "PWR1" (at -3.6 0 -90) (layer F.SilkS) hide
+          (effects (font (size 1 1) (thickness 0.15)))
+        )
     
         (fp_line (start -1.305 -3.35) (end -1.305 3.35) (layer F.Fab) (width 0.1))
         (fp_line (start 1.295 -3.35) (end -1.305 -3.35) (layer F.Fab) (width 0.1))
@@ -3114,9 +3117,6 @@
         (pad 3 smd rect (at -1.735 -2.25 90) (size 0.7 1.5) (layers F.Cu F.Paste F.Mask) (net 72 "BAT_P"))
 
     
-        (fp_text reference "PWR1" (at -3.6 0 -90) (layer F.SilkS) hide
-          (effects (font (size 1 1) (thickness 0.15)))
-        )
         (fp_text user "ON" (at 0 -4.5 0) (layer "F.SilkS")
           (effects (font (size 1 1) (thickness 0.15)) (justify bottom))
         )
@@ -3173,6 +3173,9 @@
           (fp_text value "reset_button_smd_side" (at 0 2.5 0) (layer F.Fab)
             (effects (font (size 1 1) (thickness 0.15)))
           )
+          (fp_text reference "RST1" (at 0 0 0) (layer F.SilkS) hide
+            (effects (font (size 1 1) (thickness 0.15)))
+          )
           (fp_line (start -2.35 -1.75) (end -2.35 1.75) (width 0.1) (layer "Dwgs.User"))
           (fp_line (start -2.35 -1.75) (end 2.35 -1.75) (width 0.1) (layer "Dwgs.User"))
           (fp_line (start -2.35 1.75) (end 2.35 1.75) (width 0.1) (layer "Dwgs.User"))
@@ -3189,9 +3192,6 @@
         (pad "3" smd rect (at -2.625 -0.85 180) (size 1.55 1) (layers "F.Cu" "F.Paste" "F.Mask") (net 33 "GND"))
         (pad "4" smd rect (at -2.625 0.85 180) (size 1.55 1) (layers "F.Cu" "F.Paste" "F.Mask") (net 34 "RST"))
       
-        (fp_text reference "RST1" (at 0 0 0) (layer F.SilkS) hide
-          (effects (font (size 1 1) (thickness 0.15)))
-        )
         (fp_line (start -2.35 -1.5) (end -2.35 -1.75) (width 0.1) (layer "F.SilkS"))
         (fp_line (start -2.35 1.5) (end -2.35 1.75) (width 0.1) (layer "F.SilkS"))
         (fp_line (start -2.1 -1.75) (end -2.35 -1.75) (width 0.1) (layer "F.SilkS"))
