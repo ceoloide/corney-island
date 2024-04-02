@@ -776,7 +776,7 @@ pcbs:
           rotate: 90 + diode_rotation
 
       mcu:
-        what: ceoloide/nice_nano
+        what: ceoloide/mcu_nice_nano
         where: matrix_inner_top
         params:
           P0: DAT
@@ -819,13 +819,12 @@ pcbs:
       <<: *basepcb_footprints
 
       display:
-        what: ceoloide/display_ssd1306_nice_view
+        what: ceoloide/display_ssd1306
         where: matrix_inner_top
         params:
-          display_type: ssd1306
           reversible: true
         adjust:
-          shift: [0.5 ks + 10.147, 0.375 kp -38.696]
+          shift: [0.5 ks + 10.147, 0.375 kp -24.058]
 
       reset_switch:
         what: ceoloide/reset_switch_tht_top
@@ -902,7 +901,7 @@ pcbs:
       <<: *basepcb_footprints
       
       nice_view:
-        what: ceoloide/nice_view
+        what: ceoloide/display_nice_view
         where: matrix_inner_top
         params:
           MOSI: SDA
