@@ -1984,7 +1984,7 @@
 
           
           
-        (module "ceoloide:nice_nano" (layer F.Cu) (tedit 6451A4F1)
+        (module "ceoloide:mcu_nice_nano" (layer F.Cu) (tedit 6451A4F1)
           (attr virtual)
           (at 214.704 70.87 0)
           (fp_text reference "MCU1" (at 0 -15 0) (layer F.SilkS) hide
@@ -2968,7 +2968,7 @@
       )
       
 
-      (module "ceoloide:nice_view" (layer F.Cu) (tedit 6448AF5B)
+      (module "ceoloide:display_nice_view" (layer F.Cu) (tedit 6448AF5B)
         (at 214.647 73.25 0)
         (attr virtual)
         (fp_text reference "DISP1" (at 0 20 0) (layer F.SilkS) hide
@@ -3221,7 +3221,7 @@
       )
       
 
-            (module "ceoloide/battery_connector_jst_ph_2" (layer F.Cu) (tedit 6135B927)
+            (module "ceoloide:battery_connector_jst_ph_2" (layer F.Cu) (tedit 6135B927)
                 (at 211.75 97.75 90)
 
                 (descr "JST PH series connector, S2B-PH-K (http://www.jst-mfg.com/product/pdf/eng/ePH.pdf)")
