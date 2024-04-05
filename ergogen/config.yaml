@@ -795,7 +795,6 @@ pcbs:
           P7: R2
           P8: R3
           include_traces: true
-          show_instructions: false
           show_silk_labels: true
           show_via_labels: true
           use_rectangular_jumpers: true
