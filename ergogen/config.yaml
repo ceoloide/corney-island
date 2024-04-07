@@ -802,7 +802,7 @@ pcbs:
           shift: [19.704, 0.375 kp -18.37]
       
       jlcpcb_order_number_text:
-        what: ceoloide/text
+        what: ceoloide/utility_text
         where: matrix_ring_bottom
         params:
           text: JLCJLCJLCJLC
