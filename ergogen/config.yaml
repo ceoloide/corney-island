@@ -834,7 +834,7 @@ pcbs:
           to: RST
           reversible: true
         adjust:
-          shift: [0.5 ks + 17.817, 0.375 kp -40.251]
+          shift: [0.5 ks + 17.85, 0.375 kp -40.251]
           rotate: 90
 
       trrs:
