@@ -797,6 +797,7 @@ pcbs:
           include_traces: true
           show_silk_labels: true
           show_via_labels: true
+          show_instructions: false
           use_rectangular_jumpers: true
         adjust:
           shift: [19.704, 0.375 kp -18.37]
