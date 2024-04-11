@@ -1,5 +1,5 @@
 meta:
-  engine: 4.0.5
+  engine: 4.1.0
   name: corney-island
   version: 0.2
   ref: &kb_ref "Corney Island v0.2"
@@ -676,6 +676,7 @@ outlines:
 
 pcbs:
   backplate:
+    template: kicad8
     outlines:
       main:
         outline: backplate
@@ -688,6 +689,7 @@ pcbs:
           hole_drill: screw_diameter
 
   frontplate:
+    template: kicad8
     outlines:
       main:
         outline: frontplate
@@ -700,6 +702,7 @@ pcbs:
           hole_drill: screw_diameter
 
   controller_overlay:
+    template: kicad8
     outlines:
       main:
         outline: controller_overlay
@@ -712,6 +715,7 @@ pcbs:
           hole_drill: screw_diameter
 
   _corney_island_baseline:
+    template: kicad8
     outlines: &basepcb_outlines
       main:
         outline: _pcb_outline
@@ -812,6 +816,8 @@ pcbs:
           shift: [0, -0.65 kp]
   
   corney_island:
+    template: kicad8
+
     outlines:
       <<: *basepcb_outlines
         
@@ -894,6 +900,8 @@ pcbs:
           rotate: 180
 
   corney_island_wireless:
+    template: kicad8
+    
     outlines:
       <<: *basepcb_outlines
         
