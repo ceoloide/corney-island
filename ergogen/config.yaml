@@ -5,7 +5,7 @@ meta:
   ref: &kb_ref "Corney Island v0.2"
   author: ceoloide
   url: &kb_url https://github.com/ceoloide/corney-island
-  footprint: &switch_footprint "mx"
+  footprint: &switch_footprint "ceoloide/switch_mx"
   # footprint: &switch_footprint "ceoloide/switch_choc_v1_v2"
   switch:
     $extends: presets.mx
@@ -736,16 +736,18 @@ pcbs:
         params:
           hole_size: spacer_diameter
           hole_drill: spacer_diameter
-      key_switches:
+
+      key_switches_b:
         what: *switch_footprint
         where: /key/
         params:
-          reverse: true
+          side: B
+          reversible: false
           hotswap: true
+          include_silkscreen: false
           from: "{{column_net}}"
-          to: "{{colrow}}"
+          to: "{{colrow}}_B"
           # The following parameters are specific to choc_v1_v2
-          # reversible: true
           # outer_pad_width_front: 1.6
           # outer_pad_width_back: 1.6
           # choc_v2_support: false
@@ -757,7 +759,7 @@ pcbs:
         what: ceoloide/diode_tht_sod123
         where: /key/
         params:
-          from: "{{colrow}}"
+          from: "{{colrow}}_B"
           to: "{{row_net}}"
           include_tht: false
           reversible: false
@@ -766,11 +768,29 @@ pcbs:
           shift: [horizontal_diode_shift,vertical_diode_shift]
           rotate: 90 + diode_rotation
 
+      key_switches_f:
+        what: *switch_footprint
+        where: /key/
+        params:
+          side: F
+          reversible: false
+          hotswap: true
+          include_silkscreen: false
+          from: "{{column_net}}"
+          to: "{{colrow}}_F"
+          # The following parameters are specific to choc_v1_v2
+          # outer_pad_width_front: 1.6
+          # outer_pad_width_back: 1.6
+          # choc_v2_support: false
+          # choc_v1_support: false
+        adjust:
+          rotate: switch_rotation
+
       diodes_f:
         what: ceoloide/diode_tht_sod123
         where: /key/
         params:
-          from: "{{colrow}}"
+          from: "{{colrow}}_F"
           to: "{{row_net}}"
           include_tht: false
           reversible: false
