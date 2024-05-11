@@ -6,7 +6,7 @@ kibot:
 
 preflight:
   fill_zones: true
-  run_drc: false
+  drc: false
   run_erc: false
 
 outputs:
