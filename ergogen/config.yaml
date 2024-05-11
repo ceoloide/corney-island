@@ -818,6 +818,7 @@ pcbs:
           P6: R1
           P7: R2
           P8: R3
+          reversible: true
           include_traces: true
           show_silk_labels: true
           show_via_labels: true
