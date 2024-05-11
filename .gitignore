@@ -4,6 +4,7 @@
 # Kibot
 kibot_errors.filter
 *-drc.txt
+*-drc.html
 
 # Freerouting
 freerouting/freerouting-*.jar
