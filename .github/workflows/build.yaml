@@ -64,5 +64,28 @@ jobs:
       - name: Persist output
         uses: actions/upload-artifact@v4
         with:
-          name: left right
+          name: typematrix_split 
           path: ergogen/output
+      - name: Persist output for pages
+        uses: actions/upload-pages-artifact@v4
+        with:
+          name: typematrix_split_pages
+          path: ergogen/output
+  deploy-pages:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    needs: board
+    
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      # environment created automatically by GitHub
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
