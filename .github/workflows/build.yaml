@@ -61,9 +61,6 @@ jobs:
         with:
           boards: left right
           config: boards
-      - name: Copy README
-        run: |
-          cp README.md ergogen/output
       - name: Persist output
         uses: actions/upload-artifact@v4
         with:

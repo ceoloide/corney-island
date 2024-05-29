@@ -8,9 +8,9 @@ The Typematrix 2020 was one of the first ortholinear ergo keyboards and arguably
 See [An evaluation of the TypeMatrix ergonomic keyboard](http://www.typematrix.com/documents/TypeMatrix_study.pdf)
 left | right
 -|-
-![left](images/left-front.png) | ![right](images/right-front.png)
+![left](https://tbaumann.github.io/typematrix_split_new/images/left-front.png) | ![right](https://tbaumann.github.io/typematrix_split_new/images/right-front.png)
 backside|backside
-![left bottom](images/left-back.png) | ![right bottom](images/right-back.png)
+![left bottom](https://tbaumann.github.io/typematrix_split_new/images/left-back.png) | ![right bottom](https://tbaumann.github.io/typematrix_split_new/images/right-back.png)
 
 
 The interesting thing about this keyboard is that it's a declarative design:
@@ -41,7 +41,7 @@ The interesting thing about this keyboard is that it's a declarative design:
 
 If you would like to modify this:
 * fork it
-* change `input/config.yaml` to your liking
+* change `ergogen/config.yaml` to your liking
 * push your changes; the `build.yml` GitHub Workflow will pick it up, autoroute and generate Gerbers, all in a zip file.
   See https://github.com/soundmonster/samoklava/actions
 * or:
@@ -54,9 +54,5 @@ See the [workflow](.github/workflows/build.yml) or the [Makefile](Makefile) for 
 ## Disclaimer
 
 **Work in progress!**
-
-Based on the work of Soundmonster https://github.com/soundmonster/samoklava/
-
-Requires ergogen 4.x
 
 Only connect battery if a nice!nano board is used!
