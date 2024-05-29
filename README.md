@@ -8,9 +8,9 @@ The Typematrix 2020 was one of the first ortholinear ergo keyboards and arguably
 See [An evaluation of the TypeMatrix ergonomic keyboard](http://www.typematrix.com/documents/TypeMatrix_study.pdf)
 left | right
 -|-
-![left](https://tbaumann.github.io/typematrix_split_new/images/left-front.png) | ![right](https://tbaumann.github.io/typematrix_split_new/images/right-front.png)
+![left](https://tbaumann.github.io/typematrix_split_new/images/left-top.png) | ![right](https://tbaumann.github.io/typematrix_split_new/images/right-top.png)
 backside|backside
-![left bottom](https://tbaumann.github.io/typematrix_split_new/images/left-back.png) | ![right bottom](https://tbaumann.github.io/typematrix_split_new/images/right-back.png)
+![left bottom](https://tbaumann.github.io/typematrix_split_new/images/left-bottom.png) | ![right bottom](https://tbaumann.github.io/typematrix_split_new/images/right-bottom.png)
 
 
 The interesting thing about this keyboard is that it's a declarative design:
