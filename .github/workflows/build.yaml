@@ -67,7 +67,7 @@ jobs:
           name: typematrix_split 
           path: ergogen/output
       - name: Persist output for pages
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v1
         with:
           name: typematrix_split_pages
           path: ergogen/output
