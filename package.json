@@ -1,12 +1,12 @@
 {
     "scripts": {
-        "build": "ergogen ./ergogen/ --output ./ergogen/output --clear && npx @jscad/cli ergogen/output/cases/corney_island_bottom_tray.jscad -of stla -o ergogen/output/cases/corney_island_bottom_tray.stl",
-        "debug": "ergogen ./ergogen/ --output ./ergogen/output --clear --debug && npx @jscad/cli ergogen/output/cases/corney_island_bottom_tray.jscad -of stla -o ergogen/output/cases/corney_island_bottom_tray.stl",
+        "build": "ergogen ./ergogen/ --output ./ergogen/output --clear",
+        "debug": "ergogen ./ergogen/ --output ./ergogen/output --clear --debug",
         "watch:build": "nodemon -e yaml,js -x \"npm run build\" --ignore ergogen/output",
         "watch:debug": "nodemon -e yaml,js -x \"npm run debug\" --ignore ergogen/output"
     },
     "dependencies": {
-        "ergogen": "^4.1.0",
+        "ergogen": "github:ergogen/ergogen",
         "nodemon": "^3.0.1",
         "@jscad/cli": "1.10.0" 
     },
