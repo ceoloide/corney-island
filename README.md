@@ -12,10 +12,6 @@ left | right
 backside|backside
 ![left bottom](https://tbaumann.github.io/typematrix_split_new/images/left-bottom.png) | ![right bottom](https://tbaumann.github.io/typematrix_split_new/images/right-bottom.png)
 
-## Make my own
-It's not finised really. But you can find the latest build artifacts [here](https://tbaumann.github.io/typematrix_split_new/)
-
-
 The interesting thing about this keyboard is that it's a declarative design:
 * Layout is declared using [Ergogen](https://github.com/mrzealot/ergogen/). 
 * The build system uses Ergogen to translate YAML to a KiCad PCB and plate files for FR-4 fab or laser cutting
@@ -39,6 +35,9 @@ The interesting thing about this keyboard is that it's a declarative design:
 * Middle bracked PCB with touchpad (Holds both halves together rigidly)
 * stabilizer cutouts Needs more research...
   Thanks https://github.com/jasonhazel for measuring the ChocFox WOB 3u spacebar stabilizer spacing. (40mm)
+
+## Make my own
+It's not finised really. But you can find the latest build artifacts [here](https://tbaumann.github.io/typematrix_split_new/)
 
 ## How to
 
