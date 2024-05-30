@@ -61,6 +61,10 @@ jobs:
         with:
           boards: left right
           config: boards
+      - name: Generate Directory Listings
+        uses: jayanta525/github-pages-directory-listing@v4.0.0
+        with:
+          FOLDER: ergogen/output
       - name: Persist output
         uses: actions/upload-artifact@v4
         with:
