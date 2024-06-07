@@ -20,8 +20,11 @@ if [ ! -d node_modules ]; then
 fi
 
 # Generate unrouted PCBs with Ergogen (definition in package.json)
-npm run debug
+echo Generating preview
+npm run debug >/dev/null
 
+convert -border 20x20 +level-colors white,black ergogen/output/points/demo.svg sixel:-
+echo
 convert -border 20x20 +level-colors white,black ergogen/output/outlines/combined.svg sixel:-
 echo
 
@@ -33,5 +36,6 @@ for board in ${boards}; do
 	${container_cmd} run ${container_args} ${kicad_auto_image} kibot -b ergogen/output/pcbs/${board}.kicad_pcb -c kibot/preview.kibot.yaml >/dev/null
 done
 montage ergogen/output/images/*top.png -geometry 800x480 -background none sixel:-
+echo
+montage ergogen/output/images/*bottom.png -geometry 800x480 -background none sixel:-
 # Docker runs as root and causes issues with file ownership
-sudo chown $USER -R ergogen

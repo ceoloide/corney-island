@@ -8,9 +8,14 @@
     "dependencies": {
         "ergogen": "github:ergogen/ergogen",
         "nodemon": "^3.0.1",
+        "dxf": "^5.1.0",
         "@jscad/cli": "1.10.0" 
     },
     "nodemonConfig": {
-      "delay": 2500
+      "ignore": ["./ergogen/output"],
+      "delay": 0,
+      "events": {
+        "start": "clear -x"
+      }
     }
 }
