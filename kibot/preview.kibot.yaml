@@ -1,0 +1,52 @@
+# Gerber and drill files for JLCPCB, without stencil, plus board images
+# URL: https://jlcpcb.com/help/article/16-How-to-generate-Gerber-and-Drill-files-in-KiCad-6
+
+kibot:
+  version: 1
+
+preflight:
+  fill_zones: true
+  drc: false
+  run_erc: false
+
+outputs:
+  - name: top_view
+    comment: "Top view of the PCB"
+    type: pcbdraw
+    dir: ergogen/output/images
+    options:
+      format: png
+      style: oshpark-afterdark
+      margin: 5
+      show_solderpaste: false
+
+  - name: bottom_view
+    comment: "Bottom view of the PCB"
+    type: pcbdraw
+    dir: ergogen/output/images
+    extends: top_view
+    options:
+      bottom: true
+
+global:
+  filters:
+    - number: 8
+      regex: 'Unable to find KiCad configuration file'
+    - number: 10
+      regex: 'Unable to find KiCad user templates'
+    - number: 10
+      regex: 'Unable to find KiCad 3D models'
+    - number: 58
+      regex: 'KiCad project file not found|Missing KiCad main config file'
+    - number: 58
+      regex: 'copper_edge_clearance'
+    - number: 58
+      regex: 'track_width'
+    - number: 58
+      regex: 'hole_near_hole'
+    - number: 58
+      regex: 'hole_clearance'
+    - number: 58
+      regex: 'shorting_items'
+    - number: 58
+      regex: 'solder_mask_bridge'
