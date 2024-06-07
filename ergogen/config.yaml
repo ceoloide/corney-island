@@ -1,18 +1,60 @@
-units:
-  kx: 17 
-  ky: 17
-  px: kx
-  py: ky
-  kxo: 0.5 * kx
-  kyo: 0.5 * ky
+meta:
+  engine: 4.1.0
+  name: typematrix2020-split
+  version: 0.1
+  author: Tilman Baumann
+  url: &kb_url https://github.com/tbaumann/typematrix_split_new/
 
-  cfx_x_1u: 16.5
-  cfx_x_1_5u: 26
-  cfx_x_1_5u_span: 13.25 + kx/2
-  cfx_x_space:  54.5
-  # PG1232 plate cutout FIXME regular chic
-  plate_kx: 13.6
-  plate_ky: 12.6
+  # These presets provide different layout options
+  # Select a preset in the `units` section below
+presets:
+  choc:
+    # Standard Choc spacing
+    kx: 17 # spacing between key centers (X-axis)
+    ky: 18 # spacing between key centers (Y-axis)
+    plate_kx: 13.8 # key cutout hole width (cherry, choc v2: 14, choc v1: 13.8)
+    plate_ky: 13.8 # key cutout hole height (cherry, choc v2: 14, choc v1: 13.8)
+    keycap_x_1u: 17.5
+    keycap_y_1u: 16.5
+    keycap_x_1_5u: cx * 1.5 - 0.5 
+    keycap_x_space:  cx * 3 - 0.5 
+    keycap_x_1_5u_span: cx*1.25
+    vertical_diode_shift: 1.5 # How much to shift to avoid overlap
+    horizontal_diode_shift: -0.5 plate_kx - 0.85
+    diode_rotation: -180 # Diode rotation
+    switch_rotation: 180 # Hotswap south, led north
+  cfx:
+    # CFX 1u are 15.5x15x5 keys for a tighter 17x17 matrix.  This is an idealised grid as to my knowledge no 1.5u keycaps exist for that size
+    $extends: presets.choc
+    kx: 17 # spacing between key centers (X-axis)
+    ky: 17 # spacing between key centers (Y-axis)
+    keycap_x_1u: 16.5
+  chocfox_wob:
+    # ChocFox WOB 1u are CFX. However the larger keys don't work on that grid.
+    $extends: presets.cfx
+    keycap_x_1_5u: 26
+    keycap_x_1_5u_span: 13.25 + kx/2
+    keycap_x_space:  54.5
+units:
+  $extends: presets.chocfox_wob
+
+  # Physical measures
+  screw_radius: 1.1 # M2 screws
+  screw_diameter: screw_radius * 2
+  screw_head_radius: 2.05
+  screw_head_diameter: screw_head_radius * 2
+  spacer_radius: 2.15 # M2 standoffs
+  spacer_diameter: spacer_radius * 2
+  fillet_radius: 0.5
+  via_size: 0.56 # JLCPCB min 0.56 | KiCad default 0.8
+  via_drill: 0.3 # JLCPCB min 0.3 | KiCad default 0.4
+
+  # Case variables
+  case_wall_thickness: 1.2
+  pcb_to_case_wall_tolerance: 0.25
+  bottom_plate_thickness: 1.0
+  top_plate_thickness: 1.6
+  internal_distance_between_plates: 4
 
   # Font units
   font_x: 1
@@ -62,8 +104,8 @@ points:
   key:
     padding: ky
     spread: kx
-    width: cfx_x_1u
-    height: cfx_x_1u
+    width: keycap_x_1u
+    height: keycap_x_1u
   zones:
     matrix:
       # Fix placement on KiCAD sheet.
@@ -73,14 +115,14 @@ points:
       columns:
         left:
           key:
-            spread: cfx_x_1_5u_span
-            width: cfx_x_1_5u
+            spread: keycap_x_1_5u_span
+            width: keycap_x_1_5u
             asym: left
             column_net: C0
             tags: [key, 1_5u]
         q:
           key:
-            spread: cfx_x_1_5u_span
+            spread: keycap_x_1_5u_span
             column_net: C1
         w:
           key.column_net: C2
@@ -93,8 +135,8 @@ points:
         enter:
           key:
             column_net: C6
-            spread: cfx_x_1_5u_span
-            width: cfx_x_1_5u
+            spread: keycap_x_1_5u_span
+            width: keycap_x_1_5u
             tags: [key, 1_5u]
       rows:
         bottom:
@@ -110,8 +152,8 @@ points:
 
     leftcluster:
       key:
-        spread: cfx_x_1_5u+0.5
-        width: cfx_x_1_5u
+        spread: keycap_x_1_5u+0.5
+        width: keycap_x_1_5u
         asym: left
         tags: [key, 1_5u]
       anchor:
@@ -163,7 +205,7 @@ points:
             column_net: C3
         space:
           key:
-            width: cfx_x_space
+            width: keycap_x_space
             spread: 41.5
             column_net: C4
             tags: [key, space]
@@ -195,11 +237,11 @@ points:
     right:
       anchor:
         ref: rightsym_sym_bottom
-        shift: [-cfx_x_1_5u_span, -2ky]
+        shift: [-keycap_x_1_5u_span, -2ky]
       key:
         asym: right
-        spread: cfx_x_1_5u_span
-        width: cfx_x_1_5u
+        spread: keycap_x_1_5u_span
+        width: keycap_x_1_5u
         tags: [key, 1_5u]
       columns:
         sym:
@@ -225,7 +267,7 @@ points:
     controller:
       anchor:
         ref: matrix_enter_f
-        shift: [cfx_x_1_5u/2 + mcu_xo, kyo - mcu_yo - 1.5]
+        shift: [keycap_x_1_5u/2 + mcu_xo, kx/2 - mcu_yo - 1.5]
       key:
         name: mcu
         width: mcu_x
@@ -251,43 +293,43 @@ outlines:
   _outline_left:
     - what: polygon
       operation: stack
-      fillet: 2
+      fillet: fillet_radius
       points:
         - ref: matrix_left_f
-          shift: [-cfx_x_1_5u/2 - 0.25, ky * 0.5]
+          shift: [-keycap_x_1_5u/2 - 0.25, ky * 0.5]
         - ref: matrix_enter_f
-          shift: [cfx_x_1_5u/2 + 0.25, ky * 0.5]
+          shift: [keycap_x_1_5u/2 + 0.25, ky * 0.5]
         - ref: matrix_enter_bottom
-          shift: [cfx_x_1_5u/2 + 0.25, -ky * 1.5]
+          shift: [keycap_x_1_5u/2 + 0.25, -ky * 1.5]
         - ref: leftcluster_three_down
-          shift: [cfx_x_1_5u/2 + 0.25, ky * 0.5]
+          shift: [keycap_x_1_5u/2 + 0.25, ky * 0.5]
         - ref: leftcluster_three_down
-          shift: [cfx_x_1_5u/2 + 0.25, -ky * 0.5]
+          shift: [keycap_x_1_5u/2 + 0.25, -ky * 0.5]
         - ref: leftcluster_one_down
-          shift: [-cfx_x_1_5u/2 - 0.25, -ky * 0.5]
+          shift: [-keycap_x_1_5u/2 - 0.25, -ky * 0.5]
 
   _outline_right:
     - what: polygon
       operation: stack
-      fillet: 2
+      fillet: fillet_radius
       points:
         - ref: mirror_right_sym_f
-          shift: [-cfx_x_1_5u/2 - 0.25, ky * 0.5]
+          shift: [-keycap_x_1_5u/2 - 0.25, ky * 0.5]
         - ref: mirror_matrix_enter_f
-          shift: [cfx_x_1_5u/2 + 0.25, ky * 0.5]
+          shift: [keycap_x_1_5u/2 + 0.25, ky * 0.5]
         - ref: mirror_matrix_enter_bottom
-          shift: [cfx_x_1_5u/2 + 0.25, -ky * 1.5]
+          shift: [keycap_x_1_5u/2 + 0.25, -ky * 1.5]
         - ref: mirror_rightcluster_three_down
           shift: [kx/2, ky * 0.5]
         - ref: mirror_rightcluster_three_down
           shift: [kx/2, -ky * 0.5]
         - ref: mirror_right_sym_ctl_down
-          shift: [-cfx_x_1_5u/2 - 0.25, -ky * 0.5]
+          shift: [-keycap_x_1_5u/2 - 0.25, -ky * 0.5]
   
   _mcuears:
     - what: rectangle
       size: [mcu_x +10, 6ky]
-      fillet: 2
+      fillet: fillet_radius
 
   pcb_left:
     - name: _outline_left
@@ -370,7 +412,7 @@ pcbs:
           hotswap: true
           from: "{{colrow}}"
           to: "{{column_net}}"
-          keycap_width: cfx_x_1_5u
+          keycap_width: keycap_x_1_5u
           keycap_height: 16.5
       choc_space:
         what: ceoloide/switch_choc_v1_v2
@@ -383,11 +425,12 @@ pcbs:
           #solder: true
           reversible: false
           hotswap: true
-          keycap_width: cfx_x_space
+          keycap_width: keycap_x_space
 
           keycap_height: 16.5
           from: "{{colrow}}"
           to: "{{column_net}}"
+          
       diode:
         what: ceoloide/diode_tht_sod123
         where:
@@ -398,9 +441,12 @@ pcbs:
           from: "{{colrow}}"
           to: "{{row_net}}"
           side: B # Bottom only
+          include_tht: false
+          reversible: false
         adjust:
-          shift: [-1.4, -6]
-          rotate: 180
+          shift: [horizontal_diode_shift,vertical_diode_shift]
+          rotate: 90 + diode_rotation
+
       # Controller Area
       promicro:
         what: ceoloide/mcu_nice_nano
@@ -463,7 +509,7 @@ pcbs:
           to: RST
         where:
           ref: matrix_enter_f
-          shift: [cfx_x_1_5u/2 + mcu_xo - 9, ky * 0.5 - 2]
+          shift: [keycap_x_1_5u/2 + mcu_xo - 9, ky * 0.5 - 2]
       power:
         what: ceoloide/power_switch_smd_side
         params:
@@ -474,7 +520,7 @@ pcbs:
           rotate: 90
         where:
           ref: matrix_enter_f
-          shift: [cfx_x_1_5u/2 + mcu_xo, ky * 0.5 - 2.25]
+          shift: [keycap_x_1_5u/2 + mcu_xo, ky * 0.5 - 2.25]
 
   right:
     template: kicad8
@@ -510,7 +556,7 @@ pcbs:
           #solder: true
           reversible: false
           hotswap: true
-          keycap_width: cfx_x_1_5u
+          keycap_width: keycap_x_1_5u
           keycap_height: 16.5
           from: "{{colrow}}"
           to: "{{column_net}}"
@@ -524,7 +570,7 @@ pcbs:
           #solder: true
           reversible: false
           hotswap: true
-          keycap_width: cfx_x_space
+          keycap_width: keycap_x_space
           keycap_height: 16.5
           from: "{{colrow}}"
           to: "{{column_net}}"
@@ -537,9 +583,12 @@ pcbs:
           from: "{{colrow}}"
           to: "{{row_net}}"
           side: B # Bottom only
+          include_tht: false
+          reversible: false
         adjust:
-          shift: [1.4, -6]
-          rotate: 180
+          shift: [horizontal_diode_shift,vertical_diode_shift]
+          rotate: 90 + diode_rotation
+
       # Controller Area
       promicro:
         what: ceoloide/mcu_nice_nano
@@ -603,7 +652,7 @@ pcbs:
           to: RST
         where:
           ref: mirror_matrix_enter_f
-          shift: [cfx_x_1_5u/2 + mcu_xo - 9, ky * 0.5 - 2]
+          shift: [keycap_x_1_5u/2 + mcu_xo - 9, ky * 0.5 - 2]
 
       power:
         what: ceoloide/power_switch_smd_side
@@ -615,7 +664,7 @@ pcbs:
           rotate: -90
         where:
           ref: mirror_matrix_enter_f
-          shift: [cfx_x_1_5u/2 + mcu_xo, ky * 0.5 - 2.25]
+          shift: [keycap_x_1_5u/2 + mcu_xo, ky * 0.5 - 2.25]
       logo:
         what: ceoloide/utility_ergogen_logo
         where:
