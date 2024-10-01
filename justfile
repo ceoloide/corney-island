@@ -6,7 +6,7 @@ set export
 
 # Define the boards to autoroute and export, and the plates
 boards := "left right"
-plates := "" #TODO
+plates := "plate_left plate_right" #TODO
 cases  := "" #TODO
 
 pwd := `pwd`
@@ -53,7 +53,7 @@ cases:
     npx @jscad/cli ergogen/output/cases/${case}.jscad -of stla -o ergogen/output/cases/${case}.stl
   done
 
-plates:
+plates: ergogen
   #!/usr/bin/env sh
   for plate in ${plates}; do
     echo "\n\n>>>>>> Processing $plate <<<<<<\n\n"

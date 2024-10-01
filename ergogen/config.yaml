@@ -1,7 +1,7 @@
 meta:
   engine: 4.1.0
   name: typematrix2020-split
-  version: 0.1
+  version: &kb_version v0.2
   author: Tilman Baumann
   url: &kb_url https://github.com/tbaumann/typematrix_split_new/
 
@@ -35,6 +35,8 @@ presets:
     keycap_x_1_5u: 26
     keycap_x_1_5u_span: 13.25 + kx/2
     keycap_x_space:  54.5
+
+
 units:
   $extends: presets.chocfox_wob
 
@@ -99,6 +101,11 @@ units:
   sw_reset_y: 5
   sw_reset_xo: 0.5 * sw_reset_x
   sw_reset_yo: 0.5 * sw_reset_y
+
+  #ncu bumps
+  controller_bump_x: 3kx
+  controller_bump_y: mcu_x 
+  controller_bump_shift: kx
 
 points:
   key:
@@ -267,11 +274,12 @@ points:
     controller:
       anchor:
         ref: matrix_enter_f
-        shift: [keycap_x_1_5u/2 + mcu_xo, kx/2 - mcu_yo - 1.5]
+        shift: [-keycap_x_1_5u_span - 0.5*kx - mcu_y/2, 0.5 ky + mcu_x/2]
       key:
         name: mcu
-        width: mcu_x
-        height: mcu_y
+        width: mcu_y
+        height: mcu_x
+        tags: [controller]
 
   mirror: &mirror
     ref: matrix_enter_f
@@ -326,26 +334,37 @@ outlines:
         - ref: mirror_right_sym_ctl_down
           shift: [-keycap_x_1_5u/2 - 0.25, -ky * 0.5]
   
-  _mcuears:
-    - what: rectangle
-      size: [mcu_x +10, 6ky]
+  _mcuear_left:
+    - what: polygon
       fillet: fillet_radius
+      expand: 0.5
+      points:
+        - ref: matrix_enter_f
+          shift: [-keycap_x_1_5u_span + 0.5*kx, 0.5*ky]
+        - shift: [-kx, mcu_x]
+        - shift: [-3kx, 0]
+        - shift: [-kx, -mcu_x]
+
+  _mcuear_right:
+    - what: polygon
+      fillet: fillet_radius
+      expand: 0.5
+      points:
+        - ref: mirror_matrix_enter_f
+          shift: [-0.75 * kx, 0.5*ky]
+        - shift: [-kx, mcu_x]
+        - shift: [-4kx, 0]
+        - shift: [-kx, -mcu_x]
 
   pcb_left:
     - name: _outline_left
     - operation: add
-      name: _mcuears
-      where:
-        ref: matrix_enter_f
-        shift: [0.75 * kx + mcu_x/2 -5, -2.5ky]
+      name: _mcuear_left
 
   pcb_right:
     - name: _outline_right
     - operation: add
-      name: _mcuears
-      where:
-        ref: mirror_matrix_enter_f
-        shift: [0.75 * kx + mcu_x/2 -5, -2.5ky]
+      name: _mcuear_right
 
   topleft:
     - name: _outline_left
@@ -378,6 +397,54 @@ outlines:
 
 
 pcbs:
+  plate_right:
+    template: kicad8
+    outlines:
+      right:
+        outline: topright
+    footprints:
+      jlc:
+        what: ceoloide/utility_text
+        params:
+          text: JLCJLCJLCJLC
+          side: B
+          mirrored: true
+        adjust:
+          shift: [0, 6]
+        where: 
+          - [/^mirror.*/, key, -1_5u, space]
+      url:
+        what: ceoloide/utility_text
+        params:
+          text: *kb_url
+        adjust:
+          shift: [0,-6]
+        where: 
+          - [/^mirror.*/, key, -1_5u, space]
+  plate_left:
+    template: kicad8
+    outlines:
+      right:
+        outline: topleft
+    footprints:
+      url:
+        what: ceoloide/utility_text
+        params:
+          text: *kb_url
+        adjust:
+          shift: [0,-6]
+        where: 
+          - [/^spaces_.*/, key, -1_5u, space]
+      jlc:
+        what: ceoloide/utility_text
+        params:
+          text: JLCJLCJLCJLC
+          side: B
+          mirrored: true
+        adjust:
+          shift: [0, 6]
+        where: 
+          - [/^spaces_.*/, key, -1_5u, space]
   left:
     template: kicad8
     outlines:
@@ -481,35 +548,39 @@ pcbs:
           P14: "C5" # Column
           P16: "C6" # Column
 #          P10: "F10" # Free
-
+        adjust:
+          rotate: 270
         where:
           ref: mcu
-          shift: [0, 0]
       display:
         what: ceoloide/display_nice_view
         params:
           MOSI: DPD
           SCK: DPC
           CS: DPE
+        adjust:
+          rotate: 270
         where:
           ref: mcu
-          shift: [0, -1.5] # Move the display down a bit to be sure the cable fits between the headers
+          shift: [-1.5, 0] # Move the display down a bit to be sure the cable fits between the headers
       pads_bat:
         what: ceoloide/battery_connector_jst_ph_2
         params:
         where:
           ref: mcu
-          shift: [-batc_x, -mcu_y/2 - 6]
-          #rotate: 270
+          shift: [-mcu_y/2 -7,-7]
+          rotate: 180
       reset:
-        what: ceoloide/reset_switch_smd_side
+        what: ceoloide/reset_switch_tht_top
         params:
           side: B
           from: GND
           to: RST
+        adjust:
+          rotate: 90
         where:
-          ref: matrix_enter_f
-          shift: [keycap_x_1_5u/2 + mcu_xo - 9, ky * 0.5 - 2]
+          ref: mcu
+          shift: [-mcu_y/2 -14, -0]
       power:
         what: ceoloide/power_switch_smd_side
         params:
@@ -519,8 +590,40 @@ pcbs:
         adjust:
           rotate: 90
         where:
-          ref: matrix_enter_f
-          shift: [keycap_x_1_5u/2 + mcu_xo, ky * 0.5 - 2.25]
+          ref: mcu
+          shift: [-mcu_y/2 -10, 8.5]
+      logo:
+        what: ceoloide/utility_ergogen_logo
+        where:
+          ref: mcu
+          shift: [-mcu_y/2 -20, 0]
+      url:
+        what: ceoloide/utility_text
+        params:
+          text: *kb_url
+          reversible: true
+        adjust:
+          shift: [0,-6]
+        where: 
+          - [/^spaces_.*/, key, -1_5u, space]
+      version:
+        what: ceoloide/utility_text
+        params:
+          text: *kb_version
+        adjust:
+          shift: [0,-6]
+        where: 
+          ref: mcu
+          shift: [-mcu_y/2 -22,  -2]
+      jlc:
+        what: ceoloide/utility_text
+        params:
+          text: JLCJLCJLCJLC
+          side: F
+        adjust:
+          shift: [0, 10]
+        where: 
+          - [/^spaces_.*/, key, -1_5u, space]
 
   right:
     template: kicad8
@@ -623,10 +726,10 @@ pcbs:
           P14: "C5" # Column
           P16: "C6" # Column
 #          P10: "C7" # Column
-
+        adjust:
+          rotate: 270
         where:
           ref: mirror_mcu
-          shift: [0, 0]
 
       display:
         what: ceoloide/display_nice_view
@@ -634,26 +737,29 @@ pcbs:
           MOSI: DPD
           SCK: DPC
           CS: DPE
+        adjust:
+          rotate: 270
         where:
           ref: mirror_mcu
-          shift: [0, -1.5] # Move the display down a bit to be sure the cable fits between the headers
+          shift: [-1.50, 0] # Move the display down a bit to be sure the cable fits between the headers
       pads_bat:
         what: ceoloide/battery_connector_jst_ph_2
         params:
         where:
           ref: mirror_mcu
-          shift: [-batc_x, -mcu_y/2 - 6]
-          #rotate: 270
+          shift: [-mcu_y/2 -7,-7]
+          rotate: 180
       reset:
-        what: ceoloide/reset_switch_smd_side
+        what: ceoloide/reset_switch_tht_top
         params:
           side: B
           from: GND
           to: RST
+        adjust:
+          rotate: 90
         where:
-          ref: mirror_matrix_enter_f
-          shift: [keycap_x_1_5u/2 + mcu_xo - 9, ky * 0.5 - 2]
-
+          ref: mirror_mcu
+          shift: [-mcu_y/2 -14, -0]
       power:
         what: ceoloide/power_switch_smd_side
         params:
@@ -661,12 +767,39 @@ pcbs:
           #          from: GND
           #          to: RST
         adjust:
-          rotate: -90
+          rotate: 270
         where:
-          ref: mirror_matrix_enter_f
-          shift: [keycap_x_1_5u/2 + mcu_xo, ky * 0.5 - 2.25]
+          ref: mirror_mcu
+          shift: [-mcu_y/2 -10, 8.5]
       logo:
         what: ceoloide/utility_ergogen_logo
         where:
           ref: mirror_mcu
-          shift: [-batc_x, -mcu_y/2 - 15]
+          shift: [-mcu_y/2 -20, 0]
+      url:
+        what: ceoloide/utility_text
+        params:
+          text: *kb_url
+          reversible: true
+        adjust:
+          shift: [0,-6]
+        where: 
+          - [/^mirror.*/, key, -1_5u, space]
+      version:
+        what: ceoloide/utility_text
+        params:
+          text: *kb_version
+        adjust:
+          shift: [0,-6]
+        where: 
+          ref: mirror_mcu
+          shift: [-mcu_y/2 -22,  -2]
+      jlc:
+        what: ceoloide/utility_text
+        params:
+          text: JLCJLCJLCJLC
+          side: F
+        adjust:
+          shift: [0, 10]
+        where: 
+          - [/^mirror.*/, key, -1_5u, space]
