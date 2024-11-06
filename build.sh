@@ -41,8 +41,8 @@ if [ -e ergogen/tmp/*_manually_routed.kicad_pcb ]; then
 fi
 
 
-if [ ! -e freerouting/freerouting-1.9.0.jar ]; then
-    curl https://github.com/freerouting/freerouting/releases/download/v1.9.0/freerouting-1.9.0.jar -L -o freerouting/freerouting-1.9.0.jar
+if [ ! -e freerouting/freerouting-2.0.0.jar ]; then
+    curl https://github.com/freerouting/freerouting/releases/download/v2.0.0/freerouting-2.0.0.jar -L -o freerouting/freerouting-2.0.0.jar
 fi
 
 if [ ! -e freerouting/freerouting-SNAPSHOT.jar ]; then
@@ -73,6 +73,7 @@ do
         # xvfb-run -a java -Dlog4j.configurationFile=file:./freerouting/log4j2.xml -jar freerouting/freerouting-1.7.0.jar -de ergogen/output/pcbs/${board}.dsn -do ergogen/output/pcbs/${board}.ses -dr freerouting/freerouting.rules -mp 20
         # xvfb-run -a java -Dlog4j.configurationFile=file:./freerouting/log4j2.xml -jar freerouting/freerouting-1.8.0.jar -de ergogen/output/pcbs/${board}.dsn -do ergogen/output/pcbs/${board}.ses -dr freerouting/freerouting.rules -mp 20 -dct 1
         # xvfb-run -a java -Dlog4j.configurationFile=file:./freerouting/log4j2.xml -jar freerouting/freerouting-1.9.0.jar -de ergogen/output/pcbs/${board}.dsn -do ergogen/output/pcbs/${board}.ses -dr freerouting/freerouting.rules -mp 20 -dct 1
+        # xvfb-run -a java -Dlog4j.configurationFile=file:./freerouting/log4j2.xml -jar freerouting/freerouting-2.0.0.jar -de ergogen/output/pcbs/${board}.dsn -do ergogen/output/pcbs/${board}.ses -dr freerouting/freerouting.rules -mp 20 -dct 1
         # xvfb-run -a java -Dlog4j.configurationFile=file:./freerouting/log4j2.xml -jar freerouting/freerouting-test.jar -de ergogen/output/pcbs/${board}.dsn -do ergogen/output/pcbs/${board}.ses -dr freerouting/freerouting.rules -mp 20 -dct 1
         # xvfb-run -a java -Dlog4j.configurationFile=file:./freerouting/log4j2.xml -jar freerouting/freerouting-SNAPSHOT.jar -de ergogen/output/pcbs/${board}.dsn -do ergogen/output/pcbs/${board}.ses -dr freerouting/freerouting.rules -mp 20 -dct 1
         # ${container_cmd} run ${container_args} ${freerouting_cli_image} java -Dlog4j.configurationFile=file:./freerouting/log4j2.xml -jar /opt/freerouting_cli.jar -de ergogen/output/pcbs/${board}.dsn -do ergogen/output/pcbs/${board}.ses -dr freerouting/freerouting.rules -mp 20
