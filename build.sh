@@ -10,7 +10,7 @@ plates="backplate frontplate controller_overlay"
 
 # Define the KiCad Auto Docker image to use
 kicad_auto_image="ghcr.io/inti-cmnb/kicad8_auto:latest"
-freerouting_cli_image="ceoloide/ergogen:2.0.1"
+freerouting_cli_image="ceoloide/ergogen-freerouting:latest"
 
 # Preserve manually routed files
 if [ -e pcbs/*_manually_routed.kicad_pcb ]; then
