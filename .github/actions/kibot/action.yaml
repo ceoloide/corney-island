@@ -17,5 +17,5 @@ runs:
       for board in ${{ inputs.boards }};
       do
         echo "Processing $board";
-        kibot -b $GITHUB_WORKSPACE/ergogen/output/pcbs/${board}.kicad_pcb -c $GITHUB_WORKSPACE/kibot/${{ inputs.config }}.kibot.yaml
+        kibot -b $GITHUB_WORKSPACE/pcbs/${board}.kicad_pcb -c $GITHUB_WORKSPACE/kibot/${{ inputs.config }}.kibot.yaml
       done

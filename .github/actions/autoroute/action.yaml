@@ -6,7 +6,7 @@ inputs:
     required: true
 runs:
   using: 'docker'
-  image: 'docker://soundmonster/freerouting_cli:v0.1.0'
+  image: 'docker://ceoloide/ergogen:2.0.1'
   entrypoint: '/bin/sh'
   args:
     - '-c'
@@ -14,12 +14,12 @@ runs:
       for board in ${{ inputs.boards }};
       do
         echo "Processing $board";
-        if [ -e ergogen/output/pcbs/${board}.ses ]; then
-          echo "Cleaning up ergogen/output/pcbs/${board}.ses";
-          rm -f ergogen/output/pcbs/${board}.ses;
+        if [ -e pcbs/${board}.ses ]; then
+          echo "Cleaning up pcbs/${board}.ses";
+          rm -f pcbs/${board}.ses;
         fi
-        if [ -e ergogen/output/pcbs/${board}.dsn ]; then
+        if [ -e pcbs/${board}.dsn ]; then
           echo "Autoroute PCB";
-          java -jar /opt/freerouting_cli.jar -de ergogen/output/pcbs/${board}.dsn -do ergogen/output/pcbs/${board}.ses -dr freerouting/freerouting.rules -mp 20
+          java -jar /opt/freerouting.jar -de pcbs/${board}.dsn -do pcbs/${board}.ses --user-data-path ./freerouting -mp 20 -mt 1 -dct 0 --gui.enabled=false --profile.email=marco.massarelli@gmail.com
         fi
       done

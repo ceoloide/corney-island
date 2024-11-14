@@ -14,12 +14,12 @@ runs:
       for board in ${{ inputs.boards }};
       do
         echo "Processing $board";
-        if [ -e $GITHUB_WORKSPACE/ergogen/output/pcbs/${board}.dsn ]; then
-          echo "Cleaning up $GITHUB_WORKSPACE/ergogen/output/pcbs/${board}.dsn";
-          rm -f $GITHUB_WORKSPACE/ergogen/output/pcbs/${board}.dsn;
+        if [ -e $GITHUB_WORKSPACE/pcbs/${board}.dsn ]; then
+          echo "Cleaning up $GITHUB_WORKSPACE/pcbs/${board}.dsn";
+          rm -f $GITHUB_WORKSPACE/pcbs/${board}.dsn;
         fi
-        if [ -e ergogen/output/pcbs/${board}.kicad_pcb ]; then
+        if [ -e pcbs/${board}.kicad_pcb ]; then
           echo "Export DSN";
-          $GITHUB_WORKSPACE/kibot/export_dsn.py -b $GITHUB_WORKSPACE/ergogen/output/pcbs/${board}.kicad_pcb -o $GITHUB_WORKSPACE/ergogen/output/pcbs/${board}.dsn 
+          $GITHUB_WORKSPACE/kibot/export_dsn.py -b $GITHUB_WORKSPACE/pcbs/${board}.kicad_pcb -o $GITHUB_WORKSPACE/pcbs/${board}.dsn 
         fi
       done

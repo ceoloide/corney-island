@@ -9,7 +9,6 @@ on:
       - 'kibot/*'
       - 'freerouting/*'
       - 'package.json'
-      - '*.nix'
 
 name: Build
 jobs:
@@ -64,5 +63,10 @@ jobs:
       - name: Persist output
         uses: actions/upload-artifact@v4
         with:
-          name: corney_island
-          path: ergogen/output
+          name: not_about_money
+          path:  |
+            cases
+            gerbers
+            images
+            outlines
+            pcbs

@@ -6,10 +6,8 @@ container_args="-w /board -v $(pwd):/board --rm"
 
 # Define the boards to autoroute and export, and the plates
 boards="corney_island corney_island_wireless"
-# kicad_auto_image="ghcr.io/inti-cmnb/kicad7_auto:latest"
-kicad_auto_image="setsoft/kicad_auto:ki8"
-# freerouting_cli_image="ceoloide/kicad_auto:nightly"
-freerouting_cli_image="soundmonster/freerouting_cli:v0.1.0"
+kicad_auto_image="ghcr.io/inti-cmnb/kicad8_auto:latest"
+freerouting_cli_image="ceoloide/ergogen:2.0.1"
 
 # Cleanup Freerouting log outpus
 if [ -e freerouting/freerouting.log ]; then
@@ -19,12 +17,12 @@ if [ -e logs/freerouting.log ]; then
     rm logs/freerouting.log
 fi
 
-if [ ! -e freerouting/freerouting-2.0.0.jar ]; then
-    curl https://github.com/freerouting/freerouting/releases/download/v2.0.0/freerouting-2.0.0.jar -L -o freerouting/freerouting-2.0.0.jar
+if [ ! -e freerouting/freerouting-2.0.1.jar ]; then
+    curl https://github.com/freerouting/freerouting/releases/download/v2.0.1/freerouting-2.0.1.jar -L -o freerouting/freerouting-2.0.1.jar
 fi
 
 if [ ! -e freerouting/freerouting-SNAPSHOT.jar ]; then
-    curl https://github.com/freerouting/freerouting/releases/download/SNAPSHOT/freerouting-SNAPSHOT-20241021_120600.jar -L -o freerouting/freerouting-SNAPSHOT.jar
+    curl https://github.com/freerouting/freerouting/releases/download/SNAPSHOT/freerouting-SNAPSHOT-20241111_140100.jar -L -o freerouting/freerouting-SNAPSHOT.jar
 fi
 
 for board in ${boards}
@@ -32,35 +30,29 @@ do
     echo "\n\n>>>>>> Processing $board <<<<<<\n\n"
 
     # Cleanup the outputs
-    rm -f ergogen/output/pcbs/${board}.dsn  
-    rm -f ergogen/output/pcbs/${board}.ses  
-    rm -f ergogen/output/pcbs/${board}.pro  
-    rm -f ergogen/output/pcbs/${board}_autorouted.kicad_pcb  
+    rm -f pcbs/${board}.dsn  
+    rm -f pcbs/${board}.ses  
+    rm -f pcbs/${board}.pro  
+    rm -f pcbs/${board}_autorouted.kicad_pcb  
  
-    if [ -e ergogen/output/pcbs/${board}.kicad_pcb ]; then
+    if [ -e pcbs/${board}.kicad_pcb ]; then
         echo Export DSN 
-        ${container_cmd} run ${container_args} ${kicad_auto_image} kibot/export_dsn.py -b ergogen/output/pcbs/${board}.kicad_pcb -o ergogen/output/pcbs/${board}.dsn    
-        ${container_cmd} run ${container_args} ${kicad_auto_image} kibot -b ergogen/output/pcbs/${board}.kicad_pcb -c kibot/default.kibot.yaml
+        ${container_cmd} run ${container_args} ${kicad_auto_image} kibot/export_dsn.py -b pcbs/${board}.kicad_pcb -o pcbs/${board}.dsn
+        ${container_cmd} run ${container_args} ${kicad_auto_image} kibot -b pcbs/${board}.kicad_pcb -c kibot/default.kibot.yaml
     fi
-    if [ -e ergogen/output/pcbs/${board}.dsn ]; then
+    if [ -e pcbs/${board}.dsn ]; then
         echo Autoroute PCB
-        # xvfb-run -a java -Dlog4j.configurationFile=file:./freerouting/log4j2.xml -jar freerouting/freerouting-cli.jar -de ergogen/output/pcbs/${board}.dsn -do ergogen/output/pcbs/${board}.ses -dr freerouting/freerouting.rules -mp 20
-        # xvfb-run -a java -Dlog4j.configurationFile=file:./freerouting/log4j2.xml -jar freerouting/freerouting-1.6.5.jar -de ergogen/output/pcbs/${board}.dsn -do ergogen/output/pcbs/${board}.ses -dr freerouting/freerouting.rules -mp 20
-        # xvfb-run -a java -Dlog4j.configurationFile=file:./freerouting/log4j2.xml -jar freerouting/freerouting-1.7.0.jar -de ergogen/output/pcbs/${board}.dsn -do ergogen/output/pcbs/${board}.ses -dr freerouting/freerouting.rules -mp 20        # xvfb-run -a java -Dlog4j.configurationFile=file:./freerouting/log4j2.xml -jar freerouting/freerouting-1.8.0.jar -de ergogen/output/pcbs/${board}.dsn -do ergogen/output/pcbs/${board}.ses -dr freerouting/freerouting.rules -mp 20 -dct 1
-        # xvfb-run -a java -Dlog4j.configurationFile=file:./freerouting/log4j2.xml -jar freerouting/freerouting-1.9.0.jar -de ergogen/output/pcbs/${board}.dsn -do ergogen/output/pcbs/${board}.ses -dr freerouting/freerouting.rules -mp 20 -dct 1
-        # xvfb-run -a java -Dlog4j.configurationFile=file:./freerouting/log4j2.xml -jar freerouting/freerouting-2.0.0.jar -de ergogen/output/pcbs/${board}.dsn -do ergogen/output/pcbs/${board}.ses -dr freerouting/freerouting.rules -mp 20 -dct 1
-        # xvfb-run -a java -Dlog4j.configurationFile=file:./freerouting/log4j2.xml -jar freerouting/freerouting-SNAPSHOT.jar -de ergogen/output/pcbs/${board}.dsn -do ergogen/output/pcbs/${board}.ses -dr freerouting/freerouting.rules -mp 20 -dct 1
-        # xvfb-run -a java -Dlog4j.configurationFile=file:./freerouting/log4j2.xml -jar freerouting/freerouting-test.jar -de ergogen/output/pcbs/${board}.dsn -do ergogen/output/pcbs/${board}.ses -dr freerouting/freerouting.rules -mp 20 -dct 1
-        # ${container_cmd} run ${container_args} ${freerouting_cli_image} java -Dlog4j.configurationFile=file:./freerouting/log4j2.xml -jar /opt/freerouting_cli.jar -de ergogen/output/pcbs/${board}.dsn -do ergogen/output/pcbs/${board}.ses -dr freerouting/freerouting.rules -mp 20
-        # ${container_cmd} run ${container_args} nixos/nix nix-shell --argstr board ${board}
-        java -Dlog4j.configurationFile=file:./freerouting/log4j2.xml -jar freerouting/freerouting-SNAPSHOT.jar -de ergogen/output/pcbs/${board}.dsn -do ergogen/output/pcbs/${board}.ses --user-data-path ./freerouting -mp 20 -mt 1 -dct 0 --gui.enabled=false --profile.email=marco.massarelli@gmail.com
+        # ${container_cmd} run ${container_args} ${freerouting_cli_image} java -Dlog4j.configurationFile=file:./freerouting/log4j2.xml -jar /opt/freerouting_cli.jar -de pcbs/${board}.dsn -do pcbs/${board}.ses -dr freerouting/freerouting.rules -mp 20
+        ${container_cmd} run ${container_args} ${freerouting_cli_image} java -Dlog4j.configurationFile=file:./freerouting/log4j2.xml -jar /opt/freerouting.jar -de pcbs/${board}.dsn -do pcbs/${board}.ses --user-data-path ./freerouting -mp 20 -mt 1 -dct 0 --gui.enabled=false --profile.email=marco.massarelli@gmail.com
+        # java -Dlog4j.configurationFile=file:./freerouting/log4j2.xml -jar freerouting/freerouting-2.0.1.jar -de pcbs/${board}.dsn -do pcbs/${board}.ses --user-data-path ./freerouting -mp 20 -mt 1 -dct 0 --gui.enabled=false --profile.email=marco.massarelli@gmail.com
+        # java -Dlog4j.configurationFile=file:./freerouting/log4j2.xml -jar freerouting/freerouting-SNAPSHOT.jar -de pcbs/${board}.dsn -do pcbs/${board}.ses --user-data-path ./freerouting -mp 20 -mt 1 -dct 0 --gui.enabled=false --profile.email=marco.massarelli@gmail.com
     fi
-    if [ -e ergogen/output/pcbs/${board}.ses ]; then
+    if [ -e pcbs/${board}.ses ]; then
         echo "Import SES"
-        ${container_cmd} run ${container_args} ${kicad_auto_image} kibot/import_ses.py -b ergogen/output/pcbs/${board}.kicad_pcb -s ergogen/output/pcbs/${board}.ses -o ergogen/output/pcbs/${board}_autorouted.kicad_pcb
+        ${container_cmd} run ${container_args} ${kicad_auto_image} kibot/import_ses.py -b pcbs/${board}.kicad_pcb -s pcbs/${board}.ses -o pcbs/${board}_autorouted.kicad_pcb
     fi
-    if [ -e ergogen/output/pcbs/${board}_autorouted.kicad_pcb ]; then
-        ${container_cmd} run ${container_args} ${kicad_auto_image} kibot -b ergogen/output/pcbs/${board}_autorouted.kicad_pcb -c kibot/boards.kibot.yaml
+    if [ -e pcbs/${board}_autorouted.kicad_pcb ]; then
+        ${container_cmd} run ${container_args} ${kicad_auto_image} kibot -b pcbs/${board}_autorouted.kicad_pcb -c kibot/boards.kibot.yaml
     fi
 done
 
