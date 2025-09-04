@@ -63,7 +63,7 @@ jobs:
       - name: Persist output
         uses: actions/upload-artifact@v4
         with:
-          name: not_about_money
+          name: corney_island
           path:  |
             cases
             gerbers
