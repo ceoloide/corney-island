@@ -17,8 +17,8 @@ if [ -e logs/freerouting.log ]; then
     rm logs/freerouting.log
 fi
 
-if [ ! -e freerouting/freerouting-2.0.1.jar ]; then
-    curl https://github.com/freerouting/freerouting/releases/download/v2.0.1/freerouting-2.0.1.jar -L -o freerouting/freerouting-2.0.1.jar
+if [ ! -e freerouting/freerouting-2.1.0.jar ]; then
+    curl https://github.com/freerouting/freerouting/releases/download/v2.1.0/freerouting-2.1.0.jar -L -o freerouting/freerouting-2.1.0.jar
 fi
 
 if [ ! -e freerouting/freerouting-SNAPSHOT.jar ]; then
@@ -44,7 +44,7 @@ do
         echo Autoroute PCB
         # ${container_cmd} run ${container_args} ${freerouting_cli_image} java -Dlog4j.configurationFile=file:./freerouting/log4j2.xml -jar /opt/freerouting_cli.jar -de pcbs/${board}.dsn -do pcbs/${board}.ses -dr freerouting/freerouting.rules -mp 20
         ${container_cmd} run ${container_args} ${freerouting_cli_image} java -Dlog4j.configurationFile=file:./freerouting/log4j2.xml -jar /opt/freerouting.jar -de pcbs/${board}.dsn -do pcbs/${board}.ses  -dr ./freerouting/freerouting.rules --user-data-path ./freerouting -mp 20 -mt 1 -dct 0 --gui.enabled=false --profile.email=marco.massarelli@gmail.com
-        # java -Dlog4j.configurationFile=file:./freerouting/log4j2.xml -jar freerouting/freerouting-2.0.1.jar -de pcbs/${board}.dsn -do pcbs/${board}.ses --user-data-path ./freerouting -mp 20 -mt 1 -dct 0 --gui.enabled=false --profile.email=marco.massarelli@gmail.com
+        # java -Dlog4j.configurationFile=file:./freerouting/log4j2.xml -jar freerouting/freerouting-2.1.0.jar -de pcbs/${board}.dsn -do pcbs/${board}.ses --user-data-path ./freerouting -mp 20 -mt 1 -dct 0 --gui.enabled=false --profile.email=marco.massarelli@gmail.com
         # java -Dlog4j.configurationFile=file:./freerouting/log4j2.xml -jar freerouting/freerouting-SNAPSHOT.jar -de pcbs/${board}.dsn -do pcbs/${board}.ses --user-data-path ./freerouting -mp 20 -mt 1 -dct 0 --gui.enabled=false --profile.email=marco.massarelli@gmail.com
     fi
     if [ -e pcbs/${board}.ses ]; then
