@@ -1,16 +1,16 @@
 meta:
   engine: 4.1.0
   name: corney-island
-  version: 0.2
-  ref: &kb_ref "Corney Island v0.2"
+  version: 0.3 # Choc v2 POM switches variant
+  ref: &kb_ref "Corney Island v0.3"
   author: ceoloide
   url: &kb_url https://github.com/ceoloide/corney-island
-  footprint: &switch_footprint "ceoloide/switch_mx"
-  # footprint: &switch_footprint "ceoloide/switch_choc_v1_v2"
+  # footprint: &switch_footprint "ceoloide/switch_mx"
+  footprint: &switch_footprint "ceoloide/switch_choc_v1_v2"
   switch:
-    $extends: presets.mx
+    # $extends: presets.mx
     # $extends: presets.choc_v1
-    # $extends: presets.choc_v2
+    $extends: presets.choc_v2
 
 presets:
   # These presets provide different layout options
@@ -737,21 +737,43 @@ pcbs:
           hole_size: spacer_diameter
           hole_drill: spacer_diameter
 
-      key_switches_b:
+      key_switches_outer:
         what: *switch_footprint
-        where: /key/
+        where: /outer_/
         params:
-          side: B
-          reversible: false
+          reversible: true
           hotswap: true
-          include_silkscreen: false
+          # include_silkscreen: false
+          from: "{{column_net}}"
+          to: "{{colrow}}_B"
+          # The following parameters are specific to choc_v1_v2
+          # outer_pad_width_front: 1.6
+          outer_pad_width_back: 1.6
+          choc_v2_support: true
+          choc_v1_support: false
+          include_stabilizer_pad: false
+          include_traces_vias: true
+        adjust:
+          rotate: switch_rotation
+
+      key_switches_inner:
+        what: *switch_footprint
+        where: 
+          - /matrix_(?:pinky|ring|middle|index|inner)_/
+          - /thumb_key/
+        params:
+          reversible: true
+          hotswap: true
+          # include_silkscreen: false
           from: "{{column_net}}"
           to: "{{colrow}}_B"
           # The following parameters are specific to choc_v1_v2
           # outer_pad_width_front: 1.6
           # outer_pad_width_back: 1.6
-          # choc_v2_support: false
-          # choc_v1_support: false
+          choc_v2_support: true
+          choc_v1_support: false
+          include_stabilizer_pad: false
+          include_traces_vias: true
         adjust:
           rotate: switch_rotation
 
@@ -768,23 +790,24 @@ pcbs:
           shift: [horizontal_diode_shift,vertical_diode_shift]
           rotate: 90 + diode_rotation
 
-      key_switches_f:
-        what: *switch_footprint
-        where: /key/
-        params:
-          side: F
-          reversible: false
-          hotswap: true
-          include_silkscreen: false
-          from: "{{column_net}}"
-          to: "{{colrow}}_F"
-          # The following parameters are specific to choc_v1_v2
-          # outer_pad_width_front: 1.6
-          # outer_pad_width_back: 1.6
-          # choc_v2_support: false
-          # choc_v1_support: false
-        adjust:
-          rotate: switch_rotation
+      # key_switches_f:
+      #   what: *switch_footprint
+      #   where: /key/
+      #   params:
+      #     side: F
+      #     reversible: false
+      #     hotswap: true
+      #     # include_silkscreen: false
+      #     from: "{{column_net}}"
+      #     to: "{{colrow}}_F"
+      #     # The following parameters are specific to choc_v1_v2
+      #     # outer_pad_width_front: 1.6
+      #     # outer_pad_width_back: 1.6
+      #     choc_v2_support: true
+      #     choc_v1_support: false
+      #     include_stabilizer_pad: false
+      #   adjust:
+      #     rotate: switch_rotation
 
       diodes_f:
         what: ceoloide/diode_tht_sod123
