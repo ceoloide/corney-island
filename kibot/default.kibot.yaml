@@ -13,7 +13,7 @@ outputs:
   - name: jlcpcb_gerbers
     comment: Gerbers compatible with JLCPCB
     type: gerber
-    dir: ergogen/output/gerbers/%f
+    dir: gerbers/%f
     options: &gerber_options
       exclude_edge_layer: true
       exclude_pads_from_silkscreen: true
@@ -42,7 +42,7 @@ outputs:
   - name: jlcpcb_drill
     comment: Drill files compatible with JLCPCB
     type: excellon
-    dir: ergogen/output/gerbers/%f
+    dir: gerbers/%f
     options:
       mirror_y_axis: false
       minimal_header: false
@@ -56,7 +56,7 @@ outputs:
   - name: jlcpcb
     comment: ZIP file for JLCPCB gerbers
     type: compress
-    dir: ergogen/output/gerbers
+    dir: gerbers
     options:
       files:
         - from_output: jlcpcb_gerbers
@@ -68,7 +68,7 @@ outputs:
   - name: top_view
     comment: "Top view of the PCB"
     type: pcbdraw
-    dir: ergogen/output/images
+    dir: images
     options:
       format: png
       style: oshpark-afterdark
@@ -78,7 +78,7 @@ outputs:
   - name: bottom_view
     comment: "Bottom view of the PCB"
     type: pcbdraw
-    dir: ergogen/output/images
+    dir: images
     extends: top_view
     options:
       bottom: true
