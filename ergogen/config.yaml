@@ -813,7 +813,7 @@ pcbs:
         what: ceoloide/diode_tht_sod123
         where: /key/
         params:
-          from: "{{colrow}}_F"
+          from: "{{colrow}}_B"
           to: "{{row_net}}"
           include_tht: false
           reversible: false
