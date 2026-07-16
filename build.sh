@@ -9,7 +9,7 @@ boards="corney_island_wireless corney_island"
 plates="backplate frontplate controller_overlay"
 
 # Define the KiCad Auto Docker image to use
-kicad_auto_image="ghcr.io/inti-cmnb/kicad8_auto:latest"
+kicad_auto_image="ghcr.io/inti-cmnb/kicad9_auto:latest"
 freerouting_cli_image="ceoloide/ergogen-freerouting:snapshot"
 
 # Preserve manually routed files
