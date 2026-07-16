@@ -1,0 +1,16 @@
+---
+extends: default
+
+rules:
+  document-start: disable
+  truthy: disable
+  line-length: disable
+
+ignore: |
+  node_modules/
+  .venv/
+  ergogen/footprints/ceoloide/
+  outlines/
+  points/
+  source/
+  ergogen/config.yaml
