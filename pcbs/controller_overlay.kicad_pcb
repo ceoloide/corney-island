@@ -3,7 +3,7 @@
 (kicad_pcb
   (version 20240108)
   (generator "ergogen")
-  (generator_version "4.1.0")
+  (generator_version "4.3.0")
   (general
     (thickness 1.6)
     (legacy_teardrops no)
@@ -11,8 +11,8 @@
   (paper "A3")
   (title_block
     (title "controller_overlay")
-    (date "2024-11-14")
-    (rev "0.2")
+    (date "2026-07-16")
+    (rev "0.3")
     (company "ceoloide")
   )
 
