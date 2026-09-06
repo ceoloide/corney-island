@@ -7,7 +7,7 @@
         "watch:debug": "nodemon -e yaml,js -x \"npm run debug\""
     },
     "dependencies": {
-        "ergogen": "github:ceoloide/ergogen#v4.3.0",
+        "ergogen": "github:ceoloide/ergogen#develop",
         "nodemon": "^3.0.1",
         "@jscad/cli": "1.10.0" 
     },

@@ -9,7 +9,7 @@ inputs:
     required: true
 runs:
   using: 'docker'
-  image: 'docker://ghcr.io/inti-cmnb/kicad8_auto:latest'
+  image: 'docker://ghcr.io/inti-cmnb/kicad9_auto:latest'
   entrypoint: '/bin/bash'
   args:
     - '-c'

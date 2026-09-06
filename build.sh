@@ -9,8 +9,8 @@ boards="corney_island_wireless corney_island"
 plates="backplate frontplate controller_overlay"
 
 # Define the KiCad Auto Docker image to use
-kicad_auto_image="ghcr.io/inti-cmnb/kicad8_auto:latest"
-freerouting_cli_image="ceoloide/ergogen-freerouting:k8_latest"
+kicad_auto_image="ghcr.io/inti-cmnb/kicad9_auto:latest"
+freerouting_cli_image="ceoloide/ergogen-freerouting:k9_snapshot_2.4.1"
 
 # Preserve manually routed files
 if [ -e pcbs/*_manually_routed.kicad_pcb ]; then
