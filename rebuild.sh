@@ -7,7 +7,7 @@ container_args="-w /board -v $(pwd):/board --rm"
 # Define the boards to autoroute and export, and the plates
 boards="corney_island corney_island_wireless"
 kicad_auto_image="ghcr.io/inti-cmnb/kicad9_auto:latest"
-freerouting_cli_image="ceoloide/ergogen-freerouting:k9_snapshot_2.4.1"
+freerouting_cli_image="ceoloide/ergogen-freerouting:k9_snapshot_2.5.0"
 
 # Cleanup Freerouting log outpus
 if [ -e freerouting/freerouting.log ]; then
