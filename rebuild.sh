@@ -9,9 +9,12 @@ boards="corney_island corney_island_wireless"
 kicad_auto_image="ghcr.io/inti-cmnb/kicad9_auto:latest"
 freerouting_cli_image="ceoloide/ergogen-freerouting:k9_snapshot_2.5.0"
 
-# Cleanup Freerouting log outpus
+# Cleanup Freerouting log outputs and json
 if [ -e freerouting/freerouting.log ]; then
     rm freerouting/freerouting.log
+fi
+if [ -e freerouting/freerouting.json ]; then
+    rm freerouting/freerouting.json
 fi
 if [ -e logs/freerouting.log ]; then
     rm logs/freerouting.log
@@ -42,10 +45,10 @@ do
     fi
     if [ -e pcbs/${board}.dsn ]; then
         echo Autoroute PCB
-        # ${container_cmd} run ${container_args} ${freerouting_cli_image} java -Dlog4j.configurationFile=file:./freerouting/log4j2.xml -jar /opt/freerouting_cli.jar -de pcbs/${board}.dsn -do pcbs/${board}.ses -dr freerouting/freerouting.rules -mp 20
-        ${container_cmd} run ${container_args} ${freerouting_cli_image} java -Dlog4j.configurationFile=file:./freerouting/log4j2.xml -jar /opt/freerouting.jar -de pcbs/${board}.dsn -do pcbs/${board}.ses  -dr ./freerouting/freerouting.rules --user-data-path ./freerouting -mp 20 -mt 1 -dct 0 --gui.enabled=false --profile.email=marco.massarelli@gmail.com
-        # java -Dlog4j.configurationFile=file:./freerouting/log4j2.xml -jar freerouting/freerouting-2.1.0.jar -de pcbs/${board}.dsn -do pcbs/${board}.ses --user-data-path ./freerouting -mp 20 -mt 1 -dct 0 --gui.enabled=false --profile.email=marco.massarelli@gmail.com
-        # java -Dlog4j.configurationFile=file:./freerouting/log4j2.xml -jar freerouting/freerouting-SNAPSHOT.jar -de pcbs/${board}.dsn -do pcbs/${board}.ses --user-data-path ./freerouting -mp 20 -mt 1 -dct 0 --gui.enabled=false --profile.email=marco.massarelli@gmail.com
+        # ${container_cmd} run ${container_args} ${freerouting_cli_image} java -Dlog4j.configurationFile=freerouting/log4j2.xml -jar /opt/freerouting_cli.jar -de pcbs/${board}.dsn -do pcbs/${board}.ses -dr freerouting/freerouting.rules --router.autorouter.max_passes=20
+        ${container_cmd} run ${container_args} ${freerouting_cli_image} java -Dlog4j.configurationFile=freerouting/log4j2.xml -jar /opt/freerouting.jar -de pcbs/${board}.dsn -do pcbs/${board}.ses  -dr ./freerouting/freerouting.rules --user_data_path=./freerouting --router.autorouter.max_passes=20 -mt 1 -dct 0 --gui.enabled=false --profile.email=marco.massarelli@gmail.com
+        # java -Dlog4j.configurationFile=freerouting/log4j2.xml -jar freerouting/freerouting-2.1.0.jar -de pcbs/${board}.dsn -do pcbs/${board}.ses --user_data_path=./freerouting --router.autorouter.max_passes=20 -mt 1 -dct 0 --gui.enabled=false --profile.email=marco.massarelli@gmail.com
+        # java -Dlog4j.configurationFile=freerouting/log4j2.xml -jar freerouting/freerouting-SNAPSHOT.jar -de pcbs/${board}.dsn -do pcbs/${board}.ses --user_data_path=./freerouting --router.autorouter.max_passes=20 -mt 1 -dct 0 --gui.enabled=false --profile.email=marco.massarelli@gmail.com
     fi
     if [ -e pcbs/${board}.ses ]; then
         echo "Import SES"

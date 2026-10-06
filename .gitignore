@@ -9,6 +9,7 @@ kibot_errors.filter
 # Freerouting
 freerouting/freerouting-*.jar
 freerouting/freerouting.log
+freerouting/freerouting.json
 
 # Temporary files
 *.000

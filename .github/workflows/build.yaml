@@ -13,22 +13,18 @@ on:
 name: Build
 jobs:
   board:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     strategy:
       matrix:
         board: [corney_island, corney_island_wireless]
     name: Generate ${{ matrix.board }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           submodules: true
-      - name: Docker Cache
-        uses: ScribeMD/docker-cache@0.5.0
-        with:
-          key: docker-${{ runner.os }}
       - name: Use Node.js 24
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: 24.x
           cache: 'npm'
@@ -64,7 +60,7 @@ jobs:
           boards: ${{ matrix.board }}_autorouted
           config: boards
       - name: Persist output
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: ${{ matrix.board }}
           path: |
