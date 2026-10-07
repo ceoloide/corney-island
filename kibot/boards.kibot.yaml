@@ -16,10 +16,14 @@ preflight:
       - filter: 'Ignore Default track width issues, board defaults to 0.250 but JLCPCB min is 0.127'
         error: 'track_width'
         regex: 'min width 0.2000 mm; actual 0.1[2-9][07-9]0 mm'
+      - filter: 'Ignore Default clearance issues down to JLCPCB min 0.127 mm'
+        error: 'clearance'
+        regex: 'netclass .Default. clearance 0.2000 mm; actual 0.1[2-9][0-9]+ mm'
       - filter: 'Hotswap reversible switch footprint has holes overlapping'
         error: 'hole_near_hole'
       - filter: 'Hotswap reversible switch footprint has pad overlapping with hole'
         error: 'hole_clearance'
+        regex: 'of S[0-9]+'
       - filter: 'Hotswap reversible switch footprint has pad overlapping with hole'
         error: 'solder_mask_bridge'
       - filter: 'Jumpers on the MCU are supposed to short different nets'
@@ -41,11 +45,13 @@ global:
     - number: 58
       regex: 'copper_edge_clearance'
     - number: 58
+      regex: 'clearance'
+    - number: 58
       regex: 'track_width'
     - number: 58
       regex: 'hole_near_hole'
     - number: 58
-      regex: 'hole_clearance'
+      regex: 'hole_clearance.*of S[0-9]+'
     - number: 58
       regex: 'shorting_items'
     - number: 58
