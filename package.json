@@ -9,12 +9,17 @@
     "dependencies": {
         "ergogen": "github:ceoloide/ergogen#develop",
         "nodemon": "^3.0.1",
-        "@jscad/cli": "1.10.0" 
+        "@jscad/cli": "1.10.0"
     },
     "engines": {
         "node": ">=24"
     },
     "nodemonConfig": {
-      "delay": 2500
+        "delay": 2500
+    },
+    "overrides": {
+        "minimatch": {
+            "brace-expansion": "5.0.12"
+        }
     }
 }
