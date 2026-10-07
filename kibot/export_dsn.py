@@ -1,30 +1,47 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-import sys, getopt
-import pcbnew
-"""
-This program runs pcbnew and exports a Specctra DSN file. 
-"""
+"""Export native KiCad DSN, restoring source precision without moving geometry."""
+import argparse
+import os
+from pathlib import Path
+import tempfile
 
-def main(argv):
-  board_file = ''
-  output_file = ''
-  try:
-    opts, args = getopt.getopt(argv, "hb:o:",["board=","output="])
-  except getopt.GetoptError:
-    print ('export_dsn.py -b <board_file> -o <ouput_dsn_file>')
-    sys.exit(2)
-  for opt, arg in opts:
-    if opt == '-h': 
-      print ('export_dsn.py -b <board_file> -o <ouput_dsn_file>')
-      sys.exit()
-    elif opt in ("-b", "--board"):
-      board_file = arg
-    elif opt in ("-o", "--output"):
-      output_file = arg
-  print('Exporting Specctra DSN for ', board_file, ' at ', output_file)
-  board = pcbnew.LoadBoard(board_file)
-  pcbnew.ExportSpecctraDSN(board, output_file)
+from dsn_precision import SourceGeometry, normalize_npth, parse, restore
 
-if __name__ == "__main__":
-   main(sys.argv[1:])
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('-b', '--board', required=True)
+    parser.add_argument('-o', '--output', required=True)
+    parser.add_argument('--keep-native-npth', action='store_true',
+                        help='Preserve KiCad-expanded NPTH keepouts (precision repair only)')
+    args = parser.parse_args()
+    import pcbnew
+
+    target = Path(args.output)
+    # The normalized front-view copy is never saved to the source PCB.
+    source = SourceGeometry.from_board(pcbnew.LoadBoard(args.board), pcbnew)
+    board = pcbnew.LoadBoard(args.board)
+    fd, temporary = tempfile.mkstemp(suffix='.dsn', prefix='.precision-', dir=target.parent)
+    os.close(fd)
+    try:
+        if not pcbnew.ExportSpecctraDSN(board, temporary):
+            raise RuntimeError('Could not export Specctra DSN: ' + args.board)
+        text, counts = restore(Path(temporary).read_text(), source)
+        if not args.keep_native_npth:
+            text, counts['npth_normalized'] = normalize_npth(text, source)
+        identifier = parse(text).children[1]
+        name = str(target)
+        if any(c.isspace() or c in '()"' for c in name):
+            name = '"' + name.replace('\\', '\\\\').replace('"', '\\"') + '"'
+        text = text[:identifier.start] + name + text[identifier.end:]
+        Path(temporary).write_text(text)
+        os.replace(temporary, target)
+    finally:
+        if os.path.exists(temporary):
+            os.unlink(temporary)
+    print('Exported', target, 'with source precision; changes:', counts)
+    print('Rules, intentional keepouts, and DSN resolution preserved. No contact snapping applied.')
+
+
+if __name__ == '__main__':
+    main()
