@@ -26,7 +26,8 @@
   )
   (rule
     (width 150.0)
-    (clearance 200.1)
+    (clearance 200.0)
+    (clearance 150.0 (type smd_smd))
     (clearance 75.0 (type smd_to_turn_gap))
     (clearance 75.0 (type pad_to_turn_gap))
     (clearance 200.0 (type smd))

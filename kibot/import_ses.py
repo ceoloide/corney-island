@@ -28,7 +28,8 @@ def main(argv):
       output_file = arg
   print('Importing Specctra SES ', session_file,' for ', board_file)
   board = pcbnew.LoadBoard(board_file)
-  pcbnew.ImportSpecctraSES(board, session_file)
+  if not pcbnew.ImportSpecctraSES(board, session_file):
+    raise RuntimeError('Could not import Specctra SES: ' + session_file)
   success = pcbnew.SaveBoard(output_file, board, True)
   if success:
     print('Saved output to ', output_file)
