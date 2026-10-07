@@ -61,7 +61,6 @@
     "power_ground" "Via[0-1]_560:300_um-power_ground"
   )
   (class default
-    (clearance_class default)
     (via_rule default)
     (rule
       (width 150.0)
@@ -83,7 +82,6 @@
     "LED_16" "LED_15" "LED_17" "LED_14" "LED_13" "LED_12" "LED_10" "LED_9"
     "LED_11" "LED_7" "LED_6" "LED_5" "LED_4" "LED_2" "LED_1" "LED_3"
     "LED_8" "ULED_6" "ULED_1" "ULED_2" "ULED_3" "ULED_4" "ULED_5"
-    (clearance_class "kicad_default")
     (via_rule "kicad_default")
     (rule
       (width 150.0)
@@ -95,7 +93,6 @@
   )
   (class "power_ground"
     RAW GND VCC "BAT_P" "JST_1" "JST_2"
-    (clearance_class "kicad_default")
     (via_rule "kicad_default")
     (rule
       (width 250.0)

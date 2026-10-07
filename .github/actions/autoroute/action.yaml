@@ -20,6 +20,8 @@ runs:
         fi
         if [ -e pcbs/${board}.dsn ]; then
           echo "Autoroute PCB";
-          java -jar /opt/freerouting.jar -de pcbs/${board}.dsn -do pcbs/${board}.ses -dr ./freerouting/freerouting.rules --user_data_path=./freerouting --router.autorouter.max_passes=25 -mt 1 -dct 0 --gui.enabled=false --profile.email=marco.massarelli@gmail.com
+          sed "s/(rules PCB corney_island/(rules PCB ${board}/" freerouting/freerouting.rules > freerouting/${board}.rules
+          java -jar /opt/freerouting.jar -de pcbs/${board}.dsn -do pcbs/${board}.ses -dr ./freerouting/${board}.rules --user_data_path=./freerouting --router.autorouter.max_passes=25 -mt 1 -dct 0 --gui.enabled=false --profile.email=marco.massarelli@gmail.com
+          rm -f freerouting/${board}.rules
         fi
       done

@@ -5,20 +5,14 @@ container_cmd=docker
 container_args="-w /board -v $(pwd):/board --rm"
 
 # Define the boards to autoroute and export, and the plates
-boards="corney_island corney_island_wireless"
+boards="${*:-corney_island corney_island_wireless}"
 kicad_auto_image="ghcr.io/inti-cmnb/kicad9_auto:latest"
 freerouting_cli_image="ceoloide/ergogen-freerouting:k9_snapshot_2.5.0"
 
 # Cleanup Freerouting log outputs and json
-if [ -e freerouting/freerouting.log ]; then
-    rm freerouting/freerouting.log
-fi
-if [ -e freerouting/freerouting.json ]; then
-    rm freerouting/freerouting.json
-fi
-if [ -e logs/freerouting.log ]; then
-    rm logs/freerouting.log
-fi
+rm -f freerouting/freerouting.log
+rm -f freerouting/freerouting.json
+rm -f logs/freerouting.log
 
 if [ ! -e freerouting/freerouting-2.1.0.jar ]; then
     curl https://github.com/freerouting/freerouting/releases/download/v2.1.0/freerouting-2.1.0.jar -L -o freerouting/freerouting-2.1.0.jar
@@ -45,10 +39,12 @@ do
     fi
     if [ -e pcbs/${board}.dsn ]; then
         echo Autoroute PCB
-        # ${container_cmd} run ${container_args} ${freerouting_cli_image} java -Dlog4j.configurationFile=freerouting/log4j2.xml -jar /opt/freerouting_cli.jar -de pcbs/${board}.dsn -do pcbs/${board}.ses -dr freerouting/freerouting.rules --router.autorouter.max_passes=20
-        ${container_cmd} run ${container_args} ${freerouting_cli_image} java -Dlog4j.configurationFile=freerouting/log4j2.xml -jar /opt/freerouting.jar -de pcbs/${board}.dsn -do pcbs/${board}.ses  -dr ./freerouting/freerouting.rules --user_data_path=./freerouting --router.autorouter.max_passes=20 -mt 1 -dct 0 --gui.enabled=false --profile.email=marco.massarelli@gmail.com
+        sed "s/(rules PCB corney_island/(rules PCB ${board}/" freerouting/freerouting.rules > freerouting/${board}.rules
+        # ${container_cmd} run ${container_args} ${freerouting_cli_image} java -Dlog4j.configurationFile=freerouting/log4j2.xml -jar /opt/freerouting_cli.jar -de pcbs/${board}.dsn -do pcbs/${board}.ses -dr freerouting/${board}.rules --router.autorouter.max_passes=20
+        ${container_cmd} run ${container_args} ${freerouting_cli_image} java -Dlog4j.configurationFile=freerouting/log4j2.xml -jar /opt/freerouting.jar -de pcbs/${board}.dsn -do pcbs/${board}.ses  -dr ./freerouting/${board}.rules --user_data_path=./freerouting --router.autorouter.max_passes=25 -mt 1 -dct 0 --gui.enabled=false --profile.email=marco.massarelli@gmail.com
         # java -Dlog4j.configurationFile=freerouting/log4j2.xml -jar freerouting/freerouting-2.1.0.jar -de pcbs/${board}.dsn -do pcbs/${board}.ses --user_data_path=./freerouting --router.autorouter.max_passes=20 -mt 1 -dct 0 --gui.enabled=false --profile.email=marco.massarelli@gmail.com
         # java -Dlog4j.configurationFile=freerouting/log4j2.xml -jar freerouting/freerouting-SNAPSHOT.jar -de pcbs/${board}.dsn -do pcbs/${board}.ses --user_data_path=./freerouting --router.autorouter.max_passes=20 -mt 1 -dct 0 --gui.enabled=false --profile.email=marco.massarelli@gmail.com
+        rm -f freerouting/${board}.rules
     fi
     if [ -e pcbs/${board}.ses ]; then
         echo "Import SES"
@@ -60,5 +56,4 @@ do
 done
 
 # Docker runs as root and causes issues with file ownership
-sudo chown $USER -R ergogen
-sudo chown $USER -R freerouting
+sudo chown $USER -R ergogen freerouting pcbs gerbers images 2>/dev/null || true
