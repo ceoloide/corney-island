@@ -992,6 +992,7 @@ pcbs:
           BAT_P: BAT_P
           BAT_N: GND
           reversible: true
+          use_rectangular_jumpers: true
           include_courtyard: false
         adjust:
           shift: [0.5 ks + 7.25, 0.375 kp -45.25]
