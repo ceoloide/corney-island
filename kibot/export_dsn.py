@@ -5,15 +5,13 @@ import os
 from pathlib import Path
 import tempfile
 
-from dsn_precision import SourceGeometry, normalize_npth, parse, restore
+from dsn_precision import SourceGeometry, parse, restore
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('-b', '--board', required=True)
     parser.add_argument('-o', '--output', required=True)
-    parser.add_argument('--keep-native-npth', action='store_true',
-                        help='Preserve KiCad-expanded NPTH keepouts (precision repair only)')
     args = parser.parse_args()
     import pcbnew
 
@@ -27,8 +25,6 @@ def main():
         if not pcbnew.ExportSpecctraDSN(board, temporary):
             raise RuntimeError('Could not export Specctra DSN: ' + args.board)
         text, counts = restore(Path(temporary).read_text(), source)
-        if not args.keep_native_npth:
-            text, counts['npth_normalized'] = normalize_npth(text, source)
         identifier = parse(text).children[1]
         name = str(target)
         if any(c.isspace() or c in '()"' for c in name):
@@ -39,8 +35,8 @@ def main():
     finally:
         if os.path.exists(temporary):
             os.unlink(temporary)
-    print('Exported', target, 'with source precision; changes:', counts)
-    print('Rules, intentional keepouts, and DSN resolution preserved. No contact snapping applied.')
+    print('Exported', target, 'with source precision; changed numeric tokens:', counts)
+    print('Native keepouts, rules, and DSN resolution preserved. No contact snapping applied.')
 
 
 if __name__ == '__main__':
