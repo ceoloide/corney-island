@@ -35,24 +35,27 @@ failure.
 
 ## NPTH clearance
 
-This integrates the correction from
-[PR #23](https://github.com/ceoloide/corney-island/pull/23): KiCad expands circular
-NPTH keepouts by its hole clearance, and Freerouting adds clearance outside that
-shape again. A 5.0 mm hole with 0.2 mm clearance becomes a 5.4 mm native obstacle.
-The repair restores its physical extent so Freerouting applies its clearance
-once. An oversized mechanical pad extent is preserved.
+The exporter preserves KiCad's native NPTH obstacle extents. It restores source
+coordinate precision without removing the clearance already included in those
+obstacles. The experimental `normalize_npth` utility remains in
+`dsn_precision.py` with unit coverage, but is not invoked by the exporter.
+There is no `--keep-native-npth` switch: preservation is the default behavior.
 
-Unlike the original diameter-only matching, normalization requires an anonymous
-library circle matching a source NPTH's footprint, local center, expanded
-diameter, and copper layer. Only circular pads with round drills that KiCad
-exports as circular obstacles are covered. Other keepouts are retained.
-Boards containing board or footprint rule areas are rejected by default.
-Use `--keep-native-npth` for precision repair without NPTH normalization.
+Freerouting's circular obstacle approximation and coordinate rounding remain
+separate issues. Check imported routes with unfiltered KiCad DRC; precision
+repair alone does not establish complete or correct autorouting.
 
-The router's obstacle clearance must cover the intended hole clearance; this
-script does not translate arbitrary KiCad custom rules into Freerouting rules.
-Check the imported routes with KiCad DRC. Circular obstacle approximation and
-Freerouting's own coordinate rounding remain separate issues.
+## Build integration
+
+`build.sh` applies the two-layer JLCPCB profile with `configure_jlcpcb.py`
+before export and writes unfiltered pre-route and post-route DRC reports to
+`reports/routing/`. Existing `.kicad_dru` files survive generation and are left
+unchanged; the helper creates custom rules only if that file is absent.
+
+`routing_status.py` rejects missing connections or DRC errors for the specific
+board. Failed boards skip final fabrication exports, and the batch continues
+with subsequent boards and prints a failure summary. Board-level failures do
+not set a nonzero batch exit status; generation failures still do.
 
 ## Validation
 
@@ -60,11 +63,12 @@ Freerouting's own coordinate rounding remain separate issues.
 python3 -m unittest discover -s kibot/tests -v
 ```
 
-Twelve tests cover coordinate restoration, ambiguous matches, descriptor
+Thirteen tests cover coordinate restoration, ambiguous matches, descriptor
 preservation, shared-image splitting, NPTH identity and layer matching,
 oversized extents, implicit circle origins, rule-area rejection, and idempotence.
 Integration checks on both saved keyboard boards and a ten-angle fixture verify
 source-PCB preservation, unchanged rules/resolution/nets, and idempotence of the
-combined repair. The saved wireless board normalizes 44 library circles.
+precision repair. The batch regression checks that DRC and routing failures
+do not prevent later boards from building and that custom rules are retained.
 Freerouting import testing does not establish complete autorouting or replace
 post-routing KiCad DRC.
