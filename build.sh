@@ -8,7 +8,9 @@ kicad_auto_image="ceoloide/ergogen-freerouting:k9_snapshot_20261020_121300"
 freerouting_cli_image="$kicad_auto_image"
 # JLCPCB two-layer, 1 oz FR-4 minimum: 0.10 mm (100 um).
 # https://jlcpcb.com/help/article/jlcpcb-copper-weight
-case "${FREEROUTING_NECKDOWN:-true}" in
+# Temporarily disable neckdown and fanout while routing completion is investigated.
+# https://static.ceoloide.com/reports/corney-island-seed42-comparison-2026-10-20/index.html
+case "${FREEROUTING_NECKDOWN:-false}" in
     true) freerouting_automatic_neckdown=true; freerouting_neck_width_um=100 ;;
     false) freerouting_automatic_neckdown=false; freerouting_neck_width_um=0 ;;
     *) echo "FREEROUTING_NECKDOWN must be true or false." >&2; exit 1 ;;
