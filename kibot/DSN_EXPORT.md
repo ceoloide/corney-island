@@ -52,28 +52,22 @@ repair alone does not establish complete or correct autorouting.
 
 ## Build integration
 
-The build uses `freerouting/freerouting-current-executable.jar` from the mounted
-checkout. Build the executable JAR in the sibling Freerouting checkout and copy
-it before running (after checking out the pinned revision below):
+The build and CI use the published toolchain image
+`ceoloide/ergogen-freerouting:k9_snapshot_20261020_121300` directly. It bundles
+KiCad 9, Java 25, and **Freerouting 2.5.1-SNAPSHOT** from the fixed
+`20261020_121300` snapshot (upstream revision `c4755a88`). Freerouting runs from
+`/opt/freerouting.jar` inside the image. No local JAR, source checkout, snapshot
+discovery, or runtime revision verifier is needed.
 
 ```sh
-(cd ../freerouting && ./gradlew executableJar)
-cp ../freerouting/build/libs/freerouting-current-executable.jar freerouting/
+docker pull ceoloide/ergogen-freerouting:k9_snapshot_20261020_121300
 ./build.sh
 ```
 
-`freerouting/build.json` pins version **2.5.1-SNAPSHOT** and source revision
-`1be66ad2797395f3a258a7f3b9b31c724a624867`, upstream `master` head checked on
-2026-10-19. Build that revision in a clean checkout before copying the JAR.
-`check_freerouting.py` verifies both the embedded version and manifest revision
-before generation, rejecting older or unrelated binaries. To adopt a later
-upstream head, update the pin and rebuild the JAR together.
-
-The pinned revision includes the neck-width-floor fix in
-[Freerouting PR #979](https://github.com/freerouting/freerouting/pull/979). The
-KiCad image is `ghcr.io/inti-cmnb/kicad9_auto:latest` (validated as 9.0.7+1);
-`eclipse-temurin:25-jre` supplies Java 25. The local JAR is ignored by Git; no
-container-bundled Freerouting JAR is used.
+This is a temporary image pin while the upstream fixes are developed. Update
+the image tag explicitly when adopting another build. The image is maintained
+in the sibling `ergogen-docker` repository; it includes the neck-width-floor fix
+from [Freerouting PR #979](https://github.com/freerouting/freerouting/pull/979).
 
 For two-layer, 1 oz FR-4, [JLCPCB lists a 0.10 mm minimum trace width and spacing](https://jlcpcb.com/help/article/jlcpcb-copper-weight)
 (checked 2026-10-19). The default build explicitly passes
@@ -95,8 +89,8 @@ worker. Each routing job has a 20-minute limit; override it with
 post-import connectivity and DRC checks still determine whether fabrication
 outputs are produced.
 
-CI builds the revision in `freerouting/build.json` with Java 25 and invokes the
-same `build.sh`, retaining unfiltered DRC reports with its artifacts.
+CI invokes the same `build.sh` and pulls the same toolchain image, retaining
+unfiltered DRC reports with its artifacts.
 
 `build.sh` applies the two-layer JLCPCB profile with `configure_jlcpcb.py`
 before export and writes unfiltered pre-route and post-route DRC reports to
@@ -115,10 +109,10 @@ not set a nonzero batch exit status; generation failures still do.
 python3 -m unittest discover -s kibot/tests -v
 ```
 
-Seventeen tests cover coordinate restoration, ambiguous matches, descriptor
+Sixteen tests cover coordinate restoration, ambiguous matches, descriptor
 preservation, shared-image splitting, NPTH identity and layer matching,
 oversized extents, implicit circle origins, rule-area rejection, and idempotence. Entry-point tests cover default NPTH normalization, the native
-opt-out, atomic failure, readable exports, and stale-binary rejection.
+opt-out, atomic failure, and readable exports.
 Integration checks on both saved keyboard boards and a ten-angle fixture verify
 source-PCB preservation, unchanged rules/resolution/nets, and idempotence of the
 precision repair. The batch regression checks that plate DRC, board DRC, and routing failures

@@ -1,5 +1,13 @@
 # Regenerated boards: NPTH normalization and current Freerouting
 
+> Historical results from the board-regeneration commit `d35bc08`, using the
+> local Freerouting build at `1be66ad`. The local JAR pin and verifier described
+> below have since been replaced by the published toolchain image
+> `ceoloide/ergogen-freerouting:k9_snapshot_20261020_121300`.
+> See [current build instructions](../../kibot/DSN_EXPORT.md#build-integration).
+> A smoke test of that image reproduced the same single wireless C4 open with
+> zero KiCad DRC errors. The board results and hashes below remain historical.
+
 The NPTH workaround is enabled by default again. Both keyboard boards and all
 three plates were regenerated from the current YAML. The saved wireless board
 now contains the eight rectangular JST SMD jumper pads configured in that YAML.

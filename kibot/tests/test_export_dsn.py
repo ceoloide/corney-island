@@ -1,7 +1,6 @@
 """Exercise the export entry point, including default NPTH repair and atomic failure."""
 from decimal import Decimal
 from pathlib import Path
-from zipfile import ZipFile
 import sys
 import tempfile
 from types import SimpleNamespace
@@ -11,7 +10,6 @@ from unittest.mock import patch
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import export_dsn
 from dsn_precision import PrecisionError, SourceGeometry
-from check_freerouting import verify
 
 
 class ExportTests(unittest.TestCase):
@@ -56,14 +54,3 @@ class ExportTests(unittest.TestCase):
 
     def test_unsupported_rule_area_preserves_previous_output(self):
         self.run_export(rule_area=True)
-
-    def test_stale_binary_rejected(self):
-        with tempfile.TemporaryDirectory() as temporary:
-            jar = Path(temporary) / 'stale.jar'
-            with ZipFile(jar, 'w') as archive:
-                archive.writestr('META-INF/MANIFEST.MF', 'Build-Revision: old\n')
-                archive.writestr('app/freerouting/constants/Constants.class', b'\x01\x00\x052.5.0')
-            with self.assertRaisesRegex(ValueError, '2.5.1-SNAPSHOT'):
-                verify(jar, {'version': '2.5.1-SNAPSHOT', 'revision': 'new'})
-            with self.assertRaisesRegex(ValueError, 'revision new'):
-                verify(jar, {'version': '2.5.0', 'revision': 'new'})

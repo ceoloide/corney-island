@@ -3,17 +3,11 @@
 container_cmd=docker
 boards="${*:-corney_island_wireless corney_island}"
 plates="backplate frontplate controller_overlay"
-kicad_auto_image="ghcr.io/inti-cmnb/kicad9_auto:latest"
-# Java 25 runs the checked local snapshot; KiCad operations use KiCad 9 above.
-freerouting_cli_image="eclipse-temurin:25-jre"
-freerouting_jar="freerouting/freerouting-current-executable.jar"
-if [ ! -s "$freerouting_jar" ]; then
-    echo "Missing $freerouting_jar; build the current Freerouting executable JAR and copy it here." >&2
-    exit 1
-fi
+# Temporary KiCad 9 / Freerouting 2.5.1-SNAPSHOT toolchain.
+kicad_auto_image="ceoloide/ergogen-freerouting:k9_snapshot_20261020_121300"
+freerouting_cli_image="$kicad_auto_image"
 # JLCPCB two-layer, 1 oz FR-4 minimum: 0.10 mm (100 um).
 # https://jlcpcb.com/help/article/jlcpcb-copper-weight
-python3 kibot/check_freerouting.py "$freerouting_jar" || exit 1
 case "${FREEROUTING_NECKDOWN:-true}" in
     true) freerouting_automatic_neckdown=true; freerouting_neck_width_um=100 ;;
     false) freerouting_automatic_neckdown=false; freerouting_neck_width_um=0 ;;
@@ -105,7 +99,7 @@ build_board() {
     rm -f "pcbs/$board.ses" "pcbs/${board}_autorouted.kicad_pcb"
     sed "s/(rules PCB corney_island/(rules PCB $board/" freerouting/freerouting.rules > "freerouting/$board.rules"
     run_container "$freerouting_cli_image" java \
-        -Dlog4j.configurationFile=freerouting/log4j2.xml -jar "./$freerouting_jar" \
+        -Dlog4j.configurationFile=freerouting/log4j2.xml -jar /opt/freerouting.jar \
         -de "pcbs/$board.dsn" -do "pcbs/$board.ses" -dr "./freerouting/$board.rules" \
         --user_data_path=./freerouting --gui.enabled=false \
         --router.autorouter.max_passes=25 --router.fanout.enabled=false \
