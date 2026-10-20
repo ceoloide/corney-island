@@ -4,11 +4,11 @@ on:
     paths:
       - '.github/workflows/*.yaml'
       - '.github/actions/*/action.yaml'
-      - 'ergogen/footprints/*.js'
-      - 'ergogen/config.yaml'
-      - 'kibot/*'
+      - 'ergogen/**'
+      - 'kibot/**'
       - 'freerouting/*'
-      - 'package.json'
+      - 'build.sh'
+      - 'package*.json'
 
 name: Build
 jobs:
@@ -28,38 +28,33 @@ jobs:
         with:
           node-version: 24.x
           cache: 'npm'
-      - name: Install dependencies
-        run: npm install
-      - name: Generate unrouted PCBs with Ergogen (definition in package.json)
-        run: npm run build
-      - name: Run KiBot to generate images, gerbers for the plates
-        uses: ./.github/actions/kibot
+      - name: Install locked dependencies
+        run: npm ci --ignore-scripts
+      - name: Read pinned Freerouting revision
+        id: router
+        run: python3 -c 'import json; print("revision=" + json.load(open("freerouting/build.json"))["revision"])' >> "$GITHUB_OUTPUT"
+      - name: Checkout Freerouting
+        uses: actions/checkout@v7
         with:
-          boards: frontplate backplate controller_overlay
-          config: default
-      - name: Run KiBot to generate images, gerbers for the unrouted board
-        uses: ./.github/actions/kibot
+          repository: freerouting/freerouting
+          ref: ${{ steps.router.outputs.revision }}
+          path: .freerouting-build
+      - name: Use Java 25
+        uses: actions/setup-java@v5
         with:
-          boards: ${{ matrix.board }}
-          config: default
-      - name: Export DSN file for Freerouting
-        uses: ./.github/actions/export-dsn
-        with:
-          boards: ${{ matrix.board }}
-      - name: Autoroute PCB
-        uses: ./.github/actions/autoroute
-        with:
-          boards: ${{ matrix.board }}
-      - name: Import SES
-        uses: ./.github/actions/import-ses
-        with:
-          boards: ${{ matrix.board }}
-      - name: Run KiBot to generate images, gerbers for the autorouted board
-        uses: ./.github/actions/kibot
-        with:
-          boards: ${{ matrix.board }}_autorouted
-          config: boards
-      - name: Persist output
+          distribution: temurin
+          java-version: '25'
+      - name: Build pinned Freerouting snapshot
+        working-directory: .freerouting-build
+        run: ./gradlew executableJar
+      - name: Install routing JAR
+        run: cp .freerouting-build/build/libs/freerouting-current-executable.jar freerouting/
+      - name: Check export and batch behavior
+        run: python3 -m unittest discover -s kibot/tests -v
+      - name: Generate, route, and validate using KiCad 9
+        run: ./build.sh "${{ matrix.board }}"
+      - name: Persist output and unfiltered DRC reports
+        if: always()
         uses: actions/upload-artifact@v7
         with:
           name: ${{ matrix.board }}
@@ -69,3 +64,4 @@ jobs:
             images
             outlines
             pcbs
+            reports/routing

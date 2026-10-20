@@ -1,5 +1,8 @@
 """Exercise batch failure handling without generating or routing real boards."""
 import os
+import json
+import shutil
+from zipfile import ZipFile
 from pathlib import Path
 import subprocess
 import tempfile
@@ -10,15 +13,33 @@ ROOT = Path(__file__).resolve().parents[2]
 
 class BuildTest(unittest.TestCase):
     def test_failed_boards_do_not_stop_batch_and_custom_rules_survive(self):
+        for neckdown in ('true', 'false'):
+            with self.subTest(neckdown=neckdown):
+                self.check_build(neckdown)
+
+    def check_build(self, neckdown):
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
             (root / 'bin').mkdir()
             (root / 'pcbs').mkdir()
             (root / 'freerouting').mkdir()
+            (root / 'kibot').mkdir()
+            (root / 'gerbers').mkdir()
+            (root / 'images').mkdir()
+            (root / 'gerbers/drcbad_autorouted.zip').write_text('stale fabrication')
+            (root / 'gerbers/frontplate.zip').write_text('stale plate fabrication')
+            (root / 'images/routebad_autorouted-top.png').write_text('stale image')
+            shutil.copy(ROOT / 'kibot/check_freerouting.py', root / 'kibot/')
+            shutil.copy(ROOT / 'freerouting/build.json', root / 'freerouting/')
             custom = '(version 1)\n# User custom rules\n'
             (root / 'pcbs/drcbad.kicad_dru').write_text(custom)
-            for name in ('freerouting-2.1.0.jar', 'freerouting-SNAPSHOT.jar', 'freerouting.rules'):
-                (root / 'freerouting' / name).write_text('')
+            for name in ('freerouting-2.1.0.jar', 'freerouting-SNAPSHOT.jar', 'freerouting-current-executable.jar', 'freerouting.rules'):
+                (root / 'freerouting' / name).write_text('mock')
+            expected = json.loads((ROOT / 'freerouting/build.json').read_text())
+            version = expected['version'].encode()
+            with ZipFile(root / 'freerouting/freerouting-current-executable.jar', 'w') as archive:
+                archive.writestr('META-INF/MANIFEST.MF', 'Build-Revision: ' + expected['revision'] + '\n')
+                archive.writestr('app/freerouting/constants/Constants.class', b'\x01' + len(version).to_bytes(2, 'big') + version)
             (root / 'bin/npm').write_text('''#!/bin/sh
 mkdir -p pcbs
 for board in drcbad routebad good; do touch "pcbs/$board.kicad_pcb"; done
@@ -37,7 +58,7 @@ if 'kibot/export_dsn.py' in args or 'kibot/import_ses.py' in args:
 if 'java' in args: pathlib.Path(value('-do')).touch()
 if 'kicad-cli' in args:
  report=value('-o'); board=args[-1]
- error='drcbad_autorouted' in board
+ error='drcbad_autorouted' in board or board.endswith('frontplate.kicad_pcb')
  missing='routebad_autorouted' in board
  pathlib.Path(report).write_text(json.dumps({'unconnected_items':[{}] if missing else [],'violations':[{'type':'clearance','severity':'error'}] if error else []}))
 if 'kibot/routing_status.py' in args:
@@ -47,19 +68,33 @@ if 'kibot/routing_status.py' in args:
             for executable in (root / 'bin').iterdir():
                 executable.chmod(0o755)
             result = subprocess.run(['sh', str(ROOT / 'build.sh'), 'drcbad', 'routebad', 'good'], cwd=root,
-                                    env={**os.environ, 'PATH': str(root / 'bin') + ':' + os.environ['PATH']},
+                                    env={**os.environ, 'FREEROUTING_NECKDOWN': neckdown, 'PATH': str(root / 'bin') + ':' + os.environ['PATH']},
                                     capture_output=True, text=True)
             self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+            self.assertIn('FAILED: frontplate', result.stderr)
             self.assertIn('FAILED: drcbad', result.stderr)
             self.assertIn('FAILED: routebad', result.stderr)
             self.assertNotIn('FAILED: good', result.stderr)
             calls = (root / 'calls.log').read_text().splitlines()
+            routing_calls = [line for line in calls if ' java ' in line]
+            self.assertEqual(len(routing_calls), 3)
+            for call in routing_calls:
+                self.assertIn('eclipse-temurin:25-jre java ', call)
+                self.assertIn('-jar ./freerouting/freerouting-current-executable.jar', call)
+                self.assertIn('--router.fanout.enabled=false', call)
+                self.assertIn('--router.optimizer.max_threads=1', call)
+                self.assertIn('--router.job_timeout=00:20:00', call)
+                self.assertIn(f'--router.automatic_neckdown={neckdown}', call)
+                self.assertIn(f'--router.neck_width_um={100 if neckdown == "true" else 0}', call)
             exports = [line for line in calls if ' kibot -b pcbs/' in line and '_autorouted.kicad_pcb' in line]
             self.assertEqual(len(exports), 1)
             self.assertIn('good_autorouted', exports[0])
             self.assertEqual((root / 'pcbs/drcbad.kicad_dru').read_text(), custom)
             self.assertEqual((root / 'pcbs/drcbad_autorouted.kicad_dru').read_text(), custom)
             self.assertFalse((root / 'freerouting/good.rules').exists())
+            self.assertFalse((root / 'gerbers/drcbad_autorouted.zip').exists())
+            self.assertFalse((root / 'gerbers/frontplate.zip').exists())
+            self.assertFalse((root / 'images/routebad_autorouted-top.png').exists())
 
 
 if __name__ == '__main__':
