@@ -21,7 +21,8 @@ runs:
         if [ -e pcbs/${board}.dsn ]; then
           echo "Autoroute PCB";
           sed "s/(rules PCB corney_island/(rules PCB ${board}/" freerouting/freerouting.rules > freerouting/${board}.rules
-          java -jar /opt/freerouting.jar -de pcbs/${board}.dsn -do pcbs/${board}.ses -dr ./freerouting/${board}.rules --user_data_path=./freerouting --router.autorouter.max_passes=25 --router.fanout.enabled=false --router.max_threads=1 --router.optimizer.max_threads=1 --router.job_timeout=00:20:00 --router.automatic_neckdown=true --router.neck_width_um=100 -dct 0 --gui.enabled=false --profile.email=marco.massarelli@gmail.com
+          # Temporarily disable neckdown and fanout while routing completion is investigated.
+          java -jar /opt/freerouting.jar -de pcbs/${board}.dsn -do pcbs/${board}.ses -dr ./freerouting/${board}.rules --user_data_path=./freerouting --router.autorouter.max_passes=25 --router.fanout.enabled=false --router.max_threads=1 --router.optimizer.max_threads=1 --router.job_timeout=00:20:00 --router.automatic_neckdown=false --router.neck_width_um=0 -dct 0 --gui.enabled=false --profile.email=marco.massarelli@gmail.com
           rm -f freerouting/${board}.rules
         fi
       done

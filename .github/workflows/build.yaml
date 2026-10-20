@@ -33,6 +33,10 @@ jobs:
       - name: Check export and batch behavior
         run: python3 -m unittest discover -s kibot/tests -v
       - name: Generate, route, and validate using KiCad 9
+        # Temporarily keep neckdown and fanout disabled while routing completion is investigated.
+        # Fanout is disabled in build.sh; pin neckdown here as well as its local default.
+        env:
+          FREEROUTING_NECKDOWN: 'false'
         run: ./build.sh "${{ matrix.board }}"
       - name: Persist output and unfiltered DRC reports
         if: always()
