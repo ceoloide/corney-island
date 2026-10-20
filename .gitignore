@@ -12,6 +12,7 @@ freerouting/freerouting.log
 freerouting/freerouting.json
 
 # Temporary files
+__pycache__/
 *.000
 *.bak
 *.bck

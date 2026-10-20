@@ -4,11 +4,11 @@ on:
     paths:
       - '.github/workflows/*.yaml'
       - '.github/actions/*/action.yaml'
-      - 'ergogen/footprints/*.js'
-      - 'ergogen/config.yaml'
-      - 'kibot/*'
+      - 'ergogen/**'
+      - 'kibot/**'
       - 'freerouting/*'
-      - 'package.json'
+      - 'build.sh'
+      - 'package*.json'
 
 name: Build
 jobs:
@@ -28,38 +28,14 @@ jobs:
         with:
           node-version: 24.x
           cache: 'npm'
-      - name: Install dependencies
-        run: npm install
-      - name: Generate unrouted PCBs with Ergogen (definition in package.json)
-        run: npm run build
-      - name: Run KiBot to generate images, gerbers for the plates
-        uses: ./.github/actions/kibot
-        with:
-          boards: frontplate backplate controller_overlay
-          config: default
-      - name: Run KiBot to generate images, gerbers for the unrouted board
-        uses: ./.github/actions/kibot
-        with:
-          boards: ${{ matrix.board }}
-          config: default
-      - name: Export DSN file for Freerouting
-        uses: ./.github/actions/export-dsn
-        with:
-          boards: ${{ matrix.board }}
-      - name: Autoroute PCB
-        uses: ./.github/actions/autoroute
-        with:
-          boards: ${{ matrix.board }}
-      - name: Import SES
-        uses: ./.github/actions/import-ses
-        with:
-          boards: ${{ matrix.board }}
-      - name: Run KiBot to generate images, gerbers for the autorouted board
-        uses: ./.github/actions/kibot
-        with:
-          boards: ${{ matrix.board }}_autorouted
-          config: boards
-      - name: Persist output
+      - name: Install locked dependencies
+        run: npm ci --ignore-scripts
+      - name: Check export and batch behavior
+        run: python3 -m unittest discover -s kibot/tests -v
+      - name: Generate, route, and validate using KiCad 9
+        run: ./build.sh "${{ matrix.board }}"
+      - name: Persist output and unfiltered DRC reports
+        if: always()
         uses: actions/upload-artifact@v7
         with:
           name: ${{ matrix.board }}
@@ -69,3 +45,4 @@ jobs:
             images
             outlines
             pcbs
+            reports/routing

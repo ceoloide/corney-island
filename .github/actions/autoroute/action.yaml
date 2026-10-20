@@ -1,12 +1,12 @@
 name: 'Autoroute'
-description: 'Autoroute a given DSN file to SES with FreeRouting'
+description: 'Autoroute a given DSN file to SES with Freerouting'
 inputs:
   boards:
     description: 'Specctra SES output file'
     required: true
 runs:
   using: 'docker'
-  image: 'docker://ceoloide/ergogen-freerouting:k9_snapshot_2.5.0'
+  image: 'docker://ceoloide/ergogen-freerouting:k9_snapshot_20261020_121300'
   entrypoint: '/bin/sh'
   args:
     - '-c'
@@ -21,7 +21,7 @@ runs:
         if [ -e pcbs/${board}.dsn ]; then
           echo "Autoroute PCB";
           sed "s/(rules PCB corney_island/(rules PCB ${board}/" freerouting/freerouting.rules > freerouting/${board}.rules
-          java -jar /opt/freerouting.jar -de pcbs/${board}.dsn -do pcbs/${board}.ses -dr ./freerouting/${board}.rules --user_data_path=./freerouting --router.autorouter.max_passes=25 -mt 1 -dct 0 --gui.enabled=false --profile.email=marco.massarelli@gmail.com
+          java -jar /opt/freerouting.jar -de pcbs/${board}.dsn -do pcbs/${board}.ses -dr ./freerouting/${board}.rules --user_data_path=./freerouting --router.autorouter.max_passes=25 --router.fanout.enabled=false --router.max_threads=1 --router.optimizer.max_threads=1 --router.job_timeout=00:20:00 --router.automatic_neckdown=true --router.neck_width_um=100 -dct 0 --gui.enabled=false --profile.email=marco.massarelli@gmail.com
           rm -f freerouting/${board}.rules
         fi
       done

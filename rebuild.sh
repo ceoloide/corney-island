@@ -6,21 +6,13 @@ container_args="-w /board -v $(pwd):/board --rm"
 
 # Define the boards to autoroute and export, and the plates
 boards="${*:-corney_island corney_island_wireless}"
-kicad_auto_image="ghcr.io/inti-cmnb/kicad9_auto:latest"
-freerouting_cli_image="ceoloide/ergogen-freerouting:k9_snapshot_2.5.0"
+kicad_auto_image="ceoloide/ergogen-freerouting:k9_snapshot_20261020_121300"
+freerouting_cli_image="ceoloide/ergogen-freerouting:k9_snapshot_20261020_121300"
 
 # Cleanup Freerouting log outputs and json
 rm -f freerouting/freerouting.log
 rm -f freerouting/freerouting.json
 rm -f logs/freerouting.log
-
-if [ ! -e freerouting/freerouting-2.1.0.jar ]; then
-    curl https://github.com/freerouting/freerouting/releases/download/v2.1.0/freerouting-2.1.0.jar -L -o freerouting/freerouting-2.1.0.jar
-fi
-
-if [ ! -e freerouting/freerouting-SNAPSHOT.jar ]; then
-    curl https://github.com/freerouting/freerouting/releases/download/SNAPSHOT/freerouting-SNAPSHOT-20241111_140100.jar -L -o freerouting/freerouting-SNAPSHOT.jar
-fi
 
 for board in ${boards}
 do
@@ -40,10 +32,7 @@ do
     if [ -e pcbs/${board}.dsn ]; then
         echo Autoroute PCB
         sed "s/(rules PCB corney_island/(rules PCB ${board}/" freerouting/freerouting.rules > freerouting/${board}.rules
-        # ${container_cmd} run ${container_args} ${freerouting_cli_image} java -Dlog4j.configurationFile=freerouting/log4j2.xml -jar /opt/freerouting_cli.jar -de pcbs/${board}.dsn -do pcbs/${board}.ses -dr freerouting/${board}.rules --router.autorouter.max_passes=20
-        ${container_cmd} run ${container_args} ${freerouting_cli_image} java -Dlog4j.configurationFile=freerouting/log4j2.xml -jar /opt/freerouting.jar -de pcbs/${board}.dsn -do pcbs/${board}.ses  -dr ./freerouting/${board}.rules --user_data_path=./freerouting --router.autorouter.max_passes=25 -mt 1 -dct 0 --gui.enabled=false --profile.email=marco.massarelli@gmail.com
-        # java -Dlog4j.configurationFile=freerouting/log4j2.xml -jar freerouting/freerouting-2.1.0.jar -de pcbs/${board}.dsn -do pcbs/${board}.ses --user_data_path=./freerouting --router.autorouter.max_passes=20 -mt 1 -dct 0 --gui.enabled=false --profile.email=marco.massarelli@gmail.com
-        # java -Dlog4j.configurationFile=freerouting/log4j2.xml -jar freerouting/freerouting-SNAPSHOT.jar -de pcbs/${board}.dsn -do pcbs/${board}.ses --user_data_path=./freerouting --router.autorouter.max_passes=20 -mt 1 -dct 0 --gui.enabled=false --profile.email=marco.massarelli@gmail.com
+        ${container_cmd} run ${container_args} ${freerouting_cli_image} java -Dlog4j.configurationFile=freerouting/log4j2.xml -jar /opt/freerouting.jar -de pcbs/${board}.dsn -do pcbs/${board}.ses  -dr ./freerouting/${board}.rules --user_data_path=./freerouting --router.autorouter.max_passes=25 --router.fanout.enabled=false --router.max_threads=1 --router.optimizer.max_threads=1 --router.job_timeout=00:20:00 --router.automatic_neckdown=true --router.neck_width_um=100 -dct 0 --gui.enabled=false --profile.email=marco.massarelli@gmail.com
         rm -f freerouting/${board}.rules
     fi
     if [ -e pcbs/${board}.ses ]; then
