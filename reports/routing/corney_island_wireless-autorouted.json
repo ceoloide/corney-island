@@ -1,151 +1,22 @@
 {
     "$schema": "https://schemas.kicad.org/drc.v1.json",
     "coordinate_units": "mm",
-    "date": "2026-10-20T03:30:18+0000",
+    "date": "2026-10-21T15:47:13+0000",
     "kicad_version": "9.0.7",
     "schematic_parity": [],
     "source": "corney_island_wireless_autorouted.kicad_pcb",
-    "unconnected_items": [
-        {
-            "description": "Missing connection between items",
-            "items": [
-                {
-                    "description": "Track [C4] on B.Cu, length 2.9345 mm",
-                    "pos": {
-                        "x": 179.275,
-                        "y": 101.2
-                    },
-                    "uuid": "6f772784-a555-4f0b-9c0f-4f722786cc67"
-                },
-                {
-                    "description": "Track [C4] on F.Cu, length 1.2000 mm",
-                    "pos": {
-                        "x": 185.338,
-                        "y": 121.0574
-                    },
-                    "uuid": "e1ffa350-c54a-47df-af60-f005bbf57df5"
-                }
-            ],
-            "severity": "error",
-            "type": "unconnected_items"
-        }
-    ],
+    "unconnected_items": [],
     "violations": [
         {
             "description": "The current configuration does not include the footprint library 'ceoloide'.",
             "items": [
                 {
-                    "description": "Footprint D39",
+                    "description": "Footprint D41",
                     "pos": {
-                        "x": 202.75,
-                        "y": 58.125
+                        "x": 195.374154,
+                        "y": 118.181959
                     },
-                    "uuid": "09870c38-499b-46e8-8c1f-756c210c7cc4"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D38",
-                    "pos": {
-                        "x": 202.75,
-                        "y": 77.125
-                    },
-                    "uuid": "15f71be9-4a09-4e79-845f-389c85fdc965"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint JST1",
-                    "pos": {
-                        "x": 211.75,
-                        "y": 97.75
-                    },
-                    "uuid": "168a8580-8ca8-4e03-9615-52e719d7b916"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint MH6",
-                    "pos": {
-                        "x": 152.657,
-                        "y": 107.74
-                    },
-                    "uuid": "1cbad583-e4ed-4546-9049-fb42d681c063"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D35",
-                    "pos": {
-                        "x": 183.75,
-                        "y": 74.75
-                    },
-                    "uuid": "206a276a-f1fc-4f12-ba9e-e3826b3cf421"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D22",
-                    "pos": {
-                        "x": 107.75,
-                        "y": 98.5
-                    },
-                    "uuid": "3758df1b-eebc-44ed-ba74-8010279db0db"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D27",
-                    "pos": {
-                        "x": 126.75,
-                        "y": 60.5
-                    },
-                    "uuid": "3c947461-9875-490e-bf38-ccfe7ea1a74a"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D32",
-                    "pos": {
-                        "x": 164.75,
-                        "y": 72.375
-                    },
-                    "uuid": "40281ec1-3036-464c-a758-6513f325e9f1"
+                    "uuid": "03485abb-8e6a-4b0a-9e83-3005591984aa"
                 }
             ],
             "severity": "warning",
@@ -160,322 +31,7 @@
                         "x": 145.75,
                         "y": 74.75
                     },
-                    "uuid": "4d903af1-9383-443c-bf97-e37c62afe7e6"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint MH1",
-                    "pos": {
-                        "x": 207.762,
-                        "y": 100.476
-                    },
-                    "uuid": "4e2bd21e-4768-4030-8bfd-b925f5b27753"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D42",
-                    "pos": {
-                        "x": 212.322768,
-                        "y": 113.927461
-                    },
-                    "uuid": "59b312b7-bae5-4574-9bc2-0e6b5a961b5f"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D23",
-                    "pos": {
-                        "x": 107.75,
-                        "y": 79.5
-                    },
-                    "uuid": "773a8af9-ea9b-4f1d-ac64-06c5f126cbf1"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint MH3",
-                    "pos": {
-                        "x": 109.5,
-                        "y": 71.5
-                    },
-                    "uuid": "7905cd52-fd90-4516-a3d2-29d679803b31"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint RST1",
-                    "pos": {
-                        "x": 214.704,
-                        "y": 55.165
-                    },
-                    "uuid": "7a537af1-1a80-46e3-900e-c085d4e5caff"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D26",
-                    "pos": {
-                        "x": 126.75,
-                        "y": 79.5
-                    },
-                    "uuid": "7c400d6e-e293-4d8c-b5a5-1cdb6442bf00"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D41",
-                    "pos": {
-                        "x": 195.374154,
-                        "y": 118.181959
-                    },
-                    "uuid": "83097b41-2327-4ef3-860e-fc448507a1e1"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D40",
-                    "pos": {
-                        "x": 174.25,
-                        "y": 113.375
-                    },
-                    "uuid": "8eb09e86-3dd7-4609-a2bb-4d10627afe37"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint MH5",
-                    "pos": {
-                        "x": 185.468,
-                        "y": 67.986
-                    },
-                    "uuid": "8eb7efc1-a181-4945-ba52-5a6c23742efa"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D30",
-                    "pos": {
-                        "x": 145.75,
-                        "y": 55.75
-                    },
-                    "uuid": "9e188fe9-8dd1-4b78-8d30-b5c7e8835130"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint MH2",
-                    "pos": {
-                        "x": 222.194,
-                        "y": 108.995
-                    },
-                    "uuid": "a41ac6bf-7e4b-41e1-a2e0-e11ab4540750"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D25",
-                    "pos": {
-                        "x": 126.75,
-                        "y": 98.5
-                    },
-                    "uuid": "a48c4a39-2f02-44ef-99fd-d8895e4c2734"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint MH4",
-                    "pos": {
-                        "x": 109.5,
-                        "y": 90.5
-                    },
-                    "uuid": "a6950abe-74ec-441d-9631-2df29807b849"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D33",
-                    "pos": {
-                        "x": 164.75,
-                        "y": 53.375
-                    },
-                    "uuid": "abc3ee5d-d566-4535-9846-61f165680a81"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D34",
-                    "pos": {
-                        "x": 183.75,
-                        "y": 93.75
-                    },
-                    "uuid": "af68dad4-05c0-48fd-905c-33b8b71eda0b"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D31",
-                    "pos": {
-                        "x": 164.75,
-                        "y": 91.375
-                    },
-                    "uuid": "b2975b29-080d-4b7b-a862-8638cd967aff"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint MH7",
-                    "pos": {
-                        "x": 199.241052,
-                        "y": 115.323658
-                    },
-                    "uuid": "c0033e5e-5e5d-4548-b630-f02fb03d50d2"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D36",
-                    "pos": {
-                        "x": 183.75,
-                        "y": 55.75
-                    },
-                    "uuid": "c963d839-6309-4b47-95ae-3955e0fe8830"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint MCU1",
-                    "pos": {
-                        "x": 214.704,
-                        "y": 70.87
-                    },
-                    "uuid": "d61fbd47-2a27-48eb-9318-69d24b4526e4"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint DISP1",
-                    "pos": {
-                        "x": 214.647,
-                        "y": 73.25
-                    },
-                    "uuid": "dcb676f9-d517-4f26-a033-5556ad4c0974"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D28",
-                    "pos": {
-                        "x": 145.75,
-                        "y": 93.75
-                    },
-                    "uuid": "e0e833c8-1f12-44e5-af5e-7bfc590a9597"
+                    "uuid": "0b7d6c12-9cbc-456b-8e8a-7c45bbfee766"
                 }
             ],
             "severity": "warning",
@@ -490,7 +46,67 @@
                         "x": 107.75,
                         "y": 60.5
                     },
-                    "uuid": "e7b39f96-e6b3-4995-ba24-1572cc728e65"
+                    "uuid": "14a51834-2a5b-4d74-90d3-918d61c3b084"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint MH6",
+                    "pos": {
+                        "x": 152.657,
+                        "y": 107.74
+                    },
+                    "uuid": "18504196-e037-410c-8697-164c8e09db1c"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D38",
+                    "pos": {
+                        "x": 202.75,
+                        "y": 77.125
+                    },
+                    "uuid": "199ce40c-771d-4948-b79d-d7098d700810"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D42",
+                    "pos": {
+                        "x": 212.322768,
+                        "y": 113.927461
+                    },
+                    "uuid": "1e545eaa-2199-48e2-af33-48fa3e5e76c0"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D34",
+                    "pos": {
+                        "x": 183.75,
+                        "y": 93.75
+                    },
+                    "uuid": "254b1739-80c3-4fd4-8fdc-9902617dd6f9"
                 }
             ],
             "severity": "warning",
@@ -505,7 +121,352 @@
                         "x": 223.0,
                         "y": 99.0
                     },
-                    "uuid": "e9995046-3b06-41f7-8771-276dd90d1de0"
+                    "uuid": "297aeb27-fa5b-49e8-8cd3-c2bc81ec4ee5"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint MCU1",
+                    "pos": {
+                        "x": 214.704,
+                        "y": 70.87
+                    },
+                    "uuid": "2a89602c-2775-4d19-9d30-f5b0e3b3f23d"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D27",
+                    "pos": {
+                        "x": 126.75,
+                        "y": 60.5
+                    },
+                    "uuid": "310cf0b8-5b99-4425-8721-8770fa6ba616"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D35",
+                    "pos": {
+                        "x": 183.75,
+                        "y": 74.75
+                    },
+                    "uuid": "3d9ca538-1465-46a2-a275-2a6e178c6376"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint RST1",
+                    "pos": {
+                        "x": 214.704,
+                        "y": 55.165
+                    },
+                    "uuid": "462fe6d4-4605-4671-8832-f9c8e2c2796a"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D31",
+                    "pos": {
+                        "x": 164.75,
+                        "y": 91.375
+                    },
+                    "uuid": "6622a378-c084-4650-a794-56344beddcf2"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D26",
+                    "pos": {
+                        "x": 126.75,
+                        "y": 79.5
+                    },
+                    "uuid": "6d551f2d-50c9-4f4b-9c3b-68cc2cb6a709"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D40",
+                    "pos": {
+                        "x": 174.25,
+                        "y": 113.375
+                    },
+                    "uuid": "79e5b92f-b4b1-4ef6-a370-26aa3b18ab12"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint MH3",
+                    "pos": {
+                        "x": 109.5,
+                        "y": 71.5
+                    },
+                    "uuid": "80738d8c-4e78-4aa7-ad77-e9da44bcc2a7"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D28",
+                    "pos": {
+                        "x": 145.75,
+                        "y": 93.75
+                    },
+                    "uuid": "8126aa4b-d119-440a-a702-bfd3a1c6325d"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D22",
+                    "pos": {
+                        "x": 107.75,
+                        "y": 98.5
+                    },
+                    "uuid": "8ff4a496-5570-4ed2-b7f0-fd9cc823e22c"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint MH5",
+                    "pos": {
+                        "x": 185.468,
+                        "y": 67.986
+                    },
+                    "uuid": "9b7aa4aa-f725-4420-a2b2-867d7c213a47"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint DISP1",
+                    "pos": {
+                        "x": 214.647,
+                        "y": 73.25
+                    },
+                    "uuid": "b107cc54-2a34-4e5a-bf99-523daa0988c5"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint MH2",
+                    "pos": {
+                        "x": 222.194,
+                        "y": 108.995
+                    },
+                    "uuid": "b6f82388-b954-4931-ad57-f2e27a39dddd"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D25",
+                    "pos": {
+                        "x": 126.75,
+                        "y": 98.5
+                    },
+                    "uuid": "bc8b2941-cb3e-4e17-ad0d-bdf201ad5bda"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D33",
+                    "pos": {
+                        "x": 164.75,
+                        "y": 53.375
+                    },
+                    "uuid": "c4dece03-fb62-44c2-8404-6e14e6175147"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint MH1",
+                    "pos": {
+                        "x": 207.762,
+                        "y": 100.476
+                    },
+                    "uuid": "c74bacc3-b320-463c-9abf-26c20e2c2b87"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint JST1",
+                    "pos": {
+                        "x": 211.75,
+                        "y": 97.75
+                    },
+                    "uuid": "cf2b832d-f182-47f3-a6a9-2ddb40e47f19"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D23",
+                    "pos": {
+                        "x": 107.75,
+                        "y": 79.5
+                    },
+                    "uuid": "d31a8bec-8c55-4806-bdde-a79e9eb4fcc1"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D39",
+                    "pos": {
+                        "x": 202.75,
+                        "y": 58.125
+                    },
+                    "uuid": "dbf9c3c1-057d-43e2-89da-cb7477947199"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D32",
+                    "pos": {
+                        "x": 164.75,
+                        "y": 72.375
+                    },
+                    "uuid": "e2a50a7f-269d-42d2-8272-6d360c3b0546"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint MH7",
+                    "pos": {
+                        "x": 199.241052,
+                        "y": 115.323658
+                    },
+                    "uuid": "e5ad6f5f-0af2-438b-b7bf-8a53a1d506d1"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D36",
+                    "pos": {
+                        "x": 183.75,
+                        "y": 55.75
+                    },
+                    "uuid": "e6505dd8-3094-4147-b40a-e4bd24c1eaab"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D30",
+                    "pos": {
+                        "x": 145.75,
+                        "y": 55.75
+                    },
+                    "uuid": "ea899cd4-2ed2-4636-bf50-8ab9f5f995b0"
                 }
             ],
             "severity": "warning",
@@ -520,7 +481,7 @@
                         "x": 202.75,
                         "y": 96.125
                     },
-                    "uuid": "eb462021-8316-4c82-9afa-c311cd4068e8"
+                    "uuid": "f2f5c20c-4a7e-47dc-912f-bcd23a8e806c"
                 }
             ],
             "severity": "warning",
@@ -530,27 +491,12 @@
             "description": "The current configuration does not include the footprint library 'ceoloide'.",
             "items": [
                 {
-                    "description": "Footprint S17",
+                    "description": "Footprint MH4",
                     "pos": {
-                        "x": 195.0,
-                        "y": 78.625
+                        "x": 109.5,
+                        "y": 90.5
                     },
-                    "uuid": "042bd43f-7416-4a77-b106-9f449c7dedc8"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint S16",
-                    "pos": {
-                        "x": 195.0,
-                        "y": 97.625
-                    },
-                    "uuid": "09a9785b-5596-4478-90b3-3da0aca80459"
+                    "uuid": "fc5e2d90-6d79-4f44-9739-af48316fbfb5"
                 }
             ],
             "severity": "warning",
@@ -565,82 +511,7 @@
                         "x": 138.0,
                         "y": 57.25
                     },
-                    "uuid": "0f95d76d-f9bc-4d37-be76-e216d0937583"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D10",
-                    "pos": {
-                        "x": 149.25,
-                        "y": 91.375
-                    },
-                    "uuid": "1252b9b4-4d64-4e8d-808c-2c9b4bc66d8d"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint S19",
-                    "pos": {
-                        "x": 166.5,
-                        "y": 114.875
-                    },
-                    "uuid": "17f6732a-9ea8-452a-8e24-8a95e3065a3d"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D2",
-                    "pos": {
-                        "x": 92.25,
-                        "y": 79.5
-                    },
-                    "uuid": "1945c323-48ee-40a2-a2a6-1f961969692a"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint S7",
-                    "pos": {
-                        "x": 138.0,
-                        "y": 95.25
-                    },
-                    "uuid": "1f1af52f-25d9-406f-aa5a-f34df29d4dcc"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint S13",
-                    "pos": {
-                        "x": 176.0,
-                        "y": 95.25
-                    },
-                    "uuid": "2509ef62-0a06-4e2d-8618-b2d7a338682e"
+                    "uuid": "0662c9f5-8646-4724-9752-893917b4c196"
                 }
             ],
             "severity": "warning",
@@ -655,7 +526,7 @@
                         "x": 138.0,
                         "y": 76.25
                     },
-                    "uuid": "2a03ad06-a517-4cb8-8571-04b57c5ae28e"
+                    "uuid": "15ce037e-aeeb-43eb-b953-a3b3d6754b3f"
                 }
             ],
             "severity": "warning",
@@ -665,42 +536,12 @@
             "description": "The current configuration does not include the footprint library 'ceoloide'.",
             "items": [
                 {
-                    "description": "Footprint S1",
+                    "description": "Footprint S17",
                     "pos": {
-                        "x": 100.0,
-                        "y": 100.0
+                        "x": 195.0,
+                        "y": 78.625
                     },
-                    "uuid": "30ab12bd-c39b-410a-81f8-74edca2bd866"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint S21",
-                    "pos": {
-                        "x": 209.746806,
-                        "y": 121.389158
-                    },
-                    "uuid": "3556222c-c5b4-4e34-b340-4cb1d571d2cf"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint S12",
-                    "pos": {
-                        "x": 157.0,
-                        "y": 54.875
-                    },
-                    "uuid": "405a8a43-75ed-4771-ad02-da1f8f6395a0"
+                    "uuid": "16b4659a-bc1f-41a3-a7b8-b58303eb1c26"
                 }
             ],
             "severity": "warning",
@@ -715,247 +556,7 @@
                         "x": 149.25,
                         "y": 53.375
                     },
-                    "uuid": "406c2009-1032-40b1-9529-edba4c06da78"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D1",
-                    "pos": {
-                        "x": 92.25,
-                        "y": 98.5
-                    },
-                    "uuid": "49fed64a-75f6-4e9c-b47e-97116c868ccc"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D17",
-                    "pos": {
-                        "x": 187.25,
-                        "y": 77.125
-                    },
-                    "uuid": "4b51a481-c98d-4ed8-8250-bcee2df5d461"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D20",
-                    "pos": {
-                        "x": 180.402303,
-                        "y": 114.170264
-                    },
-                    "uuid": "70ecf9c2-9f45-4a20-9b35-56e8abbaa9bd"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D15",
-                    "pos": {
-                        "x": 168.25,
-                        "y": 55.75
-                    },
-                    "uuid": "73f26497-7132-42ec-9df4-7ac6641b4047"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D13",
-                    "pos": {
-                        "x": 168.25,
-                        "y": 93.75
-                    },
-                    "uuid": "7ba0c123-7372-41dd-a873-94e58cd4836a"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D3",
-                    "pos": {
-                        "x": 92.25,
-                        "y": 60.5
-                    },
-                    "uuid": "7e187a6e-479a-41cb-9c85-6cb5a3eaf992"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D16",
-                    "pos": {
-                        "x": 187.25,
-                        "y": 96.125
-                    },
-                    "uuid": "826fb926-2690-41a8-b0d7-d14c4b086f63"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint S6",
-                    "pos": {
-                        "x": 119.0,
-                        "y": 62.0
-                    },
-                    "uuid": "87be008a-d5ec-461d-9dae-7b79e12ae555"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint S20",
-                    "pos": {
-                        "x": 187.5,
-                        "y": 117.625
-                    },
-                    "uuid": "964f4688-659a-404c-b001-f7fb48e0b3df"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D19",
-                    "pos": {
-                        "x": 158.75,
-                        "y": 113.375
-                    },
-                    "uuid": "a3099993-9cae-41e4-814d-731ce53eaed9"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D6",
-                    "pos": {
-                        "x": 111.25,
-                        "y": 60.5
-                    },
-                    "uuid": "a52e89da-94c3-4af1-b3a7-5750f2b17c9a"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D4",
-                    "pos": {
-                        "x": 111.25,
-                        "y": 98.5
-                    },
-                    "uuid": "abf0c173-3d3b-436b-84a7-7bb69bc85265"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D8",
-                    "pos": {
-                        "x": 130.25,
-                        "y": 74.75
-                    },
-                    "uuid": "af89d0dc-a30a-4a3b-8240-5289a89e2df4"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D9",
-                    "pos": {
-                        "x": 130.25,
-                        "y": 55.75
-                    },
-                    "uuid": "b4737342-dc47-4cf5-91f6-7eb71cf6a4a0"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint S4",
-                    "pos": {
-                        "x": 119.0,
-                        "y": 100.0
-                    },
-                    "uuid": "bb5f2d39-336d-4346-9ace-0552878f3771"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint S14",
-                    "pos": {
-                        "x": 176.0,
-                        "y": 76.25
-                    },
-                    "uuid": "bf15d80b-e0ef-4e63-82cf-9d9ddca3fcc9"
+                    "uuid": "239235ef-216c-4a98-8155-846f764e191e"
                 }
             ],
             "severity": "warning",
@@ -970,7 +571,7 @@
                         "x": 195.0,
                         "y": 59.625
                     },
-                    "uuid": "c0b2080d-7e50-4c3c-8d9f-2129b6781e74"
+                    "uuid": "25dbc995-c5da-465d-ad68-6f9119f5d577"
                 }
             ],
             "severity": "warning",
@@ -980,12 +581,12 @@
             "description": "The current configuration does not include the footprint library 'ceoloide'.",
             "items": [
                 {
-                    "description": "Footprint D7",
+                    "description": "Footprint D6",
                     "pos": {
-                        "x": 130.25,
-                        "y": 93.75
+                        "x": 111.25,
+                        "y": 60.5
                     },
-                    "uuid": "c111bc4f-fc41-424a-8486-451cbff8e9c4"
+                    "uuid": "2870dbbb-1522-49db-bf7f-582371859305"
                 }
             ],
             "severity": "warning",
@@ -995,27 +596,12 @@
             "description": "The current configuration does not include the footprint library 'ceoloide'.",
             "items": [
                 {
-                    "description": "Footprint S2",
-                    "pos": {
-                        "x": 100.0,
-                        "y": 81.0
-                    },
-                    "uuid": "ca7a8e76-9256-4585-a6a4-239c7e35470b"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D18",
+                    "description": "Footprint D16",
                     "pos": {
                         "x": 187.25,
-                        "y": 58.125
+                        "y": 96.125
                     },
-                    "uuid": "cce6f713-7b3a-446a-a5f7-c9728b7a1fbd"
+                    "uuid": "29067067-d358-4006-9128-165199f07871"
                 }
             ],
             "severity": "warning",
@@ -1025,27 +611,12 @@
             "description": "The current configuration does not include the footprint library 'ceoloide'.",
             "items": [
                 {
-                    "description": "Footprint D11",
-                    "pos": {
-                        "x": 149.25,
-                        "y": 72.375
-                    },
-                    "uuid": "d401923c-59cb-4fca-81c1-b113f86b70b9"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint S15",
+                    "description": "Footprint S14",
                     "pos": {
                         "x": 176.0,
-                        "y": 57.25
+                        "y": 76.25
                     },
-                    "uuid": "d8896f2d-5855-4add-8ed4-8907de0cfdaf"
+                    "uuid": "2c1ad938-a1f4-4aa2-a114-4299c7e25af1"
                 }
             ],
             "severity": "warning",
@@ -1055,12 +626,12 @@
             "description": "The current configuration does not include the footprint library 'ceoloide'.",
             "items": [
                 {
-                    "description": "Footprint S3",
+                    "description": "Footprint S16",
                     "pos": {
-                        "x": 100.0,
-                        "y": 62.0
+                        "x": 195.0,
+                        "y": 97.625
                     },
-                    "uuid": "df62e09c-19c5-440c-90ac-e9df3267920a"
+                    "uuid": "2ff0eeb6-5256-40e2-a5e6-887c578591fb"
                 }
             ],
             "severity": "warning",
@@ -1075,7 +646,7 @@
                         "x": 111.25,
                         "y": 79.5
                     },
-                    "uuid": "e06f6489-37cf-413f-a4ba-7bed206d8569"
+                    "uuid": "3579026a-87d6-400f-8c4c-52856855040f"
                 }
             ],
             "severity": "warning",
@@ -1090,7 +661,7 @@
                         "x": 157.0,
                         "y": 73.875
                     },
-                    "uuid": "e17a485c-f2d1-4826-ad56-e83373892caf"
+                    "uuid": "4c9d5674-6590-4ee0-bd99-259c06e3a1a9"
                 }
             ],
             "severity": "warning",
@@ -1100,12 +671,12 @@
             "description": "The current configuration does not include the footprint library 'ceoloide'.",
             "items": [
                 {
-                    "description": "Footprint S10",
+                    "description": "Footprint S7",
                     "pos": {
-                        "x": 157.0,
-                        "y": 92.875
+                        "x": 138.0,
+                        "y": 95.25
                     },
-                    "uuid": "e77e0828-6dbb-465f-8b16-c3778833b654"
+                    "uuid": "50daf2b5-3a5b-4fcf-acae-da313ba272ca"
                 }
             ],
             "severity": "warning",
@@ -1115,12 +686,117 @@
             "description": "The current configuration does not include the footprint library 'ceoloide'.",
             "items": [
                 {
-                    "description": "Footprint S5",
+                    "description": "Footprint D1",
+                    "pos": {
+                        "x": 92.25,
+                        "y": 98.5
+                    },
+                    "uuid": "65bed8f3-5480-4251-9ccb-418d54d6f97f"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint S6",
                     "pos": {
                         "x": 119.0,
-                        "y": 81.0
+                        "y": 62.0
                     },
-                    "uuid": "f583eac2-97ff-48cd-aa70-7f5f50bebf18"
+                    "uuid": "66dc8b53-06f9-42e2-945c-207c2a3eaf7f"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint S12",
+                    "pos": {
+                        "x": 157.0,
+                        "y": 54.875
+                    },
+                    "uuid": "67973de8-6b99-4a78-9294-836e7950a293"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint S15",
+                    "pos": {
+                        "x": 176.0,
+                        "y": 57.25
+                    },
+                    "uuid": "6b4254ce-e3fc-4257-8b71-070ddb3ce9cf"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D13",
+                    "pos": {
+                        "x": 168.25,
+                        "y": 93.75
+                    },
+                    "uuid": "76da5c39-8cbd-443c-a2c9-ec45a753cade"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D20",
+                    "pos": {
+                        "x": 180.402303,
+                        "y": 114.170264
+                    },
+                    "uuid": "7974ef5a-a7a6-4b35-b6e5-b23ab90f2605"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D15",
+                    "pos": {
+                        "x": 168.25,
+                        "y": 55.75
+                    },
+                    "uuid": "7b61471f-19a4-4a62-aa3d-29992964bdeb"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D17",
+                    "pos": {
+                        "x": 187.25,
+                        "y": 77.125
+                    },
+                    "uuid": "93a5d3c3-45b0-4eb8-b609-3a4825aeb917"
                 }
             ],
             "severity": "warning",
@@ -1135,7 +811,142 @@
                         "x": 168.25,
                         "y": 74.75
                     },
-                    "uuid": "f8c08307-cd99-4425-a7b4-cd7a35fb4c80"
+                    "uuid": "940f7c0b-4f11-4a5c-b931-c632f0a1f682"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint S1",
+                    "pos": {
+                        "x": 100.0,
+                        "y": 100.0
+                    },
+                    "uuid": "9bacb9c3-9dfc-4840-9e0c-2689d0b101a4"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D19",
+                    "pos": {
+                        "x": 158.75,
+                        "y": 113.375
+                    },
+                    "uuid": "9dc4e8fe-bfe7-44c8-846a-2c7c80425dca"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint S4",
+                    "pos": {
+                        "x": 119.0,
+                        "y": 100.0
+                    },
+                    "uuid": "9f661ca7-f2ac-4087-8d28-6e9790aac4d5"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint S13",
+                    "pos": {
+                        "x": 176.0,
+                        "y": 95.25
+                    },
+                    "uuid": "a16d417b-2233-46fe-966a-f3529acb640f"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint S3",
+                    "pos": {
+                        "x": 100.0,
+                        "y": 62.0
+                    },
+                    "uuid": "a57cbcc6-7506-4ece-9f6a-a3c582578c0a"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D3",
+                    "pos": {
+                        "x": 92.25,
+                        "y": 60.5
+                    },
+                    "uuid": "a67fb4f2-4380-41ef-9caa-b9dbce799017"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint S2",
+                    "pos": {
+                        "x": 100.0,
+                        "y": 81.0
+                    },
+                    "uuid": "a6f1ebbd-424a-43b6-ada1-16b20642b90b"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D11",
+                    "pos": {
+                        "x": 149.25,
+                        "y": 72.375
+                    },
+                    "uuid": "b257b650-ac46-4426-ad84-ea53f93ac3a2"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint S10",
+                    "pos": {
+                        "x": 157.0,
+                        "y": 92.875
+                    },
+                    "uuid": "b9535d6a-6cc7-4277-ab76-31e60eaa599b"
                 }
             ],
             "severity": "warning",
@@ -1150,7 +961,172 @@
                         "x": 204.572768,
                         "y": 127.350855
                     },
-                    "uuid": "f9602379-727c-4fe5-926b-d9caf15e1435"
+                    "uuid": "b9e9661b-bba3-4368-8449-f8ad87efd160"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint S20",
+                    "pos": {
+                        "x": 187.5,
+                        "y": 117.625
+                    },
+                    "uuid": "b9f9dae5-f603-4f7d-8fff-5e3175ba1948"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint S19",
+                    "pos": {
+                        "x": 166.5,
+                        "y": 114.875
+                    },
+                    "uuid": "bc2662ca-822e-44e0-a7a6-6046912f72bf"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D10",
+                    "pos": {
+                        "x": 149.25,
+                        "y": 91.375
+                    },
+                    "uuid": "be311efd-f144-48e7-b70b-6cbcb2174288"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D7",
+                    "pos": {
+                        "x": 130.25,
+                        "y": 93.75
+                    },
+                    "uuid": "ccf80813-d140-41f7-8bbe-10cc94fe6391"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D9",
+                    "pos": {
+                        "x": 130.25,
+                        "y": 55.75
+                    },
+                    "uuid": "d4ba9b68-50e3-4a7f-9bb9-df044201ee26"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D8",
+                    "pos": {
+                        "x": 130.25,
+                        "y": 74.75
+                    },
+                    "uuid": "d4e08378-5b23-427e-855f-034e53742230"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D2",
+                    "pos": {
+                        "x": 92.25,
+                        "y": 79.5
+                    },
+                    "uuid": "e1abd8cb-e7fe-4cdb-9c7f-8ca2d271d0a6"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D18",
+                    "pos": {
+                        "x": 187.25,
+                        "y": 58.125
+                    },
+                    "uuid": "e719b7a6-aade-49bf-a149-4045695ffd66"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint S5",
+                    "pos": {
+                        "x": 119.0,
+                        "y": 81.0
+                    },
+                    "uuid": "f0c6d1a0-0460-48be-ae4b-9c869470d2ff"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint S21",
+                    "pos": {
+                        "x": 209.746806,
+                        "y": 121.389158
+                    },
+                    "uuid": "f26e8a32-f240-4039-a4a8-e1e79d961f37"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D4",
+                    "pos": {
+                        "x": 111.25,
+                        "y": 98.5
+                    },
+                    "uuid": "fab34a84-e9d1-40f1-9d67-04c4bcc38317"
                 }
             ],
             "severity": "warning",
