@@ -96,6 +96,12 @@ unfiltered DRC reports with its artifacts.
 before export and writes unfiltered pre-route and post-route DRC reports to
 `reports/routing/`. Existing `.kicad_dru` files survive generation and are left
 unchanged; the helper creates custom rules only if that file is absent.
+Docker runs with the invoking user's UID/GID so generated files are immediately
+editable on the host. KiCad `*-bak` safety copies are removed after each board
+and on exit. Generated `.kicad_pro` files can be versioned alongside the boards;
+they are regenerated on the next build. Each autorouted project and custom-rule
+file is copied from its source board, so edits to an autorouted copy must be
+incorporated into `configure_jlcpcb.py` or the source custom rules to persist.
 
 `routing_status.py` rejects missing connections or DRC errors for the specific
 board. Plates also run unfiltered DRC before export. Failed boards skip final

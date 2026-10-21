@@ -46,6 +46,7 @@ if 'kibot/export_dsn.py' in args or 'kibot/import_ses.py' in args:
 if 'java' in args: pathlib.Path(value('-do')).touch()
 if 'kicad-cli' in args:
  report=value('-o'); board=args[-1]
+ pathlib.Path(board+'-bak').touch()
  error='drcbad_autorouted' in board or board.endswith('frontplate.kicad_pcb')
  missing='routebad_autorouted' in board
  pathlib.Path(report).write_text(json.dumps({'unconnected_items':[{}] if missing else [],'violations':[{'type':'clearance','severity':'error'}] if error else []}))
@@ -64,6 +65,8 @@ if 'kibot/routing_status.py' in args:
             self.assertIn('FAILED: routebad', result.stderr)
             self.assertNotIn('FAILED: good', result.stderr)
             calls = (root / 'calls.log').read_text().splitlines()
+            for call in calls:
+                self.assertIn(f'run --user {os.getuid()}:{os.getgid()} -e HOME=/tmp ', call)
             routing_calls = [line for line in calls if ' java ' in line]
             self.assertEqual(len(routing_calls), 3)
             for call in routing_calls:
@@ -82,6 +85,7 @@ if 'kibot/routing_status.py' in args:
             self.assertFalse((root / 'freerouting/good.rules').exists())
             self.assertFalse((root / 'gerbers/drcbad_autorouted.zip').exists())
             self.assertFalse((root / 'gerbers/frontplate.zip').exists())
+            self.assertEqual(list((root / 'pcbs').glob('*-bak')), [])
             self.assertFalse((root / 'images/routebad_autorouted-top.png').exists())
 
 
