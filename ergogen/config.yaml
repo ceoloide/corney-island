@@ -752,7 +752,7 @@ pcbs:
           choc_v2_support: true
           choc_v1_support: false
           include_stabilizer_pad: false
-          include_traces_vias: true
+          include_traces_vias: false
         adjust:
           rotate: switch_rotation
 
@@ -773,7 +773,7 @@ pcbs:
           choc_v2_support: true
           choc_v1_support: false
           include_stabilizer_pad: false
-          include_traces_vias: true
+          include_traces_vias: false
         adjust:
           rotate: switch_rotation
 
@@ -910,7 +910,7 @@ pcbs:
           P4: "{{key.led_prev}}" #DIN
           reversible: true
           reverse_mount: true
-          include_traces_vias: true
+          include_traces_vias: false
           via_size: via_size
           via_drill: via_drill
           include_keepout: false
@@ -932,7 +932,7 @@ pcbs:
           P4: "{{zone.key.din}}" #DIN
           reversible: true
           reverse_mount: false
-          include_traces_vias: true
+          include_traces_vias: false
           via_size: via_size
           via_drill: via_drill
           include_keepout: false
