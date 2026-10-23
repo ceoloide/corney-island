@@ -4,7 +4,7 @@ container_cmd=docker
 boards="${*:-corney_island_wireless corney_island}"
 plates="backplate frontplate controller_overlay"
 # Temporary KiCad 9 / Freerouting 2.5.1-SNAPSHOT toolchain.
-kicad_auto_image="ceoloide/ergogen-freerouting:k9_snapshot_20261020_121300"
+kicad_auto_image="${ERGOGEN_DOCKER_IMAGE:-ceoloide/ergogen-freerouting:k9_snapshot_20261020_121300}"
 freerouting_cli_image="$kicad_auto_image"
 # JLCPCB two-layer, 1 oz FR-4 minimum: 0.10 mm (100 um).
 # https://jlcpcb.com/help/article/jlcpcb-copper-weight
@@ -120,6 +120,8 @@ build_board() {
     cp "pcbs/$board.kicad_dru" "pcbs/${board}_autorouted.kicad_dru"
     run_container "$kicad_auto_image" kicad-cli pcb drc --format json --severity-all -o "reports/routing/$board-autorouted.json" "pcbs/${board}_autorouted.kicad_pcb"
     run_container "$kicad_auto_image" python3 kibot/routing_status.py "reports/routing/$board-autorouted.json"
+    # Old root-owned reports cannot be overwritten by the invoking user's KiCad CLI.
+    rm -f "kibot/drc/${board}_autorouted-drc."*
     run_container "$kicad_auto_image" kibot -b "pcbs/${board}_autorouted.kicad_pcb" -c kibot/boards.kibot.yaml
 }
 

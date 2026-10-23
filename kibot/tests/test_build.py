@@ -11,10 +11,11 @@ ROOT = Path(__file__).resolve().parents[2]
 class BuildTest(unittest.TestCase):
     def test_failed_boards_do_not_stop_batch_and_custom_rules_survive(self):
         for neckdown in ('true', 'false'):
-            with self.subTest(neckdown=neckdown):
-                self.check_build(neckdown)
+            for image in (None, 'local/ergogen-freerouting:patched'):
+                with self.subTest(neckdown=neckdown, image=image):
+                    self.check_build(neckdown, image)
 
-    def check_build(self, neckdown):
+    def check_build(self, neckdown, image):
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
             (root / 'bin').mkdir()
@@ -22,6 +23,8 @@ class BuildTest(unittest.TestCase):
             (root / 'freerouting').mkdir()
             (root / 'gerbers').mkdir()
             (root / 'images').mkdir()
+            (root / 'kibot/drc').mkdir(parents=True)
+            (root / 'kibot/drc/good_autorouted-drc.html').write_text('stale report')
             (root / 'gerbers/drcbad_autorouted.zip').write_text('stale fabrication')
             (root / 'gerbers/frontplate.zip').write_text('stale plate fabrication')
             (root / 'images/routebad_autorouted-top.png').write_text('stale image')
@@ -44,6 +47,9 @@ if 'kibot/configure_jlcpcb.py' in args:
 if 'kibot/export_dsn.py' in args or 'kibot/import_ses.py' in args:
  pathlib.Path(value('-o')).touch()
 if 'java' in args: pathlib.Path(value('-do')).touch()
+if 'kibot/boards.kibot.yaml' in args:
+ stale=pathlib.Path('kibot/drc') / (pathlib.Path(value('-b')).stem+'-drc.html')
+ if stale.exists(): sys.exit(7)
 if 'kicad-cli' in args:
  report=value('-o'); board=args[-1]
  pathlib.Path(board+'-bak').touch()
@@ -56,8 +62,13 @@ if 'kibot/routing_status.py' in args:
 ''')
             for executable in (root / 'bin').iterdir():
                 executable.chmod(0o755)
+            environment = {**os.environ, 'FREEROUTING_NECKDOWN': neckdown,
+                           'PATH': str(root / 'bin') + ':' + os.environ['PATH']}
+            environment.pop('ERGOGEN_DOCKER_IMAGE', None)
+            if image:
+                environment['ERGOGEN_DOCKER_IMAGE'] = image
             result = subprocess.run(['sh', str(ROOT / 'build.sh'), 'drcbad', 'routebad', 'good'], cwd=root,
-                                    env={**os.environ, 'FREEROUTING_NECKDOWN': neckdown, 'PATH': str(root / 'bin') + ':' + os.environ['PATH']},
+                                    env=environment,
                                     capture_output=True, text=True)
             self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
             self.assertIn('FAILED: frontplate', result.stderr)
@@ -65,12 +76,14 @@ if 'kibot/routing_status.py' in args:
             self.assertIn('FAILED: routebad', result.stderr)
             self.assertNotIn('FAILED: good', result.stderr)
             calls = (root / 'calls.log').read_text().splitlines()
+            expected_image = image or 'ceoloide/ergogen-freerouting:k9_snapshot_20261020_121300'
             for call in calls:
                 self.assertIn(f'run --user {os.getuid()}:{os.getgid()} -e HOME=/tmp ', call)
+                self.assertIn(expected_image + ' ', call)
             routing_calls = [line for line in calls if ' java ' in line]
             self.assertEqual(len(routing_calls), 3)
             for call in routing_calls:
-                self.assertIn('ceoloide/ergogen-freerouting:k9_snapshot_20261020_121300 java ', call)
+                self.assertIn(expected_image + ' java ', call)
                 self.assertIn('-jar /opt/freerouting.jar', call)
                 self.assertIn('--router.fanout.enabled=false', call)
                 self.assertIn('--router.optimizer.max_threads=1', call)
@@ -87,6 +100,7 @@ if 'kibot/routing_status.py' in args:
             self.assertFalse((root / 'gerbers/frontplate.zip').exists())
             self.assertEqual(list((root / 'pcbs').glob('*-bak')), [])
             self.assertFalse((root / 'images/routebad_autorouted-top.png').exists())
+            self.assertFalse((root / 'kibot/drc/good_autorouted-drc.html').exists())
 
 
 if __name__ == '__main__':
