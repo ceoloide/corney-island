@@ -1,7 +1,7 @@
 {
     "$schema": "https://schemas.kicad.org/drc.v1.json",
     "coordinate_units": "mm",
-    "date": "2026-10-20T03:34:12+0000",
+    "date": "2026-10-23T00:17:29+0000",
     "kicad_version": "9.0.7",
     "schematic_parity": [],
     "source": "backplate.kicad_pcb",
@@ -11,42 +11,27 @@
             "description": "The current configuration does not include the footprint library 'ceoloide'.",
             "items": [
                 {
-                    "description": "Footprint MH2",
-                    "pos": {
-                        "x": 109.5,
-                        "y": 90.5
-                    },
-                    "uuid": "1281c4fe-0a73-4e58-b995-7c2c1019250e"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint MH4",
-                    "pos": {
-                        "x": 152.657,
-                        "y": 107.74
-                    },
-                    "uuid": "1353feb7-76f7-4732-9fac-1b78eb678722"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
                     "description": "Footprint MH1",
                     "pos": {
                         "x": 109.5,
                         "y": 71.5
                     },
-                    "uuid": "1edc9934-b9bf-439f-8937-1a87a670bf1d"
+                    "uuid": "91375864-ea3b-4049-8f07-fba2fff3f4d8"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint MH2",
+                    "pos": {
+                        "x": 109.5,
+                        "y": 90.5
+                    },
+                    "uuid": "4d0214ad-3f1e-46e9-beb9-de3e76d54bc9"
                 }
             ],
             "severity": "warning",
@@ -61,7 +46,22 @@
                         "x": 185.468,
                         "y": 67.986
                     },
-                    "uuid": "64f10d59-5320-420c-bc8e-8b5732851d05"
+                    "uuid": "62f2e2df-de49-4841-ae6c-9460ddd8d018"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint MH4",
+                    "pos": {
+                        "x": 152.657,
+                        "y": 107.74
+                    },
+                    "uuid": "9c18cbc4-4fab-47af-901f-33b91dc469da"
                 }
             ],
             "severity": "warning",
@@ -76,7 +76,7 @@
                         "x": 199.241052,
                         "y": 115.323658
                     },
-                    "uuid": "a3fda0d3-cd15-4ee5-9f2a-2dba03ec5892"
+                    "uuid": "80f49b27-0985-4bb3-9d0d-2505f703c864"
                 }
             ],
             "severity": "warning",

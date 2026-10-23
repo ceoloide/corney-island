@@ -4,7 +4,7 @@ container_cmd=docker
 boards="${*:-corney_island_wireless corney_island}"
 plates="backplate frontplate controller_overlay"
 # Temporary KiCad 9 / Freerouting 2.5.1-SNAPSHOT toolchain.
-kicad_auto_image="ceoloide/ergogen-freerouting:k9_snapshot_20261020_121300"
+kicad_auto_image="${ERGOGEN_DOCKER_IMAGE:-ceoloide/ergogen-freerouting:k9_snapshot_20261020_121300}"
 freerouting_cli_image="$kicad_auto_image"
 # JLCPCB two-layer, 1 oz FR-4 minimum: 0.10 mm (100 um).
 # https://jlcpcb.com/help/article/jlcpcb-copper-weight
@@ -17,7 +17,14 @@ case "${FREEROUTING_NECKDOWN:-false}" in
 esac
 
 run_container() {
-    "$container_cmd" run -w /board -v "$(pwd):/board" --rm "$@"
+    # Keep generated boards editable on the host. KiCad/KiBot need a writable home.
+    "$container_cmd" run --user "$(id -u):$(id -g)" -e HOME=/tmp \
+        -w /board -v "$(pwd):/board" --rm "$@"
+}
+
+remove_backups() {
+    # KiCad safety copies are not build outputs.
+    [ ! -d pcbs ] || find pcbs -maxdepth 1 -type f -name '*-bak' -delete
 }
 
 # Only existing custom rules and manually routed files need preservation.
@@ -37,10 +44,7 @@ cleanup() {
     else
         echo "Could not restore saved files; backup retained at $project_backup" >&2
     fi
-    for directory in ergogen freerouting pcbs gerbers images reports; do
-        [ -d "$directory" ] || continue
-        run_container --entrypoint chown "$kicad_auto_image" -R "$(id -u):$(id -g)" "$directory" || true
-    done
+    remove_backups
 }
 trap 'cleanup' 0
 trap 'exit 1' HUP INT TERM
@@ -71,6 +75,7 @@ for plate in $plates; do
         run_container "$kicad_auto_image" kibot -b "pcbs/$plate.kicad_pcb" -c kibot/default.kibot.yaml
     )
     plate_status=$?
+    remove_backups
     if [ "$plate_status" -ne 0 ]; then
         echo "FAILED: $plate; continuing with the next board." >&2
         failed_boards="$failed_boards $plate"
@@ -115,6 +120,8 @@ build_board() {
     cp "pcbs/$board.kicad_dru" "pcbs/${board}_autorouted.kicad_dru"
     run_container "$kicad_auto_image" kicad-cli pcb drc --format json --severity-all -o "reports/routing/$board-autorouted.json" "pcbs/${board}_autorouted.kicad_pcb"
     run_container "$kicad_auto_image" python3 kibot/routing_status.py "reports/routing/$board-autorouted.json"
+    # Old root-owned reports cannot be overwritten by the invoking user's KiCad CLI.
+    rm -f "kibot/drc/${board}_autorouted-drc."*
     run_container "$kicad_auto_image" kibot -b "pcbs/${board}_autorouted.kicad_pcb" -c kibot/boards.kibot.yaml
 }
 
@@ -122,6 +129,7 @@ for board in $boards; do
     # Fail fast for one board without stopping the outer loop.
     (set -e; build_board "$board")
     board_status=$?
+    remove_backups
     rm -f "freerouting/$board.rules"
     if [ "$board_status" -ne 0 ]; then
         echo "FAILED: $board (status $board_status); continuing with the next board." >&2

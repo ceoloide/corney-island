@@ -70,18 +70,17 @@ in the sibling `ergogen-docker` repository; it includes the neck-width-floor fix
 from [Freerouting PR #979](https://github.com/freerouting/freerouting/pull/979).
 
 For two-layer, 1 oz FR-4, [JLCPCB lists a 0.10 mm minimum trace width and spacing](https://jlcpcb.com/help/article/jlcpcb-copper-weight)
-(checked 2026-10-19). The default build explicitly passes
-`--router.automatic_neckdown=true --router.neck_width_um=100`, matching the
-project's 0.10 mm fabrication minimum. The latter also enables whole-connection
-retries at 100 µm, so the resulting power routes still need review against their
-nominal widths and current requirements. For a comparison with both narrowing
-paths disabled:
+(checked 2026-10-19). The temporary build default is
+`FREEROUTING_NECKDOWN=false`, passing
+`--router.automatic_neckdown=false --router.neck_width_um=0`.
+To enable automatic neckdown and whole-connection retries with a 100 µm floor:
 
 ```sh
-FREEROUTING_NECKDOWN=false ./build.sh corney_island
+FREEROUTING_NECKDOWN=true ./build.sh corney_island
 ```
 
-This passes `--router.automatic_neckdown=false --router.neck_width_um=0`.
+This passes `--router.automatic_neckdown=true --router.neck_width_um=100`.
+Power routes still need review against their nominal widths and current requirements.
 The precision exporter and post-route KiCad checks apply in both modes. Fanout
 is explicitly disabled, matching the rules file, and the optimizer uses one
 worker. Each routing job has a 20-minute limit; override it with
@@ -92,10 +91,25 @@ outputs are produced.
 CI invokes the same `build.sh` and pulls the same toolchain image, retaining
 unfiltered DRC reports with its artifacts.
 
+To test a locally built patched toolchain without changing the default image:
+
+```sh
+ERGOGEN_DOCKER_IMAGE=ceoloide/ergogen-freerouting:k9_pr1010-48c969dd_pr1015-104da876 ./build.sh
+```
+
+The override applies to both KiCad operations and Freerouting.
+
+
 `build.sh` applies the two-layer JLCPCB profile with `configure_jlcpcb.py`
 before export and writes unfiltered pre-route and post-route DRC reports to
 `reports/routing/`. Existing `.kicad_dru` files survive generation and are left
 unchanged; the helper creates custom rules only if that file is absent.
+Docker runs with the invoking user's UID/GID so generated files are immediately
+editable on the host. KiCad `*-bak` safety copies are removed after each board
+and on exit. Generated `.kicad_pro` files can be versioned alongside the boards;
+they are regenerated on the next build. Each autorouted project and custom-rule
+file is copied from its source board, so edits to an autorouted copy must be
+incorporated into `configure_jlcpcb.py` or the source custom rules to persist.
 
 `routing_status.py` rejects missing connections or DRC errors for the specific
 board. Plates also run unfiltered DRC before export. Failed boards skip final
