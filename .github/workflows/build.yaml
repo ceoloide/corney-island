@@ -37,6 +37,7 @@ jobs:
         # Fanout is disabled in build.sh; pin neckdown here as well as its local default.
         env:
           FREEROUTING_NECKDOWN: 'false'
+          ERGOGEN_DOCKER_IMAGE: ceoloide/ergogen-freerouting:dev
         run: ./build.sh "${{ matrix.board }}"
       # Match exact board stems: corney_island* also matches the wireless board.
       - name: Persist ${{ matrix.board }} and its unfiltered DRC reports
