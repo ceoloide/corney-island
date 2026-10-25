@@ -1,7 +1,7 @@
 {
     "$schema": "https://schemas.kicad.org/drc.v1.json",
     "coordinate_units": "mm",
-    "date": "2026-10-23T00:17:36+0000",
+    "date": "2026-10-25T17:38:26+0000",
     "kicad_version": "9.0.7",
     "schematic_parity": [],
     "source": "frontplate.kicad_pcb",
@@ -16,7 +16,7 @@
                         "x": -2147.483548,
                         "y": 52.990111
                     },
-                    "uuid": "45c28f78-43b0-4197-ac4e-95dbbaf3fa45"
+                    "uuid": "fce5267b-3249-4db6-8282-18c423ea4ee8"
                 }
             ],
             "severity": "error",
@@ -31,7 +31,7 @@
                         "x": 109.5,
                         "y": 71.5
                     },
-                    "uuid": "5a24831a-e7b8-46c2-ab93-e74b2f0d722d"
+                    "uuid": "e7776dce-3ca3-4916-b638-1347d744a54f"
                 }
             ],
             "severity": "warning",
@@ -46,7 +46,7 @@
                         "x": 109.5,
                         "y": 90.5
                     },
-                    "uuid": "5046d05b-24f0-4f9e-b286-1769bf7b3a4e"
+                    "uuid": "b3f6da7a-d1f2-4482-8334-c951313114fa"
                 }
             ],
             "severity": "warning",
@@ -61,7 +61,7 @@
                         "x": 185.468,
                         "y": 67.986
                     },
-                    "uuid": "b27053c4-cfe6-4e03-8e51-954951a56e95"
+                    "uuid": "412d0c0e-2bbe-4000-b33d-5d8eae53065e"
                 }
             ],
             "severity": "warning",
@@ -76,7 +76,7 @@
                         "x": 152.657,
                         "y": 107.74
                     },
-                    "uuid": "d31471fc-0b52-4889-9c0b-e1dc3bfc5beb"
+                    "uuid": "1aa29f8c-c55f-4a54-955b-7e65dd37cb5e"
                 }
             ],
             "severity": "warning",
@@ -91,7 +91,7 @@
                         "x": 199.241052,
                         "y": 115.323658
                     },
-                    "uuid": "13f20e57-56b8-4b9d-8e26-403ae0b73d5b"
+                    "uuid": "f2b08186-6dde-4148-aa3d-f9026d41d073"
                 }
             ],
             "severity": "warning",

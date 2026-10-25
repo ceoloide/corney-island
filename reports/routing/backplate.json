@@ -1,7 +1,7 @@
 {
     "$schema": "https://schemas.kicad.org/drc.v1.json",
     "coordinate_units": "mm",
-    "date": "2026-10-23T00:17:29+0000",
+    "date": "2026-10-25T17:38:19+0000",
     "kicad_version": "9.0.7",
     "schematic_parity": [],
     "source": "backplate.kicad_pcb",
@@ -16,7 +16,7 @@
                         "x": 109.5,
                         "y": 71.5
                     },
-                    "uuid": "91375864-ea3b-4049-8f07-fba2fff3f4d8"
+                    "uuid": "c8ae0098-fec8-4327-838f-ab7c9b646bbc"
                 }
             ],
             "severity": "warning",
@@ -31,7 +31,7 @@
                         "x": 109.5,
                         "y": 90.5
                     },
-                    "uuid": "4d0214ad-3f1e-46e9-beb9-de3e76d54bc9"
+                    "uuid": "825378a4-13d6-4695-9289-a50569de30df"
                 }
             ],
             "severity": "warning",
@@ -46,7 +46,7 @@
                         "x": 185.468,
                         "y": 67.986
                     },
-                    "uuid": "62f2e2df-de49-4841-ae6c-9460ddd8d018"
+                    "uuid": "c9a978ca-d2b1-4af6-8ffa-cc3488f58375"
                 }
             ],
             "severity": "warning",
@@ -61,7 +61,7 @@
                         "x": 152.657,
                         "y": 107.74
                     },
-                    "uuid": "9c18cbc4-4fab-47af-901f-33b91dc469da"
+                    "uuid": "78bcb503-dc87-40ea-8d5f-e2887e5128f0"
                 }
             ],
             "severity": "warning",
@@ -76,7 +76,7 @@
                         "x": 199.241052,
                         "y": 115.323658
                     },
-                    "uuid": "80f49b27-0985-4bb3-9d0d-2505f703c864"
+                    "uuid": "0ec88713-e329-4ac5-a838-534e67e12466"
                 }
             ],
             "severity": "warning",
