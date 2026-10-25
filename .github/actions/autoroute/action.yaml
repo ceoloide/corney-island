@@ -6,7 +6,7 @@ inputs:
     required: true
 runs:
   using: 'docker'
-  image: 'docker://ceoloide/ergogen-freerouting:k9_snapshot_20261020_121300'
+  image: 'docker://ceoloide/ergogen-freerouting:dev'
   entrypoint: '/bin/sh'
   args:
     - '-c'

@@ -47,6 +47,10 @@ if 'kibot/configure_jlcpcb.py' in args:
 if 'kibot/export_dsn.py' in args or 'kibot/import_ses.py' in args:
  pathlib.Path(value('-o')).touch()
 if 'java' in args: pathlib.Path(value('-do')).touch()
+if 'kibot' in args and args[-2:] == ['top_view', 'bottom_view']:
+ stem=pathlib.Path(value('-b')).stem
+ for side in ('top', 'bottom'):
+  pathlib.Path('images', stem+'-'+side+'.png').write_text('fresh preview')
 if 'kibot/boards.kibot.yaml' in args:
  stale=pathlib.Path('kibot/drc') / (pathlib.Path(value('-b')).stem+'-drc.html')
  if stale.exists(): sys.exit(7)
@@ -76,7 +80,7 @@ if 'kibot/routing_status.py' in args:
             self.assertIn('FAILED: routebad', result.stderr)
             self.assertNotIn('FAILED: good', result.stderr)
             calls = (root / 'calls.log').read_text().splitlines()
-            expected_image = image or 'ceoloide/ergogen-freerouting:k9_snapshot_20261020_121300'
+            expected_image = image or 'ceoloide/ergogen-freerouting:dev'
             for call in calls:
                 self.assertIn(f'run --user {os.getuid()}:{os.getgid()} -e HOME=/tmp ', call)
                 self.assertIn(expected_image + ' ', call)
@@ -90,7 +94,7 @@ if 'kibot/routing_status.py' in args:
                 self.assertIn('--router.job_timeout=00:20:00', call)
                 self.assertIn(f'--router.automatic_neckdown={neckdown}', call)
                 self.assertIn(f'--router.neck_width_um={100 if neckdown == "true" else 0}', call)
-            exports = [line for line in calls if ' kibot -b pcbs/' in line and '_autorouted.kicad_pcb' in line]
+            exports = [line for line in calls if ' kibot -b pcbs/' in line and '_autorouted.kicad_pcb' in line and 'kibot/boards.kibot.yaml' in line]
             self.assertEqual(len(exports), 1)
             self.assertIn('good_autorouted', exports[0])
             self.assertEqual((root / 'pcbs/drcbad.kicad_dru').read_text(), custom)
@@ -99,7 +103,17 @@ if 'kibot/routing_status.py' in args:
             self.assertFalse((root / 'gerbers/drcbad_autorouted.zip').exists())
             self.assertFalse((root / 'gerbers/frontplate.zip').exists())
             self.assertEqual(list((root / 'pcbs').glob('*-bak')), [])
-            self.assertFalse((root / 'images/routebad_autorouted-top.png').exists())
+            for board in ('drcbad', 'routebad', 'good'):
+                for side in ('top', 'bottom'):
+                    self.assertEqual((root / f'images/{board}_autorouted-{side}.png').read_text(),
+                                     'fresh preview')
+                preview = next(i for i, line in enumerate(calls)
+                               if f'pcbs/{board}_autorouted.kicad_pcb' in line
+                               and line.endswith('top_view bottom_view'))
+                validation = next(i for i, line in enumerate(calls)
+                                  if 'kibot/routing_status.py' in line
+                                  and f'{board}-autorouted.json' in line)
+                self.assertLess(preview, validation)
             self.assertFalse((root / 'kibot/drc/good_autorouted-drc.html').exists())
 
 

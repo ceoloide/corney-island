@@ -52,15 +52,13 @@ repair alone does not establish complete or correct autorouting.
 
 ## Build integration
 
-The build and CI use the published toolchain image
-`ceoloide/ergogen-freerouting:k9_snapshot_20261020_121300` directly. It bundles
-KiCad 9, Java 25, and **Freerouting 2.5.1-SNAPSHOT** from the fixed
-`20261020_121300` snapshot (upstream revision `c4755a88`). Freerouting runs from
-`/opt/freerouting.jar` inside the image. No local JAR, source checkout, snapshot
-discovery, or runtime revision verifier is needed.
+The build, CI, and reusable autoroute action default to
+`ceoloide/ergogen-freerouting:dev`. This tag follows the development toolchain;
+set `ERGOGEN_DOCKER_IMAGE` to select a specific image for a local build.
+Freerouting runs from `/opt/freerouting.jar` inside the image.
 
 ```sh
-docker pull ceoloide/ergogen-freerouting:k9_snapshot_20261020_121300
+docker pull ceoloide/ergogen-freerouting:dev
 ./build.sh
 ```
 
@@ -86,7 +84,10 @@ is explicitly disabled, matching the rules file, and the optimizer uses one
 worker. Each routing job has a 20-minute limit; override it with
 `FREEROUTING_JOB_TIMEOUT=HH:MM:SS`. A timeout can retain a routing result, so the
 post-import connectivity and DRC checks still determine whether fabrication
-outputs are produced.
+outputs are produced. Autorouted top and bottom previews are rendered before
+that check, including for boards with missing connections or DRC errors, so
+their images remain available in CI artifacts for diagnosis. If routing or
+import fails before a board exists, no autorouted preview is generated.
 
 CI invokes the same `build.sh` and pulls the same toolchain image, retaining
 unfiltered DRC reports with its artifacts. Each board has its own artifact:
