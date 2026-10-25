@@ -38,15 +38,71 @@ jobs:
         env:
           FREEROUTING_NECKDOWN: 'false'
         run: ./build.sh "${{ matrix.board }}"
-      - name: Persist output and unfiltered DRC reports
+      # Match exact board stems: corney_island* also matches the wireless board.
+      - name: Persist ${{ matrix.board }} and its unfiltered DRC reports
         if: always()
         uses: actions/upload-artifact@v7
         with:
           name: ${{ matrix.board }}
           path: |
+            gerbers/${{ matrix.board }}.zip
+            gerbers/${{ matrix.board }}_autorouted.zip
+            gerbers/${{ matrix.board }}_manually_routed.zip
+            images/${{ matrix.board }}-*.png
+            images/${{ matrix.board }}_autorouted-*.png
+            images/${{ matrix.board }}_manually_routed-*.png
+            pcbs/${{ matrix.board }}.*
+            pcbs/${{ matrix.board }}_autorouted.*
+            pcbs/${{ matrix.board }}_manually_routed.*
+            reports/routing/${{ matrix.board }}-*.json
+            !pcbs/*-bak
+
+      # Every matrix job generates shared plates. The first job uploads them once.
+      - name: Persist backplate
+        if: always() && strategy.job-index == 0
+        uses: actions/upload-artifact@v7
+        with:
+          name: backplate
+          path: |
+            gerbers/backplate.zip
+            images/backplate-*.png
+            outlines/backplate.*
+            pcbs/backplate.kicad_*
+            reports/routing/backplate.json
+            !pcbs/*-bak
+
+      - name: Persist frontplate
+        if: always() && strategy.job-index == 0
+        uses: actions/upload-artifact@v7
+        with:
+          name: frontplate
+          path: |
+            gerbers/frontplate.zip
+            images/frontplate-*.png
+            outlines/frontplate.*
+            pcbs/frontplate.kicad_*
+            reports/routing/frontplate.json
+            !pcbs/*-bak
+
+      - name: Persist controller_overlay
+        if: always() && strategy.job-index == 0
+        uses: actions/upload-artifact@v7
+        with:
+          name: controller_overlay
+          path: |
+            gerbers/controller_overlay.zip
+            images/controller_overlay-*.png
+            outlines/controller_overlay.*
+            pcbs/controller_overlay.kicad_*
+            reports/routing/controller_overlay.json
+            !pcbs/*-bak
+
+      - name: Persist shared case and outline geometry
+        if: always() && strategy.job-index == 0
+        uses: actions/upload-artifact@v7
+        with:
+          name: case-and-outlines
+          path: |
             cases
-            gerbers
-            images
-            outlines
-            pcbs
-            reports/routing
+            outlines/pcb.*
+            outlines/preview.*
