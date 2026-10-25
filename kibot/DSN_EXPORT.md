@@ -89,7 +89,17 @@ post-import connectivity and DRC checks still determine whether fabrication
 outputs are produced.
 
 CI invokes the same `build.sh` and pulls the same toolchain image, retaining
-unfiltered DRC reports with its artifacts.
+unfiltered DRC reports with its artifacts. Each board has its own artifact:
+`corney_island`, `corney_island_wireless`, `backplate`, `frontplate`, and
+`controller_overlay`. Keyboard artifacts include only that variant's source,
+autorouted and manually routed files, fabrication ZIPs, images, and routing
+reports. Plate artifacts include that plate's PCB, fabrication ZIP, images,
+outline, and DRC report. Shared tray files and PCB/preview outlines are uploaded
+separately as `case-and-outlines`. The first matrix job uploads the shared
+artifacts once, independently of the board name. Uploads run even after a build
+failure so available diagnostic reports remain accessible; a missing fabrication ZIP can indicate failed DRC.
+Exact board stems are used because `corney_island*` would also select wireless
+files and uploading whole directories would include other boards from checkout.
 
 To test a locally built patched toolchain without changing the default image:
 
