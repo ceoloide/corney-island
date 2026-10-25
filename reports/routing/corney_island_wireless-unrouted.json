@@ -1,7 +1,7 @@
 {
     "$schema": "https://schemas.kicad.org/drc.v1.json",
     "coordinate_units": "mm",
-    "date": "2026-10-23T00:17:45+0000",
+    "date": "2026-10-25T17:38:37+0000",
     "kicad_version": "9.0.7",
     "schematic_parity": [],
     "source": "corney_island_wireless.kicad_pcb",
@@ -15,7 +15,7 @@
                         "x": 96.725,
                         "y": 67.95
                     },
-                    "uuid": "645df329-8936-457f-a952-be3ae637a12c"
+                    "uuid": "b85a019a-6a80-486b-9c0c-6b6e6de30744"
                 },
                 {
                     "description": "Pad 1 [C0] of S2 on F.Cu",
@@ -23,7 +23,7 @@
                         "x": 96.725,
                         "y": 86.95
                     },
-                    "uuid": "df70660b-21d6-42fb-85c2-6cfc42fd8a98"
+                    "uuid": "73184b95-d7b5-412c-9955-732b2369ac7b"
                 }
             ],
             "severity": "error",
@@ -38,7 +38,7 @@
                         "x": 96.725,
                         "y": 86.95
                     },
-                    "uuid": "df70660b-21d6-42fb-85c2-6cfc42fd8a98"
+                    "uuid": "73184b95-d7b5-412c-9955-732b2369ac7b"
                 },
                 {
                     "description": "Pad 1 [C0] of S2 on B.Cu",
@@ -46,7 +46,7 @@
                         "x": 103.275,
                         "y": 86.95
                     },
-                    "uuid": "61dc3774-13a9-4889-842f-f791fc1cf4df"
+                    "uuid": "d2f7ce16-94c6-44dd-b195-c65e53b4afc6"
                 }
             ],
             "severity": "error",
@@ -61,7 +61,7 @@
                         "x": 96.725,
                         "y": 105.95
                     },
-                    "uuid": "0508deda-4880-4b0f-8a42-376d04e99729"
+                    "uuid": "54000a22-7c8b-4f65-a8fa-c2530487dfbd"
                 },
                 {
                     "description": "Pad 1 [C0] of S1 on B.Cu",
@@ -69,7 +69,7 @@
                         "x": 103.275,
                         "y": 105.95
                     },
-                    "uuid": "efbadda6-9d60-40d1-9a03-e086bfa9dc61"
+                    "uuid": "6e843426-2e1f-4f49-88b1-d9cfd7fde488"
                 }
             ],
             "severity": "error",
@@ -84,7 +84,7 @@
                         "x": 103.275,
                         "y": 67.95
                     },
-                    "uuid": "45fc2550-5335-441b-88d1-d45c678a09a4"
+                    "uuid": "c8731cf4-0aaa-420c-a5db-2c1b8412e65b"
                 },
                 {
                     "description": "Pad 1 [C0] of S3 on F.Cu",
@@ -92,7 +92,7 @@
                         "x": 96.725,
                         "y": 67.95
                     },
-                    "uuid": "645df329-8936-457f-a952-be3ae637a12c"
+                    "uuid": "b85a019a-6a80-486b-9c0c-6b6e6de30744"
                 }
             ],
             "severity": "error",
@@ -107,7 +107,7 @@
                         "x": 103.275,
                         "y": 67.95
                     },
-                    "uuid": "45fc2550-5335-441b-88d1-d45c678a09a4"
+                    "uuid": "c8731cf4-0aaa-420c-a5db-2c1b8412e65b"
                 },
                 {
                     "description": "Track [C0] on F.Cu, length 1.1800 mm",
@@ -115,7 +115,7 @@
                         "x": 210.124,
                         "y": 68.33
                     },
-                    "uuid": "c2b0193d-dc8e-4b31-b517-7e6a7fd81a9d"
+                    "uuid": "318b131a-0e58-4298-8603-939a4f3c05ed"
                 }
             ],
             "severity": "error",
@@ -130,7 +130,7 @@
                         "x": 103.275,
                         "y": 105.95
                     },
-                    "uuid": "efbadda6-9d60-40d1-9a03-e086bfa9dc61"
+                    "uuid": "6e843426-2e1f-4f49-88b1-d9cfd7fde488"
                 },
                 {
                     "description": "Pad 1 [C0] of S2 on B.Cu",
@@ -138,7 +138,7 @@
                         "x": 103.275,
                         "y": 86.95
                     },
-                    "uuid": "61dc3774-13a9-4889-842f-f791fc1cf4df"
+                    "uuid": "d2f7ce16-94c6-44dd-b195-c65e53b4afc6"
                 }
             ],
             "severity": "error",
@@ -153,7 +153,7 @@
                         "x": 92.225,
                         "y": 103.75
                     },
-                    "uuid": "28c498fd-40a7-43e9-a94c-193fd4ba4515"
+                    "uuid": "615b1388-b295-4b4b-bd81-8634a290c2f1"
                 },
                 {
                     "description": "Pad 2 [outer_bottom_B] of S1 on F.Cu",
@@ -161,7 +161,7 @@
                         "x": 108.275,
                         "y": 103.75
                     },
-                    "uuid": "a400c2f4-3676-40d3-b556-d4c6dba7fc7d"
+                    "uuid": "5e8ce17a-8c93-4a86-a26b-066520416f32"
                 }
             ],
             "severity": "error",
@@ -176,7 +176,7 @@
                         "x": 92.25,
                         "y": 100.15
                     },
-                    "uuid": "f4d68338-2aba-4a6f-a7a0-42b21d7caa60"
+                    "uuid": "498c0114-3448-4f74-8547-18cce6dd08eb"
                 },
                 {
                     "description": "Pad 2 [outer_bottom_B] of S1 on B.Cu",
@@ -184,7 +184,7 @@
                         "x": 92.225,
                         "y": 103.75
                     },
-                    "uuid": "28c498fd-40a7-43e9-a94c-193fd4ba4515"
+                    "uuid": "615b1388-b295-4b4b-bd81-8634a290c2f1"
                 }
             ],
             "severity": "error",
@@ -199,7 +199,7 @@
                         "x": 210.124,
                         "y": 60.71
                     },
-                    "uuid": "c1525296-59db-474e-b5db-3c9878e4767d"
+                    "uuid": "6848068c-c3d8-4536-8b7d-6c80de792d13"
                 },
                 {
                     "description": "Track [GND] on B.Cu, length 0.1547 mm",
@@ -207,7 +207,7 @@
                         "x": 210.124,
                         "y": 63.25
                     },
-                    "uuid": "6303437a-35d9-4618-b11e-f4c72f733d0e"
+                    "uuid": "7d230d86-593a-48f6-85fb-6bba66726c5f"
                 }
             ],
             "severity": "error",
@@ -222,15 +222,15 @@
                         "x": 211.003695,
                         "y": 63.975
                     },
-                    "uuid": "d68d97f0-7035-41c3-8539-4f716b6a0146"
+                    "uuid": "abfcf58c-a574-4d09-8e46-f7a458243e08"
                 },
                 {
-                    "description": "Track [GND] on B.Cu, length 0.1547 mm",
+                    "description": "Track [GND] on B.Cu, length 1.0253 mm",
                     "pos": {
-                        "x": 210.124,
+                        "x": 210.278695,
                         "y": 65.79
                     },
-                    "uuid": "07644853-039b-4b59-abfb-28db3298a505"
+                    "uuid": "2bbda6f9-9ab5-401f-976c-472a36e97e92"
                 }
             ],
             "severity": "error",
@@ -245,7 +245,7 @@
                         "x": 211.003695,
                         "y": 66.515
                     },
-                    "uuid": "e19db1ba-2723-4cfc-8cb8-41dd4d215f77"
+                    "uuid": "5883299a-aafa-4f8a-aedb-7ae1f5ac2eaf"
                 },
                 {
                     "description": "Pad 11 [GND] of DISP1 on F.Cu",
@@ -253,7 +253,7 @@
                         "x": 212.107,
                         "y": 92.6
                     },
-                    "uuid": "b24442d0-a5dd-486e-8ab7-cdcd23dd00a4"
+                    "uuid": "3a6f0fd4-302c-4612-ba51-6c4d2e570230"
                 }
             ],
             "severity": "error",
@@ -268,7 +268,7 @@
                         "x": 212.079,
                         "y": 54.315
                     },
-                    "uuid": "dc0e9dd8-cbae-4513-825b-0817e143115e"
+                    "uuid": "84f56177-e17e-46bb-99cf-5a0095b7580d"
                 },
                 {
                     "description": "Pad 1 [GND] of RST1 on B.Cu",
@@ -276,7 +276,7 @@
                         "x": 212.079,
                         "y": 54.315
                     },
-                    "uuid": "daa9f872-ffd6-4573-afa8-89fb0e67578c"
+                    "uuid": "9124d5ed-ccf2-4433-b883-1ac6ec24e5e3"
                 }
             ],
             "severity": "error",
@@ -291,7 +291,7 @@
                         "x": 212.107,
                         "y": 92.6
                     },
-                    "uuid": "b24442d0-a5dd-486e-8ab7-cdcd23dd00a4"
+                    "uuid": "3a6f0fd4-302c-4612-ba51-6c4d2e570230"
                 },
                 {
                     "description": "Pad 2 [GND] of JST1 on F.Cu",
@@ -299,7 +299,7 @@
                         "x": 214.45,
                         "y": 96.75
                     },
-                    "uuid": "4d29dda7-8f82-41a8-b7a2-edd0602c7223"
+                    "uuid": "9124c4d7-bdbd-4d78-b06c-6374d420aecf"
                 }
             ],
             "severity": "error",
@@ -314,7 +314,7 @@
                         "x": 214.45,
                         "y": 98.75
                     },
-                    "uuid": "260d1747-0f1f-49da-9742-ba69c63cc551"
+                    "uuid": "22ba3561-d4dc-469f-a511-28b88504932e"
                 },
                 {
                     "description": "Pad 2 [GND] of JST1 on F.Cu",
@@ -322,7 +322,7 @@
                         "x": 214.45,
                         "y": 96.75
                     },
-                    "uuid": "4d29dda7-8f82-41a8-b7a2-edd0602c7223"
+                    "uuid": "9124c4d7-bdbd-4d78-b06c-6374d420aecf"
                 }
             ],
             "severity": "error",
@@ -337,7 +337,7 @@
                         "x": 217.187,
                         "y": 92.6
                     },
-                    "uuid": "0221dd1d-9edd-40de-85bf-b6f2573c33f9"
+                    "uuid": "8a4ab12a-cc26-43e4-901d-d0883976afcc"
                 },
                 {
                     "description": "Pad 2 [GND] of JST1 on F.Cu",
@@ -345,7 +345,7 @@
                         "x": 214.45,
                         "y": 96.75
                     },
-                    "uuid": "4d29dda7-8f82-41a8-b7a2-edd0602c7223"
+                    "uuid": "9124c4d7-bdbd-4d78-b06c-6374d420aecf"
                 }
             ],
             "severity": "error",
@@ -360,7 +360,7 @@
                         "x": 217.329,
                         "y": 54.315
                     },
-                    "uuid": "6d808fd6-02f1-4233-ba45-03b3c35a0731"
+                    "uuid": "c7d1fd3c-f7bd-48f6-b440-fd55abeafb93"
                 },
                 {
                     "description": "Pad 1 [GND] of RST1 on F.Cu",
@@ -368,7 +368,7 @@
                         "x": 217.329,
                         "y": 54.315
                     },
-                    "uuid": "ba92d34d-4d66-4819-bfcd-0901da22bc01"
+                    "uuid": "d0b6cf4b-2c6b-4c29-8f46-708413fe4734"
                 }
             ],
             "severity": "error",
@@ -378,20 +378,20 @@
             "description": "Missing connection between items",
             "items": [
                 {
-                    "description": "Pad 3 [GND] of RST1 on B.Cu",
+                    "description": "Pad 1 [GND] of RST1 on F.Cu",
                     "pos": {
                         "x": 217.329,
                         "y": 54.315
                     },
-                    "uuid": "6d808fd6-02f1-4233-ba45-03b3c35a0731"
+                    "uuid": "d0b6cf4b-2c6b-4c29-8f46-708413fe4734"
                 },
                 {
-                    "description": "Pad 3 [GND] of RST1 on F.Cu",
+                    "description": "Pad 1 [GND] of RST1 on B.Cu",
                     "pos": {
                         "x": 212.079,
                         "y": 54.315
                     },
-                    "uuid": "dc0e9dd8-cbae-4513-825b-0817e143115e"
+                    "uuid": "9124d5ed-ccf2-4433-b883-1ac6ec24e5e3"
                 }
             ],
             "severity": "error",
@@ -406,15 +406,15 @@
                         "x": 217.803695,
                         "y": 59.985
                     },
-                    "uuid": "34bc94d9-6762-42d2-b1ca-c2a2fb89b9ae"
+                    "uuid": "e00aa474-ea66-4a44-ae85-5167078c4057"
                 },
                 {
-                    "description": "Pad 3 [GND] of RST1 on B.Cu",
+                    "description": "Pad 1 [GND] of RST1 on F.Cu",
                     "pos": {
                         "x": 217.329,
                         "y": 54.315
                     },
-                    "uuid": "6d808fd6-02f1-4233-ba45-03b3c35a0731"
+                    "uuid": "d0b6cf4b-2c6b-4c29-8f46-708413fe4734"
                 }
             ],
             "severity": "error",
@@ -429,7 +429,7 @@
                         "x": 92.225,
                         "y": 84.75
                     },
-                    "uuid": "eec31e09-3d68-4579-99e5-e611726c8698"
+                    "uuid": "decfbad1-106f-45d6-8bf6-de7aaa94f5f0"
                 },
                 {
                     "description": "Pad 2 [outer_home_B] of S2 on F.Cu",
@@ -437,7 +437,7 @@
                         "x": 108.275,
                         "y": 84.75
                     },
-                    "uuid": "d948bc1c-b0d5-419c-af93-0eee04cb5520"
+                    "uuid": "74a96e5b-e827-4ba1-86a2-a6a341927cee"
                 }
             ],
             "severity": "error",
@@ -452,7 +452,7 @@
                         "x": 92.25,
                         "y": 81.15
                     },
-                    "uuid": "c78df297-c7f8-4255-a8f9-2ab35af42c87"
+                    "uuid": "ca44fd56-294c-4dbd-805f-fda600de6aeb"
                 },
                 {
                     "description": "Pad 2 [outer_home_B] of S2 on B.Cu",
@@ -460,7 +460,7 @@
                         "x": 92.225,
                         "y": 84.75
                     },
-                    "uuid": "eec31e09-3d68-4579-99e5-e611726c8698"
+                    "uuid": "decfbad1-106f-45d6-8bf6-de7aaa94f5f0"
                 }
             ],
             "severity": "error",
@@ -475,7 +475,7 @@
                         "x": 92.225,
                         "y": 65.75
                     },
-                    "uuid": "c442854a-cc90-42ee-a4e0-7bd2b7f58f0d"
+                    "uuid": "0f1a272c-1036-4e6f-9912-8bb733b99ed5"
                 },
                 {
                     "description": "Pad 2 [outer_top_B] of S3 on F.Cu",
@@ -483,7 +483,7 @@
                         "x": 108.275,
                         "y": 65.75
                     },
-                    "uuid": "b59b0441-af5e-4534-a337-90df4bd847aa"
+                    "uuid": "6e419a8c-e377-4dd8-86a5-c0c0de746e85"
                 }
             ],
             "severity": "error",
@@ -498,7 +498,7 @@
                         "x": 92.25,
                         "y": 62.15
                     },
-                    "uuid": "6d742c8c-4599-4239-a545-48df4cd016fd"
+                    "uuid": "0da775c1-03c0-4b0d-9b04-0eb60ea8903f"
                 },
                 {
                     "description": "Pad 2 [outer_top_B] of S3 on B.Cu",
@@ -506,7 +506,7 @@
                         "x": 92.225,
                         "y": 65.75
                     },
-                    "uuid": "c442854a-cc90-42ee-a4e0-7bd2b7f58f0d"
+                    "uuid": "0f1a272c-1036-4e6f-9912-8bb733b99ed5"
                 }
             ],
             "severity": "error",
@@ -521,7 +521,7 @@
                         "x": 115.725,
                         "y": 67.95
                     },
-                    "uuid": "76ff7636-1ba4-4e1e-9a60-23d08bc4024a"
+                    "uuid": "a69f788a-2ad3-45f5-909a-d0cadc1003be"
                 },
                 {
                     "description": "Pad 1 [C1] of S5 on F.Cu",
@@ -529,7 +529,7 @@
                         "x": 115.725,
                         "y": 86.95
                     },
-                    "uuid": "94870d28-d3b4-41d3-8bd7-e93596865e05"
+                    "uuid": "31617d59-ae10-4601-a3bd-98cba4e0b82a"
                 }
             ],
             "severity": "error",
@@ -544,7 +544,7 @@
                         "x": 115.725,
                         "y": 86.95
                     },
-                    "uuid": "94870d28-d3b4-41d3-8bd7-e93596865e05"
+                    "uuid": "31617d59-ae10-4601-a3bd-98cba4e0b82a"
                 },
                 {
                     "description": "Pad 1 [C1] of S5 on B.Cu",
@@ -552,7 +552,7 @@
                         "x": 122.275,
                         "y": 86.95
                     },
-                    "uuid": "0a972e85-faff-4165-b566-4ef530d2a423"
+                    "uuid": "5fd63b50-d844-425e-a575-a8fc7f9f912c"
                 }
             ],
             "severity": "error",
@@ -567,7 +567,7 @@
                         "x": 115.725,
                         "y": 105.95
                     },
-                    "uuid": "31cfeb26-327c-44b7-a54c-7fcdf45fba5e"
+                    "uuid": "96325b04-8f57-4e50-b3c8-e6ba9718764b"
                 },
                 {
                     "description": "Pad 1 [C1] of S4 on B.Cu",
@@ -575,7 +575,7 @@
                         "x": 122.275,
                         "y": 105.95
                     },
-                    "uuid": "56113b98-20fe-49ea-b170-8b3daf9af6a6"
+                    "uuid": "865624bb-e50c-43a6-aea6-7adb0a249a4b"
                 }
             ],
             "severity": "error",
@@ -590,7 +590,7 @@
                         "x": 122.275,
                         "y": 67.95
                     },
-                    "uuid": "8dd0be2d-632b-49d3-bdbc-3cd0ad1b08b2"
+                    "uuid": "09685ca4-e0bf-42de-ac1e-f4f0fd2813e2"
                 },
                 {
                     "description": "Pad 1 [C1] of S6 on F.Cu",
@@ -598,7 +598,7 @@
                         "x": 115.725,
                         "y": 67.95
                     },
-                    "uuid": "76ff7636-1ba4-4e1e-9a60-23d08bc4024a"
+                    "uuid": "a69f788a-2ad3-45f5-909a-d0cadc1003be"
                 }
             ],
             "severity": "error",
@@ -613,7 +613,7 @@
                         "x": 122.275,
                         "y": 67.95
                     },
-                    "uuid": "8dd0be2d-632b-49d3-bdbc-3cd0ad1b08b2"
+                    "uuid": "09685ca4-e0bf-42de-ac1e-f4f0fd2813e2"
                 },
                 {
                     "description": "Track [C1] on F.Cu, length 1.1800 mm",
@@ -621,7 +621,7 @@
                         "x": 210.124,
                         "y": 70.87
                     },
-                    "uuid": "101cdcdb-feef-4e07-8f01-3b6c1ba6a64a"
+                    "uuid": "3fee079d-bcfd-46f7-a69f-3f2d44b69a21"
                 }
             ],
             "severity": "error",
@@ -636,7 +636,7 @@
                         "x": 122.275,
                         "y": 105.95
                     },
-                    "uuid": "56113b98-20fe-49ea-b170-8b3daf9af6a6"
+                    "uuid": "865624bb-e50c-43a6-aea6-7adb0a249a4b"
                 },
                 {
                     "description": "Pad 1 [C1] of S5 on B.Cu",
@@ -644,7 +644,7 @@
                         "x": 122.275,
                         "y": 86.95
                     },
-                    "uuid": "0a972e85-faff-4165-b566-4ef530d2a423"
+                    "uuid": "5fd63b50-d844-425e-a575-a8fc7f9f912c"
                 }
             ],
             "severity": "error",
@@ -659,7 +659,7 @@
                         "x": 111.25,
                         "y": 100.15
                     },
-                    "uuid": "cd2871eb-935b-4827-999d-266ddc5928af"
+                    "uuid": "e5db539e-e6ad-4f4a-937c-29d85e629b79"
                 },
                 {
                     "description": "Pad 2 [pinky_bottom_B] of S4 on B.Cu",
@@ -667,7 +667,7 @@
                         "x": 110.725,
                         "y": 103.75
                     },
-                    "uuid": "55531a95-7c35-4442-9809-538854e33329"
+                    "uuid": "ba93f1ba-0b3d-4160-beff-bb664a13d74c"
                 }
             ],
             "severity": "error",
@@ -682,7 +682,7 @@
                         "x": 127.275,
                         "y": 103.75
                     },
-                    "uuid": "7ffc14e4-158b-4bed-a7df-cded514c11c8"
+                    "uuid": "f797c78d-b845-4e09-9981-cd21fd223108"
                 },
                 {
                     "description": "Pad 2 [pinky_bottom_B] of D4 on B.Cu",
@@ -690,7 +690,7 @@
                         "x": 111.25,
                         "y": 100.15
                     },
-                    "uuid": "cd2871eb-935b-4827-999d-266ddc5928af"
+                    "uuid": "e5db539e-e6ad-4f4a-937c-29d85e629b79"
                 }
             ],
             "severity": "error",
@@ -705,7 +705,7 @@
                         "x": 111.25,
                         "y": 81.15
                     },
-                    "uuid": "cb255565-b692-4659-b927-039fea3ebab8"
+                    "uuid": "17aa38de-ac85-4187-b955-c3f893060620"
                 },
                 {
                     "description": "Pad 2 [pinky_home_B] of S5 on B.Cu",
@@ -713,7 +713,7 @@
                         "x": 110.725,
                         "y": 84.75
                     },
-                    "uuid": "37685654-0585-41c5-89a8-282b9ea7fcd4"
+                    "uuid": "81c025ef-1828-45ae-be63-788ac2a533b2"
                 }
             ],
             "severity": "error",
@@ -728,7 +728,7 @@
                         "x": 127.275,
                         "y": 84.75
                     },
-                    "uuid": "a097c3e6-4316-4e3f-805f-1e928a8081a6"
+                    "uuid": "b5f2d31d-e44b-4bce-a477-b3e2a92e5a04"
                 },
                 {
                     "description": "Pad 2 [pinky_home_B] of D5 on B.Cu",
@@ -736,7 +736,7 @@
                         "x": 111.25,
                         "y": 81.15
                     },
-                    "uuid": "cb255565-b692-4659-b927-039fea3ebab8"
+                    "uuid": "17aa38de-ac85-4187-b955-c3f893060620"
                 }
             ],
             "severity": "error",
@@ -751,7 +751,7 @@
                         "x": 111.25,
                         "y": 62.15
                     },
-                    "uuid": "11ac01fb-5f24-460b-9fe4-87ee3c72c752"
+                    "uuid": "fd2f6994-3215-4250-9082-c8c2f5fc35e5"
                 },
                 {
                     "description": "Pad 2 [pinky_top_B] of S6 on B.Cu",
@@ -759,7 +759,7 @@
                         "x": 110.725,
                         "y": 65.75
                     },
-                    "uuid": "a2cb47db-c6be-41aa-973e-2bc1675de608"
+                    "uuid": "291980d8-7545-4f9a-950b-4a7aa0d7791b"
                 }
             ],
             "severity": "error",
@@ -774,7 +774,7 @@
                         "x": 127.275,
                         "y": 65.75
                     },
-                    "uuid": "a2068d10-8bbe-4388-8406-fc07bb39d642"
+                    "uuid": "6b7dee3b-08d8-4f9e-92dd-e2de6bcd8dde"
                 },
                 {
                     "description": "Pad 2 [pinky_top_B] of D6 on B.Cu",
@@ -782,7 +782,7 @@
                         "x": 111.25,
                         "y": 62.15
                     },
-                    "uuid": "11ac01fb-5f24-460b-9fe4-87ee3c72c752"
+                    "uuid": "fd2f6994-3215-4250-9082-c8c2f5fc35e5"
                 }
             ],
             "severity": "error",
@@ -797,7 +797,7 @@
                         "x": 134.725,
                         "y": 82.2
                     },
-                    "uuid": "f67fb859-3f43-4659-b038-4bd65ac65dc8"
+                    "uuid": "4da36c21-4825-463b-b790-2fb36d7b9506"
                 },
                 {
                     "description": "Pad 1 [C2] of S8 on B.Cu",
@@ -805,7 +805,7 @@
                         "x": 141.275,
                         "y": 82.2
                     },
-                    "uuid": "78328976-929b-4789-9622-9f6aae5176bd"
+                    "uuid": "75e44c98-23d8-4840-91cb-eeb28a6cfd3a"
                 }
             ],
             "severity": "error",
@@ -820,7 +820,7 @@
                         "x": 134.725,
                         "y": 101.2
                     },
-                    "uuid": "3c7819b8-85de-433a-afa1-364fb39a5888"
+                    "uuid": "2081b7a9-1b92-497f-913c-1d65959929af"
                 },
                 {
                     "description": "Pad 1 [C2] of S7 on B.Cu",
@@ -828,7 +828,7 @@
                         "x": 141.275,
                         "y": 101.2
                     },
-                    "uuid": "ae1d9b34-c44f-42ea-900f-25d687c74a04"
+                    "uuid": "c431608a-d295-4136-bf19-e3fe9df482c3"
                 }
             ],
             "severity": "error",
@@ -843,7 +843,7 @@
                         "x": 141.275,
                         "y": 63.2
                     },
-                    "uuid": "ac231c56-ff8d-49b3-b5d7-cc039318db51"
+                    "uuid": "ea04d51c-dd1d-4eb0-8f4b-3eeae2715274"
                 },
                 {
                     "description": "Pad 1 [C2] of S9 on F.Cu",
@@ -851,7 +851,7 @@
                         "x": 134.725,
                         "y": 63.2
                     },
-                    "uuid": "cd4dc97f-9768-4b0d-917c-9161df67337b"
+                    "uuid": "defe2fc5-695e-4939-bd96-9c2bad3f2f0e"
                 }
             ],
             "severity": "error",
@@ -866,7 +866,7 @@
                         "x": 141.275,
                         "y": 82.2
                     },
-                    "uuid": "78328976-929b-4789-9622-9f6aae5176bd"
+                    "uuid": "75e44c98-23d8-4840-91cb-eeb28a6cfd3a"
                 },
                 {
                     "description": "Pad 1 [C2] of S7 on B.Cu",
@@ -874,7 +874,7 @@
                         "x": 141.275,
                         "y": 101.2
                     },
-                    "uuid": "ae1d9b34-c44f-42ea-900f-25d687c74a04"
+                    "uuid": "c431608a-d295-4136-bf19-e3fe9df482c3"
                 }
             ],
             "severity": "error",
@@ -889,7 +889,7 @@
                         "x": 141.275,
                         "y": 82.2
                     },
-                    "uuid": "78328976-929b-4789-9622-9f6aae5176bd"
+                    "uuid": "75e44c98-23d8-4840-91cb-eeb28a6cfd3a"
                 },
                 {
                     "description": "Pad 1 [C2] of S9 on B.Cu",
@@ -897,7 +897,7 @@
                         "x": 141.275,
                         "y": 63.2
                     },
-                    "uuid": "ac231c56-ff8d-49b3-b5d7-cc039318db51"
+                    "uuid": "ea04d51c-dd1d-4eb0-8f4b-3eeae2715274"
                 }
             ],
             "severity": "error",
@@ -912,7 +912,7 @@
                         "x": 141.275,
                         "y": 82.2
                     },
-                    "uuid": "78328976-929b-4789-9622-9f6aae5176bd"
+                    "uuid": "75e44c98-23d8-4840-91cb-eeb28a6cfd3a"
                 },
                 {
                     "description": "Track [C2] on F.Cu, length 1.1800 mm",
@@ -920,7 +920,7 @@
                         "x": 210.124,
                         "y": 73.41
                     },
-                    "uuid": "9cb430b2-032c-4959-b4e0-a4ef2bbd68d8"
+                    "uuid": "9cdcfb69-32f0-4685-aced-3fdf45ad5af9"
                 }
             ],
             "severity": "error",
@@ -935,7 +935,7 @@
                         "x": 130.25,
                         "y": 95.4
                     },
-                    "uuid": "1e50f8ca-3523-4530-9283-f27597ea1d18"
+                    "uuid": "d856e424-efef-426e-8a7e-358a38ef4f92"
                 },
                 {
                     "description": "Pad 2 [ring_bottom_B] of S7 on B.Cu",
@@ -943,7 +943,7 @@
                         "x": 129.725,
                         "y": 99.0
                     },
-                    "uuid": "f3e2365b-ba5d-4659-8a12-cecd7aebe2e7"
+                    "uuid": "e1487f46-016e-4ce3-afc2-524c97528973"
                 }
             ],
             "severity": "error",
@@ -958,7 +958,7 @@
                         "x": 146.275,
                         "y": 99.0
                     },
-                    "uuid": "06441e88-e054-4721-b791-6a69dd2f6953"
+                    "uuid": "5f0fa388-caca-4121-8783-d4dba0bd87cf"
                 },
                 {
                     "description": "Pad 2 [ring_bottom_B] of D7 on B.Cu",
@@ -966,7 +966,7 @@
                         "x": 130.25,
                         "y": 95.4
                     },
-                    "uuid": "1e50f8ca-3523-4530-9283-f27597ea1d18"
+                    "uuid": "d856e424-efef-426e-8a7e-358a38ef4f92"
                 }
             ],
             "severity": "error",
@@ -981,7 +981,7 @@
                         "x": 130.25,
                         "y": 76.4
                     },
-                    "uuid": "2f17916b-8cc4-45e2-ab75-ace43fe37297"
+                    "uuid": "c950a3b6-e0b1-46ef-a6b5-fc071dbbbce6"
                 },
                 {
                     "description": "Pad 2 [ring_home_B] of S8 on B.Cu",
@@ -989,7 +989,7 @@
                         "x": 129.725,
                         "y": 80.0
                     },
-                    "uuid": "1e032a89-0d8e-46a1-af2e-6ceb88656416"
+                    "uuid": "eaeeec65-ba0c-4fec-b900-11ddc0e810b4"
                 }
             ],
             "severity": "error",
@@ -1004,7 +1004,7 @@
                         "x": 146.275,
                         "y": 80.0
                     },
-                    "uuid": "c9efaa17-a617-43ec-b200-6060be6bdb01"
+                    "uuid": "5483996b-1c13-4372-9875-56bd921e3edd"
                 },
                 {
                     "description": "Pad 2 [ring_home_B] of D8 on B.Cu",
@@ -1012,7 +1012,7 @@
                         "x": 130.25,
                         "y": 76.4
                     },
-                    "uuid": "2f17916b-8cc4-45e2-ab75-ace43fe37297"
+                    "uuid": "c950a3b6-e0b1-46ef-a6b5-fc071dbbbce6"
                 }
             ],
             "severity": "error",
@@ -1027,7 +1027,7 @@
                         "x": 130.25,
                         "y": 57.4
                     },
-                    "uuid": "421b2acc-ad34-4530-9640-45c5e12ccceb"
+                    "uuid": "05e3a17c-8d66-4e6d-b3bd-7c1e78286a77"
                 },
                 {
                     "description": "Pad 2 [ring_top_B] of S9 on B.Cu",
@@ -1035,7 +1035,7 @@
                         "x": 129.725,
                         "y": 61.0
                     },
-                    "uuid": "63f0eaa5-0c18-4d59-96f8-634de70723f6"
+                    "uuid": "2978d507-67be-4d81-a606-571e3c35f1ec"
                 }
             ],
             "severity": "error",
@@ -1050,7 +1050,7 @@
                         "x": 146.275,
                         "y": 61.0
                     },
-                    "uuid": "978e54fc-c2cf-4998-9c65-85ac136f5ff1"
+                    "uuid": "17cb40c6-b321-4c00-b973-dd9ffc28280d"
                 },
                 {
                     "description": "Pad 2 [ring_top_B] of D9 on B.Cu",
@@ -1058,7 +1058,7 @@
                         "x": 130.25,
                         "y": 57.4
                     },
-                    "uuid": "421b2acc-ad34-4530-9640-45c5e12ccceb"
+                    "uuid": "05e3a17c-8d66-4e6d-b3bd-7c1e78286a77"
                 }
             ],
             "severity": "error",
@@ -1073,7 +1073,7 @@
                         "x": 153.725,
                         "y": 79.825
                     },
-                    "uuid": "090be5e8-1e35-4fcc-a0f6-5c38acb78afb"
+                    "uuid": "854e1f6d-8ed1-4d57-ab9d-26dacb40a439"
                 },
                 {
                     "description": "Pad 1 [C3] of S11 on B.Cu",
@@ -1081,7 +1081,7 @@
                         "x": 160.275,
                         "y": 79.825
                     },
-                    "uuid": "728b4cc3-26a0-453a-b822-e4ed9bf041e2"
+                    "uuid": "eb98de3f-65e5-4dab-ab1e-43ea8d20a322"
                 }
             ],
             "severity": "error",
@@ -1096,7 +1096,7 @@
                         "x": 160.275,
                         "y": 60.825
                     },
-                    "uuid": "56629d64-6dad-4e47-b70b-c2ef022e1943"
+                    "uuid": "f96442bc-34d2-43d0-a34c-a6f79db082ac"
                 },
                 {
                     "description": "Pad 1 [C3] of S12 on F.Cu",
@@ -1104,7 +1104,7 @@
                         "x": 153.725,
                         "y": 60.825
                     },
-                    "uuid": "28798350-9d06-41b5-acd4-ff575a73bea6"
+                    "uuid": "96bd43a8-9434-45d6-a559-bf96572fef8b"
                 }
             ],
             "severity": "error",
@@ -1119,7 +1119,7 @@
                         "x": 160.275,
                         "y": 79.825
                     },
-                    "uuid": "728b4cc3-26a0-453a-b822-e4ed9bf041e2"
+                    "uuid": "eb98de3f-65e5-4dab-ab1e-43ea8d20a322"
                 },
                 {
                     "description": "Pad 1 [C3] of S12 on B.Cu",
@@ -1127,7 +1127,7 @@
                         "x": 160.275,
                         "y": 60.825
                     },
-                    "uuid": "56629d64-6dad-4e47-b70b-c2ef022e1943"
+                    "uuid": "f96442bc-34d2-43d0-a34c-a6f79db082ac"
                 }
             ],
             "severity": "error",
@@ -1142,15 +1142,15 @@
                         "x": 160.275,
                         "y": 79.825
                     },
-                    "uuid": "728b4cc3-26a0-453a-b822-e4ed9bf041e2"
+                    "uuid": "eb98de3f-65e5-4dab-ab1e-43ea8d20a322"
                 },
                 {
-                    "description": "Pad 117 [C3] of MCU1 on F.Cu",
+                    "description": "Track [C3] on F.Cu, length 1.1800 mm",
                     "pos": {
                         "x": 210.124,
                         "y": 75.95
                     },
-                    "uuid": "d50e89ac-f852-4424-9026-b5c50a79557e"
+                    "uuid": "a454ec65-dd4e-4b20-8c36-df11fd4ba0ff"
                 }
             ],
             "severity": "error",
@@ -1165,7 +1165,7 @@
                         "x": 160.275,
                         "y": 98.825
                     },
-                    "uuid": "8c718712-af83-436e-84de-e489fb7c03d0"
+                    "uuid": "78950fac-c242-4891-941e-2829a2a85333"
                 },
                 {
                     "description": "Pad 1 [C3] of S10 on F.Cu",
@@ -1173,7 +1173,7 @@
                         "x": 153.725,
                         "y": 98.825
                     },
-                    "uuid": "f077094c-2ff3-486a-bf93-aadd56d5ac6a"
+                    "uuid": "31c16027-f34c-4388-bae0-94ee828b4fc9"
                 }
             ],
             "severity": "error",
@@ -1188,7 +1188,7 @@
                         "x": 160.275,
                         "y": 98.825
                     },
-                    "uuid": "8c718712-af83-436e-84de-e489fb7c03d0"
+                    "uuid": "78950fac-c242-4891-941e-2829a2a85333"
                 },
                 {
                     "description": "Pad 1 [C3] of S11 on B.Cu",
@@ -1196,7 +1196,7 @@
                         "x": 160.275,
                         "y": 79.825
                     },
-                    "uuid": "728b4cc3-26a0-453a-b822-e4ed9bf041e2"
+                    "uuid": "eb98de3f-65e5-4dab-ab1e-43ea8d20a322"
                 }
             ],
             "severity": "error",
@@ -1211,7 +1211,7 @@
                         "x": 163.225,
                         "y": 120.825
                     },
-                    "uuid": "81299213-c208-4b6a-960a-e89ef0efaf80"
+                    "uuid": "5d5b5947-03d2-49fb-9cbb-5df37a101a0a"
                 },
                 {
                     "description": "Pad 1 [C3] of S19 on B.Cu",
@@ -1219,7 +1219,7 @@
                         "x": 169.775,
                         "y": 120.825
                     },
-                    "uuid": "e7e26020-9f17-46fe-b5e0-dffb9a43ba1e"
+                    "uuid": "b14978c1-4699-48cb-a7da-9a42ff9c5633"
                 }
             ],
             "severity": "error",
@@ -1234,7 +1234,7 @@
                         "x": 163.225,
                         "y": 120.825
                     },
-                    "uuid": "81299213-c208-4b6a-960a-e89ef0efaf80"
+                    "uuid": "5d5b5947-03d2-49fb-9cbb-5df37a101a0a"
                 },
                 {
                     "description": "Pad 1 [C3] of S10 on B.Cu",
@@ -1242,7 +1242,7 @@
                         "x": 160.275,
                         "y": 98.825
                     },
-                    "uuid": "8c718712-af83-436e-84de-e489fb7c03d0"
+                    "uuid": "78950fac-c242-4891-941e-2829a2a85333"
                 }
             ],
             "severity": "error",
@@ -1257,7 +1257,7 @@
                         "x": 149.25,
                         "y": 93.025
                     },
-                    "uuid": "29bae579-6519-47a7-8462-b7672eb53374"
+                    "uuid": "f0581049-49cf-4525-8ef2-15907ab2826a"
                 },
                 {
                     "description": "Pad 2 [middle_bottom_B] of S10 on B.Cu",
@@ -1265,7 +1265,7 @@
                         "x": 148.725,
                         "y": 96.625
                     },
-                    "uuid": "4c652123-42e3-48de-a0a8-c8aa1d6be9da"
+                    "uuid": "b44ba003-8e46-4215-915a-5ae14f2c122c"
                 }
             ],
             "severity": "error",
@@ -1280,7 +1280,7 @@
                         "x": 165.275,
                         "y": 96.625
                     },
-                    "uuid": "93226cdf-b521-44bd-9b4c-f6a80fb9ccc9"
+                    "uuid": "87227155-55d9-42dd-bce1-4111053ca641"
                 },
                 {
                     "description": "Pad 2 [middle_bottom_B] of D10 on B.Cu",
@@ -1288,7 +1288,7 @@
                         "x": 149.25,
                         "y": 93.025
                     },
-                    "uuid": "29bae579-6519-47a7-8462-b7672eb53374"
+                    "uuid": "f0581049-49cf-4525-8ef2-15907ab2826a"
                 }
             ],
             "severity": "error",
@@ -1303,7 +1303,7 @@
                         "x": 149.25,
                         "y": 74.025
                     },
-                    "uuid": "cf7be6d2-a32d-4026-8f53-979c0a2060e2"
+                    "uuid": "48d59143-a66b-4384-8f8f-c736e4c5ee3d"
                 },
                 {
                     "description": "Pad 2 [middle_home_B] of S11 on B.Cu",
@@ -1311,7 +1311,7 @@
                         "x": 148.725,
                         "y": 77.625
                     },
-                    "uuid": "4eb8090f-a426-4625-92f5-cf84daf8cb55"
+                    "uuid": "11cda7c5-7f53-4847-ac45-f489c9b9c6ab"
                 }
             ],
             "severity": "error",
@@ -1326,7 +1326,7 @@
                         "x": 165.275,
                         "y": 77.625
                     },
-                    "uuid": "cee7888a-c43b-44a5-9d29-510ed09f9c53"
+                    "uuid": "aec11b87-1236-47a5-ab3f-4a31ca8c5e10"
                 },
                 {
                     "description": "Pad 2 [middle_home_B] of D11 on B.Cu",
@@ -1334,7 +1334,7 @@
                         "x": 149.25,
                         "y": 74.025
                     },
-                    "uuid": "cf7be6d2-a32d-4026-8f53-979c0a2060e2"
+                    "uuid": "48d59143-a66b-4384-8f8f-c736e4c5ee3d"
                 }
             ],
             "severity": "error",
@@ -1349,7 +1349,7 @@
                         "x": 149.25,
                         "y": 55.025
                     },
-                    "uuid": "b5524251-1625-495d-9f28-972154ad46f8"
+                    "uuid": "9367a048-4bbb-43e0-80cd-567929f103e1"
                 },
                 {
                     "description": "Pad 2 [middle_top_B] of S12 on B.Cu",
@@ -1357,7 +1357,7 @@
                         "x": 148.725,
                         "y": 58.625
                     },
-                    "uuid": "aaa17ef8-4568-43e1-ac44-79765c2d6b5c"
+                    "uuid": "b30e0e7f-7e94-4ffd-8449-815cb332d141"
                 }
             ],
             "severity": "error",
@@ -1372,7 +1372,7 @@
                         "x": 165.275,
                         "y": 58.625
                     },
-                    "uuid": "ac2c95c5-023a-4207-a527-421e7536fb78"
+                    "uuid": "264aa801-afab-4a7c-838e-782374135b16"
                 },
                 {
                     "description": "Pad 2 [middle_top_B] of D12 on B.Cu",
@@ -1380,7 +1380,7 @@
                         "x": 149.25,
                         "y": 55.025
                     },
-                    "uuid": "b5524251-1625-495d-9f28-972154ad46f8"
+                    "uuid": "9367a048-4bbb-43e0-80cd-567929f103e1"
                 }
             ],
             "severity": "error",
@@ -1395,7 +1395,7 @@
                         "x": 172.725,
                         "y": 82.2
                     },
-                    "uuid": "982a63a1-4a7d-4196-9b7e-a13b174c6fcc"
+                    "uuid": "5a2fc0c4-de37-4db6-8160-3e964635e1d6"
                 },
                 {
                     "description": "Pad 1 [C4] of S14 on B.Cu",
@@ -1403,7 +1403,7 @@
                         "x": 179.275,
                         "y": 82.2
                     },
-                    "uuid": "8618e31d-554f-40de-92cc-3313fdedbec2"
+                    "uuid": "5f059b0f-9f0e-4780-86cb-6ac71bc8d4fe"
                 }
             ],
             "severity": "error",
@@ -1418,7 +1418,7 @@
                         "x": 179.275,
                         "y": 63.2
                     },
-                    "uuid": "9aaaefb3-ee51-4c65-88fb-9aaed9658d2c"
+                    "uuid": "101a7f05-5f54-4b96-974d-288ee4ce8eed"
                 },
                 {
                     "description": "Pad 1 [C4] of S15 on F.Cu",
@@ -1426,7 +1426,7 @@
                         "x": 172.725,
                         "y": 63.2
                     },
-                    "uuid": "775c50c8-d724-46c8-8f9e-be4b84cceb35"
+                    "uuid": "1f0d899c-49bb-49db-a3a4-38bb6cc6ff5b"
                 }
             ],
             "severity": "error",
@@ -1441,7 +1441,7 @@
                         "x": 179.275,
                         "y": 82.2
                     },
-                    "uuid": "8618e31d-554f-40de-92cc-3313fdedbec2"
+                    "uuid": "5f059b0f-9f0e-4780-86cb-6ac71bc8d4fe"
                 },
                 {
                     "description": "Pad 1 [C4] of S15 on B.Cu",
@@ -1449,7 +1449,7 @@
                         "x": 179.275,
                         "y": 63.2
                     },
-                    "uuid": "9aaaefb3-ee51-4c65-88fb-9aaed9658d2c"
+                    "uuid": "101a7f05-5f54-4b96-974d-288ee4ce8eed"
                 }
             ],
             "severity": "error",
@@ -1464,7 +1464,7 @@
                         "x": 179.275,
                         "y": 82.2
                     },
-                    "uuid": "8618e31d-554f-40de-92cc-3313fdedbec2"
+                    "uuid": "5f059b0f-9f0e-4780-86cb-6ac71bc8d4fe"
                 },
                 {
                     "description": "Track [C4] on F.Cu, length 1.1800 mm",
@@ -1472,7 +1472,7 @@
                         "x": 210.124,
                         "y": 78.49
                     },
-                    "uuid": "4a1b04db-8757-41a0-ab8c-16ac8901a820"
+                    "uuid": "4ff792c2-03a2-4029-8eb1-5cdb42de9b56"
                 }
             ],
             "severity": "error",
@@ -1487,7 +1487,7 @@
                         "x": 179.275,
                         "y": 101.2
                     },
-                    "uuid": "2728aa2c-0e08-4a61-9ccd-755df7bb92cd"
+                    "uuid": "be9fa7e9-30fc-4bba-96bb-5bfae588e2ae"
                 },
                 {
                     "description": "Pad 1 [C4] of S13 on F.Cu",
@@ -1495,7 +1495,7 @@
                         "x": 172.725,
                         "y": 101.2
                     },
-                    "uuid": "c11d3cab-abb0-497b-8f81-589398d18b52"
+                    "uuid": "cd142e44-03e0-4f09-bb64-6311af3c30ff"
                 }
             ],
             "severity": "error",
@@ -1510,7 +1510,7 @@
                         "x": 179.275,
                         "y": 101.2
                     },
-                    "uuid": "2728aa2c-0e08-4a61-9ccd-755df7bb92cd"
+                    "uuid": "be9fa7e9-30fc-4bba-96bb-5bfae588e2ae"
                 },
                 {
                     "description": "Pad 1 [C4] of S14 on B.Cu",
@@ -1518,7 +1518,7 @@
                         "x": 179.275,
                         "y": 82.2
                     },
-                    "uuid": "8618e31d-554f-40de-92cc-3313fdedbec2"
+                    "uuid": "5f059b0f-9f0e-4780-86cb-6ac71bc8d4fe"
                 }
             ],
             "severity": "error",
@@ -1533,7 +1533,7 @@
                         "x": 182.79662,
                         "y": 122.524626
                     },
-                    "uuid": "335b34d0-af94-40a1-8fed-61a050285fbb"
+                    "uuid": "65040b51-ba6e-452a-adc5-908d8c6d3843"
                 },
                 {
                     "description": "Pad 1 [C4] of S20 on B.Cu",
@@ -1541,7 +1541,7 @@
                         "x": 189.123434,
                         "y": 124.219891
                     },
-                    "uuid": "b2997e62-9705-4cdd-b03c-ba41ee94937e"
+                    "uuid": "bac59e5f-6fd2-4e45-98fa-77d54f638a7e"
                 }
             ],
             "severity": "error",
@@ -1556,7 +1556,7 @@
                         "x": 182.79662,
                         "y": 122.524626
                     },
-                    "uuid": "335b34d0-af94-40a1-8fed-61a050285fbb"
+                    "uuid": "65040b51-ba6e-452a-adc5-908d8c6d3843"
                 },
                 {
                     "description": "Pad 1 [C4] of S13 on B.Cu",
@@ -1564,7 +1564,7 @@
                         "x": 179.275,
                         "y": 101.2
                     },
-                    "uuid": "2728aa2c-0e08-4a61-9ccd-755df7bb92cd"
+                    "uuid": "be9fa7e9-30fc-4bba-96bb-5bfae588e2ae"
                 }
             ],
             "severity": "error",
@@ -1579,7 +1579,7 @@
                         "x": 168.25,
                         "y": 95.4
                     },
-                    "uuid": "b7939f45-c470-424f-830a-926ca1199971"
+                    "uuid": "22de1293-bd4c-4cd2-8bf1-ad277e79d53c"
                 },
                 {
                     "description": "Pad 2 [index_bottom_B] of S13 on B.Cu",
@@ -1587,7 +1587,7 @@
                         "x": 167.725,
                         "y": 99.0
                     },
-                    "uuid": "617f1484-6657-414d-af7c-5ef9560891f2"
+                    "uuid": "8dfa44de-527f-4c7a-9075-009db4b9e71b"
                 }
             ],
             "severity": "error",
@@ -1602,7 +1602,7 @@
                         "x": 184.275,
                         "y": 99.0
                     },
-                    "uuid": "97a3534b-0f3c-4293-a52c-b622102a6ca7"
+                    "uuid": "40006caa-c394-4179-9b9a-72c1e0b76113"
                 },
                 {
                     "description": "Pad 2 [index_bottom_B] of D13 on B.Cu",
@@ -1610,7 +1610,7 @@
                         "x": 168.25,
                         "y": 95.4
                     },
-                    "uuid": "b7939f45-c470-424f-830a-926ca1199971"
+                    "uuid": "22de1293-bd4c-4cd2-8bf1-ad277e79d53c"
                 }
             ],
             "severity": "error",
@@ -1625,7 +1625,7 @@
                         "x": 168.25,
                         "y": 76.4
                     },
-                    "uuid": "f5f09c83-30cc-4fed-96ab-2d52f2e371a4"
+                    "uuid": "3043a970-2b8f-4c93-8a0c-d8880f3822b9"
                 },
                 {
                     "description": "Pad 2 [index_home_B] of S14 on B.Cu",
@@ -1633,7 +1633,7 @@
                         "x": 167.725,
                         "y": 80.0
                     },
-                    "uuid": "1fc17d0a-2795-4e15-9e18-b671b5f6eef8"
+                    "uuid": "369abd07-30f9-4ecb-b6d4-e8d1d5a41b98"
                 }
             ],
             "severity": "error",
@@ -1648,7 +1648,7 @@
                         "x": 184.275,
                         "y": 80.0
                     },
-                    "uuid": "2e19d71e-4d30-4914-9269-30c898bd6d29"
+                    "uuid": "2fd6feaf-8a03-4cd8-a091-7c79871de680"
                 },
                 {
                     "description": "Pad 2 [index_home_B] of D14 on B.Cu",
@@ -1656,7 +1656,7 @@
                         "x": 168.25,
                         "y": 76.4
                     },
-                    "uuid": "f5f09c83-30cc-4fed-96ab-2d52f2e371a4"
+                    "uuid": "3043a970-2b8f-4c93-8a0c-d8880f3822b9"
                 }
             ],
             "severity": "error",
@@ -1671,7 +1671,7 @@
                         "x": 168.25,
                         "y": 57.4
                     },
-                    "uuid": "dd13efb4-e455-4ad1-a445-984b97a9c80f"
+                    "uuid": "d8c6b2be-2566-469a-a967-d6e0128443e6"
                 },
                 {
                     "description": "Pad 2 [index_top_B] of S15 on B.Cu",
@@ -1679,7 +1679,7 @@
                         "x": 167.725,
                         "y": 61.0
                     },
-                    "uuid": "f95f1353-c63a-4e6a-8a77-9032e2ebbeda"
+                    "uuid": "5a4d1d21-e4f2-4846-92a8-3f11fa9775b8"
                 }
             ],
             "severity": "error",
@@ -1694,7 +1694,7 @@
                         "x": 184.275,
                         "y": 61.0
                     },
-                    "uuid": "05da6edc-4ddf-42a6-83ef-2b4f5e7b467e"
+                    "uuid": "532ddde4-fcaf-4e54-85d3-1bd0623199bc"
                 },
                 {
                     "description": "Pad 2 [index_top_B] of D15 on B.Cu",
@@ -1702,7 +1702,7 @@
                         "x": 168.25,
                         "y": 57.4
                     },
-                    "uuid": "dd13efb4-e455-4ad1-a445-984b97a9c80f"
+                    "uuid": "d8c6b2be-2566-469a-a967-d6e0128443e6"
                 }
             ],
             "severity": "error",
@@ -1717,7 +1717,7 @@
                         "x": 191.725,
                         "y": 84.575
                     },
-                    "uuid": "d83fb976-f7b7-4dc3-8bbe-bf396616b81e"
+                    "uuid": "57a53701-4c2c-4f62-875f-711fcb675230"
                 },
                 {
                     "description": "Pad 1 [C5] of S16 on F.Cu",
@@ -1725,7 +1725,7 @@
                         "x": 191.725,
                         "y": 103.575
                     },
-                    "uuid": "51c8ffc4-68f1-49ad-970a-4489ce981dbd"
+                    "uuid": "9d77debe-9d90-4d76-b19c-502ea3e86bd8"
                 }
             ],
             "severity": "error",
@@ -1740,7 +1740,7 @@
                         "x": 191.725,
                         "y": 103.575
                     },
-                    "uuid": "51c8ffc4-68f1-49ad-970a-4489ce981dbd"
+                    "uuid": "9d77debe-9d90-4d76-b19c-502ea3e86bd8"
                 },
                 {
                     "description": "Pad 1 [C5] of S16 on B.Cu",
@@ -1748,7 +1748,7 @@
                         "x": 198.275,
                         "y": 103.575
                     },
-                    "uuid": "1043f913-2cb4-4a11-9560-1ca474e8c4a4"
+                    "uuid": "aa73c68d-c1c2-4150-8c21-7f8b445107b2"
                 }
             ],
             "severity": "error",
@@ -1763,7 +1763,7 @@
                         "x": 198.275,
                         "y": 65.575
                     },
-                    "uuid": "50874ceb-5633-40c4-95ea-4797baeb26a1"
+                    "uuid": "cc8f0d74-9ea0-43c4-9f0f-dfa1028f0f58"
                 },
                 {
                     "description": "Pad 1 [C5] of S18 on F.Cu",
@@ -1771,7 +1771,7 @@
                         "x": 191.725,
                         "y": 65.575
                     },
-                    "uuid": "db3286dd-1f48-49e1-aadb-69233ee33c98"
+                    "uuid": "1b37d2e1-5af3-4d5a-9d70-83009a98ea82"
                 }
             ],
             "severity": "error",
@@ -1786,7 +1786,7 @@
                         "x": 198.275,
                         "y": 84.575
                     },
-                    "uuid": "baf624a0-b1e3-4315-abd0-3c1dbd7d38c3"
+                    "uuid": "a90912a6-5d3e-4776-bf26-25a1189672d3"
                 },
                 {
                     "description": "Pad 1 [C5] of S17 on F.Cu",
@@ -1794,7 +1794,7 @@
                         "x": 191.725,
                         "y": 84.575
                     },
-                    "uuid": "d83fb976-f7b7-4dc3-8bbe-bf396616b81e"
+                    "uuid": "57a53701-4c2c-4f62-875f-711fcb675230"
                 }
             ],
             "severity": "error",
@@ -1809,7 +1809,7 @@
                         "x": 198.275,
                         "y": 84.575
                     },
-                    "uuid": "baf624a0-b1e3-4315-abd0-3c1dbd7d38c3"
+                    "uuid": "a90912a6-5d3e-4776-bf26-25a1189672d3"
                 },
                 {
                     "description": "Pad 1 [C5] of S18 on B.Cu",
@@ -1817,7 +1817,7 @@
                         "x": 198.275,
                         "y": 65.575
                     },
-                    "uuid": "50874ceb-5633-40c4-95ea-4797baeb26a1"
+                    "uuid": "cc8f0d74-9ea0-43c4-9f0f-dfa1028f0f58"
                 }
             ],
             "severity": "error",
@@ -1832,7 +1832,7 @@
                         "x": 198.275,
                         "y": 103.575
                     },
-                    "uuid": "1043f913-2cb4-4a11-9560-1ca474e8c4a4"
+                    "uuid": "aa73c68d-c1c2-4150-8c21-7f8b445107b2"
                 },
                 {
                     "description": "Pad 1 [C5] of S21 on B.Cu",
@@ -1840,7 +1840,7 @@
                         "x": 216.537157,
                         "y": 121.527925
                     },
-                    "uuid": "853b6d0f-ffe7-4cb9-a3b9-4adc2c31432e"
+                    "uuid": "2b555f4f-722d-4ac4-a8cd-758c66b26308"
                 }
             ],
             "severity": "error",
@@ -1855,7 +1855,7 @@
                         "x": 210.124,
                         "y": 81.03
                     },
-                    "uuid": "3538b78a-b60f-4d3e-93ae-bb46bfa9d9c5"
+                    "uuid": "21ab4852-4682-4027-b19f-0fd1b4610584"
                 },
                 {
                     "description": "Pad 1 [C5] of S17 on B.Cu",
@@ -1863,7 +1863,7 @@
                         "x": 198.275,
                         "y": 84.575
                     },
-                    "uuid": "baf624a0-b1e3-4315-abd0-3c1dbd7d38c3"
+                    "uuid": "a90912a6-5d3e-4776-bf26-25a1189672d3"
                 }
             ],
             "severity": "error",
@@ -1878,7 +1878,7 @@
                         "x": 213.262157,
                         "y": 127.200391
                     },
-                    "uuid": "776fb629-ea6a-41ea-95bb-10c0d30312ce"
+                    "uuid": "a0ba69e6-93e3-4ea1-803d-64fa9fdf883e"
                 },
                 {
                     "description": "Pad 1 [C5] of S21 on B.Cu",
@@ -1886,7 +1886,7 @@
                         "x": 216.537157,
                         "y": 121.527925
                     },
-                    "uuid": "853b6d0f-ffe7-4cb9-a3b9-4adc2c31432e"
+                    "uuid": "2b555f4f-722d-4ac4-a8cd-758c66b26308"
                 }
             ],
             "severity": "error",
@@ -1901,7 +1901,7 @@
                         "x": 187.25,
                         "y": 97.775
                     },
-                    "uuid": "096e7f7e-7092-4647-8a01-4ce278e3711d"
+                    "uuid": "1952f002-9f5c-4047-b145-078a33b6e174"
                 },
                 {
                     "description": "Pad 2 [inner_bottom_B] of S16 on B.Cu",
@@ -1909,7 +1909,7 @@
                         "x": 186.725,
                         "y": 101.375
                     },
-                    "uuid": "bbd3f66f-2cd5-496c-a45f-afa4378a05d3"
+                    "uuid": "c50f70a0-16ca-4bd2-8159-e65d0eb87d98"
                 }
             ],
             "severity": "error",
@@ -1924,7 +1924,7 @@
                         "x": 203.275,
                         "y": 101.375
                     },
-                    "uuid": "7842d36e-1189-453e-87cd-c6e2ec42f81f"
+                    "uuid": "c3fba462-5673-448f-9a37-9e6cbe12e205"
                 },
                 {
                     "description": "Pad 2 [inner_bottom_B] of D16 on B.Cu",
@@ -1932,7 +1932,7 @@
                         "x": 187.25,
                         "y": 97.775
                     },
-                    "uuid": "096e7f7e-7092-4647-8a01-4ce278e3711d"
+                    "uuid": "1952f002-9f5c-4047-b145-078a33b6e174"
                 }
             ],
             "severity": "error",
@@ -1947,7 +1947,7 @@
                         "x": 187.25,
                         "y": 78.775
                     },
-                    "uuid": "a6b646e0-d478-484e-85cc-296cc8a67fdc"
+                    "uuid": "596d2e67-529c-4eb8-b177-ec2daaacbe30"
                 },
                 {
                     "description": "Pad 2 [inner_home_B] of S17 on B.Cu",
@@ -1955,7 +1955,7 @@
                         "x": 186.725,
                         "y": 82.375
                     },
-                    "uuid": "e281d645-1923-4e5f-b513-e1dc74a5e625"
+                    "uuid": "0fff979e-c357-4622-a490-9fb4e23d7e29"
                 }
             ],
             "severity": "error",
@@ -1970,7 +1970,7 @@
                         "x": 203.275,
                         "y": 82.375
                     },
-                    "uuid": "48a0685b-ba52-4ee5-adc8-e4d8430e19b0"
+                    "uuid": "abb72b73-2c15-4e05-9d4f-7206626e8791"
                 },
                 {
                     "description": "Pad 2 [inner_home_B] of D17 on B.Cu",
@@ -1978,7 +1978,7 @@
                         "x": 187.25,
                         "y": 78.775
                     },
-                    "uuid": "a6b646e0-d478-484e-85cc-296cc8a67fdc"
+                    "uuid": "596d2e67-529c-4eb8-b177-ec2daaacbe30"
                 }
             ],
             "severity": "error",
@@ -1993,7 +1993,7 @@
                         "x": 187.25,
                         "y": 59.775
                     },
-                    "uuid": "ea4f6bbb-e2ae-46bf-8b28-d55844657d65"
+                    "uuid": "68de96ca-57be-4090-a16c-549d320afee4"
                 },
                 {
                     "description": "Pad 2 [inner_top_B] of S18 on B.Cu",
@@ -2001,7 +2001,7 @@
                         "x": 186.725,
                         "y": 63.375
                     },
-                    "uuid": "46aeed06-aa3e-41e4-9e2b-8bc641408088"
+                    "uuid": "329fe189-5e17-4564-b0ad-56de31565c91"
                 }
             ],
             "severity": "error",
@@ -2016,7 +2016,7 @@
                         "x": 203.275,
                         "y": 63.375
                     },
-                    "uuid": "5976c9bb-f371-40d1-a553-84f73e743dda"
+                    "uuid": "86e044cd-675e-4e81-83ef-ac8f7119fcef"
                 },
                 {
                     "description": "Pad 2 [inner_top_B] of D18 on B.Cu",
@@ -2024,7 +2024,7 @@
                         "x": 187.25,
                         "y": 59.775
                     },
-                    "uuid": "ea4f6bbb-e2ae-46bf-8b28-d55844657d65"
+                    "uuid": "68de96ca-57be-4090-a16c-549d320afee4"
                 }
             ],
             "severity": "error",
@@ -2039,7 +2039,7 @@
                         "x": 158.75,
                         "y": 115.025
                     },
-                    "uuid": "985544b3-6aa5-4693-b49b-2d3ffd7835ca"
+                    "uuid": "7abe75b8-bed1-48b8-af45-033cbc139378"
                 },
                 {
                     "description": "Pad 2 [near_home_B] of S19 on B.Cu",
@@ -2047,7 +2047,7 @@
                         "x": 158.225,
                         "y": 118.625
                     },
-                    "uuid": "aaa6a8a8-1bb1-4edd-a739-69121dde606c"
+                    "uuid": "8e3229f8-9f24-474e-aa62-e413b8748c18"
                 }
             ],
             "severity": "error",
@@ -2062,7 +2062,7 @@
                         "x": 174.775,
                         "y": 118.625
                     },
-                    "uuid": "acc04d22-e45c-4739-a43d-ebd863f8c2b7"
+                    "uuid": "f0d13508-f3e3-4b90-a631-c337514af50b"
                 },
                 {
                     "description": "Pad 2 [near_home_B] of D19 on B.Cu",
@@ -2070,7 +2070,7 @@
                         "x": 158.75,
                         "y": 115.025
                     },
-                    "uuid": "985544b3-6aa5-4693-b49b-2d3ffd7835ca"
+                    "uuid": "7abe75b8-bed1-48b8-af45-033cbc139378"
                 }
             ],
             "severity": "error",
@@ -2085,7 +2085,7 @@
                         "x": 179.975253,
                         "y": 115.764042
                     },
-                    "uuid": "14071f66-d682-464b-9fd7-2b9763d976c5"
+                    "uuid": "e1959d86-cfc1-437c-8984-8f1ab8ca1da9"
                 },
                 {
                     "description": "Pad 2 [mid_home_B] of S20 on B.Cu",
@@ -2093,7 +2093,7 @@
                         "x": 178.536392,
                         "y": 119.105494
                     },
-                    "uuid": "c7ce8f0c-12d4-42e1-a3ce-3852bad88f1b"
+                    "uuid": "ea3497c3-f10b-4d7a-91ae-a1cda9b42810"
                 }
             ],
             "severity": "error",
@@ -2108,7 +2108,7 @@
                         "x": 194.522465,
                         "y": 123.388949
                     },
-                    "uuid": "d3cab20a-07e6-409e-aff9-e6466d0b0b2a"
+                    "uuid": "556f3d18-299b-43d2-9d6f-14efcbf01b15"
                 },
                 {
                     "description": "Pad 2 [mid_home_B] of D20 on B.Cu",
@@ -2116,7 +2116,7 @@
                         "x": 179.975253,
                         "y": 115.764042
                     },
-                    "uuid": "14071f66-d682-464b-9fd7-2b9763d976c5"
+                    "uuid": "e1959d86-cfc1-437c-8984-8f1ab8ca1da9"
                 }
             ],
             "severity": "error",
@@ -2131,7 +2131,7 @@
                         "x": 206.00171,
                         "y": 128.175855
                     },
-                    "uuid": "11a5b371-72d1-48fd-bc43-97f5537fdf95"
+                    "uuid": "c2b241a9-173f-48b9-9390-06eb4defd091"
                 },
                 {
                     "description": "Pad 2 [far_home_B] of S21 on B.Cu",
@@ -2139,7 +2139,7 @@
                         "x": 208.856901,
                         "y": 130.430518
                     },
-                    "uuid": "81108ff4-48ba-427a-ab76-e8b8cda8032d"
+                    "uuid": "6a345fa4-5fc8-407b-93d8-0592b808aea4"
                 }
             ],
             "severity": "error",
@@ -2154,7 +2154,7 @@
                         "x": 217.131901,
                         "y": 116.097798
                     },
-                    "uuid": "25a95bf2-dfe4-4399-960b-33cc0079c613"
+                    "uuid": "2a897020-1c4f-4dc9-90d5-12b8b929522b"
                 },
                 {
                     "description": "Pad 2 [far_home_B] of D21 on B.Cu",
@@ -2162,7 +2162,7 @@
                         "x": 206.00171,
                         "y": 128.175855
                     },
-                    "uuid": "11a5b371-72d1-48fd-bc43-97f5537fdf95"
+                    "uuid": "c2b241a9-173f-48b9-9390-06eb4defd091"
                 }
             ],
             "severity": "error",
@@ -2177,7 +2177,7 @@
                         "x": 92.25,
                         "y": 96.85
                     },
-                    "uuid": "443f14d6-5cd5-4a3f-8793-b4fc3bbca1aa"
+                    "uuid": "5d99c489-702b-4796-926d-f1c0ab13d5cc"
                 },
                 {
                     "description": "Pad 1 [R2] of D22 on F.Cu",
@@ -2185,7 +2185,7 @@
                         "x": 107.75,
                         "y": 96.85
                     },
-                    "uuid": "7f9184e5-edff-4b57-847c-be367ca65614"
+                    "uuid": "7ab1f794-d640-488e-925e-b2f08be3312b"
                 }
             ],
             "severity": "error",
@@ -2200,7 +2200,7 @@
                         "x": 107.75,
                         "y": 96.85
                     },
-                    "uuid": "7f9184e5-edff-4b57-847c-be367ca65614"
+                    "uuid": "7ab1f794-d640-488e-925e-b2f08be3312b"
                 },
                 {
                     "description": "Pad 1 [R2] of D4 on B.Cu",
@@ -2208,7 +2208,7 @@
                         "x": 111.25,
                         "y": 96.85
                     },
-                    "uuid": "d0a26f62-f71c-4f54-b229-4a86ff7a10c8"
+                    "uuid": "3665907c-952e-4f1e-9fe0-d30d4a07d79a"
                 }
             ],
             "severity": "error",
@@ -2223,7 +2223,7 @@
                         "x": 111.25,
                         "y": 96.85
                     },
-                    "uuid": "d0a26f62-f71c-4f54-b229-4a86ff7a10c8"
+                    "uuid": "3665907c-952e-4f1e-9fe0-d30d4a07d79a"
                 },
                 {
                     "description": "Pad 1 [R2] of D25 on F.Cu",
@@ -2231,7 +2231,7 @@
                         "x": 126.75,
                         "y": 96.85
                     },
-                    "uuid": "4776a764-f1f3-4ab3-a083-9feaf595604e"
+                    "uuid": "66bfa1e7-def7-4da4-b767-46476c445b82"
                 }
             ],
             "severity": "error",
@@ -2246,7 +2246,7 @@
                         "x": 126.75,
                         "y": 96.85
                     },
-                    "uuid": "4776a764-f1f3-4ab3-a083-9feaf595604e"
+                    "uuid": "66bfa1e7-def7-4da4-b767-46476c445b82"
                 },
                 {
                     "description": "Pad 1 [R2] of D7 on B.Cu",
@@ -2254,7 +2254,7 @@
                         "x": 130.25,
                         "y": 92.1
                     },
-                    "uuid": "8dc4a11b-0037-4f63-b434-8883155cf44b"
+                    "uuid": "bffe74d9-dc3b-470f-b646-6ca4bd35bf72"
                 }
             ],
             "severity": "error",
@@ -2269,7 +2269,7 @@
                         "x": 130.25,
                         "y": 92.1
                     },
-                    "uuid": "8dc4a11b-0037-4f63-b434-8883155cf44b"
+                    "uuid": "bffe74d9-dc3b-470f-b646-6ca4bd35bf72"
                 },
                 {
                     "description": "Pad 1 [R2] of D28 on F.Cu",
@@ -2277,7 +2277,7 @@
                         "x": 145.75,
                         "y": 92.1
                     },
-                    "uuid": "27432850-1b07-4ef9-ab2b-43a5414f6fb1"
+                    "uuid": "76e87bbf-b386-4ead-8512-e775fad73319"
                 }
             ],
             "severity": "error",
@@ -2292,7 +2292,7 @@
                         "x": 149.25,
                         "y": 89.725
                     },
-                    "uuid": "524598c3-aee6-4c86-bdfc-ac2681903427"
+                    "uuid": "4e8b8802-b283-4ef1-aae3-0a75763ffc6b"
                 },
                 {
                     "description": "Pad 1 [R2] of D28 on F.Cu",
@@ -2300,7 +2300,7 @@
                         "x": 145.75,
                         "y": 92.1
                     },
-                    "uuid": "27432850-1b07-4ef9-ab2b-43a5414f6fb1"
+                    "uuid": "76e87bbf-b386-4ead-8512-e775fad73319"
                 }
             ],
             "severity": "error",
@@ -2315,7 +2315,7 @@
                         "x": 149.25,
                         "y": 89.725
                     },
-                    "uuid": "524598c3-aee6-4c86-bdfc-ac2681903427"
+                    "uuid": "4e8b8802-b283-4ef1-aae3-0a75763ffc6b"
                 },
                 {
                     "description": "Pad 1 [R2] of D31 on F.Cu",
@@ -2323,7 +2323,7 @@
                         "x": 164.75,
                         "y": 89.725
                     },
-                    "uuid": "f87ae4e1-1d33-4769-a82b-baa85b3a2aa5"
+                    "uuid": "623b509a-f782-422d-b192-98ddb0051349"
                 }
             ],
             "severity": "error",
@@ -2338,7 +2338,7 @@
                         "x": 168.25,
                         "y": 92.1
                     },
-                    "uuid": "5c0a4fb2-9701-460b-9079-830234308c08"
+                    "uuid": "9d6816e9-0aa0-4dc5-b09b-f53e87840f5f"
                 },
                 {
                     "description": "Pad 1 [R2] of D31 on F.Cu",
@@ -2346,7 +2346,7 @@
                         "x": 164.75,
                         "y": 89.725
                     },
-                    "uuid": "f87ae4e1-1d33-4769-a82b-baa85b3a2aa5"
+                    "uuid": "623b509a-f782-422d-b192-98ddb0051349"
                 }
             ],
             "severity": "error",
@@ -2361,7 +2361,7 @@
                         "x": 183.75,
                         "y": 92.1
                     },
-                    "uuid": "204b9435-c96e-4250-a139-8b7f86b8eaa7"
+                    "uuid": "2482f0a3-d1f9-4092-9b27-0797cc318f32"
                 },
                 {
                     "description": "Pad 1 [R2] of D13 on B.Cu",
@@ -2369,7 +2369,7 @@
                         "x": 168.25,
                         "y": 92.1
                     },
-                    "uuid": "5c0a4fb2-9701-460b-9079-830234308c08"
+                    "uuid": "9d6816e9-0aa0-4dc5-b09b-f53e87840f5f"
                 }
             ],
             "severity": "error",
@@ -2384,7 +2384,7 @@
                         "x": 187.25,
                         "y": 94.475
                     },
-                    "uuid": "766cac4a-6c96-49c6-89f8-386085b749d0"
+                    "uuid": "43468c1b-b602-40f3-a3b3-90cd0bbdb7f4"
                 },
                 {
                     "description": "Pad 1 [R2] of D34 on F.Cu",
@@ -2392,7 +2392,7 @@
                         "x": 183.75,
                         "y": 92.1
                     },
-                    "uuid": "204b9435-c96e-4250-a139-8b7f86b8eaa7"
+                    "uuid": "2482f0a3-d1f9-4092-9b27-0797cc318f32"
                 }
             ],
             "severity": "error",
@@ -2407,7 +2407,7 @@
                         "x": 202.75,
                         "y": 94.475
                     },
-                    "uuid": "471b186a-5671-4f81-9c0c-447d4b108fc7"
+                    "uuid": "9375242a-08ce-47fd-b4d9-96c219926425"
                 },
                 {
                     "description": "Track [R2] on B.Cu, length 0.6006 mm",
@@ -2415,7 +2415,7 @@
                         "x": 211.003695,
                         "y": 81.755
                     },
-                    "uuid": "9c5cc64a-8675-4ca0-a67d-f7bed5fd592e"
+                    "uuid": "0be4bb61-14c3-4061-839d-179482904a84"
                 }
             ],
             "severity": "error",
@@ -2430,7 +2430,7 @@
                         "x": 202.75,
                         "y": 94.475
                     },
-                    "uuid": "471b186a-5671-4f81-9c0c-447d4b108fc7"
+                    "uuid": "9375242a-08ce-47fd-b4d9-96c219926425"
                 },
                 {
                     "description": "Pad 1 [R2] of D16 on B.Cu",
@@ -2438,7 +2438,7 @@
                         "x": 187.25,
                         "y": 94.475
                     },
-                    "uuid": "766cac4a-6c96-49c6-89f8-386085b749d0"
+                    "uuid": "43468c1b-b602-40f3-a3b3-90cd0bbdb7f4"
                 }
             ],
             "severity": "error",
@@ -2453,7 +2453,7 @@
                         "x": 92.25,
                         "y": 77.85
                     },
-                    "uuid": "d9f6c7d1-4f65-4104-8bd3-571f7f91ce53"
+                    "uuid": "23b72c98-7141-4129-a974-8136a3868a71"
                 },
                 {
                     "description": "Pad 1 [R1] of D23 on F.Cu",
@@ -2461,7 +2461,7 @@
                         "x": 107.75,
                         "y": 77.85
                     },
-                    "uuid": "6356d5e6-45a9-4df9-add7-85183f37b0ad"
+                    "uuid": "021c87dd-daa0-47c8-9b9e-429cf8067ba4"
                 }
             ],
             "severity": "error",
@@ -2476,7 +2476,7 @@
                         "x": 111.25,
                         "y": 77.85
                     },
-                    "uuid": "96b7859f-3eb1-474f-8df8-3e49ba172f0a"
+                    "uuid": "b0326df7-bc93-4ad2-b5d8-515c85ab1298"
                 },
                 {
                     "description": "Pad 1 [R1] of D23 on F.Cu",
@@ -2484,7 +2484,7 @@
                         "x": 107.75,
                         "y": 77.85
                     },
-                    "uuid": "6356d5e6-45a9-4df9-add7-85183f37b0ad"
+                    "uuid": "021c87dd-daa0-47c8-9b9e-429cf8067ba4"
                 }
             ],
             "severity": "error",
@@ -2499,7 +2499,7 @@
                         "x": 126.75,
                         "y": 77.85
                     },
-                    "uuid": "92988fdf-7cab-4fa7-a44c-fce0fc5533f5"
+                    "uuid": "68f77908-e667-4786-acc5-4a8cec963aa2"
                 },
                 {
                     "description": "Pad 1 [R1] of D8 on B.Cu",
@@ -2507,7 +2507,7 @@
                         "x": 130.25,
                         "y": 73.1
                     },
-                    "uuid": "f0ded8e8-6a62-44af-a58b-1e5f51e0abcb"
+                    "uuid": "c39f3e8d-9657-48f5-bc85-5e0ceb3f408f"
                 }
             ],
             "severity": "error",
@@ -2522,7 +2522,7 @@
                         "x": 126.75,
                         "y": 77.85
                     },
-                    "uuid": "92988fdf-7cab-4fa7-a44c-fce0fc5533f5"
+                    "uuid": "68f77908-e667-4786-acc5-4a8cec963aa2"
                 },
                 {
                     "description": "Pad 1 [R1] of D5 on B.Cu",
@@ -2530,7 +2530,7 @@
                         "x": 111.25,
                         "y": 77.85
                     },
-                    "uuid": "96b7859f-3eb1-474f-8df8-3e49ba172f0a"
+                    "uuid": "b0326df7-bc93-4ad2-b5d8-515c85ab1298"
                 }
             ],
             "severity": "error",
@@ -2545,7 +2545,7 @@
                         "x": 145.75,
                         "y": 73.1
                     },
-                    "uuid": "ea98f0dc-cb74-49e4-bd94-b042910205e8"
+                    "uuid": "6e7f3321-ed17-4241-88bd-e67ded786ca4"
                 },
                 {
                     "description": "Pad 1 [R1] of D8 on B.Cu",
@@ -2553,7 +2553,7 @@
                         "x": 130.25,
                         "y": 73.1
                     },
-                    "uuid": "f0ded8e8-6a62-44af-a58b-1e5f51e0abcb"
+                    "uuid": "c39f3e8d-9657-48f5-bc85-5e0ceb3f408f"
                 }
             ],
             "severity": "error",
@@ -2568,7 +2568,7 @@
                         "x": 149.25,
                         "y": 70.725
                     },
-                    "uuid": "c217f757-d464-44b2-be3a-e7e18b2f1760"
+                    "uuid": "db638e1f-9114-4acd-9671-849c0605480d"
                 },
                 {
                     "description": "Pad 1 [R1] of D29 on F.Cu",
@@ -2576,7 +2576,7 @@
                         "x": 145.75,
                         "y": 73.1
                     },
-                    "uuid": "ea98f0dc-cb74-49e4-bd94-b042910205e8"
+                    "uuid": "6e7f3321-ed17-4241-88bd-e67ded786ca4"
                 }
             ],
             "severity": "error",
@@ -2591,7 +2591,7 @@
                         "x": 164.75,
                         "y": 70.725
                     },
-                    "uuid": "b7240537-a9d5-485c-b0ad-1cde9cf344b4"
+                    "uuid": "e9be4ede-0c75-48a6-a68e-bfcb42e33849"
                 },
                 {
                     "description": "Pad 1 [R1] of D11 on B.Cu",
@@ -2599,7 +2599,7 @@
                         "x": 149.25,
                         "y": 70.725
                     },
-                    "uuid": "c217f757-d464-44b2-be3a-e7e18b2f1760"
+                    "uuid": "db638e1f-9114-4acd-9671-849c0605480d"
                 }
             ],
             "severity": "error",
@@ -2614,7 +2614,7 @@
                         "x": 168.25,
                         "y": 73.1
                     },
-                    "uuid": "d07a205a-6d75-41d4-8db9-086219360b86"
+                    "uuid": "e02990bf-4ddb-449c-937b-aeb5a17b431a"
                 },
                 {
                     "description": "Pad 1 [R1] of D32 on F.Cu",
@@ -2622,7 +2622,7 @@
                         "x": 164.75,
                         "y": 70.725
                     },
-                    "uuid": "b7240537-a9d5-485c-b0ad-1cde9cf344b4"
+                    "uuid": "e9be4ede-0c75-48a6-a68e-bfcb42e33849"
                 }
             ],
             "severity": "error",
@@ -2637,7 +2637,7 @@
                         "x": 168.25,
                         "y": 73.1
                     },
-                    "uuid": "d07a205a-6d75-41d4-8db9-086219360b86"
+                    "uuid": "e02990bf-4ddb-449c-937b-aeb5a17b431a"
                 },
                 {
                     "description": "Pad 1 [R1] of D35 on F.Cu",
@@ -2645,7 +2645,7 @@
                         "x": 183.75,
                         "y": 73.1
                     },
-                    "uuid": "af5ba596-897e-4fcd-8c4c-4b082ae50762"
+                    "uuid": "f5d64c88-a755-4f0d-b900-57d53feb0183"
                 }
             ],
             "severity": "error",
@@ -2660,7 +2660,7 @@
                         "x": 183.75,
                         "y": 73.1
                     },
-                    "uuid": "af5ba596-897e-4fcd-8c4c-4b082ae50762"
+                    "uuid": "f5d64c88-a755-4f0d-b900-57d53feb0183"
                 },
                 {
                     "description": "Pad 1 [R1] of D17 on B.Cu",
@@ -2668,7 +2668,7 @@
                         "x": 187.25,
                         "y": 75.475
                     },
-                    "uuid": "c0d2865e-ee6c-4819-b07c-ac23653fa765"
+                    "uuid": "8295aa64-06bf-4ce2-a899-695fad2d6aa7"
                 }
             ],
             "severity": "error",
@@ -2683,7 +2683,7 @@
                         "x": 202.75,
                         "y": 75.475
                     },
-                    "uuid": "d594b416-24a5-4b5f-9db3-ee8c8e6f3dd8"
+                    "uuid": "ca7eb2e5-8a05-45d9-ba40-c8ce2e2907b0"
                 },
                 {
                     "description": "Pad 1 [R1] of D17 on B.Cu",
@@ -2691,7 +2691,7 @@
                         "x": 187.25,
                         "y": 75.475
                     },
-                    "uuid": "c0d2865e-ee6c-4819-b07c-ac23653fa765"
+                    "uuid": "8295aa64-06bf-4ce2-a899-695fad2d6aa7"
                 }
             ],
             "severity": "error",
@@ -2701,12 +2701,12 @@
             "description": "Missing connection between items",
             "items": [
                 {
-                    "description": "Pad 109 [R1] of MCU1 on B.Cu",
+                    "description": "Track [R1] on B.Cu, length 0.1547 mm",
                     "pos": {
                         "x": 210.124,
                         "y": 78.49
                     },
-                    "uuid": "8450e254-a42e-4399-8f04-fa9d5a18e6cf"
+                    "uuid": "ec3eeb6a-74d7-48f5-8f89-16535d7c4661"
                 },
                 {
                     "description": "Pad 1 [R1] of D38 on F.Cu",
@@ -2714,7 +2714,7 @@
                         "x": 202.75,
                         "y": 75.475
                     },
-                    "uuid": "d594b416-24a5-4b5f-9db3-ee8c8e6f3dd8"
+                    "uuid": "ca7eb2e5-8a05-45d9-ba40-c8ce2e2907b0"
                 }
             ],
             "severity": "error",
@@ -2729,7 +2729,7 @@
                         "x": 92.25,
                         "y": 58.85
                     },
-                    "uuid": "cd3d6979-c838-4e46-ae42-177382bd48eb"
+                    "uuid": "9a8ab5a2-592e-4a05-922d-28b5810d750b"
                 },
                 {
                     "description": "Pad 1 [R0] of D24 on F.Cu",
@@ -2737,7 +2737,7 @@
                         "x": 107.75,
                         "y": 58.85
                     },
-                    "uuid": "4200953a-1f76-4722-a988-97ea66c920d2"
+                    "uuid": "4dc772b1-090a-47fa-9937-e3e5a25c2794"
                 }
             ],
             "severity": "error",
@@ -2752,7 +2752,7 @@
                         "x": 111.25,
                         "y": 58.85
                     },
-                    "uuid": "7ea323c1-026e-46c9-bcb8-fee5178d602e"
+                    "uuid": "0a75d579-aca6-4c46-8e59-9d15fade0a71"
                 },
                 {
                     "description": "Pad 1 [R0] of D24 on F.Cu",
@@ -2760,7 +2760,7 @@
                         "x": 107.75,
                         "y": 58.85
                     },
-                    "uuid": "4200953a-1f76-4722-a988-97ea66c920d2"
+                    "uuid": "4dc772b1-090a-47fa-9937-e3e5a25c2794"
                 }
             ],
             "severity": "error",
@@ -2775,7 +2775,7 @@
                         "x": 111.25,
                         "y": 58.85
                     },
-                    "uuid": "7ea323c1-026e-46c9-bcb8-fee5178d602e"
+                    "uuid": "0a75d579-aca6-4c46-8e59-9d15fade0a71"
                 },
                 {
                     "description": "Pad 1 [R0] of D27 on F.Cu",
@@ -2783,7 +2783,7 @@
                         "x": 126.75,
                         "y": 58.85
                     },
-                    "uuid": "1521b58d-51e3-408c-af58-fed43269677c"
+                    "uuid": "48b67480-2650-44a2-bc1a-3b08c2c89526"
                 }
             ],
             "severity": "error",
@@ -2798,7 +2798,7 @@
                         "x": 130.25,
                         "y": 54.1
                     },
-                    "uuid": "6a35734b-884b-4170-a9a6-638f4389576a"
+                    "uuid": "56221476-1b58-4cb6-89fd-d98f2cec37f2"
                 },
                 {
                     "description": "Pad 1 [R0] of D27 on F.Cu",
@@ -2806,7 +2806,7 @@
                         "x": 126.75,
                         "y": 58.85
                     },
-                    "uuid": "1521b58d-51e3-408c-af58-fed43269677c"
+                    "uuid": "48b67480-2650-44a2-bc1a-3b08c2c89526"
                 }
             ],
             "severity": "error",
@@ -2821,7 +2821,7 @@
                         "x": 130.25,
                         "y": 54.1
                     },
-                    "uuid": "6a35734b-884b-4170-a9a6-638f4389576a"
+                    "uuid": "56221476-1b58-4cb6-89fd-d98f2cec37f2"
                 },
                 {
                     "description": "Pad 1 [R0] of D30 on F.Cu",
@@ -2829,7 +2829,7 @@
                         "x": 145.75,
                         "y": 54.1
                     },
-                    "uuid": "e4cefde5-1e6c-4c42-8628-fecbcab10f4f"
+                    "uuid": "6bdcb42f-4261-4db6-9c29-df43f5f4b0ec"
                 }
             ],
             "severity": "error",
@@ -2844,7 +2844,7 @@
                         "x": 149.25,
                         "y": 51.725
                     },
-                    "uuid": "50c1ee9c-0966-44b5-88a6-2ceda223ea73"
+                    "uuid": "6ab39411-50c6-4d81-98f4-80a45dadbf3d"
                 },
                 {
                     "description": "Pad 1 [R0] of D30 on F.Cu",
@@ -2852,7 +2852,7 @@
                         "x": 145.75,
                         "y": 54.1
                     },
-                    "uuid": "e4cefde5-1e6c-4c42-8628-fecbcab10f4f"
+                    "uuid": "6bdcb42f-4261-4db6-9c29-df43f5f4b0ec"
                 }
             ],
             "severity": "error",
@@ -2867,7 +2867,7 @@
                         "x": 164.75,
                         "y": 51.725
                     },
-                    "uuid": "2d203ca3-72b2-4b4e-adf7-9c5a5dc5d402"
+                    "uuid": "299a585f-ae7c-4def-9ff9-53b99a1a3b8f"
                 },
                 {
                     "description": "Pad 1 [R0] of D15 on B.Cu",
@@ -2875,7 +2875,7 @@
                         "x": 168.25,
                         "y": 54.1
                     },
-                    "uuid": "b422a4db-2f9e-4362-938d-b30c1c8f65cf"
+                    "uuid": "c91c0c93-3c92-4024-9902-955f56549359"
                 }
             ],
             "severity": "error",
@@ -2890,7 +2890,7 @@
                         "x": 164.75,
                         "y": 51.725
                     },
-                    "uuid": "2d203ca3-72b2-4b4e-adf7-9c5a5dc5d402"
+                    "uuid": "299a585f-ae7c-4def-9ff9-53b99a1a3b8f"
                 },
                 {
                     "description": "Pad 1 [R0] of D12 on B.Cu",
@@ -2898,7 +2898,7 @@
                         "x": 149.25,
                         "y": 51.725
                     },
-                    "uuid": "50c1ee9c-0966-44b5-88a6-2ceda223ea73"
+                    "uuid": "6ab39411-50c6-4d81-98f4-80a45dadbf3d"
                 }
             ],
             "severity": "error",
@@ -2913,7 +2913,7 @@
                         "x": 168.25,
                         "y": 54.1
                     },
-                    "uuid": "b422a4db-2f9e-4362-938d-b30c1c8f65cf"
+                    "uuid": "c91c0c93-3c92-4024-9902-955f56549359"
                 },
                 {
                     "description": "Pad 1 [R0] of D36 on F.Cu",
@@ -2921,7 +2921,7 @@
                         "x": 183.75,
                         "y": 54.1
                     },
-                    "uuid": "f99f7c34-7fd1-4a4a-9ebb-1506e004a491"
+                    "uuid": "2fd03552-1c74-4b92-aa09-7585965e0ef7"
                 }
             ],
             "severity": "error",
@@ -2936,7 +2936,7 @@
                         "x": 187.25,
                         "y": 56.475
                     },
-                    "uuid": "c5fd13b5-f3d6-40a3-8d24-cbfeb8202f74"
+                    "uuid": "77facbda-9326-47b6-b9a1-18b9b44b2d6a"
                 },
                 {
                     "description": "Pad 1 [R0] of D36 on F.Cu",
@@ -2944,7 +2944,7 @@
                         "x": 183.75,
                         "y": 54.1
                     },
-                    "uuid": "f99f7c34-7fd1-4a4a-9ebb-1506e004a491"
+                    "uuid": "2fd03552-1c74-4b92-aa09-7585965e0ef7"
                 }
             ],
             "severity": "error",
@@ -2959,7 +2959,7 @@
                         "x": 187.25,
                         "y": 56.475
                     },
-                    "uuid": "c5fd13b5-f3d6-40a3-8d24-cbfeb8202f74"
+                    "uuid": "77facbda-9326-47b6-b9a1-18b9b44b2d6a"
                 },
                 {
                     "description": "Pad 1 [R0] of D39 on F.Cu",
@@ -2967,7 +2967,7 @@
                         "x": 202.75,
                         "y": 56.475
                     },
-                    "uuid": "5af6433d-c6c0-44d1-9d43-2576788f76d5"
+                    "uuid": "7fae252c-aed6-4eb0-9e98-4714ad529d7d"
                 }
             ],
             "severity": "error",
@@ -2977,12 +2977,12 @@
             "description": "Missing connection between items",
             "items": [
                 {
-                    "description": "Pad 108 [R0] of MCU1 on B.Cu",
+                    "description": "Track [R0] on B.Cu, length 0.1547 mm",
                     "pos": {
                         "x": 210.124,
                         "y": 75.95
                     },
-                    "uuid": "eec7d90b-4554-42b1-a773-3bc060539c48"
+                    "uuid": "a230ab54-4187-49e4-aef8-53b3f0cd5975"
                 },
                 {
                     "description": "Pad 1 [R0] of D39 on F.Cu",
@@ -2990,7 +2990,7 @@
                         "x": 202.75,
                         "y": 56.475
                     },
-                    "uuid": "5af6433d-c6c0-44d1-9d43-2576788f76d5"
+                    "uuid": "7fae252c-aed6-4eb0-9e98-4714ad529d7d"
                 }
             ],
             "severity": "error",
@@ -3005,7 +3005,7 @@
                         "x": 174.25,
                         "y": 111.725
                     },
-                    "uuid": "38282931-4c77-49e5-a293-7536ed57aac0"
+                    "uuid": "2d3a334d-f5ba-47d4-b0ff-29680fe78682"
                 },
                 {
                     "description": "Pad 1 [R3] of D19 on B.Cu",
@@ -3013,7 +3013,7 @@
                         "x": 158.75,
                         "y": 111.725
                     },
-                    "uuid": "7dd7a38b-5a04-4621-aea3-4c28276dce8b"
+                    "uuid": "209157ee-b63c-4252-a912-9293e9a210ba"
                 }
             ],
             "severity": "error",
@@ -3028,7 +3028,7 @@
                         "x": 180.829353,
                         "y": 112.576486
                     },
-                    "uuid": "974985f0-92e3-4915-a1c7-60049ae66ad1"
+                    "uuid": "f3678297-5f50-46c8-84c6-a087881f6f5d"
                 },
                 {
                     "description": "Pad 1 [R3] of D40 on F.Cu",
@@ -3036,7 +3036,7 @@
                         "x": 174.25,
                         "y": 111.725
                     },
-                    "uuid": "38282931-4c77-49e5-a293-7536ed57aac0"
+                    "uuid": "2d3a334d-f5ba-47d4-b0ff-29680fe78682"
                 }
             ],
             "severity": "error",
@@ -3051,7 +3051,7 @@
                         "x": 195.801204,
                         "y": 116.588181
                     },
-                    "uuid": "d1af1a15-56c2-4c49-be9a-ac01c8b4517c"
+                    "uuid": "09414db1-dbb4-4547-9786-410ba1992310"
                 },
                 {
                     "description": "Pad 1 [R3] of D42 on F.Cu",
@@ -3059,7 +3059,7 @@
                         "x": 210.893826,
                         "y": 113.102461
                     },
-                    "uuid": "65598393-f930-470a-9bf5-38ed4186eb2d"
+                    "uuid": "fcd00a54-d5bf-462e-bc28-b280e5aecf26"
                 }
             ],
             "severity": "error",
@@ -3074,7 +3074,7 @@
                         "x": 195.801204,
                         "y": 116.588181
                     },
-                    "uuid": "d1af1a15-56c2-4c49-be9a-ac01c8b4517c"
+                    "uuid": "09414db1-dbb4-4547-9786-410ba1992310"
                 },
                 {
                     "description": "Pad 1 [R3] of D20 on B.Cu",
@@ -3082,7 +3082,7 @@
                         "x": 180.829353,
                         "y": 112.576486
                     },
-                    "uuid": "974985f0-92e3-4915-a1c7-60049ae66ad1"
+                    "uuid": "f3678297-5f50-46c8-84c6-a087881f6f5d"
                 }
             ],
             "severity": "error",
@@ -3097,7 +3097,7 @@
                         "x": 203.143826,
                         "y": 126.525855
                     },
-                    "uuid": "a8264cb9-31b0-4ca1-a633-18fd350015cf"
+                    "uuid": "25f02d78-ccce-4764-9b83-aee373658d78"
                 },
                 {
                     "description": "Pad 1 [R3] of D41 on F.Cu",
@@ -3105,7 +3105,7 @@
                         "x": 195.801204,
                         "y": 116.588181
                     },
-                    "uuid": "d1af1a15-56c2-4c49-be9a-ac01c8b4517c"
+                    "uuid": "09414db1-dbb4-4547-9786-410ba1992310"
                 }
             ],
             "severity": "error",
@@ -3115,12 +3115,12 @@
             "description": "Missing connection between items",
             "items": [
                 {
-                    "description": "Track [R3] on B.Cu, length 0.6006 mm",
+                    "description": "Track [R3] on B.Cu, length 1.0253 mm",
                     "pos": {
-                        "x": 211.003695,
-                        "y": 84.295
+                        "x": 210.278695,
+                        "y": 83.57
                     },
-                    "uuid": "52366946-8144-422f-8eb2-d27f4b5890b6"
+                    "uuid": "6c1050aa-64c2-4043-bd6c-da13bda87333"
                 },
                 {
                     "description": "Pad 1 [R3] of D42 on F.Cu",
@@ -3128,7 +3128,7 @@
                         "x": 210.893826,
                         "y": 113.102461
                     },
-                    "uuid": "65598393-f930-470a-9bf5-38ed4186eb2d"
+                    "uuid": "fcd00a54-d5bf-462e-bc28-b280e5aecf26"
                 }
             ],
             "severity": "error",
@@ -3143,15 +3143,15 @@
                         "x": 221.265,
                         "y": 98.25
                     },
-                    "uuid": "88c15de7-48f3-4b03-8c67-d3e844d5a2ac"
+                    "uuid": "55310d4c-ec88-49b6-8418-4b0b954cd453"
                 },
                 {
-                    "description": "Track [RAW] on B.Cu, length 0.1547 mm",
+                    "description": "Pad 124 [RAW] of MCU1 on B.Cu",
                     "pos": {
                         "x": 219.284,
                         "y": 58.17
                     },
-                    "uuid": "0b5525d3-f052-4f33-83da-8190d38c9be2"
+                    "uuid": "00832569-2f14-4a66-961b-0e6a9764de19"
                 }
             ],
             "severity": "error",
@@ -3166,7 +3166,7 @@
                         "x": 221.265,
                         "y": 99.75
                     },
-                    "uuid": "ec7a9541-6e97-4aa6-b4f0-936839300c9d"
+                    "uuid": "20d78bef-11e2-4978-93aa-75a79a5382f6"
                 },
                 {
                     "description": "Pad 2 [RAW] of PWR1 on F.Cu",
@@ -3174,7 +3174,7 @@
                         "x": 221.265,
                         "y": 98.25
                     },
-                    "uuid": "88c15de7-48f3-4b03-8c67-d3e844d5a2ac"
+                    "uuid": "55310d4c-ec88-49b6-8418-4b0b954cd453"
                 }
             ],
             "severity": "error",
@@ -3184,20 +3184,20 @@
             "description": "Missing connection between items",
             "items": [
                 {
-                    "description": "Pad 2 [RST] of RST1 on B.Cu",
-                    "pos": {
-                        "x": 212.079,
-                        "y": 56.015
-                    },
-                    "uuid": "853e32c3-2209-4b13-a934-386f220b2847"
-                },
-                {
                     "description": "Pad 4 [RST] of RST1 on F.Cu",
                     "pos": {
                         "x": 212.079,
                         "y": 56.015
                     },
-                    "uuid": "a937a578-48bb-4870-b9d7-29044c8bbbb1"
+                    "uuid": "2a3969ea-18ca-4d79-acca-f427c6dc6f1e"
+                },
+                {
+                    "description": "Pad 2 [RST] of RST1 on B.Cu",
+                    "pos": {
+                        "x": 212.079,
+                        "y": 56.015
+                    },
+                    "uuid": "6e9d0a3b-8131-4490-bc75-56350dd7365e"
                 }
             ],
             "severity": "error",
@@ -3212,7 +3212,7 @@
                         "x": 217.329,
                         "y": 56.015
                     },
-                    "uuid": "98b84611-ee9d-4333-9c50-6d02fd39bac4"
+                    "uuid": "c9f46c10-a41e-410b-bcf9-7a9e898df4ad"
                 },
                 {
                     "description": "Pad 2 [RST] of RST1 on F.Cu",
@@ -3220,7 +3220,7 @@
                         "x": 217.329,
                         "y": 56.015
                     },
-                    "uuid": "97e287ba-0a64-4d7e-bccb-3006fddeb7c8"
+                    "uuid": "72f6aa06-2fb0-41e1-87d7-4c25a5f1f16d"
                 }
             ],
             "severity": "error",
@@ -3230,20 +3230,20 @@
             "description": "Missing connection between items",
             "items": [
                 {
-                    "description": "Pad 2 [RST] of RST1 on F.Cu",
+                    "description": "Pad 4 [RST] of RST1 on B.Cu",
                     "pos": {
                         "x": 217.329,
                         "y": 56.015
                     },
-                    "uuid": "97e287ba-0a64-4d7e-bccb-3006fddeb7c8"
+                    "uuid": "c9f46c10-a41e-410b-bcf9-7a9e898df4ad"
                 },
                 {
-                    "description": "Pad 2 [RST] of RST1 on B.Cu",
+                    "description": "Pad 4 [RST] of RST1 on F.Cu",
                     "pos": {
                         "x": 212.079,
                         "y": 56.015
                     },
-                    "uuid": "853e32c3-2209-4b13-a934-386f220b2847"
+                    "uuid": "2a3969ea-18ca-4d79-acca-f427c6dc6f1e"
                 }
             ],
             "severity": "error",
@@ -3258,15 +3258,15 @@
                         "x": 218.404305,
                         "y": 62.525
                     },
-                    "uuid": "2dfd6d73-cbf9-4c28-a4aa-746bd73f7d59"
+                    "uuid": "529cd135-a889-4cfa-b3a2-98782d45d6df"
                 },
                 {
-                    "description": "Pad 2 [RST] of RST1 on F.Cu",
+                    "description": "Pad 4 [RST] of RST1 on B.Cu",
                     "pos": {
                         "x": 217.329,
                         "y": 56.015
                     },
-                    "uuid": "97e287ba-0a64-4d7e-bccb-3006fddeb7c8"
+                    "uuid": "c9f46c10-a41e-410b-bcf9-7a9e898df4ad"
                 }
             ],
             "severity": "error",
@@ -3276,12 +3276,12 @@
             "description": "Missing connection between items",
             "items": [
                 {
-                    "description": "Track [VCC] on B.Cu, length 0.3111 mm",
+                    "description": "PTH pad 121 [VCC] of MCU1",
                     "pos": {
-                        "x": 211.524,
-                        "y": 65.57
+                        "x": 211.304,
+                        "y": 65.79
                     },
-                    "uuid": "0638abbd-3f88-4bbe-849b-62af4ce66889"
+                    "uuid": "5704c426-288e-48e9-889b-324ab54ab33f"
                 },
                 {
                     "description": "PTH pad 3 [VCC] of DISP1",
@@ -3289,7 +3289,7 @@
                         "x": 214.647,
                         "y": 89.95
                     },
-                    "uuid": "b440de93-2244-4efe-a408-00a2e3fde576"
+                    "uuid": "45e71e17-af83-419e-9fe9-e0a7be4df654"
                 }
             ],
             "severity": "error",
@@ -3304,7 +3304,7 @@
                         "x": 209.567,
                         "y": 92.6
                     },
-                    "uuid": "553773bd-01ac-4360-88ed-2484068c0a3b"
+                    "uuid": "d4f6de93-805d-4dc4-9136-12d43d6775f3"
                 },
                 {
                     "description": "Pad 13 [SDA] of DISP1 on F.Cu",
@@ -3312,7 +3312,7 @@
                         "x": 219.727,
                         "y": 92.6
                     },
-                    "uuid": "971416aa-6308-44ac-8c6c-b4d3a27f9b40"
+                    "uuid": "497327fe-cab0-4e68-a948-9b78a47658ed"
                 }
             ],
             "severity": "error",
@@ -3322,12 +3322,12 @@
             "description": "Missing connection between items",
             "items": [
                 {
-                    "description": "Track [SDA] on B.Cu, length 0.6006 mm",
+                    "description": "Track [SDA] on B.Cu, length 1.0253 mm",
                     "pos": {
-                        "x": 211.003695,
-                        "y": 69.055
+                        "x": 210.278695,
+                        "y": 68.33
                     },
-                    "uuid": "e759e87a-4a91-4b0e-aa6f-9787d25e9a20"
+                    "uuid": "1682dcba-ad1f-40c9-ad38-5a645b9ccc32"
                 },
                 {
                     "description": "Pad 23 [SDA] of DISP1 on B.Cu",
@@ -3335,7 +3335,7 @@
                         "x": 209.567,
                         "y": 92.6
                     },
-                    "uuid": "553773bd-01ac-4360-88ed-2484068c0a3b"
+                    "uuid": "d4f6de93-805d-4dc4-9136-12d43d6775f3"
                 }
             ],
             "severity": "error",
@@ -3350,7 +3350,7 @@
                         "x": 211.604305,
                         "y": 71.595
                     },
-                    "uuid": "04b7f469-33db-4390-a62e-96b2172a2844"
+                    "uuid": "7ebdd4f9-1193-4a31-8141-37fef117753b"
                 },
                 {
                     "description": "Pad 22 [SCL] of DISP1 on B.Cu",
@@ -3358,7 +3358,7 @@
                         "x": 212.107,
                         "y": 92.6
                     },
-                    "uuid": "0245ff0d-e64e-45b8-a73e-a908d11f0e30"
+                    "uuid": "ff81a361-ab71-4e7b-bab8-3faabf19727a"
                 }
             ],
             "severity": "error",
@@ -3373,7 +3373,7 @@
                         "x": 212.107,
                         "y": 92.6
                     },
-                    "uuid": "0245ff0d-e64e-45b8-a73e-a908d11f0e30"
+                    "uuid": "ff81a361-ab71-4e7b-bab8-3faabf19727a"
                 },
                 {
                     "description": "Pad 12 [SCL] of DISP1 on F.Cu",
@@ -3381,7 +3381,7 @@
                         "x": 217.187,
                         "y": 92.6
                     },
-                    "uuid": "0d5420a6-21c5-481a-846e-06309ef24214"
+                    "uuid": "bcbc28b8-02dc-45b0-b3c8-c43121f4fc7b"
                 }
             ],
             "severity": "error",
@@ -3396,7 +3396,7 @@
                         "x": 209.567,
                         "y": 92.6
                     },
-                    "uuid": "23eb9ff4-f3bd-4685-bef5-438df599ad1f"
+                    "uuid": "57186ebd-f57f-495b-a8da-906fd3fb33ec"
                 },
                 {
                     "description": "Pad 20 [CS] of DISP1 on B.Cu",
@@ -3404,7 +3404,7 @@
                         "x": 219.727,
                         "y": 92.6
                     },
-                    "uuid": "155ec117-be72-46e0-8d15-4ebb7b8884fa"
+                    "uuid": "76895613-a184-4c0f-91ba-d534bb391417"
                 }
             ],
             "severity": "error",
@@ -3419,7 +3419,7 @@
                         "x": 211.003695,
                         "y": 74.135
                     },
-                    "uuid": "01dd8c15-af9e-4cae-b0d3-179f4f46de0f"
+                    "uuid": "d92a7c59-9274-4157-a070-bd4f2e44e96b"
                 },
                 {
                     "description": "Pad 10 [CS] of DISP1 on F.Cu",
@@ -3427,7 +3427,7 @@
                         "x": 209.567,
                         "y": 92.6
                     },
-                    "uuid": "23eb9ff4-f3bd-4685-bef5-438df599ad1f"
+                    "uuid": "57186ebd-f57f-495b-a8da-906fd3fb33ec"
                 }
             ],
             "severity": "error",
@@ -3442,7 +3442,7 @@
                         "x": 214.45,
                         "y": 96.75
                     },
-                    "uuid": "6061866a-7265-4b23-9e2c-1e8e49e1504c"
+                    "uuid": "e91886be-cdb3-41a0-a8a7-4c52c7578171"
                 },
                 {
                     "description": "Pad 1 [BAT_P] of JST1 on F.Cu",
@@ -3450,7 +3450,7 @@
                         "x": 214.45,
                         "y": 98.75
                     },
-                    "uuid": "c93ab2d1-1afd-4243-a9e9-57a5187de42c"
+                    "uuid": "7db4fdc3-a479-42a2-a944-c80b8a205302"
                 }
             ],
             "severity": "error",
@@ -3465,7 +3465,7 @@
                         "x": 214.45,
                         "y": 98.75
                     },
-                    "uuid": "c93ab2d1-1afd-4243-a9e9-57a5187de42c"
+                    "uuid": "7db4fdc3-a479-42a2-a944-c80b8a205302"
                 },
                 {
                     "description": "Pad 1 [BAT_P] of PWR1 on F.Cu",
@@ -3473,7 +3473,7 @@
                         "x": 221.265,
                         "y": 101.25
                     },
-                    "uuid": "86e0bd7b-1771-46eb-9b85-4daf7b299bde"
+                    "uuid": "e0ca3ca0-83ea-4d96-b37a-f40a3daa57ff"
                 }
             ],
             "severity": "error",
@@ -3482,21 +3482,21 @@
         {
             "description": "Missing connection between items",
             "items": [
+                {
+                    "description": "Pad 1 [BAT_P] of PWR1 on F.Cu",
+                    "pos": {
+                        "x": 221.265,
+                        "y": 101.25
+                    },
+                    "uuid": "e0ca3ca0-83ea-4d96-b37a-f40a3daa57ff"
+                },
                 {
                     "description": "Pad 3 [BAT_P] of PWR1 on B.Cu",
                     "pos": {
                         "x": 221.265,
                         "y": 101.25
                     },
-                    "uuid": "56852c60-bfe0-4c00-9a0e-ae269642da51"
-                },
-                {
-                    "description": "Pad 1 [BAT_P] of PWR1 on F.Cu",
-                    "pos": {
-                        "x": 221.265,
-                        "y": 101.25
-                    },
-                    "uuid": "86e0bd7b-1771-46eb-9b85-4daf7b299bde"
+                    "uuid": "b6eeb8f0-081c-4946-94c5-072b37c0e755"
                 }
             ],
             "severity": "error",
@@ -3508,387 +3508,12 @@
             "description": "The current configuration does not include the footprint library 'ceoloide'.",
             "items": [
                 {
-                    "description": "Footprint D37",
-                    "pos": {
-                        "x": 202.75,
-                        "y": 96.125
-                    },
-                    "uuid": "0ce4c106-7262-4d4d-ab80-655729967aab"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint DISP1",
-                    "pos": {
-                        "x": 214.647,
-                        "y": 73.25
-                    },
-                    "uuid": "0d2e4514-3fd6-4c6e-82e8-2f13cd0d392b"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D38",
-                    "pos": {
-                        "x": 202.75,
-                        "y": 77.125
-                    },
-                    "uuid": "16b90e20-675b-41c5-851f-8eba425cc54c"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint MH2",
-                    "pos": {
-                        "x": 222.194,
-                        "y": 108.995
-                    },
-                    "uuid": "18873cbb-1ad1-4cf1-abcd-7c98021aebd9"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D36",
-                    "pos": {
-                        "x": 183.75,
-                        "y": 55.75
-                    },
-                    "uuid": "1e2793dc-83f7-473f-ae64-5f94367e5daf"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D35",
-                    "pos": {
-                        "x": 183.75,
-                        "y": 74.75
-                    },
-                    "uuid": "26363d94-e97c-40a1-a65b-fcd64a80e2d4"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint MH5",
-                    "pos": {
-                        "x": 185.468,
-                        "y": 67.986
-                    },
-                    "uuid": "2c3e9fb5-f436-4a96-9876-f7965ae5198f"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D22",
-                    "pos": {
-                        "x": 107.75,
-                        "y": 98.5
-                    },
-                    "uuid": "2f0b0be0-cd8d-48cc-bf81-f0f12e8907e5"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint MH4",
-                    "pos": {
-                        "x": 109.5,
-                        "y": 90.5
-                    },
-                    "uuid": "32b6512f-e759-4398-bcf9-b3e4ee30fed5"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D26",
-                    "pos": {
-                        "x": 126.75,
-                        "y": 79.5
-                    },
-                    "uuid": "4286f916-1201-4697-ac6c-eb853b0b1d45"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint MH6",
-                    "pos": {
-                        "x": 152.657,
-                        "y": 107.74
-                    },
-                    "uuid": "4a8c923a-5022-4be5-910f-61bcfb4cd193"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint MH3",
-                    "pos": {
-                        "x": 109.5,
-                        "y": 71.5
-                    },
-                    "uuid": "4b8db7f7-947c-4537-8dbd-425e37f535b4"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D28",
-                    "pos": {
-                        "x": 145.75,
-                        "y": 93.75
-                    },
-                    "uuid": "5a3d46e5-ddec-4e85-bc80-25047956f2b6"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint MH7",
-                    "pos": {
-                        "x": 199.241052,
-                        "y": 115.323658
-                    },
-                    "uuid": "5c137543-385b-46da-9cd9-7d4bb90b6798"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D24",
-                    "pos": {
-                        "x": 107.75,
-                        "y": 60.5
-                    },
-                    "uuid": "5ca39796-0dce-4055-848d-3a967c917a4a"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
                     "description": "Footprint PWR1",
                     "pos": {
                         "x": 223.0,
                         "y": 99.0
                     },
-                    "uuid": "60f7b52a-1b03-43e3-ba97-9124a8ffc065"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D40",
-                    "pos": {
-                        "x": 174.25,
-                        "y": 113.375
-                    },
-                    "uuid": "67b86066-0bde-43cd-b255-b359ad698a4e"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D30",
-                    "pos": {
-                        "x": 145.75,
-                        "y": 55.75
-                    },
-                    "uuid": "774e4d50-61b9-4da0-98a6-5eb95f95b1ad"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D42",
-                    "pos": {
-                        "x": 212.322768,
-                        "y": 113.927461
-                    },
-                    "uuid": "7fcfe067-0969-49b5-b38d-882420e63a91"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D27",
-                    "pos": {
-                        "x": 126.75,
-                        "y": 60.5
-                    },
-                    "uuid": "8c158471-6522-4e29-81ca-18a0b452f4ef"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint MCU1",
-                    "pos": {
-                        "x": 214.704,
-                        "y": 70.87
-                    },
-                    "uuid": "8c6fd4ac-1c44-44df-9ef4-26a764b17d00"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D39",
-                    "pos": {
-                        "x": 202.75,
-                        "y": 58.125
-                    },
-                    "uuid": "9d451370-6923-412d-b3f3-f2bcd1540880"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D41",
-                    "pos": {
-                        "x": 195.374154,
-                        "y": 118.181959
-                    },
-                    "uuid": "9f9bffc8-52f4-4499-8e82-827a68f2d397"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D29",
-                    "pos": {
-                        "x": 145.75,
-                        "y": 74.75
-                    },
-                    "uuid": "a095e044-96be-4b43-ba8e-4eccd564fba3"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D25",
-                    "pos": {
-                        "x": 126.75,
-                        "y": 98.5
-                    },
-                    "uuid": "a72a9919-39cd-45a9-a852-78a8554bf12e"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint RST1",
-                    "pos": {
-                        "x": 214.704,
-                        "y": 55.165
-                    },
-                    "uuid": "b649ccee-6cfb-456f-b1ab-7cd3c863d99b"
+                    "uuid": "03950ace-2c77-4ab4-b271-8c035bba2608"
                 }
             ],
             "severity": "warning",
@@ -3903,22 +3528,7 @@
                         "x": 207.762,
                         "y": 100.476
                     },
-                    "uuid": "b8727f9d-32af-4f15-bd12-cb23c4567702"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint JST1",
-                    "pos": {
-                        "x": 211.75,
-                        "y": 97.75
-                    },
-                    "uuid": "b9c9321f-7991-4024-9629-84cc1ff44317"
+                    "uuid": "04c5f7e1-0e96-490e-a54e-59a1b3c3bb7e"
                 }
             ],
             "severity": "warning",
@@ -3933,7 +3543,22 @@
                         "x": 183.75,
                         "y": 93.75
                     },
-                    "uuid": "cfcaf8cf-3b27-4d7c-9b6b-95f4d08a12c4"
+                    "uuid": "158bfc94-ff12-4b43-bfed-5d4a22c3a27a"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint MCU1",
+                    "pos": {
+                        "x": 214.704,
+                        "y": 70.87
+                    },
+                    "uuid": "17bd6065-9d18-4e55-85fa-1c5d0d1f85ee"
                 }
             ],
             "severity": "warning",
@@ -3948,7 +3573,7 @@
                         "x": 164.75,
                         "y": 53.375
                     },
-                    "uuid": "d19c4bf1-147f-48ec-8d10-c07f774748bf"
+                    "uuid": "25e675cc-b3f8-4bf8-89cd-0f062e69a2ce"
                 }
             ],
             "severity": "warning",
@@ -3958,12 +3583,222 @@
             "description": "The current configuration does not include the footprint library 'ceoloide'.",
             "items": [
                 {
-                    "description": "Footprint D23",
+                    "description": "Footprint D35",
+                    "pos": {
+                        "x": 183.75,
+                        "y": 74.75
+                    },
+                    "uuid": "3287c378-cf4f-4f53-8326-89b23154a80b"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D24",
                     "pos": {
                         "x": 107.75,
+                        "y": 60.5
+                    },
+                    "uuid": "364fbcbb-66e1-4872-9bb4-13dff01d8f37"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint MH7",
+                    "pos": {
+                        "x": 199.241052,
+                        "y": 115.323658
+                    },
+                    "uuid": "41302270-bc47-48c4-b383-6845d77b5493"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint MH6",
+                    "pos": {
+                        "x": 152.657,
+                        "y": 107.74
+                    },
+                    "uuid": "42d93b33-81ca-44f7-b46d-42d813b80f98"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D41",
+                    "pos": {
+                        "x": 195.374154,
+                        "y": 118.181959
+                    },
+                    "uuid": "4d9ad595-5fc0-4675-8683-ef88313ac354"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D29",
+                    "pos": {
+                        "x": 145.75,
+                        "y": 74.75
+                    },
+                    "uuid": "5c1a734c-74ad-4d90-b900-90e5cc04fa57"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D22",
+                    "pos": {
+                        "x": 107.75,
+                        "y": 98.5
+                    },
+                    "uuid": "6084e24d-d619-4f96-9086-e75591e78724"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D36",
+                    "pos": {
+                        "x": 183.75,
+                        "y": 55.75
+                    },
+                    "uuid": "621b3b99-0aa9-4a40-8c50-60fd4f8c4707"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint MH5",
+                    "pos": {
+                        "x": 185.468,
+                        "y": 67.986
+                    },
+                    "uuid": "6cb395aa-a009-4cea-aeec-f009a93a407d"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint MH4",
+                    "pos": {
+                        "x": 109.5,
+                        "y": 90.5
+                    },
+                    "uuid": "84a93756-5eb0-4db7-89c1-cfa59f5055f7"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D28",
+                    "pos": {
+                        "x": 145.75,
+                        "y": 93.75
+                    },
+                    "uuid": "938eea1e-76a0-4cf3-9e3c-29ffd89e0016"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D26",
+                    "pos": {
+                        "x": 126.75,
                         "y": 79.5
                     },
-                    "uuid": "dc65e066-fa59-4547-b095-dff86f412388"
+                    "uuid": "97f03d72-f21c-4457-99ba-7f11df1d0935"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D42",
+                    "pos": {
+                        "x": 212.322768,
+                        "y": 113.927461
+                    },
+                    "uuid": "9c0bd656-dc2e-46b6-9ea3-6b10a9b42e57"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint MH2",
+                    "pos": {
+                        "x": 222.194,
+                        "y": 108.995
+                    },
+                    "uuid": "ad0bcf80-84fc-451b-88fa-d4798f4c1c8d"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D30",
+                    "pos": {
+                        "x": 145.75,
+                        "y": 55.75
+                    },
+                    "uuid": "ad8236dd-5095-4806-ba1d-7f85aa171d90"
                 }
             ],
             "severity": "warning",
@@ -3978,7 +3813,97 @@
                         "x": 164.75,
                         "y": 91.375
                     },
-                    "uuid": "ea3618e3-b7da-48aa-9a45-6651c8a6308a"
+                    "uuid": "b07f965d-e438-4a51-894a-c456d96de863"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D40",
+                    "pos": {
+                        "x": 174.25,
+                        "y": 113.375
+                    },
+                    "uuid": "b0cbf814-17e5-4a24-9c82-cd615ecf5e5b"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D39",
+                    "pos": {
+                        "x": 202.75,
+                        "y": 58.125
+                    },
+                    "uuid": "b1c3652e-faaf-4165-8d2c-787ef1d36ed1"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D25",
+                    "pos": {
+                        "x": 126.75,
+                        "y": 98.5
+                    },
+                    "uuid": "b4b4910c-18c2-423a-99d7-22e516b29307"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D23",
+                    "pos": {
+                        "x": 107.75,
+                        "y": 79.5
+                    },
+                    "uuid": "bcb40b8c-91d0-4557-8f20-64a31d85f4f7"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D38",
+                    "pos": {
+                        "x": 202.75,
+                        "y": 77.125
+                    },
+                    "uuid": "bd199021-f4f3-4457-a4f1-6beecc3d6d08"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D37",
+                    "pos": {
+                        "x": 202.75,
+                        "y": 96.125
+                    },
+                    "uuid": "c03462b8-f1c0-46fb-bfcf-c8d38d9c08cf"
                 }
             ],
             "severity": "warning",
@@ -3993,7 +3918,7 @@
                         "x": 164.75,
                         "y": 72.375
                     },
-                    "uuid": "eca26da4-ddcd-489f-b48b-f4ed196108d0"
+                    "uuid": "c44ff62f-e292-4a56-8f61-5e55e05d5b9c"
                 }
             ],
             "severity": "warning",
@@ -4003,12 +3928,12 @@
             "description": "The current configuration does not include the footprint library 'ceoloide'.",
             "items": [
                 {
-                    "description": "Footprint S11",
+                    "description": "Footprint RST1",
                     "pos": {
-                        "x": 157.0,
-                        "y": 73.875
+                        "x": 214.704,
+                        "y": 55.165
                     },
-                    "uuid": "0c5a7f4a-c379-4028-9a22-5faf085b30aa"
+                    "uuid": "dd1ab47f-d80e-4875-a87e-7166f6996cc6"
                 }
             ],
             "severity": "warning",
@@ -4018,27 +3943,12 @@
             "description": "The current configuration does not include the footprint library 'ceoloide'.",
             "items": [
                 {
-                    "description": "Footprint D12",
+                    "description": "Footprint D27",
                     "pos": {
-                        "x": 149.25,
-                        "y": 53.375
-                    },
-                    "uuid": "0ecf20fe-cdb4-4c5f-b503-5593f4afdf72"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D6",
-                    "pos": {
-                        "x": 111.25,
+                        "x": 126.75,
                         "y": 60.5
                     },
-                    "uuid": "19b39c99-4ae7-4e96-92d6-512c6cfff68c"
+                    "uuid": "df0e823b-a70e-488a-9f71-9edd02dcbfaf"
                 }
             ],
             "severity": "warning",
@@ -4048,12 +3958,12 @@
             "description": "The current configuration does not include the footprint library 'ceoloide'.",
             "items": [
                 {
-                    "description": "Footprint D19",
+                    "description": "Footprint JST1",
                     "pos": {
-                        "x": 158.75,
-                        "y": 113.375
+                        "x": 211.75,
+                        "y": 97.75
                     },
-                    "uuid": "19f5ace6-8930-4e1c-a351-df4af8bef7b3"
+                    "uuid": "e9973248-2a94-4b5f-a1b6-acc321355b1c"
                 }
             ],
             "severity": "warning",
@@ -4063,12 +3973,12 @@
             "description": "The current configuration does not include the footprint library 'ceoloide'.",
             "items": [
                 {
-                    "description": "Footprint S8",
+                    "description": "Footprint DISP1",
                     "pos": {
-                        "x": 138.0,
-                        "y": 76.25
+                        "x": 214.647,
+                        "y": 73.25
                     },
-                    "uuid": "24636652-4f6b-4842-939e-af6a2a616925"
+                    "uuid": "eeb5897b-8c51-4064-91fc-818aa5cfc4bd"
                 }
             ],
             "severity": "warning",
@@ -4078,312 +3988,12 @@
             "description": "The current configuration does not include the footprint library 'ceoloide'.",
             "items": [
                 {
-                    "description": "Footprint S15",
+                    "description": "Footprint MH3",
                     "pos": {
-                        "x": 176.0,
-                        "y": 57.25
+                        "x": 109.5,
+                        "y": 71.5
                     },
-                    "uuid": "257fd7a6-0834-4aa9-919f-14af2c56e332"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D20",
-                    "pos": {
-                        "x": 180.402303,
-                        "y": 114.170264
-                    },
-                    "uuid": "2d651220-7854-4459-96d6-ccf4215b9087"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint S12",
-                    "pos": {
-                        "x": 157.0,
-                        "y": 54.875
-                    },
-                    "uuid": "3ae68ac4-54f9-418d-b1ac-2c5e28103b5d"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D4",
-                    "pos": {
-                        "x": 111.25,
-                        "y": 98.5
-                    },
-                    "uuid": "3c77716d-7487-4b49-bf23-e3d195c62dcb"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D1",
-                    "pos": {
-                        "x": 92.25,
-                        "y": 98.5
-                    },
-                    "uuid": "3ceff797-b2d1-43a8-aa2e-3359a6ebfeb5"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint S17",
-                    "pos": {
-                        "x": 195.0,
-                        "y": 78.625
-                    },
-                    "uuid": "44a7bbe5-1a09-43bc-b922-7db20764a57a"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D15",
-                    "pos": {
-                        "x": 168.25,
-                        "y": 55.75
-                    },
-                    "uuid": "4a91b134-693e-4bc4-be60-3c9105acab04"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint S21",
-                    "pos": {
-                        "x": 209.746806,
-                        "y": 121.389158
-                    },
-                    "uuid": "4b8e3366-2ca7-48f8-94cb-53cfbc86a787"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint S20",
-                    "pos": {
-                        "x": 187.5,
-                        "y": 117.625
-                    },
-                    "uuid": "588b94b7-cfc7-4cc0-bb63-490b70ac072c"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint S1",
-                    "pos": {
-                        "x": 100.0,
-                        "y": 100.0
-                    },
-                    "uuid": "624847ae-2137-4ba4-8c38-185596e908dc"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D17",
-                    "pos": {
-                        "x": 187.25,
-                        "y": 77.125
-                    },
-                    "uuid": "6e77caca-9369-489b-89e3-074ad7ceeb0f"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint S2",
-                    "pos": {
-                        "x": 100.0,
-                        "y": 81.0
-                    },
-                    "uuid": "7197a1b7-063a-4a36-8a18-4766921094db"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D13",
-                    "pos": {
-                        "x": 168.25,
-                        "y": 93.75
-                    },
-                    "uuid": "729ac809-4335-4b2c-8d56-ca37bc326089"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint S9",
-                    "pos": {
-                        "x": 138.0,
-                        "y": 57.25
-                    },
-                    "uuid": "7d7ad7db-a2ec-432b-a98c-307dc9cce9d7"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint S10",
-                    "pos": {
-                        "x": 157.0,
-                        "y": 92.875
-                    },
-                    "uuid": "88cca0d4-3187-4a7b-9eac-a62320b16118"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D8",
-                    "pos": {
-                        "x": 130.25,
-                        "y": 74.75
-                    },
-                    "uuid": "8f308b60-8394-4c09-9f43-c3dee638fd9f"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D21",
-                    "pos": {
-                        "x": 204.572768,
-                        "y": 127.350855
-                    },
-                    "uuid": "90976563-1b49-405d-93d7-9331738d238a"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D16",
-                    "pos": {
-                        "x": 187.25,
-                        "y": 96.125
-                    },
-                    "uuid": "90f965bc-97db-4883-b444-b27e53b39851"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint S7",
-                    "pos": {
-                        "x": 138.0,
-                        "y": 95.25
-                    },
-                    "uuid": "95e99ff5-d9e1-44ba-ad1e-418e11fa6c2c"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint S14",
-                    "pos": {
-                        "x": 176.0,
-                        "y": 76.25
-                    },
-                    "uuid": "973216be-6498-441a-ab69-6ef0bc1fa4f4"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint S4",
-                    "pos": {
-                        "x": 119.0,
-                        "y": 100.0
-                    },
-                    "uuid": "99cf7cb2-ee6c-4862-bfad-09eadda83d5d"
+                    "uuid": "f0796eef-2f94-46f5-90cb-784995e93540"
                 }
             ],
             "severity": "warning",
@@ -4398,7 +4008,7 @@
                         "x": 100.0,
                         "y": 62.0
                     },
-                    "uuid": "9f5e535b-c19c-4998-8309-ef1c126c8f4f"
+                    "uuid": "04d692e3-80db-4918-836e-733ddcbf55e5"
                 }
             ],
             "severity": "warning",
@@ -4408,27 +4018,12 @@
             "description": "The current configuration does not include the footprint library 'ceoloide'.",
             "items": [
                 {
-                    "description": "Footprint D5",
-                    "pos": {
-                        "x": 111.25,
-                        "y": 79.5
-                    },
-                    "uuid": "a0873fb2-1fb9-4aab-8751-76431173bd69"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D10",
+                    "description": "Footprint D12",
                     "pos": {
                         "x": 149.25,
-                        "y": 91.375
+                        "y": 53.375
                     },
-                    "uuid": "a1472188-0b32-4e55-821a-5e8f484ed508"
+                    "uuid": "092b8495-e88a-452f-ba35-364206a86e86"
                 }
             ],
             "severity": "warning",
@@ -4438,12 +4033,12 @@
             "description": "The current configuration does not include the footprint library 'ceoloide'.",
             "items": [
                 {
-                    "description": "Footprint S16",
+                    "description": "Footprint S12",
                     "pos": {
-                        "x": 195.0,
-                        "y": 97.625
+                        "x": 157.0,
+                        "y": 54.875
                     },
-                    "uuid": "aa8cba19-a7ce-4292-9620-1bf230a49a1a"
+                    "uuid": "0e7bddfe-62c3-4839-97f4-e8f926e40f50"
                 }
             ],
             "severity": "warning",
@@ -4453,12 +4048,12 @@
             "description": "The current configuration does not include the footprint library 'ceoloide'.",
             "items": [
                 {
-                    "description": "Footprint S19",
+                    "description": "Footprint S9",
                     "pos": {
-                        "x": 166.5,
-                        "y": 114.875
+                        "x": 138.0,
+                        "y": 57.25
                     },
-                    "uuid": "aba9e175-3d0f-4552-addc-557777a39a14"
+                    "uuid": "1265827a-d405-4e73-9f60-3f0f56e802b7"
                 }
             ],
             "severity": "warning",
@@ -4468,72 +4063,12 @@
             "description": "The current configuration does not include the footprint library 'ceoloide'.",
             "items": [
                 {
-                    "description": "Footprint S18",
+                    "description": "Footprint S21",
                     "pos": {
-                        "x": 195.0,
-                        "y": 59.625
+                        "x": 209.746806,
+                        "y": 121.389158
                     },
-                    "uuid": "b13e1fda-d7bf-4d60-90cc-1baf5505ac9c"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D3",
-                    "pos": {
-                        "x": 92.25,
-                        "y": 60.5
-                    },
-                    "uuid": "b85acb98-c60b-4277-8919-7fb76293addf"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint S13",
-                    "pos": {
-                        "x": 176.0,
-                        "y": 95.25
-                    },
-                    "uuid": "b94985ab-61b0-42d2-8376-17a03ef0c56a"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D7",
-                    "pos": {
-                        "x": 130.25,
-                        "y": 93.75
-                    },
-                    "uuid": "c1aec3a0-79fc-4890-8562-8d97202792fb"
-                }
-            ],
-            "severity": "warning",
-            "type": "lib_footprint_issues"
-        },
-        {
-            "description": "The current configuration does not include the footprint library 'ceoloide'.",
-            "items": [
-                {
-                    "description": "Footprint D14",
-                    "pos": {
-                        "x": 168.25,
-                        "y": 74.75
-                    },
-                    "uuid": "c2894663-dbce-401c-a005-737a8da33616"
+                    "uuid": "12b3f81a-4b30-437f-b06c-6cba67c2cda1"
                 }
             ],
             "severity": "warning",
@@ -4548,7 +4083,7 @@
                         "x": 187.25,
                         "y": 58.125
                     },
-                    "uuid": "c6ad2f37-f604-46ac-8d09-6662158acf9b"
+                    "uuid": "1f7e1935-8b15-4a86-b64f-5711f5a58a0f"
                 }
             ],
             "severity": "warning",
@@ -4558,12 +4093,12 @@
             "description": "The current configuration does not include the footprint library 'ceoloide'.",
             "items": [
                 {
-                    "description": "Footprint D9",
+                    "description": "Footprint S7",
                     "pos": {
-                        "x": 130.25,
-                        "y": 55.75
+                        "x": 138.0,
+                        "y": 95.25
                     },
-                    "uuid": "ce22b068-c672-41d2-8de7-71b550c9182f"
+                    "uuid": "2751ebd3-e6d5-4215-adea-7ec992714a02"
                 }
             ],
             "severity": "warning",
@@ -4573,12 +4108,57 @@
             "description": "The current configuration does not include the footprint library 'ceoloide'.",
             "items": [
                 {
-                    "description": "Footprint D2",
+                    "description": "Footprint D17",
                     "pos": {
-                        "x": 92.25,
-                        "y": 79.5
+                        "x": 187.25,
+                        "y": 77.125
                     },
-                    "uuid": "d33a6b96-9be2-4ec6-9320-967ce8421aee"
+                    "uuid": "2d51e3e5-d0e4-4eaf-90c7-4af24a3b86d5"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D10",
+                    "pos": {
+                        "x": 149.25,
+                        "y": 91.375
+                    },
+                    "uuid": "32866780-50b8-41b9-a157-737905038d08"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint S2",
+                    "pos": {
+                        "x": 100.0,
+                        "y": 81.0
+                    },
+                    "uuid": "32d10272-e810-4b98-b5e5-405f40c0a41c"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D13",
+                    "pos": {
+                        "x": 168.25,
+                        "y": 93.75
+                    },
+                    "uuid": "346a3182-c768-45a0-9da7-11b3b0c8844f"
                 }
             ],
             "severity": "warning",
@@ -4593,7 +4173,7 @@
                         "x": 149.25,
                         "y": 72.375
                     },
-                    "uuid": "e7a5e0fd-151c-45ad-829c-9e9de64ad433"
+                    "uuid": "37da0c81-794e-45c7-bd50-0f3272437f4e"
                 }
             ],
             "severity": "warning",
@@ -4603,12 +4183,267 @@
             "description": "The current configuration does not include the footprint library 'ceoloide'.",
             "items": [
                 {
-                    "description": "Footprint S5",
+                    "description": "Footprint S13",
+                    "pos": {
+                        "x": 176.0,
+                        "y": 95.25
+                    },
+                    "uuid": "3b986e5a-82d0-4979-aaad-05663b031d80"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D3",
+                    "pos": {
+                        "x": 92.25,
+                        "y": 60.5
+                    },
+                    "uuid": "4b8f021a-e5ba-490c-8603-f9e353794d05"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint S11",
+                    "pos": {
+                        "x": 157.0,
+                        "y": 73.875
+                    },
+                    "uuid": "5188d7fc-15e3-4f2c-8f90-9d40d956d221"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint S19",
+                    "pos": {
+                        "x": 166.5,
+                        "y": 114.875
+                    },
+                    "uuid": "57fda1ca-1658-4dec-bd50-69a2373fe7eb"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D19",
+                    "pos": {
+                        "x": 158.75,
+                        "y": 113.375
+                    },
+                    "uuid": "60d281c5-af8e-44ce-bde5-e4941652af19"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint S1",
+                    "pos": {
+                        "x": 100.0,
+                        "y": 100.0
+                    },
+                    "uuid": "6d39f516-0f78-4b5c-abc7-f2fd1d128b44"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint S4",
                     "pos": {
                         "x": 119.0,
-                        "y": 81.0
+                        "y": 100.0
                     },
-                    "uuid": "e8a00a69-a3ab-40a4-b52b-b0369a6e0c58"
+                    "uuid": "7cc0ece0-f404-4bb5-b4c0-f587673cce7c"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D16",
+                    "pos": {
+                        "x": 187.25,
+                        "y": 96.125
+                    },
+                    "uuid": "8454c1a5-38e3-447a-b6c0-d10278994467"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D5",
+                    "pos": {
+                        "x": 111.25,
+                        "y": 79.5
+                    },
+                    "uuid": "85520fec-7251-437c-b6c3-f40213065619"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D9",
+                    "pos": {
+                        "x": 130.25,
+                        "y": 55.75
+                    },
+                    "uuid": "880ad7ad-3013-41e6-9259-24ac66344fff"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D7",
+                    "pos": {
+                        "x": 130.25,
+                        "y": 93.75
+                    },
+                    "uuid": "8ad9671c-17b4-4093-8da4-eac4a298835b"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint S10",
+                    "pos": {
+                        "x": 157.0,
+                        "y": 92.875
+                    },
+                    "uuid": "8f9ff800-2ddc-4c23-b9b7-4f41db9dc715"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint S20",
+                    "pos": {
+                        "x": 187.5,
+                        "y": 117.625
+                    },
+                    "uuid": "92183d22-deb4-475f-b956-6324aae1c265"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D14",
+                    "pos": {
+                        "x": 168.25,
+                        "y": 74.75
+                    },
+                    "uuid": "9c4a554c-36d7-4875-9eff-6435e80c051e"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint S15",
+                    "pos": {
+                        "x": 176.0,
+                        "y": 57.25
+                    },
+                    "uuid": "a4861ded-3139-4a71-b712-e97e29905666"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint S18",
+                    "pos": {
+                        "x": 195.0,
+                        "y": 59.625
+                    },
+                    "uuid": "b6b932b3-431b-495d-a7d0-20f2120f9a0e"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D20",
+                    "pos": {
+                        "x": 180.402303,
+                        "y": 114.170264
+                    },
+                    "uuid": "bb53ce9a-81bd-4f23-9305-6f73eb51de7d"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint S17",
+                    "pos": {
+                        "x": 195.0,
+                        "y": 78.625
+                    },
+                    "uuid": "d154839e-fa7b-4bd9-8bb9-fbbfc2da7c3e"
                 }
             ],
             "severity": "warning",
@@ -4623,7 +4458,172 @@
                         "x": 119.0,
                         "y": 62.0
                     },
-                    "uuid": "f303413d-b005-4248-b774-896c355610b1"
+                    "uuid": "d1d5df0d-48e7-4b23-b88f-58da80849f2b"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D2",
+                    "pos": {
+                        "x": 92.25,
+                        "y": 79.5
+                    },
+                    "uuid": "d892e1fa-d8c3-4589-b9f9-a770683d34e1"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D21",
+                    "pos": {
+                        "x": 204.572768,
+                        "y": 127.350855
+                    },
+                    "uuid": "da83dac0-070b-4aa6-9588-6926606d62cb"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D6",
+                    "pos": {
+                        "x": 111.25,
+                        "y": 60.5
+                    },
+                    "uuid": "dab47f9a-ccf5-42fa-b1d0-7d9e989c6f30"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D15",
+                    "pos": {
+                        "x": 168.25,
+                        "y": 55.75
+                    },
+                    "uuid": "e23bfeb4-670f-4867-b757-22d920eee507"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint S16",
+                    "pos": {
+                        "x": 195.0,
+                        "y": 97.625
+                    },
+                    "uuid": "e262c325-50a2-42bf-bf2f-60870a161bb6"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D8",
+                    "pos": {
+                        "x": 130.25,
+                        "y": 74.75
+                    },
+                    "uuid": "e4f95e96-b897-4027-9f96-29c43da922fe"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D1",
+                    "pos": {
+                        "x": 92.25,
+                        "y": 98.5
+                    },
+                    "uuid": "eabe23a8-4160-4173-88fc-8e8dd98d7fcf"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint S5",
+                    "pos": {
+                        "x": 119.0,
+                        "y": 81.0
+                    },
+                    "uuid": "ecc070c6-4383-4d12-8931-7e8d78c9e5ac"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint S14",
+                    "pos": {
+                        "x": 176.0,
+                        "y": 76.25
+                    },
+                    "uuid": "eec8ed7b-5903-4312-8853-bac8385e1dd6"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint S8",
+                    "pos": {
+                        "x": 138.0,
+                        "y": 76.25
+                    },
+                    "uuid": "ef762018-ebe0-4e53-b78e-bf7964a4926b"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint D4",
+                    "pos": {
+                        "x": 111.25,
+                        "y": 98.5
+                    },
+                    "uuid": "f446463c-f8c3-493b-8d04-c60d7ee48a82"
                 }
             ],
             "severity": "warning",

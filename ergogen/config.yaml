@@ -1,8 +1,8 @@
 meta:
   engine: 4.1.0
   name: corney-island
-  version: 0.3 # Choc v2 POM switches variant
-  ref: &kb_ref "Corney Island v0.3"
+  version: 0.4
+  ref: &kb_ref "Corney Island v0.4"
   author: ceoloide
   url: &kb_url https://github.com/ceoloide/corney-island
   # footprint: &switch_footprint "ceoloide/switch_mx"
