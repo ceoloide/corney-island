@@ -68,7 +68,7 @@ outputs:
   - name: top_view
     comment: "Top view of the PCB"
     type: pcbdraw
-    dir: images
+    dir: docs/images
     options:
       format: png
       style: oshpark-afterdark
@@ -78,7 +78,7 @@ outputs:
   - name: bottom_view
     comment: "Bottom view of the PCB"
     type: pcbdraw
-    dir: images
+    dir: docs/images
     extends: top_view
     options:
       bottom: true
