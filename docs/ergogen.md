@@ -90,9 +90,9 @@ The script regenerates the design, processes the shared plates, applies board ru
 
 Generated source boards use names such as `corney_island.kicad_pcb`; imported routing results use `corney_island_autorouted.kicad_pcb`. Source-board Gerbers can be exported before routing. Autorouted fabrication exports require the post-route check to pass; diagnostic previews may exist even when it fails.
 
-**Inspect the reports and final board before ordering.** The saved v0.4 [wired](../reports/routing/corney_island-autorouted.json) and [wireless](../reports/routing/corney_island_wireless-autorouted.json) reports dated October 25, 2026 contain no unconnected items or DRC errors. Both retain footprint-library warnings. The [frontplate report](../reports/routing/frontplate.json) still contains an outline error. The [routing notes](../reports/routing/README.md) describe historical investigations; use the report belonging to the actual board revision for a fabrication decision.
+The batch continues after individual board failures and can exit with status zero while printing `Boards requiring attention`.
 
-The batch continues after individual board failures and can exit with status zero while printing `Boards requiring attention`. A successful shell exit or CI job alone does not establish a successful board build.
+**Inspect the reports and final board before ordering.**
 
 ## Repository map
 
@@ -102,9 +102,9 @@ The batch continues after individual board failures and can exit with status zer
 | [`pcbs/`](../pcbs/) | KiCad boards, projects, and custom rules |
 | [`outlines/`](../outlines/) | Generated SVG/DXF geometry |
 | [`cases/`](../cases/) | Generated tray source and STL |
+| [`kibot/`](../docs/) | Generation guide, build guide, images |
 | [`gerbers/`](../gerbers/) | Fabrication archives; check their routing/DRC status |
-| [`images/`](../images/) | Board renders and documentation assets |
 | [`kibot/`](../kibot/) | KiCad export/import, validation, and KiBot configuration |
 | [`freerouting/`](../freerouting/) | Autorouter rules and logging configuration |
 | [`reports/routing/`](../reports/routing/) | Saved machine-readable validation and investigation results |
-| [`.github/workflows/build.yaml`](../.github/workflows/build.yaml) | Generation, routing, and artifact workflow |
+| [`.github/workflows/`](../.github/workflows/) | Generation, routing, and artifact workflow |
