@@ -65,7 +65,7 @@ mkdir -p reports/routing || exit 1
 failed_boards=""
 for plate in $plates; do
     printf '\n>>>>>> Processing %s <<<<<<\n' "$plate"
-    rm -f "gerbers/$plate.zip" "images/$plate-top.png" "images/$plate-bottom.png" \
+    rm -f "gerbers/$plate.zip" "docs/images/$plate-top.png" "docs/images/$plate-bottom.png" \
         "reports/routing/$plate.json"
     (
         set -e
@@ -86,7 +86,7 @@ build_board() {
     board=$1
     # Never leave an earlier fabrication archive or report beside a failed run.
     rm -f "gerbers/${board}_autorouted.zip" \
-        "images/${board}_autorouted-top.png" "images/${board}_autorouted-bottom.png" \
+        "docs/images/${board}_autorouted-top.png" "docs/images/${board}_autorouted-bottom.png" \
         "reports/routing/$board-autorouted.json"
     printf '\n>>>>>> Processing %s <<<<<<\n' "$board"
     if [ -e "pcbs/${board}_manually_routed.kicad_pcb" ]; then

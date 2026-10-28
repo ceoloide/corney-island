@@ -4,7 +4,7 @@ The design source is [`ergogen/config.yaml`](../ergogen/config.yaml). Generated 
 
 ## Edit in the browser
 
-[![Edit on Ergogen](../images/edit-on-ergogen.svg)](https://ergogen.xyz?github=ceoloide/corney-island)
+[![Edit on Ergogen](images/edit-on-ergogen.svg)](https://ergogen.xyz?github=ceoloide/corney-island)
 
 This link loads `ceoloide/corney-island` from GitHub into the Ergogen GUI. It opens the published repository version; local changes in your checkout are not included. The GUI’s repository loader supports `ergogen/config.yaml`, local footprint files, and footprint submodules.
 
@@ -102,7 +102,7 @@ The batch continues after individual board failures and can exit with status zer
 | [`pcbs/`](../pcbs/) | KiCad boards, projects, and custom rules |
 | [`outlines/`](../outlines/) | Generated SVG/DXF geometry |
 | [`cases/`](../cases/) | Generated tray source and STL |
-| [`kibot/`](../docs/) | Generation guide, build guide, images |
+| [`docs/`](../docs/) | Generation guide, build guide, images |
 | [`gerbers/`](../gerbers/) | Fabrication archives; check their routing/DRC status |
 | [`kibot/`](../kibot/) | KiCad export/import, validation, and KiBot configuration |
 | [`freerouting/`](../freerouting/) | Autorouter rules and logging configuration |

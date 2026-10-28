@@ -4,7 +4,7 @@
 
 <p align="center">
   <a href="https://ergogen.xyz?github=ceoloide/corney-island">
-    <img src="images/edit-on-ergogen.svg" alt="Edit on Ergogen" width="224" height="48">
+    <img src="docs/images/edit-on-ergogen.svg" alt="Edit on Ergogen" width="224" height="48">
   </a>
 </p>
 
@@ -12,7 +12,7 @@ Corney Island is a **42-key column-staggered split keyboard** with wired and wir
 
 The board is **pin-compatible with crkbd v3 QMK firmware**, and its layout is **dimensionally 100% compatible with crkbd v3 plates and cases**. The wireless firmware is built on ZMK.
 
-![Corney Island Wireless v0.1 with nice!view displays and black low-profile keycaps](images/corney_island_wireless_v0.1.jpg)
+![Corney Island Wireless v0.1 with nice!view displays and black low-profile keycaps](docs/images/corney_island_wireless_v0.1.jpg)
 
 ▲ My wireless **v0.1** build, which has been my daily driver since **January 2024**, with no known issues to report. The current design in this repository is **v0.4**.
 
@@ -43,13 +43,13 @@ Both variants use a reversible PCB design with a Pro Micro / nice!nano-style con
 
 | Top | Bottom |
 | --- | --- |
-| ![Corney Island wired PCB, top](images/corney_island_autorouted-top.png) | ![Corney Island wired PCB, bottom](images/corney_island_autorouted-bottom.png) |
+| ![Corney Island wired PCB, top](docs/images/corney_island_autorouted-top.png) | ![Corney Island wired PCB, bottom](docs/images/corney_island_autorouted-bottom.png) |
 
 ### Wireless
 
 | Top | Bottom |
 | --- | --- |
-| ![Corney Island wireless PCB, top](images/corney_island_wireless_autorouted-top.png) | ![Corney Island wireless PCB, bottom](images/corney_island_wireless_autorouted-bottom.png) |
+| ![Corney Island wireless PCB, top](docs/images/corney_island_wireless_autorouted-top.png) | ![Corney Island wireless PCB, bottom](docs/images/corney_island_wireless_autorouted-bottom.png) |
 
 The [KiCad files](pcbs/) and [Gerber archives](gerbers/) are included in this repository. See the [generation and validation guide](docs/ergogen.md#routing-and-fabrication) before producing new fabrication files.
 
@@ -94,7 +94,7 @@ The wireless keyboard pictured above uses:
 
 To modify the design, edit the YAML and regenerate the outputs. Layout dimensions and component positions can be expressed as variables and relationships, keeping the different parts of the keyboard tied to the same source.
 
-[![Edit on Ergogen](images/edit-on-ergogen.svg)](https://ergogen.xyz?github=ceoloide/corney-island)
+[![Edit on Ergogen](docs/images/edit-on-ergogen.svg)](https://ergogen.xyz?github=ceoloide/corney-island)
 
 The button opens the GitHub version of this project in [Ergogen’s web editor](https://github.com/ergogen/ergogen-gui). See the [generation guide](docs/ergogen.md) for local setup, configuration changes, and the routing workflow.
 
