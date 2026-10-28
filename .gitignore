@@ -30,6 +30,9 @@ fp-info-cache
 *.pro
 logs
 
+# AI / LLM Reports
+reports
+
 # Netlist files (exported from Eeschema)
 *.net
 

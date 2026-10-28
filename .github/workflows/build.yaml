@@ -49,9 +49,9 @@ jobs:
             gerbers/${{ matrix.board }}.zip
             gerbers/${{ matrix.board }}_autorouted.zip
             gerbers/${{ matrix.board }}_manually_routed.zip
-            images/${{ matrix.board }}-*.png
-            images/${{ matrix.board }}_autorouted-*.png
-            images/${{ matrix.board }}_manually_routed-*.png
+            docs/images/${{ matrix.board }}-*.png
+            docs/images/${{ matrix.board }}_autorouted-*.png
+            docs/images/${{ matrix.board }}_manually_routed-*.png
             pcbs/${{ matrix.board }}.*
             pcbs/${{ matrix.board }}_autorouted.*
             pcbs/${{ matrix.board }}_manually_routed.*
@@ -66,7 +66,7 @@ jobs:
           name: backplate
           path: |
             gerbers/backplate.zip
-            images/backplate-*.png
+            docs/images/backplate-*.png
             outlines/backplate.*
             pcbs/backplate.kicad_*
             reports/routing/backplate.json
@@ -79,7 +79,7 @@ jobs:
           name: frontplate
           path: |
             gerbers/frontplate.zip
-            images/frontplate-*.png
+            docs/images/frontplate-*.png
             outlines/frontplate.*
             pcbs/frontplate.kicad_*
             reports/routing/frontplate.json
@@ -92,7 +92,7 @@ jobs:
           name: controller_overlay
           path: |
             gerbers/controller_overlay.zip
-            images/controller_overlay-*.png
+            docs/images/controller_overlay-*.png
             outlines/controller_overlay.*
             pcbs/controller_overlay.kicad_*
             reports/routing/controller_overlay.json

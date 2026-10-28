@@ -22,12 +22,12 @@ class BuildTest(unittest.TestCase):
             (root / 'pcbs').mkdir()
             (root / 'freerouting').mkdir()
             (root / 'gerbers').mkdir()
-            (root / 'images').mkdir()
+            (root / 'docs/images').mkdir(parents=True)
             (root / 'kibot/drc').mkdir(parents=True)
             (root / 'kibot/drc/good_autorouted-drc.html').write_text('stale report')
             (root / 'gerbers/drcbad_autorouted.zip').write_text('stale fabrication')
             (root / 'gerbers/frontplate.zip').write_text('stale plate fabrication')
-            (root / 'images/routebad_autorouted-top.png').write_text('stale image')
+            (root / 'docs/images/routebad_autorouted-top.png').write_text('stale image')
             custom = '(version 1)\n# User custom rules\n'
             (root / 'pcbs/drcbad.kicad_dru').write_text(custom)
             (root / 'freerouting/freerouting.rules').write_text('mock')
@@ -50,7 +50,7 @@ if 'java' in args: pathlib.Path(value('-do')).touch()
 if 'kibot' in args and args[-2:] == ['top_view', 'bottom_view']:
  stem=pathlib.Path(value('-b')).stem
  for side in ('top', 'bottom'):
-  pathlib.Path('images', stem+'-'+side+'.png').write_text('fresh preview')
+  pathlib.Path('docs/images', stem+'-'+side+'.png').write_text('fresh preview')
 if 'kibot/boards.kibot.yaml' in args:
  stale=pathlib.Path('kibot/drc') / (pathlib.Path(value('-b')).stem+'-drc.html')
  if stale.exists(): sys.exit(7)
@@ -105,7 +105,7 @@ if 'kibot/routing_status.py' in args:
             self.assertEqual(list((root / 'pcbs').glob('*-bak')), [])
             for board in ('drcbad', 'routebad', 'good'):
                 for side in ('top', 'bottom'):
-                    self.assertEqual((root / f'images/{board}_autorouted-{side}.png').read_text(),
+                    self.assertEqual((root / f'docs/images/{board}_autorouted-{side}.png').read_text(),
                                      'fresh preview')
                 preview = next(i for i, line in enumerate(calls)
                                if f'pcbs/{board}_autorouted.kicad_pcb' in line
