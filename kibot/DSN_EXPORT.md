@@ -11,7 +11,7 @@ From the repository root with KiCad 9 Docker:
 
 ```sh
 docker run --rm -v "$PWD:/board" -w /board --entrypoint python3 \
-  ghcr.io/inti-cmnb/kicad9_auto:latest kibot/export_dsn.py \
+  ceoloide/ergogen-freerouting:dev kibot/export_dsn.py \
   -b pcbs/corney_island_wireless.kicad_pcb -o /board/wireless.dsn
 ```
 
@@ -52,7 +52,7 @@ repair alone does not establish complete or correct autorouting.
 
 ## Build integration
 
-The build, CI, and reusable autoroute action default to
+The build, CI, and GitHub actions default to
 `ceoloide/ergogen-freerouting:dev`. This tag follows the development toolchain;
 set `ERGOGEN_DOCKER_IMAGE` to select a specific image for a local build.
 Freerouting runs from `/opt/freerouting.jar` inside the image.

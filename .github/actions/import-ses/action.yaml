@@ -6,7 +6,7 @@ inputs:
     required: true
 runs:
   using: 'docker'
-  image: 'docker://ghcr.io/inti-cmnb/kicad9_auto:latest'
+  image: 'docker://ceoloide/ergogen-freerouting:dev'
   entrypoint: '/bin/bash'
   args:
     - '-c'
