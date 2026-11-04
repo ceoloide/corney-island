@@ -11,8 +11,8 @@
   (paper "A3")
   (title_block
     (title "frontplate")
-    (date "2026-10-25")
-    (rev "0.3")
+    (date "2026-11-04")
+    (rev "0.4")
     (company "ceoloide")
   )
 
