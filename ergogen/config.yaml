@@ -112,26 +112,26 @@ points:
           key:
             column_net: C0
           rows:
-            top.key:
+            top:
               led_prev: LED_18
               led_next: LED_19
-            home.key:
+            home:
               led_prev: LED_19
               led_next: LED_20
-            bottom.key:
+            bottom:
               led_prev: LED_20
               led_next: LED_21
         pinky:
           key:
             column_net: C1
           rows:
-            top.key:
+            top:
               led_prev: LED_17
               led_next: LED_18
-            home.key:
+            home:
               led_prev: LED_16
               led_next: LED_17
-            bottom.key:
+            bottom:
               led_prev: LED_15
               led_next: LED_16
         ring:
@@ -139,13 +139,13 @@ points:
             stagger: 0.25 kp
             column_net: C2
           rows:
-            top.key:
+            top:
               led_prev: LED_12
               led_next: LED_13
-            home.key:
+            home:
               led_prev: LED_13
               led_next: LED_14
-            bottom.key:
+            bottom:
               led_prev: LED_14
               led_next: LED_15
         middle:
@@ -153,13 +153,13 @@ points:
             stagger: 0.125 kp
             column_net: C3
           rows:
-            top.key:
+            top:
               led_prev: LED_11
               led_next: LED_12
-            home.key:
+            home:
               led_prev: LED_10
               led_next: LED_11
-            bottom.key:
+            bottom:
               led_prev: LED_9
               led_next: LED_10
         index:
@@ -167,13 +167,13 @@ points:
             stagger: -0.125 kp
             column_net: C4
           rows:
-            top.key:
+            top:
               led_prev: LED_4
               led_next: LED_5
-            home.key:
+            home:
               led_prev: LED_5
               led_next: LED_6
-            bottom.key:
+            bottom:
               led_prev: LED_6
               led_next: LED_7
         inner:
@@ -181,13 +181,13 @@ points:
             stagger: -0.125 kp
             column_net: C5
           rows:
-            top.key:
+            top:
               led_prev: LED_3
               led_next: LED_4
-            home.key:
+            home:
               led_prev: LED_2
               led_next: LED_3
-            bottom.key:
+            bottom:
               led_prev: LED_1
               led_next: LED_2
       rows:
@@ -215,7 +215,7 @@ points:
           key:
             column_net: C3
           rows:
-            home.key:
+            home:
               led_prev: LED_8
               led_next: LED_9
         mid:
@@ -225,7 +225,7 @@ points:
             stagger: -2.750
             spread: ks + 2
           rows:
-            home.key:
+            home:
               led_prev: LED_7
               led_next: LED_8
         far:
@@ -240,7 +240,7 @@ points:
               - thumb_key
               - key_1_5u
           rows:
-            home.key:
+            home:
               led_prev: ULED_6
               led_next: LED_1
       rows:
@@ -905,9 +905,9 @@ pcbs:
         where: /key/
         params:
           P1: VCC
-          P2: "{{key.led_next}}" #DOUT
+          P2: "{{led_next}}" #DOUT
           P3: GND
-          P4: "{{key.led_prev}}" #DIN
+          P4: "{{led_prev}}" #DIN
           reversible: true
           reverse_mount: true
           include_traces_vias: false
